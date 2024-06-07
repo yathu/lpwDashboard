@@ -1,14 +1,101 @@
-body{
-    background-color: #ddd;
-}
-
-.container{
-    background-color: #fff;
+body {
+  background-color: #f7fafc;
 }
 
 .circle_progress {
-    margin: 20px;
-    width: 75px;
-    height: 75px;
+  width: 70px;
+  height: 70px;
+  position: relative;
+}
+
+.btn-primary {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.hero-container {
+  background-color: #cbd7e0;
+  padding: 12px 24px;
+  border-radius: 20px;
+  .progress-swiper-container {
     position: relative;
+    .progress-swiper {
+      .swiper-slide {
+        width: auto;
+
+        .progress-slider-card {
+          background-color: #fff;
+          border: 1px solid #e2e2ea;
+          padding: 12px 8px;
+          border-radius: 16px;
+          max-width: 240px;
+
+          .col {
+            padding-left: 15px;
+
+            p {
+              font-style: normal;
+              font-weight: 600;
+              font-size: 14px;
+              line-height: 17px;
+              letter-spacing: 0.2px;
+              color: #2f2f35;
+              margin-bottom: 10px;
+            }
+            span.num {
+              font-style: normal;
+              font-weight: 700;
+              font-size: 18px;
+              letter-spacing: 0.1px;
+              color: #0062ff;
+              line-height: 1;
+            }
+            span.text {
+              font-style: normal;
+              font-weight: 500;
+              font-size: 13px;
+              letter-spacing: 0.1px;
+              color: #696974;
+              line-height: 16px;
+            }
+          }
+        }
+      }
+
+      .boosts-slide {
+        span.num {
+          color: #ff974a !important;
+        }
+      }
+
+      .hotdeal-slider {
+        .circle_progress {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 3px solid rgb(237, 28, 36,.1);
+          border-radius: 50%;
+        }
+      }
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 28px;
+      height: 28px;
+      border-radius: 25px;
+      background-color: #f7fafc;
+      border: 1px solid #cbd7e0;
+      &::after {
+        font-size: 14px;
+        color: #92929d;
+      }
+    }
+    .swiper-button-prev {
+      left: -14px;
+    }
+    .swiper-button-next {
+      right: -14px;
+    }
   }
+}
