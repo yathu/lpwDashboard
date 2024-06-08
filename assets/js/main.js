@@ -62,6 +62,41 @@ $(document).ready(function () {
 
   boosts_left.animate(0.6);
 
+  // wap swiper ------------------------------------------------------------>
+
+  var boosts_left = new ProgressBar.Circle("#wap_progress", {
+    color: "#000",
+    strokeWidth: 4,
+    trailWidth: 1,
+    easing: "easeInOut",
+    duration: 1400,
+    text: {
+      autoStyleContainer: false,
+    },
+    from: { color: "#53BC77", width: 5 },
+    to: { color: "#53BC77", width: 5 },
+    // Set default step function for all animate calls
+    step: function (state, circle) {
+      circle.path.setAttribute("stroke", state.color);
+      circle.path.setAttribute("stroke-width", state.width);
+      circle.path.setAttribute("stroke-linecap", "round");
+
+      var value = Math.round(circle.value() * 100);
+      if (value === 0) {
+        circle.setText("");
+      } else {
+        circle.setText(value + "%");
+      }
+    },
+  });
+  // bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+  boosts_left.text.style.fontSize = "16px";
+
+  boosts_left.animate(0.3);
+
+
+
+  // swipoer hero---------------------------------------------------------------------------------------------------
   const progress_swiper = new Swiper(".progress-swiper", {
     direction: "horizontal",
     loop: false,
