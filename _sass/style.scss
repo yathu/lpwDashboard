@@ -8,13 +8,6 @@ body {
   position: relative;
 }
 
-.btn-primary {
-  font-size: 14px;
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-}
-
 .hero-container {
   background-color: #cbd7e0;
   padding: 12px 24px;
@@ -22,12 +15,11 @@ body {
   .progress-swiper-container {
     position: relative;
     .progress-swiper {
-
-        .progressbar-text{
-            font-family: "Inter", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: bold;
-        }
+      .progressbar-text {
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: bold;
+      }
 
       .swiper-slide {
         width: auto;
@@ -35,9 +27,13 @@ body {
         .progress-slider-card {
           background-color: #fff;
           border: 1px solid #e2e2ea;
-          padding: 12px 8px;
+          padding: 32px 12px 8px;
           border-radius: 16px;
-          max-width: 240px;
+          width: 240px;
+          height: 180px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
 
           .col {
             padding-left: 15px;
@@ -48,7 +44,7 @@ body {
               line-height: 17px;
               letter-spacing: 0.2px;
               color: #2f2f35;
-              margin-bottom: 10px;
+              margin-bottom: 4px;
               font-family: "Inter", sans-serif;
               font-optical-sizing: auto;
               font-weight: 600;
@@ -72,6 +68,7 @@ body {
               line-height: 16px;
               font-family: "Inter", sans-serif;
               font-optical-sizing: auto;
+              margin: 12px 0px 8px;
             }
           }
         }
@@ -88,13 +85,81 @@ body {
           display: flex;
           justify-content: center;
           align-items: center;
-          border: 3px solid rgb(237, 28, 36,.1);
+          border: 3px solid rgb(237, 28, 36, 0.1);
           border-radius: 50%;
         }
       }
-      .wap-slide{
-        span.num{
-            color: #009432 !important;
+      .wap-slide {
+        span.num {
+          color: #009432 !important;
+        }
+      }
+      .voucher-slide {
+        .progress-slider-card {
+          max-width: 324px !important;
+          padding: 14px 12px !important;
+          width: 324px;
+
+          .title {
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            letter-spacing: 0.2px;
+            color: #2f2f35;
+          }
+
+          .voucher-content {
+            background: #e3fbf0;
+            border-radius: 10px;
+            padding: 8px 12px;
+            margin: 10px 0;
+
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+            .code {
+              font-family: "Inter";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 10px;
+              letter-spacing: 0.1px;
+              color: #92929d;
+              span {
+                font-weight: 600;
+              }
+            }
+            .price {
+              font-family: "Inter";
+              font-style: normal;
+              font-weight: 500;
+              font-size: 12px;
+              letter-spacing: 0.1px;
+
+              color: #696974;
+
+              span {
+                font-family: "Inter";
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                letter-spacing: 0.1px;
+                color: #50505a;
+              }
+            }
+            .expire {
+              font-family: "Inter";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 10px;
+
+              letter-spacing: 0.1px;
+
+              color: #92929d;
+            }
+          }
         }
       }
     }
