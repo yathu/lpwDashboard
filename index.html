@@ -4,8 +4,11 @@ layout: home
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-2"></div>
-    <div class="col overflow-hidden">
+    <div class="col-12 col-md-4 col-lg-2"></div>
+    <div class="col px-0">
+
+
+
       <div class="hero-container">
         <div class="progress-swiper-container">
           <div class="swiper progress-swiper">
@@ -33,6 +36,7 @@ layout: home
 
                   <button type="button" class="btn btn-primary">
                     Renew Membership
+                    <i class="bi bi-caret-right-fill"></i>
                   </button>
                 </div>
               </div>
@@ -57,6 +61,7 @@ layout: home
 
                   <button type="button" class="btn btn-primary">
                     Renew Membership
+                    <i class="bi bi-caret-right-fill"></i>
                   </button>
                 </div>
               </div>
@@ -93,6 +98,7 @@ layout: home
 
                   <button type="button" class="btn btn-primary">
                     Renew Membership
+                    <i class="bi bi-caret-right-fill"></i>
                   </button>
                 </div>
               </div>
@@ -114,6 +120,7 @@ layout: home
 
                   <button type="button" class="btn btn-primary">
                     Renew Membership
+                    <i class="bi bi-caret-right-fill"></i>
                   </button>
                 </div>
               </div>
@@ -137,7 +144,10 @@ layout: home
                     </div>
                     <a href="#" class="btn btn-green">Redeem Now</a>
                   </div>
-                  <a href="#" class="btn btn-primary">Available Options</a>
+                  <a href="#" class="btn btn-primary">
+                    Available Options
+                    <i class="bi bi-caret-right-fill"></i>
+                  </a>
                 </div>
               </div>
             </div>
@@ -151,7 +161,7 @@ layout: home
       <div class="row">
         <div class="col-8">
           <div class="row agent-sec-container">
-            <div class="col-7">
+            <div class="col-8">
               <div class="profile-info-sec row gx-0">
                 <div
                   class="col-auto flex-column justify-content-start justify-content-center"
@@ -177,7 +187,15 @@ layout: home
                 </div>
               </div>
             </div>
-            <div class="col-5">2</div>
+            <div class="col-4">
+              <div class="score-chart-container">
+                <div class="title">
+                  Your Agent Score
+                </div>
+                              {% include agentScoreChart.html %}
+
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-4"></div>

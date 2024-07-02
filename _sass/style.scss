@@ -8,10 +8,21 @@ body {
   position: relative;
 }
 
+#container {
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+}
+
 .hero-container {
   background-color: #cbd7e0;
   padding: 12px 24px;
   border-radius: 20px;
+
+  @media (max-width: 991.98px) {
+    padding: 12px;
+  }
+
   .progress-swiper-container {
     position: relative;
     .progress-swiper {
@@ -34,6 +45,11 @@ body {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+
+          @media (max-width: 575.98px) {
+            // width: auto;
+            // max-width: 100%;
+          }
 
           .col {
             padding-left: 15px;
@@ -70,6 +86,11 @@ body {
               font-optical-sizing: auto;
               margin: 12px 0px 8px;
             }
+          }
+          .btn-primary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
           }
         }
       }
@@ -263,6 +284,24 @@ body {
         color: #696974;
         margin-top: 6px;
       }
+    }
+  }
+
+  .score-chart-container {
+    padding-top: 20px;
+    
+    background: #f7fafc;
+    border-radius: 14px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+
+    .title {
+      font-size: 18px;
+      color: #2f2f35;
+      letter-spacing: 0.26px;
+      text-align: center;
     }
   }
 }

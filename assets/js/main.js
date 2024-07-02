@@ -109,20 +109,27 @@ $(document).ready(function () {
     },
     slidesPerView: "auto",
     spaceBetween: 8,
-    // Responsive breakpoints
-    // breakpoints: {
-    //   // when window width is >= 320px
-    //   320: {
-    //     slidesPerView: 1,
-    //   },
-    //   // when window width is >= 480px
-    //   480: {
-    //     slidesPerView: 1,
-    //   },
-    //   // when window width is >= 640px
-    //   640: {
-    //     slidesPerView: 'auto',
-    //   },
-    // },
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 2,
+      },
+      // when window width is >= 480px
+      480: {
+        slidesPerView: 1,
+      },
+      // when window width is >= 640px
+      640: {
+        slidesPerView: 'auto',
+      },
+    },
   });
 });
+
+var bar = new ProgressBar.Path('#path-ndmds5olzj-3', {
+  easing: 'easeInOut',
+  duration: 1400,
+});
+
+bar.set(0);
+bar.animate(0.7);  // Number from 0.0 to 1.0
