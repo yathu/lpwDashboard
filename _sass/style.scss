@@ -491,6 +491,21 @@ body {
     }
   }
 
+  hr{
+    margin: 14px 0 !important;
+    color: #EDF2F7;
+  }
+
+  .list-container{
+    .list-title{
+      font-family: Inter-SemiBold, sans-serif;
+      font-size: 18px;
+      color: #2F2F35;
+      letter-spacing: 0.2px;
+      line-height: 1.2;
+    }
+  }
+
   .score-chart-container {
     padding-top: 20px;
 

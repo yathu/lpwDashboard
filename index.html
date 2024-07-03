@@ -4,10 +4,12 @@ layout: home
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 col-md-4 col-lg-2"></div>
-        <div class="col px-0">
+        <div class="col-12 col-md-4 col-lg-2">
+            left Menu
+        </div>
+        <div class="col-12 col-md-8 col-lg-10 px-0">
 
-            <div class="hero-container">
+            <div class="hero-container my-4">
 
                 {% include heroProgressSwiper.html %}
 
@@ -218,15 +220,34 @@ layout: home
                     </div>
                     <a href="#" class="btn btn-verify">Verify Now</a>
                   </div>
+                                    <div class="desc">
+                                        Increase the score to become a Platinum Agent
+                                    </div>
+                                </div>
+                            </div>
 
+                            <hr class="my-3">
+
+                            <div class="list-container">
+                                <div class="list-title">
+                                    Quick ways to improve your Agent Score
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-4">
+                            <div class="score-chart-container">
+                                <div class="title">
+                                    Your Agent Score
+                                </div>
+                                {% include agentScoreChart.html %}
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <div class="col-4"></div>
             </div>
-            <div class="col-5">2</div>
-          </div>
         </div>
-        <div class="col-4"></div>
-      </div>
     </div>
-  </div>
 </div>
