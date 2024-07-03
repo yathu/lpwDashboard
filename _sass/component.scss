@@ -24,14 +24,28 @@
   }
 }
 
-.btn-green{
+.btn-green {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  color: #fafafb;
+  background: #009432;
+  border-radius: 8px;
+}
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 600;
-font-size: 12px;
-color: #FAFAFB;
-background: #009432;
-border-radius: 8px;
+.btn-verify {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 24px;
+  background: #ecf9f3;
+  border-radius: 10px;
 
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  text-align: center;
+  color: #009432;
 }

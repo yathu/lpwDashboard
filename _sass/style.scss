@@ -508,4 +508,60 @@ body {
       text-align: center;
     }
   }
+
+  hr {
+    border-color: #edf2f7;
+    opacity: 1;
+    margin: 14px 0px 15px 0px;
+  }
+
+  .agent-score-container {
+    .title {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: 0.2px;
+      color: #2f2f35;
+      margin-bottom: 20px;
+    }
+
+    .score-list-sec {
+      .score-list-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+        .content {
+          padding-left: 10px;
+          padding-right: 10px;
+          div {
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            letter-spacing: 0.2px;
+            color: #2f2f35;
+            line-height: 1.1;
+            margin-bottom: 4px;
+          }
+
+          span {
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 13px;
+            letter-spacing: 0.1px;
+            color: #696974;
+            display: inline-block;
+            line-height: 1.1;
+          }
+        }
+        .btn-verify{
+          min-width: max-content;
+        }
+      }
+    }
+  }
 }
