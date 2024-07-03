@@ -23,8 +23,13 @@ body {
     padding: 12px;
   }
 
+  @media (max-width: 767.98px) {
+    border-radius: 0;
+  }
+
   .progress-swiper-container {
     position: relative;
+
     .progress-swiper {
       .progressbar-text {
         font-family: "Inter", sans-serif;
@@ -65,6 +70,7 @@ body {
               font-optical-sizing: auto;
               font-weight: 600;
             }
+
             span.num {
               font-style: normal;
               font-weight: 700;
@@ -75,6 +81,7 @@ body {
               font-family: "Inter", sans-serif;
               font-optical-sizing: auto;
             }
+
             span.text {
               font-style: normal;
               font-weight: 500;
@@ -87,6 +94,7 @@ body {
               margin: 12px 0px 8px;
             }
           }
+
           .btn-primary {
             display: flex;
             justify-content: space-between;
@@ -110,11 +118,13 @@ body {
           border-radius: 50%;
         }
       }
+
       .wap-slide {
         span.num {
           color: #009432 !important;
         }
       }
+
       .voucher-slide {
         .progress-slider-card {
           max-width: 324px !important;
@@ -148,10 +158,12 @@ body {
               font-size: 10px;
               letter-spacing: 0.1px;
               color: #92929d;
+
               span {
                 font-weight: 600;
               }
             }
+
             .price {
               font-family: "Inter";
               font-style: normal;
@@ -170,6 +182,7 @@ body {
                 color: #50505a;
               }
             }
+
             .expire {
               font-family: "Inter";
               font-style: normal;
@@ -184,6 +197,7 @@ body {
         }
       }
     }
+
     .swiper-button-next,
     .swiper-button-prev {
       width: 28px;
@@ -191,17 +205,204 @@ body {
       border-radius: 25px;
       background-color: #f7fafc;
       border: 1px solid #cbd7e0;
+
       &::after {
         font-size: 14px;
         color: #92929d;
       }
     }
+
     .swiper-button-prev {
       left: -14px;
     }
+
     .swiper-button-next {
       right: -14px;
     }
+  }
+
+  .mobile-progress-container {
+    .item {
+      background: #FFFFFF;
+      border-radius: 16px;
+      box-shadow: 0 0 1px 0 rgba(12, 26, 75, 0.24), 0 3px 8px -1px rgba(50, 50, 71, 0.05);
+      padding: 15px 8px 8px 8px;
+
+      .title {
+        font-family: Inter-SemiBold, sans-serif;
+        font-size: 13px;
+        color: #2F2F35;
+        margin-bottom: 14px;
+        line-height: 1.2;
+        min-height: 26px;
+      }
+
+      .num {
+        font-family: Inter-Bold, sans-serif;
+        font-size: 18px;
+        color: #171725;
+        letter-spacing: 0.09px;
+        line-height: 1;
+      }
+
+      .label {
+        font-family: Inter-Medium, sans-serif;
+        font-size: 12px;
+        color: #696974;
+        letter-spacing: 0.1px;
+        line-height: 1.2;
+      }
+
+      .progress {
+        height: 6px;
+        margin-top: 5px;
+        margin-bottom: 12px;
+      }
+
+      .btn-primary {
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: start;
+        font-family: Inter-Medium;
+        font-size: 13px;
+        color: #FFFFFF;
+        letter-spacing: 0.06px;
+        line-height: 1.3;
+      }
+    }
+
+    .item.featured {
+      .progress-bar {
+        background-color: #0062FF;
+      }
+
+      .progress {
+        background-color: #E5EFFF;
+      }
+
+      .color {
+        color: #0062FF;
+      }
+    }
+
+    .item.boost {
+      .color {
+        color: #FF974A;
+      }
+
+      .progress-bar {
+        background-color: #FF974A;
+      }
+
+      .progress {
+        background-color: #FFF5ED;
+      }
+    }
+
+    .item.deals {
+      .title {
+        margin-bottom: 8px;
+      }
+
+      .img-box {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 3px solid rgba(237, 28, 36, .1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 11px;
+      }
+
+      .num {
+        color: #ED1C24;
+        margin-bottom: 3px;
+      }
+    }
+
+    .item.wap {
+      .color {
+        color: #53BC77;
+      }
+      .progress-bar {
+        background-color: #53BC77;
+      }
+      .progress{
+        background-color: #E8F3E8;
+      }
+
+    }
+
+    .item.voucher{
+      padding: 14px 12px !important;
+
+      .title {
+        font-family: Inter-SemiBold;
+        font-size: 14px;
+        color: #2F2F35;
+        letter-spacing: 0.2px;
+        margin-bottom: 0;
+        min-height: auto;
+      }
+
+      .voucher-content {
+        background: #e3fbf0;
+        border-radius: 10px;
+        padding: 8px 12px;
+        margin: 10px 0;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .code {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 10px;
+          letter-spacing: 0.1px;
+          color: #92929d;
+
+          span {
+            font-weight: 600;
+          }
+        }
+
+        .price {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          letter-spacing: 0.1px;
+
+          color: #696974;
+
+          span {
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.1px;
+            color: #50505a;
+          }
+        }
+
+        .expire {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 10px;
+
+          letter-spacing: 0.1px;
+
+          color: #92929d;
+        }
+      }
+    }
+
   }
 }
 
@@ -209,8 +410,8 @@ body {
   background: #ffffff;
   border-radius: 20px;
   border: 1px solid #e2e2ea;
-  padding: 24px;
-  
+  padding: 24px 12px;
+
 
   .profile-info-sec {
     .profile-img-container {
@@ -218,6 +419,7 @@ body {
       height: 72px;
 
       position: relative;
+
       .profile {
         border: 2px solid #d5aa55;
         border-radius: 50%;
@@ -260,6 +462,7 @@ body {
 
     .info {
       margin-left: 20px;
+
       .titles {
         font-family: "Inter";
         font-style: normal;
