@@ -25,6 +25,7 @@ body {
 
   @media (max-width: 767.98px) {
     border-radius: 0;
+    margin: 0 -12px;
   }
 
   .progress-swiper-container {
@@ -463,6 +464,11 @@ body {
     .info {
       margin-left: 20px;
 
+      @media (max-width: 991.98px) {
+        margin-left: 0;
+        margin-top: 12px;
+      }
+
       .titles {
         font-family: "Inter";
         font-style: normal;
@@ -470,10 +476,20 @@ body {
         line-height: 120%;
         letter-spacing: 0.2px;
         color: #2f2f35;
+        font-size: 20px;
+
+
+        @media (max-width: 767.98px) {
+          font-size: 16px;
+        }
 
         .name {
           color: #1dbf73;
           font-size: 18px;
+
+          @media (max-width: 767.98px) {
+            font-size: 13px;
+          }
         }
       }
 
@@ -487,6 +503,10 @@ body {
 
         color: #696974;
         margin-top: 6px;
+
+        @media (max-width: 767.98px) {
+          font-size: 12px;
+        }
       }
     }
   }
@@ -494,16 +514,6 @@ body {
   hr{
     margin: 14px 0 !important;
     color: #EDF2F7;
-  }
-
-  .list-container{
-    .list-title{
-      font-family: Inter-SemiBold, sans-serif;
-      font-size: 18px;
-      color: #2F2F35;
-      letter-spacing: 0.2px;
-      line-height: 1.2;
-    }
   }
 
   .score-chart-container {
@@ -517,17 +527,26 @@ body {
     flex-direction: column;
 
     .title {
+      font-family: Inter-SemiBold, sans-serif;
       font-size: 18px;
-      color: #2f2f35;
+      color: #2F2F35;
       letter-spacing: 0.26px;
       text-align: center;
+
+      @media (max-width: 767.98px) {
+        font-size: 14px;
+      }
+    }
+    svg{
+      max-width: 100%;
+      height: auto;
     }
   }
 
   hr {
     border-color: #edf2f7;
     opacity: 1;
-    margin: 14px 0px 15px 0px;
+    margin: 14px 0px;
   }
 
   .agent-score-container {
@@ -540,9 +559,31 @@ body {
       letter-spacing: 0.2px;
       color: #2f2f35;
       margin-bottom: 20px;
+
+      @media (max-width: 767.98px) {
+        font-size: 16px;
+      }
     }
 
     .score-list-sec {
+      position: relative;
+
+      .more{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-image: linear-gradient(180deg, rgba(255,255,255,0.00) 0%, rgba(255,255,255,0.78) 43%, #FFFFFF 100%);
+        padding-top: 15px;
+        text-align: center;
+        display: none;
+      }
+      @media (max-width: 767.98px) {
+        max-height: 115px;
+        overflow: hidden;
+        .more{
+          display: block;
+        }
+      }
       .score-list-item {
         display: flex;
         align-items: center;
@@ -571,6 +612,10 @@ body {
             color: #696974;
             display: inline-block;
             line-height: 1.1;
+
+            @media (max-width: 767.98px) {
+              font-size: 12px;
+            }
           }
         }
         .btn-verify{

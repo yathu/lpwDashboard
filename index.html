@@ -7,7 +7,7 @@ layout: home
         <div class="col-12 col-md-4 col-lg-2">
             left Menu
         </div>
-        <div class="col-12 col-md-8 col-lg-10 px-0">
+        <div class="col-12 col-md-8 col-lg-10">
 
             <div class="hero-container my-4">
 
@@ -110,32 +110,32 @@ layout: home
                         </div>
 
                         <div class="col-12">
-                                <div class="item voucher">
-                                    <div
-                                            class="d-flex justify-content-between align-items-center"
+                            <div class="item voucher">
+                                <div
+                                        class="d-flex justify-content-between align-items-center"
+                                >
+                                    <span class="title"> Voucher Expiring! </span>
+                                    <a href="#" class="btn btn-red">
+                                        <img src="./assets/img/danger.svg" alt=""/>
+                                        6 Days Left!</a
                                     >
-                                        <span class="title"> Voucher Expiring! </span>
-                                        <a href="#" class="btn btn-red">
-                                            <img src="./assets/img/danger.svg" alt=""/>
-                                            6 Days Left!</a
-                                        >
+                                </div>
+                                <div class="voucher-content">
+                                    <div>
+                                        <div class="code">Voucher code: <span>#LPW324</span></div>
+                                        <div class="price"><span>Rs. 5000</span> Remaining</div>
+                                        <div class="expire">Expiring: Aug 31 2024</div>
                                     </div>
-                                    <div class="voucher-content">
-                                        <div>
-                                            <div class="code">Voucher code: <span>#LPW324</span></div>
-                                            <div class="price"><span>Rs. 5000</span> Remaining</div>
-                                            <div class="expire">Expiring: Aug 31 2024</div>
-                                        </div>
-                                        <a href="#" class="btn btn-green">
-                                            Redeem Now
-                                            <i class="bi bi-caret-right-fill"></i>
-                                        </a>
-                                    </div>
-                                    <a href="#" class="btn btn-primary py-2">
-                                        Available Options
+                                    <a href="#" class="btn btn-green">
+                                        Redeem Now
                                         <i class="bi bi-caret-right-fill"></i>
                                     </a>
                                 </div>
+                                <a href="#" class="btn btn-primary py-2">
+                                    Available Options
+                                    <i class="bi bi-caret-right-fill"></i>
+                                </a>
+                            </div>
                         </div>
 
                     </div>
@@ -143,13 +143,12 @@ layout: home
 
             </div>
 
-            <div class="row mx-0">
-                <div class="col-8">
-                    <div class="row agent-sec-container">
-                        <div class="col-8">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <div class="row mx-0 agent-sec-container gx-0 gx-md-3">
+                        <div class="col-6 col-lg-8">
                             <div class="profile-info-sec row gx-0">
-                                <div
-                                        class="col-auto flex-column justify-content-start justify-content-center"
+                                <div class="col-12 col-lg-auto flex-column justify-content-start justify-content-center"
                                 >
                                     <div class="profile-img-container">
                                         <img class="profile" src="assets/img/profile.jpg" alt=""/>
@@ -160,82 +159,21 @@ layout: home
                                         <span> Gold </span>
                                     </div>
                                 </div>
-                                <div class="col info">
+                                <div class="col-12 col-lg-8 info">
                                     <div class="titles">
                                         <div class="name">Hey Mahela,</div>
                                         Your Agent Score is Low!
                                     </div>
 
-                  <div class="desc">
-                    Increase the score to become a Platinum Agent
-                  </div>
-                </div>
-              </div>
-
-              <hr>
-
-              <div class="agent-score-container">
-                <div class="title">
-                  Quick ways to improve your Agent Score
-                </div>
-                <div class="score-list-sec">
-                  <div class="score-list-item">
-                    <img src="assets/img/score_list.svg" alt="">
-                    <div class="content">
-                      <div>
-                        20 Unverified Properties
-                      </div>
-
-                      <span>
-                        Verified properties rank higher in search result
-                      </span>
-                    </div>
-                    <a href="#" class="btn btn-verify">Verify Now</a>
-                  </div>
-
-                  <div class="score-list-item">
-                    <img src="assets/img/score_list.svg" alt="">
-                    <div class="content">
-                      <div>
-                        12 Properties without photos
-                      </div>
-
-                      <span>
-                        Verified properties rank higher in search result
-                      </span>
-                    </div>
-                    <a href="#" class="btn btn-verify">Verify Now</a>
-                  </div>
-
-                  <div class="score-list-item">
-                    <img src="assets/img/score_list_success.svg" alt="">
-                    <div class="content">
-                      <div>
-                        23 Continuous Active Months on LPW
-                      </div>
-
-                      <span>
-                        The longer you are with us, the better your score.
-                      </span>
-                    </div>
-                    <a href="#" class="btn btn-verify">Verify Now</a>
-                  </div>
                                     <div class="desc">
                                         Increase the score to become a Platinum Agent
                                     </div>
                                 </div>
                             </div>
 
-                            <hr class="my-3">
-
-                            <div class="list-container">
-                                <div class="list-title">
-                                    Quick ways to improve your Agent Score
-                                </div>
-                            </div>
-
+                            <hr>
                         </div>
-                        <div class="col-4">
+                        <div class="col-6 col-lg-4">
                             <div class="score-chart-container">
                                 <div class="title">
                                     Your Agent Score
@@ -243,6 +181,64 @@ layout: home
                                 {% include agentScoreChart.html %}
 
                             </div>
+                        </div>
+
+                        <div class="row gx-0 gx-md-3">
+                            <div class="col-12 col-lg-8">
+                                <div class="agent-score-container">
+                                    <div class="title">
+                                        Quick ways to improve your Agent Score
+                                    </div>
+                                    <div class="score-list-sec">
+                                        <div class="more">
+                                            <a href="#" class="btn btn-primary">View more</a>
+                                        </div>
+                                        <div class="score-list-item">
+                                            <img src="assets/img/score_list.svg" alt="">
+                                            <div class="content">
+                                                <div>
+                                                    20 Unverified Properties
+                                                </div>
+
+                                                <span>
+                        Verified properties rank higher in search result
+                      </span>
+                                            </div>
+                                            <a href="#" class="btn btn-verify">Verify Now</a>
+                                        </div>
+
+                                        <div class="score-list-item">
+                                            <img src="assets/img/score_list.svg" alt="">
+                                            <div class="content">
+                                                <div>
+                                                    12 Properties without photos
+                                                </div>
+
+                                                <span>
+                        Verified properties rank higher in search result
+                      </span>
+                                            </div>
+                                            <a href="#" class="btn btn-verify">Verify Now</a>
+                                        </div>
+
+                                        <div class="score-list-item">
+                                            <img src="assets/img/score_list_success.svg" alt="">
+                                            <div class="content">
+                                                <div>
+                                                    23 Continuous Active Months on LPW
+                                                </div>
+
+                                                <span>
+                        The longer you are with us, the better your score.
+                      </span>
+                                            </div>
+                                            <a href="#" class="btn btn-verify">Verify Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-4"></div>
                         </div>
                     </div>
                 </div>
