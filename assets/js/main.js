@@ -104,8 +104,8 @@ $(document).ready(function () {
       el: ".swiper-pagination",
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".hero-next",
+      prevEl: ".hero-prev",
     },
     slidesPerView: "auto",
     spaceBetween: 8,
@@ -133,3 +133,17 @@ var bar = new ProgressBar.Path('#path-ndmds5olzj-3', {
 
 bar.set(0);
 bar.animate(0.7);  // Number from 0.0 to 1.0
+
+const updateSwiper = new Swiper('.update-swiper', {
+  loop: false,
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+  spaceBetween: 12,
+  // Navigation arrows
+  navigation: {
+    nextEl: '.next-update',
+    prevEl: '.prev-update',
+  },
+});

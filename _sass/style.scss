@@ -26,6 +26,7 @@ body {
   @media (max-width: 767.98px) {
     border-radius: 0;
     margin: 0 -12px;
+    padding: 0;
   }
 
   .progress-swiper-container {
@@ -222,190 +223,207 @@ body {
     }
   }
 
-  .mobile-progress-container {
-    .item {
-      background: #FFFFFF;
-      border-radius: 16px;
-      box-shadow: 0 0 1px 0 rgba(12, 26, 75, 0.24), 0 3px 8px -1px rgba(50, 50, 71, 0.05);
-      padding: 15px 8px 8px 8px;
+}
 
-      .title {
-        font-family: Inter-SemiBold, sans-serif;
-        font-size: 13px;
-        color: #2F2F35;
-        margin-bottom: 14px;
-        line-height: 1.2;
-        min-height: 26px;
-      }
+.mobile-col{
 
-      .num {
-        font-family: Inter-Bold, sans-serif;
-        font-size: 18px;
-        color: #171725;
-        letter-spacing: 0.09px;
-        line-height: 1;
-      }
+  @media (max-width: 991.98px) {
+    background-color: #cbd7e0;
+    padding-top: 12px;
+    padding-bottom: 8px;
+  }
+}
 
-      .label {
-        font-family: Inter-Medium, sans-serif;
-        font-size: 12px;
-        color: #696974;
+.mobile-progress-container {
+  .item {
+    background: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0 0 1px 0 rgba(12, 26, 75, 0.24), 0 3px 8px -1px rgba(50, 50, 71, 0.05);
+    padding: 15px 8px 8px 8px;
+
+    .title {
+      font-family: Inter-SemiBold, sans-serif;
+      font-size: 13px;
+      color: #2F2F35;
+      margin-bottom: 14px;
+      line-height: 1.2;
+      min-height: 26px;
+    }
+
+    .num {
+      font-family: Inter-Bold, sans-serif;
+      font-size: 18px;
+      color: #171725;
+      letter-spacing: 0.09px;
+      line-height: 1;
+    }
+
+    .label {
+      font-family: Inter-Medium, sans-serif;
+      font-size: 12px;
+      color: #696974;
+      letter-spacing: 0.1px;
+      line-height: 1.2;
+    }
+
+    .progress {
+      height: 6px;
+      margin-top: 5px;
+      margin-bottom: 12px;
+    }
+
+    .btn-primary {
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: start;
+      font-family: Inter-Medium;
+      font-size: 13px;
+      color: #FFFFFF;
+      letter-spacing: 0.06px;
+      line-height: 1.3;
+    }
+  }
+
+  .item.featured {
+    .progress-bar {
+      background-color: #0062FF;
+    }
+
+    .progress {
+      background-color: #E5EFFF;
+    }
+
+    .color {
+      color: #0062FF;
+    }
+  }
+
+  .item.boost {
+    .color {
+      color: #FF974A;
+    }
+
+    .progress-bar {
+      background-color: #FF974A;
+    }
+
+    .progress {
+      background-color: #FFF5ED;
+    }
+  }
+
+  .item.deals {
+    .title {
+      margin-bottom: 8px;
+    }
+
+    .img-box {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 3px solid rgba(237, 28, 36, .1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 11px;
+    }
+
+    .num {
+      color: #ED1C24;
+      margin-bottom: 3px;
+    }
+  }
+
+  .item.wap {
+    .color {
+      color: #53BC77;
+    }
+
+    .progress-bar {
+      background-color: #53BC77;
+    }
+
+    .progress {
+      background-color: #E8F3E8;
+    }
+
+  }
+
+  .item.voucher {
+    padding: 14px 12px !important;
+
+    .title {
+      font-family: Inter-SemiBold;
+      font-size: 14px;
+      color: #2F2F35;
+      letter-spacing: 0.2px;
+      margin-bottom: 0;
+      min-height: auto;
+    }
+
+    .voucher-content {
+      background: #e3fbf0;
+      border-radius: 10px;
+      padding: 8px 12px;
+      margin: 10px 0;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .code {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
         letter-spacing: 0.1px;
-        line-height: 1.2;
-      }
+        color: #92929d;
 
-      .progress {
-        height: 6px;
-        margin-top: 5px;
-        margin-bottom: 12px;
-      }
-
-      .btn-primary {
-        border-radius: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        text-align: start;
-        font-family: Inter-Medium;
-        font-size: 13px;
-        color: #FFFFFF;
-        letter-spacing: 0.06px;
-        line-height: 1.3;
-      }
-    }
-
-    .item.featured {
-      .progress-bar {
-        background-color: #0062FF;
-      }
-
-      .progress {
-        background-color: #E5EFFF;
-      }
-
-      .color {
-        color: #0062FF;
-      }
-    }
-
-    .item.boost {
-      .color {
-        color: #FF974A;
-      }
-
-      .progress-bar {
-        background-color: #FF974A;
-      }
-
-      .progress {
-        background-color: #FFF5ED;
-      }
-    }
-
-    .item.deals {
-      .title {
-        margin-bottom: 8px;
-      }
-
-      .img-box {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        border: 3px solid rgba(237, 28, 36, .1);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 11px;
-      }
-
-      .num {
-        color: #ED1C24;
-        margin-bottom: 3px;
-      }
-    }
-
-    .item.wap {
-      .color {
-        color: #53BC77;
-      }
-
-      .progress-bar {
-        background-color: #53BC77;
-      }
-
-      .progress {
-        background-color: #E8F3E8;
-      }
-
-    }
-
-    .item.voucher {
-      padding: 14px 12px !important;
-
-      .title {
-        font-family: Inter-SemiBold;
-        font-size: 14px;
-        color: #2F2F35;
-        letter-spacing: 0.2px;
-        margin-bottom: 0;
-        min-height: auto;
-      }
-
-      .voucher-content {
-        background: #e3fbf0;
-        border-radius: 10px;
-        padding: 8px 12px;
-        margin: 10px 0;
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        .code {
-          font-family: "Inter";
-          font-style: normal;
-          font-weight: 400;
-          font-size: 10px;
-          letter-spacing: 0.1px;
-          color: #92929d;
-
-          span {
-            font-weight: 600;
-          }
-        }
-
-        .price {
-          font-family: "Inter";
-          font-style: normal;
-          font-weight: 500;
-          font-size: 12px;
-          letter-spacing: 0.1px;
-
-          color: #696974;
-
-          span {
-            font-family: "Inter";
-            font-style: normal;
-            font-weight: 700;
-            font-size: 14px;
-            letter-spacing: 0.1px;
-            color: #50505a;
-          }
-        }
-
-        .expire {
-          font-family: "Inter";
-          font-style: normal;
-          font-weight: 400;
-          font-size: 10px;
-
-          letter-spacing: 0.1px;
-
-          color: #92929d;
+        span {
+          font-weight: 600;
         }
       }
-    }
 
+      .price {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        letter-spacing: 0.1px;
+
+        color: #696974;
+
+        span {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 14px;
+          letter-spacing: 0.1px;
+          color: #50505a;
+        }
+      }
+
+      .expire {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+
+        letter-spacing: 0.1px;
+
+        color: #92929d;
+      }
+    }
+  }
+
+}
+
+
+.agent-sec-col{
+  @media (max-width: 767.98px) {
+    background-color: #E2EAEF;
   }
 }
 
@@ -414,6 +432,11 @@ body {
   border-radius: 20px;
   border: 1px solid #e2e2ea;
   padding: 24px 12px;
+
+  @media (max-width: 767.98px) {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
 
 
   .profile-info-sec {
@@ -561,7 +584,18 @@ body {
     }
   }
 
+  .list-col{
+    @media (max-width: 767.98px) {
+      order: 1;
+    }
+  }
+
   .agent-score-container {
+
+    @media (min-width: 992px) {
+      margin-top: -28%;
+    }
+
     .title {
       margin-bottom: 20px;
     }
@@ -728,5 +762,126 @@ body {
     }
 
 
+  }
+}
+
+.update-container{
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 0 1px 0 rgba(12,26,75,0.24), 0 3px 8px -1px rgba(50,50,71,0.05);
+  padding: 22px 14px 16px;
+
+  @media (max-width: 767.98px) {
+    margin-top: 12px;
+  }
+
+  .header{
+    margin-bottom: 12px;
+  }
+
+  a,a:hover{
+    i{
+      color: #92929D;
+    }
+  }
+
+  .update-swiper{
+    .swiper-slide{
+      background: #E3EFFB;
+      border: 1px solid #E2E2EA;
+      border-radius: 20px;
+      padding: 12px;
+
+      .text{
+        font-family: Inter-Medium, sans-serif;
+        font-size: 14px;
+        color: #000000;
+        letter-spacing: 0.2px;
+      }
+
+    }
+    .wap-slide{
+      .content{
+        margin-bottom: 15px;
+        display: flex;
+        gap: 12px;
+        .text{
+          flex: 1;
+        }
+      }
+
+      .buttons{
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        .btn-primary{
+          flex: 1;
+        }
+        .btn-light{
+          background-color: #FFFFFF;
+          border-color: #FFFFFF;
+        }
+      }
+    }
+  }
+
+  .controls{
+    justify-content: end;
+    align-items: center;
+    margin-top: 12px;
+
+    span{
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: #F7FAFC;
+
+      i:before{
+        color: #92929D;
+
+        font-weight: 900 !important;
+      }
+    }
+    span.swiper-button-disabled{
+      background-color: #FFFFFF;
+      opacity: 20%;
+
+    }
+  }
+}
+
+.light-widget{
+  background: #E1EAF1;
+  border: 1px solid #D0D9E1;
+  border-radius: 20px;
+  box-shadow: 0 0 1px 0 rgba(12,26,75,0.24), 0 3px 8px -1px rgba(50,50,71,0.05);
+  display: flex;
+  padding: 16px 12px;
+  gap: 12px;
+
+  .img{
+    background: #FFFFFF;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .content{
+    flex: 1;
+  }
+
+  .widget-title-2{
+    margin-bottom: 2px;
   }
 }

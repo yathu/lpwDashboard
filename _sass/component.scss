@@ -61,3 +61,23 @@
     font-size: 16px;
   }
 }
+
+.widget-title-2 {
+  font-family: Inter-SemiBold, sans-serif;
+  font-size: 16px;
+  color: #2F2F35;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+
+  @media (max-width: 767.98px) {
+    font-size: 14px;
+  }
+}
+
+.widget-label{
+  font-family: Inter-Medium, serif;
+  font-size: 13px;
+  color: #696974;
+  letter-spacing: 0.1px;
+  line-height: 1.2;
+}
