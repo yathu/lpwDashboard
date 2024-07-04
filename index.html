@@ -180,13 +180,17 @@ layout: home
                                 </div>
                                 {% include agentScoreChart.html %}
 
+                                <div class="score-text">
+Low
+                                </div>
+
                             </div>
                         </div>
 
                         <div class="row gx-0 gx-md-3">
                             <div class="col-12 col-lg-8">
                                 <div class="agent-score-container">
-                                    <div class="title">
+                                    <div class="widget-title-1 title">
                                         Quick ways to improve your Agent Score
                                     </div>
                                     <div class="score-list-sec">
@@ -238,7 +242,53 @@ layout: home
                                 </div>
 
                             </div>
-                            <div class="col-4"></div>
+                            <div class="col-4">
+                                <div class="tire-container mt-3">
+                                    <div class="widget-title-1 text-center">
+                                        Membership Tier
+                                    </div>
+                                    <div class="memberships my-3">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <img src="/assets/img/silver.svg" alt="">
+                                                <div class="name">Sliver</div>
+                                                <div class="label">12 Months</div>
+                                            </div>
+                                            <div class="col-4">
+                                                <img src="/assets/img/gold.svg" alt="">
+                                                <div class="name">Gold</div>
+                                                <div class="label">24 Months</div>
+                                            </div><div class="col-4">
+                                            <img src="/assets/img/platinum.svg" alt="">
+                                            <div class="name">Platinum</div>
+                                            <div class="label">36 Months</div>
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="progress-container">
+                                        <div class="progress" style="height: 4px;">
+                                            <div class="progress-bar" role="progressbar" style="width: 50%;"
+                                                 aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <div class="check middle">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                 fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="check-inactive start active"></div>
+                                        <div class="check-inactive end"></div>
+                                    </div>
+
+                                    <a href="#" class="btn btn-primary w-100 mt-3 d-flex justify-content-between">View Benefits
+                                        <i class="bi bi-caret-right-fill"></i>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
