@@ -138,7 +138,7 @@ const updateSwiper = new Swiper('.update-swiper', {
   loop: false,
   // If we need pagination
   pagination: {
-    el: '.swiper-pagination',
+    el: '.update-pagination',
   },
   spaceBetween: 12,
   // Navigation arrows

@@ -100,3 +100,29 @@
   letter-spacing: 0.1px;
   line-height: 1.2;
 }
+.controls{
+  justify-content: end;
+  align-items: center;
+  margin-top: 12px;
+
+  span{
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #F7FAFC;
+
+    i:before{
+      color: #92929D;
+
+      font-weight: 900 !important;
+    }
+  }
+  span.swiper-button-disabled{
+    background-color: #FFFFFF;
+    opacity: 20%;
+
+  }
+}

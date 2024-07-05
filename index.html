@@ -152,8 +152,9 @@ layout: home
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row align-items-start">
                 <div class="col-12 col-lg-8 agent-sec-col">
+
                     <div class="row mx-0 agent-sec-container gx-0 gx-md-3">
                         <div class="col-6 col-lg-8">
 
@@ -185,7 +186,7 @@ layout: home
                             <hr class="d-none d-lg-block">
 
                         </div>
-<!--                        agent score-->
+                        <!--                        agent score-->
                         <div class="col-6 col-lg-4">
                             <div class="score-chart-container">
                                 <div class="title">
@@ -201,7 +202,7 @@ layout: home
                         </div>
 
 
-<!--                        agent list-->
+                        <!--                        agent list-->
                         <div class="col-12 col-lg-8 mt-3 mt-lg-0 list-col">
                             <div class="agent-score-container">
                                 <div class="widget-title-1 title">
@@ -256,7 +257,7 @@ layout: home
                             </div>
 
                         </div>
-<!--                        membership tire-->
+                        <!--                        membership tire-->
                         <div class="col-12 col-lg-4 tire-col">
                             <div class="tire-container mt-3">
                                 <div class="widget-title-1 text-center">
@@ -301,22 +302,26 @@ layout: home
                                 <a href="#" class="btn btn-primary w-100 mt-3 d-flex justify-content-between">View
                                     Benefits
                                     <i class="bi bi-caret-right-fill"></i>
-
                                 </a>
 
                             </div>
 
                         </div>
                     </div>
+
+                    <!--            tips section-->
+
+                    {% include tipsSection.html %}
+
+
                 </div>
                 <div class="col-12 col-lg-4">
-<!--                    right sidebar-->
+                    <!--                    right sidebar-->
                     {% include rightBar.html %}
                 </div>
-                <div class="col-12 col-lg-4">
-                    xxx
-                </div>
+
             </div>
+
         </div>
     </div>
 </div>
