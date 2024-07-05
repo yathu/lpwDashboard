@@ -147,3 +147,12 @@ const updateSwiper = new Swiper('.update-swiper', {
     prevEl: '.prev-update',
   },
 });
+
+var profileCompletion = new ProgressBar.Path("#profileCompleteProgress", {
+  easing: 'easeInOut',
+  duration: 1400,
+})
+
+
+profileCompletion.set(0);
+profileCompletion.animate(0.75);  // Number from 0.0 to 1.0

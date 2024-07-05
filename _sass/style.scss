@@ -93,7 +93,7 @@ body {
               line-height: 16px;
               font-family: "Inter", sans-serif;
               font-optical-sizing: auto;
-              margin: 12px 0px 8px;
+              margin: 12px 0 8px;
             }
           }
 
@@ -278,7 +278,7 @@ body {
       justify-content: space-between;
       align-items: center;
       text-align: start;
-      font-family: Inter-Medium;
+      font-family: Inter-Medium, sans-serif;
       font-size: 13px;
       color: #FFFFFF;
       letter-spacing: 0.06px;
@@ -635,7 +635,6 @@ body {
             font-style: normal;
             font-weight: 600;
             font-size: 14px;
-            line-height: 17px;
             letter-spacing: 0.2px;
             color: #2f2f35;
             line-height: 1.1;
@@ -690,7 +689,7 @@ body {
             margin-bottom: 2px;
           }
           .label{
-            font-family: Inter-Medium;
+            font-family: Inter-Medium, sans-serif;
             font-size: 11px;
             color: #696974;
             letter-spacing: 0.1px;
@@ -899,7 +898,7 @@ body {
     padding: 15px 12px;
     background: #FFFADE;
     border-radius: 10px;
-    margin: 11px 0px;
+    margin: 11px 0;
 
     >diV{
       display: flex;
@@ -928,5 +927,26 @@ body {
       background-color: #DED8B7;
     }
 
+  }
+}
+
+.profile-completion{
+  background: #FEE6C7;
+  border-radius: 20px;
+  padding: 24px 10px 20px 24px;
+
+  svg{
+    min-width: 75px;
+  }
+  .widget-label{
+    max-width: 180px;
+  }
+}
+
+.property-val{
+  @extend .profile-completion;
+  background: #F5EDFA;
+  >div{
+    gap: 12px;
   }
 }
