@@ -134,7 +134,7 @@ body {
           width: 324px;
 
           .title {
-            font-family: "Inter";
+            font-family: "Inter", sans-serif;
             font-style: normal;
             font-weight: 600;
             font-size: 14px;
@@ -154,7 +154,7 @@ body {
             align-items: center;
 
             .code {
-              font-family: "Inter";
+              font-family: "Inter", sans-serif;
               font-style: normal;
               font-weight: 400;
               font-size: 10px;
@@ -167,7 +167,7 @@ body {
             }
 
             .price {
-              font-family: "Inter";
+              font-family: "Inter", sans-serif;
               font-style: normal;
               font-weight: 500;
               font-size: 12px;
@@ -176,7 +176,7 @@ body {
               color: #696974;
 
               span {
-                font-family: "Inter";
+                font-family: "Inter", sans-serif;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 14px;
@@ -186,7 +186,7 @@ body {
             }
 
             .expire {
-              font-family: "Inter";
+              font-family: "Inter", sans-serif;
               font-style: normal;
               font-weight: 400;
               font-size: 10px;
@@ -355,7 +355,7 @@ body {
     padding: 14px 12px !important;
 
     .title {
-      font-family: Inter-SemiBold;
+      font-family: Inter-SemiBold, sans-serif;
       font-size: 14px;
       color: #2F2F35;
       letter-spacing: 0.2px;
@@ -374,7 +374,7 @@ body {
       align-items: center;
 
       .code {
-        font-family: "Inter";
+        font-family: "Inter", sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 10px;
@@ -387,7 +387,7 @@ body {
       }
 
       .price {
-        font-family: "Inter";
+        font-family: "Inter", sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 12px;
@@ -396,7 +396,7 @@ body {
         color: #696974;
 
         span {
-          font-family: "Inter";
+          font-family: "Inter", sans-serif;
           font-style: normal;
           font-weight: 700;
           font-size: 14px;
@@ -406,7 +406,7 @@ body {
       }
 
       .expire {
-        font-family: "Inter";
+        font-family: "Inter", sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 10px;
@@ -474,7 +474,7 @@ body {
       margin-top: 3px;
 
       span {
-        font-family: "Inter";
+        font-family: "Inter", sans-serif;
         font-style: normal;
         font-weight: 600;
         font-size: 12px;
@@ -495,7 +495,7 @@ body {
       }
 
       .titles {
-        font-family: "Inter";
+        font-family: "Inter", sans-serif;
         font-style: normal;
         font-weight: 600;
         line-height: 120%;
@@ -519,7 +519,7 @@ body {
       }
 
       .desc {
-        font-family: "Inter";
+        font-family: "Inter", sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -574,7 +574,7 @@ body {
     .score-text{
       background: #FDCF43;
       border-radius: 10.4px;
-      font-family: Inter-SemiBold;
+      font-family: Inter-SemiBold, sans-serif;
       font-size: 15.6px;
       color: #000000;
       letter-spacing: 0.26px;
@@ -631,7 +631,7 @@ body {
           padding-right: 10px;
 
           div {
-            font-family: "Inter";
+            font-family: "Inter", sans-serif;
             font-style: normal;
             font-weight: 600;
             font-size: 14px;
@@ -643,7 +643,7 @@ body {
           }
 
           span {
-            font-family: "Inter";
+            font-family: "Inter", sans-serif;
             font-style: normal;
             font-weight: 500;
             font-size: 13px;
@@ -681,7 +681,7 @@ body {
           flex-direction: column;
 
           .name{
-            font-family: Inter-SemiBold;
+            font-family: Inter-SemiBold, sans-serif;
             font-size: 13px;
             color: #000000;
             letter-spacing: 0.1px;
@@ -883,5 +883,50 @@ body {
 
   .widget-title-2{
     margin-bottom: 2px;
+  }
+}
+
+.leads-widget{
+  background: #EEE7C3;
+  border: 1px solid #C9C3A2;
+  border-radius: 20px;
+  padding: 11px 10px 14px;
+
+  .content{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 12px;
+    background: #FFFADE;
+    border-radius: 10px;
+    margin: 11px 0px;
+
+    >diV{
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      line-height: 1;
+      span{
+        font-family: Inter-Medium, sans-serif;
+        font-size: 12px;
+        color: #92929D;
+        letter-spacing: 0.1px;
+        margin-bottom: 5px;
+      }
+      span.lead{
+        font-family: Inter-Bold, sans-serif;
+        font-size: 14px;
+        color: #50505A;
+        letter-spacing: 0.1px;
+        margin-bottom: 0;
+      }
+    }
+
+    i{
+      width: 1px;
+      min-height: 36px;
+      background-color: #DED8B7;
+    }
+
   }
 }
