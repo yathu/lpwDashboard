@@ -1,0 +1,100 @@
+<div class="row">
+    <div class="col-12">
+        <div class="performance-chart-container">
+            <div class="widget-title-1">
+                Listing Performance Insights
+            </div>
+
+            <div class="d-flex justify-content-between ">
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                    <button type="button" class="btn">
+                        <i class="bi bi-caret-down-fill"></i>
+                    </button>
+                </div>
+                <a class="btn btn-primary" href="#">View full report</a>
+            </div>
+
+            <div class="chart-header">
+
+                <img src="/assets/img/perfomance.svg" alt="" class="img-fluid">
+                <div>
+                    <div class="widget-title-2">
+                        Overall ads Performance
+                    </div>
+                    <span>
+                        <i class="bi bi-arrow-up"></i>
+                        37.8% from last week</span>
+                </div>
+
+            </div>
+
+            <div class="chart-container">
+                <canvas id="myChart"></canvas>
+            </div>
+
+            <div class="text-end">
+
+                <a href="#" class="btn btn-primary mt-4 d-inline-flex justify-content-center align-items-center"
+                   data-bs-toggle="modal" data-bs-target="#tipsModal">
+                    <img src="/assets/img/bulpBright.svg" alt="" class="img-fluid me-2">
+                    Tips to increase the leads</a>
+
+                <!-- Modal -->
+                <div class="modal fade tipsModal" id="tipsModal" tabindex="-1"
+                     aria-labelledby="tipsModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <img src="/assets/img/bulpBrightGreen.svg" alt="">
+                                    <label class="widget-title-2" id="tipsModalLabel">
+                                        Tips to increase the leads
+                                    </label>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <ul class="list-group list-group-flush">
+
+                                    <li class="list-group-item">
+                                        <div>
+                                            <img src="/assets/img/image_icon.svg" alt="">
+                                        </div>
+                                        <p class="mb-0">Upload <b>10</b> Images to increase <b>50%</b> visibility</p>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div>
+                                            <img src="/assets/img/whatsapp_icon.svg" alt="">
+                                        </div>
+                                        <p class="mb-0">
+                                            Activate Whatsapp Live Chat & Get <b>2X</b> more view
+                                        </p>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div>
+                                            <img src="/assets/img/hotdeal.svg" alt="">
+                                        </div>
+                                        <p class="mb-0">
+                                            Activate Hot Deals & Get <b>2X</b> more view
+                                        </p>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
