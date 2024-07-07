@@ -161,7 +161,7 @@ $(document).ready(function () {
         breakpoints: {
             // when window width is >= 320px
             320: {
-                slidesPerView: 1.2,
+                    slidesPerView: 1.2,
                 spaceBetween: 12,
             },
             // when window width is >= 480px
@@ -272,7 +272,8 @@ $(document).ready(function () {
     //upgrade-swiper
 
     const upgradeSwiper = new Swiper('.upgrade-swiper', {
-
+        spaceBetween: 16,
+        slidesPerView: 1.25,
         navigation: {
             nextEl: '.next-upgrade',
             prevEl: '.prev-upgrade',
