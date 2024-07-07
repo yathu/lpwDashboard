@@ -594,7 +594,7 @@ body {
   .agent-score-container {
 
     @media (min-width: 992px) {
-      margin-top: -28%;
+      margin-top: -85px;
     }
 
     .title {
@@ -1039,35 +1039,34 @@ body {
     margin-bottom: 12px;
   }
 
-  .btn-group {
-    background-color: red;
-    position: relative;
-
-    .form-select {
-      --bs-form-select-bg-img: none;
-      padding-left: 12px;
-      font-family: Inter-Medium, sans-serif;
-      font-size: 12px;
-      color: #171725;
-      letter-spacing: 0.2px;
-    }
-
-    .btn {
-      position: absolute !important;
-      padding: 0;
-      width: 29px;
-      height: 100%;
-      right: 0;
-      bottom: 0;
-      border-left: 1px solid #E2E2EA;
-      pointer-events: none;
-      cursor: pointer;
-
-      i {
-        font-size: 12px;
-      }
-    }
-  }
+  //.btn-group {
+  //  position: relative;
+  //
+  //  .form-select {
+  //    --bs-form-select-bg-img: none;
+  //    padding-left: 12px;
+  //    font-family: Inter-Medium, sans-serif;
+  //    font-size: 12px;
+  //    color: #171725;
+  //    letter-spacing: 0.2px;
+  //  }
+  //
+  //  .btn {
+  //    position: absolute !important;
+  //    padding: 0;
+  //    width: 29px;
+  //    height: 100%;
+  //    right: 0;
+  //    bottom: 0;
+  //    border-left: 1px solid #E2E2EA;
+  //    pointer-events: none;
+  //    cursor: pointer;
+  //
+  //    i {
+  //      font-size: 12px;
+  //    }
+  //  }
+  //}
 
   .chart-header {
     padding: 16px;
@@ -1100,37 +1099,222 @@ body {
 
 }
 
-.tipsModal{
-  .modal-content{
+.upgrade-ads-container {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 24px;
+
+  .header {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+
+    .widget-title-1 {
+      flex: 1;
+    }
+  }
+
+  .upgrade-swiper {
+    .swiper-slide {
+      background: #F7FAFC;
+      border: 1px solid #CBD7E0;
+      border-radius: 18px;
+      padding: 12px;
+    }
+    .img-box {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 160px;
+        height: 120px;
+        border-radius: 12px;
+        margin-right: 20px;
+      }
+
+      div {
+        flex: 1;
+      }
+    }
+
+    hr {
+      border: 1px solid rgba(226, 226, 234, 0.40);
+    }
+
+    .insights {
+      margin-bottom: 12px;
+    }
+    .btn-section {
+      .btn {
+        display: flex;
+        align-items: center;
+        line-height: 12px;
+        padding: 14px 16px;
+        margin-bottom: 14px;
+
+        img {
+          margin-right: 10px;
+          width: 20px;
+          height: auto;
+        }
+
+        > div {
+          div {
+            font-family: Inter-SemiBold, sans-serif;
+            font-size: 12px;
+            color: #FFFFFF;
+            letter-spacing: 0;
+            line-height: 12px;
+            margin-bottom: 4px;
+            text-align: left;
+          }
+
+          span {
+            font-family: Inter-Medium, serif;
+            font-size: 12px;
+            color: #FFFFFF;
+            letter-spacing: 0;
+            line-height: 12px;
+            display: block;
+          }
+        }
+      }
+
+      .btn-d-green {
+        background: #223B2F;
+      }
+
+      .btn:last-child {
+        margin-bottom: 0;
+      }
+
+    }
+
+
+
+    .impressions {
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 12px;
+      display: flex;
+      gap: 24px;
+
+      >div{
+        flex: 1;
+      }
+      >span{
+        width: 1px;
+        background-color: #EDF2F7;
+        height: 100%;
+        min-height: 132px;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+
+        .imgBox {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 12px;
+
+          img {
+            width: 16px;
+            height: auto;
+            max-width: 100%;
+          }
+        }
+
+        .imgBox:nth-child(1) {
+          background: #B5E4CA;
+        }
+
+        .widget-label{
+          color: #2F2F35;
+          display: flex;
+          align-items: center;
+
+          img{
+            margin-left: 5px;
+          }
+
+        }
+
+        .count{
+          font-family: Inter-SemiBold, sans-serif;
+          font-size: 24px;
+          color: #1A1D1F;
+          letter-spacing: -0.72px;
+          line-height: 48px;
+          margin-top: 8px;
+          margin-bottom: 8px;
+        }
+        .res{
+          font-family: Inter-Medium, sans-serif;
+          font-size: 11px;
+          color: #83BF6E;
+          letter-spacing: -0.11px;
+          line-height: 16px;
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+
+          i{
+            margin-right: 4px;
+          }
+        }
+      }
+    }
+
+  }
+
+
+
+}
+
+.tipsModal {
+  .modal-content {
     border-color: #EDF2F7;
   }
-  .modal-header{
+
+  .modal-header {
     padding: 12px 14px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-color: #EDF2F7;
-    >div{
+
+    > div {
       display: flex;
       align-items: center;
-      img{
+
+      img {
         margin-right: 6px;
       }
     }
-    .modal-title{
+
+    .modal-title {
       @extend .widget-title-2;
     }
-    button{
-      &:hover,&:focus{
+
+    button {
+      &:hover, &:focus {
         box-shadow: none;
       }
     }
   }
-  .modal-body{
+
+  .modal-body {
     padding: 20px;
 
-    .list-group{
-      .list-group-item{
+    .list-group {
+      .list-group-item {
         background: #F7FAFC;
         border-radius: 8px;
         border: 0;
@@ -1138,7 +1322,7 @@ body {
         display: flex;
         align-items: center;
 
-        >div{
+        > div {
           width: 52px;
           height: 52px;
           display: flex;
@@ -1146,14 +1330,14 @@ body {
           justify-content: center;
           margin-right: 12px;
 
-          img{
+          img {
             width: 32px;
             height: auto;
           }
         }
 
-        p{
-          b{
+        p {
+          b {
             font-family: Inter-Bold, sans-serif;
             font-size: 16px;
             color: #16A05F;
@@ -1161,7 +1345,8 @@ body {
           }
         }
       }
-      .list-group-item:last-child{
+
+      .list-group-item:last-child {
         margin-bottom: 0;
       }
     }

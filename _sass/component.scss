@@ -24,7 +24,7 @@
   }
 }
 
-.btn-green {
+.btn-green, .btn-green:focus, .btn-green:hover {
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -93,6 +93,14 @@
   }
 }
 
+.widget-title-3{
+  font-family: Inter-SemiBold, sans-serif;
+  font-size: 14px;
+  color: #2F2F35;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+}
+
 .widget-label {
   font-family: Inter-Medium, serif;
   font-size: 13px;
@@ -124,5 +132,54 @@
     background-color: #FFFFFF;
     opacity: 20%;
 
+  }
+}
+
+.shadow{
+  box-shadow: 0 0 1px 0 rgba(12, 26, 75, 0.24), 0 3px 8px -1px rgba(50, 50, 71, 0.05);
+}
+
+.location-container{
+  display: flex;
+  align-items: center;
+
+  i{
+    color: #16A05F;
+    margin-right: 4px;
+  }
+}
+
+.custom-dropdown {
+  position: relative;
+
+  .form-select {
+    --bs-form-select-bg-img: none;
+    font-family: Inter-Medium, sans-serif;
+    font-size: 12px;
+    color: #171725;
+    letter-spacing: 0.2px;
+    padding: 10px 53px 10px 12px;
+    line-height: 1;
+
+    &:focus{
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  .btn {
+    position: absolute !important;
+    padding: 0;
+    width: 29px;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    border-left: 1px solid #E2E2EA;
+    pointer-events: none;
+    cursor: pointer;
+
+    i {
+      font-size: 12px;
+    }
   }
 }

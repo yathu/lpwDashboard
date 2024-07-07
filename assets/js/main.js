@@ -268,5 +268,16 @@ $(document).ready(function () {
         config
     );
 
+
+    //upgrade-swiper
+
+    const upgradeSwiper = new Swiper('.upgrade-swiper', {
+
+        navigation: {
+            nextEl: '.next-upgrade',
+            prevEl: '.prev-upgrade',
+        },
+    });
+
 });
 
