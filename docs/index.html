@@ -1,0 +1,2145 @@
+<!doctype html>
+<html lang="en">
+    <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap demo</title>
+  <link
+    href="/assets/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+<!--  <link rel="stylesheet" href="/assets/css/bootstrap-icons.min.css">-->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+    </style>
+
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+</head>
+
+  <body>
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-xl-2">
+            left Menu
+        </div>
+        <div class="col-12 col-xl-10">
+
+            <div class="hero-container my-lg-4">
+
+                <div class="d-none d-lg-block progress-swiper-container">
+    <div class="swiper progress-swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+
+            <div class="swiper-slide">
+                <div class="progress-slider-card">
+                    <div class="row mx-0 align-items-center gx-0 mb-3">
+                        <div class="col-auto">
+                            <div
+                                    class="circle_progress"
+                                    id="feratured_progress"
+                            ></div>
+                        </div>
+                        <div class="col">
+                            <p>No. of featured ad left to</p>
+                            <div class="d-flex align-items-center">
+                                <span class="num">60</span>
+                                <span class="text ms-2">ads left</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary">
+                        Renew Membership
+                        <i class="bi bi-caret-right-fill"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="swiper-slide boosts-slide">
+                <div class="progress-slider-card">
+                    <div class="row mx-0 align-items-center gx-0 mb-3">
+                        <div class="col-auto">
+                            <div
+                                    class="circle_progress"
+                                    id="boosts_left_progress"
+                            ></div>
+                        </div>
+                        <div class="col">
+                            <p>No. of Boosts left</p>
+                            <div class="d-flex align-items-center">
+                                <span class="num">30</span>
+                                <span class="text ms-2">Boosts left</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary">
+                        Renew Membership
+                        <i class="bi bi-caret-right-fill"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="swiper-slide hotdeal-slider">
+                <div class="progress-slider-card">
+                    <div class="row mx-0 align-items-center gx-0 mb-3">
+                        <div class="col-auto">
+                            <div class="circle_progress">
+                                <img src="/assets/img/hotdeal.svg" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <p>No. of Hot Deals</p>
+                            <div class="d-flex align-items-center">
+                                <span class="num">30</span>
+                                <span class="text ms-2">ads marked as Hot deal</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary">
+                        Renew Membership
+                        <i class="bi bi-caret-right-fill"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="swiper-slide wap-slide">
+                <div class="progress-slider-card">
+                    <div class="row mx-0 align-items-center gx-0 mb-3">
+                        <div class="col-auto">
+                            <div class="circle_progress" id="wap_progress"></div>
+                        </div>
+                        <div class="col">
+                            <p>No. of WhatsApp live chat left</p>
+                            <div class="d-flex align-items-center">
+                                <span class="num">30</span>
+                                <span class="text ms-2">chat left</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary">
+                        Renew Membership
+                        <i class="bi bi-caret-right-fill"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="swiper-slide voucher-slide">
+                <div class="progress-slider-card">
+                    <div
+                            class="d-flex justify-content-between align-items-center"
+                    >
+                        <span class="title"> Voucher Expiring! </span>
+                        <a href="#" class="btn btn-red">
+                            <img src="./assets/img/danger.svg" alt="" />
+                            6 Days Left!</a
+                        >
+                    </div>
+                    <div class="voucher-content">
+                        <div>
+                            <div class="code">Voucher code: <span>#LPW324</span></div>
+                            <div class="price"><span>Rs. 5000</span> Remaining</div>
+                            <div class="expire">Expiring: Aug 31 2024</div>
+                        </div>
+                        <a href="#" class="btn btn-green">Redeem Now</a>
+                    </div>
+                    <a href="#" class="btn btn-primary">
+                        Available Options
+                        <i class="bi bi-caret-right-fill"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="swiper-button-prev hero-prev"></div>
+    <div class="swiper-button-next hero-next"></div>
+</div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 mobile-col">
+                    <!--                    mobile progress hero section -->
+                    <div class="mobile-progress-container d-lg-none">
+                        <div class="row gx-2 gy-2">
+                            <div class="col-6">
+                                <div class="item featured">
+                                    <div class="title">No. of featured ad left to</div>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="num">75%</span>
+                                        <div>
+                                            <span class="num color">50</span>
+                                            <span class="label">ads left</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 25%;"
+                                             aria-valuenow="25"
+                                             aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+
+                                    <a href="#" class="btn btn-primary">
+                                        Renew <br>
+                                        Membership
+                                        <i class="bi bi-caret-right-fill"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="item boost">
+                                    <div class="title">No. of Boosts left</div>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="num">75%</span>
+                                        <div>
+                                            <span class="num color">50</span>
+                                            <span class="label">ads left</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 25%;"
+                                             aria-valuenow="25"
+                                             aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+
+                                    <a href="#" class="btn btn-primary">
+                                        Purchase more boosts
+                                        <i class="bi bi-caret-right-fill"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="item deals">
+                                    <div class="title">No. of Hot Deals</div>
+                                    <div class="row gx-0 mx-0 mb-2">
+                                        <div class="col-auto img-box">
+                                            <img src="/assets/img/hotdeal.svg" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="col d-flex flex-column justify-content-start align-items-start ps-2">
+                                        <span class="num">
+                                            30
+                                        </span>
+                                            <span class="label">
+                                            ads marked as Hot deal
+                                        </span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="btn btn-primary">
+                                        Purchase more boosts
+                                        <i class="bi bi-caret-right-fill"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="item wap">
+                                    <div class="title">
+                                        No. of WhatsApp live chat left
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="num">25%</span>
+                                        <div>
+                                            <span class="num color">30</span>
+                                            <span class="label">chat left</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 25%;"
+                                             aria-valuenow="25"
+                                             aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+
+                                    <a href="#" class="btn btn-primary">
+                                        Purchase more boosts
+                                        <i class="bi bi-caret-right-fill"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="item voucher">
+                                    <div
+                                            class="d-flex justify-content-between align-items-center"
+                                    >
+                                        <span class="title"> Voucher Expiring! </span>
+                                        <a href="#" class="btn btn-red">
+                                            <img src="./assets/img/danger.svg" alt=""/>
+                                            6 Days Left!</a
+                                        >
+                                    </div>
+                                    <div class="voucher-content">
+                                        <div>
+                                            <div class="code">Voucher code: <span>#LPW324</span></div>
+                                            <div class="price"><span>Rs. 5000</span> Remaining</div>
+                                            <div class="expire">Expiring: Aug 31 2024</div>
+                                        </div>
+                                        <a href="#" class="btn btn-green">
+                                            Redeem Now
+                                            <i class="bi bi-caret-right-fill"></i>
+                                        </a>
+                                    </div>
+                                    <a href="#" class="btn btn-primary py-2">
+                                        Available Options
+                                        <i class="bi bi-caret-right-fill"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--                  End  mobile progress hero section -->
+
+                </div>
+            </div>
+
+            <div class="row align-items-start">
+                <div class="col-12 col-lg-8 agent-sec-col">
+
+                    <div class="row mx-0 agent-sec-container gx-0 gx-md-3">
+                        <div class="col-6 col-lg-8">
+
+                            <!--                            agent profile -->
+                            <div class="profile-info-sec row gx-0">
+                                <div class="col-12 col-lg-auto flex-column justify-content-start justify-content-center"
+                                >
+                                    <div class="profile-img-container">
+                                        <img class="profile" src="assets/img/profile.jpg" alt=""/>
+                                        <img class="edit" src="assets/img/pencil.svg" alt=""/>
+                                    </div>
+                                    <div class="membership">
+                                        <img src="assets/img/membership.svg" alt=""/>
+                                        <span> Gold </span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-8 info">
+                                    <div class="titles">
+                                        <div class="name">Hey Mahela,</div>
+                                        Your Agent Score is Low!
+                                    </div>
+
+                                    <div class="desc">
+                                        Increase the score to become a Platinum Agent
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="d-none d-lg-block">
+
+                        </div>
+                        <!--                        agent score-->
+                        <div class="col-6 col-lg-4">
+                            <div class="score-chart-container">
+                                <div class="title">
+                                    Your Agent Score
+                                </div>
+                                <svg width="187.39664px" height="181.834867px" viewBox="0 0 187.39664 181.834867" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="50%" y1="-3.06161713e-15%" x2="50%" y2="100%" id="linearGradient-ndmds5olzj-1">
+            <stop stop-color="#7AD3FF" offset="0%"></stop>
+            <stop stop-color="#4FBAF0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="18.3842599%" y1="22.2634904%" x2="76.316869%" y2="100.078695%" id="linearGradient-ndmds5olzj-2">
+            <stop stop-color="#FDCE43" offset="0%"></stop>
+            <stop stop-color="#D67924" offset="50%"></stop>
+            <stop stop-color="#B51418" offset="100%"></stop>
+        </linearGradient>
+        <path d="M97.9184951,162.290251C81.9261018,161.523868 66.6551568,155.405614 54.5576049,144.917847C42.4600529,134.43008 34.2377567,120.181273 31.2109059,104.459245C28.1840551,88.7372181 30.5282604,72.4541038 37.8671281,58.2243807C45.2059958,43.9946576 57.1137491,32.6438817 71.6784491,25.9945581C86.2431491,19.3452345 102.619794,17.7831368 118.178915,21.559081C133.738036,25.3350252 147.576941,34.2299453 157.473615,46.815644" id="path-ndmds5olzj-3"></path>
+        <filter x="-14.4%" y="-11.4%" width="128.9%" height="125.8%" filterUnits="objectBoundingBox" id="filter-ndmds5olzj-4">
+            <feMorphology radius="7.58333397" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2.16666698" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="7.58333397" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="0" dy="2.16666698" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feGaussianBlur stdDeviation="3.25000024" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.505882382   0 0 0 0 0.831372559   0 0 0 0 0.996078432  0 0 0 0.200000003 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <circle id="path-ndmds5olzj-5" cx="96.0213527" cy="97.4999979" r="39"></circle>
+        <filter x="-28.6%" y="-25.0%" width="157.1%" height="157.1%" filterUnits="objectBoundingBox" id="filter-ndmds5olzj-6">
+            <feOffset dx="0" dy="2.78571439" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6.96428633" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.100000001 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <!-- <circle id="path-ndmds5olzj-7" cx="96.5380575" cy="26.2166653" r="1.51666665"></circle> -->
+        <filter x="-21.4%" y="-21.4%" width="142.9%" height="142.9%" filterUnits="objectBoundingBox" id="filter-ndmds5olzj-8">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.216666684" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.150000006 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="---↪️-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-82, -69)" fill-rule="nonzero">
+            <g id="Chart-11" transform="translate(82, 69)">
+                <g transform="translate(0, -0)">
+                    <path d="M157.473615,46.815644 C147.576941,34.2299453 133.738036,25.3350252 118.178915,21.559081 C102.619794,17.7831368 86.2431491,19.3452345 71.6784491,25.9945581 C57.1137491,32.6438817 45.2059958,43.9946576 37.8671281,58.2243807 C30.5282604,72.4541038 28.1840551,88.7372181 31.2109059,104.459245 C34.2377567,120.181273 42.4600529,134.43008 54.5576049,144.917847 C66.6551568,155.405614 81.9261018,161.523868 97.9184951,162.290251" id="Ellipse-8" stroke="url(#linearGradient-ndmds5olzj-1)" stroke-width="15.1666679" opacity="0.100000001" stroke-linecap="round" transform="translate(93.6983, 90.9174) rotate(60) translate(-93.6983, -90.9174)"></path>
+                    <g id="Ellipse-8-Copy" stroke-linecap="round" transform="translate(93.6983, 90.9174) rotate(60) translate(-93.6983, -90.9174)">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-ndmds5olzj-4)" xlink:href="#path-ndmds5olzj-3"></use>
+                        <use stroke="url(#linearGradient-ndmds5olzj-2)" stroke-width="15.1666679" xlink:href="#path-ndmds5olzj-3"></use>
+                    </g>
+                    <g id="Ellipse-56" opacity="0.400000006">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-ndmds5olzj-6)" xlink:href="#path-ndmds5olzj-5"></use>
+                        <use fill="#FFFFFF" xlink:href="#path-ndmds5olzj-5"></use>
+                    </g>
+                    <text x="50%" y="103.599996" text-anchor="middle" id="68%" fill="#000000" font-family=".AppleSystemUIFont" font-size="14" font-weight="normal" line-spacing="46.8000031" letter-spacing="0.13000001" >
+                        100%
+                    </text>
+                    <!-- <g id="Ellipse-10">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-ndmds5olzj-8)" xlink:href="#path-ndmds5olzj-7"></use>
+                        <use fill="#FFFFFF" xlink:href="#path-ndmds5olzj-7"></use>
+                    </g> -->
+                    <path d="M169.950295,112.278256 C161.978154,101.993243 150.81279,94.6506192 138.210934,91.4056588" id="Ellipse-23" stroke="#41B031" stroke-width="2" stroke-linecap="round" stroke-dasharray="0,0.4333333671092987,6.066667556762695,0,0.4333333671092987,6.066667556762695" transform="translate(154.0806, 101.842) rotate(60) translate(-154.0806, -101.842)"></path>
+                    <path d="M164.178347,66.2072357 C151.576491,62.9622754 138.253411,63.9991581 126.305338,69.1547431" id="Ellipse-22" stroke="#59D245" stroke-width="2" stroke-linecap="round" stroke-dasharray="0,0.4333333671092987,6.066667556762695,0,0.4333333671092987,6.066667556762695" transform="translate(145.2418, 66.7543) rotate(60) translate(-145.2418, -66.7543)"></path>
+                    <path d="M129.671133,32.9923427 C117.72306,38.1479276 107.828152,47.1295906 101.543249,58.5241726" id="Ellipse-21" stroke="#89EC79" stroke-width="2" stroke-linecap="round" stroke-dasharray="0,0.4333333671092987,6.066667556762695,0,0.4333333671092987,6.066667556762695" transform="translate(115.6072, 45.7583) rotate(60) translate(-115.6072, -45.7583)"></path>
+                    <path d="M83.1439852,27.4492174 C76.8590829,38.8437996 74.540911,52.0045514 76.5542082,64.8608004" id="Ellipse-20" stroke="#FBDE88" stroke-width="2" stroke-linecap="round" stroke-dasharray="0,0.4333333671092987,6.066667556762695,0,0.4333333671092987,6.066667556762695" transform="translate(79.4959, 46.155) rotate(60) translate(-79.4959, -46.155)"></path>
+                    <path d="M42.845696,52.2280187 C44.8589932,65.0842675 51.0894863,76.9063053 60.5568815,85.8340672" id="Ellipse-19" stroke="#EAB05A" stroke-width="2" stroke-linecap="round" stroke-dasharray="0,0.4333333671092987,6.066667556762695,0,0.4333333671092987,6.066667556762695" transform="translate(51.7013, 69.031) rotate(60) translate(-51.7013, -69.031)"></path>
+                    <path d="M26.127676,96.150441 C35.5950714,105.078203 47.7620084,110.604962 60.7141704,111.861153" id="Ellipse-18" stroke="#CE6121" stroke-width="2" stroke-linecap="round" stroke-dasharray="0,0.4333333671092987,6.066667556762695,0,0.4333333671092987,6.066667556762695" transform="translate(43.4209, 104.0058) rotate(60) translate(-43.4209, -104.0058)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+
+                                <div class="score-text">
+                                    Low
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <!--                        agent list-->
+                        <div class="col-12 col-lg-8 mt-3 mt-lg-0 list-col">
+                            <div class="agent-score-container">
+                                <div class="widget-title-1 title">
+                                    Quick ways to improve your Agent Score
+                                </div>
+                                <div id="agentScoreList" class="score-list-sec">
+                                    <div class="more">
+                                        <a id="btnViewMore" class="btn btn-primary">View more</a>
+                                    </div>
+                                    <div class="score-list-item">
+                                        <img src="assets/img/score_list.svg" alt="">
+                                        <div class="content">
+                                            <div>
+                                                20 Unverified Properties
+                                            </div>
+
+                                            <span>
+                        Verified properties rank higher in search result
+                      </span>
+                                        </div>
+                                        <a href="#" class="btn btn-verify">Verify Now</a>
+                                    </div>
+
+                                    <div class="score-list-item">
+                                        <img src="assets/img/score_list.svg" alt="">
+                                        <div class="content">
+                                            <div>
+                                                12 Properties without photos
+                                            </div>
+
+                                            <span>
+                        Verified properties rank higher in search result
+                      </span>
+                                        </div>
+                                        <a href="#" class="btn btn-verify">Verify Now</a>
+                                    </div>
+
+                                    <div class="score-list-item">
+                                        <img src="assets/img/score_list_success.svg" alt="">
+                                        <div class="content">
+                                            <div>
+                                                23 Continuous Active Months on LPW
+                                            </div>
+
+                                            <span>
+                        The longer you are with us, the better your score.
+                      </span>
+                                        </div>
+                                        <a href="#" class="btn btn-verify">Verify Now</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--                        membership tire-->
+                        <div class="col-12 col-lg-4 tire-col">
+                            <div class="tire-container mt-3">
+                                <div class="widget-title-1 text-center">
+                                    Membership Tier
+                                </div>
+                                <div class="memberships my-3">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <img src="/assets/img/silver.svg" alt="">
+                                            <div class="name">Sliver</div>
+                                            <div class="label">12 Months</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="/assets/img/gold.svg" alt="">
+                                            <div class="name">Gold</div>
+                                            <div class="label">24 Months</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="/assets/img/platinum.svg" alt="">
+                                            <div class="name">Platinum</div>
+                                            <div class="label">36 Months</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="progress-container">
+                                    <div class="progress" style="height: 4px;">
+                                        <div class="progress-bar" role="progressbar" style="width: 50%;"
+                                             aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="check middle">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                             fill="currentColor" class="bi bi-check-circle-fill"
+                                             viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="check-inactive start active"></div>
+                                    <div class="check-inactive end"></div>
+                                </div>
+
+                                <a href="#" class="btn btn-primary w-100 mt-3 d-flex justify-content-between">View
+                                    Benefits
+                                    <i class="bi bi-caret-right-fill"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!--            tips section-->
+
+                    <div class="row my-4">
+    <div class="col-12">
+        <div class="tips-container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <span class="widget-title-1">Tips to Increase Your Visibility</span>
+
+                <div class="d-none d-md-flex controls">
+                                        <span class="prev-tip me-1">
+                                            <i class="bi bi-chevron-left"></i>
+                                        </span>
+                    <span class="next-tip">
+                                        <i class="bi bi-chevron-right"></i>
+                                        </span>
+                </div>
+
+            </div>
+
+            <div class="swiper tips-swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide slide">
+                        <div>
+                            <div class="img-container">
+                                <img src="/assets/img/whatsapp_icon.svg" alt="">
+                            </div>
+                            <div class="content">
+                                Activate Whatsapp
+                                Live Chat & Get
+                                <b>2X</b>
+                                more view
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-link d-block w-100 text-end">Activate</a>
+
+                    </div>
+                    <div class="swiper-slide slide">
+                        <div>
+                            <div class="img-container">
+                                <img src="/assets/img/hotdeal.svg" alt="">
+                            </div>
+                            <div class="content">
+                                Activate Whatsapp
+                                Live Chat & Get
+                                <b>2X</b>
+                                more view
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-link d-block w-100 text-end">Activate</a>
+
+                    </div>
+                    <div class="swiper-slide slide">
+                        <div>
+                            <div class="img-container">
+                                <img src="/assets/img/star_icon.svg" alt="">
+                            </div>
+                            <div class="content">
+                                Activate Whatsapp
+                                Live Chat & Get
+                                <b>2X</b>
+                                more view
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-link d-block w-100 text-end">Activate</a>
+
+                    </div>
+                    <div class="swiper-slide slide">
+                        <div>
+                            <div class="img-container">
+                                <img src="/assets/img/star_icon.svg" alt="">
+                            </div>
+                            <div class="content">
+                                Activate Whatsapp
+                                Live Chat & Get
+                                <b>2X</b>
+                                more view
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-link d-block w-100 text-end">Activate</a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                    <div class="row">
+    <div class="col-12">
+        <div class="performance-chart-container">
+            <div class="widget-title-1">
+                Listing Performance Insights
+            </div>
+
+            <div class="d-flex justify-content-between ">
+                <div class="btn-group custom-dropdown" role="group" aria-label="Button group with nested dropdown">
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option selected>Last 7 Days</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                    <button type="button" class="btn">
+                        <i class="bi bi-caret-down-fill"></i>
+                    </button>
+                </div>
+                <a class="btn btn-primary" href="#">View full report</a>
+            </div>
+
+            <div class="chart-header">
+
+                <img src="/assets/img/perfomance.svg" alt="" class="img-fluid">
+                <div>
+                    <div class="widget-title-2">
+                        Overall ads Performance
+                    </div>
+                    <span>
+                        <i class="bi bi-arrow-up"></i>
+                        37.8% from last week</span>
+                </div>
+
+            </div>
+
+            <div class="chart-container">
+                <canvas id="myChart"></canvas>
+            </div>
+
+            <div class="text-end">
+
+                <a href="#" class="btn btn-primary mt-4 d-flex d-lg-inline-flex justify-content-center align-items-center"
+                   data-bs-toggle="modal" data-bs-target="#tipsModal">
+                    <img src="/assets/img/bulpBright.svg" alt="" class="img-fluid me-2">
+                    Tips to increase the leads</a>
+
+                <!-- Modal -->
+                <div class="modal fade tipsModal" id="tipsModal" tabindex="-1"
+                     aria-labelledby="tipsModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <img src="/assets/img/bulpBrightGreen.svg" alt="">
+                                    <label class="widget-title-2" id="tipsModalLabel">
+                                        Tips to increase the leads
+                                    </label>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <ul class="list-group list-group-flush">
+
+                                    <li class="list-group-item">
+                                        <div>
+                                            <img src="/assets/img/image_icon.svg" alt="">
+                                        </div>
+                                        <p class="mb-0">Upload <b>10</b> Images to increase <b>50%</b> visibility</p>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div>
+                                            <img src="/assets/img/whatsapp_icon.svg" alt="">
+                                        </div>
+                                        <p class="mb-0">
+                                            Activate Whatsapp Live Chat & Get <b>2X</b> more view
+                                        </p>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div>
+                                            <img src="/assets/img/hotdeal.svg" alt="">
+                                        </div>
+                                        <p class="mb-0">
+                                            Activate Hot Deals & Get <b>2X</b> more view
+                                        </p>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+                    <div class="row my-4">
+    <div class="col-12">
+        <div class="upgrade-ads-container shadow">
+            <div class="header">
+                <div class="widget-title-1">
+                    Upgraded Ads
+                </div>
+
+                <div class="d-flex controls">
+                    <span class="prev-upgrade me-1">
+                        <i class="bi bi-chevron-left"></i>
+                    </span>
+                    <span class="next-upgrade">
+                        <i class="bi bi-chevron-right"></i>
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="swiper upgrade-swiper">
+                <div class="swiper-wrapper">
+
+                    
+                    <div class="swiper-slide">
+
+                        <div class="img-box d-flex flex-column flex-lg-row align-items-lg-center">
+                            <img src="https://picsum.photos/id/19/220/120" alt="" class="img-fluid object-fit-cover">
+                            <div>
+                                <div class="widget-title-2 mb-1">
+                                    Elegant Luxury & Modern brand new house
+                                </div>
+                                <div class="location-label">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span class="widget-label">
+                                        No.150, Anura Mawatha, Nugegoda
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-12 col-md-7 col-lg-7">
+                                <div class="insights justify-content-between d-flex align-items-center">
+                                    <div class="widget-title-3">Insights</div>
+
+                                    <div class="btn-group custom-dropdown" role="group"
+                                         aria-label="Button group with nested dropdown">
+                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                            <option selected>Last 7 Days</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                        <button type="button" class="btn">
+                                            <i class="bi bi-caret-down-fill"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="impressions">
+                                    <div>
+                                        <span class="imgBox">
+                                            <img src="/assets/img/persion-circle.svg" alt="">
+                                        </span>
+                                        <span class="widget-label">Views
+                                        <img src="/assets/img/info-circle.svg" alt="" class="img-fluid">
+                                        </span>
+                                        <span class="count">
+                                            256k
+                                        </span>
+                                        <div class="res">
+                                            <i class="bi bi-arrow-up"></i>
+                                            37.8% this week
+                                        </div>
+                                    </div>
+                                    <span></span>
+                                    <div>
+                                        <span class="imgBox">
+                                            <img src="/assets/img/upDown.svg" alt="">
+                                        </span>
+                                        <span class="widget-label">Views
+                                        <img src="/assets/img/info-circle.svg" alt="" class="img-fluid">
+                                        </span>
+                                        <span class="count">
+                                            256k
+                                        </span>
+                                        <div class="res">
+                                            <i class="bi bi-arrow-up"></i>
+                                            37.8% this week
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-12 col-md-5 col-lg-5 btn-section">
+
+                                <a href="#" class="btn btn-green">
+                                    <img src="/assets/img/rocket.svg" alt="">
+                                    <div>
+                                        <div>Boost This AD Now</div>
+                                        <span>(Get 5x time Leads)</span>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="btn btn-d-green">
+                                    <img src="/assets/img/photo.svg" alt="">
+                                    <div>
+                                        <div>Insert photo</div>
+                                        <span>(Get 5x time Leads)</span>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="btn btn-d-green">
+                                    <img src="/assets/img/low_price.svg" alt="">
+                                    <div>
+                                        <div>lower price</div>
+                                        <span>(Get 5x time Leads)</span>
+                                    </div>
+                                </a>
+
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    
+                    <div class="swiper-slide">
+
+                        <div class="img-box d-flex flex-column flex-lg-row align-items-lg-center">
+                            <img src="https://picsum.photos/id/19/220/120" alt="" class="img-fluid object-fit-cover">
+                            <div>
+                                <div class="widget-title-2 mb-1">
+                                    Elegant Luxury & Modern brand new house
+                                </div>
+                                <div class="location-label">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span class="widget-label">
+                                        No.150, Anura Mawatha, Nugegoda
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-12 col-md-7 col-lg-7">
+                                <div class="insights justify-content-between d-flex align-items-center">
+                                    <div class="widget-title-3">Insights</div>
+
+                                    <div class="btn-group custom-dropdown" role="group"
+                                         aria-label="Button group with nested dropdown">
+                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                            <option selected>Last 7 Days</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                        <button type="button" class="btn">
+                                            <i class="bi bi-caret-down-fill"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="impressions">
+                                    <div>
+                                        <span class="imgBox">
+                                            <img src="/assets/img/persion-circle.svg" alt="">
+                                        </span>
+                                        <span class="widget-label">Views
+                                        <img src="/assets/img/info-circle.svg" alt="" class="img-fluid">
+                                        </span>
+                                        <span class="count">
+                                            256k
+                                        </span>
+                                        <div class="res">
+                                            <i class="bi bi-arrow-up"></i>
+                                            37.8% this week
+                                        </div>
+                                    </div>
+                                    <span></span>
+                                    <div>
+                                        <span class="imgBox">
+                                            <img src="/assets/img/upDown.svg" alt="">
+                                        </span>
+                                        <span class="widget-label">Views
+                                        <img src="/assets/img/info-circle.svg" alt="" class="img-fluid">
+                                        </span>
+                                        <span class="count">
+                                            256k
+                                        </span>
+                                        <div class="res">
+                                            <i class="bi bi-arrow-up"></i>
+                                            37.8% this week
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-12 col-md-5 col-lg-5 btn-section">
+
+                                <a href="#" class="btn btn-green">
+                                    <img src="/assets/img/rocket.svg" alt="">
+                                    <div>
+                                        <div>Boost This AD Now</div>
+                                        <span>(Get 5x time Leads)</span>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="btn btn-d-green">
+                                    <img src="/assets/img/photo.svg" alt="">
+                                    <div>
+                                        <div>Insert photo</div>
+                                        <span>(Get 5x time Leads)</span>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="btn btn-d-green">
+                                    <img src="/assets/img/low_price.svg" alt="">
+                                    <div>
+                                        <div>lower price</div>
+                                        <span>(Get 5x time Leads)</span>
+                                    </div>
+                                </a>
+
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    
+                    <div class="swiper-slide">
+
+                        <div class="img-box d-flex flex-column flex-lg-row align-items-lg-center">
+                            <img src="https://picsum.photos/id/19/220/120" alt="" class="img-fluid object-fit-cover">
+                            <div>
+                                <div class="widget-title-2 mb-1">
+                                    Elegant Luxury & Modern brand new house
+                                </div>
+                                <div class="location-label">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span class="widget-label">
+                                        No.150, Anura Mawatha, Nugegoda
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-12 col-md-7 col-lg-7">
+                                <div class="insights justify-content-between d-flex align-items-center">
+                                    <div class="widget-title-3">Insights</div>
+
+                                    <div class="btn-group custom-dropdown" role="group"
+                                         aria-label="Button group with nested dropdown">
+                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                            <option selected>Last 7 Days</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                        <button type="button" class="btn">
+                                            <i class="bi bi-caret-down-fill"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="impressions">
+                                    <div>
+                                        <span class="imgBox">
+                                            <img src="/assets/img/persion-circle.svg" alt="">
+                                        </span>
+                                        <span class="widget-label">Views
+                                        <img src="/assets/img/info-circle.svg" alt="" class="img-fluid">
+                                        </span>
+                                        <span class="count">
+                                            256k
+                                        </span>
+                                        <div class="res">
+                                            <i class="bi bi-arrow-up"></i>
+                                            37.8% this week
+                                        </div>
+                                    </div>
+                                    <span></span>
+                                    <div>
+                                        <span class="imgBox">
+                                            <img src="/assets/img/upDown.svg" alt="">
+                                        </span>
+                                        <span class="widget-label">Views
+                                        <img src="/assets/img/info-circle.svg" alt="" class="img-fluid">
+                                        </span>
+                                        <span class="count">
+                                            256k
+                                        </span>
+                                        <div class="res">
+                                            <i class="bi bi-arrow-up"></i>
+                                            37.8% this week
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-12 col-md-5 col-lg-5 btn-section">
+
+                                <a href="#" class="btn btn-green">
+                                    <img src="/assets/img/rocket.svg" alt="">
+                                    <div>
+                                        <div>Boost This AD Now</div>
+                                        <span>(Get 5x time Leads)</span>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="btn btn-d-green">
+                                    <img src="/assets/img/photo.svg" alt="">
+                                    <div>
+                                        <div>Insert photo</div>
+                                        <span>(Get 5x time Leads)</span>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="btn btn-d-green">
+                                    <img src="/assets/img/low_price.svg" alt="">
+                                    <div>
+                                        <div>lower price</div>
+                                        <span>(Get 5x time Leads)</span>
+                                    </div>
+                                </a>
+
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    
+                    <div class="swiper-slide">
+
+                        <div class="img-box d-flex flex-column flex-lg-row align-items-lg-center">
+                            <img src="https://picsum.photos/id/19/220/120" alt="" class="img-fluid object-fit-cover">
+                            <div>
+                                <div class="widget-title-2 mb-1">
+                                    Elegant Luxury & Modern brand new house
+                                </div>
+                                <div class="location-label">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span class="widget-label">
+                                        No.150, Anura Mawatha, Nugegoda
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-12 col-md-7 col-lg-7">
+                                <div class="insights justify-content-between d-flex align-items-center">
+                                    <div class="widget-title-3">Insights</div>
+
+                                    <div class="btn-group custom-dropdown" role="group"
+                                         aria-label="Button group with nested dropdown">
+                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                            <option selected>Last 7 Days</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                        <button type="button" class="btn">
+                                            <i class="bi bi-caret-down-fill"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="impressions">
+                                    <div>
+                                        <span class="imgBox">
+                                            <img src="/assets/img/persion-circle.svg" alt="">
+                                        </span>
+                                        <span class="widget-label">Views
+                                        <img src="/assets/img/info-circle.svg" alt="" class="img-fluid">
+                                        </span>
+                                        <span class="count">
+                                            256k
+                                        </span>
+                                        <div class="res">
+                                            <i class="bi bi-arrow-up"></i>
+                                            37.8% this week
+                                        </div>
+                                    </div>
+                                    <span></span>
+                                    <div>
+                                        <span class="imgBox">
+                                            <img src="/assets/img/upDown.svg" alt="">
+                                        </span>
+                                        <span class="widget-label">Views
+                                        <img src="/assets/img/info-circle.svg" alt="" class="img-fluid">
+                                        </span>
+                                        <span class="count">
+                                            256k
+                                        </span>
+                                        <div class="res">
+                                            <i class="bi bi-arrow-up"></i>
+                                            37.8% this week
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-12 col-md-5 col-lg-5 btn-section">
+
+                                <a href="#" class="btn btn-green">
+                                    <img src="/assets/img/rocket.svg" alt="">
+                                    <div>
+                                        <div>Boost This AD Now</div>
+                                        <span>(Get 5x time Leads)</span>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="btn btn-d-green">
+                                    <img src="/assets/img/photo.svg" alt="">
+                                    <div>
+                                        <div>Insert photo</div>
+                                        <span>(Get 5x time Leads)</span>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="btn btn-d-green">
+                                    <img src="/assets/img/low_price.svg" alt="">
+                                    <div>
+                                        <div>lower price</div>
+                                        <span>(Get 5x time Leads)</span>
+                                    </div>
+                                </a>
+
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+                    <div class="row">
+    <div class="col-12">
+        <div class="trending-container shadow">
+            <div class="widget-title-1">Trending Location</div>
+            <div class="widget-title-2">
+                <img src="/assets/img/raising.svg" alt="" class="img-fluid">
+                Colombo 5
+            </div>
+            <div class="d-flex align-items-center mb-3">
+                <p class="desc mb-0">
+                    Similar property in the same location is gaining <b>6x more views</b>,
+                    upgrade these properties to feature now and boost .
+                </p>
+
+                <div class="d-none d-lg-flex controls">
+                    <span class="prev-trending me-1">
+                        <i class="bi bi-chevron-left"></i>
+                    </span>
+                    <span class="next-trending">
+                        <i class="bi bi-chevron-right"></i>
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="swiper trendingSwiper">
+                <div class="swiper-wrapper">
+
+                    
+                    
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="https://placehold.co/228x140/000000/FFFFFF/png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <div class="icons">
+                                    <img src="/assets/img/bed.svg" alt="" class="img-fluid">
+                                    <span class="widget-label me-3">3</span>
+                                    <img src="/assets/img/expand.svg" alt="" class="img-fluid">
+                                    <span class="widget-label me-3">3</span>
+                                </div>
+
+                                <p class="price-content">
+                                    <b>Rs. 49M</b> approx
+                                </p>
+                                <h5 class="widget-title-2">
+                                    Brand New Apartments for Sale in Colombo 5
+                                </h5>
+                                <div class="location-label mb-3">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span class="widget-label">
+                                        Colombo 5
+                                    </span>
+                                </div>
+                                <a href="#" class="btn btn-green w-100">
+                                    <img src="/assets/img/rocket.svg" alt="" class="img-fluid">
+                                    Boost This AD Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="https://placehold.co/228x140/000000/FFFFFF/png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <div class="icons">
+                                    <img src="/assets/img/bed.svg" alt="" class="img-fluid">
+                                    <span class="widget-label me-3">3</span>
+                                    <img src="/assets/img/expand.svg" alt="" class="img-fluid">
+                                    <span class="widget-label me-3">3</span>
+                                </div>
+
+                                <p class="price-content">
+                                    <b>Rs. 49M</b> approx
+                                </p>
+                                <h5 class="widget-title-2">
+                                    Brand New Apartments for Sale in Colombo 5
+                                </h5>
+                                <div class="location-label mb-3">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span class="widget-label">
+                                        Colombo 5
+                                    </span>
+                                </div>
+                                <a href="#" class="btn btn-green w-100">
+                                    <img src="/assets/img/rocket.svg" alt="" class="img-fluid">
+                                    Boost This AD Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="https://placehold.co/228x140/000000/FFFFFF/png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <div class="icons">
+                                    <img src="/assets/img/bed.svg" alt="" class="img-fluid">
+                                    <span class="widget-label me-3">3</span>
+                                    <img src="/assets/img/expand.svg" alt="" class="img-fluid">
+                                    <span class="widget-label me-3">3</span>
+                                </div>
+
+                                <p class="price-content">
+                                    <b>Rs. 49M</b> approx
+                                </p>
+                                <h5 class="widget-title-2">
+                                    Brand New Apartments for Sale in Colombo 5
+                                </h5>
+                                <div class="location-label mb-3">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span class="widget-label">
+                                        Colombo 5
+                                    </span>
+                                </div>
+                                <a href="#" class="btn btn-green w-100">
+                                    <img src="/assets/img/rocket.svg" alt="" class="img-fluid">
+                                    Boost This AD Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <img src="https://placehold.co/228x140/000000/FFFFFF/png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <div class="icons">
+                                    <img src="/assets/img/bed.svg" alt="" class="img-fluid">
+                                    <span class="widget-label me-3">3</span>
+                                    <img src="/assets/img/expand.svg" alt="" class="img-fluid">
+                                    <span class="widget-label me-3">3</span>
+                                </div>
+
+                                <p class="price-content">
+                                    <b>Rs. 49M</b> approx
+                                </p>
+                                <h5 class="widget-title-2">
+                                    Brand New Apartments for Sale in Colombo 5
+                                </h5>
+                                <div class="location-label mb-3">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span class="widget-label">
+                                        Colombo 5
+                                    </span>
+                                </div>
+                                <a href="#" class="btn btn-green w-100">
+                                    <img src="/assets/img/rocket.svg" alt="" class="img-fluid">
+                                    Boost This AD Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+                    <div class="row my-4">
+    <div class="col-12">
+        <div class="worst-container shadow">
+            <div class="widget-title-1 d-flex align-items-center justify-content-between">
+                Worst Performing Ads
+
+                <div class="d-flex controls">
+                    <span class="prev-worst me-1">
+                        <i class="bi bi-chevron-left"></i>
+                    </span>
+                    <span class="next-worst">
+                        <i class="bi bi-chevron-right"></i>
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="swiper worstSwiper">
+                <div class="swiper-wrapper">
+
+                    
+
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="overlay">
+                                <i class="bi bi-exclamation-triangle-fill"></i>
+                                Only visible to 12% Buyers
+                            </div>
+                            <img src="https://picsum.photos/id/12/200/164" class="card-img-top" alt="...">
+                            <div class="card-body">
+
+                                <h5 class="widget-title-2">
+                                    Brand New Apartments for Sale in Colombo 5
+                                </h5>
+                                <div class="location-label">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span class="widget-label">
+                                        Colombo 5
+                                    </span>
+                                </div>
+
+                                <ul class="list-group list-group-flush btn-list">
+                                    <li class="list-group-item">
+                                        <p>
+                                            <b>+10%</b> More buyers
+                                        </p>
+                                        <a href="#" class="btn">
+                                            Add Property Images
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <p>
+                                            <b>+10%</b> More buyers
+                                        </p>
+                                        <a href="#" class="btn">
+                                            Add Property Images
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="overlay">
+                                <i class="bi bi-exclamation-triangle-fill"></i>
+                                Only visible to 12% Buyers
+                            </div>
+                            <img src="https://picsum.photos/id/12/200/164" class="card-img-top" alt="...">
+                            <div class="card-body">
+
+                                <h5 class="widget-title-2">
+                                    Brand New Apartments for Sale in Colombo 5
+                                </h5>
+                                <div class="location-label">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span class="widget-label">
+                                        Colombo 5
+                                    </span>
+                                </div>
+
+                                <ul class="list-group list-group-flush btn-list">
+                                    <li class="list-group-item">
+                                        <p>
+                                            <b>+10%</b> More buyers
+                                        </p>
+                                        <a href="#" class="btn">
+                                            Add Property Images
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <p>
+                                            <b>+10%</b> More buyers
+                                        </p>
+                                        <a href="#" class="btn">
+                                            Add Property Images
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="overlay">
+                                <i class="bi bi-exclamation-triangle-fill"></i>
+                                Only visible to 12% Buyers
+                            </div>
+                            <img src="https://picsum.photos/id/12/200/164" class="card-img-top" alt="...">
+                            <div class="card-body">
+
+                                <h5 class="widget-title-2">
+                                    Brand New Apartments for Sale in Colombo 5
+                                </h5>
+                                <div class="location-label">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span class="widget-label">
+                                        Colombo 5
+                                    </span>
+                                </div>
+
+                                <ul class="list-group list-group-flush btn-list">
+                                    <li class="list-group-item">
+                                        <p>
+                                            <b>+10%</b> More buyers
+                                        </p>
+                                        <a href="#" class="btn">
+                                            Add Property Images
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <p>
+                                            <b>+10%</b> More buyers
+                                        </p>
+                                        <a href="#" class="btn">
+                                            Add Property Images
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="overlay">
+                                <i class="bi bi-exclamation-triangle-fill"></i>
+                                Only visible to 12% Buyers
+                            </div>
+                            <img src="https://picsum.photos/id/12/200/164" class="card-img-top" alt="...">
+                            <div class="card-body">
+
+                                <h5 class="widget-title-2">
+                                    Brand New Apartments for Sale in Colombo 5
+                                </h5>
+                                <div class="location-label">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span class="widget-label">
+                                        Colombo 5
+                                    </span>
+                                </div>
+
+                                <ul class="list-group list-group-flush btn-list">
+                                    <li class="list-group-item">
+                                        <p>
+                                            <b>+10%</b> More buyers
+                                        </p>
+                                        <a href="#" class="btn">
+                                            Add Property Images
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <p>
+                                            <b>+10%</b> More buyers
+                                        </p>
+                                        <a href="#" class="btn">
+                                            Add Property Images
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+                    <div class="row mb-4">
+    <div class="col-12">
+        <div class="ads-listing-container shadow">
+            <div class="listing-header">
+
+                <ul class="nav nav-underline">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Latest Ads</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Best performing ad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Trending ads</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <hr>
+
+            <div class="listing-body">
+
+                <div class="card">
+                    <div class="card-body p-0">
+
+                        <div class="row gx-3">
+                            <div class="col-5 col-md-auto">
+                                <img src="https://picsum.photos/seed/picsum/200/164" class="img-fluid card-img" alt="...">
+                            </div>
+                            <div class="col">
+                                <a href="#" class="btn featured">
+                                    <i class="bi bi-star-fill"></i>
+                                    Featured</a>
+
+                                <div class="icons">
+                                    <img src="/assets/img/bed.svg" alt="" class="img-fluid">
+                                    <span class="widget-label me-3">3</span>
+                                    <img src="/assets/img/expand.svg" alt="" class="img-fluid">
+                                    <span class="widget-label me-3">3</span>
+                                </div>
+
+                                <p class="price-content">
+                                    <b>Rs. 49M</b> approx
+                                </p>
+
+                                <h5 class="card-title">Brand New Apartments for
+                                    Sale in Colombo 5
+                                </h5>
+
+                                <div class="location-label mb-3">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span class="widget-label">
+                                                Colombo 5
+                                            </span>
+                                </div>
+
+                            </div>
+                            <div class="col-12 col-md-3 right-section ps-md-3">
+
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <img src="/assets/img/eye.svg" alt="">
+                                        <div>
+                                            <div class="text">
+                                                Total No Of views
+                                            </div>
+                                            <div class="num">
+                                                1256
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <img src="/assets/img/person-circle.svg" alt="">
+                                        <div>
+                                            <div class="text">
+                                                Total No Of views
+                                            </div>
+                                            <div class="num">
+                                                1256
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <img src="/assets/img/calenderFill.svg" alt="">
+                                        <div>
+                                            <div class="text">
+                                                Total No Of views
+                                            </div>
+                                            <div class="num">
+                                                1256
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="footer">
+                        Last Updated: <span>Apr 25, 2024</span>
+                    </div>
+
+                </div>
+
+                <div class="card">
+                    <div class="card-body p-0">
+
+                        <div class="row gx-3">
+                            <div class="col-5 col-md-auto">
+                                <img src="https://picsum.photos/seed/picsum/200/164" class="img-fluid card-img" alt="...">
+                            </div>
+                            <div class="col">
+                                <a href="#" class="btn platinum">
+                                    <img src="/assets/img/crown.svg" alt="" class="img-fluid">
+                                    Platinum</a>
+
+                                <div class="icons">
+                                    <img src="/assets/img/bed.svg" alt="" class="img-fluid">
+                                    <span class="widget-label me-3">3</span>
+                                    <img src="/assets/img/expand.svg" alt="" class="img-fluid">
+                                    <span class="widget-label me-3">3</span>
+                                </div>
+
+                                <p class="price-content">
+                                    <b>Rs. 49M</b> approx
+                                </p>
+
+                                <h5 class="card-title">Brand New Apartments for
+                                    Sale in Colombo 5
+                                </h5>
+
+                                <div class="location-label mb-3">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span class="widget-label">
+                                                Colombo 5
+                                            </span>
+                                </div>
+
+                            </div>
+                            <div class="col-12 col-md-3 right-section ps-md-3">
+
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <img src="/assets/img/eye.svg" alt="">
+                                        <div>
+                                            <div class="text">
+                                                Total No Of views
+                                            </div>
+                                            <div class="num">
+                                                1256
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <img src="/assets/img/person-circle.svg" alt="">
+                                        <div>
+                                            <div class="text">
+                                                Total No Of views
+                                            </div>
+                                            <div class="num">
+                                                1256
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <img src="/assets/img/calenderFill.svg" alt="">
+                                        <div>
+                                            <div class="text">
+                                                Total No Of views
+                                            </div>
+                                            <div class="num">
+                                                1256
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="footer">
+                        Last Updated: <span>Apr 25, 2024</span>
+                    </div>
+
+                </div>
+
+
+                <div class="card"   >
+                    <div class="card-body p-0">
+
+                        <div class="row gx-3">
+                            <div class="col-5 col-md-auto">
+                                <img src="https://picsum.photos/seed/picsum/200/164" class="img-fluid card-img" alt="...">
+                            </div>
+                            <div class="col">
+                                <a href="#" class="btn hot-deal">
+                                    <img src="/assets/img/hotdeal-white.svg" alt="" class="img-fluid">
+                                    Hot Deal</a>
+
+                                <div class="icons">
+                                    <img src="/assets/img/bed.svg" alt="" class="img-fluid">
+                                    <span class="widget-label me-3">3</span>
+                                    <img src="/assets/img/expand.svg" alt="" class="img-fluid">
+                                    <span class="widget-label me-3">3</span>
+                                </div>
+
+                                <p class="price-content">
+                                    <b>Rs. 49M</b> approx
+                                </p>
+
+                                <h5 class="card-title">Brand New Apartments for
+                                    Sale in Colombo 5
+                                </h5>
+
+                                <div class="location-label mb-3">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span class="widget-label">
+                                                Colombo 5
+                                            </span>
+                                </div>
+
+                            </div>
+                            <div class="col-12 col-md-3 right-section ps-md-3">
+
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <img src="/assets/img/eye.svg" alt="">
+                                        <div>
+                                            <div class="text">
+                                                Total No Of views
+                                            </div>
+                                            <div class="num">
+                                                1256
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <img src="/assets/img/person-circle.svg" alt="">
+                                        <div>
+                                            <div class="text">
+                                                Total No Of views
+                                            </div>
+                                            <div class="num">
+                                                1256
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <img src="/assets/img/calenderFill.svg" alt="">
+                                        <div>
+                                            <div class="text">
+                                                Total No Of views
+                                            </div>
+                                            <div class="num">
+                                                1256
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="footer">
+                        Last Updated: <span>Apr 25, 2024</span>
+                    </div>
+
+                </div>
+
+                <div class="card">
+                    <div class="card-body p-0">
+
+                        <div class="row gx-3">
+                            <div class="col-5 col-md-auto">
+                                <img src="https://picsum.photos/seed/picsum/200/164" class="img-fluid card-img" alt="...">
+                            </div>
+                            <div class="col">
+                                <a href="#" class="btn featured">
+                                    <i class="bi bi-star-fill"></i>
+                                    Featured</a>
+
+                                <div class="icons">
+                                    <img src="/assets/img/bed.svg" alt="" class="img-fluid">
+                                    <span class="widget-label me-3">3</span>
+                                    <img src="/assets/img/expand.svg" alt="" class="img-fluid">
+                                    <span class="widget-label me-3">3</span>
+                                </div>
+
+                                <p class="price-content">
+                                    <b>Rs. 49M</b> approx
+                                </p>
+
+                                <h5 class="card-title">Brand New Apartments for
+                                    Sale in Colombo 5
+                                </h5>
+
+                                <div class="location-label mb-3">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span class="widget-label">
+                                                Colombo 5
+                                            </span>
+                                </div>
+
+                            </div>
+                            <div class="col-12 col-md-3 right-section ps-md-3">
+
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <img src="/assets/img/eye.svg" alt="">
+                                        <div>
+                                            <div class="text">
+                                                Total No Of views
+                                            </div>
+                                            <div class="num">
+                                                1256
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <img src="/assets/img/person-circle.svg" alt="">
+                                        <div>
+                                            <div class="text">
+                                                Total No Of views
+                                            </div>
+                                            <div class="num">
+                                                1256
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <img src="/assets/img/calenderFill.svg" alt="">
+                                        <div>
+                                            <div class="text">
+                                                Total No Of views
+                                            </div>
+                                            <div class="num">
+                                                1256
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="footer">
+                        Last Updated: <span>Apr 25, 2024</span>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+                </div>
+                <div class="col-12 col-lg-4">
+                    <!--                    right sidebar-->
+                    <div class="update-container">
+    <div class="d-flex justify-content-between align-items-center header">
+        <div class="widget-title-2">
+            Latest Product Updates
+        </div>
+
+        <a class="d-none d-lg-block" href="#">
+            <i class="bi bi-x-lg"></i>
+        </a>
+
+        <div class="d-flex d-lg-none controls">
+            <span class="prev-update me-1">
+            <i class="bi bi-chevron-left"></i>
+            </span>
+            <span class="next-update">
+            <i class="bi bi-chevron-right"></i>
+            </span>
+        </div>
+
+    </div>
+
+    <!-- swiper -->
+    <div class="swiper update-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide wap-slide">
+                <div class="content">
+                    <img src="/assets/img/whatsapp-outline.svg" alt="">
+                    <div class="text">
+                        Activate the new Whatsapp live chat and increase your quality leads
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <a href="#" class="btn btn-primary">How it Works?</a>
+                    <a href="#" class="btn btn-light">Dismiss</a>
+                </div>
+            </div>
+            <div class="swiper-slide wap-slide">
+                <div class="content">
+                    <img src="/assets/img/whatsapp-outline.svg" alt="">
+                    <div class="text">
+                        Activate the new Whatsapp live chat and increase your quality leads
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <a href="#" class="btn btn-primary">How it Works?</a>
+                    <a href="#" class="btn btn-light">Dismiss</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-none d-lg-flex controls">
+        <span class="prev-update me-1">
+            <i class="bi bi-chevron-left"></i>
+        </span>
+        <span class="next-update">
+            <i class="bi bi-chevron-right"></i>
+        </span>
+    </div>
+
+    <div class="swiper-pagination update-pagination position-relative">
+    </div>
+
+</div>
+
+<div class="light-widget my-3">
+    <div class="img">
+        <img src="/assets/img/member-expiry.svg" alt="#">
+    </div>
+    <div class="content">
+        <div class="widget-title-2">
+            Membership expiry date
+        </div>
+        <div class="widget-label">
+            Friday 31st May 2024
+        </div>
+    </div>
+</div>
+
+<div class="light-widget">
+    <div class="img">
+        <img src="/assets/img/pay-expire.svg" alt="#">
+    </div>
+    <div class="content">
+        <div class="widget-title-2">
+            Payment expiry date
+        </div>
+        <div class="widget-label">
+            Friday 31st May 2024
+        </div>
+    </div>
+</div>
+
+<div class="leads-widget my-3">
+    <div class="d-flex justify-content-between align-items-center">
+        <span class="widget-title-2">Leads Centre</span>
+        <a class="btn btn-red" href="#">
+            <img src="/assets/img/envelop.svg" alt="">
+            6 Unread Leads
+        </a>
+    </div>
+    <div class="content">
+        <div>
+            <span>Last 7 days</span>
+            <span class="lead">25 Leads</span>
+        </div>
+        <i></i>
+        <div>
+            <span>Last 30 days</span>
+            <span class="lead">67 Leads</span>
+        </div>
+    </div>
+    <a href="#" class="btn btn-primary w-100 d-flex justify-content-between align-items-center">View All Leads
+        <i class="bi bi-caret-right-fill"></i>
+    </a>
+</div>
+
+<div class="profile-completion">
+    <div class="d-flex align-items-start gap-4">
+        
+<svg width="75px" height="75px" viewBox="0 0 75 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <rect id="path-1hfn8o98hk-1" x="0" y="0" width="20" height="20"></rect>
+        <rect id="path-1hfn8o98hk-3" x="0" y="0" width="20" height="20"></rect>
+        <rect id="path-1hfn8o98hk-5" x="0" y="0" width="20" height="20"></rect>
+    </defs>
+    <g id="---↪️-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-63.5, -166.5)">
+            <circle id="Oval" stroke-opacity="0.100000001" stroke="#000000" stroke-width="3" opacity="0.99" cx="101" cy="204" r="35"></circle>
+            <path d="M101,169 C120.329966,169 136,184.670034 136,204 C136,223.329966 120.329966,239 101,239 C81.6700338,239 66,223.329966 66,204 C66,184.670034 81.6700338,169 101,169" id="profileCompleteProgress" stroke="#FBA94B" stroke-width="5" stroke-linecap="round"></path>
+            <g id="75%" transform="translate(81.551, 204.5)" fill="#171725" fill-rule="nonzero" font-family="Inter-Regular_Bold, Inter" font-size="18" font-weight="bold">
+                <g id="Group">
+                    <text id="75%">
+                        <tspan x="0" y="17">75%</tspan>
+                    </text>
+                </g>
+            </g>
+            <g id="fi_4797927-copy" transform="translate(90.5, 184.5)">
+                <g id="Vector-Clipped">
+                    <mask id="mask-1hfn8o98hk-2" fill="white">
+                        <use xlink:href="#path-1hfn8o98hk-1"></use>
+                    </mask>
+                    <g id="path-230xt8ojiz-1"></g>
+                    <path d="M2.08125114,3.73750005 L2.08125114,14.9312498 C2.08345174,15.7560596 2.41208158,16.546459 2.99531221,17.1296897 C3.57854284,17.7129203 4.36894171,18.0415502 5.19375145,18.0437508 L9.40625131,18.0437508 C9.4662159,17.6110419 9.59050514,17.1897228 9.77500141,16.7937507 C10.279725,15.6805478 11.1925071,14.8035604 12.3250008,14.3437507 C11.916898,14.0613734 11.5836052,13.6839675 11.3538611,13.2440783 C11.124117,12.8041892 11.004818,12.3150189 11.0062516,11.8187501 C11.0070673,10.9984869 11.3332761,10.2120532 11.91329,9.63203919 C12.493304,9.05202523 13.2797377,8.72581587 14.1000009,8.72500013 C14.3987029,8.72386464 14.6958436,8.76811968 14.9812508,8.85625016 C15.4497361,8.99485812 15.8783085,9.24342998 16.2312508,9.58125007 L16.2312508,3.73750005 C16.2312508,2.91203658 15.9032289,2.12040333 15.3195381,1.53671251 C14.7358473,0.953021687 13.9442145,0.625 13.118751,0.625 L5.19375145,0.625 C4.36861388,0.626135943 3.57759684,0.954423849 2.99413592,1.53788478 C2.41067499,2.12134572 2.08238709,2.91236247 2.08125114,3.73750005 Z M5.85625112,3.72500007 L12.4562514,3.72500007 C12.6220117,3.72500007 12.7809822,3.79084821 12.8981924,3.90805845 C13.0154026,4.02526869 13.0812511,4.18423976 13.0812511,4.35000007 C13.0812511,4.51576039 13.0154026,4.67473146 12.8981924,4.7919417 C12.7809822,4.90915193 12.6220117,4.97500008 12.4562514,4.97500008 L5.85625112,4.97500008 C5.69049081,4.97500008 5.53151974,4.90915193 5.4143095,4.7919417 C5.29709927,4.67473146 5.23125112,4.51576039 5.23125112,4.35000007 C5.23125112,4.18423976 5.29709927,4.02526869 5.4143095,3.90805845 C5.53151974,3.79084821 5.69049081,3.72500007 5.85625112,3.72500007 Z M5.85625112,7.04999992 L12.4562514,7.04999992 C12.6220117,7.04999992 12.7809822,7.11584807 12.8981924,7.2330583 C13.0154026,7.35026854 13.0812511,7.50923962 13.0812511,7.67499993 C13.0812511,7.84076024 13.0154026,7.99973132 12.8981924,8.11694155 C12.7809822,8.23415179 12.6220117,8.29999994 12.4562514,8.29999994 L5.85625112,8.29999994 C5.69049081,8.29999994 5.53151974,8.23415179 5.4143095,8.11694155 C5.29709927,7.99973132 5.23125112,7.84076024 5.23125112,7.67499993 C5.23125112,7.50923962 5.29709927,7.35026854 5.4143095,7.2330583 C5.53151974,7.11584807 5.69049081,7.04999992 5.85625112,7.04999992 Z M5.85625112,10.3687502 L8.85625124,10.3687502 C9.02201155,10.3687502 9.18098263,10.4345978 9.29819286,10.551808 C9.41540309,10.6690183 9.48125124,10.8279899 9.48125124,10.9937502 C9.48125124,11.1595106 9.41540309,11.3184822 9.29819286,11.4356925 C9.18098263,11.5529027 9.02201155,11.6187502 8.85625124,11.6187502 L5.85625112,11.6187502 C5.69049081,11.6187502 5.53151974,11.5529027 5.4143095,11.4356925 C5.29709927,11.3184822 5.23125112,11.1595106 5.23125112,10.9937502 C5.23125112,10.8279899 5.29709927,10.6690183 5.4143095,10.551808 C5.53151974,10.4345978 5.69049081,10.3687502 5.85625112,10.3687502 Z" id="Vector" fill="#FBA94B" fill-rule="nonzero" mask="url(#mask-1hfn8o98hk-2)"></path>
+                </g>
+                <g id="Vector-Clipped">
+                    <mask id="mask-1hfn8o98hk-4" fill="white">
+                        <use xlink:href="#path-1hfn8o98hk-3"></use>
+                    </mask>
+                    <g id="path-230xt8ojiz-3"></g>
+                    <path d="M16.2562504,11.8187491 C16.2562504,13.009613 15.2908638,13.9749994 14.0999998,13.9749994 C12.9091357,13.9749994 11.9437504,13.009613 11.9437504,11.8187491 C11.9437504,10.6278852 12.9091357,9.66249943 14.0999998,9.66249943 C15.2908638,9.66249943 16.2562504,10.6278852 16.2562504,11.8187491 Z" id="Vector" fill="#FBA94B" fill-rule="nonzero" mask="url(#mask-1hfn8o98hk-4)"></path>
+                </g>
+                <g id="Vector-Clipped">
+                    <mask id="mask-1hfn8o98hk-6" fill="white">
+                        <use xlink:href="#path-1hfn8o98hk-5"></use>
+                    </mask>
+                    <g id="path-230xt8ojiz-5"></g>
+                    <path d="M10.9124994,19.3749995 L17.2937503,19.3749995 C17.4593585,19.3745049 17.6180421,19.3084978 17.7351453,19.1913946 C17.8522485,19.0742914 17.9182557,18.9156077 17.9187503,18.7499995 C17.9187503,17.7380328 17.5167484,16.7675137 16.8011799,16.0519452 C16.0856113,15.3363767 15.1150922,14.9343748 14.1031255,14.9343748 C13.0911587,14.9343748 12.1206396,15.3363767 11.4050711,16.0519452 C10.6895025,16.7675137 10.2874994,17.7380328 10.2874994,18.7499995 C10.2879793,18.9156123 10.3539825,19.0743049 10.4710889,19.1914113 C10.5881953,19.3085176 10.7468867,19.3745197 10.9124994,19.3749995 Z" id="Vector" fill="#FBA94B" fill-rule="nonzero" mask="url(#mask-1hfn8o98hk-6)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+        <div>
+            <div class="widget-title-2 mb-1 ">
+                Profile Completion
+            </div>
+            <div class="widget-label">Lorem ipsum dolor sit amet, consectetur adipiscin.</div>
+        </div>
+    </div>
+    <div class="text-end">
+        <a class="btn btn-link d-inline-block" href="#">Complete Your Profile
+            <i class="bi bi-caret-right-fill"></i>
+        </a>
+    </div>
+</div>
+
+<div class="property-val mt-3">
+    <div class="d-flex align-items-start">
+        <img src="/assets/img/propertyVal.svg" alt="" class="img-fluid">
+        <div>
+            <div class="widget-title-2 mb-1 ">
+                Profile Completion
+            </div>
+            <div class="widget-label">Lorem ipsum dolor sit amet, consectetur adipiscin.</div>
+        </div>
+    </div>
+    <div class="text-end">
+        <a class="btn btn-link d-inline-block" href="#">Complete Your Profile
+            <i class="bi bi-caret-right-fill"></i>
+        </a>
+    </div>
+</div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.1.1/progressbar.min.js" integrity="sha512-8RAwsP5DBXxOKowV9rc4TwxbW0Z+YG856FOh4ymLgoAQlfhCmkYm8G46FaFAZYsG/J8jcAlI/22q0PSLHz4HAQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
