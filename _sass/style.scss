@@ -1299,21 +1299,6 @@ body {
     }
   }
 
-  p {
-    font-family: Inter-Regular, sans-serif;
-    font-size: 14px;
-    color: #696974;
-    letter-spacing: 0.1px;
-    line-height: 1.1;
-    margin-bottom: 0;
-
-    b {
-      font-family: Inter-SemiBold, sans-serif;
-      font-size: 16px;
-      color: #1DBE73;
-    }
-  }
-
   .controls {
     margin-top: 0 !important;
   }
@@ -1341,6 +1326,7 @@ body {
             ion-icon, img {
               margin-right: 6px;
               font-size: 20px;
+              color: #696974;
             }
 
             img {
@@ -1462,7 +1448,7 @@ body {
             }
           }
 
-          .list-group-item{
+          .list-group-item:last-child{
             border: 0;
             padding-bottom: 0;
           }
@@ -1471,6 +1457,181 @@ body {
 
       }
 
+    }
+  }
+}
+
+.ads-listing-container{
+  background: #FFFFFF;
+  border-radius: 20px;
+
+  .listing-header{
+    padding: 12px 12px 0;
+
+    .nav{
+      .nav-item{
+        .nav-link{
+          font-family: Inter-Medium, sans-serif;
+          font-size: 14px;
+          color: #171725;
+          letter-spacing: 0.1px;
+          padding: 16px 12px;
+          border: 0;
+        }
+        .active{
+          font-family: Inter-Medium, sans-serif;
+          font-size: 14px;
+          color: #1DBF73;
+          letter-spacing: 0.1px;
+          font-weight: 500;
+          position: relative;
+
+          &:after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 12px;
+            right: 12px;
+            height: 3px;
+            background: #1DBF73;
+            border-radius: 10px 10px 0 0;
+          }
+        }
+      }
+    }
+  }
+
+  hr{
+    border: 1px solid #EDF2F7;
+    margin-top: 0;
+    opacity: 1;
+    margin-bottom: 0;
+  }
+
+  .listing-body{
+    padding: 24px;
+
+    .card{
+      padding: 8px;
+      background: #F7FAFC;
+      border: 1px solid #CBD7E0;
+      border-radius: 12px;
+
+      .right-section{
+        border-left: 1px solid #EDF2F7;
+      }
+
+      .card-img{
+        border-radius: 8px;
+        height: 100%;
+        width: 100%;
+        object-fit: fill;
+      }
+
+      .btn{
+        padding: 4px 8px;
+        font-family: Inter-Medium, sans-serif;
+        font-size: 11px;
+        color: #FFFFFF;
+        letter-spacing: -0.11px;
+        line-height: 16px;
+        border-radius: 4px;
+        display: inline-flex;
+        align-items: center;
+
+        i,img{
+          margin-right: 8px;
+        }
+      }
+      .featured{
+        background: #3257DB;
+      }
+
+      .icons {
+        display: flex;
+        align-items: center;
+        margin-top: 12px;
+
+        ion-icon, img {
+          margin-right: 6px;
+          font-size: 20px;
+          color: #696974;
+        }
+
+        img {
+          width: 20px;
+          height: auto;
+        }
+
+      }
+
+      .price-content{
+        margin-top: 12px;
+        margin-bottom: 12px;
+      }
+
+      .card-title{
+        font-family: Inter-SemiBold, sans-serif;
+        font-size: 16px;
+        color: #2F2F35;
+        letter-spacing: 0.2px;
+        margin-bottom: 4px;
+      }
+
+      .list-group{
+        background:none ;
+        .list-group-item{
+          background:none ;
+          border: none  ;
+          margin-bottom: 12px;
+          padding: 0;
+
+          img{
+            margin-right: 12px;
+          }
+
+          .text{
+            font-family: Inter-Medium, sans-serif;
+            font-size: 12px;
+            color: #696974;
+            letter-spacing: 0.1px;
+            margin-bottom: 2px;
+            line-height: 1.1;
+          }
+          .num{
+            font-family: Inter-Bold, sans-serif;
+            font-size: 14px;
+            color: #2F2F35;
+            letter-spacing: 0.2px;
+            line-height: 1;
+          }
+        }
+
+        .list-group-item:last-child{
+          margin-bottom: 0;
+        }
+      }
+
+    }
+
+    hr{
+      margin-top: 12px;
+      margin-bottom: 12px;
+      border: 1px solid #EDF2F7;
+      opacity: 1;
+    }
+
+    .footer{
+      font-family: Inter-Medium, sans-serif ;
+      font-size: 12px;
+      color: #000000;
+      letter-spacing: 0.1px;
+      line-height: 15px;
+      margin-bottom: 4px;
+
+      span{
+        color: #696974;
+      }
     }
   }
 }
