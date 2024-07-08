@@ -288,6 +288,28 @@ $(document).ready(function () {
             nextEl: '.next-trending',
             prevEl: '.prev-trending',
         },
+        breakpoints: {
+            // when window width is >= 320px
+            320: {
+                slidesPerView: 1.4,
+                spaceBetween: 12,
+            },
+            // when window width is >= 480px
+            480: {
+                slidesPerView: 1.5,
+                spaceBetween: 12,
+
+            },
+            // when window width is >= 640px
+            640: {
+                slidesPerView: 1.5,
+                spaceBetween: 12,
+
+            },
+            1200: {
+                slidesPerView: 2.5,
+            },
+        },
     });
 
     //worstSwiper
@@ -298,6 +320,35 @@ $(document).ready(function () {
             nextEl: '.next-worst',
             prevEl: '.prev-worst',
         },
+        breakpoints: {
+            // when window width is >= 320px
+            320: {
+                slidesPerView: 1.4,
+                spaceBetween: 12,
+            },
+            // when window width is >= 480px
+            480: {
+                slidesPerView: 1.5,
+                spaceBetween: 12,
+
+            },
+            // when window width is >= 640px
+            640: {
+                slidesPerView: 1.5,
+                spaceBetween: 12,
+
+            },
+            1200: {
+                slidesPerView: 2.5,
+            },
+        },
+    });
+
+
+    //show view more in agent section
+
+    $('#btnViewMore').on('click', function(){
+        $('#agentScoreList').addClass('view-all');
     });
 
 });
