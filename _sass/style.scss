@@ -1516,6 +1516,7 @@ body {
       background: #F7FAFC;
       border: 1px solid #CBD7E0;
       border-radius: 12px;
+      margin-bottom: 16px;
 
       .right-section{
         border-left: 1px solid #EDF2F7;
@@ -1542,9 +1543,21 @@ body {
         i,img{
           margin-right: 8px;
         }
+        img{
+          height: 16px ;
+          width: auto;
+        }
       }
       .featured{
         background: #3257DB;
+      }
+
+      .platinum{
+        background-color: #1D1F25;
+      }
+
+      .hot-deal{
+        background-color: #ED1C24;
       }
 
       .icons {
@@ -1612,6 +1625,10 @@ body {
         }
       }
 
+    }
+
+    .card:last-child{
+      margin-bottom: 0;
     }
 
     hr{
