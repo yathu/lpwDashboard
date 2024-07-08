@@ -139,13 +139,15 @@
   box-shadow: 0 0 1px 0 rgba(12, 26, 75, 0.24), 0 3px 8px -1px rgba(50, 50, 71, 0.05);
 }
 
-.location-container{
+.location-label{
   display: flex;
   align-items: center;
+  line-height: 16px;
 
   i{
     color: #16A05F;
     margin-right: 4px;
+    font-size: 14px;
   }
 }
 

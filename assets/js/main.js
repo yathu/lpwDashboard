@@ -124,13 +124,13 @@ $(document).ready(function () {
         },
     });
 
-    var bar = new ProgressBar.Path('#path-ndmds5olzj-3', {
+    var bar1 = new ProgressBar.Path('#path-ndmds5olzj-3', {
         easing: 'easeInOut',
         duration: 1400,
     });
 
-    bar.set(0);
-    bar.animate(0.7);  // Number from 0.0 to 1.0
+    bar1.set(0);
+    bar1.animate(0.7);  // Number from 0.0 to 1.0
 
     const updateSwiper = new Swiper('.update-swiper', {
         loop: false,
@@ -277,6 +277,26 @@ $(document).ready(function () {
         navigation: {
             nextEl: '.next-upgrade',
             prevEl: '.prev-upgrade',
+        },
+    });
+
+    //trendingSwiper
+    const trendingSwiper = new Swiper('.trendingSwiper', {
+        spaceBetween: 16,
+        slidesPerView: 2.7,
+        navigation: {
+            nextEl: '.next-trending',
+            prevEl: '.prev-trending',
+        },
+    });
+
+    //worstSwiper
+    const worstSwiper = new Swiper('.worstSwiper', {
+        spaceBetween: 16,
+        slidesPerView: 2.7,
+        navigation: {
+            nextEl: '.next-worst',
+            prevEl: '.prev-worst',
         },
     });
 
