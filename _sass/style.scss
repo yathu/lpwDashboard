@@ -1143,14 +1143,14 @@ body {
     .img-box {
       img {
         width: 160px;
-        height: 120px;
         border-radius: 12px;
         margin-right: 20px;
 
-        @media (max-width: 767.98px) {
+        @media (max-width: 991.98px) {
           width: 100%;
           margin-right: 0;
           margin-bottom: 12px;
+          border-radius: 12px;
         }
       }
 
@@ -1199,6 +1199,7 @@ body {
             letter-spacing: 0;
             line-height: 12px;
             display: block;
+            text-align: left;
           }
         }
       }
@@ -1516,6 +1517,9 @@ body {
     padding: 12px 12px 0;
 
     .nav{
+      @media (max-width: 991.98px) {
+        gap: 0;
+      }
       .nav-item{
         .nav-link{
           font-family: Inter-Medium, sans-serif;
@@ -1524,10 +1528,17 @@ body {
           letter-spacing: 0.1px;
           padding: 16px 12px;
           border: 0;
+
+          @media (max-width: 767.98px) {
+            font-size: 13px;
+          }
+
+          @media (max-width: 575.98px) {
+            padding: 12px 5px;
+          }
         }
         .active{
           font-family: Inter-Medium, sans-serif;
-          font-size: 14px;
           color: #1DBF73;
           letter-spacing: 0.1px;
           font-weight: 500;
@@ -1558,6 +1569,10 @@ body {
   .listing-body{
     padding: 24px;
 
+    @media (max-width: 767.98px) {
+      padding: 20px 14px;
+    }
+
     .card{
       padding: 8px;
       background: #F7FAFC;
@@ -1567,6 +1582,23 @@ body {
 
       .right-section{
         border-left: 1px solid #EDF2F7;
+
+        @media (max-width: 767.98px) {
+          padding-top: 20px;
+        }
+
+        .list-group{
+
+          @media (max-width: 767.98px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 16px;
+          }
+
+          @media (max-width: 575.98px) {
+            gap:6px;
+          }
+        }
       }
 
       .card-img{
@@ -1574,6 +1606,10 @@ body {
         height: 100%;
         width: 100%;
         object-fit: fill;
+
+        @media (min-width: 768px) {
+          max-width: 200px;
+        }
       }
 
       .btn{
@@ -1648,6 +1684,10 @@ body {
 
           img{
             margin-right: 12px;
+
+            @media (max-width: 767.98px) {
+              margin-right: 6px;
+            }
           }
 
           .text{

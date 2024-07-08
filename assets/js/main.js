@@ -278,6 +278,41 @@ $(document).ready(function () {
             nextEl: '.next-upgrade',
             prevEl: '.prev-upgrade',
         },
+        breakpoints: {
+            // when window width is >= 320px
+            320: {
+                slidesPerView: 1.3,
+                spaceBetween: 10,
+            },
+            // when window width is >= 480px
+            480: {
+                slidesPerView: 1.4,
+                spaceBetween: 12,
+
+            },
+            // when window width is >= 640px
+            640: {
+                slidesPerView: 1.4,
+                spaceBetween: 12,
+
+            },
+            768: {
+                slidesPerView: 1.4,
+                spaceBetween: 12,
+
+            },
+            992: {
+                slidesPerView: 1.2,
+                spaceBetween: 12,
+
+            },
+            1200: {
+                slidesPerView: 1.2,
+            },
+            1440: {
+                slidesPerView: 1.4,
+            },
+        },
     });
 
     //trendingSwiper
