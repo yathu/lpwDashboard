@@ -203,6 +203,63 @@ $(document).ready(function () {
         'rgba(0, 0, 0, 1)'
     ];
 
+//background-image: linear-gradient(180deg, #27885D 21%, #44BD86 100%);
+
+    const gradients = [
+        {s:'#ff006f',e:'rgb(75,246,7)'},
+        {s:'#3D9ED5',e:'rgb(233,253,255)'},
+        {s:'#27885D',e:'#44BD86'},
+        {s:'#072ff6',e:'rgb(255,0,111)'},
+        {s:'#3D9ED5',e:'rgba(255,167,0,0.26)'},
+        {s:'#3D9ED5',e:'rgba(255, 255, 255, 0.00)'},
+        {s:'#3D9ED5',e:'rgba(255, 255, 255, 0.00)'},
+        {s:'#3D9ED5',e:'rgba(255, 255, 255, 0.00)'},
+    ];
+
+    // var getChart = document.getElementById('myChart').getContext("2d");
+
+    const createGradient = (context,chart)=> {
+
+        if(!chart){
+            return ;
+        }
+       const {ctx, chartArea} = chart;
+
+        console.log("ctx1==>",ctx);
+
+
+        let val = 0;
+        if (context.p0DataIndex <= 5) {
+            val = context.p0DataIndex;
+            // return  chartColors[ctx.p0DataIndex]
+        } else {
+            val = (context.p0DataIndex % 6);
+            // return chartColors[ctx.p0DataIndex % 2]
+        }
+
+        let x0,y0,x1,y1 = 0;
+
+        x0 = context?.p0?.cp1x;
+        y0 = context?.p0?.cp1y;
+        x1 = context?.p0?.cp2x;
+        y1 = context?.p0?.cp2y;
+
+
+        // const gradient = getChart.createLinearGradient(0,0,0, y1);
+
+        const gradient = ctx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
+
+        console.log("val==>",val);
+
+        gradient.addColorStop(0, gradients[val].s);
+        gradient.addColorStop(1, gradients[val].e);
+
+        console.log("gradient==>",gradient);
+
+
+        return gradient;
+    }
+
     const setColors = (ctx)=>{
         let val = 0;
         if (ctx.p0DataIndex <= 5) {
@@ -216,35 +273,19 @@ $(document).ready(function () {
         return chartColors[val]
     }
 
+    //background-image: linear-gradient(180deg, #3D9ED5 0%, rgba(255,255,255,0.00) 100%);
+
     const data = {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets: [{
             label: 'Weekly Sales',
-            data: [0, 12, 6, 9, 12, 3, 9],
-            backgroundColor: [
-                'rgba(255, 26, 104, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(0, 0, 0, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 26, 104, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)',
-                'rgba(0, 0, 0, 1)'
-            ],
+            data: [2, 12, 6, 9, 12, 3, 9],
             fill: true,
             tension: 0.4,
             borderWidth: 2,
             segment: {
                 borderColor: (ctx)=> setColors(ctx),
-                backgroundColor: (ctx)=> setColors(ctx),
+                backgroundColor: (ctx)=> createGradient(ctx, ctx.chart),
             }
         }]
     };
@@ -254,11 +295,12 @@ $(document).ready(function () {
         type: 'line',
         data,
         options: {
-            // scales: {
-            //     y: {
-            //         beginAtZero: true
-            //     }
-            // }
+            responsive:true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
         }
     };
 
