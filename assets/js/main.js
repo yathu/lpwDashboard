@@ -161,7 +161,7 @@ $(document).ready(function () {
         breakpoints: {
             // when window width is >= 320px
             320: {
-                    slidesPerView: 1.2,
+                slidesPerView: 1.2,
                 spaceBetween: 12,
             },
             // when window width is >= 480px
@@ -206,61 +206,39 @@ $(document).ready(function () {
 //background-image: linear-gradient(180deg, #27885D 21%, #44BD86 100%);
 
     const gradients = [
-        {s:'#ff006f',e:'rgb(75,246,7)'},
-        {s:'#3D9ED5',e:'rgb(233,253,255)'},
-        {s:'#27885D',e:'#44BD86'},
-        {s:'#072ff6',e:'rgb(255,0,111)'},
-        {s:'#3D9ED5',e:'rgba(255,167,0,0.26)'},
-        {s:'#3D9ED5',e:'rgba(255, 255, 255, 0.00)'},
-        {s:'#3D9ED5',e:'rgba(255, 255, 255, 0.00)'},
-        {s:'#3D9ED5',e:'rgba(255, 255, 255, 0.00)'},
+        {s: '#ff006f', e: 'rgb(75,246,7)'},
+        {s: '#3D9ED5', e: 'rgb(233,253,255)'},
+        {s: '#27885D', e: '#44BD86'},
+        {s: '#072ff6', e: 'rgb(255,0,111)'},
+        {s: '#3D9ED5', e: 'rgba(255,167,0,0.26)'},
+        {s: '#3D9ED5', e: 'rgba(255, 255, 255, 0.00)'},
+        {s: '#3D9ED5', e: 'rgba(255, 255, 255, 0.00)'},
+        {s: '#3D9ED5', e: 'rgba(255, 255, 255, 0.00)'},
     ];
 
-    // var getChart = document.getElementById('myChart').getContext("2d");
+    const createGradient = (context, chart) => {
 
-    const createGradient = (context,chart)=> {
-
-        if(!chart){
-            return ;
+        if (!chart) {
+            return;
         }
-       const {ctx, chartArea} = chart;
-
-        console.log("ctx1==>",ctx);
-
+        const {ctx, chartArea} = chart;
 
         let val = 0;
         if (context.p0DataIndex <= 5) {
             val = context.p0DataIndex;
-            // return  chartColors[ctx.p0DataIndex]
         } else {
             val = (context.p0DataIndex % 6);
-            // return chartColors[ctx.p0DataIndex % 2]
         }
 
-        let x0,y0,x1,y1 = 0;
-
-        x0 = context?.p0?.cp1x;
-        y0 = context?.p0?.cp1y;
-        x1 = context?.p0?.cp2x;
-        y1 = context?.p0?.cp2y;
-
-
-        // const gradient = getChart.createLinearGradient(0,0,0, y1);
-
         const gradient = ctx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
-
-        console.log("val==>",val);
 
         gradient.addColorStop(0, gradients[val].s);
         gradient.addColorStop(1, gradients[val].e);
 
-        console.log("gradient==>",gradient);
-
-
         return gradient;
     }
 
-    const setColors = (ctx)=>{
+    const setColors = (ctx) => {
         let val = 0;
         if (ctx.p0DataIndex <= 5) {
             val = ctx.p0DataIndex;
@@ -273,33 +251,73 @@ $(document).ready(function () {
         return chartColors[val]
     }
 
-    //background-image: linear-gradient(180deg, #3D9ED5 0%, rgba(255,255,255,0.00) 100%);
+
+    const lineData =
+        [
+            {
+                x: "10.07.2024", y: 4
+            },
+            {
+                x: "11.07.2024", y: 13
+            },
+            {
+                x: "12.07.2024", y: 9
+            },
+            {
+                x: "13.07.2024", y: 20
+            },
+
+        ];
 
     const data = {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        datasets: [{
-            label: 'Weekly Sales',
-            data: [2, 12, 6, 9, 12, 3, 9],
-            fill: true,
-            tension: 0.4,
-            borderWidth: 2,
-            segment: {
-                borderColor: (ctx)=> setColors(ctx),
-                backgroundColor: (ctx)=> createGradient(ctx, ctx.chart),
-            }
-        }]
+
+        datasets: [
+            {
+                type: 'line',
+                label: 'Weekly Sales',
+                data: lineData,
+                fill: true,
+                tension: 0.4,
+                borderWidth: 2,
+                order: 2,
+                segment: {
+                    borderColor: (ctx) => setColors(ctx),
+                    backgroundColor: (ctx) => createGradient(ctx, ctx.chart),
+                }
+            },
+            {
+                label: 'Scatter Dataset',
+                type: 'scatter',
+                data: [
+                    {x: "11.07.2024", y: 0},
+                ],
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: '#fff',
+                order: 1,
+                borderWidth: 2,
+                pointRadius: 7,
+
+            },
+        ]
     };
 
     // config
     const config = {
-        type: 'line',
         data,
         options: {
-            responsive:true,
+            responsive: true,
             scales: {
                 y: {
                     beginAtZero: true
-                }
+                },
+                xAxes: {
+                    type: 'time',
+                    time: {
+                        unit: 'day',
+                        parser: 'dd.MM.yyyy',
+                    }
+                },
+
             }
         }
     };
@@ -424,7 +442,7 @@ $(document).ready(function () {
 
     //show view more in agent section
 
-    $('#btnViewMore').on('click', function(){
+    $('#btnViewMore').on('click', function () {
         $('#agentScoreList').addClass('view-all');
     });
 
