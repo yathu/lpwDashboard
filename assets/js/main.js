@@ -296,6 +296,7 @@ $(document).ready(function () {
                 order: 1,
                 borderWidth: 2,
                 pointRadius: 7,
+                pointStyle:'rect'
 
             },
         ]
@@ -318,6 +319,29 @@ $(document).ready(function () {
                     }
                 },
 
+            },
+            plugins: {
+                annotation: {
+                    annotations: {
+                        box1: {
+                            type: 'box',
+                            xMin: '10.07.2024',
+                            xMax: '12.07.2024',
+                            yMin: 4,
+                            yMax: 6,
+                            backgroundColor: 'rgb(255,0,111)',
+                            borderWidth:0
+                        },
+                        line1: {
+                            type: 'line',
+                            yMin: -3,
+                            yMax: -3,
+                            borderColor: 'rgb(255, 99, 132)',
+                            borderWidth: 2,
+                            // display:false
+                        }
+                    }
+                }
             }
         }
     };
