@@ -329,7 +329,9 @@ $(document).ready(function () {
     const config = {
         data,
         options: {
-            responsive: true,
+            // responsive: true,
+            maintainAspectRatio: false,
+
             scales: {
                 y: {
                     beginAtZero: true,

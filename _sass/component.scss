@@ -94,7 +94,7 @@
   }
 }
 
-.widget-title-3{
+.widget-title-3 {
   font-family: Inter-SemiBold, sans-serif;
   font-size: 14px;
   color: #2F2F35;
@@ -109,12 +109,13 @@
   letter-spacing: 0.1px;
   line-height: 1.2;
 }
-.controls{
+
+.controls {
   justify-content: end;
   align-items: center;
   margin-top: 12px;
 
-  span{
+  span {
     width: 28px;
     height: 28px;
     display: flex;
@@ -123,28 +124,29 @@
     border-radius: 50%;
     background-color: #F7FAFC;
 
-    i:before{
+    i:before {
       color: #92929D;
 
       font-weight: 900 !important;
     }
   }
-  span.swiper-button-disabled{
+
+  span.swiper-button-disabled {
     background-color: #FFFFFF;
     opacity: 20%;
   }
 }
 
-.shadow{
+.shadow {
   box-shadow: 0 0 1px 0 rgba(12, 26, 75, 0.24), 0 3px 8px -1px rgba(50, 50, 71, 0.05);
 }
 
-.location-label{
+.location-label {
   display: flex;
   align-items: center;
   line-height: 16px;
 
-  i{
+  i {
     color: #16A05F;
     margin-right: 4px;
     font-size: 14px;
@@ -163,7 +165,7 @@
     padding: 10px 53px 10px 12px;
     line-height: 1;
 
-    &:focus{
+    &:focus {
       box-shadow: none;
       outline: none;
     }
@@ -199,5 +201,30 @@
     font-size: 18px;
     color: #009432;
     letter-spacing: 0.2px;
+  }
+}
+
+
+// Define your color map
+$colors: (
+        wap: #27885D,
+        platinum: #7A7F86,
+        featured: #D5AA55,
+        views: #3DD598,
+        hot-deal: #B2282E,
+        urgent-sale: #EECF50,
+  // Add more colors as needed
+);
+
+// Iterate through the color map to generate classes
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background-color: $color !important;
+  }
+  .text-#{$name} {
+    color: $color;
+  }
+  .border-#{$name} {
+    border-color: $color;
   }
 }

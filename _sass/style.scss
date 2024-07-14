@@ -612,7 +612,8 @@ body {
         padding-top: 15px;
         text-align: center;
         display: none;
-        a{
+
+        a {
           cursor: pointer;
         }
       }
@@ -666,14 +667,15 @@ body {
         }
       }
 
-      .score-list-item:last-child{
+      .score-list-item:last-child {
         margin-bottom: 0;
       }
     }
 
-    .view-all{
+    .view-all {
       max-height: none;
-      .more{
+
+      .more {
         display: none;
       }
     }
@@ -779,7 +781,7 @@ body {
       }
     }
 
-    .btn-primary{
+    .btn-primary {
       font-size: 13px;
       letter-spacing: 0.06px;
     }
@@ -1113,6 +1115,43 @@ body {
   .chart-container {
     background-color: #F7FAFC;
     padding: 25px 15px 10px 15px;
+    border-radius: 0 0 12px 12px;
+
+    .chart-box {
+      height: 400px;
+
+      @media(max-width: 575.98px) {
+        height: 250px;
+      }
+    }
+
+    .custom-legends {
+      gap: 12px;
+
+
+      .item {
+        display: flex;
+        align-items: center;
+
+        span {
+          width: 12px;
+          height: 12px;
+          background-color: #e2e2e3;
+          display: inline-block;
+          margin-right: 6px;
+        }
+
+        .long {
+          width: 19px;
+          height: 3px;
+        }
+
+        font-family: Inter-Medium, sans-serif;
+        font-size: 12px;
+        color: #6F767E;
+        letter-spacing: 0.1px;
+      }
+    }
   }
 
 }
@@ -1329,7 +1368,7 @@ body {
     margin-top: 0 !important;
   }
 
-  .desc{
+  .desc {
     font-family: Inter-Regular, sans-serif;
     font-size: 14px;
     color: #696974;
@@ -1339,7 +1378,7 @@ body {
       font-size: 13px;
     }
 
-    b{
+    b {
       font-family: Inter-SemiBold, sans-serif;
       font-size: 16px;
       color: #1DBE73;
@@ -1462,7 +1501,7 @@ body {
           border-radius: 8px;
           padding: 12px;
 
-          .list-group-item{
+          .list-group-item {
             padding: 0 0 12px;
             border-bottom: 1px solid #EDF2F7;
 
@@ -1480,7 +1519,8 @@ body {
                 letter-spacing: 0.2px;
               }
             }
-            .btn{
+
+            .btn {
               font-family: Inter-SemiBold, sans-serif;
               font-size: 12px;
               color: #FAFAFB;
@@ -1492,14 +1532,14 @@ body {
             }
           }
 
-          .list-group-item:last-child{
+          .list-group-item:last-child {
             border: 0;
             padding-bottom: 0;
           }
 
         }
 
-        .location-label{
+        .location-label {
           margin-bottom: 12px;
           margin-top: 12px;
         }
@@ -1509,19 +1549,20 @@ body {
   }
 }
 
-.ads-listing-container{
+.ads-listing-container {
   background: #FFFFFF;
   border-radius: 20px;
 
-  .listing-header{
+  .listing-header {
     padding: 12px 12px 0;
 
-    .nav{
+    .nav {
       @media (max-width: 991.98px) {
         gap: 0;
       }
-      .nav-item{
-        .nav-link{
+
+      .nav-item {
+        .nav-link {
           font-family: Inter-Medium, sans-serif;
           font-size: 14px;
           color: #171725;
@@ -1537,14 +1578,15 @@ body {
             padding: 12px 5px;
           }
         }
-        .active{
+
+        .active {
           font-family: Inter-Medium, sans-serif;
           color: #1DBF73;
           letter-spacing: 0.1px;
           font-weight: 500;
           position: relative;
 
-          &:after{
+          &:after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -1559,35 +1601,35 @@ body {
     }
   }
 
-  hr{
+  hr {
     border: 1px solid #EDF2F7;
     margin-top: 0;
     opacity: 1;
     margin-bottom: 0;
   }
 
-  .listing-body{
+  .listing-body {
     padding: 24px;
 
     @media (max-width: 767.98px) {
       padding: 20px 14px;
     }
 
-    .card{
+    .card {
       padding: 8px;
       background: #F7FAFC;
       border: 1px solid #CBD7E0;
       border-radius: 12px;
       margin-bottom: 16px;
 
-      .right-section{
+      .right-section {
         border-left: 1px solid #EDF2F7;
 
         @media (max-width: 767.98px) {
           padding-top: 20px;
         }
 
-        .list-group{
+        .list-group {
 
           @media (max-width: 767.98px) {
             flex-direction: row;
@@ -1596,12 +1638,12 @@ body {
           }
 
           @media (max-width: 575.98px) {
-            gap:6px;
+            gap: 6px;
           }
         }
       }
 
-      .card-img{
+      .card-img {
         border-radius: 8px;
         height: 100%;
         width: 100%;
@@ -1612,7 +1654,7 @@ body {
         }
       }
 
-      .btn{
+      .btn {
         padding: 4px 8px;
         font-family: Inter-Medium, sans-serif;
         font-size: 11px;
@@ -1623,23 +1665,25 @@ body {
         display: inline-flex;
         align-items: center;
 
-        i,img{
+        i, img {
           margin-right: 8px;
         }
-        img{
-          height: 16px ;
+
+        img {
+          height: 16px;
           width: auto;
         }
       }
-      .featured{
+
+      .featured {
         background: #3257DB;
       }
 
-      .platinum{
+      .platinum {
         background-color: #1D1F25;
       }
 
-      .hot-deal{
+      .hot-deal {
         background-color: #ED1C24;
       }
 
@@ -1661,12 +1705,12 @@ body {
 
       }
 
-      .price-content{
+      .price-content {
         margin-top: 12px;
         margin-bottom: 12px;
       }
 
-      .card-title{
+      .card-title {
         font-family: Inter-SemiBold, sans-serif;
         font-size: 16px;
         color: #2F2F35;
@@ -1674,15 +1718,16 @@ body {
         margin-bottom: 4px;
       }
 
-      .list-group{
-        background:none ;
-        .list-group-item{
-          background:none ;
-          border: none  ;
+      .list-group {
+        background: none;
+
+        .list-group-item {
+          background: none;
+          border: none;
           margin-bottom: 12px;
           padding: 0;
 
-          img{
+          img {
             margin-right: 12px;
 
             @media (max-width: 767.98px) {
@@ -1690,7 +1735,7 @@ body {
             }
           }
 
-          .text{
+          .text {
             font-family: Inter-Medium, sans-serif;
             font-size: 12px;
             color: #696974;
@@ -1698,7 +1743,8 @@ body {
             margin-bottom: 2px;
             line-height: 1.1;
           }
-          .num{
+
+          .num {
             font-family: Inter-Bold, sans-serif;
             font-size: 14px;
             color: #2F2F35;
@@ -1707,33 +1753,33 @@ body {
           }
         }
 
-        .list-group-item:last-child{
+        .list-group-item:last-child {
           margin-bottom: 0;
         }
       }
 
     }
 
-    .card:last-child{
+    .card:last-child {
       margin-bottom: 0;
     }
 
-    hr{
+    hr {
       margin-top: 12px;
       margin-bottom: 12px;
       border: 1px solid #EDF2F7;
       opacity: 1;
     }
 
-    .footer{
-      font-family: Inter-Medium, sans-serif ;
+    .footer {
+      font-family: Inter-Medium, sans-serif;
       font-size: 12px;
       color: #000000;
       letter-spacing: 0.1px;
       line-height: 15px;
       margin-bottom: 4px;
 
-      span{
+      span {
         color: #696974;
       }
     }
