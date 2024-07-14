@@ -255,7 +255,9 @@ $(document).ready(function () {
     const lineData =
         [
             {
-                x: "10.07.2024", y: 4
+                x: "9.07.2024", y: 4
+            },{
+                x: "10.07.2024", y: 15
             },
             {
                 x: "11.07.2024", y: 13
@@ -265,6 +267,9 @@ $(document).ready(function () {
             },
             {
                 x: "13.07.2024", y: 20
+            },
+            {
+                x: "14.07.2024", y: 30
             },
 
         ];
@@ -302,6 +307,24 @@ $(document).ready(function () {
         ]
     };
 
+    const barPlacement = [-8, -11, -14]
+
+    const chartAreaBorder = {
+        id: 'chartAreaBorder',
+        beforeDraw(chart) {
+            const { ctx, chartArea: { left, top, right, bottom } } = chart;
+
+            // Save the current state
+            ctx.save();
+
+            // Ensure no strokes (borders) are drawn by setting the line width to 0
+            ctx.lineWidth = 0;
+
+            // Restore the state to ensure no other drawing operations are affected
+            ctx.restore();
+        }
+    };
+
     // config
     const config = {
         data,
@@ -313,27 +336,56 @@ $(document).ready(function () {
                     ticks: {
                         callback: (label) => label <0 ? '' : label,
                     },
+                    grid: {
+                        color: (context) => {
+                            console.log("ctx==>",context.tick.value);
+
+                            return context.tick.value < 0 ? '#f7fafc' : '#F1F1F5';
+                        },
+                    },
+                    border: {
+                        display: false,
+                    },
+
                 },
                 xAxes: {
                     type: 'time',
                     time: {
                         unit: 'day',
                         parser: 'dd.MM.yyyy',
-                    }
-                },
-
-            },
-            plugins: {
-                annotation: {
-                    // clip: false,
-                    legend: {
+                    },
+                    position: {y:0},
+                    border: {
                         display: false,
                     },
+                    grid: {
+                        color: (context) => {
+
+                            return '#F1F1F5';
+                        },
+                    },
+                },
+                x: {
+                    border: {
+                        display:false
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false,
+                },
+                // chartAreaBorder: {
+                //     borderColor: '#f7fafc',
+                //     borderWidth: { top: 0, bottom: 5, left: 0, right: 0 } // Customize border widths here
+                // },
+                annotation: {
+                    // clip: false,
                     annotations: {
                         line1: {
                             type: 'line',
-                            yMin: -8,
-                            yMax: -8,
+                            yMin: barPlacement[0],
+                            yMax: barPlacement[0],
                             borderColor: '#DFE5F0',
                             borderWidth: 8,
                             // display:false
@@ -341,17 +393,54 @@ $(document).ready(function () {
                         line2: {
                             type: 'line',
                             xMin: '11.07.2024',
-                            xMax: '12.07.2024',
-                            yMin: -8,
-                            yMax: -8,
+                            xMax: '13.07.2024',
+                            yMin: barPlacement[0],
+                            yMax: barPlacement[0],
                             borderColor: '#C53E46',
+                            borderWidth: 8  ,
+                            // display:false
+                        },
+                        line3: {
+                            type: 'line',
+                            yMin: barPlacement[1],
+                            yMax: barPlacement[1],
+                            borderColor: '#DFE5F0',
+                            borderWidth: 8,
+                            // display:false
+                        },
+                        line4: {
+                            type: 'line',
+                            xMin: '10.07.2024',
+                            xMax: '12.07.2024',
+                            yMin: barPlacement[1],
+                            yMax: barPlacement[1],
+                            borderColor: '#27885D',
+                            borderWidth: 8  ,
+                            // display:false
+                        },
+                        line5: {
+                            type: 'line',
+                            yMin: barPlacement[2],
+                            yMax: barPlacement[2],
+                            borderColor: '#DFE5F0',
+                            borderWidth: 8,
+                            // display:false
+                        },
+                        line6: {
+                            type: 'line',
+                            xMin: '12.07.2024',
+                            xMax: '13.07.2024',
+                            yMin: barPlacement[2],
+                            yMax: barPlacement[2],
+                            borderColor: '#27885D',
                             borderWidth: 8  ,
                             // display:false
                         }
                     }
                 }
             }
-        }
+        },
+        plugins: [chartAreaBorder]
     };
 
     // render init block
