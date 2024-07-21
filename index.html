@@ -7,6 +7,11 @@ layout: home
         <div class="col-12 col-xl-2">
             left Menu
         </div>
+
+        <div class="col-12 product-update-mobile d-lg-none">
+            {% include latestProductUpdate.html %}
+        </div>
+
         <div class="col-12 col-xl-10">
 
             <div class="hero-container my-lg-4">
@@ -309,6 +314,10 @@ layout: home
                         </div>
                     </div>
 
+                    <div class="row d-lg-none mobile-right-section">
+                        {% include rightBar.html %}
+                    </div>
+
                     <!--            tips section-->
 
                     {% include tipsSection.html %}
@@ -327,7 +336,12 @@ layout: home
                 </div>
                 <div class="col-12 col-lg-4">
                     <!--                    right sidebar-->
-                    {% include rightBar.html %}
+
+                    <div class="d-none d-lg-block product-update-desktop">{% include latestProductUpdate.html %}</div>
+                    <div class="d-none d-lg-block">
+                        {% include rightBar.html %}
+                    </div>
+
                 </div>
 
             </div>

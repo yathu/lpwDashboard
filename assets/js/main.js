@@ -132,17 +132,32 @@ $(document).ready(function () {
     bar1.set(0);
     bar1.animate(0.7);  // Number from 0.0 to 1.0
 
-    const updateSwiper = new Swiper('.update-swiper', {
+    const updateSwiper = new Swiper('.product-update-desktop .update-swiper', {
         loop: false,
         // If we need pagination
         pagination: {
-            el: '.update-pagination',
+            el: '.product-update-desktop .update-pagination',
         },
         spaceBetween: 12,
         // Navigation arrows
         navigation: {
-            nextEl: '.next-update',
-            prevEl: '.prev-update',
+            nextEl: '.product-update-desktop .next-update',
+            prevEl: '.product-update-desktop .prev-update',
+        },
+    });
+
+    //mobile
+    const updateMobileSwiper = new Swiper('.product-update-mobile .update-swiper', {
+        loop: false,
+        // If we need pagination
+        pagination: {
+            el: '.product-update-mobile .update-pagination',
+        },
+        spaceBetween: 12,
+        // Navigation arrows
+        navigation: {
+            nextEl: '.product-update-mobile .next-update',
+            prevEl: '.product-update-mobile .prev-update',
         },
     });
 
