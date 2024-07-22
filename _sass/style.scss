@@ -39,7 +39,7 @@ body {
       .progressbar-text {
         font-family: "Inter", sans-serif;
         font-optical-sizing: auto;
-        font-weight: bold;
+        font-weight: 700;
       }
 
       .swiper-slide {
@@ -245,7 +245,9 @@ body {
     padding: 15px 8px 8px 8px;
 
     .title {
-      font-family: Inter-SemiBold, sans-serif;
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: 600;
       font-size: 13px;
       color: #2F2F35;
       margin-bottom: 14px;
@@ -254,16 +256,18 @@ body {
     }
 
     .num {
-      font-family: Inter-Bold, sans-serif;
-      font-size: 18px;
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: 700;      font-size: 18px;
       color: #171725;
       letter-spacing: 0.09px;
       line-height: 1;
     }
 
     .label {
-      font-family: Inter-Medium, sans-serif;
-      font-size: 12px;
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: 500;      font-size: 12px;
       color: #696974;
       letter-spacing: 0.1px;
       line-height: 1.2;
@@ -281,7 +285,9 @@ body {
       justify-content: space-between;
       align-items: center;
       text-align: start;
-      font-family: Inter-Medium, sans-serif;
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: 500;
       font-size: 13px;
       color: #FFFFFF;
       letter-spacing: 0.06px;
@@ -358,8 +364,9 @@ body {
     padding: 14px 12px !important;
 
     .title {
-      font-family: Inter-SemiBold, sans-serif;
-      font-size: 14px;
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: 600;      font-size: 14px;
       color: #2F2F35;
       letter-spacing: 0.2px;
       margin-bottom: 0;
@@ -564,8 +571,9 @@ body {
     padding-bottom: 15px;
 
     .title {
-      font-family: Inter-SemiBold, sans-serif;
-      font-size: 18px;
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: 600;      font-size: 18px;
       color: #2F2F35;
       letter-spacing: 0.26px;
       text-align: center;
@@ -583,8 +591,9 @@ body {
     .score-text {
       background: #FDCF43;
       border-radius: 10.4px;
-      font-family: Inter-SemiBold, sans-serif;
-      font-size: 15.6px;
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: 600;      font-size: 15.6px;
       color: #000000;
       letter-spacing: 0.26px;
       padding: 6px 11px;
@@ -706,8 +715,9 @@ body {
           flex-direction: column;
 
           .name {
-            font-family: Inter-SemiBold, sans-serif;
-            font-size: 13px;
+            font-family: "Inter", sans-serif;
+            font-style: normal;
+            font-weight: 600;            font-size: 13px;
             color: #000000;
             letter-spacing: 0.1px;
             text-align: center;
@@ -716,8 +726,9 @@ body {
           }
 
           .label {
-            font-family: Inter-Medium, sans-serif;
-            font-size: 11px;
+            font-family: "Inter", sans-serif;
+            font-style: normal;
+            font-weight: 500;            font-size: 11px;
             color: #696974;
             letter-spacing: 0.1px;
             text-align: center;
@@ -830,8 +841,9 @@ body {
       padding: 12px;
 
       .text {
-        font-family: Inter-Medium, sans-serif;
-        font-size: 14px;
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 500;        font-size: 14px;
         color: #000000;
         letter-spacing: 0.2px;
       }
@@ -942,16 +954,18 @@ body {
       line-height: 1;
 
       span {
-        font-family: Inter-Medium, sans-serif;
-        font-size: 12px;
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 500;        font-size: 12px;
         color: #92929D;
         letter-spacing: 0.1px;
         margin-bottom: 5px;
       }
 
       span.lead {
-        font-family: Inter-Bold, sans-serif;
-        font-size: 14px;
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 700;        font-size: 14px;
         color: #50505A;
         letter-spacing: 0.1px;
         margin-bottom: 0;
@@ -1045,16 +1059,18 @@ body {
     }
 
     .content {
-      font-family: Inter-Medium, sans-serif;
-      font-size: 16px;
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: 500;      font-size: 16px;
       color: #000000;
       letter-spacing: 0.2px;
       line-height: 1.2;
       flex: 1;
 
       b {
-        font-family: Inter-Bold, sans-serif;
-        color: #16A05F;
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 700;        color: #16A05F;
       }
     }
   }
@@ -1119,8 +1135,9 @@ body {
 
     > div {
       span {
-        font-family: Inter-Medium, sans-serif;
-        font-size: 14px;
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 500;        font-size: 14px;
         color: #83BF6E;
         letter-spacing: -0.14px;
         line-height: 1.1;
@@ -1165,8 +1182,9 @@ body {
           height: 3px;
         }
 
-        font-family: Inter-Medium, sans-serif;
-        font-size: 12px;
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 500;        font-size: 12px;
         color: #6F767E;
         letter-spacing: 0.1px;
       }
@@ -1241,8 +1259,9 @@ body {
 
         > div {
           div {
-            font-family: Inter-SemiBold, sans-serif;
-            font-size: 12px;
+            font-family: "Inter", sans-serif;
+            font-style: normal;
+            font-weight: 600;            font-size: 12px;
             color: #FFFFFF;
             letter-spacing: 0;
             line-height: 12px;
@@ -1251,8 +1270,9 @@ body {
           }
 
           span {
-            font-family: Inter-Medium, serif;
-            font-size: 12px;
+            font-family: "Inter", sans-serif;
+            font-style: normal;
+            font-weight: 500;            font-size: 12px;
             color: #FFFFFF;
             letter-spacing: 0;
             line-height: 12px;
@@ -1333,8 +1353,9 @@ body {
         }
 
         .count {
-          font-family: Inter-SemiBold, sans-serif;
-          font-size: 24px;
+          font-family: "Inter", sans-serif;
+          font-style: normal;
+          font-weight: 600;          font-size: 24px;
           color: #1A1D1F;
           letter-spacing: -0.72px;
           line-height: 48px;
@@ -1343,8 +1364,9 @@ body {
         }
 
         .res {
-          font-family: Inter-Medium, sans-serif;
-          font-size: 11px;
+          font-family: "Inter", sans-serif;
+          font-style: normal;
+          font-weight: 500;          font-size: 11px;
           color: #83BF6E;
           letter-spacing: -0.11px;
           line-height: 16px;
@@ -1388,8 +1410,9 @@ body {
   }
 
   .desc {
-    font-family: Inter-Regular, sans-serif;
-    font-size: 14px;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;    font-size: 14px;
     color: #696974;
     letter-spacing: 0.1px;
 
@@ -1398,8 +1421,9 @@ body {
     }
 
     b {
-      font-family: Inter-SemiBold, sans-serif;
-      font-size: 16px;
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: 600;      font-size: 16px;
       color: #1DBE73;
       letter-spacing: 0.1px;
     }
@@ -1439,8 +1463,9 @@ body {
           }
 
           p {
-            font-family: Inter-Regular, sans-serif;
-            font-size: 13px;
+            font-family: "Inter", sans-serif;
+            font-style: normal;
+            font-weight: 400;            font-size: 13px;
             color: #696974;
             letter-spacing: 0.2px;
             margin-bottom: 12px;
@@ -1457,8 +1482,9 @@ body {
           }
 
           .btn-green {
-            font-family: Inter-SemiBold, sans-serif;
-            font-size: 12px;
+            font-family: "Inter", sans-serif;
+            font-style: normal;
+            font-weight: 600;            font-size: 12px;
             color: #FFFFFF;
             letter-spacing: 0;
             line-height: 12px;
@@ -1494,8 +1520,9 @@ body {
           display: flex;
           align-items: center;
           padding: 7px 10px;
-          font-family: Inter-SemiBold, sans-serif;
-          font-size: 11px;
+          font-family: "Inter", sans-serif;
+          font-style: normal;
+          font-weight: 600;          font-size: 11px;
           color: #FFFFFF;
           letter-spacing: 0.2px;
           line-height: 1;
@@ -1526,22 +1553,25 @@ body {
 
             p {
 
-              font-family: Inter-Medium, sans-serif;
-              font-size: 14px;
+              font-family: "Inter", sans-serif;
+              font-style: normal;
+              font-weight: 500;              font-size: 14px;
               color: #2F2F35;
               letter-spacing: 0.2px;
 
               b {
-                font-family: Inter-Bold, sans-serif;
-                font-size: 14px;
+                font-family: "Inter", sans-serif;
+                font-style: normal;
+                font-weight: 700;                font-size: 14px;
                 color: #1DBF73;
                 letter-spacing: 0.2px;
               }
             }
 
             .btn {
-              font-family: Inter-SemiBold, sans-serif;
-              font-size: 12px;
+              font-family: "Inter", sans-serif;
+              font-style: normal;
+              font-weight: 600;              font-size: 12px;
               color: #FAFAFB;
               text-align: center;
               padding: 10px;
@@ -1582,8 +1612,9 @@ body {
 
       .nav-item {
         .nav-link {
-          font-family: Inter-Medium, sans-serif;
-          font-size: 14px;
+          font-family: "Inter", sans-serif;
+          font-style: normal;
+          font-weight: 500;          font-size: 14px;
           color: #171725;
           letter-spacing: 0.1px;
           padding: 16px 12px;
@@ -1599,7 +1630,8 @@ body {
         }
 
         .active {
-          font-family: Inter-Medium, sans-serif;
+          font-family: "Inter", sans-serif;
+          font-style: normal;
           color: #1DBF73;
           letter-spacing: 0.1px;
           font-weight: 500;
@@ -1675,8 +1707,9 @@ body {
 
       .btn {
         padding: 4px 8px;
-        font-family: Inter-Medium, sans-serif;
-        font-size: 11px;
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 500;        font-size: 11px;
         color: #FFFFFF;
         letter-spacing: -0.11px;
         line-height: 16px;
@@ -1730,8 +1763,9 @@ body {
       }
 
       .card-title {
-        font-family: Inter-SemiBold, sans-serif;
-        font-size: 16px;
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 600;        font-size: 16px;
         color: #2F2F35;
         letter-spacing: 0.2px;
         margin-bottom: 4px;
@@ -1755,8 +1789,9 @@ body {
           }
 
           .text {
-            font-family: Inter-Medium, sans-serif;
-            font-size: 12px;
+            font-family: "Inter", sans-serif;
+            font-style: normal;
+            font-weight: 500;            font-size: 12px;
             color: #696974;
             letter-spacing: 0.1px;
             margin-bottom: 2px;
@@ -1764,8 +1799,9 @@ body {
           }
 
           .num {
-            font-family: Inter-Bold, sans-serif;
-            font-size: 14px;
+            font-family: "Inter", sans-serif;
+            font-style: normal;
+            font-weight: 700;            font-size: 14px;
             color: #2F2F35;
             letter-spacing: 0.2px;
             line-height: 1;
@@ -1791,8 +1827,9 @@ body {
     }
 
     .footer {
-      font-family: Inter-Medium, sans-serif;
-      font-size: 12px;
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: 500;      font-size: 12px;
       color: #000000;
       letter-spacing: 0.1px;
       line-height: 15px;
@@ -1866,8 +1903,9 @@ body {
 
         p {
           b {
-            font-family: Inter-Bold, sans-serif;
-            font-size: 16px;
+            font-family: "Inter", sans-serif;
+            font-style: normal;
+            font-weight: 700;            font-size: 16px;
             color: #16A05F;
             letter-spacing: 0.2px;
           }
