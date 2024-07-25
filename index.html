@@ -160,7 +160,7 @@ layout: home
             <div class="row align-items-start">
                 <div class="col-12 col-lg-8 agent-sec-col">
 
-                    <div class="row mx-0 agent-sec-container gx-0 gx-md-3">
+                    <div class="row mx-0 agent-sec-container gx-0 gx-md-3 shadow">
                         <div class="col-6 col-lg-8">
 
                             <!--                            agent profile -->
@@ -336,6 +336,8 @@ layout: home
                 </div>
                 <div class="col-12 col-lg-4">
                     <!--                    right sidebar-->
+
+                    {% include voucherItem.html %}
 
                     <div class="d-none d-lg-block product-update-desktop">{% include latestProductUpdate.html %}</div>
                     <div class="d-none d-lg-block">

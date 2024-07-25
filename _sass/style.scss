@@ -130,77 +130,6 @@ body {
         }
       }
 
-      .voucher-slide {
-        .progress-slider-card {
-          max-width: 324px !important;
-          padding: 14px 12px !important;
-          width: 324px;
-
-          .title {
-            font-family: "Inter", sans-serif;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 14px;
-            line-height: 17px;
-            letter-spacing: 0.2px;
-            color: #2f2f35;
-          }
-
-          .voucher-content {
-            background: #e3fbf0;
-            border-radius: 10px;
-            padding: 8px 12px;
-            margin: 10px 0;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            .code {
-              font-family: "Inter", sans-serif;
-              font-style: normal;
-              font-weight: 400;
-              font-size: 10px;
-              letter-spacing: 0.1px;
-              color: #92929d;
-
-              span {
-                font-weight: 600;
-              }
-            }
-
-            .price {
-              font-family: "Inter", sans-serif;
-              font-style: normal;
-              font-weight: 500;
-              font-size: 12px;
-              letter-spacing: 0.1px;
-
-              color: #696974;
-
-              span {
-                font-family: "Inter", sans-serif;
-                font-style: normal;
-                font-weight: 700;
-                font-size: 14px;
-                letter-spacing: 0.1px;
-                color: #50505a;
-              }
-            }
-
-            .expire {
-              font-family: "Inter", sans-serif;
-              font-style: normal;
-              font-weight: 400;
-              font-size: 10px;
-
-              letter-spacing: 0.1px;
-
-              color: #92929d;
-            }
-          }
-        }
-      }
     }
 
     .swiper-button-next,
@@ -258,7 +187,8 @@ body {
     .num {
       font-family: "Inter", sans-serif;
       font-style: normal;
-      font-weight: 700;      font-size: 18px;
+      font-weight: 700;
+      font-size: 18px;
       color: #171725;
       letter-spacing: 0.09px;
       line-height: 1;
@@ -267,7 +197,8 @@ body {
     .label {
       font-family: "Inter", sans-serif;
       font-style: normal;
-      font-weight: 500;      font-size: 12px;
+      font-weight: 500;
+      font-size: 12px;
       color: #696974;
       letter-spacing: 0.1px;
       line-height: 1.2;
@@ -366,7 +297,8 @@ body {
     .title {
       font-family: "Inter", sans-serif;
       font-style: normal;
-      font-weight: 600;      font-size: 14px;
+      font-weight: 600;
+      font-size: 14px;
       color: #2F2F35;
       letter-spacing: 0.2px;
       margin-bottom: 0;
@@ -437,7 +369,7 @@ body {
   }
 }
 
-.mobile-right-section{
+.mobile-right-section {
   background-color: #F7FAFC;
   padding: 0 12px 12px 12px;
 }
@@ -445,7 +377,7 @@ body {
 .agent-sec-container {
   background: #ffffff;
   border-radius: 20px;
-  border: 1px solid #e2e2ea;
+  //border: 1px solid #e2e2ea;
   padding: 24px 12px;
 
   @media (max-width: 767.98px) {
@@ -573,7 +505,8 @@ body {
     .title {
       font-family: "Inter", sans-serif;
       font-style: normal;
-      font-weight: 600;      font-size: 18px;
+      font-weight: 600;
+      font-size: 18px;
       color: #2F2F35;
       letter-spacing: 0.26px;
       text-align: center;
@@ -593,7 +526,8 @@ body {
       border-radius: 10.4px;
       font-family: "Inter", sans-serif;
       font-style: normal;
-      font-weight: 600;      font-size: 15.6px;
+      font-weight: 600;
+      font-size: 15.6px;
       color: #000000;
       letter-spacing: 0.26px;
       padding: 6px 11px;
@@ -620,6 +554,8 @@ body {
 
     .score-list-sec {
       position: relative;
+      display: inline-flex;
+      flex-direction: column;
 
       .more {
         position: absolute;
@@ -647,6 +583,7 @@ body {
         display: flex;
         align-items: center;
         margin-bottom: 16px;
+        justify-content: space-between;
 
         .content {
           padding-left: 10px;
@@ -717,7 +654,8 @@ body {
           .name {
             font-family: "Inter", sans-serif;
             font-style: normal;
-            font-weight: 600;            font-size: 13px;
+            font-weight: 600;
+            font-size: 13px;
             color: #000000;
             letter-spacing: 0.1px;
             text-align: center;
@@ -728,7 +666,8 @@ body {
           .label {
             font-family: "Inter", sans-serif;
             font-style: normal;
-            font-weight: 500;            font-size: 11px;
+            font-weight: 500;
+            font-size: 11px;
             color: #696974;
             letter-spacing: 0.1px;
             text-align: center;
@@ -808,10 +747,90 @@ body {
   }
 }
 
-.product-update-mobile{
+.product-update-mobile {
   background-color: #E2EAEF;
   padding-bottom: 12px;
 }
+
+.voucher-slide-item {
+  .progress-slider-card {
+    padding: 14px 12px !important;
+    background-color: #fff;
+    border: 1px solid #e2e2ea;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-bottom: 16px;
+
+
+    .title {
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 0.2px;
+      color: #2f2f35;
+    }
+
+    .voucher-content {
+      background: #e3fbf0;
+      border-radius: 10px;
+      padding: 8px 12px;
+      margin: 10px 0;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .code {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        letter-spacing: 0.1px;
+        color: #92929d;
+
+        span {
+          font-weight: 600;
+        }
+      }
+
+      .price {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        letter-spacing: 0.1px;
+
+        color: #696974;
+
+        span {
+          font-family: "Inter", sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 14px;
+          letter-spacing: 0.1px;
+          color: #50505a;
+        }
+      }
+
+      .expire {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+
+        letter-spacing: 0.1px;
+
+        color: #92929d;
+      }
+    }
+  }
+}
+
 
 .update-container {
   background: #FFFFFF;
@@ -843,7 +862,8 @@ body {
       .text {
         font-family: "Inter", sans-serif;
         font-style: normal;
-        font-weight: 500;        font-size: 14px;
+        font-weight: 500;
+        font-size: 14px;
         color: #000000;
         letter-spacing: 0.2px;
       }
@@ -956,7 +976,8 @@ body {
       span {
         font-family: "Inter", sans-serif;
         font-style: normal;
-        font-weight: 500;        font-size: 12px;
+        font-weight: 500;
+        font-size: 12px;
         color: #92929D;
         letter-spacing: 0.1px;
         margin-bottom: 5px;
@@ -965,7 +986,8 @@ body {
       span.lead {
         font-family: "Inter", sans-serif;
         font-style: normal;
-        font-weight: 700;        font-size: 14px;
+        font-weight: 700;
+        font-size: 14px;
         color: #50505A;
         letter-spacing: 0.1px;
         margin-bottom: 0;
@@ -1061,7 +1083,8 @@ body {
     .content {
       font-family: "Inter", sans-serif;
       font-style: normal;
-      font-weight: 500;      font-size: 16px;
+      font-weight: 500;
+      font-size: 16px;
       color: #000000;
       letter-spacing: 0.2px;
       line-height: 1.2;
@@ -1070,20 +1093,21 @@ body {
       b {
         font-family: "Inter", sans-serif;
         font-style: normal;
-        font-weight: 700;        color: #16A05F;
+        font-weight: 700;
+        color: #16A05F;
       }
     }
   }
 }
 
-.performance-chart-parent{
+.performance-chart-parent {
   @media(max-width: 991.98px) {
     background: #C9D5DF;
   }
 }
+
 .performance-chart-container {
   background-color: #FFFFFF;
-  box-shadow: 0 0 1px 0 rgba(12, 26, 75, 0.24), 0 3px 8px -1px rgba(50, 50, 71, 0.05);
   padding: 24px;
   border-radius: 20px;
   @media(max-width: 767.98px) {
@@ -1137,7 +1161,8 @@ body {
       span {
         font-family: "Inter", sans-serif;
         font-style: normal;
-        font-weight: 500;        font-size: 14px;
+        font-weight: 500;
+        font-size: 14px;
         color: #83BF6E;
         letter-spacing: -0.14px;
         line-height: 1.1;
@@ -1184,7 +1209,8 @@ body {
 
         font-family: "Inter", sans-serif;
         font-style: normal;
-        font-weight: 500;        font-size: 12px;
+        font-weight: 500;
+        font-size: 12px;
         color: #6F767E;
         letter-spacing: 0.1px;
       }
@@ -1261,7 +1287,8 @@ body {
           div {
             font-family: "Inter", sans-serif;
             font-style: normal;
-            font-weight: 600;            font-size: 12px;
+            font-weight: 600;
+            font-size: 12px;
             color: #FFFFFF;
             letter-spacing: 0;
             line-height: 12px;
@@ -1272,7 +1299,8 @@ body {
           span {
             font-family: "Inter", sans-serif;
             font-style: normal;
-            font-weight: 500;            font-size: 12px;
+            font-weight: 500;
+            font-size: 12px;
             color: #FFFFFF;
             letter-spacing: 0;
             line-height: 12px;
@@ -1355,7 +1383,8 @@ body {
         .count {
           font-family: "Inter", sans-serif;
           font-style: normal;
-          font-weight: 600;          font-size: 24px;
+          font-weight: 600;
+          font-size: 24px;
           color: #1A1D1F;
           letter-spacing: -0.72px;
           line-height: 48px;
@@ -1366,7 +1395,8 @@ body {
         .res {
           font-family: "Inter", sans-serif;
           font-style: normal;
-          font-weight: 500;          font-size: 11px;
+          font-weight: 500;
+          font-size: 11px;
           color: #83BF6E;
           letter-spacing: -0.11px;
           line-height: 16px;
@@ -1412,7 +1442,8 @@ body {
   .desc {
     font-family: "Inter", sans-serif;
     font-style: normal;
-    font-weight: 400;    font-size: 14px;
+    font-weight: 400;
+    font-size: 14px;
     color: #696974;
     letter-spacing: 0.1px;
 
@@ -1423,7 +1454,8 @@ body {
     b {
       font-family: "Inter", sans-serif;
       font-style: normal;
-      font-weight: 600;      font-size: 16px;
+      font-weight: 600;
+      font-size: 16px;
       color: #1DBE73;
       letter-spacing: 0.1px;
     }
@@ -1465,7 +1497,8 @@ body {
           p {
             font-family: "Inter", sans-serif;
             font-style: normal;
-            font-weight: 400;            font-size: 13px;
+            font-weight: 400;
+            font-size: 13px;
             color: #696974;
             letter-spacing: 0.2px;
             margin-bottom: 12px;
@@ -1484,7 +1517,8 @@ body {
           .btn-green {
             font-family: "Inter", sans-serif;
             font-style: normal;
-            font-weight: 600;            font-size: 12px;
+            font-weight: 600;
+            font-size: 12px;
             color: #FFFFFF;
             letter-spacing: 0;
             line-height: 12px;
@@ -1522,7 +1556,8 @@ body {
           padding: 7px 10px;
           font-family: "Inter", sans-serif;
           font-style: normal;
-          font-weight: 600;          font-size: 11px;
+          font-weight: 600;
+          font-size: 11px;
           color: #FFFFFF;
           letter-spacing: 0.2px;
           line-height: 1;
@@ -1555,14 +1590,16 @@ body {
 
               font-family: "Inter", sans-serif;
               font-style: normal;
-              font-weight: 500;              font-size: 14px;
+              font-weight: 500;
+              font-size: 14px;
               color: #2F2F35;
               letter-spacing: 0.2px;
 
               b {
                 font-family: "Inter", sans-serif;
                 font-style: normal;
-                font-weight: 700;                font-size: 14px;
+                font-weight: 700;
+                font-size: 14px;
                 color: #1DBF73;
                 letter-spacing: 0.2px;
               }
@@ -1571,7 +1608,8 @@ body {
             .btn {
               font-family: "Inter", sans-serif;
               font-style: normal;
-              font-weight: 600;              font-size: 12px;
+              font-weight: 600;
+              font-size: 12px;
               color: #FAFAFB;
               text-align: center;
               padding: 10px;
@@ -1614,7 +1652,8 @@ body {
         .nav-link {
           font-family: "Inter", sans-serif;
           font-style: normal;
-          font-weight: 500;          font-size: 14px;
+          font-weight: 500;
+          font-size: 14px;
           color: #171725;
           letter-spacing: 0.1px;
           padding: 16px 12px;
@@ -1709,7 +1748,8 @@ body {
         padding: 4px 8px;
         font-family: "Inter", sans-serif;
         font-style: normal;
-        font-weight: 500;        font-size: 11px;
+        font-weight: 500;
+        font-size: 11px;
         color: #FFFFFF;
         letter-spacing: -0.11px;
         line-height: 16px;
@@ -1765,7 +1805,8 @@ body {
       .card-title {
         font-family: "Inter", sans-serif;
         font-style: normal;
-        font-weight: 600;        font-size: 16px;
+        font-weight: 600;
+        font-size: 16px;
         color: #2F2F35;
         letter-spacing: 0.2px;
         margin-bottom: 4px;
@@ -1791,7 +1832,8 @@ body {
           .text {
             font-family: "Inter", sans-serif;
             font-style: normal;
-            font-weight: 500;            font-size: 12px;
+            font-weight: 500;
+            font-size: 12px;
             color: #696974;
             letter-spacing: 0.1px;
             margin-bottom: 2px;
@@ -1801,7 +1843,8 @@ body {
           .num {
             font-family: "Inter", sans-serif;
             font-style: normal;
-            font-weight: 700;            font-size: 14px;
+            font-weight: 700;
+            font-size: 14px;
             color: #2F2F35;
             letter-spacing: 0.2px;
             line-height: 1;
@@ -1829,7 +1872,8 @@ body {
     .footer {
       font-family: "Inter", sans-serif;
       font-style: normal;
-      font-weight: 500;      font-size: 12px;
+      font-weight: 500;
+      font-size: 12px;
       color: #000000;
       letter-spacing: 0.1px;
       line-height: 15px;
@@ -1905,7 +1949,8 @@ body {
           b {
             font-family: "Inter", sans-serif;
             font-style: normal;
-            font-weight: 700;            font-size: 16px;
+            font-weight: 700;
+            font-size: 16px;
             color: #16A05F;
             letter-spacing: 0.2px;
           }
