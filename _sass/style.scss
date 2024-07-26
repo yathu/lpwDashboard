@@ -943,8 +943,34 @@ body {
     }
   }
 
+  .num {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    color: #ed1c24;
+    letter-spacing: 0.09px;
+    line-height: 1;
+  }
+
+  .label {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    color: #696974;
+    letter-spacing: 0.1px;
+    line-height: 1.2;
+  }
+
   .content {
     flex: 1;
+
+    .progress {
+      height: 6px;
+      margin-top: 5px;
+      background-color: #c1d2df;
+    }
   }
 
   .widget-title-2 {
