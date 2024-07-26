@@ -452,6 +452,11 @@ $(document).ready(function () {
                 legend: {
                     display: false,
                 },
+                // title: {
+                //     display: true,
+                //     text: 'Custom Chart Title',
+                //     align:'start'
+                // },
                 // chartAreaBorder: {
                 //     borderColor: '#f7fafc',
                 //     borderWidth: { top: 0, bottom: 5, left: 0, right: 0 } // Customize border widths here
