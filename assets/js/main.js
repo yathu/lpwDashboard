@@ -208,6 +208,14 @@ $(document).ready(function () {
 
     //Chart js
 
+    const DATA_COUNT = 8;
+
+
+    const labels = [];
+    for (let i = 0; i < DATA_COUNT; ++i) {
+        labels.push('' + i);
+    }
+
     const chartColors = [
         'rgba(255, 26, 104, 1)',
         'rgba(54, 162, 235, 1)',
@@ -220,15 +228,15 @@ $(document).ready(function () {
 
 //background-image: linear-gradient(180deg, #27885D 21%, #44BD86 100%);
 
+
     const gradients = [
-        {s: '#ff006f', e: 'rgb(75,246,7)'},
-        {s: '#3D9ED5', e: 'rgb(233,253,255)'},
+        // {s: '#ff006f', e: '#072ff6'},
+        {s: '#3D9ED5', e: 'rgba(255,255,255,0)'},
         {s: '#27885D', e: '#44BD86'},
-        {s: '#072ff6', e: 'rgb(255,0,111)'},
-        {s: '#3D9ED5', e: 'rgba(255,167,0,0.26)'},
-        {s: '#3D9ED5', e: 'rgba(255, 255, 255, 0.00)'},
-        {s: '#3D9ED5', e: 'rgba(255, 255, 255, 0.00)'},
-        {s: '#3D9ED5', e: 'rgba(255, 255, 255, 0.00)'},
+        {s: '#3D9ED5', e: 'rgba(255,255,255,0.1)'},
+        {s: '#D5AA55', e: '#F7F5F0'},
+        {s: '#27885D', e: '#44BD86'},
+        {s: '#7A7F86', e: '#EAECEB'},
     ];
 
     const createGradient = (context, chart) => {
@@ -245,9 +253,14 @@ $(document).ready(function () {
             val = (context.p0DataIndex % 6);
         }
 
-        const gradient = ctx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
+        const gradient = ctx.createLinearGradient(0, 0, 0, chart.height);
 
-        gradient.addColorStop(0, gradients[val].s);
+        // gradient.addColorStop(0, gradients[val].s);
+        // gradient.addColorStop(0.8, gradients[val].e);
+
+        gradient.addColorStop(0, gradients[val].s);    // Start color
+        gradient.addColorStop(0.1, gradients[val].s);  // Start color occupies 30%
+        gradient.addColorStop(0.7, gradients[val].e);    // End color starts from 70%
         gradient.addColorStop(1, gradients[val].e);
 
         return gradient;
@@ -270,21 +283,49 @@ $(document).ready(function () {
     const lineData =
         [
             {
-                x: "9.07.2024", y: 4
-            },{
-                x: "10.07.2024", y: 15
+                x: "9.07.2024", y: 10
+            }, {
+            x: "10.07.2024", y: 15
+        },
+            {
+                x: "11.07.2024", y: 20
             },
             {
-                x: "11.07.2024", y: 13
-            },
-            {
-                x: "12.07.2024", y: 9
+                x: "12.07.2024", y: 25
             },
             {
                 x: "13.07.2024", y: 20
             },
             {
                 x: "14.07.2024", y: 30
+            },
+            {
+                x: "15.07.2024", y: 25
+            },
+
+        ];
+
+    const line2Data =
+        [
+            {
+                x: "9.07.2024", y: 0
+            }, {
+            x: "10.07.2024", y: 5
+        },
+            {
+                x: "11.07.2024", y: 10
+            },
+            {
+                x: "12.07.2024", y: 15
+            },
+            {
+                x: "13.07.2024", y: 10
+            },
+            {
+                x: "14.07.2024", y: 20
+            },
+            {
+                x: "15.07.2024", y: 15
             },
 
         ];
@@ -294,16 +335,35 @@ $(document).ready(function () {
         datasets: [
             {
                 type: 'line',
+                label: 'Sales',
+                data: line2Data,
+                fill: true,
+                tension: 0.4,
+                borderWidth: 3,
+                order: 1,
+                // segment: {
+                //     borderColor: (ctx) => '#E13D44',
+                // },
+                borderColor: '#E13D44',
+                pointStyle: false,
+                // pointBackgroundColor: 'rgba(225,61,68,0.71)',
+                // pointRadius: 4,
+                // pointBorderWidth:0,
+            },
+            {
+                type: 'line',
                 label: 'Weekly Sales',
                 data: lineData,
                 fill: true,
                 tension: 0.4,
-                borderWidth: 2,
-                order: 2,
+                borderWidth: 3,
+                order: 3,
                 segment: {
-                    borderColor: (ctx) => setColors(ctx),
+                    borderColor: (ctx) => '#3DD598',
                     backgroundColor: (ctx) => createGradient(ctx, ctx.chart),
-                }
+                },
+                pointStyle: false,
+
             },
             {
                 label: 'Scatter Dataset',
@@ -313,10 +373,10 @@ $(document).ready(function () {
                 ],
                 backgroundColor: 'rgb(255, 99, 132)',
                 borderColor: '#fff',
-                order: 1,
+                order: 2,
                 borderWidth: 2,
                 pointRadius: 7,
-                pointStyle: 'rect'
+                // pointStyle: ''
 
             },
         ]
@@ -327,7 +387,7 @@ $(document).ready(function () {
     const chartAreaBorder = {
         id: 'chartAreaBorder',
         beforeDraw(chart) {
-            const { ctx, chartArea: { left, top, right, bottom } } = chart;
+            const {ctx, chartArea: {left, top, right, bottom}} = chart;
 
             // Save the current state
             ctx.save();
@@ -351,11 +411,11 @@ $(document).ready(function () {
                 y: {
                     beginAtZero: true,
                     ticks: {
-                        callback: (label) => label <0 ? '' : label,
+                        callback: (label) => label < 0 ? '' : label,
                     },
                     grid: {
                         color: (context) => {
-                            console.log("ctx==>",context.tick.value);
+                            console.log("ctx==>", context.tick.value);
 
                             return context.tick.value < 0 ? '#f7fafc' : '#F1F1F5';
                         },
@@ -371,7 +431,7 @@ $(document).ready(function () {
                         unit: 'day',
                         parser: 'dd.MM.yyyy',
                     },
-                    position: {y:0},
+                    position: {y: 0},
                     border: {
                         display: false,
                     },
@@ -384,7 +444,7 @@ $(document).ready(function () {
                 },
                 x: {
                     border: {
-                        display:false
+                        display: false
                     }
                 }
             },
@@ -397,7 +457,10 @@ $(document).ready(function () {
                 //     borderWidth: { top: 0, bottom: 5, left: 0, right: 0 } // Customize border widths here
                 // },
                 annotation: {
-                    // clip: false,
+                    clip: false,
+                    common: {
+                        drawTime: 'beforeDatasetsDraw'
+                    },
                     annotations: {
                         line1: {
                             type: 'line',
@@ -405,54 +468,116 @@ $(document).ready(function () {
                             yMax: barPlacement[0],
                             borderColor: '#DFE5F0',
                             borderWidth: 8,
-                            // display:false
+                            drawTime: 'beforeDatasetsDraw',
                         },
+
                         line2: {
                             type: 'line',
-                            xMin: '11.07.2024',
+                            xMin: '10.07.2024',
                             xMax: '13.07.2024',
                             yMin: barPlacement[0],
                             yMax: barPlacement[0],
                             borderColor: '#C53E46',
-                            borderWidth: 8  ,
-                            // display:false
+                            borderWidth: 8,
+                            drawTime: 'afterDatasetsDraw',
+                            // label: {
+                            //     display: false,
+                            //     backgroundColor: '#333',
+                            //     content: (ctx) => ['title tooltip'],
+                            //     yAdjust: -17,
+                            // },
+                            // enter({element}, event) {
+                            //     element.label.options.display = true;
+                            //     return true;
+                            // },
+                            // leave({element}, event) {
+                            //     element.label.options.display = false;
+                            //     return true;
+                            // }
+
                         },
                         line3: {
+                            type: 'line',
+                            xMin: '11.07.2024',
+                            xMax: '13.07.2024',
+                            yMin: barPlacement[1],
+                            yMax: barPlacement[1],
+                            borderColor: '#C53E46',
+                            borderWidth: 8,
+                            drawTime: 'afterDatasetsDraw',
+                            // label: {
+                            //     display: false,
+                            //     backgroundColor: '#333',
+                            //     content: (ctx) => ['title tooltip'],
+                            //     yAdjust: -17,
+                            // },
+                            // enter({element}, event) {
+                            //     element.label.options.display = true;
+                            //     return true;
+                            // },
+                            // leave({element}, event) {
+                            //     element.label.options.display = false;
+                            //     return true;
+                            // }
+
+                        },
+
+                        line4: {
                             type: 'line',
                             yMin: barPlacement[1],
                             yMax: barPlacement[1],
                             borderColor: '#DFE5F0',
                             borderWidth: 8,
-                            // display:false
+                            drawTime: 'beforeDatasetsDraw',
                         },
-                        line4: {
-                            type: 'line',
-                            xMin: '10.07.2024',
-                            xMax: '12.07.2024',
-                            yMin: barPlacement[1],
-                            yMax: barPlacement[1],
-                            borderColor: '#27885D',
-                            borderWidth: 8  ,
-                            // display:false
-                        },
+
+
                         line5: {
                             type: 'line',
                             yMin: barPlacement[2],
                             yMax: barPlacement[2],
                             borderColor: '#DFE5F0',
                             borderWidth: 8,
-                            // display:false
+                            drawTime: 'beforeDatasetsDraw',
                         },
+
                         line6: {
                             type: 'line',
-                            xMin: '12.07.2024',
+                            xMin: '11.07.2024',
                             xMax: '13.07.2024',
                             yMin: barPlacement[2],
                             yMax: barPlacement[2],
                             borderColor: '#27885D',
-                            borderWidth: 8  ,
-                            // display:false
-                        }
+                            borderWidth: 8,
+                            drawTime: 'afterDatasetsDraw',
+                            // label: {
+                            //     display: false,
+                            //     backgroundColor: '#333',
+                            //     drawTime: 'afterDatasetsDraw',
+                            //     content: (ctx) => ['title tooltip'],
+                            //     // yAdjust: -6,
+                            // },
+                            // enter({element}, event) {
+                            //     element.label.options.display = true;
+                            //     return true;
+                            // },
+                            // leave({element}, event) {
+                            //     element.label.options.display = false;
+                            //     return true;
+                            // }
+                        },
+
+
+
+
+
+
+
+
+
+
+
+
                     }
                 }
             }
