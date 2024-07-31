@@ -135,8 +135,13 @@
     border-radius: 50%;
     background-color: #F7FAFC;
 
+    -webkit-box-shadow: 0 0 11px 0 #b5b5b5;
+    -moz-box-shadow: 0 0 11px 0 #b5b5b5;
+    box-shadow: 0 0 11px 0 #b5b5b5;
+
     i:before {
-      color: #92929D;
+      //color: #92929D;
+      color: #009432;
 
       font-weight: 900 !important;
     }
@@ -220,7 +225,8 @@
     letter-spacing: 0.2px;
   }
 }
-.color-primary{
+
+.color-primary {
   color: #1a73e8 !important;
 }
 
@@ -233,6 +239,7 @@ $colors: (
         views: #3DD598,
         hot-deal: #B2282E,
         urgent-sale: #EECF50,
+        page-no: #E13D44
   // Add more colors as needed
 );
 

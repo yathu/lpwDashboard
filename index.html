@@ -122,6 +122,10 @@ layout: home
                             </div>
 
                             <div class="col-12">
+                                {% include rightExpire.html %}
+                            </div>
+
+                            <div class="col-12">
                                 <div class="item voucher">
                                     <div
                                             class="d-flex justify-content-between align-items-center"
@@ -165,7 +169,7 @@ layout: home
 
                             <!--                            agent profile -->
                             <div class="profile-info-sec row gx-0">
-                                <div class="col-12 col-lg-auto flex-column justify-content-start justify-content-center"
+                                <div class="col-12 col-lg-auto d-flex align-items-center flex-column justify-content-start justify-content-center"
                                 >
                                     <div class="profile-img-container">
                                         <img class="profile" src="assets/img/profile.jpg" alt=""/>
@@ -215,7 +219,7 @@ layout: home
                                 </div>
                                 <div id="agentScoreList" class="score-list-sec">
                                     <div class="more">
-                                        <a id="btnViewMore" class="btn btn-primary">View more</a>
+                                        <a id="btnViewMore" class="btn btn-outline-primary">View more</a>
                                     </div>
                                     <div class="score-list-item">
                                         <img src="assets/img/score_list.svg" alt="">
@@ -340,7 +344,8 @@ layout: home
                     {% include voucherItem.html %}
 
                     <div class="d-none d-lg-block product-update-desktop">{% include latestProductUpdate.html %}</div>
-                    <div class="d-none d-lg-block">
+                    <div class="d-none d-lg-block pt-3">
+                        {% include rightExpire.html %}
                         {% include rightBar.html %}
                     </div>
 

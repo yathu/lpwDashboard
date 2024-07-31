@@ -1,7 +1,7 @@
 $(document).ready(function () {
     var bar = new ProgressBar.Circle("#feratured_progress", {
         color: "#000",
-        strokeWidth: 4,
+        strokeWidth: 5,
         trailWidth: 1,
         easing: "easeInOut",
         duration: 1400,
@@ -34,7 +34,7 @@ $(document).ready(function () {
 
     var boosts_left = new ProgressBar.Circle("#boosts_left_progress", {
         color: "#000",
-        strokeWidth: 4,
+        strokeWidth: 5,
         trailWidth: 1,
         easing: "easeInOut",
         duration: 1400,
@@ -66,7 +66,7 @@ $(document).ready(function () {
 
     var boosts_left = new ProgressBar.Circle("#wap_progress", {
         color: "#000",
-        strokeWidth: 4,
+        strokeWidth: 5,
         trailWidth: 1,
         easing: "easeInOut",
         duration: 1400,

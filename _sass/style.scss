@@ -51,7 +51,7 @@ body {
           padding: 32px 12px 8px;
           border-radius: 16px;
           width: 240px;
-          height: 180px;
+          height: 195px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
@@ -70,7 +70,7 @@ body {
               line-height: 17px;
               letter-spacing: 0.2px;
               color: #2f2f35;
-              margin-bottom: 4px;
+              //margin-bottom: 4px;
               font-family: "Inter", sans-serif;
               font-optical-sizing: auto;
               font-weight: 600;
@@ -96,8 +96,16 @@ body {
               line-height: 16px;
               font-family: "Inter", sans-serif;
               font-optical-sizing: auto;
-              margin: 12px 0 8px;
+              margin: 0 0 0 8px;
             }
+
+            .expire{
+              font-size: 12px;
+              font-family: "Inter", sans-serif;
+              color: #e23d44;
+              font-weight: 400;
+            }
+
           }
 
           .btn-primary {
@@ -140,9 +148,14 @@ body {
       background-color: #f7fafc;
       border: 1px solid #cbd7e0;
 
+      -webkit-box-shadow: 0 0 11px 0 #b5b5b5;
+      -moz-box-shadow: 0 0 11px 0 #b5b5b5;
+      box-shadow: 0 0 11px 0 #b5b5b5;
+
       &::after {
         font-size: 14px;
-        color: #92929d;
+        //color: #92929d;
+        color: #009432;
       }
     }
 
@@ -172,6 +185,7 @@ body {
     border-radius: 16px;
     box-shadow: 0 0 1px 0 rgba(12, 26, 75, 0.24), 0 3px 8px -1px rgba(50, 50, 71, 0.05);
     padding: 15px 8px 8px 8px;
+    height: 100%;
 
     .title {
       font-family: "Inter", sans-serif;
@@ -359,7 +373,9 @@ body {
       }
     }
   }
-
+  .light-widget.mb-3{
+    margin-bottom: 8px !important;
+  }
 }
 
 
@@ -568,6 +584,10 @@ body {
 
         a {
           cursor: pointer;
+          font-family: "Inter", sans-serif;
+          font-size: 13px;
+          letter-spacing: 0.06px;
+          font-weight: 500;
         }
       }
 
@@ -1070,6 +1090,16 @@ body {
         align-items: start;
         .swiper-slide {
           height: 150px;
+        }
+      }
+
+      @media(max-width: 575.98px) {
+
+        height: 345px;
+
+
+        .swiper-slide {
+          height: 165px;
         }
       }
     }
