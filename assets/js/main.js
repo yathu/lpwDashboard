@@ -146,6 +146,13 @@ $(document).ready(function () {
         },
     });
 
+    let index_currentSlide = updateSwiper.realIndex;
+    // let currentSlide       = updateSwiper.slides[index_currentSlide]
+
+    $('.dismiss-btn').on('click', function () {
+        updateSwiper.removeSlide(index_currentSlide);
+    });
+
     //mobile
     const updateMobileSwiper = new Swiper('.product-update-mobile .update-swiper', {
         loop: false,
@@ -159,6 +166,12 @@ $(document).ready(function () {
             nextEl: '.product-update-mobile .next-update',
             prevEl: '.product-update-mobile .prev-update',
         },
+    });
+
+    let index_currentSlide_mobile = updateMobileSwiper.realIndex;
+
+    $('.dismiss-btn').on('click', function () {
+        updateMobileSwiper.removeSlide(index_currentSlide_mobile);
     });
 
     const tipsAwiper = new Swiper('.tips-swiper', {

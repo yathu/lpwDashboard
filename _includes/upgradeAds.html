@@ -41,56 +41,130 @@
 
                         <div class="row">
                             <div class="col-12 col-md-7 col-lg-7">
-                                <div class="insights justify-content-between d-flex align-items-center">
-                                    <div class="widget-title-3">Insights</div>
 
-                                    <div class="btn-group custom-dropdown" role="group"
-                                         aria-label="Button group with nested dropdown">
-                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                                            <option selected>Last 7 Days</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                        <button type="button" class="btn">
-                                            <i class="bi bi-caret-down-fill"></i>
-                                        </button>
-                                    </div>
-                                </div>
+                                <div class="accordion accordion-flush" id="accordionExample{{i}}">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="widget-title-3 accordion-button collapsed" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseOne{{i}}" aria-expanded="true"
+                                                    aria-controls="collapseOne">Insights
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne{{i}}" class="accordion-collapse collapse"
+                                             data-bs-parent="#accordionExample{{i}}">
+                                            <div class="accordion-body">
 
-                                <div class="impressions">
-                                    <div>
+                                                <div class="btn-group custom-dropdown mb-3" role="group"
+                                                     aria-label="Button group with nested dropdown">
+                                                    <select class="form-select form-select-sm"
+                                                            aria-label=".form-select-sm example">
+                                                        <option selected>Last 7 Days</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                    <button type="button" class="btn">
+                                                        <i class="bi bi-caret-down-fill"></i>
+                                                    </button>
+                                                </div>
+
+
+                                                <div class="impressions">
+                                                    <div>
                                         <span class="imgBox">
                                             <img src="assets/img/persion-circle.svg" alt="">
                                         </span>
-                                        <span class="widget-label">Views
+                                                        <span class="widget-label">Views
                                         <img src="assets/img/info-circle.svg" alt="" class="img-fluid">
                                         </span>
-                                        <span class="count">
+                                                        <span class="count">
                                             256k
                                         </span>
-                                        <div class="res">
-                                            <i class="bi bi-arrow-up"></i>
-                                            37.8% this week
-                                        </div>
-                                    </div>
-                                    <span></span>
-                                    <div>
+                                                        <div class="res">
+                                                            <i class="bi bi-arrow-up"></i>
+                                                            37.8% this week
+                                                        </div>
+                                                    </div>
+                                                    <span></span>
+                                                    <div>
                                         <span class="imgBox">
                                             <img src="assets/img/upDown.svg" alt="">
                                         </span>
-                                        <span class="widget-label">Views
+                                                        <span class="widget-label">Views
                                         <img src="assets/img/info-circle.svg" alt="" class="img-fluid">
                                         </span>
-                                        <span class="count">
+                                                        <span class="count">
                                             256k
                                         </span>
-                                        <div class="res">
-                                            <i class="bi bi-arrow-up"></i>
-                                            37.8% this week
+                                                        <div class="res">
+                                                            <i class="bi bi-arrow-up"></i>
+                                                            37.8% this week
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+
                                         </div>
                                     </div>
+
+
                                 </div>
+
+<!--                                <div class="insights justify-content-between d-flex align-items-center">-->
+<!--                                    <div class="widget-title-3">Insights</div>-->
+
+<!--                                    <div class="btn-group custom-dropdown" role="group"-->
+<!--                                         aria-label="Button group with nested dropdown">-->
+<!--                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">-->
+<!--                                            <option selected>Last 7 Days</option>-->
+<!--                                            <option value="1">One</option>-->
+<!--                                            <option value="2">Two</option>-->
+<!--                                            <option value="3">Three</option>-->
+<!--                                        </select>-->
+<!--                                        <button type="button" class="btn">-->
+<!--                                            <i class="bi bi-caret-down-fill"></i>-->
+<!--                                        </button>-->
+<!--                                    </div>-->
+
+
+<!--                                </div>-->
+
+<!--                                <div class="impressions">-->
+<!--                                    <div>-->
+<!--                                        <span class="imgBox">-->
+<!--                                            <img src="assets/img/persion-circle.svg" alt="">-->
+<!--                                        </span>-->
+<!--                                        <span class="widget-label">Views-->
+<!--                                        <img src="assets/img/info-circle.svg" alt="" class="img-fluid">-->
+<!--                                        </span>-->
+<!--                                        <span class="count">-->
+<!--                                            256k-->
+<!--                                        </span>-->
+<!--                                        <div class="res">-->
+<!--                                            <i class="bi bi-arrow-up"></i>-->
+<!--                                            37.8% this week-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <span></span>-->
+<!--                                    <div>-->
+<!--                                        <span class="imgBox">-->
+<!--                                            <img src="assets/img/upDown.svg" alt="">-->
+<!--                                        </span>-->
+<!--                                        <span class="widget-label">Views-->
+<!--                                        <img src="assets/img/info-circle.svg" alt="" class="img-fluid">-->
+<!--                                        </span>-->
+<!--                                        <span class="count">-->
+<!--                                            256k-->
+<!--                                        </span>-->
+<!--                                        <div class="res">-->
+<!--                                            <i class="bi bi-arrow-up"></i>-->
+<!--                                            37.8% this week-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
 
                             </div>
                             <div class="col-12 col-md-5 col-lg-5 btn-section">
