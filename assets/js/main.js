@@ -364,7 +364,6 @@ $(document).ready(function () {
           backgroundColor: (ctx) => createGradient(ctx, ctx.chart),
         },
         pointStyle: false,
-        yAxisID: "pageView",
       },
 
       {
@@ -422,11 +421,11 @@ $(document).ready(function () {
       maintainAspectRatio: false,
 
       scales: {
-        pageView: {
+        y: {
           type: "linear",
           display: true,
           position: "left",
-          beginAtZero: true,
+          // beginAtZero: true,
           ticks: {
             callback: (label) => (label < 0 ? "" : label),
           },
@@ -440,6 +439,8 @@ $(document).ready(function () {
           border: {
             display: false,
           },
+          suggestedMin:-15,
+          suggestedMax: 30
         },
 
         viewLine: {
@@ -447,13 +448,15 @@ $(document).ready(function () {
           display: true,
           position: "right",
           // beginAtZero: true,
-          // ticks: {
-          //   callback: (label) => (label < 0 ? "" : label),
-          // },
+          ticks: {
+            callback: (label) => (label < 0 ? "" : label),
+          },
           grid: {
             display: false,
             drawOnChartArea: false,
           },
+          suggestedMin:-15,
+          suggestedMax: 30
         },
 
         xAxes: {
@@ -463,9 +466,9 @@ $(document).ready(function () {
             unit: "day",
             parser: "dd.MM.yyyy",
           },
-          // position: { 
-          //   viewLine: 0 
-          // },
+          position: { 
+            y: 0 
+          },
           border: {
             display: false,
           },
@@ -477,7 +480,7 @@ $(document).ready(function () {
         },
         x: {
           border: {
-            // display: false,
+            display: false,
           },
           // position: { y: 0 },
         },
@@ -501,107 +504,107 @@ $(document).ready(function () {
             drawTime: "beforeDatasetsDraw",
           },
           annotations: {
-            // line1: {
-            //   type: "line",
-            //   yMin: barPlacement[0],
-            //   yMax: barPlacement[0],
-            //   borderColor: "#DFE5F0",
-            //   borderWidth: 8,
-            //   drawTime: "beforeDatasetsDraw",
-            // },
+            line1: {
+              type: "line",
+              yMin: barPlacement[0],
+              yMax: barPlacement[0],
+              borderColor: "#DFE5F0",
+              borderWidth: 8,
+              drawTime: "beforeDatasetsDraw",
+            },
 
-            // line2: {
-            //   type: "line",
-            //   xMin: "10.07.2024",
-            //   xMax: "13.07.2024",
-            //   yMin: barPlacement[0],
-            //   yMax: barPlacement[0],
-            //   borderColor: "#C53E46",
-            //   borderWidth: 8,
-            //   drawTime: "afterDatasetsDraw",
-            //   // label: {
-            //   //     display: false,
-            //   //     backgroundColor: '#333',
-            //   //     content: (ctx) => ['title tooltip'],
-            //   //     yAdjust: -17,
-            //   // },
-            //   // enter({element}, event) {
-            //   //     element.label.options.display = true;
-            //   //     return true;
-            //   // },
-            //   // leave({element}, event) {
-            //   //     element.label.options.display = false;
-            //   //     return true;
-            //   // }
-            // },
-            // line3: {
-            //   type: "line",
-            //   xMin: "11.07.2024",
-            //   xMax: "13.07.2024",
-            //   yMin: barPlacement[1],
-            //   yMax: barPlacement[1],
-            //   borderColor: "#C53E46",
-            //   borderWidth: 8,
-            //   drawTime: "afterDatasetsDraw",
-            //   // label: {
-            //   //     display: false,
-            //   //     backgroundColor: '#333',
-            //   //     content: (ctx) => ['title tooltip'],
-            //   //     yAdjust: -17,
-            //   // },
-            //   // enter({element}, event) {
-            //   //     element.label.options.display = true;
-            //   //     return true;
-            //   // },
-            //   // leave({element}, event) {
-            //   //     element.label.options.display = false;
-            //   //     return true;
-            //   // }
-            // },
+            line2: {
+              type: "line",
+              xMin: "10.07.2024",
+              xMax: "13.07.2024",
+              yMin: barPlacement[0],
+              yMax: barPlacement[0],
+              borderColor: "#C53E46",
+              borderWidth: 8,
+              drawTime: "afterDatasetsDraw",
+              // label: {
+              //     display: false,
+              //     backgroundColor: '#333',
+              //     content: (ctx) => ['title tooltip'],
+              //     yAdjust: -17,
+              // },
+              // enter({element}, event) {
+              //     element.label.options.display = true;
+              //     return true;
+              // },
+              // leave({element}, event) {
+              //     element.label.options.display = false;
+              //     return true;
+              // }
+            },
+            line3: {
+              type: "line",
+              xMin: "11.07.2024",
+              xMax: "13.07.2024",
+              yMin: barPlacement[1],
+              yMax: barPlacement[1],
+              borderColor: "#C53E46",
+              borderWidth: 8,
+              drawTime: "afterDatasetsDraw",
+              // label: {
+              //     display: false,
+              //     backgroundColor: '#333',
+              //     content: (ctx) => ['title tooltip'],
+              //     yAdjust: -17,
+              // },
+              // enter({element}, event) {
+              //     element.label.options.display = true;
+              //     return true;
+              // },
+              // leave({element}, event) {
+              //     element.label.options.display = false;
+              //     return true;
+              // }
+            },
 
-            // line4: {
-            //   type: "line",
-            //   yMin: barPlacement[1],
-            //   yMax: barPlacement[1],
-            //   borderColor: "#DFE5F0",
-            //   borderWidth: 8,
-            //   drawTime: "beforeDatasetsDraw",
-            // },
+            line4: {
+              type: "line",
+              yMin: barPlacement[1],
+              yMax: barPlacement[1],
+              borderColor: "#DFE5F0",
+              borderWidth: 8,
+              drawTime: "beforeDatasetsDraw",
+            },
 
-            // line5: {
-            //   type: "line",
-            //   yMin: barPlacement[2],
-            //   yMax: barPlacement[2],
-            //   borderColor: "#DFE5F0",
-            //   borderWidth: 8,
-            //   drawTime: "beforeDatasetsDraw",
-            // },
+            line5: {
+              type: "line",
+              yMin: barPlacement[2],
+              yMax: barPlacement[2],
+              borderColor: "#DFE5F0",
+              borderWidth: 8,
+              drawTime: "beforeDatasetsDraw",
+            },
 
-            // line6: {
-            //   type: "line",
-            //   xMin: "11.07.2024",
-            //   xMax: "13.07.2024",
-            //   yMin: barPlacement[2],
-            //   yMax: barPlacement[2],
-            //   borderColor: "#27885D",
-            //   borderWidth: 8,
-            //   drawTime: "afterDatasetsDraw",
-            //   // label: {
-            //   //     display: false,
-            //   //     backgroundColor: '#333',
-            //   //     drawTime: 'afterDatasetsDraw',
-            //   //     content: (ctx) => ['title tooltip'],
-            //   //     // yAdjust: -6,
-            //   // },
-            //   // enter({element}, event) {
-            //   //     element.label.options.display = true;
-            //   //     return true;
-            //   // },
-            //   // leave({element}, event) {
-            //   //     element.label.options.display = false;
-            //   //     return true;
-            //   // }
-            // },
+            line6: {
+              type: "line",
+              xMin: "11.07.2024",
+              xMax: "13.07.2024",
+              yMin: barPlacement[2],
+              yMax: barPlacement[2],
+              borderColor: "#27885D",
+              borderWidth: 8,
+              drawTime: "afterDatasetsDraw",
+              // label: {
+              //     display: false,
+              //     backgroundColor: '#333',
+              //     drawTime: 'afterDatasetsDraw',
+              //     content: (ctx) => ['title tooltip'],
+              //     // yAdjust: -6,
+              // },
+              // enter({element}, event) {
+              //     element.label.options.display = true;
+              //     return true;
+              // },
+              // leave({element}, event) {
+              //     element.label.options.display = false;
+              //     return true;
+              // }
+            },
           },
         },
       },
