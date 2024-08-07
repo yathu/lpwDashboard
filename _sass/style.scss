@@ -1277,10 +1277,19 @@ body {
     }
 
     .chart-box {
-      height: 400px;
+      height: 375px;
 
       @media(max-width: 575.98px) {
-        height: 250px;
+        height: 225px;
+      }
+    }
+
+    .chart-box-timeline {
+      height: 140px;
+      margin-top: 20px;
+
+      @media(max-width: 575.98px) {
+        // height: 200px;
       }
     }
 

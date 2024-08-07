@@ -290,15 +290,15 @@ $(document).ready(function () {
   const pageViewData = [
     {
       x: "9.07.2024",
-      y: 10,
+      y: 100,
     },
     {
       x: "10.07.2024",
-      y: 15,
+      y: 105,
     },
     {
       x: "11.07.2024",
-      y: 20,
+      y: 200,
     },
     {
       x: "12.07.2024",
@@ -306,15 +306,15 @@ $(document).ready(function () {
     },
     {
       x: "13.07.2024",
-      y: 20,
+      y: 400,
     },
     {
       x: "14.07.2024",
-      y: 30,
+      y: 700,
     },
     {
       x: "15.07.2024",
-      y: 25,
+      y: 205,
     },
   ];
 
@@ -378,7 +378,7 @@ $(document).ready(function () {
         pointStyle: false,
         yAxisID: "viewLine",
       },
-      
+
       // {
       //   label: "Scatter Dataset",
       //   type: "scatter",
@@ -439,8 +439,8 @@ $(document).ready(function () {
           border: {
             display: false,
           },
-          suggestedMin:-15,
-          suggestedMax: 30
+          suggestedMin: 0,
+          // suggestedMax: 30
         },
 
         viewLine: {
@@ -455,8 +455,8 @@ $(document).ready(function () {
             display: false,
             drawOnChartArea: false,
           },
-          suggestedMin:-15,
-          suggestedMax: 30
+          suggestedMin: 0,
+          // suggestedMax: 30
         },
 
         xAxes: {
@@ -466,9 +466,9 @@ $(document).ready(function () {
             unit: "day",
             parser: "dd.MM.yyyy",
           },
-          position: { 
-            y: 0 
-          },
+          // position: {
+          //   y: 0
+          // },
           border: {
             display: false,
           },
@@ -489,124 +489,7 @@ $(document).ready(function () {
         legend: {
           display: false,
         },
-        // title: {
-        //     display: true,
-        //     text: 'Custom Chart Title',
-        //     align:'start'
-        // },
-        // chartAreaBorder: {
-        //     borderColor: '#f7fafc',
-        //     borderWidth: { top: 0, bottom: 5, left: 0, right: 0 } // Customize border widths here
-        // },
-        annotation: {
-          clip: false,
-          common: {
-            drawTime: "beforeDatasetsDraw",
-          },
-          annotations: {
-            line1: {
-              type: "line",
-              yMin: barPlacement[0],
-              yMax: barPlacement[0],
-              borderColor: "#DFE5F0",
-              borderWidth: 8,
-              drawTime: "beforeDatasetsDraw",
-            },
-
-            line2: {
-              type: "line",
-              xMin: "10.07.2024",
-              xMax: "13.07.2024",
-              yMin: barPlacement[0],
-              yMax: barPlacement[0],
-              borderColor: "#C53E46",
-              borderWidth: 8,
-              drawTime: "afterDatasetsDraw",
-              // label: {
-              //     display: false,
-              //     backgroundColor: '#333',
-              //     content: (ctx) => ['title tooltip'],
-              //     yAdjust: -17,
-              // },
-              // enter({element}, event) {
-              //     element.label.options.display = true;
-              //     return true;
-              // },
-              // leave({element}, event) {
-              //     element.label.options.display = false;
-              //     return true;
-              // }
-            },
-            line3: {
-              type: "line",
-              xMin: "11.07.2024",
-              xMax: "13.07.2024",
-              yMin: barPlacement[1],
-              yMax: barPlacement[1],
-              borderColor: "#C53E46",
-              borderWidth: 8,
-              drawTime: "afterDatasetsDraw",
-              // label: {
-              //     display: false,
-              //     backgroundColor: '#333',
-              //     content: (ctx) => ['title tooltip'],
-              //     yAdjust: -17,
-              // },
-              // enter({element}, event) {
-              //     element.label.options.display = true;
-              //     return true;
-              // },
-              // leave({element}, event) {
-              //     element.label.options.display = false;
-              //     return true;
-              // }
-            },
-
-            line4: {
-              type: "line",
-              yMin: barPlacement[1],
-              yMax: barPlacement[1],
-              borderColor: "#DFE5F0",
-              borderWidth: 8,
-              drawTime: "beforeDatasetsDraw",
-            },
-
-            line5: {
-              type: "line",
-              yMin: barPlacement[2],
-              yMax: barPlacement[2],
-              borderColor: "#DFE5F0",
-              borderWidth: 8,
-              drawTime: "beforeDatasetsDraw",
-            },
-
-            line6: {
-              type: "line",
-              xMin: "11.07.2024",
-              xMax: "13.07.2024",
-              yMin: barPlacement[2],
-              yMax: barPlacement[2],
-              borderColor: "#27885D",
-              borderWidth: 8,
-              drawTime: "afterDatasetsDraw",
-              // label: {
-              //     display: false,
-              //     backgroundColor: '#333',
-              //     drawTime: 'afterDatasetsDraw',
-              //     content: (ctx) => ['title tooltip'],
-              //     // yAdjust: -6,
-              // },
-              // enter({element}, event) {
-              //     element.label.options.display = true;
-              //     return true;
-              // },
-              // leave({element}, event) {
-              //     element.label.options.display = false;
-              //     return true;
-              // }
-            },
-          },
-        },
+    
       },
     },
     // plugins: [chartAreaBorder],
@@ -722,4 +605,235 @@ $(document).ready(function () {
   $("#btnViewMore").on("click", function () {
     $("#agentScoreList").addClass("view-all");
   });
+});
+
+//timelineChart
+
+const timelineData = [
+  {
+    x: "9.07.2024",
+    // y: 10,
+  },
+  {
+    x: "10.07.2024",
+    // y: 5,
+  },
+  {
+    x: "11.07.2024",
+    // y: 10,
+  },
+  {
+    x: "12.07.2024",
+    // y: 15,
+  },
+  {
+    x: "13.07.2024",
+    // y: 10,
+  },
+  {
+    x: "14.07.2024",
+    // y: 20,
+  },
+  {
+    x: "15.07.2024",
+    // y: 15,
+  },
+];
+
+const timeline_ctx = document.getElementById("timelineChart");
+
+const timeline_data = {
+  datasets: [
+    {
+      label: "# of Votes",
+      data: timelineData,
+      borderWidth: 1,
+    },
+  ],
+};
+const barPlacement = [0, 3, 6];
+
+new Chart(timeline_ctx, {
+  type: "line",
+  data: timeline_data,
+  options: {
+    maintainAspectRatio: false,
+    layout:{
+      padding:{
+        left:25,
+        right:20,
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: {
+          display: false,
+        },
+        ticks: {
+          display: false,
+        },
+        border: {
+          display: false,
+        },  
+        suggestedMax:10
+      },
+      xAxes: {
+        type: "time",
+        // alignToPixels:true,
+        time: {
+          unit: "day",
+          parser: "dd.MM.yyyy",
+        },
+        border: {
+          display: false,
+        },
+        grid: {
+          display: false,
+        },
+        ticks: {
+          display: false,
+        },
+      },
+      x: {
+        border: {
+          display: false,
+        },
+        // position: { y: 0 },
+      },
+    },
+    plugins: {
+      legend: {
+        display: false,
+      },
+      annotation: {
+        clip: false,
+        common: {
+          drawTime: "beforeDatasetsDraw",
+        },
+        annotations: {
+          line1: {
+            type: "line",
+            yMin: barPlacement[0],
+            yMax: barPlacement[0],
+            borderColor: "#DFE5F0",
+            borderWidth: 8,
+            drawTime: "beforeDatasetsDraw",
+          },
+
+          line2: {
+            type: "line",
+            xMin: "10.07.2024",
+            xMax: "13.07.2024",
+            yMin: barPlacement[0],
+            yMax: barPlacement[0],
+            borderColor: "#C53E46",
+            borderWidth: 8,
+            drawTime: "afterDatasetsDraw",
+            label: {
+                display: true,
+                backgroundColor: '#333',
+                content: (ctx) => ['title tooltip'],
+                padding:{
+                  top:2,
+                  left:4,
+                  bottom:2,
+                  right:4,
+                },
+                yAdjust: -2,
+                font: {
+                  size: 11,
+                  weight:400
+              }
+            },
+          },
+          line3: {
+            type: "line",
+            xMin: "11.07.2024",
+            xMax: "13.07.2024",
+            yMin: barPlacement[1],
+            yMax: barPlacement[1],
+            borderColor: "#C53E46",
+            borderWidth: 8,
+            drawTime: "afterDatasetsDraw",
+            label: {
+              display: true,
+              backgroundColor: '#333',
+              content: (ctx) => {
+                console.log("ctx1==>",ctx);
+
+                return ['title tooltip']},
+              padding:{
+                top:2,
+                left:4,
+                bottom:2,
+                right:4,
+              },
+              yAdjust: -12,
+              font: {
+                size: 11,
+                weight:400
+            }
+          },
+          },
+
+          line4: {
+            type: "line",
+            yMin: barPlacement[1],
+            yMax: barPlacement[1],
+            borderColor: "#DFE5F0",
+            borderWidth: 8,
+            drawTime: "beforeDatasetsDraw",
+          },
+
+          line5: {
+            type: "line",
+            yMin: barPlacement[2],
+            yMax: barPlacement[2],
+            borderColor: "#DFE5F0",
+            borderWidth: 8,
+            drawTime: "beforeDatasetsDraw",
+          },
+
+          line6: {
+            type: "line",
+            xMin: "11.07.2024",
+            xMax: "13.07.2024",
+            yMin: barPlacement[2],
+            yMax: barPlacement[2],
+            borderColor: "#27885D",
+            borderWidth: 8,
+            drawTime: "beforeDatasetsDraw",
+            label: {
+              display: true,
+              backgroundColor: '#333',
+              content: (ctx) => {
+                console.log("ctx1==>",ctx);
+
+                return ['title tooltip']},
+              padding:{
+                top:2,
+                left:4,
+                bottom:2,
+                right:4,
+              },
+              yAdjust: -12,
+              font: {
+                size: 11,
+                weight:400
+            }
+          },
+            // enter({element}, event) {
+            //     element.label.options.display = true;
+            //     return true;
+            // },
+            // leave({element}, event) {
+            //     element.label.options.display = false;
+            //     return true;
+            // }
+          },
+        },
+      },
+    },
+  },
 });
