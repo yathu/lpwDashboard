@@ -35,7 +35,7 @@ layout: home
                                         </div>
 
                                         <div class="expire w-100">
-                                            Expire on 2024.08.02
+                                            expires on 2024.08.02
                                         </div>
 
                                     </div>
@@ -63,7 +63,7 @@ layout: home
                                             <span class="label">ads left</span>
                                         </div>
                                         <div class="expire w-100">
-                                            Expire on 2024.08.02
+                                            expires on 2024.08.02
                                         </div>
                                     </div>
                                     <div class="progress">
@@ -96,7 +96,7 @@ layout: home
                                         </div>
 
                                         <div class="expire col-12">
-                                            Expire on 2024.08.02
+                                            expires on 2024.08.02
                                         </div>
 
                                     </div>
@@ -121,7 +121,7 @@ layout: home
                                         </div>
 
                                         <div class="expire w-100">
-                                            Expire on 2024.08.02
+                                            expires on 2024.08.02
                                         </div>
                                     </div>
                                     <div class="progress">
@@ -189,8 +189,11 @@ layout: home
                                 <div class="col-12 col-lg-auto d-flex align-items-center flex-column justify-content-start justify-content-center"
                                 >
                                     <div class="profile-img-container">
-                                        <img class="profile" src="assets/img/profile.jpg" alt=""/>
-                                        <img class="edit" src="assets/img/pencil.svg" alt=""/>
+                                        <img id="previewImg" class="profile" src="assets/img/profile.jpg" alt=""/>
+                                        <div class="edit-icon-container">
+                                            <img class="edit" src="assets/img/pencil.svg" alt="" onclick="document.getElementById('fileInput').click();"/>
+                                            <input type="file" id="fileInput" accept=".png, .jpg, .jpeg" onchange="showImage(this)">
+                                        </div>
                                     </div>
                                     <div class="membership">
                                         <img src="assets/img/membership.svg" alt=""/>

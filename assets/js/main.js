@@ -837,3 +837,19 @@ new Chart(timeline_ctx, {
     },
   },
 });
+
+
+//profile image upload
+
+function showImage(input) {
+  if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        
+          const previewImg = document.getElementById('previewImg');
+          previewImg.src = e.target.result;
+          document.getElementById('imagePreview').style.display = 'block';
+      }
+      reader.readAsDataURL(input.files[0]);
+  }
+}
