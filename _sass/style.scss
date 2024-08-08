@@ -903,6 +903,7 @@ body {
         margin-bottom: 15px;
         display: flex;
         gap: 12px;
+        align-items: center;
 
         .text {
           flex: 1;
@@ -1124,6 +1125,7 @@ body {
       gap: 12px;
       display: flex;
       align-items: center;
+      width: 100%;
     }
 
     .img-container {

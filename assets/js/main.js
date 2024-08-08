@@ -392,8 +392,6 @@ $(document).ready(function () {
     ],
   };
 
-  const barPlacement = [-8, -11, -14];
-
   const chartAreaBorder = {
     id: "chartAreaBorder",
     beforeDraw(chart) {
@@ -605,7 +603,7 @@ $(document).ready(function () {
   $("#btnViewMore").on("click", function () {
     $("#agentScoreList").addClass("view-all");
   });
-});
+
 
 //timelineChart
 
@@ -845,7 +843,7 @@ function showImage(input) {
   if (input.files && input.files[0]) {
       const reader = new FileReader();
       reader.onload = function (e) {
-        
+
           const previewImg = document.getElementById('previewImg');
           previewImg.src = e.target.result;
           document.getElementById('imagePreview').style.display = 'block';
@@ -853,3 +851,25 @@ function showImage(input) {
       reader.readAsDataURL(input.files[0]);
   }
 }
+
+//collapse for mobile
+
+function toggleAccordionClasses() {
+  if ($(window).width() <= 767.98) {
+      $('.upgrade-ads-container').find('.accordion-button').addClass('collapsed');
+      $('.upgrade-ads-container').find('.accordion-collapse').removeClass('show');
+  } else {
+      $('.upgrade-ads-container').find('.accordion-button').removeClass('collapsed');
+      $('.upgrade-ads-container').find('.accordion-collapse').addClass('show');
+  }
+}
+
+// Call the function on page load
+toggleAccordionClasses();
+
+// Add a listener for window resize
+$(window).resize(function() {
+  toggleAccordionClasses();
+});
+
+});
