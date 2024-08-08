@@ -133,10 +133,11 @@
     justify-content: center;
     border-radius: 50%;
     background-color: #F7FAFC;
+    border: 1px solid;
 
-    -webkit-box-shadow: 0 0 11px 0 #b5b5b5;
-    -moz-box-shadow: 0 0 11px 0 #b5b5b5;
-    box-shadow: 0 0 11px 0 #b5b5b5;
+    // -webkit-box-shadow: 0 0 11px 0 #b5b5b5;
+    // -moz-box-shadow: 0 0 11px 0 #b5b5b5;
+    // box-shadow: 0 0 11px 0 #b5b5b5;
 
     i:before {
       //color: #92929D;

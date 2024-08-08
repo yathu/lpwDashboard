@@ -3,15 +3,18 @@
         <div class="ads-listing-container shadow">
             <div class="listing-header">
 
-                <ul class="nav nav-underline">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Latest Ads</a>
+                <ul class="nav nav-tabs border-0">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="latest-ads-tab" data-bs-toggle="tab" data-bs-target="#latest-ads-tab-pane" type="button" role="tab" aria-controls="latest-ads-tab-pane" aria-selected="true">Latest Ads</button>
+
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Best performing ad</a>
-                    </li>
+                        <button class="nav-link" id="perfom-ads-tab" data-bs-toggle="tab" data-bs-target="#perfom-ads-tab-pane" type="button" role="tab" aria-controls="perfom-ads-tab-pane" aria-selected="false">Best performing ad</button>
+
+                 </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Trending ads</a>
+                        <button class="nav-link" id="trending-ads-tab" data-bs-toggle="tab" data-bs-target="#trending-ads-tab-pane" type="button" role="tab" aria-controls="trending-ads-tab-pane" aria-selected="false">Trending ads</button>
+
                     </li>
                 </ul>
 
@@ -19,356 +22,450 @@
 
             <hr>
 
-            <div class="listing-body">
+            <div class="tab-content listing-body" id="myTabContent">
 
-                <div class="card">
-                    <div class="card-body p-0">
-
-                        <div class="row gx-3">
-                            <div class="col-5 col-md-auto">
-                                <img src="https://picsum.photos/seed/picsum/200/164" class="img-fluid card-img" alt="...">
-                            </div>
-                            <div class="col">
-                                <a href="#" class="btn featured">
-                                    <i class="bi bi-star-fill"></i>
-                                    Featured</a>
-
-                                <div class="icons">
-                                    <img src="assets/img/bed.svg" alt="" class="img-fluid">
-                                    <span class="widget-label me-3">3</span>
-                                    <img src="assets/img/expand.svg" alt="" class="img-fluid">
-                                    <span class="widget-label me-3">3</span>
+                <div class="tab-pane fade show active" id="latest-ads-tab-pane" role="tabpanel" aria-labelledby="latest-ads-tab" tabindex="0">
+                    <div class="card">
+                        <div class="card-body p-0">
+    
+                            <div class="row gx-3">
+                                <div class="col-5 col-md-auto">
+                                    <img src="https://picsum.photos/seed/picsum/200/164" class="img-fluid card-img" alt="...">
                                 </div>
-
-                                <p class="price-content">
-                                    <b>Rs. 49M</b> approx
-                                </p>
-
-                                <h5 class="card-title">Brand New Apartments for
-                                    Sale in Colombo 5
-                                </h5>
-
-                                <div class="location-label mb-3">
-                                    <i class="bi bi-geo-alt-fill"></i>
-                                    <span class="widget-label">
-                                                Colombo 5
-                                            </span>
+                                <div class="col">
+                                    <a href="#" class="btn featured">
+                                        <i class="bi bi-star-fill"></i>
+                                        Featured</a>
+    
+                                    <div class="icons">
+                                        <img src="assets/img/bed.svg" alt="" class="img-fluid">
+                                        <span class="widget-label me-3">3</span>
+                                        <img src="assets/img/expand.svg" alt="" class="img-fluid">
+                                        <span class="widget-label me-3">3</span>
+                                    </div>
+    
+                                    <p class="price-content">
+                                        <b>Rs. 49M</b> approx
+                                    </p>
+    
+                                    <h5 class="card-title">Brand New Apartments for
+                                        Sale in Colombo 5
+                                    </h5>
+    
+                                    <div class="location-label mb-3">
+                                        <i class="bi bi-geo-alt-fill"></i>
+                                        <span class="widget-label">
+                                                    Colombo 5
+                                                </span>
+                                    </div>
+    
                                 </div>
-
-                            </div>
-                            <div class="col-12 col-md-3 right-section ps-md-3">
-
-                                <ul class="list-group">
-                                    <li class="list-group-item d-flex align-items-center">
-                                        <img src="assets/img/eye.svg" alt="">
-                                        <div>
-                                            <div class="text">
-                                                Total No Of views
+                                <div class="col-12 col-md-3 right-section ps-md-3">
+    
+                                    <ul class="list-group">
+                                        <li class="list-group-item d-flex align-items-center">
+                                            <img src="assets/img/eye.svg" alt="">
+                                            <div>
+                                                <div class="text">
+                                                    Total No Of views
+                                                </div>
+                                                <div class="num">
+                                                    1256
+                                                </div>
                                             </div>
-                                            <div class="num">
-                                                1256
+                                        </li>
+    
+                                        <li class="list-group-item d-flex align-items-center">
+                                            <img src="assets/img/person-circle.svg" alt="">
+                                            <div>
+                                                <div class="text">
+                                                    Total No Of views
+                                                </div>
+                                                <div class="num">
+                                                    1256
+                                                </div>
                                             </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="list-group-item d-flex align-items-center">
-                                        <img src="assets/img/person-circle.svg" alt="">
-                                        <div>
-                                            <div class="text">
-                                                Total No Of views
+                                        </li>
+    
+                                        <li class="list-group-item d-flex align-items-center">
+                                            <img src="assets/img/calenderFill.svg" alt="">
+                                            <div>
+                                                <div class="text">
+                                                    Total No Of views
+                                                </div>
+                                                <div class="num">
+                                                    1256
+                                                </div>
                                             </div>
-                                            <div class="num">
-                                                1256
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="list-group-item d-flex align-items-center">
-                                        <img src="assets/img/calenderFill.svg" alt="">
-                                        <div>
-                                            <div class="text">
-                                                Total No Of views
-                                            </div>
-                                            <div class="num">
-                                                1256
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                </ul>
-
+                                        </li>
+    
+                                    </ul>
+    
+                                </div>
                             </div>
                         </div>
+    
+                        <hr>
+                        <div class="footer">
+                            Last Updated: <span>Apr 25, 2024</span>
+                        </div>
+    
                     </div>
-
-                    <hr>
-                    <div class="footer">
-                        Last Updated: <span>Apr 25, 2024</span>
-                    </div>
-
-                </div>
-
-                <div class="card">
-                    <div class="card-body p-0">
-
-                        <div class="row gx-3">
-                            <div class="col-5 col-md-auto">
-                                <img src="https://picsum.photos/seed/picsum/200/164" class="img-fluid card-img" alt="...">
-                            </div>
-                            <div class="col">
-                                <a href="#" class="btn platinum">
-                                    <img src="assets/img/crown.svg" alt="" class="img-fluid">
-                                    Platinum</a>
-
-                                <div class="icons">
-                                    <img src="assets/img/bed.svg" alt="" class="img-fluid">
-                                    <span class="widget-label me-3">3</span>
-                                    <img src="assets/img/expand.svg" alt="" class="img-fluid">
-                                    <span class="widget-label me-3">3</span>
+    
+                    <div class="card">
+                        <div class="card-body p-0">
+    
+                            <div class="row gx-3">
+                                <div class="col-5 col-md-auto">
+                                    <img src="https://picsum.photos/seed/picsum/200/164" class="img-fluid card-img" alt="...">
                                 </div>
-
-                                <p class="price-content">
-                                    <b>Rs. 49M</b> approx
-                                </p>
-
-                                <h5 class="card-title">Brand New Apartments for
-                                    Sale in Colombo 5
-                                </h5>
-
-                                <div class="location-label mb-3">
-                                    <i class="bi bi-geo-alt-fill"></i>
-                                    <span class="widget-label">
-                                                Colombo 5
-                                            </span>
+                                <div class="col">
+                                    <a href="#" class="btn platinum">
+                                        <img src="assets/img/crown.svg" alt="" class="img-fluid">
+                                        Platinum</a>
+    
+                                    <div class="icons">
+                                        <img src="assets/img/bed.svg" alt="" class="img-fluid">
+                                        <span class="widget-label me-3">3</span>
+                                        <img src="assets/img/expand.svg" alt="" class="img-fluid">
+                                        <span class="widget-label me-3">3</span>
+                                    </div>
+    
+                                    <p class="price-content">
+                                        <b>Rs. 49M</b> approx
+                                    </p>
+    
+                                    <h5 class="card-title">Brand New Apartments for
+                                        Sale in Colombo 5
+                                    </h5>
+    
+                                    <div class="location-label mb-3">
+                                        <i class="bi bi-geo-alt-fill"></i>
+                                        <span class="widget-label">
+                                                    Colombo 5
+                                                </span>
+                                    </div>
+    
                                 </div>
-
-                            </div>
-                            <div class="col-12 col-md-3 right-section ps-md-3">
-
-                                <ul class="list-group">
-                                    <li class="list-group-item d-flex align-items-center">
-                                        <img src="assets/img/eye.svg" alt="">
-                                        <div>
-                                            <div class="text">
-                                                Total No Of views
+                                <div class="col-12 col-md-3 right-section ps-md-3">
+    
+                                    <ul class="list-group">
+                                        <li class="list-group-item d-flex align-items-center">
+                                            <img src="assets/img/eye.svg" alt="">
+                                            <div>
+                                                <div class="text">
+                                                    Total No Of views
+                                                </div>
+                                                <div class="num">
+                                                    1256
+                                                </div>
                                             </div>
-                                            <div class="num">
-                                                1256
+                                        </li>
+    
+                                        <li class="list-group-item d-flex align-items-center">
+                                            <img src="assets/img/person-circle.svg" alt="">
+                                            <div>
+                                                <div class="text">
+                                                    Total No Of views
+                                                </div>
+                                                <div class="num">
+                                                    1256
+                                                </div>
                                             </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="list-group-item d-flex align-items-center">
-                                        <img src="assets/img/person-circle.svg" alt="">
-                                        <div>
-                                            <div class="text">
-                                                Total No Of views
+                                        </li>
+    
+                                        <li class="list-group-item d-flex align-items-center">
+                                            <img src="assets/img/calenderFill.svg" alt="">
+                                            <div>
+                                                <div class="text">
+                                                    Total No Of views
+                                                </div>
+                                                <div class="num">
+                                                    1256
+                                                </div>
                                             </div>
-                                            <div class="num">
-                                                1256
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="list-group-item d-flex align-items-center">
-                                        <img src="assets/img/calenderFill.svg" alt="">
-                                        <div>
-                                            <div class="text">
-                                                Total No Of views
-                                            </div>
-                                            <div class="num">
-                                                1256
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                </ul>
-
+                                        </li>
+    
+                                    </ul>
+    
+                                </div>
                             </div>
                         </div>
+    
+                        <hr>
+                        <div class="footer">
+                            Last Updated: <span>Apr 25, 2024</span>
+                        </div>
+    
                     </div>
-
-                    <hr>
-                    <div class="footer">
-                        Last Updated: <span>Apr 25, 2024</span>
-                    </div>
-
-                </div>
-
-
-                <div class="card"   >
-                    <div class="card-body p-0">
-
-                        <div class="row gx-3">
-                            <div class="col-5 col-md-auto">
-                                <img src="https://picsum.photos/seed/picsum/200/164" class="img-fluid card-img" alt="...">
-                            </div>
-                            <div class="col">
-                                <a href="#" class="btn hot-deal">
-                                    <img src="assets/img/hotdeal-white.svg" alt="" class="img-fluid">
-                                    Hot Deal</a>
-
-                                <div class="icons">
-                                    <img src="assets/img/bed.svg" alt="" class="img-fluid">
-                                    <span class="widget-label me-3">3</span>
-                                    <img src="assets/img/expand.svg" alt="" class="img-fluid">
-                                    <span class="widget-label me-3">3</span>
+    
+    
+                    <div class="card"   >
+                        <div class="card-body p-0">
+    
+                            <div class="row gx-3">
+                                <div class="col-5 col-md-auto">
+                                    <img src="https://picsum.photos/seed/picsum/200/164" class="img-fluid card-img" alt="...">
                                 </div>
-
-                                <p class="price-content">
-                                    <b>Rs. 49M</b> approx
-                                </p>
-
-                                <h5 class="card-title">Brand New Apartments for
-                                    Sale in Colombo 5
-                                </h5>
-
-                                <div class="location-label mb-3">
-                                    <i class="bi bi-geo-alt-fill"></i>
-                                    <span class="widget-label">
-                                                Colombo 5
-                                            </span>
+                                <div class="col">
+                                    <a href="#" class="btn hot-deal">
+                                        <img src="assets/img/hotdeal-white.svg" alt="" class="img-fluid">
+                                        Hot Deal</a>
+    
+                                    <div class="icons">
+                                        <img src="assets/img/bed.svg" alt="" class="img-fluid">
+                                        <span class="widget-label me-3">3</span>
+                                        <img src="assets/img/expand.svg" alt="" class="img-fluid">
+                                        <span class="widget-label me-3">3</span>
+                                    </div>
+    
+                                    <p class="price-content">
+                                        <b>Rs. 49M</b> approx
+                                    </p>
+    
+                                    <h5 class="card-title">Brand New Apartments for
+                                        Sale in Colombo 5
+                                    </h5>
+    
+                                    <div class="location-label mb-3">
+                                        <i class="bi bi-geo-alt-fill"></i>
+                                        <span class="widget-label">
+                                                    Colombo 5
+                                                </span>
+                                    </div>
+    
                                 </div>
-
-                            </div>
-                            <div class="col-12 col-md-3 right-section ps-md-3">
-
-                                <ul class="list-group">
-                                    <li class="list-group-item d-flex align-items-center">
-                                        <img src="assets/img/eye.svg" alt="">
-                                        <div>
-                                            <div class="text">
-                                                Total No Of views
+                                <div class="col-12 col-md-3 right-section ps-md-3">
+    
+                                    <ul class="list-group">
+                                        <li class="list-group-item d-flex align-items-center">
+                                            <img src="assets/img/eye.svg" alt="">
+                                            <div>
+                                                <div class="text">
+                                                    Total No Of views
+                                                </div>
+                                                <div class="num">
+                                                    1256
+                                                </div>
                                             </div>
-                                            <div class="num">
-                                                1256
+                                        </li>
+    
+                                        <li class="list-group-item d-flex align-items-center">
+                                            <img src="assets/img/person-circle.svg" alt="">
+                                            <div>
+                                                <div class="text">
+                                                    Total No Of views
+                                                </div>
+                                                <div class="num">
+                                                    1256
+                                                </div>
                                             </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="list-group-item d-flex align-items-center">
-                                        <img src="assets/img/person-circle.svg" alt="">
-                                        <div>
-                                            <div class="text">
-                                                Total No Of views
+                                        </li>
+    
+                                        <li class="list-group-item d-flex align-items-center">
+                                            <img src="assets/img/calenderFill.svg" alt="">
+                                            <div>
+                                                <div class="text">
+                                                    Total No Of views
+                                                </div>
+                                                <div class="num">
+                                                    1256
+                                                </div>
                                             </div>
-                                            <div class="num">
-                                                1256
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="list-group-item d-flex align-items-center">
-                                        <img src="assets/img/calenderFill.svg" alt="">
-                                        <div>
-                                            <div class="text">
-                                                Total No Of views
-                                            </div>
-                                            <div class="num">
-                                                1256
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                </ul>
-
+                                        </li>
+    
+                                    </ul>
+    
+                                </div>
                             </div>
                         </div>
+    
+                        <hr>
+                        <div class="footer">
+                            Last Updated: <span>Apr 25, 2024</span>
+                        </div>
+    
                     </div>
-
-                    <hr>
-                    <div class="footer">
-                        Last Updated: <span>Apr 25, 2024</span>
-                    </div>
+    
 
                 </div>
-
-                <div class="card">
-                    <div class="card-body p-0">
-
-                        <div class="row gx-3">
-                            <div class="col-5 col-md-auto">
-                                <img src="https://picsum.photos/seed/picsum/200/164" class="img-fluid card-img" alt="...">
-                            </div>
-                            <div class="col">
-                                <a href="#" class="btn featured">
-                                    <i class="bi bi-star-fill"></i>
-                                    Featured</a>
-
-                                <div class="icons">
-                                    <img src="assets/img/bed.svg" alt="" class="img-fluid">
-                                    <span class="widget-label me-3">3</span>
-                                    <img src="assets/img/expand.svg" alt="" class="img-fluid">
-                                    <span class="widget-label me-3">3</span>
+                <div class="tab-pane fade" id="perfom-ads-tab-pane" role="tabpanel" aria-labelledby="perfom-ads-tab" tabindex="0">
+                    <div class="card">
+                        <div class="card-body p-0">
+    
+                            <div class="row gx-3">
+                                <div class="col-5 col-md-auto">
+                                    <img src="https://picsum.photos/seed/picsum/200/164" class="img-fluid card-img" alt="...">
                                 </div>
-
-                                <p class="price-content">
-                                    <b>Rs. 49M</b> approx
-                                </p>
-
-                                <h5 class="card-title">Brand New Apartments for
-                                    Sale in Colombo 5
-                                </h5>
-
-                                <div class="location-label mb-3">
-                                    <i class="bi bi-geo-alt-fill"></i>
-                                    <span class="widget-label">
-                                                Colombo 5
-                                            </span>
+                                <div class="col">
+                                    <a href="#" class="btn featured">
+                                        <i class="bi bi-star-fill"></i>
+                                        Featured</a>
+    
+                                    <div class="icons">
+                                        <img src="assets/img/bed.svg" alt="" class="img-fluid">
+                                        <span class="widget-label me-3">3</span>
+                                        <img src="assets/img/expand.svg" alt="" class="img-fluid">
+                                        <span class="widget-label me-3">3</span>
+                                    </div>
+    
+                                    <p class="price-content">
+                                        <b>Rs. 49M</b> approx
+                                    </p>
+    
+                                    <h5 class="card-title">Brand New Apartments for
+                                        Sale in Colombo 5
+                                    </h5>
+    
+                                    <div class="location-label mb-3">
+                                        <i class="bi bi-geo-alt-fill"></i>
+                                        <span class="widget-label">
+                                                    Colombo 5
+                                                </span>
+                                    </div>
+    
                                 </div>
-
-                            </div>
-                            <div class="col-12 col-md-3 right-section ps-md-3">
-
-                                <ul class="list-group">
-                                    <li class="list-group-item d-flex align-items-center">
-                                        <img src="assets/img/eye.svg" alt="">
-                                        <div>
-                                            <div class="text">
-                                                Total No Of views
+                                <div class="col-12 col-md-3 right-section ps-md-3">
+    
+                                    <ul class="list-group">
+                                        <li class="list-group-item d-flex align-items-center">
+                                            <img src="assets/img/eye.svg" alt="">
+                                            <div>
+                                                <div class="text">
+                                                    Total No Of views
+                                                </div>
+                                                <div class="num">
+                                                    1256
+                                                </div>
                                             </div>
-                                            <div class="num">
-                                                1256
+                                        </li>
+    
+                                        <li class="list-group-item d-flex align-items-center">
+                                            <img src="assets/img/person-circle.svg" alt="">
+                                            <div>
+                                                <div class="text">
+                                                    Total No Of views
+                                                </div>
+                                                <div class="num">
+                                                    1256
+                                                </div>
                                             </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="list-group-item d-flex align-items-center">
-                                        <img src="assets/img/person-circle.svg" alt="">
-                                        <div>
-                                            <div class="text">
-                                                Total No Of views
+                                        </li>
+    
+                                        <li class="list-group-item d-flex align-items-center">
+                                            <img src="assets/img/calenderFill.svg" alt="">
+                                            <div>
+                                                <div class="text">
+                                                    Total No Of views
+                                                </div>
+                                                <div class="num">
+                                                    1256
+                                                </div>
                                             </div>
-                                            <div class="num">
-                                                1256
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="list-group-item d-flex align-items-center">
-                                        <img src="assets/img/calenderFill.svg" alt="">
-                                        <div>
-                                            <div class="text">
-                                                Total No Of views
-                                            </div>
-                                            <div class="num">
-                                                1256
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                </ul>
-
+                                        </li>
+    
+                                    </ul>
+    
+                                </div>
                             </div>
                         </div>
+    
+                        <hr>
+                        <div class="footer">
+                            Last Updated: <span>Apr 25, 2024</span>
+                        </div>
+    
                     </div>
-
-                    <hr>
-                    <div class="footer">
-                        Last Updated: <span>Apr 25, 2024</span>
-                    </div>
-
                 </div>
+                <div class="tab-pane fade" id="trending-ads-tab-pane" role="tabpanel" aria-labelledby="trending-ads-tab" tabindex="0">
+                    <div class="card">
+                        <div class="card-body p-0">
+    
+                            <div class="row gx-3">
+                                <div class="col-5 col-md-auto">
+                                    <img src="https://picsum.photos/seed/picsum/200/164" class="img-fluid card-img" alt="...">
+                                </div>
+                                <div class="col">
+                                    <a href="#" class="btn featured">
+                                        <i class="bi bi-star-fill"></i>
+                                        Featured</a>
+    
+                                    <div class="icons">
+                                        <img src="assets/img/bed.svg" alt="" class="img-fluid">
+                                        <span class="widget-label me-3">3</span>
+                                        <img src="assets/img/expand.svg" alt="" class="img-fluid">
+                                        <span class="widget-label me-3">3</span>
+                                    </div>
+    
+                                    <p class="price-content">
+                                        <b>Rs. 49M</b> approx
+                                    </p>
+    
+                                    <h5 class="card-title">Brand New Apartments for
+                                        Sale in Colombo 5
+                                    </h5>
+    
+                                    <div class="location-label mb-3">
+                                        <i class="bi bi-geo-alt-fill"></i>
+                                        <span class="widget-label">
+                                                    Colombo 5
+                                                </span>
+                                    </div>
+    
+                                </div>
+                                <div class="col-12 col-md-3 right-section ps-md-3">
+    
+                                    <ul class="list-group">
+                                        <li class="list-group-item d-flex align-items-center">
+                                            <img src="assets/img/eye.svg" alt="">
+                                            <div>
+                                                <div class="text">
+                                                    Total No Of views
+                                                </div>
+                                                <div class="num">
+                                                    1256
+                                                </div>
+                                            </div>
+                                        </li>
+    
+                                        <li class="list-group-item d-flex align-items-center">
+                                            <img src="assets/img/person-circle.svg" alt="">
+                                            <div>
+                                                <div class="text">
+                                                    Total No Of views
+                                                </div>
+                                                <div class="num">
+                                                    1256
+                                                </div>
+                                            </div>
+                                        </li>
+    
+                                        <li class="list-group-item d-flex align-items-center">
+                                            <img src="assets/img/calenderFill.svg" alt="">
+                                            <div>
+                                                <div class="text">
+                                                    Total No Of views
+                                                </div>
+                                                <div class="num">
+                                                    1256
+                                                </div>
+                                            </div>
+                                        </li>
+    
+                                    </ul>
+    
+                                </div>
+                            </div>
+                        </div>
+    
+                        <hr>
+                        <div class="footer">
+                            Last Updated: <span>Apr 25, 2024</span>
+                        </div>
+    
+                    </div>
+                </div>
+        
 
 
             </div>
