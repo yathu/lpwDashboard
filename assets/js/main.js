@@ -410,7 +410,7 @@ $(document).ready(function () {
       {
         label: "Scatter Dataset",
         type: "scatter",
-        data: [{ x: "11.07.2024", y: 400 },{ x: "13.07.2024", y: 300 },],
+        data: [{ x: "11.07.2024", y: 0 },{ x: "13.07.2024", y: 0 },],
         backgroundColor: "#ffc0b3",
         borderColor: "#ff0000",
         order: 2,
@@ -796,7 +796,7 @@ $(document).ready(function () {
                   bottom: 2,
                   right: 4,
                 },
-                yAdjust: -2,
+                yAdjust: -4,
                 font: {
                   size: 11,
                   weight: 400,
@@ -826,7 +826,7 @@ $(document).ready(function () {
                   bottom: 2,
                   right: 4,
                 },
-                yAdjust: -12,
+                yAdjust: -15,
                 font: {
                   size: 11,
                   weight: 400,
@@ -875,7 +875,7 @@ $(document).ready(function () {
                   bottom: 2,
                   right: 4,
                 },
-                yAdjust: -12,
+                yAdjust: -15,
                 font: {
                   size: 11,
                   weight: 400,
@@ -921,7 +921,7 @@ $(document).ready(function () {
                   bottom: 2,
                   right: 4,
                 },
-                yAdjust: -12,
+                yAdjust: -15,
                 font: {
                   size: 11,
                   weight: 400,
@@ -959,7 +959,7 @@ $(document).ready(function () {
                   bottom: 2,
                   right: 4,
                 },
-                yAdjust: -12,
+                yAdjust: -15,
                 font: {
                   size: 11,
                   weight: 400,
