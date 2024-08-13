@@ -838,41 +838,7 @@ const thumbnailVideoAdColors = [
             drawTime: "beforeDatasetsDraw",
           },
           annotations: {
-            line1: {
-              type: "line",
-              yMin: barPlacement[0],
-              yMax: barPlacement[0],
-              borderColor: "#DFE5F0",
-              borderWidth: 8,
-              drawTime: "beforeDatasetsDraw",
-            },
 
-            line2: {//line 5
-              type: "line",
-              xMin: "10.07.2024",
-              xMax: "13.07.2024",
-              yMin: barPlacement[0],
-              yMax: barPlacement[0],
-              borderColor: "#C53E46",
-              borderWidth: 8,
-              drawTime: "afterDatasetsDraw",
-              label: {
-                display: true,
-                backgroundColor: "#333",
-                content: (ctx) => ["title tooltip"],
-                padding: {
-                  top: 2,
-                  left: 4,
-                  bottom: 2,
-                  right: 4,
-                },
-                yAdjust: -4,
-                font: {
-                  size: 11,
-                  weight: 400,
-                },
-              },
-            },
             line3: {//line 4
               type: "line",
               xMin: "11.07.2024",
