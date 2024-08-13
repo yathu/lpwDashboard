@@ -665,6 +665,76 @@ $(document).ready(function () {
 
   //timelineChart
 
+  const whatsappCount = 9;
+  const hotDealCount = 2;
+  const urgetSaleCount = 2;
+  const thumbVideoCount = 2;
+
+
+  const whatsappLiveColors = [
+    "#CCFFCC",  // Light Green
+    "#B3FFB3",
+    "#99FF99",
+    "#80FF80",
+    "#66FF66",
+    "#4DFF4D",
+    "#33FF33",
+    "#1AFF1A",
+    "#00FF00",  // Lime
+    "#00E600",
+    "#00CC00",
+    "#00B300",
+    "#009900",
+    "#008000",  // Green
+    "#006600",
+    "#004D00",
+    "#003300",
+    "#001A00",
+    "#001000",
+    "#000D00"   // Very Dark Green
+];
+
+const hotDealColors = [
+  "#FFCCCC",  // Light Red
+  "#FF9999",
+  "#FF6666",
+  "#FF3333",
+  "#FF0000",  // Red
+  "#E60000",
+  "#CC0000",
+  "#990000",
+  "#660000",
+  "#330000"   // Dark Red
+];
+
+const urgentSaleColors = [
+  "#E6CCFF",  // Light Purple
+  "#D9B3FF",
+  "#CC99FF",
+  "#BF80FF",
+  "#B366FF",
+  "#A64DFF",
+  "#9933FF",
+  "#8C1AFF",
+  "#8000FF",  // Purple
+  "#6600CC"   // Dark Purple
+];
+
+const thumbnailVideoAdColors = [
+  "#CCE5FF",  // Light Blue
+  "#B3D1FF",
+  "#99CCFF",
+  "#80BFFF",
+  "#66B2FF",
+  "#4DA6FF",
+  "#3399FF",
+  "#1A8CFF",
+  "#007BFF",  // Medium Blue
+  "#005FCC"   // Dark Blue
+];
+
+
+
   const timelineData = [
     {
       x: "9.07.2024",
@@ -777,7 +847,7 @@ $(document).ready(function () {
               drawTime: "beforeDatasetsDraw",
             },
 
-            line2: {
+            line2: {//line 5
               type: "line",
               xMin: "10.07.2024",
               xMax: "13.07.2024",
@@ -803,13 +873,13 @@ $(document).ready(function () {
                 },
               },
             },
-            line3: {
+            line3: {//line 4
               type: "line",
               xMin: "11.07.2024",
               xMax: "13.07.2024",
               yMin: barPlacement[1],
               yMax: barPlacement[1],
-              borderColor: "#EECF50",
+              borderColor: thumbnailVideoAdColors[thumbVideoCount],
               borderWidth: 8,
               drawTime: "afterDatasetsDraw",
               label: {
@@ -818,7 +888,7 @@ $(document).ready(function () {
                 content: (ctx) => {
                   console.log("ctx1==>", ctx);
 
-                  return ["title tooltip"];
+                  return ["Thumnail Video"];
                 },
                 padding: {
                   top: 2,
@@ -852,13 +922,13 @@ $(document).ready(function () {
               drawTime: "beforeDatasetsDraw",
             },
 
-            line6: {
+            line6: {//line 3
               type: "line",
               xMin: "11.07.2024",
               xMax: "13.07.2024",
               yMin: barPlacement[2],
               yMax: barPlacement[2],
-              borderColor: "#27885D",
+              borderColor: urgentSaleColors[urgetSaleCount],
               borderWidth: 8,
               drawTime: "beforeDatasetsDraw",
               label: {
@@ -867,7 +937,7 @@ $(document).ready(function () {
                 content: (ctx) => {
                   console.log("ctx1==>", ctx);
 
-                  return ["title tooltip"];
+                  return ["Urgent Sale"];
                 },
                 padding: {
                   top: 2,
@@ -900,20 +970,20 @@ $(document).ready(function () {
               drawTime: "beforeDatasetsDraw",
             },
 
-            line8: {
+            line8: {//line 2
               type: "line",
               xMin: "10.07.2024",
               xMax: "12.07.2024",
               yMin: barPlacement[3],
               yMax: barPlacement[3],
-              borderColor: "#27885D",
+              borderColor: hotDealColors[hotDealCount],
               borderWidth: 8,
               drawTime: "beforeDatasetsDraw",
               label: {
                 display: true,
                 backgroundColor: "#333",
                 content: (ctx) => {
-                  return ["title tooltip"];
+                  return ["Hot Deal"];
                 },
                 padding: {
                   top: 2,
@@ -938,20 +1008,20 @@ $(document).ready(function () {
               drawTime: "beforeDatasetsDraw",
             },
 
-            line10: {
+            line10: {//line 1
               type: "line",
               xMin: "13.07.2024",
               xMax: "14.07.2024",
               yMin: barPlacement[4],
               yMax: barPlacement[4],
-              borderColor: "#27885D",
+              borderColor: whatsappLiveColors[whatsappCount],
               borderWidth: 8,
               drawTime: "beforeDatasetsDraw",
               label: {
                 display: true,
                 backgroundColor: "#333",
                 content: (ctx) => {
-                  return ["title tooltip"];
+                  return ["whatsapp Live"];
                 },
                 padding: {
                   top: 2,
