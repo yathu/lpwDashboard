@@ -410,7 +410,10 @@ $(document).ready(function () {
       {
         label: "Scatter Dataset",
         type: "scatter",
-        data: [{ x: "11.07.2024", y: 0 },{ x: "13.07.2024", y: 0 },],
+        data: [
+          { x: "11.07.2024", y: 0 },
+          { x: "13.07.2024", y: 0 },
+        ],
         backgroundColor: "#ffc0b3",
         borderColor: "#ff0000",
         order: 2,
@@ -528,10 +531,9 @@ $(document).ready(function () {
         tooltip: {
           callbacks: {
             label: function (context) {
-               
-              console.log("tool1==>",context);
+              console.log("tool1==>", context);
               // console.log("tool1==>",context?.raw?.y);
-              console.log("tool1==>",context?.dataset?.label);
+              console.log("tool1==>", context?.dataset?.label);
 
               let label = "Boosted ads";
 
@@ -545,8 +547,6 @@ $(document).ready(function () {
             },
           },
         },
-
-
       },
     },
     // plugins: [chartAreaBorder],
@@ -670,9 +670,8 @@ $(document).ready(function () {
   const urgetSaleCount = 2;
   const thumbVideoCount = 2;
 
-
   const whatsappLiveColors = [
-    "#CCFFCC",  // Light Green
+    "#CCFFCC", // Light Green
     "#B3FFB3",
     "#99FF99",
     "#80FF80",
@@ -680,60 +679,58 @@ $(document).ready(function () {
     "#4DFF4D",
     "#33FF33",
     "#1AFF1A",
-    "#00FF00",  // Lime
+    "#00FF00", // Lime
     "#00E600",
     "#00CC00",
     "#00B300",
     "#009900",
-    "#008000",  // Green
+    "#008000", // Green
     "#006600",
     "#004D00",
     "#003300",
     "#001A00",
     "#001000",
-    "#000D00"   // Very Dark Green
-];
+    "#000D00", // Very Dark Green
+  ];
 
-const hotDealColors = [
-  "#FFCCCC",  // Light Red
-  "#FF9999",
-  "#FF6666",
-  "#FF3333",
-  "#FF0000",  // Red
-  "#E60000",
-  "#CC0000",
-  "#990000",
-  "#660000",
-  "#330000"   // Dark Red
-];
+  const hotDealColors = [
+    "#FFCCCC", // Light Red
+    "#FF9999",
+    "#FF6666",
+    "#FF3333",
+    "#FF0000", // Red
+    "#E60000",
+    "#CC0000",
+    "#990000",
+    "#660000",
+    "#330000", // Dark Red
+  ];
 
-const urgentSaleColors = [
-  "#E6CCFF",  // Light Purple
-  "#D9B3FF",
-  "#CC99FF",
-  "#BF80FF",
-  "#B366FF",
-  "#A64DFF",
-  "#9933FF",
-  "#8C1AFF",
-  "#8000FF",  // Purple
-  "#6600CC"   // Dark Purple
-];
+  const urgentSaleColors = [
+    "#E6CCFF", // Light Purple
+    "#D9B3FF",
+    "#CC99FF",
+    "#BF80FF",
+    "#B366FF",
+    "#A64DFF",
+    "#9933FF",
+    "#8C1AFF",
+    "#8000FF", // Purple
+    "#6600CC", // Dark Purple
+  ];
 
-const thumbnailVideoAdColors = [
-  "#CCE5FF",  // Light Blue
-  "#B3D1FF",
-  "#99CCFF",
-  "#80BFFF",
-  "#66B2FF",
-  "#4DA6FF",
-  "#3399FF",
-  "#1A8CFF",
-  "#007BFF",  // Medium Blue
-  "#005FCC"   // Dark Blue
-];
-
-
+  const thumbnailVideoAdColors = [
+    "#CCE5FF", // Light Blue
+    "#B3D1FF",
+    "#99CCFF",
+    "#80BFFF",
+    "#66B2FF",
+    "#4DA6FF",
+    "#3399FF",
+    "#1A8CFF",
+    "#007BFF", // Medium Blue
+    "#005FCC", // Dark Blue
+  ];
 
   const timelineData = [
     {
@@ -838,8 +835,8 @@ const thumbnailVideoAdColors = [
             drawTime: "beforeDatasetsDraw",
           },
           annotations: {
-
-            line3: {//line 4
+            line3: {
+              //line 4
               type: "line",
               xMin: "11.07.2024",
               xMax: "13.07.2024",
@@ -888,7 +885,8 @@ const thumbnailVideoAdColors = [
               drawTime: "beforeDatasetsDraw",
             },
 
-            line6: {//line 3
+            line6: {
+              //line 3
               type: "line",
               xMin: "11.07.2024",
               xMax: "13.07.2024",
@@ -936,7 +934,8 @@ const thumbnailVideoAdColors = [
               drawTime: "beforeDatasetsDraw",
             },
 
-            line8: {//line 2
+            line8: {
+              //line 2
               type: "line",
               xMin: "10.07.2024",
               xMax: "12.07.2024",
@@ -974,7 +973,8 @@ const thumbnailVideoAdColors = [
               drawTime: "beforeDatasetsDraw",
             },
 
-            line10: {//line 1
+            line10: {
+              //line 1
               type: "line",
               xMin: "13.07.2024",
               xMax: "14.07.2024",
@@ -1047,4 +1047,60 @@ const thumbnailVideoAdColors = [
   $(window).resize(function () {
     toggleAccordionClasses();
   });
+
+  //custom long legends
+
+  $("#whatsappColors").append(
+    '<span class="me-1">1</span>'
+  );
+  whatsappLiveColors.map((color) =>
+    $("#whatsappColors").append(
+      '<span class="box" style="background-color:' + color + '"></span>'
+    )
+  );
+  $("#whatsappColors").append(
+    '<span class="ms-1">'+ whatsappLiveColors.length +'</span>'
+  );
+
+  //hotDealColors
+  $("#hotDealColors").append(
+    '<span class="me-1">1</span>'
+  );
+  hotDealColors.map((color) =>
+    $("#hotDealColors").append(
+      '<span class="box" style="background-color:' + color + '"></span>'
+    )
+  );
+  $("#hotDealColors").append(
+    '<span class="ms-1">'+ hotDealColors.length +'</span>'
+  );
+
+  //hotDealColors
+  $("#urgentSaleColors").append(
+    '<span class="me-1">1</span>'
+  );
+  urgentSaleColors.map((color) =>
+    $("#urgentSaleColors").append(
+      '<span class="box" style="background-color:' + color + '"></span>'
+    )
+  );
+  $("#urgentSaleColors").append(
+    '<span class="ms-1">'+ urgentSaleColors.length +'</span>'
+  );
+
+  //hotDealColors
+  $("#thumbnailVideoColors").append(
+    '<span class="me-1">1</span>'
+  );
+  thumbnailVideoAdColors.map((color) =>
+    $("#thumbnailVideoColors").append(
+      '<span class="box" style="background-color:' + color + '"></span>'
+    )
+  );
+  $("#thumbnailVideoColors").append(
+    '<span class="ms-1">'+ thumbnailVideoAdColors.length +'</span>'
+  );
+
+  //custom long legends end
+
 });
