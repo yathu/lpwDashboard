@@ -1330,6 +1330,11 @@ body {
     }
 
     .long-legends{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
       .legend-item{
         display: flex;
         justify-content: center;
@@ -1342,6 +1347,11 @@ body {
         font-size: 12px;
         color: #6f767e;
         letter-spacing: 0.1px;
+        margin-right: 25px;
+        
+        :last-child{
+          margin-right: 0;
+        }
 
         .box-container{
           display: flex;

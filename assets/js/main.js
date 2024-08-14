@@ -732,6 +732,20 @@ $(document).ready(function () {
     "#005FCC", // Dark Blue
   ];
 
+  const upgradeAdsColors = [
+    "#f8eddf",  // Lightest shade
+    "#f5e4cd",
+    "#ebcaa2",
+    "#e1af78",
+    "#d7944d",
+    "#cd7a23",
+    "#b66f1f",
+    "#9f641b",
+    "#885916",
+    "#d5aa55"   // Original color
+  ]
+  
+
   const timelineData = [
     {
       x: "9.07.2024",
@@ -1098,6 +1112,19 @@ $(document).ready(function () {
     )
   );
   $("#thumbnailVideoColors").append(
+    '<span class="ms-1">'+ thumbnailVideoAdColors.length +'</span>'
+  );
+
+  //upgradeAdsColors
+  $("#upgradeAdsColors").append(
+    '<span class="me-1">1</span>'
+  );
+  upgradeAdsColors.map((color) =>
+    $("#upgradeAdsColors").append(
+      '<span class="box" style="background-color:' + color + '"></span>'
+    )
+  );
+  $("#upgradeAdsColors").append(
     '<span class="ms-1">'+ thumbnailVideoAdColors.length +'</span>'
   );
 
