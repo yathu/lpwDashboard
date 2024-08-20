@@ -880,6 +880,37 @@ $(document).ready(function () {
                 },
               },
             },
+            line11: {
+              //line 4
+              type: "line",
+              xMin: "9.07.2024",
+              xMax: "10.07.2024",
+              yMin: barPlacement[1],
+              yMax: barPlacement[1],
+              borderColor: thumbnailVideoAdColors[thumbVideoCount],
+              borderWidth: 8,
+              drawTime: "afterDatasetsDraw",
+              label: {
+                display: true,
+                backgroundColor: "#333",
+                content: (ctx) => {
+                  console.log("ctx1==>", ctx);
+
+                  return ["Thumnail Video"];
+                },
+                padding: {
+                  top: 2,
+                  left: 4,
+                  bottom: 2,
+                  right: 4,
+                },
+                yAdjust: -15,
+                font: {
+                  size: 11,
+                  weight: 400,
+                },
+              },
+            },
 
             line4: {
               type: "line",
