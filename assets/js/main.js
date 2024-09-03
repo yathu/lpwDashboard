@@ -733,7 +733,7 @@ $(document).ready(function () {
   ];
 
   const upgradeAdsColors = [
-    "#f8eddf",  // Lightest shade
+    "#f8eddf", // Lightest shade
     "#f5e4cd",
     "#ebcaa2",
     "#e1af78",
@@ -742,9 +742,8 @@ $(document).ready(function () {
     "#b66f1f",
     "#9f641b",
     "#885916",
-    "#d5aa55"   // Original color
-  ]
-  
+    "#d5aa55", // Original color
+  ];
 
   const timelineData = [
     {
@@ -789,6 +788,303 @@ $(document).ready(function () {
     ],
   };
   const barPlacement = [0, 3, 6, 9, 12];
+
+  const timeline_7data = [
+    {
+      start: "10.07.2024",
+      end: "11.07.2024",
+      type: "whatsapp",
+      value: 2,
+    },
+    {
+      start: "9.07.2024",
+      end: "13.07.2024",
+      type: "hotDeal",
+      value: 2,
+    },
+    {
+      start: "12.07.2024",
+      end: "13.07.2024",
+      type: "urgentSale",
+      value: 2,
+    },
+    {
+      start: "14.07.2024",
+      end: "15.07.2024",
+      type: "thumbnailVideo",
+      value: 2,
+    },
+  ];
+
+  let timeline_annotations_7 = {
+    // line3: {
+    //   //line 4
+    //   type: "line",
+    //   xMin: "11.07.2024",
+    //   xMax: "13.07.2024",
+    //   yMin: barPlacement[1],
+    //   yMax: barPlacement[1],
+    //   borderColor: thumbnailVideoAdColors[thumbVideoCount],
+    //   borderWidth: 8,
+    //   drawTime: "afterDatasetsDraw",
+    //   label: {
+    //     display: true,
+    //     backgroundColor: "#333",
+    //     content: (ctx) => {
+    //       console.log("ctx1==>", ctx);
+
+    //       return ["Thumnail Video"];
+    //     },
+    //     padding: {
+    //       top: 2,
+    //       left: 4,
+    //       bottom: 2,
+    //       right: 4,
+    //     },
+    //     yAdjust: -15,
+    //     font: {
+    //       size: 11,
+    //       weight: 400,
+    //     },
+    //   },
+    // },
+    // line11: {
+    //   //line 4
+    //   type: "line",
+    //   xMin: "9.07.2024",
+    //   xMax: "10.07.2024",
+    //   yMin: barPlacement[1],
+    //   yMax: barPlacement[1],
+    //   borderColor: thumbnailVideoAdColors[thumbVideoCount],
+    //   borderWidth: 8,
+    //   drawTime: "afterDatasetsDraw",
+    //   label: {
+    //     display: true,
+    //     backgroundColor: "#333",
+    //     content: (ctx) => {
+    //       console.log("ctx1==>", ctx);
+
+    //       return ["Thumnail Video"];
+    //     },
+    //     padding: {
+    //       top: 2,
+    //       left: 4,
+    //       bottom: 2,
+    //       right: 4,
+    //     },
+    //     yAdjust: -15,
+    //     font: {
+    //       size: 11,
+    //       weight: 400,
+    //     },
+    //   },
+    // },
+
+    line4: {
+      type: "line",
+      yMin: barPlacement[1],
+      yMax: barPlacement[1],
+      borderColor: "#DFE5F0",
+      borderWidth: 8,
+      drawTime: "beforeDatasetsDraw",
+    },
+
+    line5: {
+      type: "line",
+      yMin: barPlacement[2],
+      yMax: barPlacement[2],
+      borderColor: "#DFE5F0",
+      borderWidth: 8,
+      drawTime: "beforeDatasetsDraw",
+    },
+
+    // line6: {
+    //   //line 3
+    //   type: "line",
+    //   xMin: "11.07.2024",
+    //   xMax: "13.07.2024",
+    //   yMin: barPlacement[2],
+    //   yMax: barPlacement[2],
+    //   borderColor: urgentSaleColors[urgetSaleCount],
+    //   borderWidth: 8,
+    //   drawTime: "beforeDatasetsDraw",
+    //   label: {
+    //     display: true,
+    //     backgroundColor: "#333",
+    //     content: (ctx) => {
+    //       console.log("ctx1==>", ctx);
+
+    //       return ["Urgent Sale"];
+    //     },
+    //     padding: {
+    //       top: 2,
+    //       left: 4,
+    //       bottom: 2,
+    //       right: 4,
+    //     },
+    //     yAdjust: -15,
+    //     font: {
+    //       size: 11,
+    //       weight: 400,
+    //     },
+    //   },
+    //   // enter({element}, event) {
+    //   //     element.label.options.display = true;
+    //   //     return true;
+    //   // },
+    //   // leave({element}, event) {
+    //   //     element.label.options.display = false;
+    //   //     return true;
+    //   // }
+    // },
+
+    line7: {
+      type: "line",
+      yMin: barPlacement[3],
+      yMax: barPlacement[3],
+      borderColor: "#DFE5F0",
+      borderWidth: 8,
+      drawTime: "beforeDatasetsDraw",
+    },
+
+    // line8: {
+    //   //line 2
+    //   type: "line",
+    //   xMin: "10.07.2024",
+    //   xMax: "12.07.2024",
+    //   yMin: barPlacement[3],
+    //   yMax: barPlacement[3],
+    //   borderColor: hotDealColors[hotDealCount],
+    //   borderWidth: 8,
+    //   drawTime: "beforeDatasetsDraw",
+    //   label: {
+    //     display: true,
+    //     backgroundColor: "#333",
+    //     content: (ctx) => {
+    //       return ["Hot Deal"];
+    //     },
+    //     padding: {
+    //       top: 2,
+    //       left: 4,
+    //       bottom: 2,
+    //       right: 4,
+    //     },
+    //     yAdjust: -15,
+    //     font: {
+    //       size: 11,
+    //       weight: 400,
+    //     },
+    //   },
+    // },
+
+    line9: {
+      type: "line",
+      yMin: barPlacement[4],
+      yMax: barPlacement[4],
+      borderColor: "#DFE5F0",
+      borderWidth: 8,
+      drawTime: "beforeDatasetsDraw",
+    },
+
+    // line10: {
+    //   //line 1
+    //   type: "line",
+    //   xMin: "13.07.2024",
+    //   xMax: "14.07.2024",
+    //   yMin: barPlacement[4],
+    //   yMax: barPlacement[4],
+    //   borderColor: whatsappLiveColors[whatsappCount],
+    //   borderWidth: 8,
+    //   drawTime: "beforeDatasetsDraw",
+    //   label: {
+    //     display: true,
+    //     backgroundColor: "#333",
+    //     content: (ctx) => {
+    //       return ["whatsapp Live"];
+    //     },
+    //     padding: {
+    //       top: 2,
+    //       left: 4,
+    //       bottom: 2,
+    //       right: 4,
+    //     },
+    //     yAdjust: -15,
+    //     font: {
+    //       size: 11,
+    //       weight: 400,
+    //     },
+    //   },
+    // },
+  };
+
+  const timeline_annotations_7_temp = timeline_7data.map(
+    ({ start, end, type, value }, index) => {
+      //MyObjList['newKey'] = obj;
+
+      console.log("ind==>", index);
+      const str = `line${index}`;
+
+      const bColor =
+        type == "whatsapp"
+          ? whatsappLiveColors[value]
+          : type == "hotDeal"
+          ? hotDealColors[value]
+          : type == "urgentSale"
+          ? urgentSaleColors[value]
+          : thumbnailVideoAdColors[value];
+
+      const placement =
+        type == "whatsapp"
+          ? 4
+          : type == "hotDeal"
+          ? 3
+          : type == "urgentSale"
+          ? 2
+          : 1;
+
+      console.log("placement==>", placement);
+
+      const newData = {
+        [str]: {
+          //line 4
+          type: "line",
+          xMin: start,
+          xMax: end,
+          yMin: barPlacement[placement],
+          yMax: barPlacement[placement],
+          borderColor: bColor,
+          borderWidth: 8,
+          drawTime: "afterDatasetsDraw",
+          label: {
+            display: true,
+            backgroundColor: "#333",
+            content: (ctx) => {
+              console.log("ctx1==>", ctx);
+
+              return [type];
+            },
+            padding: {
+              top: 2,
+              left: 4,
+              bottom: 2,
+              right: 4,
+            },
+            yAdjust: -15,
+            font: {
+              size: 11,
+              weight: 400,
+            },
+          },
+        },
+      };
+
+      console.log("newData str==>", newData);
+
+      timeline_annotations_7 = { ...timeline_annotations_7, ...newData };
+    }
+  );
+
+  console.log("timeline_annotations_7_temp==>", timeline_annotations_7);
 
   new Chart(timeline_ctx, {
     type: "line",
@@ -848,206 +1144,7 @@ $(document).ready(function () {
           common: {
             drawTime: "beforeDatasetsDraw",
           },
-          annotations: {
-            line3: {
-              //line 4
-              type: "line",
-              xMin: "11.07.2024",
-              xMax: "13.07.2024",
-              yMin: barPlacement[1],
-              yMax: barPlacement[1],
-              borderColor: thumbnailVideoAdColors[thumbVideoCount],
-              borderWidth: 8,
-              drawTime: "afterDatasetsDraw",
-              label: {
-                display: true,
-                backgroundColor: "#333",
-                content: (ctx) => {
-                  console.log("ctx1==>", ctx);
-
-                  return ["Thumnail Video"];
-                },
-                padding: {
-                  top: 2,
-                  left: 4,
-                  bottom: 2,
-                  right: 4,
-                },
-                yAdjust: -15,
-                font: {
-                  size: 11,
-                  weight: 400,
-                },
-              },
-            },
-            line11: {
-              //line 4
-              type: "line",
-              xMin: "9.07.2024",
-              xMax: "10.07.2024",
-              yMin: barPlacement[1],
-              yMax: barPlacement[1],
-              borderColor: thumbnailVideoAdColors[thumbVideoCount],
-              borderWidth: 8,
-              drawTime: "afterDatasetsDraw",
-              label: {
-                display: true,
-                backgroundColor: "#333",
-                content: (ctx) => {
-                  console.log("ctx1==>", ctx);
-
-                  return ["Thumnail Video"];
-                },
-                padding: {
-                  top: 2,
-                  left: 4,
-                  bottom: 2,
-                  right: 4,
-                },
-                yAdjust: -15,
-                font: {
-                  size: 11,
-                  weight: 400,
-                },
-              },
-            },
-
-            line4: {
-              type: "line",
-              yMin: barPlacement[1],
-              yMax: barPlacement[1],
-              borderColor: "#DFE5F0",
-              borderWidth: 8,
-              drawTime: "beforeDatasetsDraw",
-            },
-
-            line5: {
-              type: "line",
-              yMin: barPlacement[2],
-              yMax: barPlacement[2],
-              borderColor: "#DFE5F0",
-              borderWidth: 8,
-              drawTime: "beforeDatasetsDraw",
-            },
-
-            line6: {
-              //line 3
-              type: "line",
-              xMin: "11.07.2024",
-              xMax: "13.07.2024",
-              yMin: barPlacement[2],
-              yMax: barPlacement[2],
-              borderColor: urgentSaleColors[urgetSaleCount],
-              borderWidth: 8,
-              drawTime: "beforeDatasetsDraw",
-              label: {
-                display: true,
-                backgroundColor: "#333",
-                content: (ctx) => {
-                  console.log("ctx1==>", ctx);
-
-                  return ["Urgent Sale"];
-                },
-                padding: {
-                  top: 2,
-                  left: 4,
-                  bottom: 2,
-                  right: 4,
-                },
-                yAdjust: -15,
-                font: {
-                  size: 11,
-                  weight: 400,
-                },
-              },
-              // enter({element}, event) {
-              //     element.label.options.display = true;
-              //     return true;
-              // },
-              // leave({element}, event) {
-              //     element.label.options.display = false;
-              //     return true;
-              // }
-            },
-
-            line7: {
-              type: "line",
-              yMin: barPlacement[3],
-              yMax: barPlacement[3],
-              borderColor: "#DFE5F0",
-              borderWidth: 8,
-              drawTime: "beforeDatasetsDraw",
-            },
-
-            line8: {
-              //line 2
-              type: "line",
-              xMin: "10.07.2024",
-              xMax: "12.07.2024",
-              yMin: barPlacement[3],
-              yMax: barPlacement[3],
-              borderColor: hotDealColors[hotDealCount],
-              borderWidth: 8,
-              drawTime: "beforeDatasetsDraw",
-              label: {
-                display: true,
-                backgroundColor: "#333",
-                content: (ctx) => {
-                  return ["Hot Deal"];
-                },
-                padding: {
-                  top: 2,
-                  left: 4,
-                  bottom: 2,
-                  right: 4,
-                },
-                yAdjust: -15,
-                font: {
-                  size: 11,
-                  weight: 400,
-                },
-              },
-            },
-
-            line9: {
-              type: "line",
-              yMin: barPlacement[4],
-              yMax: barPlacement[4],
-              borderColor: "#DFE5F0",
-              borderWidth: 8,
-              drawTime: "beforeDatasetsDraw",
-            },
-
-            line10: {
-              //line 1
-              type: "line",
-              xMin: "13.07.2024",
-              xMax: "14.07.2024",
-              yMin: barPlacement[4],
-              yMax: barPlacement[4],
-              borderColor: whatsappLiveColors[whatsappCount],
-              borderWidth: 8,
-              drawTime: "beforeDatasetsDraw",
-              label: {
-                display: true,
-                backgroundColor: "#333",
-                content: (ctx) => {
-                  return ["whatsapp Live"];
-                },
-                padding: {
-                  top: 2,
-                  left: 4,
-                  bottom: 2,
-                  right: 4,
-                },
-                yAdjust: -15,
-                font: {
-                  size: 11,
-                  weight: 400,
-                },
-              },
-            },
-          },
+          annotations: timeline_annotations_7,
         },
       },
     },
@@ -1095,70 +1192,59 @@ $(document).ready(function () {
 
   //custom long legends
 
-  $("#whatsappColors").append(
-    '<span class="me-1">1</span>'
-  );
+  $("#whatsappColors").append('<span class="me-1">1</span>');
   whatsappLiveColors.map((color) =>
     $("#whatsappColors").append(
       '<span class="box" style="background-color:' + color + '"></span>'
     )
   );
   $("#whatsappColors").append(
-    '<span class="ms-1">'+ whatsappLiveColors.length +'</span>'
+    '<span class="ms-1">' + whatsappLiveColors.length + "</span>"
   );
 
   //hotDealColors
-  $("#hotDealColors").append(
-    '<span class="me-1">1</span>'
-  );
+  $("#hotDealColors").append('<span class="me-1">1</span>');
   hotDealColors.map((color) =>
     $("#hotDealColors").append(
       '<span class="box" style="background-color:' + color + '"></span>'
     )
   );
   $("#hotDealColors").append(
-    '<span class="ms-1">'+ hotDealColors.length +'</span>'
+    '<span class="ms-1">' + hotDealColors.length + "</span>"
   );
 
   //hotDealColors
-  $("#urgentSaleColors").append(
-    '<span class="me-1">1</span>'
-  );
+  $("#urgentSaleColors").append('<span class="me-1">1</span>');
   urgentSaleColors.map((color) =>
     $("#urgentSaleColors").append(
       '<span class="box" style="background-color:' + color + '"></span>'
     )
   );
   $("#urgentSaleColors").append(
-    '<span class="ms-1">'+ urgentSaleColors.length +'</span>'
+    '<span class="ms-1">' + urgentSaleColors.length + "</span>"
   );
 
   //hotDealColors
-  $("#thumbnailVideoColors").append(
-    '<span class="me-1">1</span>'
-  );
+  $("#thumbnailVideoColors").append('<span class="me-1">1</span>');
   thumbnailVideoAdColors.map((color) =>
     $("#thumbnailVideoColors").append(
       '<span class="box" style="background-color:' + color + '"></span>'
     )
   );
   $("#thumbnailVideoColors").append(
-    '<span class="ms-1">'+ thumbnailVideoAdColors.length +'</span>'
+    '<span class="ms-1">' + thumbnailVideoAdColors.length + "</span>"
   );
 
   //upgradeAdsColors
-  $("#upgradeAdsColors").append(
-    '<span class="me-1">1</span>'
-  );
+  $("#upgradeAdsColors").append('<span class="me-1">1</span>');
   upgradeAdsColors.map((color) =>
     $("#upgradeAdsColors").append(
       '<span class="box" style="background-color:' + color + '"></span>'
     )
   );
   $("#upgradeAdsColors").append(
-    '<span class="ms-1">'+ thumbnailVideoAdColors.length +'</span>'
+    '<span class="ms-1">' + thumbnailVideoAdColors.length + "</span>"
   );
 
   //custom long legends end
-
 });
