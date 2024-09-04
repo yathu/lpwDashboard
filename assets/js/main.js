@@ -287,7 +287,8 @@ $(document).ready(function () {
     return chartColors[val];
   };
 
-  const pageViewData = [
+
+  const pageViewData7Days = [
     {
       x: "9.07.2024",
       y: 100,
@@ -325,7 +326,58 @@ $(document).ready(function () {
     },
   ];
 
-  const pageNumData = [
+  const pageViewData15Days = [
+    { x: "9.07.2024", y: 100, adsCount: 0 },
+    { x: "10.07.2024", y: 105, adsCount: 1 },
+    { x: "11.07.2024", y: 200, adsCount: 4 },
+    { x: "12.07.2024", y: 25, adsCount: 6 },
+    { x: "13.07.2024", y: 400, adsCount: 8 },
+    { x: "14.07.2024", y: 700, adsCount: 9 },
+    { x: "15.07.2024", y: 205, adsCount: 10 },
+    { x: "16.07.2024", y: 300, adsCount: 12 },
+    { x: "17.07.2024", y: 150, adsCount: 13 },
+    { x: "18.07.2024", y: 500, adsCount: 14 },
+    { x: "19.07.2024", y: 350, adsCount: 16 },
+    { x: "20.07.2024", y: 600, adsCount: 17 },
+    { x: "21.07.2024", y: 450, adsCount: 18 },
+    { x: "22.07.2024", y: 750, adsCount: 20 },
+    { x: "23.07.2024", y: 800, adsCount: 21 },
+  ];
+
+  const pageViewData30Days = [
+    { x: "9.07.2024", y: 100, adsCount: 0 },
+    { x: "10.07.2024", y: 105, adsCount: 1 },
+    { x: "11.07.2024", y: 200, adsCount: 4 },
+    { x: "12.07.2024", y: 25, adsCount: 6 },
+    { x: "13.07.2024", y: 400, adsCount: 8 },
+    { x: "14.07.2024", y: 700, adsCount: 9 },
+    { x: "15.07.2024", y: 205, adsCount: 10 },
+    { x: "16.07.2024", y: 300, adsCount: 12 },
+    { x: "17.07.2024", y: 150, adsCount: 13 },
+    { x: "18.07.2024", y: 500, adsCount: 14 },
+    { x: "19.07.2024", y: 350, adsCount: 16 },
+    { x: "20.07.2024", y: 600, adsCount: 17 },
+    { x: "21.07.2024", y: 450, adsCount: 18 },
+    { x: "22.07.2024", y: 750, adsCount: 20 },
+    { x: "23.07.2024", y: 800, adsCount: 21 },
+    { x: "24.07.2024", y: 850, adsCount: 23 },
+    { x: "25.07.2024", y: 300, adsCount: 24 },
+    { x: "26.07.2024", y: 400, adsCount: 25 },
+    { x: "27.07.2024", y: 500, adsCount: 26 },
+    { x: "28.07.2024", y: 600, adsCount: 28 },
+    { x: "29.07.2024", y: 450, adsCount: 29 },
+    { x: "30.07.2024", y: 700, adsCount: 30 },
+    { x: "31.07.2024", y: 800, adsCount: 31 },
+    { x: "01.08.2024", y: 650, adsCount: 33 },
+    { x: "02.08.2024", y: 700, adsCount: 34 },
+    { x: "03.08.2024", y: 500, adsCount: 35 },
+    { x: "04.08.2024", y: 750, adsCount: 37 },
+    { x: "05.08.2024", y: 800, adsCount: 38 },
+    { x: "06.08.2024", y: 900, adsCount: 40 },
+    { x: "07.08.2024", y: 950, adsCount: 41 },
+  ];
+
+  const pageNumData7days = [
     {
       x: "9.07.2024",
       y: 0,
@@ -356,6 +408,73 @@ $(document).ready(function () {
     },
   ];
 
+  const pageNumData15Days = [
+    { x: "9.07.2024", y: 0 },
+    { x: "10.07.2024", y: 5 },
+    { x: "11.07.2024", y: 10 },
+    { x: "12.07.2024", y: 15 },
+    { x: "13.07.2024", y: 10 },
+    { x: "14.07.2024", y: 20 },
+    { x: "15.07.2024", y: 15 },
+    { x: "16.07.2024", y: 25 },
+    { x: "17.07.2024", y: 20 },
+    { x: "18.07.2024", y: 30 },
+    { x: "19.07.2024", y: 25 },
+    { x: "20.07.2024", y: 35 },
+    { x: "21.07.2024", y: 30 },
+    { x: "22.07.2024", y: 40 },
+    { x: "23.07.2024", y: 35 },
+  ];
+
+  const pageNumData30Days = [
+    { x: "9.07.2024", y: 0 },
+    { x: "10.07.2024", y: 5 },
+    { x: "11.07.2024", y: 10 },
+    { x: "12.07.2024", y: 15 },
+    { x: "13.07.2024", y: 10 },
+    { x: "14.07.2024", y: 20 },
+    { x: "15.07.2024", y: 15 },
+    { x: "16.07.2024", y: 25 },
+    { x: "17.07.2024", y: 20 },
+    { x: "18.07.2024", y: 30 },
+    { x: "19.07.2024", y: 25 },
+    { x: "20.07.2024", y: 35 },
+    { x: "21.07.2024", y: 30 },
+    { x: "22.07.2024", y: 40 },
+    { x: "23.07.2024", y: 35 },
+    { x: "24.07.2024", y: 45 },
+    { x: "25.07.2024", y: 40 },
+    { x: "26.07.2024", y: 50 },
+    { x: "27.07.2024", y: 45 },
+    { x: "28.07.2024", y: 55 },
+    { x: "29.07.2024", y: 50 },
+    { x: "30.07.2024", y: 60 },
+    { x: "31.07.2024", y: 55 },
+    { x: "01.08.2024", y: 65 },
+    { x: "02.08.2024", y: 60 },
+    { x: "03.08.2024", y: 70 },
+    { x: "04.08.2024", y: 65 },
+    { x: "05.08.2024", y: 75 },
+    { x: "06.08.2024", y: 70 },
+    { x: "07.08.2024", y: 80 },
+  ];
+
+  const scatter7 = [
+    { x: "11.07.2024", y: 0 },
+    { x: "13.07.2024", y: 0 },
+  ];
+
+  const scatter15 = [
+    { x: "11.07.2024", y: 0 },
+    { x: "21.07.2024", y: 0 },
+  ];
+
+  const scatter30 = [
+    { x: "11.07.2024", y: 0 },
+    { x: "29.07.2024", y: 0 },
+  ];
+
+
   const yellowShades = [
     "#FFFFE0", // Light Yellow
     "#FFFACD", // Lemon Chiffon
@@ -374,7 +493,7 @@ $(document).ready(function () {
       {
         type: "line",
         label: "Weekly Sales",
-        data: pageViewData,
+        data: pageViewData7Days,
         fill: true,
         tension: 0.4,
         borderWidth: 0,
@@ -397,7 +516,7 @@ $(document).ready(function () {
       {
         type: "line",
         label: "Sales",
-        data: pageNumData,
+        data: pageNumData7days,
         fill: false,
         tension: 0.4,
         borderWidth: 3,
@@ -410,10 +529,7 @@ $(document).ready(function () {
       {
         label: "Scatter Dataset",
         type: "scatter",
-        data: [
-          { x: "11.07.2024", y: 0 },
-          { x: "13.07.2024", y: 0 },
-        ],
+        data: scatter7,
         backgroundColor: "#ffc0b3",
         borderColor: "#ff0000",
         order: 2,
@@ -554,6 +670,38 @@ $(document).ready(function () {
 
   // render init block
   const myChart = new Chart(document.getElementById("myChart"), config);
+
+  $("#listingPerfomanceDays").on("change", function () {
+    //myChart
+    const val = this.value;
+
+    console.log("change==>", val);
+
+    let newData = pageViewData7Days;
+    let newPageNumData = pageNumData7days;
+    let newScatter = scatter7;
+
+    if (val == 15) {
+      newData = pageViewData15Days;
+      newPageNumData = pageNumData15Days;
+      newScatter = scatter15;
+    }
+
+    if (val == 30) {
+      newData = pageViewData30Days;
+      newPageNumData = pageNumData30Days;
+      newScatter = scatter30;
+    }
+
+    console.log("myChart==>");
+    console.log(myChart.data);
+
+    myChart.data.datasets[0].data = newData;
+    myChart.data.datasets[1].data = newPageNumData;
+    myChart.data.datasets[2].data = newScatter;
+
+    myChart.update();
+  });
 
   //upgrade-swiper
 
@@ -745,36 +893,48 @@ $(document).ready(function () {
     "#d5aa55", // Original color
   ];
 
-  const timelineData = [
-    {
-      x: "9.07.2024",
-      // y: 10,
-    },
-    {
-      x: "10.07.2024",
-      // y: 5,
-    },
-    {
-      x: "11.07.2024",
-      // y: 10,
-    },
-    {
-      x: "12.07.2024",
-      // y: 15,
-    },
-    {
-      x: "13.07.2024",
-      // y: 10,
-    },
-    {
-      x: "14.07.2024",
-      // y: 20,
-    },
-    {
-      x: "15.07.2024",
-      // y: 15,
-    },
+  // const timelineData = [
+  //   {
+  //     x: "9.07.2024",
+  //     // y: 10,
+  //   },
+  //   {
+  //     x: "10.07.2024",
+  //     // y: 5,
+  //   },
+  //   {
+  //     x: "11.07.2024",
+  //     // y: 10,
+  //   },
+  //   {
+  //     x: "12.07.2024",
+  //     // y: 15,
+  //   },
+  //   {
+  //     x: "13.07.2024",
+  //     // y: 10,
+  //   },
+  //   {
+  //     x: "14.07.2024",
+  //     // y: 20,
+  //   },
+  //   {
+  //     x: "15.07.2024",
+  //     // y: 15,
+  //   },
+  // ];
+
+  const timelineDates7 = [
+    "9.07.2024",
+    "10.07.2024",
+    "11.07.2024",
+    "12.07.2024",
+    "13.07.2024",
+    "14.07.2024",
+    "15.07.2024",
   ];
+
+  const timelineData = timelineDates7.map((data) => { return {x:data}});  
 
   const timeline_ctx = document.getElementById("timelineChart");
 
