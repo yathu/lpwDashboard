@@ -164,7 +164,10 @@ layout: home
                                             <i class="bi bi-caret-right-fill"></i>
                                         </a>
                                     </div>
-                                    <a href="#" class="btn btn-primary py-2">
+                                    <a href="#" class="btn btn-primary py-2"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#availableModal"
+                                    >
                                         Available Options
                                         <i class="bi bi-caret-right-fill"></i>
                                     </a>
@@ -376,3 +379,60 @@ layout: home
         </div>
     </div>
 </div>
+
+
+        <!-- Modal -->
+        <div
+          class="modal fade availableModal"
+          id="availableModal"
+          tabindex="-1"
+          aria-labelledby="availableModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div>
+                  <img src="assets/img/bulpBrightGreen.svg" alt="" />
+                  <label class="widget-title-2" id="tipsModalLabel">
+                    Tips to increase the leads
+                  </label>
+                </div>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <div>
+                      <img src="assets/img/image_icon.svg" alt="" />
+                    </div>
+                    <p class="mb-0">
+                      Upload <b>10</b> Images to increase <b>50%</b> visibility
+                    </p>
+                  </li>
+                  <li class="list-group-item">
+                    <div>
+                      <img src="assets/img/whatsapp_icon.svg" alt="" />
+                    </div>
+                    <p class="mb-0">
+                      Activate Whatsapp Live Chat & Get <b>2X</b> more view
+                    </p>
+                  </li>
+                  <li class="list-group-item">
+                    <div>
+                      <img src="assets/img/hotdeal.svg" alt="" />
+                    </div>
+                    <p class="mb-0">
+                      Activate Hot Deals & Get <b>2X</b> more view
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>

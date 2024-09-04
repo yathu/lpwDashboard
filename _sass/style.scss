@@ -2141,3 +2141,7 @@ body {
     }
   }
 }
+
+.availableModal{
+  @extend .tipsModal;
+}

@@ -287,7 +287,6 @@ $(document).ready(function () {
     return chartColors[val];
   };
 
-
   const pageViewData7Days = [
     {
       x: "9.07.2024",
@@ -473,7 +472,6 @@ $(document).ready(function () {
     { x: "11.07.2024", y: 0 },
     { x: "29.07.2024", y: 0 },
   ];
-
 
   const yellowShades = [
     "#FFFFE0", // Light Yellow
@@ -670,38 +668,6 @@ $(document).ready(function () {
 
   // render init block
   const myChart = new Chart(document.getElementById("myChart"), config);
-
-  $("#listingPerfomanceDays").on("change", function () {
-    //myChart
-    const val = this.value;
-
-    console.log("change==>", val);
-
-    let newData = pageViewData7Days;
-    let newPageNumData = pageNumData7days;
-    let newScatter = scatter7;
-
-    if (val == 15) {
-      newData = pageViewData15Days;
-      newPageNumData = pageNumData15Days;
-      newScatter = scatter15;
-    }
-
-    if (val == 30) {
-      newData = pageViewData30Days;
-      newPageNumData = pageNumData30Days;
-      newScatter = scatter30;
-    }
-
-    console.log("myChart==>");
-    console.log(myChart.data);
-
-    myChart.data.datasets[0].data = newData;
-    myChart.data.datasets[1].data = newPageNumData;
-    myChart.data.datasets[2].data = newScatter;
-
-    myChart.update();
-  });
 
   //upgrade-swiper
 
@@ -934,7 +900,62 @@ $(document).ready(function () {
     "15.07.2024",
   ];
 
-  const timelineData = timelineDates7.map((data) => { return {x:data}});  
+  const timelineDates15 = [
+    "9.07.2024",
+    "10.07.2024",
+    "11.07.2024",
+    "12.07.2024",
+    "13.07.2024",
+    "14.07.2024",
+    "15.07.2024",
+    "16.07.2024",
+    "17.07.2024",
+    "18.07.2024",
+    "19.07.2024",
+    "20.07.2024",
+    "21.07.2024",
+    "22.07.2024",
+    "23.07.2024",
+  ];
+
+  const timelineDates30 = [
+    "9.07.2024",
+    "10.07.2024",
+    "11.07.2024",
+    "12.07.2024",
+    "13.07.2024",
+    "14.07.2024",
+    "15.07.2024",
+    "16.07.2024",
+    "17.07.2024",
+    "18.07.2024",
+    "19.07.2024",
+    "20.07.2024",
+    "21.07.2024",
+    "22.07.2024",
+    "23.07.2024",
+    "24.07.2024",
+    "25.07.2024",
+    "26.07.2024",
+    "27.07.2024",
+    "28.07.2024",
+    "29.07.2024",
+    "30.07.2024",
+    "31.07.2024",
+    "01.08.2024",
+    "02.08.2024",
+    "03.08.2024",
+    "04.08.2024",
+    "05.08.2024",
+    "06.08.2024",
+    "07.08.2024",
+  ];
+  
+  
+
+  const timelineData = Tata=>Tata.map((data) => {
+    return { x: data };
+  });
 
   const timeline_ctx = document.getElementById("timelineChart");
 
@@ -942,7 +963,7 @@ $(document).ready(function () {
     datasets: [
       {
         label: "# of Votes",
-        data: timelineData,
+        data: timelineData(timelineDates7),
         borderWidth: 1,
       },
     ],
@@ -1246,7 +1267,7 @@ $(document).ready(function () {
 
   console.log("timeline_annotations_7_temp==>", timeline_annotations_7);
 
-  new Chart(timeline_ctx, {
+  const timelineChart = new Chart(timeline_ctx, {
     type: "line",
     data: timeline_data,
     options: {
@@ -1308,6 +1329,49 @@ $(document).ready(function () {
         },
       },
     },
+  });
+
+  //dropdown onchange
+
+  $("#listingPerfomanceDays").on("change", function () {
+    //myChart
+    const val = this.value;
+
+    console.log("change==>", val);
+
+    let newData = pageViewData7Days;
+    let newPageNumData = pageNumData7days;
+    let newScatter = scatter7;
+
+    let timeLineDates = timelineDates7;
+
+    if (val == 15) {
+      newData = pageViewData15Days;
+      newPageNumData = pageNumData15Days;
+      newScatter = scatter15;
+
+      timeLineDates = timelineDates15;
+    }
+
+    if (val == 30) {
+      newData = pageViewData30Days;
+      newPageNumData = pageNumData30Days;
+      newScatter = scatter30;
+
+      timeLineDates = timelineDates30;
+    }
+
+    console.log("myChart==>");
+    console.log(myChart.data);
+
+    myChart.data.datasets[0].data = newData;
+    myChart.data.datasets[1].data = newPageNumData;
+    myChart.data.datasets[2].data = newScatter;
+
+    myChart.update();
+
+    timelineChart.data.datasets[0].data = timelineData(timeLineDates);
+    timelineChart.update();
   });
 
   //profile image upload
