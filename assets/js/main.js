@@ -950,12 +950,11 @@ $(document).ready(function () {
     "06.08.2024",
     "07.08.2024",
   ];
-  
-  
 
-  const timelineData = Tata=>Tata.map((data) => {
-    return { x: data };
-  });
+  const timelineData = (Tata) =>
+    Tata.map((data) => {
+      return { x: data };
+    });
 
   const timeline_ctx = document.getElementById("timelineChart");
 
@@ -997,70 +996,62 @@ $(document).ready(function () {
     },
   ];
 
-  let timeline_annotations_7 = {
-    // line3: {
-    //   //line 4
-    //   type: "line",
-    //   xMin: "11.07.2024",
-    //   xMax: "13.07.2024",
-    //   yMin: barPlacement[1],
-    //   yMax: barPlacement[1],
-    //   borderColor: thumbnailVideoAdColors[thumbVideoCount],
-    //   borderWidth: 8,
-    //   drawTime: "afterDatasetsDraw",
-    //   label: {
-    //     display: true,
-    //     backgroundColor: "#333",
-    //     content: (ctx) => {
-    //       console.log("ctx1==>", ctx);
+  const timeline_15data = [
+    {
+      start: "10.07.2024",
+      end: "12.07.2024",
+      type: "whatsapp",
+      value: 3,
+    },
+    {
+      start: "9.07.2024",
+      end: "13.07.2024",
+      type: "hotDeal",
+      value: 5,
+    },
+    {
+      start: "14.07.2024",
+      end: "16.07.2024",
+      type: "urgentSale",
+      value: 3,
+    },
+    {
+      start: "17.07.2024",
+      end: "20.07.2024",
+      type: "thumbnailVideo",
+      value: 4,
+    },
+  ];
 
-    //       return ["Thumnail Video"];
-    //     },
-    //     padding: {
-    //       top: 2,
-    //       left: 4,
-    //       bottom: 2,
-    //       right: 4,
-    //     },
-    //     yAdjust: -15,
-    //     font: {
-    //       size: 11,
-    //       weight: 400,
-    //     },
-    //   },
-    // },
-    // line11: {
-    //   //line 4
-    //   type: "line",
-    //   xMin: "9.07.2024",
-    //   xMax: "10.07.2024",
-    //   yMin: barPlacement[1],
-    //   yMax: barPlacement[1],
-    //   borderColor: thumbnailVideoAdColors[thumbVideoCount],
-    //   borderWidth: 8,
-    //   drawTime: "afterDatasetsDraw",
-    //   label: {
-    //     display: true,
-    //     backgroundColor: "#333",
-    //     content: (ctx) => {
-    //       console.log("ctx1==>", ctx);
+  
+  const timeline_30data = [
+    {
+      start: "10.07.2024",
+      end: "14.07.2024",
+      type: "whatsapp",
+      value: 5,
+    },
+    {
+      start: "9.07.2024",
+      end: "15.07.2024",
+      type: "hotDeal",
+      value: 7,
+    },
+    {
+      start: "16.07.2024",
+      end: "20.07.2024",
+      type: "urgentSale",
+      value: 5,
+    },
+    {
+      start: "29.07.2024",
+      end: "06.08.2024",
+      type: "thumbnailVideo",
+      value: 6,
+    }
+  ];
 
-    //       return ["Thumnail Video"];
-    //     },
-    //     padding: {
-    //       top: 2,
-    //       left: 4,
-    //       bottom: 2,
-    //       right: 4,
-    //     },
-    //     yAdjust: -15,
-    //     font: {
-    //       size: 11,
-    //       weight: 400,
-    //     },
-    //   },
-    // },
-
+  let timeline_bg_lines = {
     line4: {
       type: "line",
       yMin: barPlacement[1],
@@ -1079,46 +1070,6 @@ $(document).ready(function () {
       drawTime: "beforeDatasetsDraw",
     },
 
-    // line6: {
-    //   //line 3
-    //   type: "line",
-    //   xMin: "11.07.2024",
-    //   xMax: "13.07.2024",
-    //   yMin: barPlacement[2],
-    //   yMax: barPlacement[2],
-    //   borderColor: urgentSaleColors[urgetSaleCount],
-    //   borderWidth: 8,
-    //   drawTime: "beforeDatasetsDraw",
-    //   label: {
-    //     display: true,
-    //     backgroundColor: "#333",
-    //     content: (ctx) => {
-    //       console.log("ctx1==>", ctx);
-
-    //       return ["Urgent Sale"];
-    //     },
-    //     padding: {
-    //       top: 2,
-    //       left: 4,
-    //       bottom: 2,
-    //       right: 4,
-    //     },
-    //     yAdjust: -15,
-    //     font: {
-    //       size: 11,
-    //       weight: 400,
-    //     },
-    //   },
-    //   // enter({element}, event) {
-    //   //     element.label.options.display = true;
-    //   //     return true;
-    //   // },
-    //   // leave({element}, event) {
-    //   //     element.label.options.display = false;
-    //   //     return true;
-    //   // }
-    // },
-
     line7: {
       type: "line",
       yMin: barPlacement[3],
@@ -1128,36 +1079,6 @@ $(document).ready(function () {
       drawTime: "beforeDatasetsDraw",
     },
 
-    // line8: {
-    //   //line 2
-    //   type: "line",
-    //   xMin: "10.07.2024",
-    //   xMax: "12.07.2024",
-    //   yMin: barPlacement[3],
-    //   yMax: barPlacement[3],
-    //   borderColor: hotDealColors[hotDealCount],
-    //   borderWidth: 8,
-    //   drawTime: "beforeDatasetsDraw",
-    //   label: {
-    //     display: true,
-    //     backgroundColor: "#333",
-    //     content: (ctx) => {
-    //       return ["Hot Deal"];
-    //     },
-    //     padding: {
-    //       top: 2,
-    //       left: 4,
-    //       bottom: 2,
-    //       right: 4,
-    //     },
-    //     yAdjust: -15,
-    //     font: {
-    //       size: 11,
-    //       weight: 400,
-    //     },
-    //   },
-    // },
-
     line9: {
       type: "line",
       yMin: barPlacement[4],
@@ -1166,42 +1087,13 @@ $(document).ready(function () {
       borderWidth: 8,
       drawTime: "beforeDatasetsDraw",
     },
-
-    // line10: {
-    //   //line 1
-    //   type: "line",
-    //   xMin: "13.07.2024",
-    //   xMax: "14.07.2024",
-    //   yMin: barPlacement[4],
-    //   yMax: barPlacement[4],
-    //   borderColor: whatsappLiveColors[whatsappCount],
-    //   borderWidth: 8,
-    //   drawTime: "beforeDatasetsDraw",
-    //   label: {
-    //     display: true,
-    //     backgroundColor: "#333",
-    //     content: (ctx) => {
-    //       return ["whatsapp Live"];
-    //     },
-    //     padding: {
-    //       top: 2,
-    //       left: 4,
-    //       bottom: 2,
-    //       right: 4,
-    //     },
-    //     yAdjust: -15,
-    //     font: {
-    //       size: 11,
-    //       weight: 400,
-    //     },
-    //   },
-    // },
   };
 
-  const timeline_annotations_7_temp = timeline_7data.map(
-    ({ start, end, type, value }, index) => {
-      //MyObjList['newKey'] = obj;
+  const timeline_anntation_gen = genData => {
+    let temData = {};
 
+    genData.map(({ start, end, type, value }, index) => {
+      //MyObjList['newKey'] = obj;
       console.log("ind==>", index);
       const str = `line${index}`;
 
@@ -1261,11 +1153,17 @@ $(document).ready(function () {
 
       console.log("newData str==>", newData);
 
-      timeline_annotations_7 = { ...timeline_annotations_7, ...newData };
-    }
-  );
+      temData = { ...temData, ...newData };
+    });
 
-  console.log("timeline_annotations_7_temp==>", timeline_annotations_7);
+    return temData;
+  };
+
+  const timeline7gen = timeline_anntation_gen(timeline_7data);
+
+  timeline_bg_lines = {...timeline_bg_lines, ...timeline7gen} 
+
+  // console.log("timeline_bg_lines==>", timeline7gen);
 
   const timelineChart = new Chart(timeline_ctx, {
     type: "line",
@@ -1325,7 +1223,7 @@ $(document).ready(function () {
           common: {
             drawTime: "beforeDatasetsDraw",
           },
-          annotations: timeline_annotations_7,
+          annotations: timeline_bg_lines,
         },
       },
     },
@@ -1370,8 +1268,22 @@ $(document).ready(function () {
 
     myChart.update();
 
+    console.log("timelineChart==>", timelineChart);
     timelineChart.data.datasets[0].data = timelineData(timeLineDates);
     timelineChart.update();
+
+
+    //annotation
+
+    const days = val== 15 ? timeline_15data : val== 30 ? timeline_30data : timeline_7data;
+
+    const timelinegen = timeline_anntation_gen(days);
+
+    timeline_bg_lines = {...timeline_bg_lines, ...timelinegen} 
+
+    timelineChart.options.plugins.annotation.annotations = timeline_bg_lines;
+    timelineChart.update();
+
   });
 
   //profile image upload
