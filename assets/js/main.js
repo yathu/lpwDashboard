@@ -325,7 +325,7 @@ $(document).ready(function () {
     },
   ];
 
-  const pageViewData15Days = [
+  const pageViewData90Days = [
     { x: "9.07.2024", y: 100, adsCount: 0 },
     { x: "10.07.2024", y: 105, adsCount: 1 },
     { x: "11.07.2024", y: 200, adsCount: 4 },
@@ -341,6 +341,48 @@ $(document).ready(function () {
     { x: "21.07.2024", y: 450, adsCount: 18 },
     { x: "22.07.2024", y: 750, adsCount: 20 },
     { x: "23.07.2024", y: 800, adsCount: 21 },
+    { x: "24.07.2024", y: 250, adsCount: 22 },
+    { x: "25.07.2024", y: 320, adsCount: 23 },
+    { x: "26.07.2024", y: 290, adsCount: 24 },
+    { x: "27.07.2024", y: 520, adsCount: 25 },
+    { x: "28.07.2024", y: 480, adsCount: 26 },
+    { x: "29.07.2024", y: 610, adsCount: 27 },
+    { x: "30.07.2024", y: 700, adsCount: 28 },
+    { x: "31.07.2024", y: 340, adsCount: 29 },
+    { x: "1.08.2024", y: 550, adsCount: 30 },
+    { x: "2.08.2024", y: 600, adsCount: 31 },
+    { x: "3.08.2024", y: 820, adsCount: 32 },
+    { x: "4.08.2024", y: 720, adsCount: 33 },
+    { x: "5.08.2024", y: 300, adsCount: 34 },
+    { x: "6.08.2024", y: 500, adsCount: 35 },
+    { x: "7.08.2024", y: 400, adsCount: 36 },
+    { x: "8.08.2024", y: 650, adsCount: 37 },
+    { x: "9.08.2024", y: 700, adsCount: 38 },
+    { x: "10.08.2024", y: 200, adsCount: 39 },
+    { x: "11.08.2024", y: 540, adsCount: 40 },
+    { x: "12.08.2024", y: 360, adsCount: 41 },
+    { x: "13.08.2024", y: 480, adsCount: 42 },
+    { x: "14.08.2024", y: 600, adsCount: 43 },
+    { x: "15.08.2024", y: 250, adsCount: 44 },
+    { x: "16.08.2024", y: 700, adsCount: 45 },
+    { x: "17.08.2024", y: 590, adsCount: 46 },
+    { x: "18.08.2024", y: 800, adsCount: 47 },
+    { x: "19.08.2024", y: 850, adsCount: 48 },
+    { x: "20.08.2024", y: 100, adsCount: 49 },
+    { x: "21.08.2024", y: 300, adsCount: 50 },
+    { x: "22.08.2024", y: 550, adsCount: 51 },
+    { x: "23.08.2024", y: 450, adsCount: 52 },
+    { x: "24.08.2024", y: 650, adsCount: 53 },
+    { x: "25.08.2024", y: 780, adsCount: 54 },
+    { x: "26.08.2024", y: 480, adsCount: 55 },
+    { x: "27.08.2024", y: 350, adsCount: 56 },
+    { x: "28.08.2024", y: 600, adsCount: 57 },
+    { x: "29.08.2024", y: 700, adsCount: 58 },
+    { x: "30.08.2024", y: 500, adsCount: 59 },
+    { x: "31.08.2024", y: 750, adsCount: 60 },
+    { x: "1.09.2024", y: 400, adsCount: 61 },
+    { x: "2.09.2024", y: 600, adsCount: 62 },
+    { x: "3.09.2024", y: 350, adsCount: 63 },
   ];
 
   const pageViewData30Days = [
@@ -407,7 +449,7 @@ $(document).ready(function () {
     },
   ];
 
-  const pageNumData15Days = [
+  const pageNumData90Days = [
     { x: "9.07.2024", y: 0 },
     { x: "10.07.2024", y: 5 },
     { x: "11.07.2024", y: 10 },
@@ -422,7 +464,8 @@ $(document).ready(function () {
     { x: "20.07.2024", y: 35 },
     { x: "21.07.2024", y: 30 },
     { x: "22.07.2024", y: 40 },
-    { x: "23.07.2024", y: 35 },
+    { x: "01.09.2024", y: 10 },
+    { x: "03.09.2024", y: 20 },
   ];
 
   const pageNumData30Days = [
@@ -463,9 +506,9 @@ $(document).ready(function () {
     { x: "13.07.2024", y: 0 },
   ];
 
-  const scatter15 = [
+  const scatter90 = [
     { x: "11.07.2024", y: 0 },
-    { x: "21.07.2024", y: 0 },
+    { x: "03.09.2024", y: 0 },
   ];
 
   const scatter30 = [
@@ -614,6 +657,17 @@ $(document).ready(function () {
           time: {
             unit: "day",
             parser: "dd.MM.yyyy",
+            displayFormats: {
+              millisecond: "MMM dd",
+              second: "MMM dd",
+              minute: "MMM dd",
+              hour: "MMM dd",
+              day: "MMM dd",
+              week: "MMM dd",
+              month: "MMM dd",
+              quarter: "MMM dd",
+              year: "MMM dd",
+            },
           },
           // position: {
           //   y: 0
@@ -758,8 +812,6 @@ $(document).ready(function () {
   const selected = $("#trendLocationSwiperDropwown").val();
 
   swiperFilter(selected);
-
-
 
   $("#trendLocationSwiperDropwown").on("change", function () {
     swiperFilter(this.value);
@@ -924,7 +976,7 @@ $(document).ready(function () {
     "15.07.2024",
   ];
 
-  const timelineDates15 = [
+  const timelineDates90 = [
     "9.07.2024",
     "10.07.2024",
     "11.07.2024",
@@ -940,6 +992,48 @@ $(document).ready(function () {
     "21.07.2024",
     "22.07.2024",
     "23.07.2024",
+    "24.07.2024",
+    "25.07.2024",
+    "26.07.2024",
+    "27.07.2024",
+    "28.07.2024",
+    "29.07.2024",
+    "30.07.2024",
+    "31.07.2024",
+    "1.08.2024",
+    "2.08.2024",
+    "3.08.2024",
+    "4.08.2024",
+    "5.08.2024",
+    "6.08.2024",
+    "7.08.2024",
+    "8.08.2024",
+    "9.08.2024",
+    "10.08.2024",
+    "11.08.2024",
+    "12.08.2024",
+    "13.08.2024",
+    "14.08.2024",
+    "15.08.2024",
+    "16.08.2024",
+    "17.08.2024",
+    "18.08.2024",
+    "19.08.2024",
+    "20.08.2024",
+    "21.08.2024",
+    "22.08.2024",
+    "23.08.2024",
+    "24.08.2024",
+    "25.08.2024",
+    "26.08.2024",
+    "27.08.2024",
+    "28.08.2024",
+    "29.08.2024",
+    "30.08.2024",
+    "31.08.2024",
+    "1.09.2024",
+    "2.09.2024",
+    "3.09.2024",
   ];
 
   const timelineDates30 = [
@@ -1013,6 +1107,12 @@ $(document).ready(function () {
       value: 2,
     },
     {
+      start: "10.07.2024",
+      end: "11.07.2024",
+      type: "thumbnailVideo",
+      value: 2,
+    },
+    {
       start: "14.07.2024",
       end: "15.07.2024",
       type: "thumbnailVideo",
@@ -1020,7 +1120,7 @@ $(document).ready(function () {
     },
   ];
 
-  const timeline_15data = [
+  const timeline_90data = [
     {
       start: "10.07.2024",
       end: "12.07.2024",
@@ -1040,8 +1140,8 @@ $(document).ready(function () {
       value: 3,
     },
     {
-      start: "17.07.2024",
-      end: "20.07.2024",
+      start: "20.08.2024",
+      end: "01.09.2024",
       type: "thumbnailVideo",
       value: 4,
     },
@@ -1075,7 +1175,7 @@ $(document).ready(function () {
   ];
 
   let timeline_bg_lines = {
-    line4: {
+    line100: {
       type: "line",
       yMin: barPlacement[1],
       yMax: barPlacement[1],
@@ -1084,7 +1184,7 @@ $(document).ready(function () {
       drawTime: "beforeDatasetsDraw",
     },
 
-    line5: {
+    line101: {
       type: "line",
       yMin: barPlacement[2],
       yMax: barPlacement[2],
@@ -1093,7 +1193,7 @@ $(document).ready(function () {
       drawTime: "beforeDatasetsDraw",
     },
 
-    line7: {
+    line102: {
       type: "line",
       yMin: barPlacement[3],
       yMax: barPlacement[3],
@@ -1102,7 +1202,7 @@ $(document).ready(function () {
       drawTime: "beforeDatasetsDraw",
     },
 
-    line9: {
+    line103: {
       type: "line",
       yMin: barPlacement[4],
       yMax: barPlacement[4],
@@ -1219,6 +1319,17 @@ $(document).ready(function () {
           time: {
             unit: "day",
             parser: "dd.MM.yyyy",
+            displayFormats: {
+              millisecond: "MMM dd",
+              second: "MMM dd",
+              minute: "MMM dd",
+              hour: "MMM dd",
+              day: "MMM dd",
+              week: "MMM dd",
+              month: "MMM dd",
+              quarter: "MMM dd",
+              year: "MMM dd",
+            },
           },
           border: {
             display: false,
@@ -1266,12 +1377,12 @@ $(document).ready(function () {
 
     let timeLineDates = timelineDates7;
 
-    if (val == 15) {
-      newData = pageViewData15Days;
-      newPageNumData = pageNumData15Days;
-      newScatter = scatter15;
+    if (val == 90) {
+      newData = pageViewData90Days;
+      newPageNumData = pageNumData90Days;
+      newScatter = scatter90;
 
-      timeLineDates = timelineDates15;
+      timeLineDates = timelineDates90;
     }
 
     if (val == 30) {
@@ -1289,6 +1400,17 @@ $(document).ready(function () {
     myChart.data.datasets[1].data = newPageNumData;
     myChart.data.datasets[2].data = newScatter;
 
+    if (val == 90) {
+      console.log("myChart==>", myChart);
+      console.log("myChart1==>", myChart.options.scales.xAxes.time);
+
+      myChart.options.scales.xAxes.time.unit = "week";
+      // myChart.options.scales.xAxes.time.displayFormats = { month: 'MM' }
+      // myChart.options.scales.xAxes.time.parser = 'dd.MM.yy';
+    } else {
+      myChart.options.scales.xAxes.time.unit = "day";
+    }
+
     myChart.update();
 
     // console.log("timelineChart==>", timelineChart);
@@ -1298,8 +1420,8 @@ $(document).ready(function () {
     //annotation
 
     const days =
-      val == 15
-        ? timeline_15data
+      val == 90
+        ? timeline_90data
         : val == 30
         ? timeline_30data
         : timeline_7data;
@@ -1309,6 +1431,18 @@ $(document).ready(function () {
     timeline_bg_lines = { ...timeline_bg_lines, ...timelinegen };
 
     timelineChart.options.plugins.annotation.annotations = timeline_bg_lines;
+
+    if (val == 90) {
+      // console.log("myChart==>", myChart);
+      // console.log("myChart1==>", myChart.options.scales.xAxes.time);
+
+      timelineChart.options.scales.xAxes.time.unit = "week";
+      // myChart.options.scales.xAxes.time.displayFormats = { month: 'MM' }
+      // myChart.options.scales.xAxes.time.parser = 'dd.MM.yy';
+    } else {
+      timelineChart.options.scales.xAxes.time.unit = "day";
+    }
+
     timelineChart.update();
   });
 
