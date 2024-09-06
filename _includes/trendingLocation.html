@@ -6,10 +6,10 @@
                 <img src="assets/img/raising.svg" alt="" class="img-fluid">
 <!--                Colombo 5-->
                 <div>
-                    <select class="form-select form-select-sm" aria-label="Default select example">
-                        <option selected value="1">Colombo 5</option>
-                        <option value="2">Colombo 6</option>
-                        <option value="3">Colombo 10</option>
+                    <select id="trendLocationSwiperDropwown" class="form-select form-select-sm" aria-label="Default select example">
+                        <option selected value="5">Colombo 5</option>
+                        <option value="6">Colombo 6</option>
+                        <option value="7">Colombo 7</option>
                     </select>
                 </div>
 
@@ -34,11 +34,11 @@
             <div class="swiper trendingSwiper">
                 <div class="swiper-wrapper">
 
-                    {% for i in (1...4) %}
+                    {% for i in (5...10) %}
 
-                    <div class="swiper-slide">
+                    <div class="swiper-slide colombo-{{i}}">
                         <div class="card">
-                            <img src="https://placehold.co/228x140/000000/FFFFFF/png" class="card-img-top" alt="...">
+                            <img src="https://placehold.co/228x140/000000/FFFFFF/png?text={{i}}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <div class="icons">
                                     <img src="assets/img/bed.svg" alt="" class="img-fluid">

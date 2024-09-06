@@ -499,7 +499,7 @@ $(document).ready(function () {
         segment: {
           // borderColor: (ctx) => "#3DD598",
           backgroundColor: (ctx) => {
-            console.log("data===>", ctx?.p0?.raw?.adsCount);
+            // console.log("data===>", ctx?.p0?.raw?.adsCount);
             const ads_count = ctx?.p0?.raw?.adsCount;
 
             if (ads_count) {
@@ -580,7 +580,7 @@ $(document).ready(function () {
           },
           grid: {
             color: (context) => {
-              console.log("ctx==>", context.tick.value);
+              // console.log("ctx==>", context.tick.value);
 
               return context.tick.value < 0 ? "#f7fafc" : "#F1F1F5";
             },
@@ -645,9 +645,9 @@ $(document).ready(function () {
         tooltip: {
           callbacks: {
             label: function (context) {
-              console.log("tool1==>", context);
-              // console.log("tool1==>",context?.raw?.y);
-              console.log("tool1==>", context?.dataset?.label);
+              // console.log("tool1==>", context);
+              // // console.log("tool1==>",context?.raw?.y);
+              // console.log("tool1==>", context?.dataset?.label);
 
               let label = "Boosted ads";
 
@@ -739,6 +739,30 @@ $(document).ready(function () {
         slidesPerView: 2.5,
       },
     },
+  });
+
+  const swiperFilter = (value) => {
+    const classval = "colombo-" + value;
+
+    $(".trendingSwiper .swiper-slide").each(function () {
+      if ($(this).hasClass(classval)) {
+        $(this).removeClass("d-none");
+      } else {
+        $(this).addClass("d-none");
+      }
+    });
+
+    trendingSwiper.update();
+  };
+
+  const selected = $("#trendLocationSwiperDropwown").val();
+
+  swiperFilter(selected);
+
+
+
+  $("#trendLocationSwiperDropwown").on("change", function () {
+    swiperFilter(this.value);
   });
 
   //worstSwiper
@@ -1093,7 +1117,7 @@ $(document).ready(function () {
 
     genData.map(({ start, end, type, value }, index) => {
       //MyObjList['newKey'] = obj;
-      console.log("ind==>", index);
+      // console.log("ind==>", index);
       const str = `line${index}`;
 
       const bColor =
@@ -1114,7 +1138,7 @@ $(document).ready(function () {
           ? 2
           : 1;
 
-      console.log("placement==>", placement);
+      // console.log("placement==>", placement);
 
       const newData = {
         [str]: {
@@ -1131,7 +1155,7 @@ $(document).ready(function () {
             display: true,
             backgroundColor: "#333",
             content: (ctx) => {
-              console.log("ctx1==>", ctx);
+              // console.log("ctx1==>", ctx);
 
               return [type];
             },
@@ -1150,7 +1174,7 @@ $(document).ready(function () {
         },
       };
 
-      console.log("newData str==>", newData);
+      // console.log("newData str==>", newData);
 
       temData = { ...temData, ...newData };
     });
@@ -1162,7 +1186,7 @@ $(document).ready(function () {
 
   timeline_bg_lines = { ...timeline_bg_lines, ...timeline7gen };
 
-  // console.log("timeline_bg_lines==>", timeline7gen);
+  // // console.log("timeline_bg_lines==>", timeline7gen);
 
   const timelineChart = new Chart(timeline_ctx, {
     type: "line",
@@ -1234,7 +1258,7 @@ $(document).ready(function () {
     //myChart
     const val = this.value;
 
-    console.log("change==>", val);
+    // console.log("change==>", val);
 
     let newData = pageViewData7Days;
     let newPageNumData = pageNumData7days;
@@ -1258,8 +1282,8 @@ $(document).ready(function () {
       timeLineDates = timelineDates30;
     }
 
-    console.log("myChart==>");
-    console.log(myChart.data);
+    // console.log("myChart==>");
+    // console.log(myChart.data);
 
     myChart.data.datasets[0].data = newData;
     myChart.data.datasets[1].data = newPageNumData;
@@ -1267,7 +1291,7 @@ $(document).ready(function () {
 
     myChart.update();
 
-    console.log("timelineChart==>", timelineChart);
+    // console.log("timelineChart==>", timelineChart);
     timelineChart.data.datasets[0].data = timelineData(timeLineDates);
     timelineChart.update();
 
@@ -1389,15 +1413,24 @@ $(document).ready(function () {
   //upgrade ads dropdown
 
   $(".upgrade_drop").on("change", function () {
-    console.log(this.value);
+    // console.log(this.value);
 
-    const item = 'data-'+this.value;
+    const item = "data-" + this.value;
 
-    $(this).closest('.accordion-body').find('.insight-data').removeClass('d-flex');
-    $(this).closest('.accordion-body').find('.insight-data').addClass('d-none');
+    $(this)
+      .closest(".accordion-body")
+      .find(".insight-data")
+      .removeClass("d-flex");
+    $(this).closest(".accordion-body").find(".insight-data").addClass("d-none");
 
-    $(this).closest('.accordion-body').find('.'+ item).removeClass('d-none');
-    $(this).closest('.accordion-body').find('.'+ item).addClass('d-flex');
+    $(this)
+      .closest(".accordion-body")
+      .find("." + item)
+      .removeClass("d-none");
+    $(this)
+      .closest(".accordion-body")
+      .find("." + item)
+      .addClass("d-flex");
   });
 
   //upgrade ads dropdown
