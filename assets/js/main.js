@@ -1023,7 +1023,6 @@ $(document).ready(function () {
     },
   ];
 
-  
   const timeline_30data = [
     {
       start: "10.07.2024",
@@ -1045,10 +1044,10 @@ $(document).ready(function () {
     },
     {
       start: "29.07.2024",
-      end: "06.08.2024",
+      end: "07.08.2024",
       type: "thumbnailVideo",
       value: 6,
-    }
+    },
   ];
 
   let timeline_bg_lines = {
@@ -1089,7 +1088,7 @@ $(document).ready(function () {
     },
   };
 
-  const timeline_anntation_gen = genData => {
+  const timeline_anntation_gen = (genData) => {
     let temData = {};
 
     genData.map(({ start, end, type, value }, index) => {
@@ -1161,7 +1160,7 @@ $(document).ready(function () {
 
   const timeline7gen = timeline_anntation_gen(timeline_7data);
 
-  timeline_bg_lines = {...timeline_bg_lines, ...timeline7gen} 
+  timeline_bg_lines = { ...timeline_bg_lines, ...timeline7gen };
 
   // console.log("timeline_bg_lines==>", timeline7gen);
 
@@ -1272,18 +1271,21 @@ $(document).ready(function () {
     timelineChart.data.datasets[0].data = timelineData(timeLineDates);
     timelineChart.update();
 
-
     //annotation
 
-    const days = val== 15 ? timeline_15data : val== 30 ? timeline_30data : timeline_7data;
+    const days =
+      val == 15
+        ? timeline_15data
+        : val == 30
+        ? timeline_30data
+        : timeline_7data;
 
     const timelinegen = timeline_anntation_gen(days);
 
-    timeline_bg_lines = {...timeline_bg_lines, ...timelinegen} 
+    timeline_bg_lines = { ...timeline_bg_lines, ...timelinegen };
 
     timelineChart.options.plugins.annotation.annotations = timeline_bg_lines;
     timelineChart.update();
-
   });
 
   //profile image upload
@@ -1383,4 +1385,20 @@ $(document).ready(function () {
   );
 
   //custom long legends end
+
+  //upgrade ads dropdown
+
+  $(".upgrade_drop").on("change", function () {
+    console.log(this.value);
+
+    const item = 'data-'+this.value;
+
+    $(this).closest('.accordion-body').find('.insight-data').removeClass('d-flex');
+    $(this).closest('.accordion-body').find('.insight-data').addClass('d-none');
+
+    $(this).closest('.accordion-body').find('.'+ item).removeClass('d-none');
+    $(this).closest('.accordion-body').find('.'+ item).addClass('d-flex');
+  });
+
+  //upgrade ads dropdown
 });
