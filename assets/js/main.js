@@ -1,4 +1,6 @@
 $(document).ready(function () {
+  Chart.register(ChartDataLabels);
+
   var bar = new ProgressBar.Circle("#feratured_progress", {
     color: "#000",
     strokeWidth: 5,
@@ -502,18 +504,18 @@ $(document).ready(function () {
   ];
 
   const scatter7 = [
-    { x: "11.07.2024", y: 0 },
-    { x: "13.07.2024", y: 0 },
+    { x: "11.07.2024", y: 0, value: 2 },
+    { x: "13.07.2024", y: 0, value: 7 },
   ];
 
   const scatter90 = [
-    { x: "11.07.2024", y: 0 },
-    { x: "03.09.2024", y: 0 },
+    { x: "11.07.2024", y: 0, value: 2 },
+    { x: "03.09.2024", y: 0, value: 5 },
   ];
 
   const scatter30 = [
-    { x: "11.07.2024", y: 0 },
-    { x: "29.07.2024", y: 0 },
+    { x: "11.07.2024", y: 0, value: 2 },
+    { x: "29.07.2024", y: 0, value: 2 },
   ];
 
   const yellowShades = [
@@ -552,6 +554,9 @@ $(document).ready(function () {
           },
         },
         pointStyle: false,
+        datalabels: {
+          display: false,
+        },
       },
 
       {
@@ -565,23 +570,28 @@ $(document).ready(function () {
         borderColor: "#E13D44",
         pointStyle: false,
         yAxisID: "viewLine",
+        datalabels: {
+          display: false,
+        },
       },
 
       {
         label: "Scatter Dataset",
-        type: "scatter",
+        type: "bubble",
         data: scatter7,
         backgroundColor: "#ffc0b3",
         borderColor: "#ff0000",
         order: 2,
         borderWidth: 2,
-        pointRadius: 7,
-        // scaleId: "dots",
-        // tooltip:{
-        //   label:{
-        //     backgroundColor:'#fff'
-        //   }
-        // }
+        pointRadius: 10,
+
+        // Core options
+        datalabels: {
+          formatter: function ({ value }, context) {
+            return value;
+          },
+          // color: 'white'
+        },
       },
     ],
   };
@@ -687,9 +697,6 @@ $(document).ready(function () {
           },
           // position: { y: 0 },
         },
-        // dots:{
-
-        // }
       },
       plugins: {
         legend: {
@@ -699,19 +706,21 @@ $(document).ready(function () {
         tooltip: {
           callbacks: {
             label: function (context) {
-              // console.log("tool1==>", context);
+              // console.log("tool1==>", context.dataset.type);
               // // console.log("tool1==>",context?.raw?.y);
               // console.log("tool1==>", context?.dataset?.label);
 
-              let label = "Boosted ads";
+              if (context.dataset.type == "bubble") {
+                let label = "Boosted ads";
 
-              if (label) {
-                label += ": ";
+                if (label) {
+                  label += ": ";
+                }
+                if (context.parsed.y !== null) {
+                  label += context.raw.value;
+                }
+                return label;
               }
-              if (context.parsed.y !== null) {
-                label += context.parsed.y;
-              }
-              return label;
             },
           },
         },
@@ -1089,8 +1098,8 @@ $(document).ready(function () {
 
   const timeline_7data = [
     {
-      start: "10.07.2024",
-      end: "11.07.2024",
+      start: "11.07.2024",
+      end: "13.07.2024",
       type: "whatsapp",
       value: 2,
     },
@@ -1173,8 +1182,66 @@ $(document).ready(function () {
       value: 6,
     },
   ];
+  const adjust = -25;
 
   let timeline_bg_lines = {
+    label1: {
+      type: "label",
+      yValue: 12,
+      // xValue:'9.07.2024',
+      backgroundColor: "#333",
+      content: ["Whatsapp"],
+      font: {
+        size: 13,
+      },
+      yAdjust: adjust,
+      color: "#fff",
+      borderRadius: 4,
+      padding: 4,
+    },
+    label2: {
+      type: "label",
+      yValue: 9,
+      // xValue:'9.07.2024',
+      backgroundColor: "#333",
+      content: ["Hot deal"],
+      font: {
+        size: 13,
+      },
+      yAdjust: adjust,
+      color: "#fff",
+      borderRadius: 4,
+      padding: 4,
+    },
+    label3: {
+      type: "label",
+      yValue: 6,
+      // xValue:'9.07.2024',
+      backgroundColor: "#333",
+      content: ["Urgent sale"],
+      font: {
+        size: 13,
+      },
+      yAdjust: adjust,
+      color: "#fff",
+      borderRadius: 4,
+      padding: 4,
+    },
+    label4: {
+      type: "label",
+      yValue: 3,
+      // xValue:'9.07.2024',
+      backgroundColor: "#333",
+      content: ["Thumbnail Video"],
+      font: {
+        size: 13,
+      },
+      yAdjust: adjust,
+      color: "#fff",
+      borderRadius: 4,
+      padding: 4,
+    },
+
     line100: {
       type: "line",
       yMin: barPlacement[1],
@@ -1253,11 +1320,15 @@ $(document).ready(function () {
           drawTime: "afterDatasetsDraw",
           label: {
             display: true,
-            backgroundColor: "#333",
+            backgroundColor: "#fff",
+            color: "#000",
+          borderColor: bColor,
+          borderWidth: 2,
+
             content: (ctx) => {
               // console.log("ctx1==>", ctx);
 
-              return [type];
+              return [value];
             },
             padding: {
               top: 2,
@@ -1265,7 +1336,7 @@ $(document).ready(function () {
               bottom: 2,
               right: 4,
             },
-            yAdjust: -15,
+            yAdjust: -3,
             font: {
               size: 11,
               weight: 400,
@@ -1297,6 +1368,7 @@ $(document).ready(function () {
         padding: {
           left: 25,
           right: 20,
+          top: 25,
         },
       },
       scales: {
