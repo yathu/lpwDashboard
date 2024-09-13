@@ -659,6 +659,8 @@ $(document).ready(function () {
           },
           suggestedMin: 0,
           // suggestedMax: 30
+          reverse: true,
+          // min:1
         },
 
         xAxes: {
@@ -1184,7 +1186,7 @@ $(document).ready(function () {
   ];
   const adjust = -25;
 
-  let timeline_bg_lines = {
+  const timeline_bg_lines = {
     label1: {
       type: "label",
       yValue: 12,
@@ -1355,7 +1357,7 @@ $(document).ready(function () {
 
   const timeline7gen = timeline_anntation_gen(timeline_7data);
 
-  timeline_bg_lines = { ...timeline_bg_lines, ...timeline7gen };
+  let temp_timeline_bg_lines = { ...timeline_bg_lines, ...timeline7gen };
 
   // // console.log("timeline_bg_lines==>", timeline7gen);
 
@@ -1429,7 +1431,7 @@ $(document).ready(function () {
           common: {
             drawTime: "beforeDatasetsDraw",
           },
-          annotations: timeline_bg_lines,
+          annotations: temp_timeline_bg_lines,
         },
       },
     },
@@ -1500,9 +1502,9 @@ $(document).ready(function () {
 
     const timelinegen = timeline_anntation_gen(days);
 
-    timeline_bg_lines = { ...timeline_bg_lines, ...timelinegen };
+   let temp_timeline_bg_lines = { ...timeline_bg_lines, ...timelinegen };
 
-    timelineChart.options.plugins.annotation.annotations = timeline_bg_lines;
+    timelineChart.options.plugins.annotation.annotations = temp_timeline_bg_lines;
 
     if (val == 90) {
       // console.log("myChart==>", myChart);
