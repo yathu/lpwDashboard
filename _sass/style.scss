@@ -183,6 +183,9 @@ body {
       0 3px 8px -1px rgba(50, 50, 71, 0.05);
     padding: 15px 8px 8px 8px;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     .title {
       font-family: "Inter", sans-serif;
@@ -413,7 +416,6 @@ body {
       position: relative;
 
       .profile {
-        border: 2px solid #d5aa55;
         border-radius: 50%;
         max-width: 100%;
         object-fit: cover;
@@ -436,7 +438,6 @@ body {
 
     .membership {
       border-radius: 16px;
-      background: rgb(213, 170, 85);
       display: inline-flex;
       justify-content: center;
       align-items: center;
@@ -453,6 +454,31 @@ body {
 
         color: #ffffff;
         margin-left: 3px;
+      }
+    } 
+// gold silver platinum
+    &.gold {
+      .profile {
+        border: 2px solid #d5aa55;
+      }
+      .membership{
+        background: rgb(213, 170, 85);
+      }
+    }
+    &.silver {
+      .profile {
+        border: 2px solid #b0b9be;
+      }
+      .membership{
+        background: #b0b9be;
+      }
+    }
+    &.platinum {
+      .profile {
+        border: 2px solid #7a7f86;
+      }
+      .membership{
+        background: #7a7f86;
       }
     }
 
@@ -612,11 +638,12 @@ body {
         display: flex;
         align-items: center;
         margin-bottom: 16px;
-        justify-content: space-between;
+        justify-content: start;
 
         .content {
           padding-left: 10px;
           padding-right: 10px;
+          flex: 1;
 
           div {
             font-family: "Inter", sans-serif;
@@ -643,6 +670,10 @@ body {
               font-size: 12px;
             }
           }
+        }
+
+        .btn-box{
+          min-width: 162px;
         }
 
         .btn-verify {
@@ -1291,7 +1322,7 @@ body {
     }
 
     .chart-box-timeline {
-      height: 180px;
+      height: 250px;
       margin-top: 20px;
       padding-right: 8px;
 
@@ -1883,6 +1914,10 @@ body {
       padding: 20px 14px;
     }
 
+    .fade{
+      opacity: 1 !important;
+    }
+
     .card {
       padding: 8px;
       background: #f7fafc;
@@ -2143,6 +2178,6 @@ body {
   }
 }
 
-.availableModal{
+.availableModal {
   @extend .tipsModal;
 }
