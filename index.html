@@ -3,436 +3,449 @@ layout: home
 ---
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-12 col-xl-2">
-            left Menu
-        </div>
+  <div class="row">
+    <div class="col-12 col-xl-2">left Menu</div>
 
-        <div class="col-12 product-update-mobile d-lg-none">
-            {% include latestProductUpdate.html %}
-        </div>
-
-        <div class="col-12 col-xl-10">
-
-            <div class="hero-container my-lg-4">
-
-                {% include heroProgressSwiper.html %}
-            </div>
-
-            <div class="row">
-                <div class="col-12 mobile-col">
-                    <!--                    mobile progress hero section -->
-                    <div class="mobile-progress-container d-lg-none">
-                        <div class="row gx-2 gy-2">
-                            <div class="col-6">
-                                <div class="item featured">
-                                    <div class="title">No. of featured ad left to</div>
-                                    <div class="d-flex justify-content-between flex-wrap">
-                                        <span class="num">75%</span>
-                                        <div>
-                                            <span class="num color">50</span>
-                                            <span class="label">ads left</span>
-                                        </div>
-
-                                        <div class="expire w-100">
-                                            expires on 2024.08.02
-                                        </div>
-
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 25%;"
-                                             aria-valuenow="25"
-                                             aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-
-                                    <a href="#" class="btn btn-primary">
-                                        Renew <br>
-                                        Membership
-                                        <i class="bi bi-caret-right-fill"></i>
-                                    </a>
-
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="item boost">
-                                    <div class="title">No. of Boosts left</div>
-                                    <div class="d-flex justify-content-between flex-wrap">
-                                        <span class="num">75%</span>
-                                        <div>
-                                            <span class="num color">50</span>
-                                            <span class="label">ads left</span>
-                                        </div>
-                                        <div class="expire w-100">
-                                            expires on 2024.08.02
-                                        </div>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 25%;"
-                                             aria-valuenow="25"
-                                             aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-
-                                    <a href="#" class="btn btn-primary">
-                                        Purchase more boosts
-                                        <i class="bi bi-caret-right-fill"></i>
-                                    </a>
-
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="item deals">
-                                    <div class="title">No. of Hot Deals</div>
-                                    <div class="row gx-0 mx-0 mb-2">
-                                        <div class="col-auto img-box">
-                                            <img src="assets/img/hotdeal.svg" alt="" class="img-fluid">
-                                        </div>
-                                        <div class="col d-flex flex-column justify-content-start align-items-start ps-2">
-                                        <span class="num">
-                                            30
-                                        </span>
-                                            <span class="label">
-                                            ads marked as Hot deal
-                                        </span>
-                                        </div>
-
-                                        <div class="expire col-12">
-                                            expires on 2024.08.02
-                                        </div>
-
-                                    </div>
-                                    <a href="#" class="btn btn-primary">
-                                        Purchase more boosts
-                                        <i class="bi bi-caret-right-fill"></i>
-                                    </a>
-
-                                </div>
-                            </div>
-
-                            <div class="col-6">
-                                <div class="item wap">
-                                    <div class="title">
-                                        No. of WhatsApp live chat left
-                                    </div>
-                                    <div class="d-flex justify-content-between flex-wrap">
-                                        <span class="num">25%</span>
-                                        <div>
-                                            <span class="num color">30</span>
-                                            <span class="label">chat left</span>
-                                        </div>
-
-                                        <div class="expire w-100">
-                                            expires on 2024.08.02
-                                        </div>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 25%;"
-                                             aria-valuenow="25"
-                                             aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-
-                                    <a href="#" class="btn btn-primary">
-                                        Purchase more boosts
-                                        <i class="bi bi-caret-right-fill"></i>
-                                    </a>
-
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                {% include rightExpire.html %}
-                            </div>
-
-                            <div class="col-12">
-                                <div class="item voucher">
-                                    <div
-                                            class="d-flex justify-content-between align-items-center"
-                                    >
-                                        <span class="title"> Voucher Expiring! </span>
-                                        <a href="#" class="btn btn-red">
-                                            <img src="./assets/img/danger.svg" alt=""/>
-                                            6 Days Left!</a
-                                        >
-                                    </div>
-                                    <div class="voucher-content">
-                                        <div>
-                                            <div class="code">Voucher code: <span>#LPW324</span></div>
-                                            <div class="price"><span>Rs. 5000</span> Remaining</div>
-                                            <div class="expire">Expiring: Aug 31 2024</div>
-                                        </div>
-                                        <a href="#" class="btn btn-green">
-                                            Redeem Now
-                                            <i class="bi bi-caret-right-fill"></i>
-                                        </a>
-                                    </div>
-                                    <a href="#" class="btn btn-primary py-2"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#availableModal"
-                                    >
-                                        Available Options
-                                        <i class="bi bi-caret-right-fill"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!--                  End  mobile progress hero section -->
-
-                </div>
-            </div>
-
-            <div class="row align-items-start">
-                <div class="col-12 col-lg-8 agent-sec-col">
-
-                    <div class="row mx-0 agent-sec-container gx-0 gx-md-3 shadow">
-                        <div class="col-6 col-lg-8">
-
-                            <!--                            agent profile -->
-                            <div class="profile-info-sec row gx-0">
-                                <div class="col-12 col-lg-auto d-flex align-items-center flex-column justify-content-start justify-content-center"
-                                >
-                                    <div class="profile-img-container">
-                                        <img id="previewImg" class="profile" src="assets/img/profile.jpg" alt=""/>
-                                        <div class="edit-icon-container">
-                                            <img class="edit" src="assets/img/pencil.svg" alt="" onclick="document.getElementById('fileInput').click();"/>
-                                            <input type="file" id="fileInput" accept=".png, .jpg, .jpeg" onchange="showImage(this)">
-                                        </div>
-                                    </div>
-                                    <div class="membership">
-                                        <img src="assets/img/membership.svg" alt=""/>
-                                        <span> Gold </span>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-8 info">
-                                    <div class="titles">
-                                        <div class="name">Hey Mahela,</div>
-                                        Your Agent Score is Low!
-                                    </div>
-
-                                    <div class="desc">
-                                        Increase the score to become a Platinum Agent
-                                    </div>
-                                </div>
-                            </div>
-
-                            <hr class="d-none d-lg-block">
-
-                        </div>
-                        <!--                        agent score-->
-                        <div class="col-6 col-lg-4">
-                            <div class="score-chart-container">
-                                <div class="title">
-                                    Your Agent Score
-                                </div>
-                                {% include agentScoreChart.html %}
-
-                                <div class="score-text">
-                                    Low
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                        <!--                        agent list-->
-                        <div class="col-12 col-lg-8 mt-3 mt-lg-0 list-col">
-                            <div class="agent-score-container">
-                                <div class="widget-title-1 title">
-                                    Quick ways to improve your Agent Score
-                                </div>
-                                <div id="agentScoreList" class="score-list-sec">
-                                    <div class="more">
-                                        <a id="btnViewMore" class="btn btn-outline-primary">View more</a>
-                                    </div>
-                                    <div class="score-list-item">
-                                        <img src="assets/img/score_list.svg" alt="">
-                                        <div class="content">
-                                            <div>
-                                                20 Unverified Properties
-                                            </div>
-
-                                            <span>
-                        Verified properties rank higher in search result
-                      </span>
-                                        </div>
-                                        <a href="#" class="btn btn-verify">Verify Now</a>
-                                    </div>
-
-                                    <div class="score-list-item">
-                                        <img src="assets/img/score_list.svg" alt="">
-                                        <div class="content">
-                                            <div>
-                                                12 Properties without photos
-                                            </div>
-
-                                            <span>
-                        Verified properties rank higher in search result
-                      </span>
-                                        </div>
-                                        <a href="#" class="btn btn-verify">Verify Now</a>
-                                    </div>
-
-                                    <div class="score-list-item">
-                                        <img src="assets/img/score_list_success.svg" alt="">
-                                        <div class="content">
-                                            <div>
-                                                23 Continuous Active Months on LPW
-                                            </div>
-
-                                            <span>
-                        The longer you are with us, the better your score.
-                      </span>
-                                        </div>
-                                        <a href="#" class="btn btn-verify">Verify Now</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!--                        membership tire-->
-                        <div class="col-12 col-lg-4 tire-col">
-                            <div class="tire-container mt-3">
-                                <div class="widget-title-1 text-center">
-                                    Membership Tier
-                                </div>
-                                <div class="memberships my-3">
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <img src="assets/img/silver.svg" alt="">
-                                            <div class="name">Sliver</div>
-                                            <div class="label">12 Months</div>
-                                        </div>
-                                        <div class="col-4">
-                                            <img src="assets/img/gold.svg" alt="">
-                                            <div class="name">Gold</div>
-                                            <div class="label">24 Months</div>
-                                        </div>
-                                        <div class="col-4">
-                                            <img src="assets/img/platinum.svg" alt="">
-                                            <div class="name">Platinum</div>
-                                            <div class="label">36 Months</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="progress-container">
-                                    <div class="progress" style="height: 4px;">
-                                        <div class="progress-bar" role="progressbar" style="width: 50%;"
-                                             aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <div class="check middle">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                             fill="currentColor" class="bi bi-check-circle-fill"
-                                             viewBox="0 0 16 16">
-                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                                        </svg>
-                                    </div>
-                                    <div class="check-inactive start active"></div>
-                                    <div class="check-inactive end"></div>
-                                </div>
-
-                                <a href="#" class="btn btn-primary w-100 mt-3 d-flex justify-content-between">View
-                                    Benefits
-                                    <i class="bi bi-caret-right-fill"></i>
-                                </a>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="row d-lg-none mobile-right-section">
-                        {% include rightBar.html %}
-                    </div>
-
-                    <!--            tips section-->
-
-                    {% include tipsSection.html %}
-
-                    {% include perfomanceChart.html %}
-
-
-                    {% include upgradeAds.html %}
-
-                    {% include trendingLocation.html %}
-
-                    {% include worst.html %}
-
-                    {% include adsListing.html %}
-
-                </div>
-                <div class="col-12 col-lg-4">
-                    <!--                    right sidebar-->
-
-                    {% include voucherItem.html %}
-
-                    <div class="d-none d-lg-block product-update-desktop">{% include latestProductUpdate.html %}</div>
-                    <div class="d-none d-lg-block pt-3">
-                        {% include rightExpire.html %}
-                        {% include rightBar.html %}
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
+    <div class="col-12 product-update-mobile d-lg-none">
+      {% include latestProductUpdate.html %}
     </div>
-</div>
 
+    <div class="col-12 col-xl-10">
+      <div class="hero-container my-lg-4">
+        {% include heroProgressSwiper.html %}
+      </div>
 
-        <!-- Modal -->
-        <div
-          class="modal fade availableModal"
-          id="availableModal"
-          tabindex="-1"
-          aria-labelledby="availableModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <div>
-                  <img src="assets/img/bulpBrightGreen.svg" alt="" />
-                  <label class="widget-title-2" id="tipsModalLabel">
-                    Tips to increase the leads
-                  </label>
+      <div class="row">
+        <div class="col-12 mobile-col">
+          <!--                    mobile progress hero section -->
+          <div class="mobile-progress-container d-lg-none">
+            <div class="row gx-2 gy-2">
+              <div class="col-6">
+                <div class="item featured">
+                  <div>
+                    <div class="title">No. of featured ad left to</div>
+                    <div class="d-flex justify-content-between flex-wrap">
+                      <span class="num">75%</span>
+                      <div>
+                        <span class="num color">50</span>
+                        <span class="label">ads left</span>
+                      </div>
+
+                      <div class="expire w-100">expires on 2024.08.02</div>
+                    </div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 25%"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <a href="#" class="btn btn-primary">
+                    Renew <br />
+                    Membership
+                    <i class="bi bi-caret-right-fill"></i>
+                  </a>
                 </div>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
               </div>
-              <div class="modal-body">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">
-                    <div>
-                      <img src="assets/img/image_icon.svg" alt="" />
+              <div class="col-6">
+                <div class="item boost">
+                  <div>
+                    <div class="title">No. of Boosts left</div>
+                    <div class="d-flex justify-content-between flex-wrap">
+                      <span class="num">75%</span>
+                      <div>
+                        <span class="num color">50</span>
+                        <span class="label">ads left</span>
+                      </div>
+                      <div class="expire w-100">expires on 2024.08.02</div>
                     </div>
-                    <p class="mb-0">
-                      Upload <b>10</b> Images to increase <b>50%</b> visibility
-                    </p>
-                  </li>
-                  <li class="list-group-item">
-                    <div>
-                      <img src="assets/img/whatsapp_icon.svg" alt="" />
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 25%"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
                     </div>
-                    <p class="mb-0">
-                      Activate Whatsapp Live Chat & Get <b>2X</b> more view
-                    </p>
-                  </li>
-                  <li class="list-group-item">
-                    <div>
-                      <img src="assets/img/hotdeal.svg" alt="" />
+                  </div>
+
+                  <a href="#" class="btn btn-primary">
+                    Purchase more boosts
+                    <i class="bi bi-caret-right-fill"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="item deals">
+                  <div>
+                    <div class="title">No. of Hot Deals</div>
+                    <div class="row gx-0 mx-0 mb-2">
+                      <div class="col-auto img-box">
+                        <img
+                          src="assets/img/hotdeal.svg"
+                          alt=""
+                          class="img-fluid"
+                        />
+                      </div>
+                      <div
+                        class="col d-flex flex-column justify-content-start align-items-start ps-2"
+                      >
+                        <span class="num"> 30 </span>
+                        <span class="label"> ads marked as Hot deal </span>
+                      </div>
                     </div>
-                    <p class="mb-0">
-                      Activate Hot Deals & Get <b>2X</b> more view
-                    </p>
-                  </li>
-                </ul>
+
+                    <div class="expire col-12">expires on 2024.08.02</div>
+                  </div>
+
+                  <a href="#" class="btn btn-primary">
+                    Purchase more boosts
+                    <i class="bi bi-caret-right-fill"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="item wap">
+                  <div>
+                    <div class="title">No. of WhatsApp live chat left</div>
+                    <div class="d-flex justify-content-between flex-wrap">
+                      <span class="num">25%</span>
+                      <div>
+                        <span class="num color">30</span>
+                        <span class="label">chat left</span>
+                      </div>
+
+                      <div class="expire w-100">expires on 2024.08.02</div>
+                    </div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 25%"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <a href="#" class="btn btn-primary">
+                    Purchase more boosts
+                    <i class="bi bi-caret-right-fill"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-12">{% include rightExpire.html %}</div>
+
+              <div class="col-12">
+                <div class="item voucher">
+                  <div>
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <span class="title"> Voucher Expiring! </span>
+                      <a href="#" class="btn btn-red">
+                        <img src="./assets/img/danger.svg" alt="" />
+                        6 Days Left!</a
+                      >
+                    </div>
+                    <div class="voucher-content">
+                      <div>
+                        <div class="code">
+                          Voucher code: <span>#LPW324</span>
+                        </div>
+                        <div class="price"><span>Rs. 5000</span> Remaining</div>
+                        <div class="expire">Expiring: Aug 31 2024</div>
+                      </div>
+                      <a href="#" class="btn btn-green">
+                        Redeem Now
+                        <i class="bi bi-caret-right-fill"></i>
+                      </a>
+                    </div> 
+                  </div>
+
+                  <a
+                    href="#"
+                    class="btn btn-primary py-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#availableModal"
+                  >
+                    Available Options
+                    <i class="bi bi-caret-right-fill"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
+          <!--                  End  mobile progress hero section -->
         </div>
+      </div>
+
+      <div class="row align-items-start">
+        <div class="col-12 col-lg-8 agent-sec-col">
+          <div class="row mx-0 agent-sec-container gx-0 gx-md-3 shadow">
+            <div class="col-6 col-lg-8">
+              <!--                            agent profile -->
+              <div class="profile-info-sec platinum row gx-0">
+                <div
+                  class="col-12 col-lg-auto d-flex align-items-center flex-column justify-content-start justify-content-center"
+                >
+                  <div class="profile-img-container">
+                    <img
+                      id="previewImg"
+                      class="profile"
+                      src="assets/img/profile.jpg"
+                      alt=""
+                    />
+                    <div class="edit-icon-container">
+                      <img
+                        class="edit"
+                        src="assets/img/pencil.svg"
+                        alt=""
+                        onclick="document.getElementById('fileInput').click();"
+                      />
+                      <input
+                        type="file"
+                        id="fileInput"
+                        accept=".png, .jpg, .jpeg"
+                        onchange="showImage(this)"
+                      />
+                    </div>
+                  </div>
+                  <div class="membership">
+                    <img src="assets/img/membership.svg" alt="" />
+                    <span> Gold </span>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-8 info">
+                  <div class="titles">
+                    <div class="name">Hey Mahela,</div>
+                    Your Agent Score is Low!
+                  </div>
+
+                  <div class="desc">
+                    Increase the score to become a Platinum Agent
+                  </div>
+                </div>
+              </div>
+
+              <hr class="d-none d-lg-block" />
+            </div>
+            <!--                        agent score-->
+            <div class="col-6 col-lg-4">
+              <div class="score-chart-container">
+                <div class="title">Your Agent Score</div>
+                {% include agentScoreChart.html %}
+
+                <div class="score-text">Low</div>
+              </div>
+            </div>
+
+            <!--                        agent list-->
+            <div class="col-12 col-lg-8 mt-3 mt-lg-0 list-col">
+              <div class="agent-score-container">
+                <div class="widget-title-1 title">
+                  Quick ways to improve your Agent Score
+                </div>
+                <div id="agentScoreList" class="score-list-sec">
+                  <div class="more">
+                    <a id="btnViewMore" class="btn btn-outline-primary"
+                      >View more</a
+                    >
+                  </div>
+                  <div class="score-list-item">
+                    <img src="assets/img/score_list.svg" alt="" />
+                    <div class="content">
+                      <div>20 Unverified Properties</div>
+
+                      <span>
+                        Verified properties rank higher in search result
+                      </span>
+                    </div>
+                    <div class="btn-box">
+                      <a href="#" class="btn btn-verify">Verify Now</a>
+                    </div>
+                  </div>
+
+                  <div class="score-list-item">
+                    <img src="assets/img/score_list.svg" alt="" />
+                    <div class="content">
+                      <div>12 Properties without photos</div>
+
+                      <span>
+                        Verified properties rank higher in search result
+                      </span>
+                    </div>
+                    <div class="btn-box">
+                      <a href="#" class="btn btn-verify">Verify Now</a>
+                    </div>
+                  </div>
+
+                  <div class="score-list-item">
+                    <img src="assets/img/score_list_success.svg" alt="" />
+                    <div class="content">
+                      <div>23 Continuous Active Months on LPW</div>
+
+                      <span>
+                        The longer you are with us, the better your score.
+                      </span>
+                    </div>
+                    <div class="btn-box">
+                      <a href="#" class="btn btn-verify">Verify Now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--                        membership tire-->
+            <div class="col-12 col-lg-4 tire-col">
+              <div class="tire-container mt-3">
+                <div class="widget-title-1 text-center">Membership Tier</div>
+                <div class="memberships my-3">
+                  <div class="row">
+                    <div class="col-4">
+                      <img src="assets/img/silver.svg" alt="" />
+                      <div class="name">Sliver</div>
+                      <div class="label">12 Months</div>
+                    </div>
+                    <div class="col-4">
+                      <img src="assets/img/gold.svg" alt="" />
+                      <div class="name">Gold</div>
+                      <div class="label">24 Months</div>
+                    </div>
+                    <div class="col-4">
+                      <img src="assets/img/platinum.svg" alt="" />
+                      <div class="name">Platinum</div>
+                      <div class="label">36 Months</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="progress-container">
+                  <div class="progress" style="height: 4px">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width: 50%"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                  <div class="check middle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-check-circle-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="check-inactive start active"></div>
+                  <div class="check-inactive end"></div>
+                </div>
+
+                <a
+                  href="#"
+                  class="btn btn-primary w-100 mt-3 d-flex justify-content-between"
+                  >View Benefits
+                  <i class="bi bi-caret-right-fill"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="row d-lg-none mobile-right-section">
+            {% include rightBar.html %}
+          </div>
+
+          <!--            tips section-->
+
+          {% include tipsSection.html %} {% include perfomanceChart.html %} {%
+          include upgradeAds.html %} {% include trendingLocation.html %} {%
+          include worst.html %} {% include adsListing.html %}
+        </div>
+        <div class="col-12 col-lg-4">
+          <!--                    right sidebar-->
+
+          {% include voucherItem.html %}
+
+          <div class="d-none d-lg-block product-update-desktop">
+            {% include latestProductUpdate.html %}
+          </div>
+          <div class="d-none d-lg-block pt-3">
+            {% include rightExpire.html %} {% include rightBar.html %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade availableModal"
+  id="availableModal"
+  tabindex="-1"
+  aria-labelledby="availableModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <img src="assets/img/bulpBrightGreen.svg" alt="" />
+          <label class="widget-title-2" id="tipsModalLabel">
+            Tips to increase the leads
+          </label>
+        </div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div>
+              <img src="assets/img/image_icon.svg" alt="" />
+            </div>
+            <p class="mb-0">
+              Upload <b>10</b> Images to increase <b>50%</b> visibility
+            </p>
+          </li>
+          <li class="list-group-item">
+            <div>
+              <img src="assets/img/whatsapp_icon.svg" alt="" />
+            </div>
+            <p class="mb-0">
+              Activate Whatsapp Live Chat & Get <b>2X</b> more view
+            </p>
+          </li>
+          <li class="list-group-item">
+            <div>
+              <img src="assets/img/hotdeal.svg" alt="" />
+            </div>
+            <p class="mb-0">Activate Hot Deals & Get <b>2X</b> more view</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
