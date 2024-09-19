@@ -1185,6 +1185,13 @@ $(document).ready(function () {
     },
   ];
   const adjust = -25;
+  const titleLabelSize = 12;
+  const titlePadding = {
+    top: 2,
+    left: 4,
+    bottom: 2,
+    right: 4,
+  };
 
   const timeline_bg_lines = {
     label1: {
@@ -1194,12 +1201,12 @@ $(document).ready(function () {
       backgroundColor: "#333",
       content: ["Whatsapp"],
       font: {
-        size: 13,
+        size: titleLabelSize,
       },
       yAdjust: adjust,
       color: "#fff",
       borderRadius: 4,
-      padding: 4,
+      padding: titlePadding,
     },
     label2: {
       type: "label",
@@ -1208,12 +1215,12 @@ $(document).ready(function () {
       backgroundColor: "#333",
       content: ["Hot deal"],
       font: {
-        size: 13,
+        size: titleLabelSize,
       },
       yAdjust: adjust,
       color: "#fff",
       borderRadius: 4,
-      padding: 4,
+      padding: titlePadding,
     },
     label3: {
       type: "label",
@@ -1222,12 +1229,12 @@ $(document).ready(function () {
       backgroundColor: "#333",
       content: ["Urgent sale"],
       font: {
-        size: 13,
+        size: titleLabelSize,
       },
       yAdjust: adjust,
       color: "#fff",
       borderRadius: 4,
-      padding: 4,
+      padding: titlePadding,
     },
     label4: {
       type: "label",
@@ -1236,12 +1243,12 @@ $(document).ready(function () {
       backgroundColor: "#333",
       content: ["Thumbnail Video"],
       font: {
-        size: 13,
+        size: titleLabelSize,
       },
       yAdjust: adjust,
       color: "#fff",
       borderRadius: 4,
-      padding: 4,
+      padding: titlePadding,
     },
 
     line100: {
@@ -1281,6 +1288,25 @@ $(document).ready(function () {
     },
   };
 
+
+  const getColor = (type, value )=> {
+    console.log("getColor=>", type,value);
+       
+    const colorType =
+    type == "whatsapp"
+      ? whatsappLiveColors
+      : type == "hotDeal"
+      ? hotDealColors
+      : type == "urgentSale"
+      ? urgentSaleColors
+      : thumbnailVideoAdColors;
+
+      const newVal = value > (colorType.length -1) ? (colorType.length-1) : value;
+
+      return colorType[newVal];  
+  }
+
+
   const timeline_anntation_gen = (genData) => {
     let temData = {};
 
@@ -1289,14 +1315,7 @@ $(document).ready(function () {
       // console.log("ind==>", index);
       const str = `line${index}`;
 
-      const bColor =
-        type == "whatsapp"
-          ? whatsappLiveColors[value]
-          : type == "hotDeal"
-          ? hotDealColors[value]
-          : type == "urgentSale"
-          ? urgentSaleColors[value]
-          : thumbnailVideoAdColors[value];
+      const bColor = getColor(type, value);
 
       const placement =
         type == "whatsapp"
@@ -1324,8 +1343,8 @@ $(document).ready(function () {
             display: true,
             backgroundColor: "#fff",
             color: "#000",
-          borderColor: bColor,
-          borderWidth: 2,
+            borderColor: bColor,
+            borderWidth: 2,
 
             content: (ctx) => {
               // console.log("ctx1==>", ctx);
@@ -1333,12 +1352,12 @@ $(document).ready(function () {
               return [value];
             },
             padding: {
-              top: 2,
-              left: 4,
-              bottom: 2,
-              right: 4,
+              top: 0,
+              left: 3,
+              bottom: 0,
+              right: 3,
             },
-            yAdjust: -3,
+            yAdjust: 0,
             font: {
               size: 11,
               weight: 400,
@@ -1371,6 +1390,7 @@ $(document).ready(function () {
           left: 25,
           right: 20,
           top: 25,
+          bottom: 0,
         },
       },
       scales: {
@@ -1502,9 +1522,10 @@ $(document).ready(function () {
 
     const timelinegen = timeline_anntation_gen(days);
 
-   let temp_timeline_bg_lines = { ...timeline_bg_lines, ...timelinegen };
+    let temp_timeline_bg_lines = { ...timeline_bg_lines, ...timelinegen };
 
-    timelineChart.options.plugins.annotation.annotations = temp_timeline_bg_lines;
+    timelineChart.options.plugins.annotation.annotations =
+      temp_timeline_bg_lines;
 
     if (val == 90) {
       // console.log("myChart==>", myChart);
