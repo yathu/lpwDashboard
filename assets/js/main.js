@@ -505,7 +505,7 @@ $(document).ready(function () {
 
   const scatter7 = [
     { x: "11.07.2024", y: 0, value: 2 },
-    { x: "13.07.2024", y: 0, value: 7 },
+    { x: "13.07.2024", y: 0, value: 700 },
   ];
 
   const scatter90 = [
@@ -587,8 +587,8 @@ $(document).ready(function () {
 
         // Core options
         datalabels: {
-          formatter: function ({ value }, context) {
-            return value;
+          formatter: function ({value}, context) {
+            return value < 100 ? value : '';
           },
           // color: 'white'
         },
@@ -1663,4 +1663,5 @@ $(document).ready(function () {
   });
 
   //upgrade ads dropdown
+
 });
