@@ -1,5 +1,281 @@
 $(document).ready(() => {
-  // AdinsightPage
+
+  const genLeftTitle = (title, id, fromLeft, topAlign) => {
+    const yLeftTitle = {
+      id: id,
+      afterDatasetsDraw(chart, args, options) {
+        const {
+          ctx,
+          chartArea: { top, left },
+          scales: { x, y },
+        } = chart;
+        ctx.save();
+        ctx.fillText(title, fromLeft, top - topAlign);
+        ctx.restore();
+      },
+    };
+
+    return yLeftTitle;
+  };
+
+  const genRightTitle = (title, id, fromRight, topAlign) => {
+    const yRightTitle = {
+      id: id,
+      afterDatasetsDraw(chart, args, options) {
+        const {
+          ctx,
+          chartArea: { top, right },
+          scales: { x, y },
+        } = chart;
+        ctx.save();
+        ctx.fillText(title, right + fromRight, top - topAlign);
+        ctx.restore();
+      },
+    };
+
+    return yRightTitle;
+  };
+
+  //ads type chart
+  var adsTypeCtx = document.getElementById("adsTypeChart");
+
+  const adsViewsData = [400, 800];
+  const adsLeadsData = [200, 600];
+
+  var adsTypeData = {
+    labels: ["Featured", "Normal"],
+    datasets: [
+      {
+        label: "Views",
+        type: "bar",
+        backgroundColor: "red",
+        data: adsViewsData,
+        barThickness: 30,
+        borderWidth: 1,
+        borderColor: "white",
+        // barPercentage: 0.3
+
+        // categoryPercentage:1.0,
+        // barPercentage: 0.5,
+      },
+      {
+        label: "Leads",
+        type: "bar",
+        backgroundColor: "green",
+        data: adsLeadsData,
+        yAxisID: "y1",
+        barThickness: 30,
+        borderWidth: 1,
+        borderColor: "white",
+
+        // inflateAmount:5
+        // barPercentage: 0.7
+
+        // categoryPercentage: 0,
+        // barPercentage: 0.5,
+      },
+    ],
+  };
+
+  var adsTypeChart = new Chart(adsTypeCtx, {
+    type: "bar",
+    data: adsTypeData,
+    // inflateAmount: 5,
+    options: {
+      //barValueSpacing: 20,
+      categoryPercentage: 0.5,
+      barPercentage: 0.3,
+
+      responsive: true,
+      maintainAspectRatio: false,
+      layout: {
+        padding: {
+          top: 30,
+        },
+      },
+
+      scales: {
+        y: {
+          type: "linear",
+          display: true,
+          position: "left",
+          //	suggestedMin: 0,
+
+          ticks: {
+            // autoSkip: true,
+            maxTicksLimit: 6,
+          },
+          grid: {
+            // drawTicks: false,
+            tickColor: "white",
+          },
+        },
+        y1: {
+          type: "linear",
+          display: true,
+          position: "right",
+          //suggestedMin: 0,
+          grid: {
+            drawOnChartArea: false,
+            tickColor: "white",
+          },
+          ticks: {
+            // autoSkip: true,
+            maxTicksLimit: 6,
+          },
+        },
+        x: {
+          type: "category",
+          grid: {
+            drawOnChartArea: false,
+            // drawTicks: false,
+            tickColor: "white",
+          },
+          border: {
+            display: false,
+          },
+        },
+      },
+      plugins: {
+        legend: {
+          display: true,
+          position: "bottom",
+          labels: {
+            usePointStyle: true,
+            pointStyle: "circle",
+            // boxWidth: 0
+          },
+        },
+      },
+    },
+    plugins: [
+      genLeftTitle("Pages", "PageNUmLtitle", 0, 20),
+      genRightTitle("Leads", "PageNumRtitle", 1, 20),
+    ],
+  });
+
+  //ads type chart end
+
+  //deals chart .......................................
+
+  var dealsCtx = document.getElementById("dealsChart");
+
+  const dealsViewsData = [400, 800];
+  const dealLeadsData = [200, 600];
+
+  var hotData = {
+    labels: ["Featured", "Normal"],
+    datasets: [
+      {
+        label: "Views",
+        type: "bar",
+        backgroundColor: "red",
+        data: dealsViewsData,
+        barThickness: 30,
+        borderWidth: 1,
+        borderColor: "white",
+        // barPercentage: 0.3
+
+        // categoryPercentage:1.0,
+        // barPercentage: 0.5,
+      },
+      {
+        label: "Leads",
+        type: "bar",
+        backgroundColor: "green",
+        data: dealLeadsData,
+        yAxisID: "y1",
+        barThickness: 30,
+        borderWidth: 1,
+        borderColor: "white",
+
+        // inflateAmount:5
+        // barPercentage: 0.7
+
+        // categoryPercentage: 0,
+        // barPercentage: 0.5,
+      },
+    ],
+  };
+
+  var dealsChart = new Chart(dealsCtx, {
+    type: "bar",
+    data: hotData,
+    // inflateAmount: 5,
+    options: {
+      //barValueSpacing: 20,
+      categoryPercentage: 0.5,
+      barPercentage: 0.3,
+
+      responsive: true,
+      maintainAspectRatio: false,
+      layout: {
+        padding: {
+          top: 30,
+        },
+      },
+
+      scales: {
+        y: {
+          type: "linear",
+          display: true,
+          position: "left",
+          //	suggestedMin: 0,
+
+          ticks: {
+            // autoSkip: true,
+            maxTicksLimit: 6,
+          },
+          grid: {
+            // drawTicks: false,
+            tickColor: "white",
+          },
+        },
+        y1: {
+          type: "linear",
+          display: true,
+          position: "right",
+          //suggestedMin: 0,
+          grid: {
+            drawOnChartArea: false,
+            tickColor: "white",
+          },
+          ticks: {
+            // autoSkip: true,
+            maxTicksLimit: 6,
+          },
+        },
+        x: {
+          type: "category",
+          grid: {
+            drawOnChartArea: false,
+            // drawTicks: false,
+            tickColor: "white",
+          },
+          border: {
+            display: false,
+          },
+        },
+      },
+      plugins: {
+        legend: {
+          display: true,
+          position: "bottom",
+          labels: {
+            usePointStyle: true,
+            pointStyle: "circle",
+            // boxWidth: 0
+          },
+        },
+      },
+    },
+    plugins: [
+      genLeftTitle("Views", "dealsLtitle", 0, 20),
+      genRightTitle("Leads", "dealsRtitle", 1, 20),
+    ],
+  });
+
+  //deals chart end .......................................
 
   var ctx = document.getElementById("pageNumberChart");
 
@@ -39,34 +315,6 @@ $(document).ready(() => {
         // yAxisID: "y1",
       },
     ],
-  };
-
-  const yLeftTitle = {
-    id: "yLeftTitle",
-    afterDatasetsDraw(chart, args, options) {
-      const {
-        ctx,
-        chartArea: { top, left },
-        scales: { x, y },
-      } = chart;
-      ctx.save();
-      ctx.fillText("Pages", 10, top - 10);
-      ctx.restore();
-    },
-  };
-
-  const yRightTitle = {
-    id: "yRightTitle",
-    afterDatasetsDraw(chart, args, options) {
-      const {
-        ctx,
-        chartArea: { top, right },
-        scales: { x, y },
-      } = chart;
-      ctx.save();
-      ctx.fillText("Ads", right + 40, top - 10);
-      ctx.restore();
-    },
   };
 
   var myBarChart = new Chart(ctx, {
@@ -175,7 +423,10 @@ $(document).ready(() => {
         },
       },
     },
-    plugins: [yLeftTitle, yRightTitle],
+    plugins: [
+      genLeftTitle("Pages", "PageNUmLtitle", 10, 10),
+      genRightTitle("Ads", "pageNumRtitle", 40, 10),
+    ],
   });
 });
 
@@ -206,7 +457,6 @@ const leadsAdsData = [
   { label: "90%", lead: 120, ads: 60 },
   { label: "100%", lead: 125, ads: 90 },
 ];
-
 
 var data = {
   labels: leadsAdsData.map((data) => data.label),
