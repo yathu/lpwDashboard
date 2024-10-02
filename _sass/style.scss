@@ -2339,6 +2339,10 @@ body {
       border-radius: 12px;
       padding: 16px;
 
+      @media (max-width:767.98px) {
+        width: 100%;
+      }
+
       .title {
         display: flex;
         align-items: center;
@@ -2373,6 +2377,9 @@ body {
           line-height: 12px;
           color: #6f767e;
           padding: 10px 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .btn-check:checked + .btn,
@@ -2396,9 +2403,167 @@ body {
         height: 275px;
       }
 
+      .pageNumberChartContainer {
+        height: 275px;
+      }
+
       .dealsChartContainer {
+        height: 275px;
+      }
+      .boostedChartContainer {
         height: 275px;
       }
     }
   }
+
+  .recommend-container {
+    background: #ffffff;
+    box-shadow: 0px 0px 1px rgba(12, 26, 75, 0.24),
+      0px 3px 8px -1px rgba(50, 50, 71, 0.05);
+    border-radius: 20px;
+    padding: 24px 24px 20px;
+
+    .title {
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: 0.2px;
+      color: #2f2f35;
+      margin-bottom: 24px;
+    }
+    .items-container {
+      display: flex;
+      justify-content: start;
+      // align-items: start;
+      gap: 25px;
+
+      @media (max-width:767.98px) {
+        flex-direction: column;
+      }
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: start;
+        padding: 12px;
+        background: #f7fafc;
+        border: 1px solid #e2e2ea;
+        box-shadow: 0px 3px 8px -1px rgba(50, 50, 71, 0.05);
+        border-radius: 20px;
+        width: calc(33% - 12.5px);
+        max-width: 340px;
+
+        @media (max-width:767.98px) {
+          width: 100%;
+          max-width: none !important;
+        }
+
+        .red {
+          color: #ed1c24;
+        }
+
+        .green {
+          color: #018e37;
+        }
+
+        .yellow{
+          color: #F4BC2F;
+        }
+
+        .black {
+          color: #2f2f35 !important;
+        }
+
+        .top {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          margin-bottom: 14px;
+
+          span.img {
+            width: 52px;
+            height: 52px;
+            min-width: 52px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #ffffff;
+            border: 1px solid rgba(237, 28, 36, 0.1);
+            border-radius: 32px;
+            margin-right: 13px;
+          }
+
+          div {
+            font-family: "Inter", sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            letter-spacing: 0.2px;
+            color: #2f2f35;
+          }
+        }
+
+        p {
+          font-family: "Inter", sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 19px;
+          letter-spacing: 0.1px;
+          color: #696974;
+          margin-bottom: 14px;
+          span {
+            color: #009432;
+          }
+        }
+
+        .bottom {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+
+          .btn-link {
+            font-family: "Inter", sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: -0.01em;
+            padding: 0;
+
+            color: #1a73e8;
+          }
+
+          .form-check-input {
+            width: 48px;
+            height: 24px;
+            box-shadow: none !important;
+          }
+        }
+      }
+
+      .boost {
+        .top {
+          span.img {
+            border: 1px solid rgba(1, 142, 55, 0.1) !important;
+          }
+        }
+      }
+
+      .star {
+        .top {
+          span.img {
+            border: 1px solid rgba(237, 28, 36, 0.1);
+          }
+        }
+      }
+    }
+  }
 }
+
+// background: linear-gradient(180deg, #27885D 21.12%, #44BD86 100%);
