@@ -185,6 +185,7 @@ title: insight
               id="featured"
               autocomplete="off"
               checked
+              value="featured"
             />
             <label class="btn btn-outline-primary" for="featured"
               >Featured Ads</label
@@ -196,6 +197,7 @@ title: insight
               name="upgradeChartType"
               id="platinum"
               autocomplete="off"
+              value="platinum"
             />
             <label class="btn btn-outline-primary" for="platinum"
               >Platinum Ads</label
@@ -207,6 +209,7 @@ title: insight
               name="upgradeChartType"
               id="showcase"
               autocomplete="off"
+              value="showcase"
             />
             <label class="btn btn-outline-primary" for="showcase"
               >Showcase Ads</label
@@ -232,23 +235,24 @@ title: insight
             <input
               type="radio"
               class="btn-check"
-              name="dealChart"
+              name="dealChartType"
               id="hotDeal"
               autocomplete="off"
               checked
+              value="hotdeal"
             />
             <label class="btn btn-outline-primary" for="hotDeal">
               <img src="assets/img/addInsight/hotdeal.svg" alt="" />
               <span>Hot deal</span>
-              </label
-            > 
+            </label>
 
             <input
               type="radio"
               class="btn-check"
-              name="dealChart"
+              name="dealChartType"
               id="whatsapp"
               autocomplete="off"
+              value="whatsapp"
             />
             <label class="btn btn-outline-primary" for="whatsapp">
               <img src="assets/img/addInsight/whatsapp.svg" alt="" />
@@ -258,9 +262,10 @@ title: insight
             <input
               type="radio"
               class="btn-check"
-              name="dealChart"
+              name="dealChartType"
               id="video"
               autocomplete="off"
+              value="video"
             />
             <label class="btn btn-outline-primary" for="video">
               <img src="assets/img/addInsight/video.svg" alt="" />
@@ -293,6 +298,13 @@ title: insight
           </div>
         </div>
         <div class="chart-box w-100">
+          <div class="title">
+            <img
+              src="assets/img/addInsight/ad.svg"
+              alt=""
+            />
+            Leads and Ads
+          </div>
           <canvas id="leadsAdsChart"></canvas>
         </div>
       </div>
@@ -482,7 +494,8 @@ title: insight
             </div>
             <p>Upgrade to featured to get get <span>+40%</span> leads</p>
             <div class="bottom">
-              <a class="btn btn-primary" href="#">Activate
+              <a class="btn btn-primary" href="#"
+                >Activate
                 <i class="bi bi-caret-right-fill"></i>
               </a>
               <div class="form-check form-switch">

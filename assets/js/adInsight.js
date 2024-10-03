@@ -65,8 +65,14 @@ $(document).ready(() => {
   //ads type chart
   var adsTypeCtx = document.getElementById("adsTypeChart");
 
-  const adsViewsData = [400, 800];
-  const adsLeadsData = [200, 600];
+  const featuredAdsViewsData = [400, 800];
+  const featuredAdsLeadsData = [200, 700];
+
+  const platinumAdsViewsData = [300, 700];
+  const platinumAdsLeadsData = [100, 600];
+
+  const showcaseAdsViewsData = [200, 500];
+  const showcaseAdsLeadsData = [300, 600];
 
   var adsTypeData = {
     labels: ["Featured", "Normal"],
@@ -74,7 +80,7 @@ $(document).ready(() => {
       {
         label: "Views",
         type: "bar",
-        data: adsViewsData,
+        data: featuredAdsViewsData,
         barThickness: 30,
         borderWidth: 1,
         borderColor: "white",
@@ -92,7 +98,7 @@ $(document).ready(() => {
       {
         label: "Leads",
         type: "bar",
-        data: adsLeadsData,
+        data: featuredAdsLeadsData,
         yAxisID: "y1",
         barThickness: 30,
         borderWidth: 1,
@@ -189,6 +195,28 @@ $(document).ready(() => {
     ],
   });
 
+  //on pills change data
+
+  // console.log(adsTypeChart.data);
+
+  $("input[type=radio][name=upgradeChartType]").change(function () {
+    if (this.value == "featured") {
+      
+      adsTypeChart.data.datasets[0].data = featuredAdsViewsData;
+      adsTypeChart.data.datasets[1].data = featuredAdsLeadsData;
+
+    } else if (this.value == "platinum") {
+      adsTypeChart.data.datasets[0].data = platinumAdsViewsData;
+      adsTypeChart.data.datasets[1].data = platinumAdsLeadsData;
+
+    } else {
+      adsTypeChart.data.datasets[0].data = showcaseAdsViewsData;
+      adsTypeChart.data.datasets[1].data = showcaseAdsLeadsData;
+    }
+
+    adsTypeChart.update();
+  });
+
   //ads type chart end
 
   //deals chart .......................................
@@ -198,8 +226,14 @@ $(document).ready(() => {
   const dealsViewsData = [400, 800];
   const dealLeadsData = [200, 600];
 
+  const wapViewsData = [300, 600];
+  const wapLeadsData = [100, 400];
+
+  const videoViewsData = [200, 700];
+  const videoLeadsData = [400, 700];
+
   var hotData = {
-    labels: ["Featured", "Normal"],
+    labels: ["Hot deals", "Normal"],
     datasets: [
       {
         label: "Views",
@@ -320,6 +354,24 @@ $(document).ready(() => {
       genLeftTitle("Views", "dealsLtitle", 0, 20),
       genRightTitle("Leads", "dealsRtitle", 1, 20),
     ],
+  });
+
+  $("input[type=radio][name=dealChartType]").change(function () {
+    if (this.value == "hotdeal") {
+      
+      dealsChart.data.datasets[0].data = dealsViewsData;
+      dealsChart.data.datasets[1].data = dealLeadsData;
+
+    } else if (this.value == "whatsapp") {
+      dealsChart.data.datasets[0].data = wapViewsData;
+      dealsChart.data.datasets[1].data = wapLeadsData;
+
+    } else {
+      dealsChart.data.datasets[0].data = videoViewsData;
+      dealsChart.data.datasets[1].data = videoLeadsData;
+    }
+
+    dealsChart.update();
   });
 
   //deals chart end .......................................
@@ -483,6 +535,8 @@ $(document).ready(() => {
         datalabels: {
           display: false,
         },
+        borderWidth: 1,
+        borderColor: "white",
         // axis: 'y',
         //yAxisID: 'y',
       },
@@ -496,6 +550,8 @@ $(document).ready(() => {
         datalabels: {
           display: false,
         },
+        borderWidth: 1,
+        borderColor: "white",
         // axis: 'y',
         // yAxisID: "y1",
       },
@@ -675,6 +731,11 @@ $(document).ready(() => {
     data: leadsData,
     options: {
       //barValueSpacing: 20,
+      layout: {
+        padding: {
+          top: 30,
+        },
+      },
       scales: {
         x: {
           grid: {
@@ -684,6 +745,17 @@ $(document).ready(() => {
               display: false,
             },
           },
+          title:{
+            display: true,
+            text:'Price percentage',
+            color:'#000',
+            font: {
+              // family: 'Roboto',
+              size: 14,
+            },
+            padding: {top: 15, left: 0, right: 0, bottom: 10}
+  
+          }
         },
         y: {
           type: "linear",
@@ -706,7 +778,22 @@ $(document).ready(() => {
           },
         },
       },
+      plugins: {
+        legend: {
+          display: true,
+          position: "bottom",
+          labels: {
+            usePointStyle: true,
+            pointStyle: "circle",
+            // boxWidth: 0
+          },
+        },
+      },
     },
+    plugins: [
+      genLeftTitle("Leads", "leadLtitle", 0, 20),
+      genRightTitle("Ads", "leadRtitle", 0, 20),
+    ],
   });
 
   //overall chart...........................................
@@ -1004,13 +1091,16 @@ $(document).ready(() => {
         borderColor: "#ff0000",
         order: 2,
         borderWidth: 2,
-        pointRadius: 10,
+        pointRadius: 12,
 
         // Core options
         datalabels: {
+          font:{
+            size:11
+          },
           formatter: function ({ value }, context) {
-            // return value < 100 ? value : '';.
-            return "";
+            return value < 100 ? value : '99+';
+            // return value;
           },
           // color: 'white'
         },
