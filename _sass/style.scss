@@ -2413,6 +2413,15 @@ body {
       .boostedChartContainer {
         height: 275px;
       }
+
+      .leadsAdsChartContainer{
+        height: 400px;
+
+        @media (max-width:767.98px) {
+          height: 300px;
+        }
+
+      }
     }
   }
 

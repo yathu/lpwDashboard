@@ -731,6 +731,8 @@ $(document).ready(() => {
     data: leadsData,
     options: {
       //barValueSpacing: 20,
+      responsive: true,
+      maintainAspectRatio: false,
       layout: {
         padding: {
           top: 30,
