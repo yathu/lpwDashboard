@@ -205,7 +205,18 @@ $(document).ready(function () {
         slidesPerView: 1.5,
         spaceBetween: 12,
       },
+      768: {
+        slidesPerView: 1.7,
+        spaceBetween: 12,
+      },
+      992: {
+        slidesPerView: 1.9,
+        spaceBetween: 12,
+      },
       1200: {
+        slidesPerView: 2.1,
+      },
+      1440: {
         slidesPerView: 2.5,
       },
     },
@@ -531,6 +542,12 @@ $(document).ready(function () {
     "#FF8C00", // Dark Orange (Darker Yellow)
   ];
 
+  const perfomanceData = {
+    7:{isUp:true, value:49.5, },
+    30:{isUp:false, value:29.5, },
+    90:{isUp:true, value:19.5, },
+}
+
   const data = {
     datasets: [
       {
@@ -553,10 +570,14 @@ $(document).ready(function () {
             // return createGradient(ctx, ctx.chart)
           },
         },
-        pointStyle: false,
+        // pointStyle: false,
         datalabels: {
           display: false,
         },
+        pointBackgroundColor: 'yellow',
+        pointRadius:3,
+        pointBorderColor:yellowShades[yellowShades.length - 1],
+        pointBorderWidth:1
       },
 
       {
@@ -568,11 +589,15 @@ $(document).ready(function () {
         borderWidth: 3,
         order: 1,
         borderColor: "#E13D44",
-        pointStyle: false,
+        // pointStyle: false,
         yAxisID: "viewLine",
         datalabels: {
           display: false,
         },
+        pointBackgroundColor: 'yellow',
+        pointRadius:3,
+        pointBorderColor:'#FF007F',
+        pointBorderWidth:1
       },
 
       {
@@ -1539,6 +1564,22 @@ $(document).ready(function () {
     }
 
     timelineChart.update();
+
+    const perform = perfomanceData[val];
+    const duration = val == 7 ? 'last week' : val==30 ? 'last 30 days' : 'last 90 days';
+    const perfomanceMsg = `${perform.value}% from ${duration}`;
+    console.log("perfomanceMsg==>",perfomanceMsg, perform.isUp);
+
+    if(perform.isUp){
+      $('#perfomanceMessageBox').removeClass('down');
+    } else{
+      $('#perfomanceMessageBox').addClass('down');
+    }
+
+
+    $("#perfomanceMessageBox i").removeClass().addClass(perform.isUp ? 'bi bi-arrow-up' : 'bi bi-arrow-down');
+    $("#perfomanceMessageBox .text").text(perfomanceMsg);
+
   });
 
   //profile image upload
