@@ -313,7 +313,29 @@ title: insight
           <div class="performance-chart-container shadow">
             <div class="widget-title-1">Listing Performance Insights</div>
 
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between align-items-end">
+
+              <div class="col-12 col-sm-6">
+                <div
+                class="btn-group custom-dropdown all-ads-dropdown"
+                role="group"
+                aria-label="Button group with nested dropdown"
+              >
+                <select
+                  class="form-select form-select-sm"
+                  aria-label=".form-select-sm example"
+                  id="allAdsSelect"
+                >
+                  <option selected value="all">All ads</option>
+                  <option value="ads1">Ads 1</option>
+                </select>
+                <button type="button" class="btn">
+                  <i class="bi bi-caret-down-fill"></i>
+                </button>
+              </div>
+              </div>
+
+
               <div
                 class="btn-group custom-dropdown"
                 role="group"
@@ -332,7 +354,6 @@ title: insight
                   <i class="bi bi-caret-down-fill"></i>
                 </button>
               </div>
-              <a class="btn btn-primary" href="#">View full report</a>
             </div>
 
             <div class="chart-header">

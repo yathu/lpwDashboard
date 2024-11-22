@@ -434,7 +434,7 @@ $(document).ready(function () {
   const pageNumData7days = [
     {
       x: "9.07.2024",
-      y: 0,
+      y: 15,
     },
     {
       x: "10.07.2024",
@@ -543,16 +543,16 @@ $(document).ready(function () {
   ];
 
   const perfomanceData = {
-    7:{isUp:true, value:49.5, },
-    30:{isUp:false, value:29.5, },
-    90:{isUp:true, value:19.5, },
-}
+    7: { isUp: true, value: 49.5 },
+    30: { isUp: false, value: 29.5 },
+    90: { isUp: true, value: 19.5 },
+  };
 
   const data = {
     datasets: [
       {
         type: "line",
-        label: "Weekly Sales",
+        label: "Page views",
         data: pageViewData7Days,
         fill: true,
         tension: 0.4,
@@ -565,7 +565,8 @@ $(document).ready(function () {
             const ads_count = ctx?.p0?.raw?.adsCount;
 
             if (ads_count) {
-              return ads_count < 10 ? yellowShades[ads_count] : yellowShades[9];
+              console.log("ads_count==>", ads_count);
+              return ads_count < upgradeAdsColors.length ? upgradeAdsColors[ads_count] : upgradeAdsColors[upgradeAdsColors.length-1];
             } else return yellowShades[0];
             // return createGradient(ctx, ctx.chart)
           },
@@ -574,15 +575,15 @@ $(document).ready(function () {
         datalabels: {
           display: false,
         },
-        pointBackgroundColor: 'yellow',
-        pointRadius:3,
-        pointBorderColor:yellowShades[yellowShades.length - 1],
-        pointBorderWidth:1
+        pointBackgroundColor: "yellow",
+        pointRadius: 3,
+        pointBorderColor: yellowShades[yellowShades.length - 1],
+        pointBorderWidth: 1,
       },
 
       {
         type: "line",
-        label: "Sales",
+        label: "Page number",
         data: pageNumData7days,
         fill: false,
         tension: 0.4,
@@ -594,10 +595,10 @@ $(document).ready(function () {
         datalabels: {
           display: false,
         },
-        pointBackgroundColor: 'yellow',
-        pointRadius:3,
-        pointBorderColor:'#FF007F',
-        pointBorderWidth:1
+        pointBackgroundColor: "yellow",
+        pointRadius: 3,
+        pointBorderColor: "#FF007F",
+        pointBorderWidth: 1,
       },
 
       {
@@ -609,11 +610,12 @@ $(document).ready(function () {
         order: 2,
         borderWidth: 2,
         pointRadius: 10,
+        pointHoverRadius: 1,
 
         // Core options
         datalabels: {
-          formatter: function ({value}, context) {
-            return value < 100 ? value : '';
+          formatter: function ({ value }, context) {
+            return value < 100 ? value : "";
           },
           // color: 'white'
         },
@@ -674,8 +676,9 @@ $(document).ready(function () {
           type: "linear",
           display: true,
           position: "right",
-          // beginAtZero: true,
+          beginAtZero: true,
           ticks: {
+            stepSize: 1,
             callback: (label) => (label < 0 ? "" : label),
           },
           grid: {
@@ -686,6 +689,7 @@ $(document).ready(function () {
           // suggestedMax: 30
           reverse: true,
           // min:1
+          // grace: 1
         },
 
         xAxes: {
@@ -694,6 +698,7 @@ $(document).ready(function () {
           time: {
             unit: "day",
             parser: "dd.MM.yyyy",
+            tooltipFormat: "MM/dd/yyyy",
             displayFormats: {
               millisecond: "MMM dd",
               second: "MMM dd",
@@ -707,7 +712,7 @@ $(document).ready(function () {
             },
           },
           // position: {
-          //   y: 0
+          //   y: 100
           // },
           border: {
             display: false,
@@ -758,6 +763,21 @@ $(document).ready(function () {
 
   // render init block
   const myChart = new Chart(document.getElementById("myChart"), config);
+
+  const addOneMorePage = () => {
+    const maxPage = myChart.scales.viewLine.max;
+    const length = myChart.scales.viewLine.ticks.length;
+    const stepSize = maxPage / (length - 1);
+    const newMaxVal = Math.ceil(maxPage + stepSize);
+
+    console.log("newMaxVal==>", newMaxVal);
+    myChart.config.options.scales.viewLine.max = newMaxVal;
+
+    console.log(myChart.config.options.scales.viewLine);
+    myChart.update();
+  };
+
+  addOneMorePage();
 
   //upgrade-swiper
 
@@ -968,7 +988,8 @@ $(document).ready(function () {
     "#b66f1f",
     "#9f641b",
     "#885916",
-    "#d5aa55", // Original color
+    "#754c12",
+    // "#d5aa55", // Original color
   ];
 
   // const timelineData = [
@@ -1313,24 +1334,22 @@ $(document).ready(function () {
     },
   };
 
+  const getColor = (type, value) => {
+    console.log("getColor=>", type, value);
 
-  const getColor = (type, value )=> {
-    console.log("getColor=>", type,value);
-       
     const colorType =
-    type == "whatsapp"
-      ? whatsappLiveColors
-      : type == "hotDeal"
-      ? hotDealColors
-      : type == "urgentSale"
-      ? urgentSaleColors
-      : thumbnailVideoAdColors;
+      type == "whatsapp"
+        ? whatsappLiveColors
+        : type == "hotDeal"
+        ? hotDealColors
+        : type == "urgentSale"
+        ? urgentSaleColors
+        : thumbnailVideoAdColors;
 
-      const newVal = value > (colorType.length -1) ? (colorType.length-1) : value;
+    const newVal = value > colorType.length - 1 ? colorType.length - 1 : value;
 
-      return colorType[newVal];  
-  }
-
+    return colorType[newVal];
+  };
 
   const timeline_anntation_gen = (genData) => {
     let temData = {};
@@ -1532,6 +1551,12 @@ $(document).ready(function () {
 
     myChart.update();
 
+    delete myChart.config.options.scales.viewLine.max;
+
+    myChart.update();
+
+    addOneMorePage();
+
     // console.log("timelineChart==>", timelineChart);
     timelineChart.data.datasets[0].data = timelineData(timeLineDates);
     timelineChart.update();
@@ -1566,20 +1591,21 @@ $(document).ready(function () {
     timelineChart.update();
 
     const perform = perfomanceData[val];
-    const duration = val == 7 ? 'last week' : val==30 ? 'last 30 days' : 'last 90 days';
+    const duration =
+      val == 7 ? "last week" : val == 30 ? "last 30 days" : "last 90 days";
     const perfomanceMsg = `${perform.value}% from ${duration}`;
-    console.log("perfomanceMsg==>",perfomanceMsg, perform.isUp);
+    console.log("perfomanceMsg==>", perfomanceMsg, perform.isUp);
 
-    if(perform.isUp){
-      $('#perfomanceMessageBox').removeClass('down');
-    } else{
-      $('#perfomanceMessageBox').addClass('down');
+    if (perform.isUp) {
+      $("#perfomanceMessageBox").removeClass("down");
+    } else {
+      $("#perfomanceMessageBox").addClass("down");
     }
 
-
-    $("#perfomanceMessageBox i").removeClass().addClass(perform.isUp ? 'bi bi-arrow-up' : 'bi bi-arrow-down');
+    $("#perfomanceMessageBox i")
+      .removeClass()
+      .addClass(perform.isUp ? "bi bi-arrow-up" : "bi bi-arrow-down");
     $("#perfomanceMessageBox .text").text(perfomanceMsg);
-
   });
 
   //profile image upload
@@ -1704,5 +1730,4 @@ $(document).ready(function () {
   });
 
   //upgrade ads dropdown
-
 });

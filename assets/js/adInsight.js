@@ -201,14 +201,11 @@ $(document).ready(() => {
 
   $("input[type=radio][name=upgradeChartType]").change(function () {
     if (this.value == "featured") {
-      
       adsTypeChart.data.datasets[0].data = featuredAdsViewsData;
       adsTypeChart.data.datasets[1].data = featuredAdsLeadsData;
-
     } else if (this.value == "platinum") {
       adsTypeChart.data.datasets[0].data = platinumAdsViewsData;
       adsTypeChart.data.datasets[1].data = platinumAdsLeadsData;
-
     } else {
       adsTypeChart.data.datasets[0].data = showcaseAdsViewsData;
       adsTypeChart.data.datasets[1].data = showcaseAdsLeadsData;
@@ -358,14 +355,11 @@ $(document).ready(() => {
 
   $("input[type=radio][name=dealChartType]").change(function () {
     if (this.value == "hotdeal") {
-      
       dealsChart.data.datasets[0].data = dealsViewsData;
       dealsChart.data.datasets[1].data = dealLeadsData;
-
     } else if (this.value == "whatsapp") {
       dealsChart.data.datasets[0].data = wapViewsData;
       dealsChart.data.datasets[1].data = wapLeadsData;
-
     } else {
       dealsChart.data.datasets[0].data = videoViewsData;
       dealsChart.data.datasets[1].data = videoLeadsData;
@@ -747,17 +741,16 @@ $(document).ready(() => {
               display: false,
             },
           },
-          title:{
+          title: {
             display: true,
-            text:'Price percentage',
-            color:'#000',
+            text: "Price percentage",
+            color: "#000",
             font: {
               // family: 'Roboto',
               size: 14,
             },
-            padding: {top: 15, left: 0, right: 0, bottom: 10}
-  
-          }
+            padding: { top: 15, left: 0, right: 0, bottom: 10 },
+          },
         },
         y: {
           type: "linear",
@@ -1042,6 +1035,56 @@ $(document).ready(() => {
     "#FF8C00", // Dark Orange (Darker Yellow)
   ];
 
+  const chartDatas = {
+    all: {
+      7: {
+        pageView: pageViewData7Days,
+        pageNUm: pageNumData7days,
+        scatter: scatter7,
+      },
+      30: {
+        pageView: pageViewData30Days,
+        pageNUm: pageNumData30Days,
+        scatter: scatter30,
+      },
+      90: {
+        pageView: pageViewData90Days,
+        pageNUm: pageNumData90Days,
+        scatter: scatter90,
+      },
+    },
+    ads1: {
+      7: {
+        pageView: [
+          {
+            x: "9.07.2024",
+            y: 500,
+            adsCount: 0,
+          },
+          ...pageViewData7Days.slice(1),
+        ],
+        pageNUm: [
+          {
+            x: "9.07.2024",
+            y: 300,
+          },
+          ...pageNumData7days.slice(1),
+        ],
+        scatter: scatter7,
+      },
+      30: {
+        pageView: pageViewData30Days,
+        pageNUm: pageNumData30Days,
+        scatter: scatter30,
+      },
+      90: {
+        pageView: pageViewData90Days,
+        pageNUm: pageNumData90Days,
+        scatter: scatter90,
+      },
+    },
+  };
+
   const data = {
     datasets: [
       {
@@ -1097,11 +1140,11 @@ $(document).ready(() => {
 
         // Core options
         datalabels: {
-          font:{
-            size:11
+          font: {
+            size: 11,
           },
           formatter: function ({ value }, context) {
-            return value < 100 ? value : '99+';
+            return value < 100 ? value : "99+";
             // return value;
           },
           // color: 'white'
@@ -1825,43 +1868,46 @@ $(document).ready(() => {
   });
 
   //dropdown onchange
+  $("#allAdsSelect").on("change", function () {
+    handleSelectChart();
+  });
 
   $("#listingPerfomanceDays").on("change", function () {
-    //overallChart
-    const val = this.value;
+    handleSelectChart();
+  });
 
-    // console.log("change==>", val);
+  function handleSelectChart() {
+    var adsSelect = document.getElementById("allAdsSelect");
+    var selectedAd = adsSelect.value;
 
-    let newData = pageViewData7Days;
-    let newPageNumData = pageNumData7days;
-    let newScatter = scatter7;
+    var daysSelect = document.getElementById("listingPerfomanceDays");
+    var selectedDay = daysSelect.value;
+
+    console.log(selectedAd, selectedDay);
+
+    let selectedAdDayData = chartDatas[selectedAd][selectedDay];
+
+    console.log("ddData==>", selectedAdDayData);
+
+    let newData = selectedAdDayData.pageView;
+    let newPageNumData = selectedAdDayData.pageNUm;
+    let newScatter = selectedAdDayData.scatter;
 
     let timeLineDates = timelineDates7;
 
-    if (val == 90) {
-      newData = pageViewData90Days;
-      newPageNumData = pageNumData90Days;
-      newScatter = scatter90;
-
+    if (selectedDay == 90) {
       timeLineDates = timelineDates90;
     }
 
-    if (val == 30) {
-      newData = pageViewData30Days;
-      newPageNumData = pageNumData30Days;
-      newScatter = scatter30;
-
+    if (selectedDay == 30) {
       timeLineDates = timelineDates30;
     }
-
-    // console.log("overallChart==>");
-    // console.log(overallChart.data);
 
     overallChart.data.datasets[0].data = newData;
     overallChart.data.datasets[1].data = newPageNumData;
     overallChart.data.datasets[2].data = newScatter;
 
-    if (val == 90) {
+    if (selectedDay == 90) {
       console.log("overallChart==>", overallChart);
       console.log("overallChart1==>", overallChart.options.scales.xAxes.time);
 
@@ -1881,9 +1927,9 @@ $(document).ready(() => {
     //annotation
 
     const days =
-      val == 90
+      selectedDay == 90
         ? timeline_90data
-        : val == 30
+        : selectedDay == 30
         ? timeline_30data
         : timeline_7data;
 
@@ -1894,7 +1940,7 @@ $(document).ready(() => {
     timelineChart.options.plugins.annotation.annotations =
       temp_timeline_bg_lines;
 
-    if (val == 90) {
+    if (selectedDay == 90) {
       // console.log("overallChart==>", overallChart);
       // console.log("overallChart1==>", overallChart.options.scales.xAxes.time);
 
@@ -1906,7 +1952,7 @@ $(document).ready(() => {
     }
 
     timelineChart.update();
-  });
+  }
 
   //custom long legends
 

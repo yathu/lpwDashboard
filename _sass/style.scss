@@ -1260,6 +1260,18 @@ body {
     width: auto !important;
   }
 
+  .all-ads-dropdown{
+    width: 100% !important;
+    .form-select{
+      padding: 15px 53px 15px 12px;
+      border-color: #009432;
+    }
+    .btn{
+      background-color: #DFF1E9;
+      border-color: #009432;
+    }
+  }
+
   //.btn-group {
   //  position: relative;
   //
