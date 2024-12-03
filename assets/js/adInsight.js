@@ -200,15 +200,28 @@ $(document).ready(() => {
   // console.log(adsTypeChart.data);
 
   $("input[type=radio][name=upgradeChartType]").change(function () {
+
+
+    // console.log(adsTypeChart.data.labels);
     if (this.value == "featured") {
       adsTypeChart.data.datasets[0].data = featuredAdsViewsData;
       adsTypeChart.data.datasets[1].data = featuredAdsLeadsData;
+
+      adsTypeChart.data.labels.splice(0, 1, "Featured");
+
     } else if (this.value == "platinum") {
       adsTypeChart.data.datasets[0].data = platinumAdsViewsData;
       adsTypeChart.data.datasets[1].data = platinumAdsLeadsData;
+
+      adsTypeChart.data.labels.splice(0, 1, "Platinum");
+
+
     } else {
       adsTypeChart.data.datasets[0].data = showcaseAdsViewsData;
       adsTypeChart.data.datasets[1].data = showcaseAdsLeadsData;
+
+      adsTypeChart.data.labels.splice(0, 1, "ShowCase");
+
     }
 
     adsTypeChart.update();
@@ -357,12 +370,23 @@ $(document).ready(() => {
     if (this.value == "hotdeal") {
       dealsChart.data.datasets[0].data = dealsViewsData;
       dealsChart.data.datasets[1].data = dealLeadsData;
+
+      dealsChart.data.labels.splice(0, 1, "Hot deals");
+
+
     } else if (this.value == "whatsapp") {
       dealsChart.data.datasets[0].data = wapViewsData;
       dealsChart.data.datasets[1].data = wapLeadsData;
+
+      dealsChart.data.labels.splice(0, 1, "whatsapp");
+
+
     } else {
       dealsChart.data.datasets[0].data = videoViewsData;
       dealsChart.data.datasets[1].data = videoLeadsData;
+
+      dealsChart.data.labels.splice(0, 1, "Video");
+
     }
 
     dealsChart.update();
@@ -1090,7 +1114,7 @@ $(document).ready(() => {
       {
         type: "line",
         label: "Weekly Sales",
-        data: pageViewData7Days,
+        data: chartDatas.all[7].pageView,
         fill: true,
         tension: 0.4,
         borderWidth: 0,
@@ -1116,7 +1140,7 @@ $(document).ready(() => {
       {
         type: "line",
         label: "Sales",
-        data: pageNumData7days,
+        data: chartDatas.all[7].pageNUm,
         fill: false,
         tension: 0.4,
         borderWidth: 3,
@@ -1131,12 +1155,13 @@ $(document).ready(() => {
       {
         label: "Scatter Dataset",
         type: "bubble",
-        data: scatter7,
+        data: chartDatas.all[7].scatter,
         backgroundColor: "#ffc0b3",
         borderColor: "#ff0000",
         order: 2,
         borderWidth: 2,
-        pointRadius: 12,
+        pointRadius: 10,
+        pointHoverRadius: 1,
 
         // Core options
         datalabels: {
