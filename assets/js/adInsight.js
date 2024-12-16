@@ -200,28 +200,22 @@ $(document).ready(() => {
   // console.log(adsTypeChart.data);
 
   $("input[type=radio][name=upgradeChartType]").change(function () {
-
-
     // console.log(adsTypeChart.data.labels);
     if (this.value == "featured") {
       adsTypeChart.data.datasets[0].data = featuredAdsViewsData;
       adsTypeChart.data.datasets[1].data = featuredAdsLeadsData;
 
       adsTypeChart.data.labels.splice(0, 1, "Featured");
-
     } else if (this.value == "platinum") {
       adsTypeChart.data.datasets[0].data = platinumAdsViewsData;
       adsTypeChart.data.datasets[1].data = platinumAdsLeadsData;
 
       adsTypeChart.data.labels.splice(0, 1, "Platinum");
-
-
     } else {
       adsTypeChart.data.datasets[0].data = showcaseAdsViewsData;
       adsTypeChart.data.datasets[1].data = showcaseAdsLeadsData;
 
       adsTypeChart.data.labels.splice(0, 1, "ShowCase");
-
     }
 
     adsTypeChart.update();
@@ -372,21 +366,16 @@ $(document).ready(() => {
       dealsChart.data.datasets[1].data = dealLeadsData;
 
       dealsChart.data.labels.splice(0, 1, "Hot deals");
-
-
     } else if (this.value == "whatsapp") {
       dealsChart.data.datasets[0].data = wapViewsData;
       dealsChart.data.datasets[1].data = wapLeadsData;
 
       dealsChart.data.labels.splice(0, 1, "whatsapp");
-
-
     } else {
       dealsChart.data.datasets[0].data = videoViewsData;
       dealsChart.data.datasets[1].data = videoLeadsData;
 
       dealsChart.data.labels.splice(0, 1, "Video");
-
     }
 
     dealsChart.update();
@@ -1059,22 +1048,218 @@ $(document).ready(() => {
     "#FF8C00", // Dark Orange (Darker Yellow)
   ];
 
+  const timelineDates7 = [
+    "9.07.2024",
+    "10.07.2024",
+    "11.07.2024",
+    "12.07.2024",
+    "13.07.2024",
+    "14.07.2024",
+    "15.07.2024",
+  ];
+
+  const timelineDates90 = [
+    "9.07.2024",
+    "10.07.2024",
+    "11.07.2024",
+    "12.07.2024",
+    "13.07.2024",
+    "14.07.2024",
+    "15.07.2024",
+    "16.07.2024",
+    "17.07.2024",
+    "18.07.2024",
+    "19.07.2024",
+    "20.07.2024",
+    "21.07.2024",
+    "22.07.2024",
+    "23.07.2024",
+    "24.07.2024",
+    "25.07.2024",
+    "26.07.2024",
+    "27.07.2024",
+    "28.07.2024",
+    "29.07.2024",
+    "30.07.2024",
+    "31.07.2024",
+    "1.08.2024",
+    "2.08.2024",
+    "3.08.2024",
+    "4.08.2024",
+    "5.08.2024",
+    "6.08.2024",
+    "7.08.2024",
+    "8.08.2024",
+    "9.08.2024",
+    "10.08.2024",
+    "11.08.2024",
+    "12.08.2024",
+    "13.08.2024",
+    "14.08.2024",
+    "15.08.2024",
+    "16.08.2024",
+    "17.08.2024",
+    "18.08.2024",
+    "19.08.2024",
+    "20.08.2024",
+    "21.08.2024",
+    "22.08.2024",
+    "23.08.2024",
+    "24.08.2024",
+    "25.08.2024",
+    "26.08.2024",
+    "27.08.2024",
+    "28.08.2024",
+    "29.08.2024",
+    "30.08.2024",
+    "31.08.2024",
+    "1.09.2024",
+    "2.09.2024",
+    "3.09.2024",
+  ];
+
+  const timelineDates30 = [
+    "9.07.2024",
+    "10.07.2024",
+    "11.07.2024",
+    "12.07.2024",
+    "13.07.2024",
+    "14.07.2024",
+    "15.07.2024",
+    "16.07.2024",
+    "17.07.2024",
+    "18.07.2024",
+    "19.07.2024",
+    "20.07.2024",
+    "21.07.2024",
+    "22.07.2024",
+    "23.07.2024",
+    "24.07.2024",
+    "25.07.2024",
+    "26.07.2024",
+    "27.07.2024",
+    "28.07.2024",
+    "29.07.2024",
+    "30.07.2024",
+    "31.07.2024",
+    "01.08.2024",
+    "02.08.2024",
+    "03.08.2024",
+    "04.08.2024",
+    "05.08.2024",
+    "06.08.2024",
+    "07.08.2024",
+  ];
+
+  const timeline_7data = [
+    {
+      start: "11.07.2024",
+      end: "13.07.2024",
+      type: "whatsapp",
+      value: 2,
+    },
+    {
+      start: "9.07.2024",
+      end: "13.07.2024",
+      type: "hotDeal",
+      value: 2,
+    },
+    {
+      start: "12.07.2024",
+      end: "13.07.2024",
+      type: "urgentSale",
+      value: 2,
+    },
+    {
+      start: "10.07.2024",
+      end: "11.07.2024",
+      type: "thumbnailVideo",
+      value: 2,
+    },
+    {
+      start: "14.07.2024",
+      end: "15.07.2024",
+      type: "thumbnailVideo",
+      value: 2,
+    },
+  ];
+
+  const timeline_90data = [
+    {
+      start: "10.07.2024",
+      end: "12.07.2024",
+      type: "whatsapp",
+      value: 3,
+    },
+    {
+      start: "9.07.2024",
+      end: "13.07.2024",
+      type: "hotDeal",
+      value: 5,
+    },
+    {
+      start: "14.07.2024",
+      end: "16.07.2024",
+      type: "urgentSale",
+      value: 3,
+    },
+    {
+      start: "20.08.2024",
+      end: "01.09.2024",
+      type: "thumbnailVideo",
+      value: 4,
+    },
+  ];
+
+  const timeline_30data = [
+    {
+      start: "10.07.2024",
+      end: "14.07.2024",
+      type: "whatsapp",
+      value: 5,
+    },
+    {
+      start: "9.07.2024",
+      end: "15.07.2024",
+      type: "hotDeal",
+      value: 7,
+    },
+    {
+      start: "16.07.2024",
+      end: "20.07.2024",
+      type: "urgentSale",
+      value: 5,
+    },
+    {
+      start: "29.07.2024",
+      end: "07.08.2024",
+      type: "thumbnailVideo",
+      value: 6,
+    },
+  ];
+
   const chartDatas = {
     all: {
       7: {
         pageView: pageViewData7Days,
         pageNUm: pageNumData7days,
         scatter: scatter7,
+        timelineDate: timelineDates7,
+        timelineData: timeline_7data,
       },
       30: {
         pageView: pageViewData30Days,
         pageNUm: pageNumData30Days,
         scatter: scatter30,
+        timelineDate: timelineDates30,
+        timelineData: timeline_30data,
       },
       90: {
         pageView: pageViewData90Days,
         pageNUm: pageNumData90Days,
         scatter: scatter90,
+        timelineDate: timelineDates90,
+        timelineData: timeline_90data,
       },
     },
     ads1: {
@@ -1095,16 +1280,30 @@ $(document).ready(() => {
           ...pageNumData7days.slice(1),
         ],
         scatter: scatter7,
+        timelineDate: [...timelineDates7, ..."16.07.2024"],
+        timelineData: [
+          ...timeline_7data,
+          {
+            start: "15.07.2024",
+            end: "16.07.2024",
+            type: "thumbnailVideo",
+            value: 9,
+          },
+        ],
       },
       30: {
         pageView: pageViewData30Days,
         pageNUm: pageNumData30Days,
         scatter: scatter30,
+        timelineDate: timelineDates30,
+        timelineData: timeline_30data,
       },
       90: {
         pageView: pageViewData90Days,
         pageNUm: pageNumData90Days,
         scatter: scatter90,
+        timelineDate: timelineDates90,
+        timelineData: timeline_90data,
       },
     },
   };
@@ -1299,6 +1498,29 @@ $(document).ready(() => {
     config
   );
 
+  const addOneMorePage = () => {
+    // return;
+
+    const maxPage = overallChart.scales.viewLine.max;
+    const length = overallChart.scales.viewLine.ticks.length;
+    const stepSize = maxPage / (length - 1);
+    const newMaxVal = Math.ceil(maxPage + stepSize);
+
+    // if (length > 4) {
+    //   return;
+    // }
+
+    console.log("old==>", maxPage);
+    console.log("new==>", stepSize, newMaxVal);
+    overallChart.config.options.scales.viewLine.max = newMaxVal;
+    overallChart.config.options.scales.viewLine.ticks.stepSize = stepSize;
+
+    console.log(overallChart.config.options.scales.viewLine);
+    overallChart.update();
+  };
+
+  addOneMorePage();
+
   //overall chart...........................................
 
   //timeline chart...........
@@ -1414,109 +1636,6 @@ $(document).ready(() => {
   //   },
   // ];
 
-  const timelineDates7 = [
-    "9.07.2024",
-    "10.07.2024",
-    "11.07.2024",
-    "12.07.2024",
-    "13.07.2024",
-    "14.07.2024",
-    "15.07.2024",
-  ];
-
-  const timelineDates90 = [
-    "9.07.2024",
-    "10.07.2024",
-    "11.07.2024",
-    "12.07.2024",
-    "13.07.2024",
-    "14.07.2024",
-    "15.07.2024",
-    "16.07.2024",
-    "17.07.2024",
-    "18.07.2024",
-    "19.07.2024",
-    "20.07.2024",
-    "21.07.2024",
-    "22.07.2024",
-    "23.07.2024",
-    "24.07.2024",
-    "25.07.2024",
-    "26.07.2024",
-    "27.07.2024",
-    "28.07.2024",
-    "29.07.2024",
-    "30.07.2024",
-    "31.07.2024",
-    "1.08.2024",
-    "2.08.2024",
-    "3.08.2024",
-    "4.08.2024",
-    "5.08.2024",
-    "6.08.2024",
-    "7.08.2024",
-    "8.08.2024",
-    "9.08.2024",
-    "10.08.2024",
-    "11.08.2024",
-    "12.08.2024",
-    "13.08.2024",
-    "14.08.2024",
-    "15.08.2024",
-    "16.08.2024",
-    "17.08.2024",
-    "18.08.2024",
-    "19.08.2024",
-    "20.08.2024",
-    "21.08.2024",
-    "22.08.2024",
-    "23.08.2024",
-    "24.08.2024",
-    "25.08.2024",
-    "26.08.2024",
-    "27.08.2024",
-    "28.08.2024",
-    "29.08.2024",
-    "30.08.2024",
-    "31.08.2024",
-    "1.09.2024",
-    "2.09.2024",
-    "3.09.2024",
-  ];
-
-  const timelineDates30 = [
-    "9.07.2024",
-    "10.07.2024",
-    "11.07.2024",
-    "12.07.2024",
-    "13.07.2024",
-    "14.07.2024",
-    "15.07.2024",
-    "16.07.2024",
-    "17.07.2024",
-    "18.07.2024",
-    "19.07.2024",
-    "20.07.2024",
-    "21.07.2024",
-    "22.07.2024",
-    "23.07.2024",
-    "24.07.2024",
-    "25.07.2024",
-    "26.07.2024",
-    "27.07.2024",
-    "28.07.2024",
-    "29.07.2024",
-    "30.07.2024",
-    "31.07.2024",
-    "01.08.2024",
-    "02.08.2024",
-    "03.08.2024",
-    "04.08.2024",
-    "05.08.2024",
-    "06.08.2024",
-    "07.08.2024",
-  ];
-
   const timelineData = (Tata) =>
     Tata.map((data) => {
       return { x: data };
@@ -1528,99 +1647,13 @@ $(document).ready(() => {
     datasets: [
       {
         label: "# of Votes",
-        data: timelineData(timelineDates7),
+        data: timelineData(chartDatas.all[7].timelineDate),
         borderWidth: 1,
       },
     ],
   };
   const barPlacement = [0, 3, 6, 9, 12];
 
-  const timeline_7data = [
-    {
-      start: "11.07.2024",
-      end: "13.07.2024",
-      type: "whatsapp",
-      value: 2,
-    },
-    {
-      start: "9.07.2024",
-      end: "13.07.2024",
-      type: "hotDeal",
-      value: 2,
-    },
-    {
-      start: "12.07.2024",
-      end: "13.07.2024",
-      type: "urgentSale",
-      value: 2,
-    },
-    {
-      start: "10.07.2024",
-      end: "11.07.2024",
-      type: "thumbnailVideo",
-      value: 2,
-    },
-    {
-      start: "14.07.2024",
-      end: "15.07.2024",
-      type: "thumbnailVideo",
-      value: 2,
-    },
-  ];
-
-  const timeline_90data = [
-    {
-      start: "10.07.2024",
-      end: "12.07.2024",
-      type: "whatsapp",
-      value: 3,
-    },
-    {
-      start: "9.07.2024",
-      end: "13.07.2024",
-      type: "hotDeal",
-      value: 5,
-    },
-    {
-      start: "14.07.2024",
-      end: "16.07.2024",
-      type: "urgentSale",
-      value: 3,
-    },
-    {
-      start: "20.08.2024",
-      end: "01.09.2024",
-      type: "thumbnailVideo",
-      value: 4,
-    },
-  ];
-
-  const timeline_30data = [
-    {
-      start: "10.07.2024",
-      end: "14.07.2024",
-      type: "whatsapp",
-      value: 5,
-    },
-    {
-      start: "9.07.2024",
-      end: "15.07.2024",
-      type: "hotDeal",
-      value: 7,
-    },
-    {
-      start: "16.07.2024",
-      end: "20.07.2024",
-      type: "urgentSale",
-      value: 5,
-    },
-    {
-      start: "29.07.2024",
-      end: "07.08.2024",
-      type: "thumbnailVideo",
-      value: 6,
-    },
-  ];
   const adjust = -25;
   const titleLabelSize = 12;
   const titlePadding = {
@@ -1809,7 +1842,7 @@ $(document).ready(() => {
     return temData;
   };
 
-  const timeline7gen = timeline_anntation_gen(timeline_7data);
+  const timeline7gen = timeline_anntation_gen(chartDatas.all[7].timelineData);
 
   let temp_timeline_bg_lines = { ...timeline_bg_lines, ...timeline7gen };
 
@@ -1918,15 +1951,19 @@ $(document).ready(() => {
     let newPageNumData = selectedAdDayData.pageNUm;
     let newScatter = selectedAdDayData.scatter;
 
-    let timeLineDates = timelineDates7;
+    let timeLineDates = selectedAdDayData.timelineDate;
 
-    if (selectedDay == 90) {
-      timeLineDates = timelineDates90;
-    }
+    // if (selectedDay == 90) {
+    //   timeLineDates = timelineDates90;
+    // }
 
-    if (selectedDay == 30) {
-      timeLineDates = timelineDates30;
-    }
+    // if (selectedDay == 30) {
+    //   timeLineDates = timelineDates30;
+    // }
+
+    overallChart.config.options.scales.viewLine.max = undefined;
+    overallChart.config.options.scales.viewLine.ticks.stepSize = undefined;
+    overallChart.update();
 
     overallChart.data.datasets[0].data = newData;
     overallChart.data.datasets[1].data = newPageNumData;
@@ -1945,18 +1982,21 @@ $(document).ready(() => {
 
     overallChart.update();
 
-    // console.log("timelineChart==>", timelineChart);
+    addOneMorePage();
+
     timelineChart.data.datasets[0].data = timelineData(timeLineDates);
     timelineChart.update();
 
     //annotation
 
-    const days =
-      selectedDay == 90
-        ? timeline_90data
-        : selectedDay == 30
-        ? timeline_30data
-        : timeline_7data;
+    // const days =
+    //   selectedDay == 90
+    //     ? timeline_90data
+    //     : selectedDay == 30
+    //     ? timeline_30data
+    //     : timeline_7data;
+
+    const days = selectedAdDayData.timelineData;
 
     const timelinegen = timeline_anntation_gen(days);
 
@@ -2026,7 +2066,7 @@ $(document).ready(() => {
 
   //upgradeAdsColors
   $("#upgradeAdsColors").append('<span class="me-1">1</span>');
-  upgradeAdsColors.map((color) =>
+  yellowShades.map((color) =>
     $("#upgradeAdsColors").append(
       '<span class="box" style="background-color:' + color + '"></span>'
     )
