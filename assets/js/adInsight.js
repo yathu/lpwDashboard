@@ -1,6 +1,9 @@
 $(document).ready(() => {
   Chart.register(ChartDataLabels);
 
+  const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+  const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+
   const genLeftTitle = (title, id, fromLeft, topAlign) => {
     const yLeftTitle = {
       id: id,
