@@ -516,12 +516,14 @@ $(document).ready(() => {
   var ctx = document.getElementById("pageNumberChart");
 
   const chartData = [
-    { label: "1-10", view: 500, lead: 22, ads: 100, psg: "<1%" },
+    { label: "1-10", view: 500, lead: 22, ads: 100, psg: "<0%" },
     { label: "11-20", view: 700, lead: 104, ads: 100, psg: "<1%" },
     { label: "21-30", view: 200, lead: 200, ads: 300, psg: "2%" },
     { label: "31-40", view: 800, lead: 300, ads: 800, psg: "6%" },
     { label: "41-50", view: 2000, lead: 400, ads: 400, psg: "20%" },
-    { label: "51-100", view: 2500, lead: 525, ads: 3200, psg: "90%" },
+    { label: "51-60", view: 2500, lead: 525, ads: 3200, psg: "80%" },
+    { label: "61-80", view: 3500, lead: 625, ads: 4200, psg: "90%" },
+    { label: "81-100", view: 3500, lead: 625, ads: 4200, psg: "90%" },
   ];
 
   const labelsData = chartData.map((data) => data.label);
@@ -608,10 +610,13 @@ $(document).ready(() => {
             tickLength: 20,
             tickColor: "white",
           },
+          max: psg.length-1,
+          min: 0,
           ticks: {
-            maxTicksLimit: psg.length,
+            // maxTicksLimit: psg.length,
+            stepSize: 1,
             callback: function (val, index) {
-              const tickval = psg[index];
+              const tickval = psg.reverse()[index];
               return tickval;
             },
             // padding:5
@@ -630,10 +635,10 @@ $(document).ready(() => {
           border: {
             display: false,
           },
-          // min: 0,
-          // max: 3200,
+          min: 0,
+          max: adsTick.length -1,
           ticks: {
-            maxTicksLimit: adsTick.length,
+            // maxTicksLimit: adsTick.length,
             callback: function (val, index) {
               const tickval = adsTick[index];
 
@@ -674,8 +679,8 @@ $(document).ready(() => {
       },
     },
     plugins: [
-      genLeftTitle("Pages", "PageNUmLtitle", 10, 10),
-      genRightTitle("Ads", "pageNumRtitle", 40, 10),
+      genLeftTitle("Pages", "PageNUmLtitle", 10, 15),
+      genRightTitle("Ads", "pageNumRtitle", 35, 15),
     ],
   });
 
@@ -1325,15 +1330,19 @@ $(document).ready(() => {
             const ads_count = ctx?.p0?.raw?.adsCount;
 
             if (ads_count) {
-              return ads_count < 10 ? yellowShades[ads_count] : yellowShades[9];
+              return ads_count < 10 ? yellowShades[ads_count] : yellowShades[yellowShades.length -1];
             } else return yellowShades[0];
             // return createGradient(ctx, ctx.chart)
           },
         },
-        pointStyle: false,
+        // pointStyle: false,
         datalabels: {
           display: false,
         },
+        pointBackgroundColor: "yellow",
+        pointRadius: 3,
+        pointBorderColor: yellowShades[yellowShades.length - 1],
+        pointBorderWidth: 1,
       },
 
       {
@@ -1345,16 +1354,20 @@ $(document).ready(() => {
         borderWidth: 3,
         order: 1,
         borderColor: "#E13D44",
-        pointStyle: false,
+        // pointStyle: false,
         yAxisID: "viewLine",
         datalabels: {
           display: false,
         },
+        pointBackgroundColor: "yellow",
+        pointRadius: 3,
+        pointBorderColor: "#FF007F",
+        pointBorderWidth: 1,
       },
       {
         label: "Scatter Dataset",
         type: "bubble",
-        data: chartDatas.all[7].scatter,
+        data: chartDatas.all[7].scatter.filter((data) => data.value > 0),
         backgroundColor: "#ffc0b3",
         borderColor: "#ff0000",
         order: 2,
@@ -1943,13 +1956,15 @@ $(document).ready(() => {
 
     console.log(selectedAd, selectedDay);
 
+    /// data: chartDatas.all[7].scatter.filter((data)=> data.value > 0),
     let selectedAdDayData = chartDatas[selectedAd][selectedDay];
 
     console.log("ddData==>", selectedAdDayData);
 
     let newData = selectedAdDayData.pageView;
     let newPageNumData = selectedAdDayData.pageNUm;
-    let newScatter = selectedAdDayData.scatter;
+
+    let newScatter = selectedAdDayData.scatter.filter((data) => data.value > 0);
 
     let timeLineDates = selectedAdDayData.timelineDate;
 
