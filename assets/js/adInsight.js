@@ -363,7 +363,10 @@ $(document).ready(() => {
     ],
   });
 
-  $("input[type=radio][name=dealChartType]").change(function () {
+  $("input[type=radio][name=dealChartType]").change(function (e) {
+
+    e.preventDefault();
+
     if (this.value == "hotdeal") {
       dealsChart.data.datasets[0].data = dealsViewsData;
       dealsChart.data.datasets[1].data = dealLeadsData;
@@ -374,11 +377,23 @@ $(document).ready(() => {
       dealsChart.data.datasets[1].data = wapLeadsData;
 
       dealsChart.data.labels.splice(0, 1, "whatsapp");
-    } else {
+    } else if(this.value == "video") {
       dealsChart.data.datasets[0].data = videoViewsData;
       dealsChart.data.datasets[1].data = videoLeadsData;
 
       dealsChart.data.labels.splice(0, 1, "Video");
+    }
+    else if (this.value == "new1") {
+      dealsChart.data.datasets[0].data = wapViewsData;
+      dealsChart.data.datasets[1].data = wapLeadsData;
+
+      dealsChart.data.labels.splice(0, 1, "new 1");
+    }
+    else if(this.value == "new2") {
+      dealsChart.data.datasets[0].data = videoViewsData;
+      dealsChart.data.datasets[1].data = videoLeadsData;
+
+      dealsChart.data.labels.splice(0, 1, "new 2");
     }
 
     dealsChart.update();
@@ -1254,6 +1269,8 @@ $(document).ready(() => {
         scatter: scatter7,
         timelineDate: timelineDates7,
         timelineData: timeline_7data,
+        performance:{ isUp: false, value: 49.5 }
+
       },
       30: {
         pageView: pageViewData30Days,
@@ -1261,6 +1278,8 @@ $(document).ready(() => {
         scatter: scatter30,
         timelineDate: timelineDates30,
         timelineData: timeline_30data,
+        performance:{ isUp: true, value: 69.5 }
+
       },
       90: {
         pageView: pageViewData90Days,
@@ -1268,6 +1287,8 @@ $(document).ready(() => {
         scatter: scatter90,
         timelineDate: timelineDates90,
         timelineData: timeline_90data,
+        performance:{ isUp: true, value: 9.5 }
+
       },
     },
     ads1: {
@@ -1298,6 +1319,8 @@ $(document).ready(() => {
             value: 9,
           },
         ],
+        performance:{ isUp: false, value: 19.5 }
+
       },
       30: {
         pageView: pageViewData30Days,
@@ -1305,6 +1328,8 @@ $(document).ready(() => {
         scatter: scatter30,
         timelineDate: timelineDates30,
         timelineData: timeline_30data,
+        performance:{ isUp: true, value: 39.5 }
+
       },
       90: {
         pageView: pageViewData90Days,
@@ -1312,6 +1337,7 @@ $(document).ready(() => {
         scatter: scatter90,
         timelineDate: timelineDates90,
         timelineData: timeline_90data,
+        performance:{ isUp: false, value: 29.5 }
       },
     },
   };
@@ -1950,6 +1976,28 @@ $(document).ready(() => {
     handleSelectChart();
   });
 
+
+  const handlePerfomance = (perform, selectedDay)=>{
+
+    const duration =
+        selectedDay == 7 ? "last week" : selectedDay == 30 ? "last 30 days" : "last 90 days";
+    const perfomanceMsg = `${perform.value}% from ${duration}`;
+    console.log("perfomanceMsg==>", perfomanceMsg, perform.isUp);
+
+    if (perform.isUp) {
+      $("#perfomanceMessageBox").removeClass("down");
+    } else {
+      $("#perfomanceMessageBox").addClass("down");
+    }
+
+    $("#perfomanceMessageBox i")
+        .removeClass()
+        .addClass(perform.isUp ? "bi bi-arrow-up" : "bi bi-arrow-down");
+    $("#perfomanceMessageBox .text").text(perfomanceMsg);
+  }
+
+  handleSelectChart();
+
   function handleSelectChart() {
     var adsSelect = document.getElementById("allAdsSelect");
     var selectedAd = adsSelect.value;
@@ -1963,6 +2011,12 @@ $(document).ready(() => {
     let selectedAdDayData = chartDatas[selectedAd][selectedDay];
 
     console.log("ddData==>", selectedAdDayData);
+
+    const perform = selectedAdDayData.performance;
+    console.log("perform==>",perform);
+
+    handlePerfomance(perform, selectedDay);
+
 
     let newData = selectedAdDayData.pageView;
     let newPageNumData = selectedAdDayData.pageNUm;
@@ -2036,6 +2090,7 @@ $(document).ready(() => {
 
     timelineChart.update();
   }
+
 
   //custom long legends
 

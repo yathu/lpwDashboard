@@ -2397,6 +2397,25 @@ body {
         }
       }
 
+      .buttons-container{
+        overflow-x: auto;
+        flex: 1;
+        margin-right: 15px;
+
+        .btn-check{
+          position: relative;
+          display: none !important;
+        }
+      }
+
+      .buttons-container {
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+      }
+      .buttons-container::-webkit-scrollbar {
+        display: none;  /* Safari and Chrome */
+      }
+
       .btn-group {
         margin-bottom: 20px;
 
@@ -2417,6 +2436,7 @@ body {
           display: flex;
           align-items: center;
           justify-content: center;
+          min-width: fit-content;
         }
 
         .btn-check:checked + .btn,

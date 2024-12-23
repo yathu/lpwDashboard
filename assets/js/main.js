@@ -1606,6 +1606,7 @@ $(document).ready(function () {
       .removeClass()
       .addClass(perform.isUp ? "bi bi-arrow-up" : "bi bi-arrow-down");
     $("#perfomanceMessageBox .text").text(perfomanceMsg);
+
   });
 
   //profile image upload
