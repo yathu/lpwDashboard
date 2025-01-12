@@ -91,7 +91,7 @@ $(document).ready(() => {
   var adsTypeCtx = document.getElementById("adsTypeChart");
 
   const featuredAdsViewsData = [400, 800];
-  const featuredAdsLeadsData = [200, 700];
+  const featuredAdsLeadsData = [20, 700];
 
   const platinumAdsViewsData = [300, 700];
   const platinumAdsLeadsData = [100, 600];
@@ -117,7 +117,10 @@ $(document).ready(() => {
         // categoryPercentage:1.0,
         // barPercentage: 0.5,
         datalabels: {
-          display: false,
+          align: "end",
+          anchor: "end",
+          color: "green",
+          offset: 0,
         },
       },
       {
@@ -132,7 +135,11 @@ $(document).ready(() => {
           return createGradient(ctx.chart, "");
         },
         datalabels: {
-          display: false,
+          align: "end",
+          anchor: "end",
+          color: "blue",
+          offset: 0,
+
         },
         // inflateAmount:5
         // barPercentage: 0.7
