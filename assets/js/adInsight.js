@@ -1499,6 +1499,17 @@ $(document).ready(() => {
         xAxes: {
           type: "time",
           // alignToPixels:true,
+          ticks:{
+            color: (context)=>{
+              console.log("Color val==>",context.tick.value);
+              const dayOfWeek = moment(context.tick.value).day();
+              var isWeekend = (dayOfWeek === 6) || (dayOfWeek  === 0);
+
+              if (isWeekend) {
+                return 'blue'
+              }
+            }
+          },
           time: {
             unit: "day",
             parser: "dd.MM.yyyy",
