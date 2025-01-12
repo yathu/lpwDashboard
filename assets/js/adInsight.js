@@ -1,6 +1,28 @@
 $(document).ready(() => {
   Chart.register(ChartDataLabels);
 
+  $(".chosen-select").chosen();
+
+  //button groups swiper
+
+  const dealsButtonswiper = new Swiper('.dealsButtonsSwiper', {
+    // loop: true,
+    slidesPerView: 'auto',
+      spaceBetween: 10,
+
+    // If we need pagination
+    // pagination: {
+    //   el: '.swiper-pagination',
+    // },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.dealsNext ',
+      prevEl: '.dealsPrev',
+    },
+
+  });
+
   const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
   const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 
@@ -194,7 +216,7 @@ $(document).ready(() => {
     },
     plugins: [
       genLeftTitle("Pages", "PageNUmLtitle", 0, 20),
-      genRightTitle("Leads", "PageNumRtitle", 1, 20),
+      genRightTitle("Leads Per Ads", "PageNumRtitle", -50, 20),
     ],
   });
 
@@ -698,7 +720,7 @@ $(document).ready(() => {
     },
     plugins: [
       genLeftTitle("Pages", "PageNUmLtitle", 10, 15),
-      genRightTitle("Ads", "pageNumRtitle", 35, 15),
+      genRightTitle("Leads Per Ads", "pageNumRtitle", 35, 15),
     ],
   });
 

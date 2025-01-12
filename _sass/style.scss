@@ -180,7 +180,7 @@ body {
     background: #ffffff;
     border-radius: 16px;
     box-shadow: 0 0 1px 0 rgba(12, 26, 75, 0.24),
-      0 3px 8px -1px rgba(50, 50, 71, 0.05);
+    0 3px 8px -1px rgba(50, 50, 71, 0.05);
     padding: 15px 8px 8px 8px;
     height: 100%;
     display: flex;
@@ -372,6 +372,7 @@ body {
       }
     }
   }
+
   .light-widget.mb-3 {
     margin-bottom: 8px !important;
   }
@@ -456,27 +457,33 @@ body {
         margin-left: 3px;
       }
     }
+
     // gold silver platinum
     &.gold {
       .profile {
         border: 2px solid #d5aa55;
       }
+
       .membership {
         background: rgb(213, 170, 85);
       }
     }
+
     &.silver {
       .profile {
         border: 2px solid #b0b9be;
       }
+
       .membership {
         background: #b0b9be;
       }
     }
+
     &.platinum {
       .profile {
         border: 2px solid #7a7f86;
       }
+
       .membership {
         background: #7a7f86;
       }
@@ -608,10 +615,10 @@ body {
         bottom: 0;
         width: 100%;
         background-image: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0) 0%,
-          rgba(255, 255, 255, 0.78) 43%,
-          #ffffff 100%
+                        180deg,
+                        rgba(255, 255, 255, 0) 0%,
+                        rgba(255, 255, 255, 0.78) 43%,
+                        #ffffff 100%
         );
         padding-top: 15px;
         text-align: center;
@@ -892,7 +899,7 @@ body {
   background: #ffffff;
   border-radius: 20px;
   box-shadow: 0 0 1px 0 rgba(12, 26, 75, 0.24),
-    0 3px 8px -1px rgba(50, 50, 71, 0.05);
+  0 3px 8px -1px rgba(50, 50, 71, 0.05);
   padding: 22px 14px 16px;
 
   @media (max-width: 767.98px) {
@@ -991,7 +998,7 @@ body {
   border: 1px solid #d0d9e1;
   border-radius: 20px;
   box-shadow: 0 0 1px 0 rgba(12, 26, 75, 0.24),
-    0 3px 8px -1px rgba(50, 50, 71, 0.05);
+  0 3px 8px -1px rgba(50, 50, 71, 0.05);
   display: flex;
   padding: 16px 12px;
   gap: 12px;
@@ -1133,7 +1140,7 @@ body {
 
   .slide {
     box-shadow: 0 0 1px 0 rgba(12, 26, 75, 0.24),
-      0 3px 8px -1px rgba(50, 50, 71, 0.05);
+    0 3px 8px -1px rgba(50, 50, 71, 0.05);
     background: #f7fafc;
     border: 1px solid #e2e2ea;
     border-radius: 20px;
@@ -1185,6 +1192,7 @@ body {
         color: #16a05f;
       }
     }
+
     .btn {
       @extend .btn-link;
       //background-color: white;
@@ -1260,13 +1268,15 @@ body {
     width: auto !important;
   }
 
-  .all-ads-dropdown{
+  .all-ads-dropdown {
     width: 100% !important;
-    .form-select{
+
+    .form-select {
       padding: 15px 53px 15px 12px;
       border-color: #009432;
     }
-    .btn{
+
+    .btn {
       background-color: #DFF1E9;
       border-color: #009432;
     }
@@ -1327,6 +1337,7 @@ body {
 
       .down {
         color: #ff0000;
+
         span {
           color: #ff0000;
         }
@@ -1349,6 +1360,7 @@ body {
         color: #171725;
         letter-spacing: 0.1px;
       }
+
       .desc {
         font-family: "Inter", sans-serif;
         font-weight: 500;
@@ -1575,6 +1587,7 @@ body {
         padding: 0;
       }
     }
+
     .impressions {
       background: #ffffff;
       border-radius: 12px;
@@ -1661,20 +1674,20 @@ body {
             margin-right: 4px;
           }
 
-          .bi-arrow-down{
+          .bi-arrow-down {
             display: none;
           }
         }
 
-        .down{
-          .res{
+        .down {
+          .res {
             color: #ff0000;
 
-            .bi-arrow-up{
+            .bi-arrow-up {
               display: none;
             }
 
-            .bi-arrow-down{
+            .bi-arrow-down {
               display: inline-block;
             }
           }
@@ -2232,6 +2245,7 @@ body {
 
         p {
           text-align: left;
+
           b {
             font-family: "Inter", sans-serif;
             font-style: normal;
@@ -2270,7 +2284,7 @@ body {
   .summary-sec-container {
     background: #ffffff;
     box-shadow: 0px 0px 1px rgba(12, 26, 75, 0.24),
-      0px 3px 8px -1px rgba(50, 50, 71, 0.05);
+    0px 3px 8px -1px rgba(50, 50, 71, 0.05);
     border-radius: 20px;
     padding: 12px;
     display: flex;
@@ -2341,8 +2355,10 @@ body {
           display: none;
         }
       }
+
       .up {
         color: #009432;
+
         .upIcon {
           display: inline-block;
         }
@@ -2350,6 +2366,7 @@ body {
 
       .down {
         color: #cd1515;
+
         .downIcon {
           display: inline-block;
         }
@@ -2360,7 +2377,7 @@ body {
   .charts-container {
     background: #ffffff;
     box-shadow: 0px 0px 1px rgba(12, 26, 75, 0.24),
-      0px 3px 8px -1px rgba(50, 50, 71, 0.05);
+    0px 3px 8px -1px rgba(50, 50, 71, 0.05);
     border-radius: 20px;
     padding: 12px;
     display: flex;
@@ -2397,24 +2414,89 @@ body {
         }
       }
 
-      .buttons-container{
+      .buttons-container {
         overflow-x: auto;
         flex: 1;
-        margin-right: 15px;
+        margin-right: 10px;
 
-        .btn-check{
+        .btn-check {
           position: relative;
           display: none !important;
         }
       }
 
       .buttons-container {
-        -ms-overflow-style: none;  /* Internet Explorer 10+ */
-        scrollbar-width: none;  /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        scrollbar-width: none; /* Firefox */
       }
+
       .buttons-container::-webkit-scrollbar {
-        display: none;  /* Safari and Chrome */
+        display: none; /* Safari and Chrome */
       }
+
+
+      .dealsPrev {
+        padding: 10px;
+        padding-left: 0;
+      }
+
+      .dealsNext {
+        padding: 10px;
+        padding-right: 0;
+      }
+
+      .dealsButtonsSwiper {
+        //margin-bottom: 20px;
+        flex: 1;
+
+        .swiper-slide {
+          width: auto;
+
+          img {
+            margin-right: 4px;
+          }
+
+          .btn-outline-primary {
+            background-color: #ffffff;
+            border-color: #efefef;
+            font-family: "Inter", sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 12px;
+            color: #6f767e;
+            padding: 10px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: fit-content;
+          }
+
+          .btn-check:checked + .btn,
+          .btn.active,
+          .btn.show,
+          .btn:first-child:active,
+          :not(.btn-check) + .btn:active {
+            background-color: #32ae601f;
+            border-color: #009432;
+            color: #009432;
+          }
+
+          .btn-check + .btn:hover {
+            color: #009432;
+            background-color: #32ae601f;
+            border-color: #009432;
+          }
+
+        }
+
+        .swiper-button-next:after, .swiper-button-prev:after {
+          font-size: 20px;
+          color: #57c981;
+          min-width: 24px;
+        }
+      }
+
 
       .btn-group {
         margin-bottom: 20px;
@@ -2467,6 +2549,7 @@ body {
       .dealsChartContainer {
         height: 275px;
       }
+
       .boostedChartContainer {
         height: 275px;
       }
@@ -2484,7 +2567,7 @@ body {
   .recommend-container {
     background: #ffffff;
     box-shadow: 0px 0px 1px rgba(12, 26, 75, 0.24),
-      0px 3px 8px -1px rgba(50, 50, 71, 0.05);
+    0px 3px 8px -1px rgba(50, 50, 71, 0.05);
     border-radius: 20px;
     padding: 24px 24px 20px;
 
@@ -2498,6 +2581,7 @@ body {
       color: #2f2f35;
       margin-bottom: 24px;
     }
+
     .items-container {
       display: flex;
       justify-content: start;
@@ -2582,6 +2666,7 @@ body {
           letter-spacing: 0.1px;
           color: #696974;
           margin-bottom: 14px;
+
           span {
             color: #009432;
           }
@@ -2632,7 +2717,7 @@ body {
 }
 
 // background: linear-gradient(180deg, #27885D 21.12%, #44BD86 100%);
-.wid-info-btn{
+.wid-info-btn {
   width: 30px;
   height: 30px;
   border-radius: 50%;
