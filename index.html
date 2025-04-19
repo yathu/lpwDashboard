@@ -3,6 +3,38 @@ layout: home
 ---
 
 <div class="container-fluid">
+
+  <div class="d-none">
+    <div id="newPopoverContainer" style=" width: auto; background: white; border-radius: 8px; font-family: Arial, sans-serif;">
+      <h3 style="color: #009432; margin: 0; font-size: 18px;">See it everywhere, update it from anywhere</h3>
+      <p style="color: #333; font-size: 14px; margin-top: 8px;">
+        Mirror your card to another board to view or edit it from multiple locations.
+      </p>
+      <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px;">
+        <button class="dismissNew" style="background: none; border: none; color: #555; font-size: 14px; cursor: pointer;">Dismiss</button>
+        <a href="#" class="dismissNew" style="background: #009432; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; text-decoration: none !important;">Try it</a>
+      </div>
+    </div>
+  </div>
+
+<!--  <button type="button" id="example"-->
+  <!--          data-bs-content="Hi Geek!!"-->
+  <!--          data-bs-placement="bottom"-->
+  <!--          class="btn btn-info">-->
+  <!--    Popover element-->
+  <!--  </button>-->
+
+  <a tabindex="0" role="button" id="example" class="btn btn-primary">
+    Open
+  </a>
+
+  <button type="button" id="show" class="btn btn-success">
+    Show Popover Manually using this Button
+  </button>
+  <button type="button" id="hide" class="btn btn-danger">
+    Hide Popover Manually using this Button
+  </button>
+
   <div class="row">
     <div class="col-12 col-xl-2">left Menu</div>
 
@@ -68,7 +100,7 @@ layout: home
                       </div>
                       <div class="expire w-100">expires on 2024.08.02</div>
                     </div>
-                    
+
                     <div class="progress">
                       <div
                         class="progress-bar"
@@ -178,7 +210,7 @@ layout: home
                         Redeem Now
                         <i class="bi bi-caret-right-fill"></i>
                       </a>
-                    </div> 
+                    </div>
                   </div>
 
                   <a

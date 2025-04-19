@@ -167,65 +167,68 @@ title: insight
             </div>
 
             <div class="charts-container mb-3">
-                <div class="chart-box">
-                    <div class="title">
-                        <img src="assets/img/addInsight/summary/upgradeAds.svg" alt=""/>
-                        Upgraded ads vs normal ads
-                    </div>
-
-                    <div class="d-flex justify-content-between align-items-start">
-                        <div
-                                class="btn-group"
-                                role="group"
-                                aria-label="Basic radio toggle button group"
-                        >
-                            <input
-                                    type="radio"
-                                    class="btn-check"
-                                    name="upgradeChartType"
-                                    id="featured"
-                                    autocomplete="off"
-                                    checked
-                                    value="featured"
-                            />
-                            <label class="btn btn-outline-primary" for="featured"
-                            >Featured Ads</label
-                            >
-
-                            <input
-                                    type="radio"
-                                    class="btn-check"
-                                    name="upgradeChartType"
-                                    id="platinum"
-                                    autocomplete="off"
-                                    value="platinum"
-                            />
-                            <label class="btn btn-outline-primary" for="platinum"
-                            >Platinum Ads</label
-                            >
-
-                            <input
-                                    type="radio"
-                                    class="btn-check"
-                                    name="upgradeChartType"
-                                    id="showcase"
-                                    autocomplete="off"
-                                    value="showcase"
-                            />
-                            <label class="btn btn-outline-primary" for="showcase"
-                            >Showcase Ads</label
-                            >
+                <div class="chart-box d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="title">
+                            <img src="assets/img/addInsight/summary/upgradeAds.svg" alt=""/>
+                            Upgraded ads vs normal ads
                         </div>
 
-                        <button type="button" class="btn btn-sm btn-outline-secondary rounded-5 text-center" data-bs-toggle="popover"
-                                data-bs-trigger="hover" data-bs-placement="top"
-                                data-bs-content="And here's some amazing content. It's very engaging. Right?">
-                            <i class="bi bi-info ms-0"></i>
-                        </button>
-                    </div>
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div
+                                    class="btn-group"
+                                    role="group"
+                                    aria-label="Basic radio toggle button group"
+                            >
+                                <input
+                                        type="radio"
+                                        class="btn-check"
+                                        name="upgradeChartType"
+                                        id="featured"
+                                        autocomplete="off"
+                                        checked
+                                        value="featured"
+                                />
+                                <label class="btn btn-outline-primary" for="featured"
+                                >Featured Ads</label
+                                >
 
-                    <div class="adsTypeChartContainer mb-1">
-                        <canvas id="adsTypeChart"></canvas>
+                                <input
+                                        type="radio"
+                                        class="btn-check"
+                                        name="upgradeChartType"
+                                        id="platinum"
+                                        autocomplete="off"
+                                        value="platinum"
+                                />
+                                <label class="btn btn-outline-primary" for="platinum"
+                                >Platinum Ads</label
+                                >
+
+                                <input
+                                        type="radio"
+                                        class="btn-check"
+                                        name="upgradeChartType"
+                                        id="showcase"
+                                        autocomplete="off"
+                                        value="showcase"
+                                />
+                                <label class="btn btn-outline-primary" for="showcase"
+                                >Showcase Ads</label
+                                >
+                            </div>
+
+                            <button type="button" class="btn btn-sm btn-outline-secondary rounded-5 text-center"
+                                    data-bs-toggle="popover"
+                                    data-bs-trigger="hover" data-bs-placement="top"
+                                    data-bs-content="And here's some amazing content. It's very engaging. Right?">
+                                <i class="bi bi-info ms-0"></i>
+                            </button>
+                        </div>
+
+                        <div class="adsTypeChartContainer mb-1">
+                            <canvas id="adsTypeChart"></canvas>
+                        </div>
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center">
@@ -233,7 +236,7 @@ title: insight
                             Overall Data
                         </span>
 
-                        <a href="#" class="btn btn-primary"
+                        <a href="#" class="btn btn-outline-success"
                         >Upgrade your ads now
                             <i class="bi bi-caret-right-fill"></i>
                         </a>
@@ -248,7 +251,7 @@ title: insight
 
                         <div class="buttons-container d-flex align-items-center justify-content-between">
 
-                            <div class="dealsPrev">
+                            <div class="deals-arrows dealsPrev">
                                 <i class="bi bi-chevron-left"></i>
                             </div>
 
@@ -343,7 +346,7 @@ title: insight
                                 </div>
                             </div>
 
-                            <div class="dealsNext">
+                            <div class="deals-arrows dealsNext">
                                 <i class="bi bi-chevron-right"></i>
                             </div>
 
@@ -358,7 +361,8 @@ title: insight
                         </div>
 
 
-                        <button type="button" class="btn btn-sm btn-outline-secondary rounded-5 text-center mt-2" data-bs-toggle="popover"
+                        <button type="button" class="btn btn-sm btn-outline-secondary rounded-5 text-center mt-2"
+                                data-bs-toggle="popover"
                                 data-bs-trigger="hover" data-bs-placement="top"
                                 data-bs-content="And here's some amazing content. It's very engaging. Right?">
                             <i class="bi bi-info ms-0"></i>
@@ -379,7 +383,8 @@ title: insight
                             Your ADs Page Number
                         </div>
 
-                        <button type="button" class="btn btn-sm btn-outline-secondary rounded-5 text-center" data-bs-toggle="popover"
+                        <button type="button" class="btn btn-sm btn-outline-secondary rounded-5 text-center"
+                                data-bs-toggle="popover"
                                 data-bs-trigger="hover" data-bs-placement="top"
                                 data-bs-content="And here's some amazing content. It's very engaging. Right?">
                             <i class="bi bi-info ms-0"></i>
@@ -400,7 +405,8 @@ title: insight
                             Boosted ads Vs Normal ads
                         </div>
 
-                        <button type="button" class="btn btn-sm btn-outline-secondary rounded-5 text-center" data-bs-toggle="popover"
+                        <button type="button" class="btn btn-sm btn-outline-secondary rounded-5 text-center"
+                                data-bs-toggle="popover"
                                 data-bs-trigger="hover" data-bs-placement="top"
                                 data-bs-content="And here's some amazing content. It's very engaging. Right?">
                             <i class="bi bi-info ms-0"></i>
@@ -420,7 +426,8 @@ title: insight
                             <img src="assets/img/addInsight/ad.svg" alt=""/>
                             Leads and Ads
                         </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary rounded-5 text-center" data-bs-toggle="popover"
+                        <button type="button" class="btn btn-sm btn-outline-secondary rounded-5 text-center"
+                                data-bs-toggle="popover"
                                 data-bs-trigger="hover" data-bs-placement="top"
                                 data-bs-content="And here's some amazing content. It's very engaging. Right?">
                             <i class="bi bi-info ms-0"></i>

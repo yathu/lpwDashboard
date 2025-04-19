@@ -693,6 +693,17 @@ $(document).ready(function () {
         },
 
         xAxes: {
+          ticks:{
+            color: (context)=>{
+              console.log("Color val==>",context.tick.value);
+              const dayOfWeek = moment(context.tick.value).day();
+              var isWeekend = (dayOfWeek === 6) || (dayOfWeek  === 0);
+
+              if (isWeekend) {
+                return 'blue'
+              }
+            }
+          },
           type: "time",
           // alignToPixels:true,
           time: {
@@ -1731,4 +1742,50 @@ $(document).ready(function () {
   });
 
   //upgrade ads dropdown
+
+  //popover
+
+  const exampleEl = document.getElementById('example');
+  var contentItem = document.getElementById("newPopoverContainer");
+
+  var options = {
+    html: true,
+    container: 'body',
+    content: contentItem,
+    trigger: 'manual',
+    placement: 'auto',
+  }
+
+  const popover = new bootstrap.Popover(exampleEl,options)
+  const hideButton = document.getElementById('hide')
+  const showButton = document.getElementById('show')
+
+  hideButton.addEventListener('click', () => {
+    popover.hide()
+  })
+  showButton.addEventListener('click', () => {
+    popover.show()
+  })
+
+  $(showButton).hover(function (e){
+
+    const isLabelShowed = localStorage.getItem("isNewPopoverSowed");
+    if (isLabelShowed) return;
+
+    popover.show();
+    localStorage.setItem("isNewPopoverSowed", 'true');
+
+  });
+
+  $('.dismissNew').on('click', () => {
+    popover.hide();
+  });
+
+  // $(exampleEl).on('click',function (e){
+  //   e.preventDefault();
+  //   e.stopPropagation();
+  //   console.log('click');
+  //   return false;
+  // });
+
 });

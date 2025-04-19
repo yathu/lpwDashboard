@@ -26,6 +26,9 @@ $(document).ready(() => {
   const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
   const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 
+
+  // $('button').popover('show').off('click');
+
   const genLeftTitle = (title, id, fromLeft, topAlign) => {
     const yLeftTitle = {
       id: id,
@@ -90,8 +93,8 @@ $(document).ready(() => {
   //ads type chart
   var adsTypeCtx = document.getElementById("adsTypeChart");
 
-  const featuredAdsViewsData = [400, 800];
-  const featuredAdsLeadsData = [20, 700];
+  const featuredAdsViewsData = [0, 800];
+  const featuredAdsLeadsData = [0, 700];
 
   const platinumAdsViewsData = [300, 700];
   const platinumAdsLeadsData = [100, 600];
@@ -107,8 +110,12 @@ $(document).ready(() => {
         type: "bar",
         data: featuredAdsViewsData,
         barThickness: 30,
-        borderWidth: 1,
-        borderColor: "white",
+        borderWidth: {
+          top: 1,
+          right: 0,
+          bottom: 0,
+          left: 0
+        },        borderColor: "white",
         backgroundColor: (ctx) => {
           return createGradient(ctx.chart, "green");
         },
@@ -129,7 +136,12 @@ $(document).ready(() => {
         data: featuredAdsLeadsData,
         yAxisID: "y1",
         barThickness: 30,
-        borderWidth: 1,
+        borderWidth: {
+          top: 1,
+          right: 0,
+          bottom: 0,
+          left: 0
+        },
         borderColor: "white",
         backgroundColor: (ctx) => {
           return createGradient(ctx.chart, "");
@@ -139,7 +151,6 @@ $(document).ready(() => {
           anchor: "end",
           color: "blue",
           offset: 0,
-
         },
         // inflateAmount:5
         // barPercentage: 0.7
@@ -1333,9 +1344,13 @@ $(document).ready(() => {
         pageNUm: [
           {
             x: "9.07.2024",
-            y: 300,
+            y: 1,
           },
-          ...pageNumData7days.slice(1),
+          {
+            x: "14.07.2024",
+            y: 1,
+          },
+          // ...pageNumData7days.slice(1),
         ],
         scatter: scatter7,
         timelineDate: [...timelineDates7, ..."16.07.2024"],
@@ -1452,6 +1467,7 @@ $(document).ready(() => {
   const config = {
     data,
     options: {
+      clip:false,
       responsive: true,
       maintainAspectRatio: false,
 
@@ -1462,6 +1478,7 @@ $(document).ready(() => {
           position: "left",
           // beginAtZero: true,
           ticks: {
+            precision: 0,
             callback: (label) => (label < 0 ? "" : label),
           },
           grid: {
@@ -1484,16 +1501,17 @@ $(document).ready(() => {
           position: "right",
           // beginAtZero: true,
           ticks: {
+            precision: 0,
             callback: (label) => (label < 0 ? "" : label),
           },
           grid: {
             display: false,
             drawOnChartArea: false,
           },
-          suggestedMin: 0,
+          suggestedMin: 1,
           // suggestedMax: 30
           reverse: true,
-          // min:1
+          min:1
         },
 
         xAxes: {
