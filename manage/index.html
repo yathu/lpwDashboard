@@ -2,107 +2,153 @@
 layout: manage_ads
 ---
 <div class="container">
-  <div class="row">
-    <div class="col-12 col-lg-2"></div>
-    <div class="col-12 col-lg-10">
+    <!--  initial slider section-->
+    <div class="row">
+        <div class="col-12 col-xl-2"></div>
+        <div class="col-12 col-xl-10 pt-4">
 
-      <!-- Swiper Container -->
-      <div class="swiper initial-swiper-container">
-        <div class="swiper-wrapper">
-          <!-- Card 1 -->
-          <div class="swiper-slide">
+            <!-- Swiper Container -->
+            <div class="initial-swiper-container mb-4">
+                <div class="swiper initial-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Card 1 -->
+                        <div class="swiper-slide">
 
-            <div class="card-item">
-              <div class="card-icon">
-                <img src="https://via.placeholder.com/44" alt="Rocket" class="rocket-icon">
-              </div>
-              <div class="card-content">
-                <div class="card-header">
-                  <h3 class="card-title">My Boosts Credits</h3>
-                  <span class="badge badge-blue">1200</span>
+                            <div class="card-item">
+                                <div class="card-icon rocket-icon">
+                                    <img src="../assets/img/mng_sources/rocket.svg" alt="Rocket">
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-header">
+                                        <h3 class="card-title">My Boosts Credits</h3>
+                                        <span class="badge badge-blue">1200</span>
+                                    </div>
+                                    <div class="card-action">
+                                        <button class="btn">
+                                            Purchase more
+                                            <i class="bi bi-caret-right-fill"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="swiper-slide">
+                            <div class="card-item">
+                                <div class="card-icon email-icon">
+                                    <img src="../assets/img/mng_sources/envelop.svg" alt="Email" class="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Leads Centre</h3>
+                                        <span class="badge badge-red">10+</span>
+                                    </div>
+                                    <div class="card-action">
+                                        <button class="btn">
+                                            View All Leads
+                                            <i class="bi bi-caret-right-fill"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="swiper-slide">
+                            <div class="card-item">
+                                <div class="card-icon whatsapp-icon">
+                                    <img src="../assets/img/mng_sources/whatsapp.svg" alt="WhatsApp" class="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-header">
+                                        <h3 class="card-title">WhatsApp Live</h3>
+                                        <span class="badge badge-green">44</span>
+                                    </div>
+                                    <div class="card-action">
+                                        <button class="btn">
+                                            Purchase more
+                                            <i class="bi bi-caret-right-fill"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="swiper-slide">
+                            <div class="card-item">
+                                <div class="card-icon hot-deals-icon">
+                                    <img src="../assets/img/mng_sources/flame.svg" alt="Hot Deals" class="">
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Hot Deals</h3>
+                                        <span class="badge badge-pink">19</span>
+                                    </div>
+                                    <div class="card-action">
+                                        <button class="btn">
+                                            Purchase more
+                                            <i class="bi bi-caret-right-fill"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-action">
-                  <button class="btn btn-primary">
-                    Purchase more
-                    <span class="arrow-icon">›</span>
-                  </button>
-                </div>
-              </div>
+                <div class="swiper-nav swiper-button-prev"></div>
+                <div class="swiper-nav swiper-button-next"></div>
             </div>
 
-          </div>
-
-          <!-- Card 2 -->
-          <div class="swiper-slide">
-            <div class="card-item">
-              <div class="card-icon">
-                <img src="https://via.placeholder.com/44" alt="Email" class="email-icon">
-              </div>
-              <div class="card-content">
-                <div class="card-header">
-                  <h3 class="card-title">Leads Centre</h3>
-                  <span class="badge badge-red">10+</span>
+            <!--    searchForm-->
+            <div class="search-container mb-4">
+                <h2 class="search-title">Search</h2>
+                <div class="row g-3">
+                    <div class="col-12 col-lg">
+                        <input type="text" class="form-control" placeholder="Keyword, Ad ID or Agent Ref">
+                    </div>
+                    <div class="col-6 col-lg-auto">
+                        <select class="form-select">
+                            <option selected>All Types</option>
+                            <option>Residential</option>
+                            <option>Commercial</option>
+                            <option>Land</option>
+                        </select>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <select class="form-select">
+                            <option selected>Property Type</option>
+                            <option>Apartment</option>
+                            <option>House</option>
+                            <option>Villa</option>
+                            <option>Office</option>
+                        </select>
+                    </div>
+                    <div class="col-6 col-lg-auto">
+                        <select class="form-select">
+                            <option selected>Status</option>
+                            <option>For Sale</option>
+                            <option>For Rent</option>
+                            <option>Sold</option>
+                        </select>
+                    </div>
+                    <div class="col-6 col-lg-auto">
+                        <select class="form-select">
+                            <option selected>Posted</option>
+                            <option>Last 24 hours</option>
+                            <option>Last week</option>
+                            <option>Last month</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-lg-auto">
+                        <button type="button" class="btn w-100">SEARCH</button>
+                    </div>
                 </div>
-                <div class="card-action">
-                  <button class="btn btn-primary">
-                    View All Leads
-                    <span class="arrow-icon">›</span>
-                  </button>
-                </div>
-              </div>
             </div>
-          </div>
 
-          <!-- Card 3 -->
-          <div class="swiper-slide">
-            <div class="card-item">
-              <div class="card-icon">
-                <img src="https://via.placeholder.com/44" alt="WhatsApp" class="whatsapp-icon">
-              </div>
-              <div class="card-content">
-                <div class="card-header">
-                  <h3 class="card-title">WhatsApp Live</h3>
-                  <span class="badge badge-green">44</span>
-                </div>
-                <div class="card-action">
-                  <button class="btn btn-primary">
-                    Purchase more
-                    <span class="arrow-icon">›</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="swiper-slide">
-            <div class="card-item">
-              <div class="card-icon">
-                <img src="https://via.placeholder.com/44" alt="Hot Deals" class="hot-deals-icon">
-              </div>
-              <div class="card-content">
-                <div class="card-header">
-                  <h3 class="card-title">Hot Deals</h3>
-                  <span class="badge badge-pink">19</span>
-                </div>
-                <div class="card-action">
-                  <button class="btn btn-primary">
-                    Purchase more
-                    <span class="arrow-icon">›</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-
-      </div>
-
-
-
     </div>
-  </div>
+
 </div>
