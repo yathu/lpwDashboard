@@ -1,7 +1,7 @@
 ---
 layout: manage_ads
 ---
-<div class="container">
+<div class="container manage-ads-container">
     <!--  initial slider section-->
     <div class="row">
         <div class="col-12 col-xl-2"></div>
@@ -148,20 +148,34 @@ layout: manage_ads
                 </div>
             </div>
 
+<!--            my ads-->
             <div class="my-ads-container">
-                <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="d-flex justify-content-between align-items-center">
                     <h2 class="my-ads-title">My Ads</h2>
                     <div class="d-flex align-items-center">
                         <div class="view-toggle me-3">
                             <button class="btn btn-outline-light p-1 active">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" color="#009432" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22 8.52V3.98C22 2.57 21.36 2 19.77 2H15.73C14.14 2 13.5 2.57 13.5 3.98V8.51C13.5 9.93 14.14 10.49 15.73 10.49H19.77C21.36 10.5 22 9.93 22 8.52Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M22 19.77V15.73C22 14.14 21.36 13.5 19.77 13.5H15.73C14.14 13.5 13.5 14.14 13.5 15.73V19.77C13.5 21.36 14.14 22 15.73 22H19.77C21.36 22 22 21.36 22 19.77Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10.5 8.52V3.98C10.5 2.57 9.86 2 8.27 2H4.23C2.64 2 2 2.57 2 3.98V8.51C2 9.93 2.64 10.49 4.23 10.49H8.27C9.86 10.5 10.5 9.93 10.5 8.52Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10.5 19.77V15.73C10.5 14.14 9.86 13.5 8.27 13.5H4.23C2.64 13.5 2 14.14 2 15.73V19.77C2 21.36 2.64 22 4.23 22H8.27C9.86 22 10.5 21.36 10.5 19.77Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                             </button>
                             <button class="btn btn-outline-light p-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+
+                                <svg width="24" height="24" viewBox="0 0 24 24" color="#92929D" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g opacity="0.6">
+                                        <path d="M19.9 13.5H4.1C2.6 13.5 2 14.14 2 15.73V19.77C2 21.36 2.6 22 4.1 22H19.9C21.4 22 22 21.36 22 19.77V15.73C22 14.14 21.4 13.5 19.9 13.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19.9 2H4.1C2.6 2 2 2.64 2 4.23V8.27C2 9.86 2.6 10.5 4.1 10.5H19.9C21.4 10.5 22 9.86 22 8.27V4.23C22 2.64 21.4 2 19.9 2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                </svg>
+
                             </button>
                         </div>
                         <div class="sort-dropdown">
                             <button class="btn btn-outline-secondary dropdown-toggle sort-btn" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i style="font-size: 16px" class="bi bi-filter me-2"></i>
                                 Sort
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="sortDropdown">
@@ -180,6 +194,54 @@ layout: manage_ads
                         <div class="status-label pending">PENDING: 1</div>
                         <div class="status-label upgraded">UPGRADED: 1</div>
                         <div class="status-label expire">ABOUT TO EXPIRE: 4</div>
+                    </div>
+                </div>
+            </div>
+
+<!--            grid ad item container-->
+
+            <div class="grid-ad-item">
+                <div class="ad-content">
+                    <div class="ad-image">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Frame%201321315171.jpg-vg7NgMIxk5DuDKS73SIOt9XZsAztJd.jpeg" alt="House for sale">
+                    </div>
+                    <div class="ad-details">
+                        <div class="label-container">
+                            <span class="label label-orange">SALE</span>
+                            <span class="label label-dark">HOUSE</span>
+                            <span class="label label-green"><i class="bi bi-whatsapp"></i> Whatsapp Chat</span>
+                            <span class="label label-red"><i class="bi bi-fire"></i> Hot Deal</span>
+                            <span class="label label-outline-success"><i class="bi bi-circle-fill text-success"></i> Active</span>
+                        </div>
+
+                        <h2 class="ad-heading">3 Bedrooms house for sale in Colombo 4 for Rs. 45 million</h2>
+
+                        <div class="ad-icons">
+                            <div class="icon-item">
+                                <div class="icon-circle">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                </div>
+                                <span>Colombo 5</span>
+                            </div>
+                            <div class="icon-item">
+                                <div class="icon-circle">
+                                    <i class="bi bi-eye-fill"></i>
+                                </div>
+                                <span>19 views</span>
+                            </div>
+                            <div class="icon-item">
+                                <div class="icon-circle">
+                                    <i class="bi bi-person-fill"></i>
+                                </div>
+                                <span>7 Leads</span>
+                            </div>
+                            <div class="icon-item">
+                                <div class="icon-circle">
+                                    <i class="bi bi-hash"></i>
+                                </div>
+                                <span>Ad Page <span class="badge bg-danger">1</span></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

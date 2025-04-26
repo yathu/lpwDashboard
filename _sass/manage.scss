@@ -17,6 +17,11 @@ body{
   font-family: "Inter", sans-serif;
   background-color: #F7FAFC;
 }
+.manage-ads-container{
+  .btn-outline-secondary{
+    border-color: #92929D5C !important;
+  }
+}
 
 // Swiper container
 .initial-swiper-container {
@@ -216,7 +221,7 @@ body{
 .my-ads-container {
   background-color: #FFFFFF;
   border-radius: 20px;
-  padding: 16px 20px;
+  padding: 16px 12px;
 
   .my-ads-title {
     font-size: 16px;
@@ -224,11 +229,17 @@ body{
     margin-bottom: 0;
   }
 
-  .sort-btn {
-    font-size: 12px;
-    font-weight: 500;
-    border-radius: 20px;
-    padding: 8px 16px;
+  .sort-dropdown{
+    margin-top: 16px;
+    .sort-btn {
+      font-size: 12px;
+      font-weight: 500;
+      border-radius: 8px;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   .view-toggle {
@@ -248,6 +259,7 @@ body{
   }
 
   .status-labels-container {
+    margin-top: 12px;
     overflow-x: auto;
 
     .status-labels {
@@ -261,6 +273,7 @@ body{
         padding: 12px 24px;
         border-radius: 50px;
         white-space: nowrap;
+        font-weight: 600;
 
         &.active {
           background-color: rgba(25, 135, 84, 0.15);
@@ -285,6 +298,141 @@ body{
         &.expire {
           background-color: rgba(108, 117, 125, 0.15);
           color: #6c757d;
+        }
+      }
+    }
+  }
+}
+
+.grid-ad-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 20px;
+  padding: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+  .ad-content {
+    display: flex;
+
+    .ad-image {
+      width: 220px;
+      height: auto;
+      flex-shrink: 0;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 14px;
+        object-fit: cover;
+      }
+    }
+
+    .ad-details {
+      display: flex;
+      flex-direction: column;
+      margin-left: 24px;
+      flex: 1;
+
+      .label-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding-bottom: 12px;
+
+        .label {
+          display: inline-flex;
+          align-items: center;
+          border-radius: 54px;
+          padding: 6px 10px;
+          font-family: 'Inter', sans-serif;
+          font-weight: 500;
+          font-size: 13px;
+          line-height: 16px;
+          letter-spacing: -1%;
+
+          i {
+            margin-right: 4px;
+          }
+
+          &.label-orange {
+            background-color: #FF9F43;
+            color: white;
+          }
+
+          &.label-dark {
+            background-color: #333;
+            color: white;
+          }
+
+          &.label-green {
+            background-color: #E7F7E7;
+            color: #25D366;
+          }
+
+          &.label-red {
+            background-color: #FFEBEE;
+            color: #F44336;
+          }
+
+          &.label-outline-success {
+            background-color: white;
+            color: #28a745;
+            border: 1px solid #28a745;
+
+            i {
+              font-size: 10px;
+              margin-right: 4px;
+            }
+          }
+        }
+      }
+
+      .ad-heading {
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: 0.2px;
+        margin-bottom: 16px;
+      }
+
+      .ad-icons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+
+        .icon-item {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          .icon-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            i {
+              font-size: 16px;
+              color: #666;
+            }
+          }
+
+          span {
+            font-size: 14px;
+            color: #666;
+
+            .badge {
+              font-size: 12px;
+              padding: 3px 6px;
+              border-radius: 4px;
+            }
+          }
         }
       }
     }
