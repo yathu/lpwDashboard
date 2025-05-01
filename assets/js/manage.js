@@ -52,9 +52,9 @@ $(document).ready(() => {
         collapsibleContent.classList.toggle('show');
 
         if (collapsibleContent.classList.contains('show')) {
-            this.innerHTML = 'VIEW LESS <span><i class="fa-solid fa-chevron-up"></i></span>';
+            this.innerHTML = 'VIEW LESS <span><i class="bi bi-caret-up-fill"></i></span>';
         } else {
-            this.innerHTML = 'VIEW MORE <span><i class="fa-solid fa-chevron-down"></i></span>';
+            this.innerHTML = 'VIEW MORE <span><i class="bi bi-caret-down-fill"></i></span>';
         }
     });
 
@@ -63,9 +63,9 @@ $(document).ready(() => {
         collapsibleContent.classList.toggle('show-mobile');
 
         if (collapsibleContent.classList.contains('show-mobile')) {
-            this.innerHTML = 'View Less <span><i class="fa-solid fa-chevron-up"></i></span>';
+            this.innerHTML = 'View Less <span><i class="bi bi-caret-up-fill"></i></span>';
         } else {
-            this.innerHTML = 'View More <span><i class="fa-solid fa-chevron-down"></i></span>';
+            this.innerHTML = 'View More <span><i class="bi bi-caret-down-fill"></i></span>';
         }
     });
 

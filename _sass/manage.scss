@@ -33,12 +33,13 @@ $box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 $padding-button: 10px 16px;
 $transition-speed: 0.3s;
 
-body{
+body {
   font-family: "Inter", sans-serif;
   background-color: #F7FAFC;
 }
-.manage-ads-container{
-  .btn-outline-secondary{
+
+.manage-ads-container {
+  .btn-outline-secondary {
     border-color: #92929D5C !important;
   }
 }
@@ -49,7 +50,6 @@ body{
   padding: 0 20px;
   position: relative;
   //padding-bottom: 30px;
-
 
 
   .swiper-slide {
@@ -181,15 +181,17 @@ body{
     }
   }
 
-  .swiper-nav{
-    &:after{
+  .swiper-nav {
+    &:after {
       font-size: 16px;
     }
   }
-  .swiper-button-prev{
+
+  .swiper-button-prev {
     left: -7px;
   }
-  .swiper-button-next{
+
+  .swiper-button-next {
     right: -7px;
   }
 
@@ -249,8 +251,9 @@ body{
     margin-bottom: 0;
   }
 
-  .sort-dropdown{
+  .sort-dropdown {
     margin-top: 16px;
+
     .sort-btn {
       font-size: 12px;
       font-weight: 500;
@@ -360,6 +363,8 @@ body{
         flex-wrap: wrap;
         gap: 12px;
         padding-bottom: 12px;
+        border-bottom: 1px solid #E2E2EA;
+        margin-bottom: 16px;
 
         .label {
           display: inline-flex;
@@ -415,7 +420,7 @@ body{
         font-size: 18px;
         line-height: 26px;
         letter-spacing: 0.2px;
-        margin-bottom: 16px;
+        margin-bottom: 12px;
       }
 
       .ad-icons {
@@ -432,10 +437,43 @@ body{
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background-color: #f5f5f5;
+            //background-color: #f5f5f5;
             display: flex;
             align-items: center;
             justify-content: center;
+            border: 1px solid;
+
+            &.location {
+              border-color: rgba(184, 219, 190, 1);
+
+              i {
+                color: #16A05F;
+              }
+            }
+
+            &.views {
+              border-color: #FEE3BD;
+
+              i {
+                color: #F58E44;
+              }
+            }
+
+            &.leads {
+              border-color: #43A048;
+
+              i {
+                color: #43A048;
+              }
+            }
+
+            &.page {
+              border-color: #FFE4E4;
+
+              i {
+                color: #E54137;
+              }
+            }
 
             i {
               font-size: 16px;
@@ -445,12 +483,17 @@ body{
 
           span {
             font-size: 14px;
-            color: #666;
+            color: #212226;
+            font-weight: 500;
 
-            .badge {
-              font-size: 12px;
-              padding: 3px 6px;
+            span.badge {
+              padding: 3px 5px;
               border-radius: 4px;
+              background-color: #E54137;
+              color: white;
+              font-size: 16px;
+              font-weight: 500;
+              margin-left: 10px;
             }
           }
         }
@@ -460,50 +503,63 @@ body{
 
   // Main container styles
   .grid-ad-item-header {
-    margin-bottom: 15px;
+    //margin-bottom: 15px;
+    gap: 10px;
 
     // Card styles
     .ad-card, .boost-card {
       border-radius: $card-border-radius;
-      padding: $card-padding;
-      margin-bottom: 15px;
+      padding: 10px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      border: 1px solid #F3E7CA;
     }
 
     .ad-card {
       background-color: $color-promote-card;
+      gap: 12px;
 
       .ad-info {
-        .icon-arrow-up {
+        gap: 12px;
+        .bi-arrow-up-circle-fill {
           color: $color-highlight;
-          font-size: $icon-size / 2;
+          font-size: 32px;
+        }
+        .highlight {
+          color: $color-highlight;
+          font-weight: 600;
+        }
+        .ad-text{
+          font-size: 14px;
+          font-weight: 500;
         }
       }
     }
 
     .boost-card {
       background-color: $color-boost-card;
+      gap: 12px;
+      border: 1px solid #F4D4CA;
 
       .boost-info {
-        strong {
-          font-weight: bold;
-        }
+        font-size: 13px;
       }
     }
 
     // Button styles
     .promote-btn, .boost-btn {
-      padding: $padding-button;
+      padding: 10px 12px;
       border: none;
       border-radius: $card-border-radius / 2;
       font-weight: 500;
+      font-size: 14px;
       box-shadow: $box-shadow;
       display: flex;
       align-items: center;
       transition: transform 0.2s, box-shadow 0.2s;
-
+      //min-width: 151px;
+      min-width: max-content;
       &:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
@@ -523,6 +579,9 @@ body{
     .boost-btn {
       background-color: $color-boost-bg;
       color: $color-text-light;
+      i{
+        font-size: 16px;
+      }
     }
 
     .view-toggle {
@@ -531,16 +590,12 @@ body{
       border: none;
       font-weight: 500;
       transition: color 0.2s;
+      text-decoration: none;
+      font-size: 14px;
 
       &:hover {
         color: darken($primary-color, 10%);
       }
-    }
-
-    // Utility styles
-    .highlight {
-      color: $color-highlight;
-      font-weight: bold;
     }
 
     .info-icon, .dropdown-icon {
@@ -558,39 +613,49 @@ body{
 
   // Collapsible content styles
   .grid-ad-details {
-    max-height: 0;
+    //max-height: 0;
     overflow: hidden;
     transition: max-height $transition-speed ease-out, opacity $transition-speed ease-out, margin $transition-speed ease-out;
-    opacity: 0;
+    //opacity: 0;
     margin-top: 0;
+    //max-height: 0;
+    display: none;
 
     &.show {
-      max-height: 1000px;
-      opacity: 1;
-      margin-top: 15px;
+      //max-height: 1000px;
+      //opacity: 1;
+      //margin-top: 15px;
+      //max-height: max-content;
+      display: flex;
     }
 
     &.show-mobile {
       @media (max-width: 767.98px) {
-        max-height: 1000px;
-        opacity: 1;
+        //max-height: 1000px;
+        //max-height: max-content;
+        //opacity: 1;
+        display: flex;
+
         margin-top: 15px;
       }
     }
 
     // Stats cards
     .stats-container {
-      background-color: #FFFFFF;
+      background-color: #FFF8E7;
       border-radius: $card-border-radius;
-      padding: $card-padding;
+      padding: 16px 8px;
       box-shadow: $box-shadow;
       height: 100%;
+      border: 1px solid #F3E7CA;
+      margin-bottom: 12px;
     }
 
     .stats-card {
       display: flex;
       align-items: center;
-      padding: 10px;
+      //padding: 10px;
+      flex:1;
 
       @media (max-width: 767.98px) {
         margin-bottom: 15px;
@@ -605,30 +670,31 @@ body{
       align-items: center;
       justify-content: center;
       margin-right: 12px;
-
+      border: 1px solid;
       i {
         font-size: 18px;
       }
     }
 
     .views-icon {
-      background-color: $color-views-bg;
-      color: darken($color-views-bg, 40%);
+      border-color: #FEE3BD;
+      color: #F58E44;
     }
 
     .telephone-icon {
-      background-color: $color-telephone-bg;
-      color: darken($color-telephone-bg, 40%);
+      border-color: #EBE5FD;
+      color: #5B43A0;
     }
 
     .whatsapp-icon {
-      background-color: $color-whatsapp-bg;
-      color: $color-trend-up;
+      //background-color: $color-whatsapp-bg;
+      border-color: #B6DAB1;
+      color: #29A71A;
     }
 
     .email-icon {
-      background-color: $color-email-bg;
-      color: $color-trend-down;
+      border-color: #E19CC5;
+      color: #AB1F73;
     }
 
     .stats-info {
@@ -636,15 +702,22 @@ body{
     }
 
     .stats-label {
-      font-size: 14px;
+      font-size: 13px;
+      font-weight: 500;
       color: $color-info;
     }
 
     .stats-value {
-      font-size: 16px;
-      font-weight: 600;
       display: flex;
       align-items: center;
+      font-size: 16px;
+      font-weight: 400;
+      color: #212226;
+
+      strong{
+        font-weight: 600;
+        margin-right: 4px;
+      }
 
       .trend-up {
         color: $color-trend-up;
@@ -661,15 +734,16 @@ body{
     .ad-details-container {
       background-color: #F8F9FA;
       border-radius: $card-border-radius;
-      padding: $card-padding;
-      box-shadow: $box-shadow;
+      padding: 16px 8px;
       height: 100%;
+      border: 1px solid #D0D9E1;
     }
 
     .detail-item {
       display: flex;
       align-items: center;
-      padding: 10px;
+      //padding: 10px;
+      flex:1;
 
       @media (max-width: 767.98px) {
         margin-bottom: 10px;
@@ -677,8 +751,8 @@ body{
     }
 
     .detail-icon {
-      width: 32px;
-      height: 32px;
+      //width: 32px;
+      //height: 32px;
       display: flex;
       align-items: center;
       justify-content: center;
