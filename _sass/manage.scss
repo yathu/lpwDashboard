@@ -13,6 +13,26 @@ $badge-green-color: #4CAF50;
 $badge-pink-bg: #FFE0E0;
 $badge-pink-color: #FB6F6F;
 
+// Additional variables for this component
+$color-promote-bg: #FFCF4B;
+$color-boost-bg: #FF5722;
+$color-promote-card: #FFF9E6;
+$color-boost-card: #FFF5F2;
+$color-highlight: #28a745;
+$color-text-dark: #000;
+$color-text-light: #fff;
+$color-info: #6c757d;
+$color-views-bg: #FFF5E6;
+$color-telephone-bg: #F0E7FF;
+$color-whatsapp-bg: #E0F6E0;
+$color-email-bg: #FFE0E0;
+$color-trend-up: #4CAF50;
+$color-trend-down: #E13D44;
+
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$padding-button: 10px 16px;
+$transition-speed: 0.3s;
+
 body{
   font-family: "Inter", sans-serif;
   background-color: #F7FAFC;
@@ -437,4 +457,530 @@ body{
       }
     }
   }
+
+  // Main container styles
+  .grid-ad-item-header {
+    margin-bottom: 15px;
+
+    // Card styles
+    .ad-card, .boost-card {
+      border-radius: $card-border-radius;
+      padding: $card-padding;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .ad-card {
+      background-color: $color-promote-card;
+
+      .ad-info {
+        .icon-arrow-up {
+          color: $color-highlight;
+          font-size: $icon-size / 2;
+        }
+      }
+    }
+
+    .boost-card {
+      background-color: $color-boost-card;
+
+      .boost-info {
+        strong {
+          font-weight: bold;
+        }
+      }
+    }
+
+    // Button styles
+    .promote-btn, .boost-btn {
+      padding: $padding-button;
+      border: none;
+      border-radius: $card-border-radius / 2;
+      font-weight: 500;
+      box-shadow: $box-shadow;
+      display: flex;
+      align-items: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      &:active {
+        transform: translateY(0);
+        box-shadow: $box-shadow;
+      }
+    }
+
+    .promote-btn {
+      background-color: $color-promote-bg;
+      color: $color-text-dark;
+    }
+
+    .boost-btn {
+      background-color: $color-boost-bg;
+      color: $color-text-light;
+    }
+
+    .view-toggle {
+      color: $primary-color;
+      background: none;
+      border: none;
+      font-weight: 500;
+      transition: color 0.2s;
+
+      &:hover {
+        color: darken($primary-color, 10%);
+      }
+    }
+
+    // Utility styles
+    .highlight {
+      color: $color-highlight;
+      font-weight: bold;
+    }
+
+    .info-icon, .dropdown-icon {
+      color: $color-info;
+      cursor: pointer;
+    }
+
+    // Responsive adjustments
+    @media (max-width: 767.98px) {
+      .ad-card, .boost-card {
+        justify-content: center;
+      }
+    }
+  }
+
+  // Collapsible content styles
+  .grid-ad-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height $transition-speed ease-out, opacity $transition-speed ease-out, margin $transition-speed ease-out;
+    opacity: 0;
+    margin-top: 0;
+
+    &.show {
+      max-height: 1000px;
+      opacity: 1;
+      margin-top: 15px;
+    }
+
+    &.show-mobile {
+      @media (max-width: 767.98px) {
+        max-height: 1000px;
+        opacity: 1;
+        margin-top: 15px;
+      }
+    }
+
+    // Stats cards
+    .stats-container {
+      background-color: #FFFFFF;
+      border-radius: $card-border-radius;
+      padding: $card-padding;
+      box-shadow: $box-shadow;
+      height: 100%;
+    }
+
+    .stats-card {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+
+      @media (max-width: 767.98px) {
+        margin-bottom: 15px;
+      }
+    }
+
+    .stats-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+
+      i {
+        font-size: 18px;
+      }
+    }
+
+    .views-icon {
+      background-color: $color-views-bg;
+      color: darken($color-views-bg, 40%);
+    }
+
+    .telephone-icon {
+      background-color: $color-telephone-bg;
+      color: darken($color-telephone-bg, 40%);
+    }
+
+    .whatsapp-icon {
+      background-color: $color-whatsapp-bg;
+      color: $color-trend-up;
+    }
+
+    .email-icon {
+      background-color: $color-email-bg;
+      color: $color-trend-down;
+    }
+
+    .stats-info {
+      flex: 1;
+    }
+
+    .stats-label {
+      font-size: 14px;
+      color: $color-info;
+    }
+
+    .stats-value {
+      font-size: 16px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+
+      .trend-up {
+        color: $color-trend-up;
+        margin-left: 5px;
+      }
+
+      .trend-down {
+        color: $color-trend-down;
+        margin-left: 5px;
+      }
+    }
+
+    // Ad details
+    .ad-details-container {
+      background-color: #F8F9FA;
+      border-radius: $card-border-radius;
+      padding: $card-padding;
+      box-shadow: $box-shadow;
+      height: 100%;
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+
+      @media (max-width: 767.98px) {
+        margin-bottom: 10px;
+      }
+    }
+
+    .detail-icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      color: $color-info;
+
+      i {
+        font-size: 16px;
+      }
+    }
+
+    .detail-info {
+      flex: 1;
+    }
+
+    .detail-label {
+      font-size: 12px;
+      color: $color-info;
+    }
+
+    .detail-value {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    // Action buttons
+    .action-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 12px;
+      border-radius: $card-border-radius / 2;
+      border: 1px solid #DEE2E6;
+      background-color: #FFFFFF;
+      font-weight: 500;
+      transition: all 0.2s;
+
+      i {
+        margin-right: 8px;
+      }
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: $box-shadow;
+      }
+    }
+
+    .edit-btn {
+      color: $color-boost-bg;
+
+      &:hover {
+        background-color: lighten($color-boost-bg, 45%);
+      }
+    }
+
+    .delete-btn {
+      color: $color-trend-down;
+
+      &:hover {
+        background-color: lighten($color-trend-down, 45%);
+      }
+    }
+
+    .insights-btn {
+      color: $primary-color;
+      background-color: $badge-blue-bg;
+      border-color: $badge-blue-bg;
+
+      .insights-icon {
+        margin-right: 8px;
+      }
+
+      &:hover {
+        background-color: darken($badge-blue-bg, 5%);
+      }
+    }
+  }
+
+  .lead-features-section {
+    padding: 20px 0;
+
+    // Left column - Features toggle container
+    .features-toggle-container {
+      background-color: #FFFFFF;
+      border-radius: $card-border-radius;
+      padding: 16px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+      // Toggle item
+      .toggle-item {
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        border-radius: 16px;
+        margin-bottom: 12px;
+        transition: all 0.3s ease;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        // Toggle icon
+        .toggle-icon {
+          width: $icon-size;
+          height: $icon-size;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 16px;
+          flex-shrink: 0;
+
+          &.whatsapp-icon {
+            background-color: $color-whatsapp-bg;
+          }
+
+          &.hot-deal-icon {
+            background-color: $badge-pink-bg;
+          }
+
+          &.contact-icon {
+            background-color: $badge-blue-bg;
+          }
+
+          img {
+            max-width: 24px;
+            height: auto;
+          }
+        }
+
+        // Toggle content
+        .toggle-content {
+          flex: 1;
+
+          .toggle-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 2px;
+          }
+
+          .toggle-subtitle {
+            font-size: 14px;
+            color: $color-info;
+            margin-bottom: 0;
+          }
+        }
+
+        // Toggle switch
+        .form-check-input {
+          width: 48px;
+          height: 24px;
+
+          &:checked {
+            background-color: #25D366;
+            border-color: #25D366;
+          }
+
+          &:focus {
+            box-shadow: 0 0 0 0.25rem rgba(37, 211, 102, 0.25);
+          }
+        }
+      }
+    }
+
+    // Right column - Recommendations
+    .recommendations-container {
+      background-color: #FFFFFF;
+      border-radius: $card-border-radius;
+      padding: 16px;
+      height: 100%;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+      // Header
+      .recommendations-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+
+        .recommendations-title {
+          font-size: 18px;
+          font-weight: 600;
+          margin-bottom: 0;
+        }
+
+        // Custom navigation buttons
+        .swiper-nav-buttons {
+          display: flex;
+          gap: 8px;
+
+          .swiper-nav-button {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #F0F0F0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &:hover {
+              background-color: #E0E0E0;
+            }
+
+            i {
+              font-size: 14px;
+              color: #333;
+            }
+          }
+        }
+      }
+
+      // Swiper container
+      .recommendation-swiper {
+        width: 100%;
+        height: auto;
+
+        .swiper-slide {
+          height: auto;
+        }
+
+        // Recommendation card
+        .recommendation-card {
+          background-color: #FFF9F0;
+          border-radius: 16px;
+          padding: 20px;
+          position: relative;
+          overflow: hidden;
+
+          &.social-media-card {
+            background-color: $color-promote-card;
+          }
+
+          .info-icon {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            i {
+              font-size: 12px;
+              color: $color-info;
+            }
+          }
+
+          .recommendation-card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: $color-text-dark;
+          }
+
+          .recommendation-media {
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 16px;
+
+            img {
+              width: 100%;
+              height: auto;
+              object-fit: cover;
+            }
+          }
+
+          .recommendation-card-text {
+            font-size: 14px;
+            color: darken($color-info, 10%);
+            margin-bottom: 16px;
+            line-height: 1.5;
+          }
+
+          .action-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: $primary-color;
+            color: white;
+            font-weight: 500;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+
+            &:hover {
+              background-color: darken($primary-color, 10%);
+              color: white;
+            }
+
+            i {
+              margin-left: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+
 }

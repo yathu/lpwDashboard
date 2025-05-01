@@ -244,6 +244,362 @@ layout: manage_ads
                         </div>
                     </div>
                 </div>
+
+                <!-- Ad Header Section -->
+                <div class="row align-items-center grid-ad-item-header">
+                    <!-- First Column - Promote Ad -->
+                    <div class="col-12 col-md-4">
+                        <div class="ad-card d-flex align-items-center justify-content-between">
+                            <!-- Content visible only on desktop -->
+                            <div class="ad-info d-none d-md-flex align-items-center">
+                                <div class="me-2">
+                                    <i class="fa-solid fa-arrow-up icon-arrow-up"></i>
+                                </div>
+                                <div>
+                                    <span class="highlight">30X</span>
+                                    <span class="d-block d-md-inline">Want up to <span class="highlight">30x</span> more views a month?</span>
+                                </div>
+                            </div>
+
+                            <!-- Button visible on all screens -->
+                            <button class="promote-btn d-flex align-items-center">
+                                <span class="me-2"><i class="fa-solid fa-bullhorn"></i></span> PROMOTE AD
+                            </button>
+
+                            <!-- Info icon -->
+                            <span class="ms-2 info-icon"><i class="fa-solid fa-circle-info"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Second Column - Boost Ad -->
+                    <div class="col-12 col-md-4">
+                        <div class="boost-card d-flex align-items-center justify-content-between">
+                            <!-- Content visible only on desktop -->
+                            <div class="boost-info d-none d-md-block">
+                                Last boosted: <strong>01 hr ago</strong>
+                            </div>
+
+                            <!-- Button visible on all screens -->
+                            <button class="boost-btn d-flex align-items-center">
+                                <span class="me-2"><i class="fa-solid fa-rocket"></i></span> BOOST AD
+                            </button>
+
+                            <!-- Info icon -->
+                            <span class="ms-2 info-icon"><i class="fa-solid fa-circle-info"></i></span>
+
+                            <!-- Dropdown icon (only visible on desktop) -->
+                            <span class="ms-2 d-none d-md-block dropdown-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Third Column - View Toggle -->
+                    <div class="col-12 col-md-4 text-end">
+                        <!-- Desktop version (VIEW LESS) -->
+                        <button class="view-toggle d-none d-md-inline-block" id="desktop-toggle">
+                            VIEW LESS <span><i class="fa-solid fa-chevron-up"></i></span>
+                        </button>
+
+                        <!-- Mobile version (View More) -->
+                        <button class="view-toggle d-inline-block d-md-none" id="mobile-toggle">
+                            View More <span><i class="fa-solid fa-chevron-down"></i></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Collapsible Content Section -->
+                <div class="row grid-ad-details" id="collapsible-content">
+                    <!-- Main content row -->
+                    <div class="col-12">
+                        <div class="row">
+                            <!-- Left Column (col-9) -->
+                            <div class="col-md-9">
+                                <div class="d-flex flex-column">
+                                    <!-- First Row: Stats Cards -->
+                                    <div class="stats-container mb-3">
+                                        <div class="row">
+                                            <!-- Views Card -->
+                                            <div class="col-6 col-md-3">
+                                                <div class="stats-card">
+                                                    <div class="stats-icon views-icon">
+                                                        <i class="fa-solid fa-eye"></i>
+                                                    </div>
+                                                    <div class="stats-info">
+                                                        <div class="stats-label">Views</div>
+                                                        <div class="stats-value">
+                                                            100 <span class="trend-down"><i class="fa-solid fa-arrow-down"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Telephone Card -->
+                                            <div class="col-6 col-md-3">
+                                                <div class="stats-card">
+                                                    <div class="stats-icon telephone-icon">
+                                                        <i class="fa-solid fa-phone"></i>
+                                                    </div>
+                                                    <div class="stats-info">
+                                                        <div class="stats-label">Telephone</div>
+                                                        <div class="stats-value">
+                                                            12 Leads <span class="trend-down"><i class="fa-solid fa-arrow-down"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Whatsapp Card -->
+                                            <div class="col-6 col-md-3">
+                                                <div class="stats-card">
+                                                    <div class="stats-icon whatsapp-icon">
+                                                        <i class="fa-brands fa-whatsapp"></i>
+                                                    </div>
+                                                    <div class="stats-info">
+                                                        <div class="stats-label">Whatsapp</div>
+                                                        <div class="stats-value">
+                                                            12 Leads <span class="trend-up"><i class="fa-solid fa-arrow-up"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Email Card -->
+                                            <div class="col-6 col-md-3">
+                                                <div class="stats-card">
+                                                    <div class="stats-icon email-icon">
+                                                        <i class="fa-solid fa-envelope"></i>
+                                                    </div>
+                                                    <div class="stats-info">
+                                                        <div class="stats-label">Email</div>
+                                                        <div class="stats-value">
+                                                            12 Leads <span class="trend-down"><i class="fa-solid fa-arrow-down"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Second Row: Ad Details -->
+                                    <div class="ad-details-container">
+                                        <div class="row">
+                                            <!-- Ad ID -->
+                                            <div class="col-6 col-md-3">
+                                                <div class="detail-item">
+                                                    <div class="detail-icon">
+                                                        <i class="fa-solid fa-hashtag"></i>
+                                                    </div>
+                                                    <div class="detail-info">
+                                                        <div class="detail-label">Ad ID</div>
+                                                        <div class="detail-value">#5563006</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Ad Posted On -->
+                                            <div class="col-6 col-md-3">
+                                                <div class="detail-item">
+                                                    <div class="detail-icon">
+                                                        <i class="fa-solid fa-calendar"></i>
+                                                    </div>
+                                                    <div class="detail-info">
+                                                        <div class="detail-label">Ad posted on</div>
+                                                        <div class="detail-value">01-03-2024</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Last Updated On -->
+                                            <div class="col-6 col-md-3">
+                                                <div class="detail-item">
+                                                    <div class="detail-icon">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                    </div>
+                                                    <div class="detail-info">
+                                                        <div class="detail-label">Last updated on</div>
+                                                        <div class="detail-value">01-03-2024</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Last Boosted -->
+                                            <div class="col-6 col-md-3">
+                                                <div class="detail-item">
+                                                    <div class="detail-icon">
+                                                        <i class="fa-solid fa-rocket"></i>
+                                                    </div>
+                                                    <div class="detail-info">
+                                                        <div class="detail-label">Last Boosted</div>
+                                                        <div class="detail-value">01 hr ago</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Column (col-3) - Action Buttons -->
+                            <div class="col-md-3">
+                                <div class="d-flex flex-column h-100">
+                                    <!-- Edit Button -->
+                                    <button class="action-btn edit-btn mb-3">
+                                        <i class="fa-solid fa-pen-to-square"></i> Edit
+                                    </button>
+
+                                    <!-- Delete Button -->
+                                    <button class="action-btn delete-btn mb-3">
+                                        <i class="fa-solid fa-trash"></i> Delete
+                                    </button>
+
+                                    <!-- View Insights Button -->
+                                    <button class="action-btn insights-btn">
+                                        <div class="insights-icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M2 12H4V21H2V12Z" fill="#1A73E8"/>
+                                                <path d="M7 8H9V21H7V8Z" fill="#1A73E8"/>
+                                                <path d="M12 4H14V21H12V4Z" fill="#1A73E8"/>
+                                                <path d="M17 10H19V21H17V10Z" fill="#1A73E8"/>
+                                                <path d="M3 8L7 5L12 9L17 6L21 9" stroke="#1A73E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        View Insights
+                                        <i class="fa-solid fa-chevron-right ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<!--                features-->
+
+                <div class="lead-features-section">
+                    <div class="row">
+                        <!-- Left Column - Toggle Features -->
+                        <div class="col-4">
+                            <div class="features-toggle-container">
+                                <div class="toggle-item">
+                                    <div class="toggle-icon whatsapp-icon">
+                                        <img src="/api/placeholder/24/24" alt="WhatsApp Icon">
+                                    </div>
+                                    <div class="toggle-content">
+                                        <h5 class="toggle-title">WhatsApp Live Chat</h5>
+                                        <p class="toggle-subtitle">Chat (09/20 credits used)</p>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="whatsappToggle" checked>
+                                    </div>
+                                </div>
+
+                                <div class="toggle-item">
+                                    <div class="toggle-icon hot-deal-icon">
+                                        <img src="/api/placeholder/24/24" alt="Hot Deal Icon">
+                                    </div>
+                                    <div class="toggle-content">
+                                        <h5 class="toggle-title">Hot Deal Property</h5>
+                                        <p class="toggle-subtitle">Chat (05/20 credits used)</p>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="hotDealToggle" checked>
+                                    </div>
+                                </div>
+
+                                <div class="toggle-item">
+                                    <div class="toggle-icon contact-icon">
+                                        <img src="/api/placeholder/24/24" alt="Contact Form Icon">
+                                    </div>
+                                    <div class="toggle-content">
+                                        <h5 class="toggle-title">Contact Request Form</h5>
+                                        <p class="toggle-subtitle">Always enabled</p>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-circle-info text-secondary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column - Recommendations Swiper -->
+                        <div class="col-8">
+                            <div class="recommendations-container">
+                                <div class="recommendations-header">
+                                    <h4 class="recommendations-title">Recommendations to increase leads</h4>
+                                    <div class="swiper-nav-buttons">
+                                        <div class="swiper-nav-button swiper-button-prev-custom">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </div>
+                                        <div class="swiper-nav-button swiper-button-next-custom">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Swiper Component -->
+                                <div class="swiper recommendation-swiper">
+                                    <div class="swiper-wrapper">
+                                        <!-- Swiper Slide 1 -->
+                                        <div class="swiper-slide">
+                                            <div class="recommendation-card social-media-card">
+                                                <div class="info-icon">
+                                                    <i class="fas fa-info"></i>
+                                                </div>
+                                                <h5 class="recommendation-card-title">Post on Social Media</h5>
+                                                <div class="recommendation-media">
+                                                    <img src="/api/placeholder/400/200" alt="Social Media Promotion">
+                                                </div>
+                                                <p class="recommendation-card-text">
+                                                    Showcase your listing on LankaPropertyWeb's official social media pages/channel on FB, Instagram, YouTube and TikTok with a total following of 150K+ (with property interests)
+                                                </p>
+                                                <a href="#" class="action-button">
+                                                    Purchase Now <i class="fas fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <!-- Swiper Slide 2 -->
+                                        <div class="swiper-slide">
+                                            <div class="recommendation-card">
+                                                <div class="info-icon">
+                                                    <i class="fas fa-info"></i>
+                                                </div>
+                                                <h5 class="recommendation-card-title">Get 6x more views</h5>
+                                                <div class="recommendation-media">
+                                                    <img src="/api/placeholder/400/200" alt="Increased Views">
+                                                </div>
+                                                <p class="recommendation-card-text">
+                                                    Promote your property to get 6x more views and increase your chances of finding the right buyer or tenant faster.
+                                                </p>
+                                                <a href="#" class="action-button">
+                                                    Boost Listing <i class="fas fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <!-- Swiper Slide 3 -->
+                                        <div class="swiper-slide">
+                                            <div class="recommendation-card">
+                                                <div class="info-icon">
+                                                    <i class="fas fa-info"></i>
+                                                </div>
+                                                <h5 class="recommendation-card-title">Featured Property</h5>
+                                                <div class="recommendation-media">
+                                                    <img src="/api/placeholder/400/200" alt="Featured Property">
+                                                </div>
+                                                <p class="recommendation-card-text">
+                                                    Get your property featured at the top of search results and category pages for maximum visibility.
+                                                </p>
+                                                <a href="#" class="action-button">
+                                                    Make Featured <i class="fas fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
         </div>

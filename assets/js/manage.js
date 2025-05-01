@@ -38,5 +38,52 @@ $(document).ready(() => {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
-    })
-})
+    });
+
+    const desktopToggle = document.getElementById('desktop-toggle');
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const collapsibleContent = document.getElementById('collapsible-content');
+
+    // Set initial state
+    collapsibleContent.classList.add('show');
+
+    // Desktop toggle
+    desktopToggle.addEventListener('click', function() {
+        collapsibleContent.classList.toggle('show');
+
+        if (collapsibleContent.classList.contains('show')) {
+            this.innerHTML = 'VIEW LESS <span><i class="fa-solid fa-chevron-up"></i></span>';
+        } else {
+            this.innerHTML = 'VIEW MORE <span><i class="fa-solid fa-chevron-down"></i></span>';
+        }
+    });
+
+    // Mobile toggle
+    mobileToggle.addEventListener('click', function() {
+        collapsibleContent.classList.toggle('show-mobile');
+
+        if (collapsibleContent.classList.contains('show-mobile')) {
+            this.innerHTML = 'View Less <span><i class="fa-solid fa-chevron-up"></i></span>';
+        } else {
+            this.innerHTML = 'View More <span><i class="fa-solid fa-chevron-down"></i></span>';
+        }
+    });
+
+    //features swiper
+
+    const Fswiper = new Swiper('.recommendation-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next-custom',
+            prevEl: '.swiper-button-prev-custom',
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 1,
+            }
+        }
+    });
+
+});
