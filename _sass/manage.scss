@@ -837,16 +837,20 @@ body {
 
     // Left column - Features toggle container
     .features-toggle-container {
-      background-color: #FFFFFF;
-      border-radius: $card-border-radius;
+      background-color: #F7FAFC;
+      border-radius: 14px;
+      border: 1px solid #D0D9E1;
       padding: 16px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      height: 100%;
 
       // Toggle item
       .toggle-item {
         display: flex;
         align-items: center;
-        padding: 16px;
         border-radius: 16px;
         margin-bottom: 12px;
         transition: all 0.3s ease;
@@ -863,7 +867,7 @@ body {
           display: flex;
           align-items: center;
           justify-content: center;
-          margin-right: 16px;
+          margin-right: 8px;
           flex-shrink: 0;
 
           &.whatsapp-icon {
@@ -889,26 +893,30 @@ body {
           flex: 1;
 
           .toggle-title {
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 14px;
+            font-weight: 500;
             margin-bottom: 2px;
           }
 
           .toggle-subtitle {
-            font-size: 14px;
-            color: $color-info;
+            font-size: 11px;
+            font-weight: 500;
+            color: #C99719;
             margin-bottom: 0;
           }
         }
 
         // Toggle switch
+        .form-check {
+          //margin-bottom: 0;
+        }
         .form-check-input {
-          width: 48px;
+          width: 39px;
           height: 24px;
 
           &:checked {
-            background-color: #25D366;
-            border-color: #25D366;
+            background-color: #018E37;
+            border-color: #018E37;
           }
 
           &:focus {
@@ -920,8 +928,9 @@ body {
 
     // Right column - Recommendations
     .recommendations-container {
-      background-color: #FFFFFF;
-      border-radius: $card-border-radius;
+      background-color: #FEF8E9;
+      border-radius: 14px;
+      border: 1px solid #BA943C;
       padding: 16px;
       height: 100%;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -969,8 +978,6 @@ body {
 
       // Swiper container
       .recommendation-swiper {
-        width: 100%;
-        height: auto;
 
         .swiper-slide {
           height: auto;
@@ -978,41 +985,12 @@ body {
 
         // Recommendation card
         .recommendation-card {
-          background-color: #FFF9F0;
           border-radius: 16px;
-          padding: 20px;
           position: relative;
           overflow: hidden;
 
-          &.social-media-card {
-            background-color: $color-promote-card;
-          }
 
-          .info-icon {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
 
-            i {
-              font-size: 12px;
-              color: $color-info;
-            }
-          }
-
-          .recommendation-card-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: $color-text-dark;
-          }
 
           .recommendation-media {
             border-radius: 8px;
@@ -1026,32 +1004,40 @@ body {
             }
           }
 
-          .recommendation-card-text {
-            font-size: 14px;
-            color: darken($color-info, 10%);
-            margin-bottom: 16px;
-            line-height: 1.5;
-          }
-
-          .action-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: $primary-color;
-            color: white;
-            font-weight: 500;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-
-            &:hover {
-              background-color: darken($primary-color, 10%);
+          .recommendation-content{
+            .recommendation-card-title {
+              font-size: 18px;
+              font-weight: 600;
+              margin-bottom: 8px;
+              color: $color-text-dark;
+            }
+            .recommendation-card-text {
+              font-size: 14px;
+              color: darken($color-info, 10%);
+              margin-bottom: 16px;
+              line-height: 1.5;
+            }
+            .action-button {
+              display: inline-block;
+              padding: 10px 20px;
+              background-color: $primary-color;
               color: white;
-            }
+              font-weight: 500;
+              border-radius: 8px;
+              text-decoration: none;
+              transition: background-color 0.3s;
 
-            i {
-              margin-left: 8px;
+              &:hover {
+                background-color: darken($primary-color, 10%);
+                color: white;
+              }
+
+              i {
+                margin-left: 8px;
+              }
             }
           }
+
         }
       }
     }
