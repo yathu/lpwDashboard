@@ -604,6 +604,7 @@ body {
       //margin-top: 15px;
       //max-height: max-content;
       display: flex;
+      flex-direction: column;
     }
 
     &.show-mobile {
@@ -611,8 +612,7 @@ body {
         //max-height: 1000px;
         //max-height: max-content;
         //opacity: 1;
-        display: flex;
-
+        display: block;
         margin-top: 15px;
       }
     }
@@ -762,35 +762,36 @@ body {
       justify-content: center;
       width: 100%;
       padding: 12px;
-      border-radius: $card-border-radius / 2;
+      border-radius: 10px;
       border: 1px solid #DEE2E6;
       background-color: #FFFFFF;
       font-weight: 500;
       transition: all 0.2s;
+      font-size: 14px;
+      line-height: 1;
+      letter-spacing: 0;
+
 
       i {
         margin-right: 8px;
       }
-
-      &:hover {
-        transform: translateY(-2px);
-        box-shadow: $box-shadow;
-      }
     }
 
     .edit-btn {
-      color: $color-boost-bg;
+      color: #FF4500;
+      border-color: #FF4500;
 
       &:hover {
-        background-color: lighten($color-boost-bg, 45%);
+        background-color: lighten(#FF4500, 45%);
       }
     }
 
     .delete-btn {
-      color: $color-trend-down;
+      color: #FF4500;
+      border-color: #FF4500;
 
       &:hover {
-        background-color: lighten($color-trend-down, 45%);
+        background-color: lighten(#FF4500, 45%);
       }
     }
 
@@ -798,7 +799,9 @@ body {
       color: $primary-color;
       background-color: $badge-blue-bg;
       border-color: $badge-blue-bg;
-
+      flex: 1;
+      padding: 8px;
+      justify-content: space-between;
       .insights-icon {
         margin-right: 8px;
       }
@@ -810,7 +813,9 @@ body {
   }
 
   .lead-features-section {
-    padding: 20px 0;
+    //padding: 20px 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
 
     // Left column - Features toggle container
     .features-toggle-container {
@@ -1034,6 +1039,7 @@ body {
       justify-content: center;
       align-items: center;
       width: 100%;
+      padding: 14px;
 
       .meter-title{
         font-weight: 600;
@@ -1041,6 +1047,26 @@ body {
         line-height: 100%;
         letter-spacing: 0.26px;
         text-align: center;
+        margin-bottom: 10px;
+      }
+      .badge{
+        background-color: #FBE2E2;
+        color: #CD3A40;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 100%;
+        letter-spacing: 0.26px;
+        //padding: 2px 4px;
+        margin-bottom: 8px;
+        margin-top: -40px;
+      }
+      p{
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 100%;
+        letter-spacing: 0.1px;
+        text-align: center;
+        margin-bottom: 0;
       }
     }
     .max-swiper-container{
@@ -1054,10 +1080,8 @@ body {
 
       // Ad Swiper Component
       .ad-swiper-container {
+        position: relative;
 
-        .max-ad-swiper{
-          position: relative;
-        }
         .swiper-slide {
           text-align: center;
           background: #fff;
@@ -1079,6 +1103,66 @@ body {
           flex-direction: column;
           justify-content: space-between;
           align-items: center;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            z-index: 0;
+            border-radius: 15px;
+            //background: linear-gradient(180deg, #134825 0%, rgba(0, 148, 50, 0.5) 54.5%, rgba(220, 206, 136, 0) 100%);
+          }
+
+          &.green{
+            &::before {
+              background: linear-gradient(180deg, #134825 0%, rgba(0, 148, 50, 0.5) 54.5%, rgba(220, 206, 136, 0) 100%);
+            }
+
+            .ad-badge-icon {
+              background: linear-gradient(180deg, #009432 0%, #44CD72 100%);
+              .icon-circle{
+                background-color: #009432;
+              }
+            }
+            .ad-badge-text{
+              color: #009432;
+            }
+          }
+
+          &.blue{
+            &::before {
+              background: linear-gradient(180deg, #0A121C 0%, rgba(90, 154, 189, 0.67) 54.5%, rgba(71, 111, 135, 0) 100%);
+            }
+            .ad-badge-icon {
+              background: linear-gradient(180deg, #11368C 0%, #446DCD 100%);
+              .icon-circle{
+                background-color: #1C3777;
+              }
+            }
+            .ad-badge-text{
+              color: #1C3777;
+            }
+          }
+
+          &.gold{
+            &::before {
+              background: linear-gradient(180deg, #150E09 0%, rgba(152, 121, 53, 0.74) 54.5%, rgba(231, 205, 149, 0) 100%);
+            }
+
+            .ad-badge-icon {
+              background: linear-gradient(180deg, #ECD09F 0%, #CDAF44 100%);
+              .icon-circle{
+                background-color: #C09E45;
+              }
+            }
+            .ad-badge-text{
+              color: #C09E45;
+            }
+          }
+
         }
 
         .ad-slide-title {
@@ -1087,71 +1171,67 @@ body {
           letter-spacing: 0.1px;
           text-align: center;
           vertical-align: middle;
+          color: #FFFFFF;
+          z-index: 1;
         }
 
         // Badge styles
         .ad-badge {
           display: flex;
           align-items: center;
-          background: #fff;
-          border-radius: 50px;
-          padding: 0.5rem 1rem;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-          //margin-bottom: 2rem;
+          z-index: 1;
 
-          &-green {
-            .ad-badge-percentage {
-              color: #28a745;
+          .ad-badge-icon{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-right: -12px;
+            z-index: 2;
+
+            .icon-circle{
+              width: 16px;
+              height: 16px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-bottom: 5px;
             }
-            .ad-badge-icon {
-              background-color: #28a745;
+
+            .ad-badge-percentage{
+              font-weight: 600;
+              font-size: 16px;
+              line-height: 13px;
+              letter-spacing: -1px;
+              vertical-align: middle;
             }
           }
 
-          &-blue {
-            .ad-badge-percentage {
-              color: #0d6efd;
-            }
-            .ad-badge-icon {
-              background-color: #0d6efd;
-            }
-          }
-
-          &-gold {
-            .ad-badge-percentage {
-              color: #ffc107;
-            }
-            .ad-badge-icon {
-              background-color: #ffc107;
-            }
+          .ad-badge-content{
+            background: #fff;
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 7px 6px 7px 18px;
           }
 
           &-icon {
-            width: 30px;
-            height: 30px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 0.5rem;
             font-weight: bold;
           }
 
-          &-content {
-            text-align: left;
-          }
-
-          &-percentage {
-            font-size: 1.5rem;
-            font-weight: 700;
-            line-height: 1;
-          }
-
           &-text {
-            font-size: 0.8rem;
-            color: #333;
-            line-height: 1.2;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 13px;
+            text-align: center;
           }
         }
 
@@ -1169,6 +1249,7 @@ body {
           display: flex;
           align-items: center;
           justify-content: center;
+          margin: 0;
 
           &::after {
             font-size: 12px;
@@ -1178,11 +1259,11 @@ body {
         }
 
         .max-ad-swiper-button-prev {
-          //left: -16.67%; // 1/3 outside
+          left: -7px;
         }
 
         .max-ad-swiper-button-next {
-          //right: -16.67%; // 1/3 outside
+          right: -7px;
         }
 
         // Responsive adjustments
