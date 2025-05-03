@@ -24,7 +24,7 @@ layout: manage_ads
                                         <span class="badge badge-blue">1200</span>
                                     </div>
                                     <div class="card-action">
-                                        <button class="btn">
+                                        <button class="btn btn-primary-light w-100">
                                             Purchase more
                                             <i class="bi bi-caret-right-fill"></i>
                                         </button>
@@ -46,7 +46,7 @@ layout: manage_ads
                                         <span class="badge badge-red">10+</span>
                                     </div>
                                     <div class="card-action">
-                                        <button class="btn">
+                                        <button class="btn btn-primary-light w-100">
                                             View All Leads
                                             <i class="bi bi-caret-right-fill"></i>
                                         </button>
@@ -67,7 +67,7 @@ layout: manage_ads
                                         <span class="badge badge-green">44</span>
                                     </div>
                                     <div class="card-action">
-                                        <button class="btn">
+                                        <button class="btn btn-primary-light w-100">
                                             Purchase more
                                             <i class="bi bi-caret-right-fill"></i>
                                         </button>
@@ -88,7 +88,7 @@ layout: manage_ads
                                         <span class="badge badge-pink">19</span>
                                     </div>
                                     <div class="card-action">
-                                        <button class="btn">
+                                        <button class="btn btn-primary-light w-100">
                                             Purchase more
                                             <i class="bi bi-caret-right-fill"></i>
                                         </button>
@@ -543,26 +543,34 @@ layout: manage_ads
                                 <div class="swiper recommendation-swiper">
                                     <div class="swiper-wrapper">
                                         <!-- Swiper Slide 1 -->
+
+                                        {% for i in (1..3) %}
                                         <div class="swiper-slide">
                                             <div class="recommendation-card row gx-3">
                                                 <div class="col-12 col-md-4 col-lg-5 recommendation-media">
-                                                    <img src="../assets/img/mng_sources/features/adImg.png" alt="Social Media Promotion">
+                                                    <img src="../assets/img/mng_sources/features/adImg.png"
+                                                         alt="Social Media Promotion">
                                                 </div>
                                                 <div class="col-12 col-md-8 col-lg-7 recommendation-content">
                                                     <h5 class="recommendation-card-title">Post on Social Media</h5>
 
+                                                    <button class="btn btn-brown">
+                                                        Get 6x more views
+                                                    </button>
+                                        
                                                     <p class="recommendation-card-text">
                                                         Showcase your listing on LankaPropertyWeb's official social media
                                                         pages/channel on FB, Instagram, YouTube and TikTok with a total
                                                         following of 150K+ (with property interests)
                                                     </p>
-                                                    <a href="#" class="action-button">
+                                                    <a href="#" class="btn btn-primary">
                                                         Purchase Now <i class="bi bi-arrow-right"></i>
                                                     </a>
                                                 </div>
-
+                                        
                                             </div>
                                         </div>
+                                        {% endfor %}
 
                                     </div>
                                 </div>
@@ -570,6 +578,82 @@ layout: manage_ads
                         </div>
                     </div>
                 </div>
+
+<!--                visibility meter section-->
+
+                <div class="visibility-meter-section">
+                    <div class="row gx-3">
+                        <div class="col-3">
+                            <div class="meter-chart-container">
+                                <div class="meter-title">
+                                    Visibility Meter
+                                </div>
+                                {% include agentScoreChart.html %}
+                            </div>
+                        </div>
+                        <div class="col-9 max-swiper-container">
+                            <h6>How to get Maximum Buyers to see your Property Ad</h6>
+
+                            <div class="ad-swiper-container">
+                                <div class="swiper max-ad-swiper">
+                                    <div class="swiper-wrapper">
+                                        <!-- Slide 1 -->
+                                        <div class="swiper-slide">
+                                            <div class="ad-slide" style="background-image: url('../assets/img/mng_sources/features/max-property-image.png');">
+                                                <h2 class="ad-slide-title">Add Property Photos</h2>
+                                                <div class="ad-badge ad-badge-green">
+                                                    <div class="ad-badge-icon">↑</div>
+                                                    <div class="ad-badge-content">
+                                                        <div class="ad-badge-percentage">+50%</div>
+                                                        <div class="ad-badge-text">More Buyers<br>will see Ad</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Slide 2 -->
+                                        <div class="swiper-slide">
+                                            <div class="ad-slide" style="background-image: url('../assets/img/mng_sources/features/max-property-image.png');">
+                                                <div class="ad-slide-content">
+                                                    <h2 class="ad-slide-title">Add Additional Property Details</h2>
+                                                    <div class="ad-badge ad-badge-blue">
+                                                        <div class="ad-badge-icon">↑</div>
+                                                        <div class="ad-badge-content">
+                                                            <div class="ad-badge-percentage">+5%</div>
+                                                            <div class="ad-badge-text">More Buyers<br>will see Ad</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Slide 3 -->
+                                        <div class="swiper-slide">
+                                            <div class="ad-slide" style="background-image: url('../assets/img/mng_sources/features/max-property-image.png');">
+                                                <div class="ad-slide-content">
+                                                    <h2 class="ad-slide-title">Upgrade to premium Services</h2>
+                                                    <div class="ad-badge ad-badge-gold">
+                                                        <div class="ad-badge-icon">↑</div>
+                                                        <div class="ad-badge-content">
+                                                            <div class="ad-badge-percentage">+70%</div>
+                                                            <div class="ad-badge-text">More Buyers<br>will see Ad</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Navigation buttons -->
+                                    <div class="swiper-button-prev max-ad-swiper-button-prev"></div>
+                                    <div class="swiper-button-next max-ad-swiper-button-next"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
 
             </div>
 
