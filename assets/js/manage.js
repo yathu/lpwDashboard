@@ -40,32 +40,35 @@ $(document).ready(() => {
             },
     });
 
-    const desktopToggle = document.getElementById('desktop-toggle');
+    const desktopToggle = $('.desktop-toggle');
     const mobileToggle = document.getElementById('mobile-toggle');
-    const collapsibleContent = document.getElementById('collapsible-content');
+    const collapsibleContent = $('.collapsible-content');
 
     // Set initial state
-    collapsibleContent.classList.add('show');
+    collapsibleContent.eq(0).addClass('show');
 
     // Desktop toggle
-    desktopToggle.addEventListener('click', function() {
-        collapsibleContent.classList.toggle('show');
+    desktopToggle.on('click', function () {
+        const closestContent = $(this).closest('.grid-ad-item').find('.collapsible-content');
+        console.log(closestContent);
+        closestContent.toggleClass('show');
 
-        if (collapsibleContent.classList.contains('show')) {
-            this.innerHTML = 'VIEW LESS <span><i class="bi bi-caret-up-fill"></i></span>';
+        if (closestContent.hasClass('show')) {
+            $(this).html('VIEW LESS <span><i class="bi bi-caret-up-fill"></i></span>');
         } else {
-            this.innerHTML = 'VIEW MORE <span><i class="bi bi-caret-down-fill"></i></span>';
+            $(this).html('VIEW MORE <span><i class="bi bi-caret-down-fill"></i></span>');
         }
     });
 
     // Mobile toggle
     mobileToggle.addEventListener('click', function() {
-        collapsibleContent.classList.toggle('show-mobile');
+        const closestContent = $(this).closest('.grid-ad-item').find('.collapsible-content');
+        closestContent.toggleClass('show');
 
-        if (collapsibleContent.classList.contains('show-mobile')) {
-            this.innerHTML = 'View Less <span><i class="bi bi-caret-up-fill"></i></span>';
+        if (closestContent.hasClass('show')) {
+            $(this).html('VIEW LESS <span><i class="bi bi-caret-up-fill"></i></span>');
         } else {
-            this.innerHTML = 'View More <span><i class="bi bi-caret-down-fill"></i></span>';
+            $(this).html('VIEW MORE <span><i class="bi bi-caret-down-fill"></i></span>');
         }
     });
 
