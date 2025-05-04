@@ -1,7 +1,7 @@
 ---
 layout: manage_ads
 ---
-<div class="container manage-ads-container">
+<div class="container-xxl manage-ads-container">
     <!--  initial slider section-->
     <div class="row">
         <div class="col-12 col-xl-2"></div>
@@ -210,6 +210,575 @@ layout: manage_ads
                     </div>
                 </div>
             </div>
+
+            <!-- Property Header Component -->
+            <div class="property-header py-1">
+                    <div class="mx-0 row gx-3">
+                        <div class="col-2">
+                            Title <i class="bi bi-chevron-expand"></i>
+                        </div>
+                        <div class="col-1">
+                            Location
+                        </div>
+                        <div class="col-2">
+                            Listing
+                        </div>
+                        <div class="col-1">
+                            Status
+                        </div>
+                        <div class="col-1">
+                            Views <i class="bi bi-chevron-expand"></i>
+                        </div>
+                        <div class="col-1">
+                            Leads <i class="bi bi-chevron-expand"></i>
+                        </div>
+                        <div class="col-1">
+                            Last Boosted <i class="bi bi-chevron-expand"></i>
+                        </div>
+                        <div class="col-1">
+                            Ad Page <i class="bi bi-chevron-expand"></i>
+                        </div>
+                        <div class="col-1">
+                            Agent's Ref <i class="bi bi-chevron-expand"></i>
+                        </div>
+                        <div class="col-auto ms-auto">
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </div>
+                    </div>
+            </div>
+
+            <!-- Property Item Component -->
+            <div class="property-item mb-5">
+                <div class="row mx-0 gx-3 header-row">
+                            <div class="col-2">
+                                <i class="bi bi-check-square-fill verified-icon"></i>
+                                <span class="text-truncate title">3 Bedrooms house for...</span>
+                            </div>
+                            <div class="col-1">
+                                <span class="text-truncate">Collombo 05</span>
+                            </div>
+                            <div class="col-2">
+                                <span class="feature-tag">FEATURED</span>
+                                <button class="whatsapp-btn"><i class="bi bi-whatsapp"></i></button>
+                                <button class="hot-btn"><i class="bi bi-fire"></i></button>
+                            </div>
+                            <div class="col-1">
+                                <div class="status-active">
+                                    Active <span class="status-dot"></span>
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                19 Views
+                            </div>
+                            <div class="col-1">
+                                7 Leads
+                            </div>
+                            <div class="col-1">
+                                01 day ago
+                            </div>
+                            <div class="col-1">
+                                <span class="property-rank">#1</span>
+                            </div>
+                            <div class="col-1 pe-4">
+                                0867543
+                            </div>
+                            <div class="col-auto ms-auto">
+                                <i class="bi bi-chevron-down"></i>
+                            </div>
+                        </div>
+
+                    <!-- Collapsible Details Section -->
+                    <div class="row gx-0">
+                        <div class="col-12">
+                            <div class="property-details">
+
+                                <div class="grid-ad-item">
+                                    <div class="ad-content">
+                                        <div class="ad-image">
+                                            <img src="../assets/img/mng_sources/property.png" alt="House for sale">
+                                        </div>
+                                        <div class="ad-details">
+                                            <div class="label-container">
+                                                <span class="label label-orange">SALE</span>
+                                                <span class="label label-dark">HOUSE</span>
+                                                <span class="label label-green"><i class="bi bi-whatsapp"></i> Whatsapp Chat</span>
+                                                <span class="label label-red"><i class="bi bi-fire"></i> Hot Deal</span>
+                                                <span class="label label-outline-success"><i class="bi bi-circle-fill text-success"></i> Active</span>
+                                            </div>
+
+                                            <h2 class="ad-heading">3 Bedrooms house for sale in Colombo 4 for Rs. 45 million</h2>
+
+                                            <div class="ad-icons">
+                                                <div class="icon-item">
+                                                    <div class="icon-circle location">
+                                                        <i class="bi bi-geo-alt-fill"></i>
+                                                    </div>
+                                                    <span class="fw-bold">Colombo 5</span>
+                                                </div>
+                                                <div class="icon-item">
+                                                    <div class="icon-circle views">
+                                                        <i class="bi bi-eye-fill"></i>
+                                                    </div>
+                                                    <span><strong>19</strong> views</span>
+                                                </div>
+                                                <div class="icon-item">
+                                                    <div class="icon-circle leads">
+                                                        <i class="bi bi-person-fill"></i>
+                                                    </div>
+                                                    <span><strong>7</strong> Leads</span>
+                                                </div>
+                                                <div class="icon-item">
+                                                    <div class="icon-circle page">
+                                                        <i class="bi bi-hash"></i>
+                                                    </div>
+                                                    <span>Ad Page<span class="badge">#{{ item }}</span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Ad Header Section -->
+                                    <div class="row align-items-center grid-ad-item-header gx-0">
+                                        <!-- First Column - Promote Ad -->
+                                        <div class="col-12 col-lg">
+                                            <div class="ad-card d-flex align-items-center justify-content-between">
+                                                <!-- Content visible only on desktop -->
+                                                <div class="ad-info d-none d-md-flex align-items-center">
+                                                    <div class="d-flex align-items-center justify-content-center">
+                                                        <i class="bi bi-arrow-up-circle-fill me-1"></i>
+                                                        <span class="highlight">30X</span>
+                                                    </div>
+                                                    <div class="flex flex-wrap ad-text">
+                                                        Want up to <span class="highlight">30x</span> more views a month?
+                                                    </div>
+                                                </div>
+
+                                                <!-- Button visible on all screens -->
+                                                <button class="btn promote-btn d-flex align-items-center">
+                                <span class="me-2">
+                        <img src="../assets/img/mng_sources/megaphone.svg" alt="House for sale">
+                                </span> PROMOTE AD
+                                                </button>
+
+                                                <!-- Info icon -->
+                                                <span class="info-icon">
+                                <i class="bi bi-info-circle-fill"></i>
+                            </span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Second Column - Boost Ad -->
+                                        <div class="col-12 col-lg">
+                                            <div class="boost-card d-flex align-items-center justify-content-between">
+                                                <!-- Content visible only on desktop -->
+                                                <div class="boost-info d-none d-md-block flex-grow-1">
+                                                    Last boosted: <strong>01 hr ago</strong>
+                                                </div>
+
+                                                <!-- Button visible on all screens -->
+                                                <button class="boost-btn d-flex align-items-center">
+                                <span class="me-2">
+                                    <i class="bi bi-rocket-takeoff-fill"></i>
+                                </span>
+                                                    BOOST AD
+                                                </button>
+
+                                                <!-- Info icon -->
+                                                <span class="ms-2 info-icon">
+                                <i class="bi bi-info-circle-fill"></i>
+                            </span>
+                                                <!-- Dropdown icon (only visible on desktop) -->
+                                                <!--                            <span class="ms-2 d-none d-md-block dropdown-icon"><i class="fa-solid fa-chevron-down"></i></span>-->
+                                            </div>
+                                        </div>
+
+                                        <!-- Third Column - View Toggle -->
+                                        <div class="col-12 col-lg-auto text-end">
+                                            <!-- Desktop version (VIEW LESS) -->
+                                            <button class="btn btn-link view-toggle d-none d-md-inline-flex align-items-center desktop-toggle">
+                                                VIEW LESS
+                                                <i class="bi bi-caret-up-fill ms-1"></i>
+                                            </button>
+
+                                            <!-- Mobile version (View More) -->
+                                            <button class="view-toggle d-inline-block d-md-none" id="mobile-toggle">
+                                                View More <span>
+                            <i class="bi bi-caret-down-fill"></i>
+                        </span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Collapsible Content Section -->
+                                    <div class="grid-ad-details collapsible-content">
+                                        <div class="row">
+                                            <!-- Left Column (col-9) -->
+                                            <div class="col-md-9">
+                                                <div class="d-flex flex-column">
+                                                    <!-- First Row: Stats Cards -->
+                                                    <div class="d-flex justify-content-between align-items-center stats-container">
+                                                        <div class="stats-card">
+                                                            <div class="stats-icon views-icon">
+                                                                <i class="bi bi-eye-fill"></i>
+                                                            </div>
+                                                            <div class="stats-info">
+                                                                <div class="stats-label">Views</div>
+                                                                <div class="stats-value">
+                                                                    <strong>100</strong> <span class="trend-down"><i
+                                                                        class="bi bi-arrow-down"></i></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="stats-card">
+                                                            <div class="stats-icon telephone-icon">
+                                                                <i class="bi bi-telephone-fill"></i>
+                                                            </div>
+                                                            <div class="stats-info">
+                                                                <div class="stats-label">Telephone</div>
+                                                                <div class="stats-value">
+                                                                    <strong>12</strong> Leads <span class="trend-down"><i
+                                                                        class="bi bi-arrow-down"></i></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="stats-card">
+                                                            <div class="stats-icon whatsapp-icon">
+                                                                <i class="bi bi-whatsapp"></i>
+                                                            </div>
+                                                            <div class="stats-info">
+                                                                <div class="stats-label">Whatsapp</div>
+                                                                <div class="stats-value">
+                                                                    <strong>12</strong> Leads <span class="trend-up"><i
+                                                                        class="bi bi-arrow-up"></i></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="stats-card">
+                                                            <div class="stats-icon email-icon">
+                                                                <i class="bi bi-envelope-fill"></i>
+                                                            </div>
+                                                            <div class="stats-info">
+                                                                <div class="stats-label">Email</div>
+                                                                <div class="stats-value">
+                                                                    <strong>12</strong> Leads <span class="trend-down"><i
+                                                                        class="bi bi-arrow-down"></i></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Second Row: Ad Details -->
+                                                    <div class="ad-details-container d-flex">
+                                                        <!-- Ad ID -->
+                                                        <div class="detail-item">
+                                                            <div class="detail-icon">
+                                                                <i class="bi bi-hash"></i>
+                                                            </div>
+                                                            <div class="detail-info">
+                                                                <div class="detail-label">Ad ID</div>
+                                                                <div class="detail-value">#5563006</div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Ad Posted On -->
+
+                                                        <div class="detail-item">
+                                                            <div class="detail-icon">
+                                                                <i class="bi bi-calendar"></i>
+                                                            </div>
+                                                            <div class="detail-info">
+                                                                <div class="detail-label">Ad posted on</div>
+                                                                <div class="detail-value">01-03-2024</div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Last Updated On -->
+
+                                                        <div class="detail-item">
+                                                            <div class="detail-icon">
+                                                                <i class="bi bi-clock-history"></i>
+                                                            </div>
+                                                            <div class="detail-info">
+                                                                <div class="detail-label">Last updated on</div>
+                                                                <div class="detail-value">01-03-2024</div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Last Boosted -->
+                                                        <div class="detail-item">
+                                                            <div class="detail-icon">
+                                                                <i class="bi bi-rocket-takeoff-fill"></i>
+                                                            </div>
+                                                            <div class="detail-info">
+                                                                <div class="detail-label">Last Boosted</div>
+                                                                <div class="detail-value">01 hr ago</div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Right Column (col-3) - Action Buttons -->
+                                            <div class="col-md-3">
+                                                <div class="d-flex flex-column h-100 row-gap-2">
+                                                    <!-- Edit Button -->
+                                                    <button class="btn action-btn edit-btn">
+                                                        <i class="bi bi-pencil-square"></i> Edit
+                                                    </button>
+
+                                                    <!-- Delete Button -->
+                                                    <button class="btn action-btn delete-btn">
+                                                        <i class="bi bi-trash"></i> Delete
+                                                    </button>
+
+                                                    <!-- View Insights Button -->
+                                                    <button class="btn action-btn insights-btn">
+                                                        <div class="insights-icon">
+                                                            <svg width="83" height="55" viewBox="0 0 83 55" fill="none"
+                                                                 xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M19.8246 38.3711C13.4756 44.6581 2.95119 42.4144 1.5 40.6411V54L81.5 53.9241V0C70.6161 2.41809 61.5462 15.0338 54.2902 16.9683C47.0343 18.9028 44.8575 37.4783 38.3272 36.1887C31.7969 34.899 26.1302 30.2538 19.8246 38.3711Z"
+                                                                      fill="url(#paint0_linear_109_3619)"/>
+                                                                <path d="M1.5 54H81.5" stroke="#BEC1CD" stroke-width="1.5"
+                                                                      stroke-dasharray="5.11 5.11"/>
+                                                                <path d="M1.5 39.8653C2.95119 41.8707 13.4756 44.4081 19.8246 37.2982C26.1735 30.1883 31.7969 34.0167 38.3272 35.4751C44.8575 36.9336 47.0343 19.7968 54.2902 17.6092C61.5462 15.4215 70.6161 3.73459 81.5 1"
+                                                                      stroke="#3DD598" stroke-width="1.5" stroke-linecap="round"
+                                                                      stroke-linejoin="round"/>
+                                                                <defs>
+                                                                    <linearGradient id="paint0_linear_109_3619" x1="107.777" y1="-55.7793"
+                                                                                    x2="107.777" y2="77.2386"
+                                                                                    gradientUnits="userSpaceOnUse">
+                                                                        <stop stop-color="#3D9ED5"/>
+                                                                        <stop offset="1" stop-color="white" stop-opacity="0"/>
+                                                                    </linearGradient>
+                                                                </defs>
+                                                            </svg>
+
+                                                        </div>
+                                                        View Insights
+                                                        <i class="bi bi-chevron-right ms-2"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--                features-->
+
+                                        <div class="lead-features-section">
+                                            <div class="row gx-2">
+                                                <!-- Left Column - Toggle Features -->
+                                                <div class="col-12 col-lg-5 col-xxl-4">
+                                                    <div class="features-toggle-container">
+                                                        <div class="toggle-item">
+                                                            <div class="toggle-icon whatsapp-icon">
+                                                                <img src="../assets/img/mng_sources/features/whatsapp.svg"
+                                                                     alt="WhatsApp Icon">
+                                                            </div>
+                                                            <div class="toggle-content">
+                                                                <h5 class="toggle-title">WhatsApp Live Chat</h5>
+                                                                <p class="toggle-subtitle">Chat (09/20 credits used)</p>
+                                                            </div>
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" role="switch"
+                                                                       id="whatsappToggle" checked>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="toggle-item">
+                                                            <div class="toggle-icon hot-deal-icon">
+                                                                <img src="../assets/img/mng_sources/features/hotdeal.svg"
+                                                                     alt="Hot Deal Icon">
+                                                            </div>
+                                                            <div class="toggle-content">
+                                                                <h5 class="toggle-title">Hot Deal Property</h5>
+                                                                <p class="toggle-subtitle">Chat (05/20 credits used)</p>
+                                                            </div>
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" role="switch"
+                                                                       id="hotDealToggle"
+                                                                       checked>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="toggle-item">
+                                                            <div class="toggle-icon contact-icon">
+                                                                <img src="../assets/img/mng_sources/features/contact-form.svg"
+                                                                     alt="Contact Form Icon">
+                                                            </div>
+                                                            <div class="toggle-content">
+                                                                <h5 class="toggle-title">Contact Request Form</h5>
+                                                                <p class="toggle-subtitle">Always enabled</p>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                <i class="bi bi-info-circle-fill text-secondary me-2 mt-1"></i>
+                                                                <div class="form-check form-switch">
+                                                                    <input class="form-check-input" type="checkbox" role="switch"
+                                                                           id="contactToggle"
+                                                                           checked>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <!-- Right Column - Recommendations Swiper -->
+                                                <div class="col-12 col-lg-7 col-xxl-8">
+                                                    <div class="recommendations-container">
+                                                        <div class="recommendations-header">
+                                                            <h4 class="recommendations-title">Recommendations to increase leads</h4>
+                                                            <div class="swiper-nav-buttons">
+                                                                <div class="swiper-nav-button swiper-button-prev-custom">
+                                                                    <i class="bi bi-chevron-left"></i>
+                                                                </div>
+                                                                <div class="swiper-nav-button swiper-button-next-custom">
+                                                                    <i class="bi bi-chevron-right"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Swiper Component -->
+                                                        <div class="swiper recommendation-swiper">
+                                                            <div class="swiper-wrapper">
+                                                                <!-- Swiper Slide 1 -->
+
+                                                                {% for i in (1..3) %}
+                                                                <div class="swiper-slide">
+                                                                    <div class="recommendation-card row gx-3">
+                                                                        <div class="col-12 col-md-4 col-lg-5 recommendation-media">
+                                                                            <img src="../assets/img/mng_sources/features/adImg.png"
+                                                                                 alt="Social Media Promotion">
+                                                                        </div>
+                                                                        <div class="col-12 col-md-8 col-lg-7 recommendation-content">
+                                                                            <h5 class="recommendation-card-title">Post on Social Media</h5>
+
+                                                                            <button class="btn btn-brown">
+                                                                                Get 6x more views
+                                                                            </button>
+
+                                                                            <p class="recommendation-card-text">
+                                                                                Showcase your listing on LankaPropertyWeb's official social
+                                                                                media
+                                                                                pages/channel on FB, Instagram, YouTube and TikTok with a
+                                                                                total
+                                                                                following of 150K+ (with property interests)
+                                                                            </p>
+                                                                            <a href="#" class="btn btn-primary">
+                                                                                Purchase Now <i class="bi bi-arrow-right"></i>
+                                                                            </a>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                                {% endfor %}
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--                visibility meter section-->
+
+                                        <div class="visibility-meter-section">
+                                            <div class="row gx-3">
+                                                <div class="col-3">
+                                                    <div class="meter-chart-container">
+                                                        <div class="meter-title">
+                                                            Visibility Meter
+                                                        </div>
+                                                        {% include agentScoreChart.html %}
+                                                        <span class="badge">
+                                    Low Visibility
+                                </span>
+                                                        <p>
+                                                            Only 16% Buyers can see your Property Ad
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-9 max-swiper-container">
+                                                    <h6>How to get Maximum Buyers to see your Property Ad</h6>
+
+                                                    <div class="ad-swiper-container">
+                                                        <div class="swiper max-ad-swiper">
+                                                            <div class="swiper-wrapper">
+                                                                <!-- Slide 1 -->
+                                                                <div class="swiper-slide">
+                                                                    <div class="ad-slide green"
+                                                                         style="background-image: url('../assets/img/mng_sources/features/max-property-image.png');">
+                                                                        <h2 class="ad-slide-title">Add Property Photos</h2>
+                                                                        <div class="ad-badge ad-badge-green">
+                                                                            <div class="ad-badge-icon">
+                                                        <span class="icon-circle">
+                                                            <i class="bi bi-arrow-up-short"></i>
+                                                        </span>
+                                                                                <div class="ad-badge-percentage">+50%</div>
+                                                                            </div>
+                                                                            <div class="ad-badge-content">
+                                                                                <div class="ad-badge-text">More Buyers<br>will see Ad</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Slide 2 -->
+                                                                <div class="swiper-slide">
+                                                                    <div class="ad-slide blue"
+                                                                         style="background-image: url('../assets/img/mng_sources/features/max-property-image.png');">
+                                                                        <h2 class="ad-slide-title">Add Property Photos</h2>
+                                                                        <div class="ad-badge ad-badge-blue">
+                                                                            <div class="ad-badge-icon">
+                                                        <span class="icon-circle">
+                                                            <i class="bi bi-arrow-up-short"></i>
+                                                        </span>
+                                                                                <div class="ad-badge-percentage">+50%</div>
+                                                                            </div>
+                                                                            <div class="ad-badge-content">
+                                                                                <div class="ad-badge-text">More Buyers<br>will see Ad</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Slide 3 -->
+                                                                <div class="swiper-slide">
+                                                                    <div class="ad-slide gold"
+                                                                         style="background-image: url('../assets/img/mng_sources/features/max-property-image.png');">
+                                                                        <h2 class="ad-slide-title">Add Property Photos</h2>
+                                                                        <div class="ad-badge ad-badge-gold">
+                                                                            <div class="ad-badge-icon">
+                                                        <span class="icon-circle">
+                                                            <i class="bi bi-arrow-up-short"></i>
+                                                        </span>
+                                                                                <div class="ad-badge-percentage">+50%</div>
+                                                                            </div>
+                                                                            <div class="ad-badge-content">
+                                                                                <div class="ad-badge-text">More Buyers<br>will see Ad</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <!-- Navigation buttons -->
+                                                        <div class="swiper-button-prev max-ad-swiper-button-prev"></div>
+                                                        <div class="swiper-button-next max-ad-swiper-button-next"></div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+
 
             <!--            grid ad item container-->
 

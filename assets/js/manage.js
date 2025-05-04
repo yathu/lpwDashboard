@@ -3,9 +3,9 @@ $(document).ready(() => {
 
     var swiper = new Swiper(".initial-swiper", {
         // Optional parameters
-            loop: true,
-            spaceBetween: 12,
-            slidesPerView: 'auto',
+        loop: true,
+        spaceBetween: 12,
+        slidesPerView: 'auto',
 
         // Responsive breakpoints
         breakpoints: {
@@ -34,10 +34,10 @@ $(document).ready(() => {
 
             },
         },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
     });
 
     const desktopToggle = $('.desktop-toggle');
@@ -61,7 +61,7 @@ $(document).ready(() => {
     });
 
     // Mobile toggle
-    mobileToggle.addEventListener('click', function() {
+    mobileToggle.addEventListener('click', function () {
         const closestContent = $(this).closest('.grid-ad-item').find('.collapsible-content');
         closestContent.toggleClass('show');
 
@@ -97,6 +97,27 @@ $(document).ready(() => {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+    });
+
+    //list item toggle
+
+    const listItem = $('.property-item');
+
+    $(listItem).on('click', function () {
+        const element = $(this);
+
+        $(element).toggleClass('expanded');
+
+        // Change the chevron icon direction
+        const chevron = element.find('.bi-chevron-down, .bi-chevron-up');
+
+        console.log("chevron==>",chevron);
+
+
+        if (chevron) {
+            $(chevron).toggleClass('bi-chevron-down');
+            $(chevron).toggleClass('bi-chevron-up');
+        }
     });
 
 });

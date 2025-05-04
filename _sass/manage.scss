@@ -305,6 +305,225 @@ body {
   }
 }
 
+// Property Listing Components SCSS with Bootstrap columns
+
+// Variables
+$success-color: #28a745;
+$danger-color: #dc3545;
+$warning-color: #ffc107;
+$whatsapp-color: #25D366;
+$light-gray: #f8f9fa;
+$medium-gray: #dee2e6;
+$dark-gray: #495057;
+$header-bg: #f1f3f5;
+
+  // Header component
+  .property-header {
+    background-color: $header-bg;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.5;
+    letter-spacing: 0;
+    color: #727272;
+
+    .row{
+      >div{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+
+    //border-bottom: 1px solid $medium-gray;
+
+    .col, .col-1, .col-2, .col-3, .col-auto {
+      display: flex;
+      align-items: center;
+    }
+
+    .sort-icon {
+      margin-left: 5px;
+      color: #adb5bd;
+      font-size: 0.75rem;
+    }
+  }
+
+  // Data table item component
+  .property-item {
+
+    .header-row{
+      background-color: white;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      border-bottom: 1px solid $medium-gray;
+      padding: 12px 0;
+
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0;
+
+      .title{
+        font-weight: 600;
+      }
+
+
+      &:hover {
+        background-color: $light-gray;
+      }
+    }
+
+    .col, .col-1, .col-2, .col-3, .col-auto {
+      display: flex;
+      align-items: center;
+    }
+
+    // Verified icon
+    .verified-icon {
+      color: $success-color;
+      margin-right: 0.5rem;
+    }
+
+    // Text truncation
+    .text-truncate {
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    // Feature tag
+    .feature-tag {
+      background-color: $warning-color;
+      color: #212529;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.5rem;
+      border-radius: 50px;
+      margin-right: 0.5rem;
+    }
+
+    // Action buttons
+    .whatsapp-btn {
+      background-color: transparent;
+      color: $whatsapp-color;
+      border: none;
+      padding: 0;
+      margin-right: 0.5rem;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .hot-btn {
+      background-color: transparent;
+      color: $danger-color;
+      border: none;
+      padding: 0;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    // Status indicator
+    .status-active {
+      color: $success-color;
+      border: 1px solid $success-color;
+      border-radius: 50px;
+      padding: 0.2rem 0.75rem;
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+
+      .status-dot {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background-color: $success-color;
+        border-radius: 50%;
+        margin-left: 5px;
+      }
+    }
+
+    // Property rank label
+    .property-rank {
+      background-color: $danger-color;
+      color: white;
+      font-weight: 600;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    // Expandable details section
+    .property-details {
+      background-color: #FFFFFF;
+      display: none;
+
+      h5 {
+        color: $dark-gray;
+        margin-bottom: 1rem;
+      }
+    }
+
+    // When expanded
+    &.expanded {
+      .property-details {
+        display: block;
+      }
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 992px) {
+    .property-header,
+    .property-item {
+      .col-1 {
+        // Make columns stack better on smaller screens
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    // On mobile, show fewer columns
+    .property-header,
+    .property-item {
+      .row {
+        flex-wrap: wrap;
+      }
+
+      // Important columns take more space
+      .col-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+
+      .col-2 {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+
+      // Less important columns hide on mobile
+      .col-1:nth-child(n+6):not(:last-child) {
+        display: none;
+      }
+    }
+  }
+
+
+// Utility classes
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .grid-ad-item {
   display: flex;
   flex-direction: column;
