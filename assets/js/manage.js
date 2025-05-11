@@ -120,4 +120,11 @@ $(document).ready(() => {
         }
     });
 
+    //upgrade Ads swiper
+    const upgradeAdSwiper = new Swiper('.upgrade-ad-swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        loop: true,
+    });
+
 });
