@@ -234,10 +234,10 @@ $(document).ready(() => {
     }
 
 
-}, {passive: true});
+    const toggleSwitches = document.querySelectorAll('input[type="checkbox"]');
 
-    toggleSwitches.forEach(switch => {
-        switch.addEventListener('change', function() {
+    toggleSwitches.forEach(el => {
+        el.addEventListener('change', function() {
             console.log('Switch state:', this.checked ?
                 this.nextElementSibling.querySelector('.on-text').textContent :
                 this.nextElementSibling.querySelector('.off-text').textContent);
