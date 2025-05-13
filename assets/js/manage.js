@@ -233,4 +233,15 @@ $(document).ready(() => {
         selectAllCheckbox.checked = allSelected;
     }
 
+
+}, {passive: true});
+
+    toggleSwitches.forEach(switch => {
+        switch.addEventListener('change', function() {
+            console.log('Switch state:', this.checked ?
+                this.nextElementSibling.querySelector('.on-text').textContent :
+                this.nextElementSibling.querySelector('.off-text').textContent);
+        });
+    });
+
 });
