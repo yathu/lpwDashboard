@@ -308,6 +308,9 @@ body {
 .selected-options-container{
   gap: 9px;
   margin-bottom: 12px;
+  .btn{
+    text-transform: uppercase;
+  }
 }
 
 // Property Listing Components SCSS with Bootstrap columns
@@ -552,6 +555,10 @@ $header-bg: #f1f3f5;
       width: 220px;
       height: auto;
       flex-shrink: 0;
+
+      @media (max-width: 767.98px) {
+        width: 128px;
+      }
 
       img {
         width: 100%;
