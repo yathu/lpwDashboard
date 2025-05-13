@@ -918,7 +918,7 @@ layout: manage_ads
                             </div>
 
                             <!-- Button visible on all screens -->
-                            <button class="boost-btn d-flex align-items-center">
+                            <button class="boost-btn d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#boostAdModal">
                                 <span class="me-2">
                                     <i class="bi bi-rocket-takeoff-fill"></i>
                                 </span>
@@ -1387,7 +1387,7 @@ layout: manage_ads
                             </div>
 
                             <!-- Button visible on all screens -->
-                            <button class="boost-btn d-flex align-items-center">
+                            <button class="boost-btn d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#boostAdModal">
                                 <span class="me-2">
                                     <i class="bi bi-rocket-takeoff-fill"></i>
                                 </span>
@@ -2473,6 +2473,133 @@ layout: manage_ads
 
 
             </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade boost-ad-modal" id="boostAdModal" tabindex="-1" aria-labelledby="boostAdModalLabel">
+    <div class="modal-dialog modal-dialog-centered boost-ad-modal">
+        <div class="modal-content">
+            <div class="modal-body p-3">
+                <div class="boost-item">
+                    <!-- Main boost content -->
+                    <div class="header d-flex align-items-center justify-content-between">
+                        <h2 class="header-text">
+                            Your ad has dropped to page 5. Boost your ad now to bring it back to top of the list.
+                        </h2>
+                        <i class="bi bi-info-circle-fill"></i>
+                    </div>
+
+                    <div class="status-info">
+                        <div class="ad-page">Ad Page <strong>#5</strong></div>
+                        <div class="last-boosted">Last boosted: <strong>01-03-2024 09:30 PM</strong></div>
+                    </div>
+
+                    <button class="promote-btn boost-btn btn px-4">
+                        <i class="bi bi-rocket-takeoff-fill rocket-icon"></i>
+                        BOOST AD
+                    </button>
+
+                    <hr class="m-0">
+
+                    <div class="controls-section">
+                        <span class="auto-boost-label">Auto Boost</span>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="autoBoostSwitch" checked>
+                        </div>
+                        <button class="promote-btn boost-btn edit-btn btn" id="showAutoBoostBtn">
+                            <i class="bi bi-pencil-fill edit-icon"></i>
+                            Edit
+                        </button>
+                    </div>
+
+                    <div class="schedule-display">
+                        <i class="bi bi-calendar-event calendar-icon"></i>
+                        <span>#MON-SUN | 08.00 & 14:00</span>
+                    </div>
+
+                    <div class="info-banner">
+                        <p>By activating it the user will get <span class="highlight">+35%</span> more
+                            leads</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Auto Boost Popup - initially hidden -->
+<div class="auto-boost-popup" id="autoBoostPopup" style="display: none;">
+    <div class="popup-content">
+        <div class="popup-header">
+            <h3 class="popup-title">Auto Boost Set Standard Hours</h3>
+            <button class="close-btn" id="closePopupBtn">&times;</button>
+        </div>
+
+        <div class="ad-title-section">
+            <div class="ad-title-label">AD Title:</div>
+            <h4 class="ad-title">3 Bedrooms house for sale in Colombo 4 for Rs. 45 million</h4>
+        </div>
+
+        <div class="days-section">
+            <div class="section-label">When do you want to boost the AD?</div>
+            <div class="days-container">
+                <button class="day-btn active" data-day="sun">Sun</button>
+                <button class="day-btn active" data-day="mon">Mon</button>
+                <button class="day-btn active" data-day="tue">Tue</button>
+                <button class="day-btn active" data-day="wed">Wed</button>
+                <button class="day-btn active" data-day="thu">Thu</button>
+                <button class="day-btn active" data-day="fri">Fri</button>
+                <button class="day-btn active" data-day="sat">Sat</button>
+            </div>
+
+            <div class="form-check select-all">
+                <input class="form-check-input" type="checkbox" id="selectAllDays" checked>
+                <label class="form-check-label" for="selectAllDays">
+                    Select all days
+                </label>
+            </div>
+        </div>
+
+        <div class="timeslots-section">
+            <div class="section-label">Choose the time slots to Boost the AD</div>
+            <div class="slots-container">
+                <div class="slot">
+                    <div class="slot-label">Time Slot 1:</div>
+                    <select class="time-select" id="timeSlot1">
+                        <option value="8:00">8:00 AM</option>
+                        <option value="9:00">9:00 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="13:00">1:00 PM</option>
+                        <option value="14:00">2:00 PM</option>
+                    </select>
+                </div>
+
+                <div class="slot">
+                    <div class="slot-label">Time Slot 2:</div>
+                    <select class="time-select" id="timeSlot2">
+                        <option value="none">None</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="14:00" selected>2:00 PM</option>
+                        <option value="16:00">4:00 PM</option>
+                        <option value="18:00">6:00 PM</option>
+                        <option value="20:00">8:00 PM</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="note-section">
+            <span class="note-asterisk">Note*:</span>
+            The auto boost will end automatically if the boost credit is not sufficient to run.
+        </div>
+
+        <div class="actions">
+            <button class="close-popup-btn" id="closePopupBtnBottom">Close</button>
+            <button class="save-btn" id="saveChangesBtn">Save Changes</button>
         </div>
     </div>
 </div>

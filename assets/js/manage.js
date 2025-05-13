@@ -134,4 +134,103 @@ $(document).ready(() => {
         loop: true,
     });
 
+
+
+
+
+
+
+    const showAutoBoostBtn = document.getElementById('showAutoBoostBtn');
+    const autoBoostPopup = document.getElementById('autoBoostPopup');
+    const closePopupBtn = document.getElementById('closePopupBtn');
+    const closePopupBtnBottom = document.getElementById('closePopupBtnBottom');
+    const saveChangesBtn = document.getElementById('saveChangesBtn');
+    const autoBoostSwitch = document.getElementById('autoBoostSwitch');
+    const scheduleDisplay = document.querySelector('.schedule-display span');
+    const dayButtons = document.querySelectorAll('.day-btn');
+    const selectAllCheckbox = document.getElementById('selectAllDays');
+    const timeSlot1 = document.getElementById('timeSlot1');
+    const timeSlot2 = document.getElementById('timeSlot2');
+
+    // Show/Hide Auto Boost Popup
+    showAutoBoostBtn.addEventListener('click', function() {
+        autoBoostPopup.style.display = 'flex';
+    });
+
+    closePopupBtn.addEventListener('click', function() {
+        autoBoostPopup.style.display = 'none';
+    });
+
+    closePopupBtnBottom.addEventListener('click', function() {
+        autoBoostPopup.style.display = 'none';
+    });
+
+    // Day buttons toggle functionality
+    dayButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            this.classList.toggle('active');
+            updateSelectAllCheckbox();
+        });
+    });
+
+    // Select all days checkbox functionality
+    selectAllCheckbox.addEventListener('change', function() {
+        dayButtons.forEach(button => {
+            if (this.checked) {
+                button.classList.add('active');
+            } else {
+                button.classList.remove('active');
+            }
+        });
+    });
+
+    // Save Changes Button
+    saveChangesBtn.addEventListener('click', function() {
+        // Get selected days
+        const selectedDays = Array.from(dayButtons)
+            .filter(btn => btn.classList.contains('active'))
+            .map(btn => btn.dataset.day.toUpperCase());
+
+        // Format display text
+        let displayText = '';
+        if (selectedDays.length === 7) {
+            displayText = '#MON-SUN';
+        } else if (selectedDays.length === 0) {
+            displayText = 'No days selected';
+        } else {
+            displayText = '#' + selectedDays.join('-');
+        }
+
+        // Add time slots
+        const slot1Value = timeSlot1.value;
+        let timeDisplay = slot1Value.replace(':00', '.00');
+
+        if (timeSlot2.value !== 'none') {
+            const slot2Value = timeSlot2.value;
+            timeDisplay += ' & ' + slot2Value.replace(':00', '.00');
+        }
+
+        // Update schedule display
+        scheduleDisplay.textContent = `${displayText} | ${timeDisplay}`;
+
+        // Close popup
+        autoBoostPopup.style.display = 'none';
+    });
+
+    // Toggle Auto Boost Switch
+    autoBoostSwitch.addEventListener('change', function() {
+        const scheduleDisplayElement = document.querySelector('.schedule-display');
+        if (this.checked) {
+            scheduleDisplayElement.style.display = 'flex';
+        } else {
+            scheduleDisplayElement.style.display = 'none';
+        }
+    });
+
+    // Helper function to update "Select all" checkbox state
+    function updateSelectAllCheckbox() {
+        const allSelected = Array.from(dayButtons).every(btn => btn.classList.contains('active'));
+        selectAllCheckbox.checked = allSelected;
+    }
+
 });

@@ -2007,6 +2007,363 @@ $header-bg: #f1f3f5;
 
 }
 
+// SCSS Version
+
+// Boost Ad Modal
+.boost-ad-modal {
+
+  .modal-content {
+    border-radius: 20px;
+    //overflow: hidden;
+  }
+
+  .boost-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background-color: #FFF9F7;
+    border: 1px solid #F4D4CA;
+    border-radius: 14px;
+    padding: 12px;
+
+    .header{
+      gap: 12px;
+      .header-text {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.2px;
+        color: #2F2F35;
+        margin-bottom: 0;
+      }
+      i{
+        color: #92929D;
+      }
+    }
+
+    .status-info {
+      display: flex;
+      justify-content: center;
+      font-size: 13px;
+      line-height: 18px;
+      letter-spacing: 0;
+      gap: 12px;
+    }
+
+    .ad-page {
+      padding-right: 12px;
+      border-right: 1px solid #ddd;
+    }
+
+    hr{
+      margin: 0;
+      border-color: #E2E2EA;
+      opacity: 1;
+    }
+  }
+
+
+
+
+
+  //.last-boosted {
+  //  font-size: 1.25rem;
+  //  color: #555;
+  //
+  //  &-date {
+  //    font-weight: 500;
+  //  }
+  //}
+
+  .boost-btn {
+    background-color: $color-boost-bg;
+    color: #fff;
+
+    &:hover {
+
+    }
+  }
+
+  .rocket-icon {
+    margin-right: 0.5rem;
+  }
+
+  .controls-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    .auto-boost-label {
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 14px;
+      letter-spacing: 0;
+      margin-right: 8px;
+    }
+
+    .edit-btn {
+      background-color: #fff;
+      color: #FF4500;
+      border: 1px solid #FF4500;
+    }
+
+    .edit-icon {
+      margin-right: 0.5rem;
+    }
+  }
+
+
+
+  .schedule-display {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0;
+
+    .calendar-icon {
+      margin-right: 0.5rem;
+      color: #696974;
+    }
+
+  }
+
+
+  .info-banner {
+    background-color: #E4FCEC;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: left;
+    width: 100%;
+
+    p{
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 100%;
+      letter-spacing: 0.1px;
+      color: #696974;
+      margin-bottom: 0;
+
+      .highlight {
+        color: #009432;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .form-check-input {
+    transform: scale(1.5);
+    margin-right: 0.75rem;
+  }
+}
+
+// Auto Boost Popup - Kept separate as requested
+.auto-boost-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1060;
+
+  .popup-content {
+    background: white;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    padding: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+
+  .popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 16px 0;
+    border-bottom: 1px solid #EDF2F7;
+    margin-bottom: 16px;
+  }
+
+  .popup-title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.2px;
+    margin-bottom: 0;
+  }
+
+  .close-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.75rem;
+    line-height: 1;
+    padding: 0;
+    color: #999;
+  }
+
+  .ad-title-section {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 16px;
+  }
+
+  .ad-title-label {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0.2px;
+    color: #2F2F35;
+    margin-bottom: 5px;
+  }
+
+  .ad-title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: #2F2F35;
+    margin-bottom: 0;
+  }
+
+  .days-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-label {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0;
+    color: #212226;
+    margin-bottom: 16px;
+  }
+
+  .days-container {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .day-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #009432;
+    background: white;
+    color: #009432;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+
+
+    &.active {
+      background-color: #009432;
+      color: white;
+    }
+
+    &:hover:not(.active) {
+      background-color: #F2F6F2;
+    }
+  }
+
+  .select-all {
+    margin-top: 0.5rem;
+  }
+
+  .timeslots-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .slots-container {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .slot {
+    flex: 1;
+
+    &-label {
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #555;
+    }
+  }
+
+  .time-select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .note-section {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: #777;
+  }
+
+  .note-asterisk {
+    font-weight: 700;
+    color: #555;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+  }
+
+  .close-popup-btn {
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+  }
+
+  .save-btn {
+    background-color: #ff5722;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+
+    &:hover {
+      background-color: #e64a19;
+    }
+  }
+}
+
+// Form switch custom styling
+.form-switch {
+  .form-check-input {
+    width: 39px;
+    height: 24px;
+
+    &:checked {
+      background-color: #018e37;
+      border-color: #018e37;
+    }
+  }
+}
+
 .promote-btn  {
   padding: 10px 12px;
   border: none;
@@ -2016,6 +2373,7 @@ $header-bg: #f1f3f5;
   box-shadow: $box-shadow;
   display: flex;
   align-items: center;
+  justify-content: center;
   transition: transform 0.2s, box-shadow 0.2s;
   //min-width: 151px;
   min-width: max-content;
