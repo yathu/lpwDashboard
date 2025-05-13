@@ -1528,6 +1528,7 @@ $header-bg: #f1f3f5;
 
 .modal-ads-container {
   padding: 12px;
+  border-radius: 20px;
 
   .ad-item {
     display: flex;
@@ -1562,7 +1563,7 @@ $header-bg: #f1f3f5;
         font-size: 18px;
         line-height: 1;
         letter-spacing: 0;
-        margin-bottom: 4px;
+        margin-bottom: 6px;
         color: #212226;
       }
 
@@ -1584,12 +1585,13 @@ $header-bg: #f1f3f5;
     .swiper-slide {
       padding: 8px;
       border: 1px solid #EDDFC1;
-      border-radius: 8px;
+      border-radius: 12px;
       background-color: #F7FAFC;
       display: flex;
       flex-direction: column;
       gap: 12px;
       width: 260px;
+      height: auto;
 
       .title-row {
         display: flex;
@@ -1601,7 +1603,6 @@ $header-bg: #f1f3f5;
           height: 56px;
           border-radius: 10px;
           overflow: hidden;
-          background-color: #C6A04E;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -1619,7 +1620,6 @@ $header-bg: #f1f3f5;
           font-size: 16px;
           line-height: 12px;
           letter-spacing: 0;
-          color: #C6A04E;
         }
       }
 
@@ -1628,7 +1628,7 @@ $header-bg: #f1f3f5;
         font-size: 13px;
         line-height: 1.3;
         letter-spacing: 0.1px;
-
+        flex:1;
       }
 
       .row-3 {
@@ -1695,7 +1695,74 @@ $header-bg: #f1f3f5;
   }
 
   .upgrade-ad-swiper{
+    .img-box{
+      background-color: #C6A04E;
+    }
+    .title{
+      color: #C6A04E;
+    }
+  }
+}
 
+.buy-add-on-container{
+  background-color: #FCEEFC;
+  margin-top: 12px;
+
+  .ad-item{
+    .ad-image-circle{
+      border: 1px solid #CBD3EF;
+    }
+  }
+
+  .swiper-slide{
+    .img-box{
+      background: #A852C2;
+    }
+    .title{
+      color: #A852C2;
+    }
+  }
+
+}
+
+.buy-boosts-container{
+  background: #E7F6F6;
+  padding: 12px;
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  border-radius: 20px;
+  align-items: center;
+
+  .img-box{
+    background-color: #FFFFFF;
+    height: 66px;
+    width: 66px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #CBD3EF;
+  }
+  .content{
+    flex: 1;
+    .title{
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 0;
+      color: #212226;
+
+    }
+    .description{
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.2;
+      letter-spacing: 0.2px;
+    }
+  }
+  .btn-primary-light{
+    border: 1px solid #1A73E8;
   }
 }
 
@@ -1814,6 +1881,9 @@ $header-bg: #f1f3f5;
   transform: translateY(0);
 }
 .custom-manage-modal{
+  .modal-content{
+    border: 0;
+  }
   .modal-header{
     padding: 12px 16px;
     display: flex;

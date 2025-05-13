@@ -127,4 +127,11 @@ $(document).ready(() => {
         loop: true,
     });
 
+    //buy-addon-swiper
+    const buyAddonSwiper = new Swiper('.buy-addon-swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        loop: true,
+    });
+
 });
