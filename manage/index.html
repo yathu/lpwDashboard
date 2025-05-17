@@ -112,34 +112,60 @@ layout: manage_ads
                     <div class="col-6 col-lg-auto">
                         <select class="form-select">
                             <option selected>All Types</option>
-                            <option>Residential</option>
-                            <option>Commercial</option>
+                            <option>Sales</option>
+                            <option>Rentals</option>
                             <option>Land</option>
                         </select>
                     </div>
                     <div class="col-6 col-lg-2">
                         <select class="form-select">
-                            <option selected>Property Type</option>
-                            <option>Apartment</option>
-                            <option>House</option>
-                            <option>Villa</option>
-                            <option>Office</option>
+                            <option value="0">All types</option>
+                            <option value="House">House</option>
+                            <option value="Apartment">Apartment / Flat</option>
+                            <option value="Annexe">Annexe</option>
+                            <option value="Bungalow">Bungalow</option>
+                            <option value="Villa">Villa</option>
+                            <option value="Commercial">Commercial</option>
+                            <option value="Room">Room</option>
+                            <option value="Studio/Bedsit">Studio/Bedsit</option>
+                            <option value="Other">Other</option>
+                            <option value="Bare Land">Bare(empty) Land</option>
+                            <option value="Cultivated Land">Cultivated Land</option>
+                            <option value="Land with house">Land with house</option>
+                            <option value="Coconut land">Coconut land</option>
+                            <option value="Tea land">Tea land</option>
+                            <option value="Rubber land">Rubber land</option>
+                            <option value="Paddy(rice) land">Paddy(rice) land</option>
+                            <option value="Beachfront land">Beachfront land</option>
+                            <option value="Waterfront land">WaterFront Land</option>
+                            <option value="Cinnamon land">Cinnamon land</option>
+
                         </select>
                     </div>
                     <div class="col-6 col-lg-auto">
                         <select class="form-select">
-                            <option selected>Status</option>
-                            <option>For Sale</option>
-                            <option>For Rent</option>
-                            <option>Sold</option>
+                            <option selected disabled>Status</option>
+                            <option value="0">All</option>
+                            <option value="1">Active</option>
+                            <option value="2">Inactive</option>
+                            <option value="4">Pending</option>
+                            <option value="5">Upgraded ads</option>
+                            <option value="10">Featured Ads</option>
+                            <option value="11">Platinum Ads</option>
+                            <option value="6">WhatsApp Live</option>
+                            <option value="7">Hot Deal</option>
+                            <option value="8">Trending Ads</option>
+                            <option value="12">Below Market Average</option>
                         </select>
                     </div>
                     <div class="col-6 col-lg-auto">
                         <select class="form-select">
-                            <option selected>Posted</option>
-                            <option>Last 24 hours</option>
-                            <option>Last week</option>
-                            <option>Last month</option>
+                            <option value="0">Any</option>
+                            <option value="2">Last 24 hrs</option>
+                            <option value="3">Last 7 days</option>
+                            <option value="4">Last 14 days</option>
+                            <option value="5">Last 30 days</option>
+                            <option value="6">Last 90 days</option>
                         </select>
                     </div>
                     <div class="col-12 col-lg-auto">
@@ -192,9 +218,11 @@ layout: manage_ads
                                 Sort
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="sortDropdown">
-                                <li><a class="dropdown-item" href="#">Newest</a></li>
-                                <li><a class="dropdown-item" href="#">Oldest</a></li>
-                                <li><a class="dropdown-item" href="#">Status</a></li>
+                                <li><a class="dropdown-item" href="#">Newest First</a></li>
+                                <li><a class="dropdown-item" href="#">Oldest First</a></li>
+                                <li><a class="dropdown-item" href="#">Last Modified</a></li>
+                                <li><a class="dropdown-item" href="#">Last Boosted</a></li>
+                                <li><a class="dropdown-item" href="#">Sort by Page</a></li>
                             </ul>
                         </div>
                     </div>
@@ -566,7 +594,8 @@ layout: manage_ads
                                                 </button>
 
                                                 <!-- Delete Button -->
-                                                <button class="btn action-btn delete-btn" data-bs-toggle="modal" data-bs-target="#closeAdModal">
+                                                <button class="btn action-btn delete-btn" data-bs-toggle="modal"
+                                                        data-bs-target="#closeAdModal">
                                                     <i class="bi bi-trash"></i> Delete
                                                 </button>
 
@@ -841,6 +870,99 @@ layout: manage_ads
 
             <!--            grid ad item container-->
 
+            <div class="grid-ad-item agent-mobile-ad mt-5">
+
+                <div class="label-action-container">
+                    <div class="label-container">
+                        <span class="label label-featured">Featured</span>
+                        <span class="label label-green"><i class="bi bi-whatsapp"></i> Live Chat</span>
+                        <span class="label label-fire"><i class="bi bi-fire"></i></span>
+                        <!--                                <span class="label label-outline-success"><i class="bi bi-circle-fill text-success"></i> Active</span>-->
+                    </div>
+
+                    <div class="action-container">
+                        <label class="custom-switch">
+                            <input type="checkbox" checked>
+                            <div class="switch-slider">
+                                <span class="on-text">Active</span>
+                                <span class="off-text">Active</span>
+                            </div>
+                        </label>
+
+                        <i class="bi bi-three-dots-vertical"></i>
+
+                    </div>
+                </div>
+
+                <div class="ad-content row gx-3">
+                    <div class="ad-image col-4">
+                        <img src="../assets/img/mng_sources/property.png" alt="House for sale">
+                    </div>
+                    <div class="ad-details col-8">
+                        <div class="label-container">
+                            <span class="label label-orange">SALE</span>
+                            <span class="label label-dark">HOUSE</span>
+                        </div>
+
+                        <h2 class="ad-heading">3 Bedrooms house for sale in Colombo 4 for Rs. 45 million</h2>
+                        <span class="location">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            Colombo 5
+                        </span>
+                    </div>
+                </div>
+
+                <div class="ad-icons">
+                    <div class="icon-item">
+                        <div class="icon-circle views">
+                            <i class="bi bi-eye-fill"></i>
+                        </div>
+                        <span><strong>19</strong> views</span>
+                    </div>
+                    <div class="icon-item">
+                        <div class="icon-circle leads">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+                        <span><strong>7</strong> Leads</span>
+                    </div>
+                    <div class="icon-item">
+                        <span>Ad Page<span class="badge">#12</span></span>
+                    </div>
+                </div>
+
+                <!-- Ad Header Section -->
+                <div class="row grid-ad-item-header gx-0">
+                    <button class="btn promote-btn" data-bs-toggle="modal"
+                            data-bs-target="#promotedAddModal">
+                                <span class="me-1">
+                                 <img src="../assets/img/mng_sources/megaphone.svg" alt="House for sale">
+                                </span> PROMOTE AD
+                    </button>
+                    <!-- Second Column - Boost Ad -->
+                    <button class="btn boost-btn" data-bs-toggle="modal"
+                            data-bs-target="#boostAdModal">
+                                <span class="me-1">
+                                    <i class="bi bi-rocket-takeoff-fill"></i>
+                                </span>
+                        BOOST AD
+                    </button>
+                    <button class="btn btn-link view-toggle">
+                        VIEW MORE
+                        <i class="bi bi-caret-down-fill ms-1"></i>
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+
             <div class="grid-ad-item mt-5">
                 <div class="ad-content">
                     <div class="ad-image">
@@ -1095,7 +1217,8 @@ layout: manage_ads
                                 </button>
 
                                 <!-- Delete Button -->
-                                <button class="btn action-btn delete-btn" data-bs-toggle="modal" data-bs-target="#closeAdModal">
+                                <button class="btn action-btn delete-btn" data-bs-toggle="modal"
+                                        data-bs-target="#closeAdModal">
                                     <i class="bi bi-trash"></i> Delete
                                 </button>
 
@@ -1585,7 +1708,8 @@ layout: manage_ads
                                 </button>
 
                                 <!-- Delete Button -->
-                                <button class="btn action-btn delete-btn" data-bs-toggle="modal" data-bs-target="#closeAdModal">
+                                <button class="btn action-btn delete-btn" data-bs-toggle="modal"
+                                        data-bs-target="#closeAdModal">
                                     <i class="bi bi-trash"></i> Delete
                                 </button>
 
@@ -2695,7 +2819,8 @@ layout: manage_ads
                     </div>
                     <div class="form-check mb-2">
                         <input class="form-check-input" type="radio" name="reason" id="notAvailable">
-                        <label class="form-check-label" for="notAvailable">Property not available for sale or rent anymore</label>
+                        <label class="form-check-label" for="notAvailable">Property not available for sale or rent
+                            anymore</label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="reason" id="otherReason">
@@ -2704,7 +2829,7 @@ layout: manage_ads
                 </form>
             </div>
             <div class="modal-footer justify-content-start">
-                <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal" >Cancel</button>
+                <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Cancel</button>
                 <button type="button" class="btn btn-success">Proceed</button>
             </div>
         </div>
