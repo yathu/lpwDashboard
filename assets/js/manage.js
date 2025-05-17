@@ -3,7 +3,7 @@ $(document).ready(() => {
 
     var swiper = new Swiper(".initial-swiper", {
         // Optional parameters
-        loop: true,
+        loop: false,
         spaceBetween: 12,
         slidesPerView: 'auto',
 
@@ -35,8 +35,8 @@ $(document).ready(() => {
             },
         },
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next-init',
+            prevEl: '.swiper-button-prev-init',
         },
     });
 
@@ -89,14 +89,15 @@ $(document).ready(() => {
         }
     });
 
-    const maxAdSwiper = new Swiper('.max-ad-swiper', {
+    const maxAdSwiper = new Swiper('.max-ad-swiper-1', {
         slidesPerView: 3,
         spaceBetween: 12,
         loop: true,
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.max-ad-swiper-button-next',
+            prevEl: '.max-ad-swiper-button-prev',
         },
+        allowSlideNext:true,
     });
 
     //list item toggle
@@ -125,6 +126,10 @@ $(document).ready(() => {
         slidesPerView: 'auto',
         spaceBetween: 10,
         loop: true,
+        navigation:{
+            nextEl:'.upgrade-ad-swiper-button-next',
+            prevEl:'.upgrade-ad-swiper-button-prev',
+        }
     });
 
     //buy-addon-swiper
@@ -132,12 +137,11 @@ $(document).ready(() => {
         slidesPerView: 'auto',
         spaceBetween: 10,
         loop: true,
+        navigation:{
+            nextEl:'.buy-ad-swiper-button-next',
+            prevEl:'.buy-ad-swiper-button-prev',
+        }
     });
-
-
-
-
-
 
 
     const showAutoBoostBtn = document.getElementById('showAutoBoostBtn');
