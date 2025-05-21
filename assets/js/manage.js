@@ -352,7 +352,23 @@ $(document).ready(() => {
             $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost').addClass('d-none');
         });
 
-        // Action button handlers
+    // Handle switch toggle for deactivation
+    $('.custom-switch input[type="checkbox"]').on('change', function() {
+        if (!$(this).is(':checked')) {
+            // If switch is turned off, show deactivate confirmation modal
+            $('#selectedAdsActionsModal .modal-title').text('Confirm Deactivate');
+            $('#selectedAdsActionsModal .modal-content-deactivate').removeClass('d-none');
+            $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-boost').addClass('d-none');
+            $('#selectedAdsActionsModal .modal-btn-deactivate').removeClass('d-none');
+            $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost').addClass('d-none');
+
+            // Show the modal
+            $('#selectedAdsActionsModal').modal('show');
+        }
+    });
+
+
+    // Action button handlers
         $('#selectedAdsActionsModal .modal-btn-delete').click(function() {
             console.log('Deleting selected ads...');
             $('#selectedAdsActionsModal').modal('hide');

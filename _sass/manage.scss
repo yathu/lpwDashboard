@@ -794,10 +794,14 @@ $header-bg: #f1f3f5;
       i {
         font-size: 22px;
         color: #E2EAEF;
+        cursor: pointer;
 
         &.active {
           color: #4AB26C;
         }
+      }
+      .bi-star-fill.active{
+        color: #ffcf4b;
       }
     }
   }
@@ -2901,7 +2905,7 @@ $header-bg: #f1f3f5;
 .custom-switch {
   position: relative;
   display: inline-block;
-  min-width: 81px;
+  min-width: 85px;
   height: 28px;
   cursor: pointer;
 
@@ -2924,7 +2928,7 @@ $header-bg: #f1f3f5;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 8px 0 0;
+    padding: 0 5px 0 0;
     color: #dc3545;
     font-weight: 500;
     font-size: 13px;
@@ -2960,7 +2964,7 @@ $header-bg: #f1f3f5;
     &:before {
       transform: translateX(50px);
       background-color: #4AB26C;
-      left: 5px;
+      left: 8px;
 
     }
 
