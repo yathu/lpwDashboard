@@ -276,17 +276,24 @@ body {
     }
   }
 
+
   .status-labels-container {
     margin-top: 12px;
     overflow-x: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     .status-labels {
       display: flex;
       flex-wrap: nowrap;
       gap: 12px;
       padding-bottom: 8px;
-      overflow-x: scroll;
-      box-sizing: content-box;
+      //overflow-x: scroll;
+      //box-sizing: content-box;
 
       .status-label {
         font-size: 14px;
@@ -406,6 +413,9 @@ $header-bg: #f1f3f5;
       font-weight: 600;
     }
 
+    .form-check-label{
+      cursor: pointer;
+    }
 
     &:hover {
       background-color: $light-gray;
@@ -499,10 +509,19 @@ $header-bg: #f1f3f5;
   .property-details {
     background-color: #FFFFFF;
     display: none;
+    //padding-top: 16px;
+    border-bottom: 1px solid #e2e2ea;
 
     h5 {
       color: $dark-gray;
       margin-bottom: 1rem;
+    }
+
+    .grid-ad-item{
+      border: none;
+      box-shadow: none;
+      margin-bottom: 0;
+      //border-bottom: 1px solid #e2e2ea;
     }
   }
 
@@ -2899,14 +2918,14 @@ $header-bg: #f1f3f5;
     right: 0;
     bottom: 0;
     background-color: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid #dc3545;
     border-radius: 30px;
     transition: 0.4s;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding: 0 8px 0 0;
-    color: #aaa;
+    color: #dc3545;
     font-weight: 500;
     font-size: 13px;
     line-height: 16px;
@@ -2919,9 +2938,9 @@ $header-bg: #f1f3f5;
       content: "";
       height: 22px;
       width: 22px;
-      left: 5px;
+      left: 3px;
       bottom: 2px;
-      background-color: #ccc;
+      background-color: #dc3545;
       border-radius: 50%;
       transition: .4s;
     }
@@ -2941,6 +2960,8 @@ $header-bg: #f1f3f5;
     &:before {
       transform: translateX(50px);
       background-color: #4AB26C;
+      left: 5px;
+
     }
 
     .on-text {

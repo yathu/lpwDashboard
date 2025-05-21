@@ -248,4 +248,164 @@ $(document).ready(() => {
         });
     });
 
+    //handle delete boost deactivate
+    // Modal content handling
+//     const deleteBtn = $('#deleteSelectedAdsBtn');
+//     const boostBtn = $('#boostSelectedAd');
+//     const deactivateBtn = $('#deactivateSelectedAdsBtn');
+//
+//     const modal = document.getElementById('actionsModal');
+//     const modalTitle = modal.querySelector('.modal-title');
+//     const deleteContent = modal.querySelector('.modal-content-delete');
+//     const boostContent = modal.querySelector('.modal-content-boost');
+//     const deactivateContent = modal.querySelector('.modal-content-deactivate');
+//     const deleteActionBtn = modal.querySelector('.modal-btn-delete');
+//     const boostActionBtn = modal.querySelector('.modal-btn-boost');
+//     const deactivateActionBtn = modal.querySelector('.modal-btn-deactivate');
+//
+// // Delete button click handler
+//     deleteBtn.addEventListener('click', () => {
+//         modalTitle.textContent = 'Confirm Delete';
+//         showModalContent('delete');
+//     });
+//
+// // Boost button click handler
+//     boostBtn.addEventListener('click', () => {
+//         modalTitle.textContent = 'Confirm Boost';
+//         showModalContent('boost');
+//     });
+//
+// // Deactivate button click handler
+//     deactivateBtn.addEventListener('click', () => {
+//         modalTitle.textContent = 'Confirm Deactivate';
+//         showModalContent('deactivate');
+//     });
+//
+//     function showModalContent(type) {
+//         // Hide all content and buttons first
+//         deleteContent.classList.add('d-none');
+//         boostContent.classList.add('d-none');
+//         deactivateContent.classList.add('d-none');
+//         deleteActionBtn.classList.add('d-none');
+//         boostActionBtn.classList.add('d-none');
+//         deactivateActionBtn.classList.add('d-none');
+//
+//         // Show appropriate content and button
+//         switch(type) {
+//             case 'delete':
+//                 deleteContent.classList.remove('d-none');
+//                 deleteActionBtn.classList.remove('d-none');
+//                 break;
+//             case 'boost':
+//                 boostContent.classList.remove('d-none');
+//                 boostActionBtn.classList.remove('d-none');
+//                 break;
+//             case 'deactivate':
+//                 deactivateContent.classList.remove('d-none');
+//                 deactivateActionBtn.classList.remove('d-none');
+//                 break;
+//         }
+//     }
+//
+// // Action button handlers
+//     deleteActionBtn.addEventListener('click', () => {
+//         // Handle delete action
+//         console.log('Deleting selected ads...');
+//         bootstrap.Modal.getInstance(modal).hide();
+//     });
+//
+//     boostActionBtn.addEventListener('click', () => {
+//         // Handle boost action
+//         console.log('Boosting selected ads...');
+//         bootstrap.Modal.getInstance(modal).hide();
+//     });
+//
+//     deactivateActionBtn.addEventListener('click', () => {
+//         // Handle deactivate action
+//         console.log('Deactivating selected ads...');
+//         bootstrap.Modal.getInstance(modal).hide();
+//     });
+
+
+        // Button click handlers
+        $('#deleteSelectedAdsBtn').click(function() {
+            $('#selectedAdsActionsModal .modal-title').text('Confirm Delete');
+            $('#selectedAdsActionsModal .modal-content-delete').removeClass('d-none');
+            $('#selectedAdsActionsModal .modal-content-boost, #selectedAdsActionsModal .modal-content-deactivate').addClass('d-none');
+            $('#selectedAdsActionsModal .modal-btn-delete').removeClass('d-none');
+            $('#selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-deactivate').addClass('d-none');
+        });
+
+        $('#boostSelectedAd').click(function() {
+            $('#selectedAdsActionsModal .modal-title').text('Confirm Boost');
+            $('#selectedAdsActionsModal .modal-content-boost').removeClass('d-none');
+            $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-deactivate').addClass('d-none');
+            $('#selectedAdsActionsModal .modal-btn-boost').removeClass('d-none');
+            $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-deactivate').addClass('d-none');
+        });
+
+        $('#deactivateSelectedAdsBtn').click(function() {
+            $('#selectedAdsActionsModal .modal-title').text('Confirm Deactivate');
+            $('#selectedAdsActionsModal .modal-content-deactivate').removeClass('d-none');
+            $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-boost').addClass('d-none');
+            $('#selectedAdsActionsModal .modal-btn-deactivate').removeClass('d-none');
+            $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost').addClass('d-none');
+        });
+
+        // Action button handlers
+        $('#selectedAdsActionsModal .modal-btn-delete').click(function() {
+            console.log('Deleting selected ads...');
+            $('#selectedAdsActionsModal').modal('hide');
+        });
+
+        $('#selectedAdsActionsModal .modal-btn-boost').click(function() {
+            console.log('Boosting selected ads...');
+            $('#selectedAdsActionsModal').modal('hide');
+        });
+
+        $('#selectedAdsActionsModal .modal-btn-deactivate').click(function() {
+            console.log('Deactivating selected ads...');
+            $('#selectedAdsActionsModal').modal('hide');
+        });
+
+        // Reset modal content when modal is hidden
+        $('#selectedAdsActionsModal').on('hidden.bs.modal', function() {
+            $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-boost, #selectedAdsActionsModal .modal-content-deactivate').addClass('d-none');
+            $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-deactivate').addClass('d-none');
+        });
+
+
+        //social media popover
+
+    // Initialize all popovers
+    let shareButton = $('#sharePopover');
+
+    shareButton.popover({
+        trigger: 'click',
+        html: true,
+        placement: 'bottom',
+        content: `
+            <div class='d-flex gap-3 p-2'>
+                <a href='#' class='text-dark fs-5'><i class='bi bi-facebook'></i></a>
+                <a href='#' class='text-dark fs-5'><i class='bi bi-twitter-x'></i></a>
+                <a href='#' class='text-dark fs-5'><i class='bi bi-whatsapp'></i></a>
+                <a href='#' class='text-dark fs-5'><i class='bi bi-telegram'></i></a>
+                <a href='#' class='text-dark fs-5'><i class='bi bi-linkedin'></i></a>
+            </div>`
+    });
+
+    // Close popover when clicking outside
+    $(document).on('click', function(e) {
+        if (!$(e.target).closest('[data-bs-toggle="popover"]').length &&
+            !$(e.target).closest('.popover').length) {
+            shareButton.popover('hide');
+        }
+    });
+
+    // Prevent popover from closing when clicking inside it
+    $(document).on('click', '.popover', function(e) {
+        e.stopPropagation();
+    });
+
+
 });

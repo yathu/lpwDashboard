@@ -243,20 +243,20 @@ layout: manage_ads
 
             <div class="selected-options-container d-none d-md-flex flex-column flex-md-row align-items-center">
 
-                <button class="btn btn-dark">
+                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#selectedAdsActionsModal" id="deleteSelectedAdsBtn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9.12634 17.0237L12.0152 14.1348L14.9041 17.0237L16.4597 15.4681L13.5708 12.5792L16.4597 9.69035L14.9041 8.13479L12.0152 11.0237L9.12634 8.13479L7.57079 9.69035L10.4597 12.5792L7.57079 15.4681L9.12634 17.0237ZM6.45968 22.0237C5.84857 22.0237 5.32542 21.8061 4.89023 21.3709C4.45505 20.9357 4.23745 20.4126 4.23745 19.8015V5.35702H3.12634V3.13479H8.6819V2.02368H15.3486V3.13479H20.9041V5.35702H19.793V19.8015C19.793 20.4126 19.5754 20.9357 19.1402 21.3709C18.705 21.8061 18.1819 22.0237 17.5708 22.0237H6.45968Z"
                               fill="white"/>
                     </svg>
                     delete selected ads
                 </button>
-                <button class="btn btn-dark">
+                <button id="sharePopover" class="btn btn-dark">
                     <i class="bi bi-share-fill me-2"></i>SHARE selected ads
                 </button>
-                <button class="btn btn-dark">
+                <button class="btn btn-dark" id="boostSelectedAd" data-bs-toggle="modal" data-bs-target="#selectedAdsActionsModal">
                     <i class="bi bi-rocket-takeoff-fill me-2"></i>BOOST selected ads
                 </button>
-                <button class="btn btn-dark">
+                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#selectedAdsActionsModal" id="deactivateSelectedAdsBtn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <mask id="mask0_1_1574" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
                               width="24" height="24">
@@ -315,7 +315,7 @@ layout: manage_ads
                     <div class="col-2 position-relative">
                         <input class="form-check-input position-absolute z-0" id="propertyListItem{{i}}" type="checkbox"
                                value="">
-                        <label for="propertyListItem{{i}}" class="p-2 d-inline-block z-1"></label>
+                        <label for="propertyListItem{{i}}" class="p-2 d-inline-block z-1 form-check-label"></label>
                         <span class="text-truncate title ps-2">3 Bedrooms house for...</span>
                     </div>
                     <div class="col-1">
@@ -327,9 +327,13 @@ layout: manage_ads
                         <button class="hot-btn"><i class="bi bi-fire"></i></button>
                     </div>
                     <div class="col-1">
-                        <div class="status-active">
-                            Active <span class="status-dot"></span>
-                        </div>
+                        <label class="custom-switch">
+                            <input type="checkbox">
+                            <div class="switch-slider">
+                                <span class="on-text">Active</span>
+                                <span class="off-text">Active</span>
+                            </div>
+                        </label>
                     </div>
                     <div class="col-1">
                         19 Views
@@ -2395,6 +2399,45 @@ layout: manage_ads
             <div class="modal-footer justify-content-start">
                 <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Cancel</button>
                 <button type="button" class="btn btn-success">Proceed</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--popup for delete, boost, deactivate-->
+<!-- Actions Modal -->
+<div class="modal fade" id="selectedAdsActionsModal" tabindex="-1" aria-labelledby="actionsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="actionsModalLabel">Confirm Action</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Delete Content -->
+                <div class="modal-content-delete d-none">
+                    <p>Are you sure you want to delete the selected ads?</p>
+                    <p>This action cannot be undone.</p>
+                </div>
+
+                <!-- Boost Content -->
+                <div class="modal-content-boost d-none">
+                    <p>Are you sure you want to boost the selected ads?</p>
+                    <p>This will use your available boost credits.</p>
+                </div>
+
+                <!-- Deactivate Content -->
+                <div class="modal-content-deactivate d-none">
+                    <p>Are you sure you want to deactivate the selected ads?</p>
+                    <p>You can reactivate them later.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Cancel</button>
+                <!-- Action buttons -->
+                <button type="button" class="btn btn-success modal-btn-delete d-none">Yes, Delete</button>
+                <button type="button" class="btn btn-success modal-btn-boost d-none">Yes, Boost</button>
+                <button type="button" class="btn btn-success modal-btn-deactivate d-none">Yes, Deactivate</button>
             </div>
         </div>
     </div>
