@@ -243,7 +243,8 @@ layout: manage_ads
 
             <div class="selected-options-container d-none d-md-flex flex-column flex-md-row align-items-center">
 
-                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#selectedAdsActionsModal" id="deleteSelectedAdsBtn">
+                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#selectedAdsActionsModal"
+                        id="deleteSelectedAdsBtn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9.12634 17.0237L12.0152 14.1348L14.9041 17.0237L16.4597 15.4681L13.5708 12.5792L16.4597 9.69035L14.9041 8.13479L12.0152 11.0237L9.12634 8.13479L7.57079 9.69035L10.4597 12.5792L7.57079 15.4681L9.12634 17.0237ZM6.45968 22.0237C5.84857 22.0237 5.32542 21.8061 4.89023 21.3709C4.45505 20.9357 4.23745 20.4126 4.23745 19.8015V5.35702H3.12634V3.13479H8.6819V2.02368H15.3486V3.13479H20.9041V5.35702H19.793V19.8015C19.793 20.4126 19.5754 20.9357 19.1402 21.3709C18.705 21.8061 18.1819 22.0237 17.5708 22.0237H6.45968Z"
                               fill="white"/>
@@ -253,10 +254,12 @@ layout: manage_ads
                 <button id="sharePopover" class="btn btn-dark">
                     <i class="bi bi-share-fill me-2"></i>SHARE selected ads
                 </button>
-                <button class="btn btn-dark" id="boostSelectedAd" data-bs-toggle="modal" data-bs-target="#selectedAdsActionsModal">
+                <button class="btn btn-dark" id="boostSelectedAd" data-bs-toggle="modal"
+                        data-bs-target="#selectedAdsActionsModal">
                     <i class="bi bi-rocket-takeoff-fill me-2"></i>BOOST selected ads
                 </button>
-                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#selectedAdsActionsModal" id="deactivateSelectedAdsBtn">
+                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#selectedAdsActionsModal"
+                        id="deactivateSelectedAdsBtn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <mask id="mask0_1_1574" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
                               width="24" height="24">
@@ -451,7 +454,10 @@ layout: manage_ads
 
                                             <!-- Info icon -->
                                             <span class="info-icon">
-                                                <i class="bi bi-info-circle-fill"></i>
+                                                <i data-bs-toggle="tooltip"
+                                                   data-bs-custom-class="custom-tooltip"
+                                                   data-bs-title="Click the Promote button to boost visibility and generate more leads."
+                                                        class="bi bi-info-circle-fill"></i>
                                             </span>
                                         </div>
                                     </div>
@@ -474,7 +480,10 @@ layout: manage_ads
 
                                             <!-- Info icon -->
                                             <span class="ms-2 info-icon">
-                                <i class="bi bi-info-circle-fill"></i>
+                                <i data-bs-toggle="tooltip"
+                                   data-bs-custom-class="custom-tooltip"
+                                   data-bs-title="Click the Boost button to boost visibility and generate more leads."
+                                        class="bi bi-info-circle-fill"></i>
                             </span>
                                             <!-- Dropdown icon (only visible on desktop) -->
                                             <!--                            <span class="ms-2 d-none d-md-block dropdown-icon"><i class="fa-solid fa-chevron-down"></i></span>-->
@@ -686,7 +695,10 @@ layout: manage_ads
                                                             <p class="toggle-subtitle">Always enabled</p>
                                                         </div>
                                                         <div class="d-flex align-items-center">
-                                                            <i class="bi bi-info-circle-fill text-secondary me-2 mt-1"></i>
+                                                            <i data-bs-toggle="tooltip"
+                                                               data-bs-custom-class="custom-tooltip"
+                                                               data-bs-title="Contact request form description"
+                                                                    class="bi bi-info-circle-fill text-secondary me-2 mt-1"></i>
                                                             <div class="form-check form-switch">
                                                                 <input class="form-check-input" type="checkbox"
                                                                        role="switch"
@@ -1108,7 +1120,10 @@ layout: manage_ads
 
                                 <!-- Info icon -->
                                 <span class="info-icon">
-                                <i class="bi bi-info-circle-fill"></i>
+                                <i data-bs-toggle="tooltip"
+                                   data-bs-custom-class="custom-tooltip"
+                                   data-bs-title="Click the Promote button to boost visibility and generate more leads."
+                                   class="bi bi-info-circle-fill"></i>
                             </span>
                             </div>
                         </div>
@@ -1132,7 +1147,10 @@ layout: manage_ads
 
                                 <!-- Info icon -->
                                 <span class="ms-2 info-icon">
-                                <i class="bi bi-info-circle-fill"></i>
+                                <i data-bs-toggle="tooltip"
+                                   data-bs-custom-class="custom-tooltip"
+                                   data-bs-title="Click the Boost button to boost visibility and generate more leads."
+                                   class="bi bi-info-circle-fill"></i>
                             </span>
                                 <!-- Dropdown icon (only visible on desktop) -->
                                 <!--                            <span class="ms-2 d-none d-md-block dropdown-icon"><i class="fa-solid fa-chevron-down"></i></span>-->
@@ -1356,7 +1374,10 @@ layout: manage_ads
                                             <p class="toggle-subtitle">Always enabled</p>
                                         </div>
                                         <div class="d-flex align-items-center">
-                                            <i class="bi bi-info-circle-fill text-secondary me-2 mt-1"></i>
+                                            <i data-bs-toggle="tooltip"
+                                               data-bs-custom-class="custom-tooltip"
+                                               data-bs-title="Contact request description"
+                                               class="bi bi-info-circle-fill text-secondary me-2 mt-1"></i>
                                             <div class="form-check form-switch">
                                                 <input class="form-check-input" type="checkbox" role="switch"
                                                        id="contactToggle"
@@ -1512,17 +1533,148 @@ layout: manage_ads
                                     <div class="swiper-button-prev max-ad-swiper-button-prev"></div>
                                     <div class="swiper-button-next max-ad-swiper-button-next"></div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+<!--            pendingPaymentsSection-->
+
+            <div class="grid-ad-item single-grid-item pending-payment-item mt-5">
+<!--                class for approval is:   pending-approval   -->
+
+                <div class="ad-content">
+                    <div class="ad-image">
+                        <img src="../assets/img/mng_sources/property.png" alt="House for sale">
+                    </div>
+                    <div class="ad-details">
+                        <div class="label-action-container">
+                            <div class="label-container">
+                                <span class="label label-orange">SALE</span>
+                                <span class="label label-dark">HOUSE</span>
+                            </div>
+
+                            <div class="action-container d-none d-md-flex">
+                                <i class="bi bi-star-fill active"></i>
+                                <i class="bi bi-pin-fill active"></i>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 col-md">
+                                <h2 class="ad-heading">3 Bedrooms house for sale in Colombo 4 for Rs. 45 million</h2>
+                                <div class="icon-item">
+                                    <div class="icon-circle">
+                                        <i class="bi bi-geo-alt-fill"></i>
+                                    </div>
+                                    <span class="fw-bold">Colombo 5</span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-auto">
+                                <div class="pending-payment-box">
+                                    <div class="content">
+                                        <span class="icon">
+                                            <i class="bi bi-shield-exclamation"></i>
+                                        </span>
+                                        <div>
+                                            <div class="title">
+                                                Pending payment.
+                                            </div>
+                                            <p>
+                                                Please click the button to activate
+                                                the ad
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="text-center text-md-end">
+                                        <a href="#" class="btn">
+                                        Pay Now
+                                            <i class="bi bi-caret-right-fill"></i>
+                                    </a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Collapsible Content Section -->
+                <div class="grid-ad-details collapsible-content">
+                    <div class="row details-row mx-0 gx-0">
+                        <!-- Left Column (col-9) -->
+                        <div class="col-12 col-md">
+                            <div class="d-flex flex-column h-100">
+                                <!-- Second Row: Ad Details -->
+                                <div class="ad-details-container d-flex">
+                                    <!-- Ad ID -->
+                                    <div class="detail-item">
+                                        <div class="detail-icon">
+                                            <i class="bi bi-hash"></i>
+                                        </div>
+                                        <div class="detail-info">
+                                            <div class="detail-label">Ad ID</div>
+                                            <div class="detail-value">#5563006</div>
+                                        </div>
+                                    </div>
+                                    <!-- Ad Posted On -->
+
+                                    <div class="detail-item">
+                                        <div class="detail-icon">
+                                            <i class="bi bi-calendar"></i>
+                                        </div>
+                                        <div class="detail-info">
+                                            <div class="detail-label">Ad posted on</div>
+                                            <div class="detail-value">01-03-2024</div>
+                                        </div>
+                                    </div>
+                                    <!-- Last Updated On -->
+
+                                    <div class="detail-item">
+                                        <div class="detail-icon">
+                                            <i class="bi bi-clock-history"></i>
+                                        </div>
+                                        <div class="detail-info">
+                                            <div class="detail-label">Last updated on</div>
+                                            <div class="detail-value">01-03-2024</div>
+                                        </div>
+                                    </div>
+                                    <!-- Last Boosted -->
+                                    <div class="detail-item">
+                                        <div class="detail-icon">
+                                            <i class="bi bi-rocket-takeoff-fill"></i>
+                                        </div>
+                                        <div class="detail-info">
+                                            <div class="detail-label">Last Boosted</div>
+                                            <div class="detail-value">01 hr ago</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column (col-3) - Action Buttons -->
+                        <div class="col-12 col-md-auto px-md-3 px-lg-4 px-xl-5">
+                            <div class="d-flex flex-column h-100 row-gap-2">
+                                <!-- Edit Button -->
+                                <button class="btn action-btn edit-btn">
+                                    <i class="bi bi-pencil-square"></i> Edit
+                                </button>
+
+                                <!-- Delete Button -->
+                                <button class="btn action-btn delete-btn" data-bs-toggle="modal"
+                                        data-bs-target="#closeAdModal">
+                                    <i class="bi bi-trash"></i> Delete
+                                </button>
                             </div>
                         </div>
                     </div>
 
+
                 </div>
-
-
             </div>
 
-            <!--            grid ad item 2nd for Upgraded to feature property container-->
 
 
             <!--          for pagination-->
@@ -2224,7 +2376,10 @@ layout: manage_ads
 
                     <!-- Info icon -->
                     <span class="info-icon">
-                                <i class="bi bi-info-circle-fill"></i>
+                                <i data-bs-toggle="tooltip"
+                                   data-bs-custom-class="custom-tooltip"
+                                   data-bs-title="Click the Promote button to boost visibility and generate more leads."
+                                        class="bi bi-info-circle-fill"></i>
                             </span>
                 </div>
 
@@ -2245,7 +2400,10 @@ layout: manage_ads
                         <h2 class="header-text">
                             Your ad has dropped to page 5. Boost your ad now to bring it back to top of the list.
                         </h2>
-                        <i class="bi bi-info-circle-fill"></i>
+                        <i data-bs-toggle="tooltip"
+                           data-bs-custom-class="custom-tooltip"
+                           data-bs-title="Click the Boost button to boost visibility and generate more leads."
+                                class="bi bi-info-circle-fill"></i>
                     </div>
 
                     <div class="status-info">
@@ -2406,7 +2564,8 @@ layout: manage_ads
 
 <!--popup for delete, boost, deactivate-->
 <!-- Actions Modal -->
-<div class="modal fade" id="selectedAdsActionsModal" tabindex="-1" aria-labelledby="actionsModalLabel" aria-hidden="true">
+<div class="modal fade" id="selectedAdsActionsModal" tabindex="-1" aria-labelledby="actionsModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
