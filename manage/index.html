@@ -1539,7 +1539,7 @@ layout: manage_ads
                 </div>
             </div>
 
-<!--            pendingPaymentsSection-->
+            <!--            pendingPaymentsSection-->
 
             <div class="grid-ad-item single-grid-item pending-payment-item mt-5">
 <!--                class for approval is:   pending-approval   -->
@@ -2411,7 +2411,7 @@ layout: manage_ads
                         <div class="last-boosted">Last boosted: <strong>01-03-2024 09:30 PM</strong></div>
                     </div>
 
-                    <button class="promote-btn boost-btn btn px-4">
+                    <button class="promote-btn boost-btn btn px-4" data-bs-toggle="modal" data-bs-target="#boostConfirmModal">
                         <i class="bi bi-rocket-takeoff-fill rocket-icon"></i>
                         BOOST AD
                     </button>
@@ -2597,6 +2597,24 @@ layout: manage_ads
                 <button type="button" class="btn btn-success modal-btn-delete d-none">Yes, Delete</button>
                 <button type="button" class="btn btn-success modal-btn-boost d-none">Yes, Boost</button>
                 <button type="button" class="btn btn-success modal-btn-deactivate d-none">Yes, Deactivate</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Boost Confirm Modal -->
+<div class="modal fade boost-confirm-modal" id="boostConfirmModal" tabindex="-1" aria-labelledby="boostConfirmModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <i class="bi bi-exclamation-circle-fill mb-5"></i>
+                <h5 class="modal-title mb-0" id="boostConfirmModalLabel">You are about to Boost the ad</h5>
+                <small class="text-muted d-block">your total credit amount is 2024 and you will be charged 1 credit per boost</small>
+            </div>
+            <div class="modal-footer py-2 gap-2">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">no, cancel boost!</button>
+                <button type="button" class="btn promote-btn boost-btn">Yes Boost it!</button>
             </div>
         </div>
     </div>

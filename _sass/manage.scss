@@ -3010,6 +3010,33 @@ $header-bg: #f1f3f5;
   }
 }
 
+.boost-confirm-modal{
+  i{
+    font-size: 30px;
+    color: #FE993F;
+  }
+  .modal-footer{
+    .btn{
+      font-size: 12px;
+      font-weight: 500;
+      padding: 10px 12px;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .boost-btn {
+      background-color: $color-boost-bg;
+      color: #fff;
+      border: 1px solid $color-boost-bg;
+
+      &:hover {
+
+      }
+    }
+  }
+
+}
+
 // Form switch custom styling
 .form-switch {
   .form-check-input {
