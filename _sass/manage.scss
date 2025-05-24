@@ -193,7 +193,6 @@ body {
     //height: 50px;
     //border-radius: 6px;
     border: none;
-    padding: 12px 9px;
     font-size: 14px;
     font-weight: 400;
     //line-height: 20px;
@@ -203,6 +202,10 @@ body {
     line-height: 20px;
     letter-spacing: 0;
     color: #696974;
+
+    @media (min-width: 768px) {
+      padding: 12px 9px;
+    }
 
     &::placeholder {
       color: #6c757d;
@@ -218,8 +221,10 @@ body {
     font-size: 14px;
     //padding: 14px 24px;
     line-height: 16px;
-    min-height: 44px;
     height: 100%;
+    @media (min-width: 768px) {
+      min-height: 44px;
+    }
   }
 }
 
@@ -981,6 +986,11 @@ $header-bg: #f1f3f5;
       justify-content: space-between;
       align-items: center;
       //flex-wrap: wrap;
+      @media (min-width: 768px) {
+        &:nth-child(2) {
+          //margin-bottom: 0;
+        }
+      }
       @media (max-width: 767.98px) {
         flex-wrap: wrap;
         padding: 12px;
