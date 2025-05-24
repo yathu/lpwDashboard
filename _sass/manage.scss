@@ -977,6 +977,14 @@ $header-bg: #f1f3f5;
       height: 100%;
       border: 1px solid #F3E7CA;
       margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      //flex-wrap: wrap;
+      @media (max-width: 767.98px) {
+        flex-wrap: wrap;
+        padding: 12px;
+      }
     }
 
     .stats-card {
@@ -986,7 +994,8 @@ $header-bg: #f1f3f5;
       flex: 1;
 
       @media (max-width: 767.98px) {
-        margin-bottom: 15px;
+        margin-bottom: 12px;
+        flex-basis: 50%;
       }
     }
 
@@ -1066,6 +1075,12 @@ $header-bg: #f1f3f5;
       padding: 16px 8px;
       height: 100%;
       border: 1px solid #D0D9E1;
+
+      @media (max-width: 767.98px) {
+        flex-wrap: wrap;
+        padding: 12px 16px;
+        margin-bottom: 12px;
+      }
     }
 
     .detail-item {
@@ -1076,6 +1091,7 @@ $header-bg: #f1f3f5;
 
       @media (max-width: 767.98px) {
         margin-bottom: 10px;
+        flex-basis: 50%;
       }
     }
 
@@ -1173,6 +1189,13 @@ $header-bg: #f1f3f5;
     margin-top: 10px;
     margin-bottom: 10px;
 
+    >.row{
+      @media (max-width: 767.98px) {
+
+        gap: 12px;
+      }
+    }
+
     // Left column - Features toggle container
     .features-toggle-container {
       background-color: #F7FAFC;
@@ -1190,10 +1213,14 @@ $header-bg: #f1f3f5;
         display: flex;
         align-items: center;
         border-radius: 16px;
-        margin-bottom: 12px;
+        //margin-bottom: 12px;
         transition: all 0.3s ease;
 
         &:last-child {
+          margin-bottom: 0;
+        }
+
+        @media (max-width: 767.98px) {
           margin-bottom: 0;
         }
 
@@ -1207,6 +1234,11 @@ $header-bg: #f1f3f5;
           justify-content: center;
           margin-right: 8px;
           flex-shrink: 0;
+
+          @media (max-width: 767.98px) {
+            width: 32px;
+            height: 32px;
+          }
 
           &.whatsapp-icon {
             background-color: $color-whatsapp-bg;
@@ -1223,6 +1255,10 @@ $header-bg: #f1f3f5;
           img {
             max-width: 24px;
             height: auto;
+
+            @media (max-width: 767.98px) {
+              max-width: 20px;
+            }
           }
         }
 
@@ -1233,7 +1269,7 @@ $header-bg: #f1f3f5;
           .toggle-title {
             font-size: 14px;
             font-weight: 500;
-            margin-bottom: 2px;
+            margin-bottom: 0;
           }
 
           .toggle-subtitle {
@@ -1388,6 +1424,10 @@ $header-bg: #f1f3f5;
     padding: 16px;
     border-radius: 14px;
 
+    @media (max-width: 767.98px) {
+      margin-bottom: 12px;
+    }
+
     .meter-chart-container {
       background-color: #fff;
       border-radius: 14px;
@@ -1398,13 +1438,27 @@ $header-bg: #f1f3f5;
       width: 100%;
       padding: 14px;
 
+      @media (max-width: 767.98px) {
+        margin-bottom: 16px;
+      }
+
       .meter-title {
         font-weight: 600;
         font-size: 16px;
         line-height: 100%;
         letter-spacing: 0.26px;
         text-align: center;
-        margin-bottom: 10px;
+        @media (max-width: 767.98px) {
+          margin-bottom: 10px;
+        }
+      }
+
+      .value{
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: 0.13px;
+        vertical-align: middle;
       }
 
       .badge {
@@ -1415,8 +1469,10 @@ $header-bg: #f1f3f5;
         line-height: 100%;
         letter-spacing: 0.26px;
         //padding: 2px 4px;
-        margin-bottom: 8px;
-        margin-top: -40px;
+        @media (min-width: 768px) {
+          margin-top: -40px;
+          margin-bottom: 8px;
+        }
       }
 
       p {
@@ -1426,6 +1482,18 @@ $header-bg: #f1f3f5;
         letter-spacing: 0.1px;
         text-align: center;
         margin-bottom: 0;
+      }
+      .progress{
+        height: 12px;
+        padding: 3px;
+        @media (max-width: 767.98px) {
+          margin-top: 8px;
+          margin-bottom: 12px;
+        }
+        .progress-bar{
+          border-radius: 25px;
+          background-image: linear-gradient(90deg, #B51418 9.4%, #D67924 86.75%, #FDCE43 164.1%);
+        }
       }
     }
 
@@ -1726,7 +1794,7 @@ $header-bg: #f1f3f5;
   @media (max-width: 767.98px) {
     .grid-ad-details {
       .details-row {
-
+        order: 2;
       }
 
       .lead-features-section {

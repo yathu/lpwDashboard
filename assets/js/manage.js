@@ -98,6 +98,20 @@ $(document).ready(() => {
             prevEl: '.max-ad-swiper-button-prev',
         },
         allowSlideNext:true,
+        breakpoints: {
+            320:{
+                slidesPerView: 1.3,
+            },
+            576: {
+                slidesPerView: 2.1,
+            },
+            768:{
+                slidesPerView: 2.1,
+            },
+            992: {
+                slidesPerView: 3,
+            }
+        }
     });
 
     //list item toggle

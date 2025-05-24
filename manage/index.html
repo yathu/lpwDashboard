@@ -457,7 +457,7 @@ layout: manage_ads
                                                 <i data-bs-toggle="tooltip"
                                                    data-bs-custom-class="custom-tooltip"
                                                    data-bs-title="Click the Promote button to boost visibility and generate more leads."
-                                                        class="bi bi-info-circle-fill"></i>
+                                                   class="bi bi-info-circle-fill"></i>
                                             </span>
                                         </div>
                                     </div>
@@ -483,7 +483,7 @@ layout: manage_ads
                                 <i data-bs-toggle="tooltip"
                                    data-bs-custom-class="custom-tooltip"
                                    data-bs-title="Click the Boost button to boost visibility and generate more leads."
-                                        class="bi bi-info-circle-fill"></i>
+                                   class="bi bi-info-circle-fill"></i>
                             </span>
                                             <!-- Dropdown icon (only visible on desktop) -->
                                             <!--                            <span class="ms-2 d-none d-md-block dropdown-icon"><i class="fa-solid fa-chevron-down"></i></span>-->
@@ -498,7 +498,7 @@ layout: manage_ads
                                         <div class="col-md-9">
                                             <div class="d-flex flex-column">
                                                 <!-- First Row: Stats Cards -->
-                                                <div class="d-flex justify-content-between align-items-center stats-container">
+                                                <div class="stats-container">
                                                     <div class="stats-card">
                                                         <div class="stats-icon views-icon">
                                                             <i class="bi bi-eye-fill"></i>
@@ -698,7 +698,7 @@ layout: manage_ads
                                                             <i data-bs-toggle="tooltip"
                                                                data-bs-custom-class="custom-tooltip"
                                                                data-bs-title="Contact request form description"
-                                                                    class="bi bi-info-circle-fill text-secondary me-2 mt-1"></i>
+                                                               class="bi bi-info-circle-fill text-secondary me-2 mt-1"></i>
                                                             <div class="form-check form-switch">
                                                                 <input class="form-check-input" type="checkbox"
                                                                        role="switch"
@@ -1182,7 +1182,7 @@ layout: manage_ads
                         <div class="col-md-9">
                             <div class="d-flex flex-column">
                                 <!-- First Row: Stats Cards -->
-                                <div class="d-flex justify-content-between align-items-center stats-container">
+                                <div class="stats-container">
                                     <div class="stats-card">
                                         <div class="stats-icon views-icon">
                                             <i class="bi bi-eye-fill"></i>
@@ -1450,21 +1450,37 @@ layout: manage_ads
 
                     <div class="visibility-meter-section">
                         <div class="row gx-3">
-                            <div class="col-3">
-                                <div class="meter-chart-container">
+                            <div class="col-12 col-md-3">
+                                <div class="meter-chart-container d-flex">
                                     <div class="meter-title">
                                         Visibility Meter
                                     </div>
-                                    {% include agentScoreChart.html %}
-                                    <span class="badge">
-                                    Low Visibility
-                                </span>
+
+                                    <div class="d-flex w-100 flex-md-column align-items-center justify-content-between justify-content-md-center">
+                                        <div class="d-none d-md-block mb-1">
+                                            {% include agentScoreChart.html %}
+                                        </div>
+
+                                        <span class="value d-md-none">
+                                            25%
+                                        </span>
+
+                                        <span class="badge">
+                                        Low Visibility
+                                        </span>
+                                    </div>
+
+                                    <div class="progress w-100 d-md-none" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" style="width: 25%"></div>
+                                    </div>
+
                                     <p>
                                         Only 16% Buyers can see your Property Ad
                                     </p>
                                 </div>
+
                             </div>
-                            <div class="col-9 max-swiper-container">
+                            <div class="col-12 col-md-9 max-swiper-container">
                                 <h6>How to get Maximum Buyers to see your Property Ad</h6>
 
                                 <div class="ad-swiper-container">
@@ -1527,6 +1543,25 @@ layout: manage_ads
                                                 </div>
                                             </div>
 
+                                            <!-- Slide 2 -->
+                                            <div class="swiper-slide">
+                                                <div class="ad-slide blue"
+                                                     style="background-image: url('../assets/img/mng_sources/features/max-property-image.png');">
+                                                    <h2 class="ad-slide-title">Add Property Photos</h2>
+                                                    <div class="ad-badge ad-badge-blue">
+                                                        <div class="ad-badge-icon">
+                                                        <span class="icon-circle">
+                                                            <i class="bi bi-arrow-up-short"></i>
+                                                        </span>
+                                                            <div class="ad-badge-percentage">+50%</div>
+                                                        </div>
+                                                        <div class="ad-badge-content">
+                                                            <div class="ad-badge-text">More Buyers<br>will see Ad</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                     <!-- Navigation buttons -->
@@ -1542,7 +1577,7 @@ layout: manage_ads
             <!--            pendingPaymentsSection-->
 
             <div class="grid-ad-item single-grid-item pending-payment-item mt-5">
-<!--                class for approval is:   pending-approval   -->
+                <!--                class for approval is:   pending-approval   -->
 
                 <div class="ad-content">
                     <div class="ad-image">
@@ -1589,9 +1624,9 @@ layout: manage_ads
                                     </div>
                                     <div class="text-center text-md-end">
                                         <a href="#" class="btn">
-                                        Pay Now
+                                            Pay Now
                                             <i class="bi bi-caret-right-fill"></i>
-                                    </a></div>
+                                        </a></div>
                                 </div>
                             </div>
                         </div>
@@ -1674,7 +1709,6 @@ layout: manage_ads
 
                 </div>
             </div>
-
 
 
             <!--          for pagination-->
@@ -2379,7 +2413,7 @@ layout: manage_ads
                                 <i data-bs-toggle="tooltip"
                                    data-bs-custom-class="custom-tooltip"
                                    data-bs-title="Click the Promote button to boost visibility and generate more leads."
-                                        class="bi bi-info-circle-fill"></i>
+                                   class="bi bi-info-circle-fill"></i>
                             </span>
                 </div>
 
@@ -2403,7 +2437,7 @@ layout: manage_ads
                         <i data-bs-toggle="tooltip"
                            data-bs-custom-class="custom-tooltip"
                            data-bs-title="Click the Boost button to boost visibility and generate more leads."
-                                class="bi bi-info-circle-fill"></i>
+                           class="bi bi-info-circle-fill"></i>
                     </div>
 
                     <div class="status-info">
@@ -2411,7 +2445,8 @@ layout: manage_ads
                         <div class="last-boosted">Last boosted: <strong>01-03-2024 09:30 PM</strong></div>
                     </div>
 
-                    <button class="promote-btn boost-btn btn px-4" data-bs-toggle="modal" data-bs-target="#boostConfirmModal">
+                    <button class="promote-btn boost-btn btn px-4" data-bs-toggle="modal"
+                            data-bs-target="#boostConfirmModal">
                         <i class="bi bi-rocket-takeoff-fill rocket-icon"></i>
                         BOOST AD
                     </button>
@@ -2603,17 +2638,20 @@ layout: manage_ads
 </div>
 
 <!-- Boost Confirm Modal -->
-<div class="modal fade boost-confirm-modal" id="boostConfirmModal" tabindex="-1" aria-labelledby="boostConfirmModalLabel"
+<div class="modal fade boost-confirm-modal" id="boostConfirmModal" tabindex="-1"
+     aria-labelledby="boostConfirmModalLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body text-center">
                 <i class="bi bi-exclamation-circle-fill mb-5"></i>
                 <h5 class="modal-title mb-0" id="boostConfirmModalLabel">You are about to Boost the ad</h5>
-                <small class="text-muted d-block">your total credit amount is 2024 and you will be charged 1 credit per boost</small>
+                <small class="text-muted d-block">your total credit amount is 2024 and you will be charged 1 credit per
+                    boost</small>
             </div>
             <div class="modal-footer py-2 gap-2">
-                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">no, cancel boost!</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">no, cancel boost!
+                </button>
                 <button type="button" class="btn promote-btn boost-btn">Yes Boost it!</button>
             </div>
         </div>
