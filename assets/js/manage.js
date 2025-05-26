@@ -341,40 +341,50 @@ $(document).ready(() => {
 //     });
 
 
-        // Button click handlers
-        $('#deleteSelectedAdsBtn').click(function() {
-            $('#selectedAdsActionsModal .modal-title').text('Confirm Delete');
-            $('#selectedAdsActionsModal .modal-content-delete').removeClass('d-none');
-            $('#selectedAdsActionsModal .modal-content-boost, #selectedAdsActionsModal .modal-content-deactivate').addClass('d-none');
-            $('#selectedAdsActionsModal .modal-btn-delete').removeClass('d-none');
-            $('#selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-deactivate').addClass('d-none');
-        });
+    // Button click handlers
+    $('#deleteSelectedAdsBtn').click(function () {
+        $('#selectedAdsActionsModal .modal-title').text('Confirm Delete');
+        $('#selectedAdsActionsModal .modal-content-delete').removeClass('d-none');
+        $('#selectedAdsActionsModal .modal-content-boost, #selectedAdsActionsModal .modal-content-deactivate, #selectedAdsActionsModal .modal-content-activate').addClass('d-none');
+        $('#selectedAdsActionsModal .modal-btn-delete').removeClass('d-none');
+        $('#selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-deactivate, #selectedAdsActionsModal .modal-btn-activate').addClass('d-none');
+    });
 
-        $('#boostSelectedAd').click(function() {
-            $('#selectedAdsActionsModal .modal-title').text('Confirm Boost');
-            $('#selectedAdsActionsModal .modal-content-boost').removeClass('d-none');
-            $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-deactivate').addClass('d-none');
-            $('#selectedAdsActionsModal .modal-btn-boost').removeClass('d-none');
-            $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-deactivate').addClass('d-none');
-        });
+    $('#boostSelectedAd').click(function () {
+        $('#selectedAdsActionsModal .modal-title').text('Confirm Boost');
+        $('#selectedAdsActionsModal .modal-content-boost').removeClass('d-none');
+        $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-deactivate, #selectedAdsActionsModal .modal-content-activate').addClass('d-none');
+        $('#selectedAdsActionsModal .modal-btn-boost').removeClass('d-none');
+        $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-deactivate, #selectedAdsActionsModal .modal-btn-activate').addClass('d-none');
+    });
 
-        $('#deactivateSelectedAdsBtn').click(function() {
-            $('#selectedAdsActionsModal .modal-title').text('Confirm Deactivate');
-            $('#selectedAdsActionsModal .modal-content-deactivate').removeClass('d-none');
-            $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-boost').addClass('d-none');
-            $('#selectedAdsActionsModal .modal-btn-deactivate').removeClass('d-none');
-            $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost').addClass('d-none');
-        });
+    $('#deactivateSelectedAdsBtn').click(function () {
+        $('#selectedAdsActionsModal .modal-title').text('Confirm Deactivate');
+        $('#selectedAdsActionsModal .modal-content-deactivate').removeClass('d-none');
+        $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-boost, #selectedAdsActionsModal .modal-content-activate').addClass('d-none');
+        $('#selectedAdsActionsModal .modal-btn-deactivate').removeClass('d-none');
+        $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-activate').addClass('d-none');
+    });
 
     // Handle switch toggle for deactivation
-    $('.custom-switch input[type="checkbox"]').on('change', function() {
+    $('.custom-switch input[type="checkbox"]').on('change', function () {
         if (!$(this).is(':checked')) {
             // If switch is turned off, show deactivate confirmation modal
             $('#selectedAdsActionsModal .modal-title').text('Confirm Deactivate');
             $('#selectedAdsActionsModal .modal-content-deactivate').removeClass('d-none');
-            $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-boost').addClass('d-none');
+            $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-boost, #selectedAdsActionsModal .modal-content-activate').addClass('d-none');
             $('#selectedAdsActionsModal .modal-btn-deactivate').removeClass('d-none');
-            $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost').addClass('d-none');
+            $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-activate').addClass('d-none');
+
+            // Show the modal
+            $('#selectedAdsActionsModal').modal('show');
+        } else {
+            // If switch is turned on, show activate confirmation modal
+            $('#selectedAdsActionsModal .modal-title').text('Confirm Activate');
+            $('#selectedAdsActionsModal .modal-content-Activate').removeClass('d-none');
+            $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-boost, #selectedAdsActionsModal .modal-content-deactivate').addClass('d-none');
+            $('#selectedAdsActionsModal .modal-btn-activate').removeClass('d-none');
+            $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-deactivate').addClass('d-none');
 
             // Show the modal
             $('#selectedAdsActionsModal').modal('show');
@@ -398,10 +408,15 @@ $(document).ready(() => {
             $('#selectedAdsActionsModal').modal('hide');
         });
 
+        $('#selectedAdsActionsModal .modal-btn-activate').click(function() {
+            console.log('activating selected ads...');
+            $('#selectedAdsActionsModal').modal('hide');
+        });
+
         // Reset modal content when modal is hidden
         $('#selectedAdsActionsModal').on('hidden.bs.modal', function() {
-            $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-boost, #selectedAdsActionsModal .modal-content-deactivate').addClass('d-none');
-            $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-deactivate').addClass('d-none');
+            $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-boost, #selectedAdsActionsModal .modal-content-deactivate, #selectedAdsActionsModal .modal-content-Activate').addClass('d-none');
+            $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-deactivate, #selectedAdsActionsModal .modal-btn-activate').addClass('d-none');
         });
 
 
