@@ -97,15 +97,15 @@ $(document).ready(() => {
             nextEl: '.max-ad-swiper-button-next',
             prevEl: '.max-ad-swiper-button-prev',
         },
-        allowSlideNext:true,
+        allowSlideNext: true,
         breakpoints: {
-            320:{
+            320: {
                 slidesPerView: 1.3,
             },
             576: {
                 slidesPerView: 2.1,
             },
-            768:{
+            768: {
                 slidesPerView: 2.1,
             },
             992: {
@@ -128,7 +128,7 @@ $(document).ready(() => {
         // Change the chevron icon direction
         const chevron = element.find('.bi-chevron-down, .bi-chevron-up');
 
-        console.log("chevron==>",chevron);
+        console.log("chevron==>", chevron);
 
 
         if (chevron) {
@@ -142,9 +142,9 @@ $(document).ready(() => {
         slidesPerView: 'auto',
         spaceBetween: 10,
         loop: true,
-        navigation:{
-            nextEl:'.upgrade-ad-swiper-button-next',
-            prevEl:'.upgrade-ad-swiper-button-prev',
+        navigation: {
+            nextEl: '.upgrade-ad-swiper-button-next',
+            prevEl: '.upgrade-ad-swiper-button-prev',
         }
     });
 
@@ -153,9 +153,9 @@ $(document).ready(() => {
         slidesPerView: 'auto',
         spaceBetween: 10,
         loop: true,
-        navigation:{
-            nextEl:'.buy-ad-swiper-button-next',
-            prevEl:'.buy-ad-swiper-button-prev',
+        navigation: {
+            nextEl: '.buy-ad-swiper-button-next',
+            prevEl: '.buy-ad-swiper-button-prev',
         }
     });
 
@@ -173,28 +173,28 @@ $(document).ready(() => {
     const timeSlot2 = document.getElementById('timeSlot2');
 
     // Show/Hide Auto Boost Popup
-    showAutoBoostBtn.addEventListener('click', function() {
+    showAutoBoostBtn.addEventListener('click', function () {
         autoBoostPopup.style.display = 'flex';
     });
 
-    closePopupBtn.addEventListener('click', function() {
+    closePopupBtn.addEventListener('click', function () {
         autoBoostPopup.style.display = 'none';
     });
 
-    closePopupBtnBottom.addEventListener('click', function() {
+    closePopupBtnBottom.addEventListener('click', function () {
         autoBoostPopup.style.display = 'none';
     });
 
     // Day buttons toggle functionality
     dayButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             this.classList.toggle('active');
             updateSelectAllCheckbox();
         });
     });
 
     // Select all days checkbox functionality
-    selectAllCheckbox.addEventListener('change', function() {
+    selectAllCheckbox.addEventListener('change', function () {
         dayButtons.forEach(button => {
             if (this.checked) {
                 button.classList.add('active');
@@ -205,7 +205,7 @@ $(document).ready(() => {
     });
 
     // Save Changes Button
-    saveChangesBtn.addEventListener('click', function() {
+    saveChangesBtn.addEventListener('click', function () {
         // Get selected days
         const selectedDays = Array.from(dayButtons)
             .filter(btn => btn.classList.contains('active'))
@@ -238,7 +238,7 @@ $(document).ready(() => {
     });
 
     // Toggle Auto Boost Switch
-    autoBoostSwitch.addEventListener('change', function() {
+    autoBoostSwitch.addEventListener('change', function () {
         const scheduleDisplayElement = document.querySelector('.schedule-display');
         if (this.checked) {
             scheduleDisplayElement.style.display = 'flex';
@@ -257,7 +257,7 @@ $(document).ready(() => {
     const toggleSwitches = document.querySelectorAll('input[type="checkbox"]');
 
     toggleSwitches.forEach(el => {
-        el.addEventListener('change', function() {
+        el.addEventListener('change', function () {
             console.log('Switch state:', this.checked ?
                 this.nextElementSibling.querySelector('.on-text').textContent :
                 this.nextElementSibling.querySelector('.off-text').textContent);
@@ -395,34 +395,34 @@ $(document).ready(() => {
 
 
     // Action button handlers
-        $('#selectedAdsActionsModal .modal-btn-delete').click(function() {
-            console.log('Deleting selected ads...');
-            $('#selectedAdsActionsModal').modal('hide');
-        });
+    $('#selectedAdsActionsModal .modal-btn-delete').click(function () {
+        console.log('Deleting selected ads...');
+        $('#selectedAdsActionsModal').modal('hide');
+    });
 
-        $('#selectedAdsActionsModal .modal-btn-boost').click(function() {
-            console.log('Boosting selected ads...');
-            $('#selectedAdsActionsModal').modal('hide');
-        });
+    $('#selectedAdsActionsModal .modal-btn-boost').click(function () {
+        console.log('Boosting selected ads...');
+        $('#selectedAdsActionsModal').modal('hide');
+    });
 
-        $('#selectedAdsActionsModal .modal-btn-deactivate').click(function() {
-            console.log('Deactivating selected ads...');
-            $('#selectedAdsActionsModal').modal('hide');
-        });
+    $('#selectedAdsActionsModal .modal-btn-deactivate').click(function () {
+        console.log('Deactivating selected ads...');
+        $('#selectedAdsActionsModal').modal('hide');
+    });
 
-        $('#selectedAdsActionsModal .modal-btn-activate').click(function() {
-            console.log('activating selected ads...');
-            $('#selectedAdsActionsModal').modal('hide');
-        });
+    $('#selectedAdsActionsModal .modal-btn-activate').click(function () {
+        console.log('activating selected ads...');
+        $('#selectedAdsActionsModal').modal('hide');
+    });
 
-        // Reset modal content when modal is hidden
-        $('#selectedAdsActionsModal').on('hidden.bs.modal', function() {
-            $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-boost, #selectedAdsActionsModal .modal-content-deactivate, #selectedAdsActionsModal .modal-content-Activate').addClass('d-none');
-            $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-deactivate, #selectedAdsActionsModal .modal-btn-activate').addClass('d-none');
-        });
+    // Reset modal content when modal is hidden
+    $('#selectedAdsActionsModal').on('hidden.bs.modal', function () {
+        $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-boost, #selectedAdsActionsModal .modal-content-deactivate, #selectedAdsActionsModal .modal-content-Activate').addClass('d-none');
+        $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-deactivate, #selectedAdsActionsModal .modal-btn-activate').addClass('d-none');
+    });
 
 
-        //social media popover
+    //social media popover
 
     // Initialize all popovers
     let shareButton = $('#sharePopover');
@@ -442,7 +442,7 @@ $(document).ready(() => {
     });
 
     // Close popover when clicking outside
-    $(document).on('click', function(e) {
+    $(document).on('click', function (e) {
         if (!$(e.target).closest('[data-bs-toggle="popover"]').length &&
             !$(e.target).closest('.popover').length) {
             shareButton.popover('hide');
@@ -450,12 +450,32 @@ $(document).ready(() => {
     });
 
     // Prevent popover from closing when clicking inside it
-    $(document).on('click', '.popover', function(e) {
+    $(document).on('click', '.popover', function (e) {
         e.stopPropagation();
     });
 
     //tooltip default code
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+    // const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+    // const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+
+
+    // new bootstrap.Popover('.dot-popover', {
+    //     placement: 'bottom',
+    //     html: true,
+    //     template: `
+    //                          <div class="popover" role="tooltip">
+    //                             <div class="popover-body">
+    //                               <div class="d-flex gap-1 justify-content-space-between p-1">
+    //                                 <i class="bi bi-star-fill"></i>
+    //                                 <i class="bi bi-pin-fill"></i>
+    //                                 <i class="bi bi-share-fill"></i>
+    //                               </div>
+    //                             </div>
+    //                           </div>
+    //                         `
+    // });
 
 });
