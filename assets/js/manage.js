@@ -117,9 +117,11 @@ $(document).ready(() => {
     //list item toggle
 
     const listItem = $('.property-item');
+    const listItemHeader = $('.property-item .header-row');
 
-    $(listItem).on('click', function () {
-        const element = $(this);
+
+    $(listItemHeader).on('click', function () {
+        const element = listItem;
 
         $(element).toggleClass('expanded');
 
