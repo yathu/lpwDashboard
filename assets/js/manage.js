@@ -142,6 +142,20 @@ $(document).ready(() => {
         slidesPerView: 'auto',
         spaceBetween: 10,
         loop: true,
+        breakpoints: {
+            // when window width is >= 320px
+            320: {
+                slidesPerView: 1.3,
+            },
+            // when window width is >= 480px
+            480: {
+                slidesPerView: 1.5,
+            },
+            // when window width is >= 768px
+            768: {
+                slidesPerView: 'auto',
+            },
+        },
         navigation: {
             nextEl: '.upgrade-ad-swiper-button-next',
             prevEl: '.upgrade-ad-swiper-button-prev',
@@ -153,6 +167,20 @@ $(document).ready(() => {
         slidesPerView: 'auto',
         spaceBetween: 10,
         loop: true,
+        breakpoints: {
+            // when window width is >= 320px
+            320: {
+                slidesPerView: 1.3,
+            },
+            // when window width is >= 480px
+            480: {
+                slidesPerView: 1.5,
+            },
+            // when window width is >= 768px
+            768: {
+                slidesPerView: 'auto',
+            },
+        },
         navigation: {
             nextEl: '.buy-ad-swiper-button-next',
             prevEl: '.buy-ad-swiper-button-prev',
@@ -175,6 +203,7 @@ $(document).ready(() => {
     // Show/Hide Auto Boost Popup
     showAutoBoostBtn.addEventListener('click', function () {
         autoBoostPopup.style.display = 'flex';
+
     });
 
     closePopupBtn.addEventListener('click', function () {
@@ -458,24 +487,12 @@ $(document).ready(() => {
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
-    // const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-    // const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+    const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 
-
-    // new bootstrap.Popover('.dot-popover', {
-    //     placement: 'bottom',
-    //     html: true,
-    //     template: `
-    //                          <div class="popover" role="tooltip">
-    //                             <div class="popover-body">
-    //                               <div class="d-flex gap-1 justify-content-space-between p-1">
-    //                                 <i class="bi bi-star-fill"></i>
-    //                                 <i class="bi bi-pin-fill"></i>
-    //                                 <i class="bi bi-share-fill"></i>
-    //                               </div>
-    //                             </div>
-    //                           </div>
-    //                         `
+    // const popoverBtn = $('.dot-popover');
+    // const popover = new bootstrap.Popover(popoverBtn,{
+    //     trigger: 'click',
     // });
 
 });

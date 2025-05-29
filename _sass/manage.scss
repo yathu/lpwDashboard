@@ -403,7 +403,7 @@ $header-bg: #f1f3f5;
 
 // Data table item component
 .property-item {
-  @media (max-width: 767.98px) {
+  @media (max-width: 991.98px) {
     display: none;
   }
 
@@ -2633,6 +2633,15 @@ $header-bg: #f1f3f5;
       .swiper-button-next {
         margin-right: -19px;
       }
+
+      @media (max-width: 767.98px) {
+        padding: 0;
+
+        .swiper-button-prev, .swiper-button-next {
+          display: none;
+        }
+      }
+
     }
   }
 }
@@ -2899,6 +2908,7 @@ $header-bg: #f1f3f5;
     padding: 16px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     position: relative;
+    transition: height 1s ease-in-out;
   }
 
   .popup-header {
@@ -3360,4 +3370,18 @@ $header-bg: #f1f3f5;
 .custom-tooltip {
   //--bs-tooltip-bg: #ff0000;
   //--bs-tooltip-color: var(--bs-white);
+}
+
+.mobile-popover{
+  margin: -8px;
+  i{
+    color: #e2eaef;
+    font-size: 20px;
+  }
+  .bi-star-fill.active{
+    color: #ffcf4b;
+  }
+  .bi-pin-fill.active{
+    color: #4ab26c;
+  }
 }

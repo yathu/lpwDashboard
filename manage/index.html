@@ -275,7 +275,7 @@ layout: manage_ads
             </div>
 
             <!-- Property Header Component -->
-            <div class="property-header d-none d-md-block py-1">
+            <div class="property-header d-none d-lg-block py-1">
                 <div class="mx-0 row gx-3">
                     <div class="col-2">
                         Title <i class="bi bi-chevron-expand"></i>
@@ -977,8 +977,14 @@ layout: manage_ads
                             </div>
                         </label>
 
-                        <i class="bi bi-three-dots-vertical dot-popover" data-bs-toggle="popover"></i>
+                        <i class="bi bi-three-dots-vertical dot-popover" data-bs-toggle="popover"
+                           data-bs-placement="bottom" data-bs-html="true"
+                           data-bs-content='<div class="mobile-popover">
+                           <a href="#"><i class="bi bi-pin-fill active"></i></a>
+                           <a class="mx-3" href="#"><i class="bi bi-star-fill active"></i></a>
+                           <a href="#"><i class="bi bi-share-fill"></i></a></div>'>
 
+                        </i>
                     </div>
                 </div>
 
@@ -1062,7 +1068,14 @@ layout: manage_ads
                             </div>
                         </label>
 
-                        <i class="bi bi-three-dots-vertical"></i>
+                        <i class="bi bi-three-dots-vertical dot-popover" data-bs-toggle="popover"
+                           data-bs-placement="bottom" data-bs-html="true"
+                           data-bs-content='<div class="mobile-popover">
+                           <a href="#"><i class="bi bi-pin-fill active"></i></a>
+                           <a class="mx-3" href="#"><i class="bi bi-star-fill active"></i></a>
+                           <a href="#"><i class="bi bi-share-fill"></i></a></div>'>
+
+                        </i>
 
                     </div>
                 </div>
@@ -2432,7 +2445,7 @@ layout: manage_ads
 </div>
 
 <!--featured ad modal-->
-<div class="modal fade featured-ad-modal" id="featuredAdModal" tabindex="-1"
+<div class="modal fade featured-ad-modal slide-up" id="featuredAdModal" tabindex="-1"
      aria-labelledby="featuredAdModalLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -2496,7 +2509,7 @@ layout: manage_ads
 </div>
 
 
-<div class="modal fade boost-ad-modal" id="boostAdModal" tabindex="-1" aria-labelledby="boostAdModalLabel">
+<div class="modal fade boost-ad-modal slide-up" id="boostAdModal" tabindex="-1" aria-labelledby="boostAdModalLabel">
     <div class="modal-dialog modal-dialog-centered boost-ad-modal">
         <div class="modal-content">
             <div class="modal-body p-3">
@@ -2552,7 +2565,7 @@ layout: manage_ads
 </div>
 
 <!-- Auto Boost Popup - initially hidden -->
-<div class="auto-boost-popup" id="autoBoostPopup" style="display: none;">
+<div class="auto-boost-popup slide-up" id="autoBoostPopup" style="display: none;">
     <div class="popup-content">
         <div class="popup-header">
             <h3 class="popup-title">Auto Boost Set Standard Hours</h3>
@@ -2627,7 +2640,7 @@ layout: manage_ads
 </div>
 
 <!-- Delete Modal -->
-<div class="modal fade" id="closeAdModal" tabindex="-1" aria-labelledby="closeAdModalLabel" aria-hidden="true">
+<div class="modal fade slide-up" id="closeAdModal" tabindex="-1" aria-labelledby="closeAdModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content close-ad-modal">
             <div class="modal-header bg-light-success">
@@ -2671,7 +2684,7 @@ layout: manage_ads
 
 <!--popup for delete, boost, deactivate-->
 <!-- Actions Modal -->
-<div class="modal fade" id="selectedAdsActionsModal" tabindex="-1" aria-labelledby="actionsModalLabel"
+<div class="modal fade slide-up" id="selectedAdsActionsModal" tabindex="-1" aria-labelledby="actionsModalLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -2717,7 +2730,7 @@ layout: manage_ads
 </div>
 
 <!-- Boost Confirm Modal -->
-<div class="modal fade boost-confirm-modal" id="boostConfirmModal" tabindex="-1"
+<div class="modal fade boost-confirm-modal slide-up" id="boostConfirmModal" tabindex="-1"
      aria-labelledby="boostConfirmModalLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
