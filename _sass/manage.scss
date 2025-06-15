@@ -2746,6 +2746,17 @@ $header-bg: #f1f3f5;
   .modal-content {
     border-radius: 20px;
     //overflow: hidden;
+
+    .modal-header{
+      .btn-close{
+        padding: 0 10px 0 0 ;
+        font-size: 11px;
+      }
+      i{
+        font-size: 22px;
+        color: #717171;
+      }
+    }
   }
 
   .boost-item {
@@ -3384,4 +3395,8 @@ $header-bg: #f1f3f5;
   .bi-pin-fill.active{
     color: #4ab26c;
   }
+}
+
+.pointer{
+  cursor: pointer !important;
 }
