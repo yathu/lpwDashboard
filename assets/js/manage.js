@@ -188,7 +188,6 @@ $(document).ready(() => {
     });
 
 
-    const showAutoBoostBtn = document.getElementById('showAutoBoostBtn');
     const autoBoostPopup = document.getElementById('autoBoostPopup');
     const closePopupBtn = document.getElementById('closePopupBtn');
     const closePopupBtnBottom = document.getElementById('closePopupBtnBottom');
@@ -201,9 +200,8 @@ $(document).ready(() => {
     const timeSlot2 = document.getElementById('timeSlot2');
 
     // Show/Hide Auto Boost Popup
-    showAutoBoostBtn.addEventListener('click', function () {
+    $(".showAutoBoostBtn").on('click', function () {
         autoBoostPopup.style.display = 'flex';
-
     });
 
     closePopupBtn.addEventListener('click', function () {
