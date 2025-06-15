@@ -832,14 +832,23 @@ $header-bg: #f1f3f5;
       padding: 10px 16px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: start;
       border: 1px solid #F3E7CA;
       height: 100%;
+
+      @media (min-width: 992px) {
+        justify-content: space-between;
+      }
     }
 
     .ad-card {
       background-color: $color-promote-card;
       gap: 12px;
+      flex-wrap: wrap;
+
+      @media (min-width: 992px) {
+        flex-wrap: nowrap;
+      }
 
       .ad-info {
         gap: 12px;
@@ -873,8 +882,29 @@ $header-bg: #f1f3f5;
       gap: 12px;
       border: 1px solid #F4D4CA;
 
+      @media (min-width: 768px) {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      @media(min-width: 992px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        //width: 100%;
+      }
+
       .boost-info {
         font-size: 13px;
+      }
+      .controls-section{
+        display: flex;
+        align-items: center;
+        gap: 7px;
+
+        .auto-boost-label{
+          font-size: 13px;
+        }
       }
     }
 
