@@ -488,6 +488,49 @@ $(document).ready(() => {
     const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
     const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 
+    // Promote Modal Tab Functionality
+    const tabButtons = document.querySelectorAll('.promote-modal-tabs .tab-btn');
+    const modalSections = document.querySelectorAll('.modal-section');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetSection = this.getAttribute('data-section');
+            
+            // Remove active class from all tabs and sections
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            modalSections.forEach(section => section.classList.remove('active'));
+            
+            // Add active class to clicked tab
+            this.classList.add('active');
+            
+            // Show target section
+            const targetElement = document.getElementById(`${targetSection}-section`);
+            if (targetElement) {
+                targetElement.classList.add('active');
+            }
+        });
+    });
+
+    // Placement card selection functionality
+    const placementCards = document.querySelectorAll('.placement-card');
+    const selectButtons = document.querySelectorAll('.select-btn');
+
+    selectButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const card = this.closest('.placement-card');
+            
+            // Remove selected state from all cards
+            placementCards.forEach(c => {
+                c.classList.remove('selected');
+                c.querySelector('.select-btn').textContent = 'Select';
+            });
+            
+            // Add selected state to clicked card
+            card.classList.add('selected');
+            this.textContent = 'Selected';
+        });
+    });
+
     // const popoverBtn = $('.dot-popover');
     // const popover = new bootstrap.Popover(popoverBtn,{
     //     trigger: 'click',
