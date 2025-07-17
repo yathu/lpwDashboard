@@ -2387,7 +2387,7 @@ $header-bg: #f1f3f5;
 
   .modal-header {
     padding: 16px;
-    padding-bottom: 10px;
+    // padding-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -2414,7 +2414,9 @@ $header-bg: #f1f3f5;
   }
 
   .modal-body {
-    padding: 16px;
+    padding: 0 16px 16px;
+    max-height: 70vh;
+    overflow-y: auto;
 
     // New Promote Modal Design Styles
     .promote-modal-tabs {
@@ -2424,6 +2426,10 @@ $header-bg: #f1f3f5;
       margin-bottom: 24px;
       border-bottom: 1px solid #e2e2ea;
       padding-bottom: 16px;
+      position: sticky;
+      top: 0;
+      background: #ffffff;
+      z-index: 10;
 
       .tab-btn {
         display: flex;
@@ -2467,11 +2473,12 @@ $header-bg: #f1f3f5;
     }
 
     .modal-section {
-      display: none;
+      display: block;
+      margin-bottom: 32px;
       animation: fadeIn 0.3s ease-in-out;
 
-      &.active {
-        display: block;
+      &:last-child {
+        margin-bottom: 0;
       }
 
       .section-header {

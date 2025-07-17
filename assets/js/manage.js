@@ -488,7 +488,7 @@ $(document).ready(() => {
     const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
     const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 
-    // Promote Modal Tab Functionality
+    // Promote Modal Scroll Navigation Functionality
     const tabButtons = document.querySelectorAll('.promote-modal-tabs .tab-btn');
     const modalSections = document.querySelectorAll('.modal-section');
 
@@ -496,17 +496,22 @@ $(document).ready(() => {
         button.addEventListener('click', function() {
             const targetSection = this.getAttribute('data-section');
             
-            // Remove active class from all tabs and sections
+            // Remove active class from all tabs
             tabButtons.forEach(btn => btn.classList.remove('active'));
-            modalSections.forEach(section => section.classList.remove('active'));
             
             // Add active class to clicked tab
             this.classList.add('active');
             
-            // Show target section
+            // Scroll to target section
             const targetElement = document.getElementById(`${targetSection}-section`);
             if (targetElement) {
-                targetElement.classList.add('active');
+                const modalBody = targetElement.closest('.modal-body');
+                const targetOffset = targetElement.offsetTop - modalBody.offsetTop - 20; // 20px offset for better visibility
+                
+                modalBody.scrollTo({
+                    top: targetOffset,
+                    behavior: 'smooth'
+                });
             }
         });
     });
@@ -533,7 +538,36 @@ $(document).ready(() => {
 
     // const popoverBtn = $('.dot-popover');
     // const popover = new bootstrap.Popover(popoverBtn,{
-    //     trigger: 'click',
-    // });
+    //     trigger: 'click,    // });
+
+    // Scroll spy functionality - update active tab based on visible section
+    (function() {
+        const modalBody = document.querySelector('#promotedAddModal .modal-body');
+        if (!modalBody) return;
+        modalBody.addEventListener('scroll', function() {
+            const scrollTop = this.scrollTop;
+            const tabHeight = document.querySelector('.promote-modal-tabs').offsetHeight;
+            let currentSection = null;
+            let minDistance = Infinity;
+            modalSections.forEach(section => {
+                const sectionTop = section.offsetTop - modalBody.offsetTop - tabHeight - 10;
+                const distance = Math.abs(scrollTop - sectionTop);
+                if (scrollTop >= sectionTop && distance < minDistance) {
+                    minDistance = distance;
+                    currentSection = section;
+                }
+            });
+            if (currentSection) {
+                const sectionName = currentSection.id.replace('-section', '');
+                tabButtons.forEach(btn => {
+                    if (btn.getAttribute('data-section') === sectionName) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            }
+        });
+    })();
 
 });
