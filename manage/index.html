@@ -2280,10 +2280,16 @@ layout: manage_ads
   aria-labelledby="promotedAddModalLabel"
   aria-hidden="true"
 >
-  <div class="modal-dialog modal-dialog-centered modal-lg">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="promotedAddModalLabel">Promote Ad</h5>
+        <div>
+          <h5 class="modal-title" id="promotedAddModalLabel">
+            Promote Your Ad
+          </h5>
+          <span>Boost visibility and reach more customers</span>
+        </div>
+
         <button
           type="button"
           class="btn-close"
@@ -2324,9 +2330,9 @@ layout: manage_ads
               <div class="card-content">
                 <h5 class="card-title">Featured Ad</h5>
                 <p class="card-description">Top placement for 3 days</p>
-                <div class="card-benefit">
-                  <span class="benefit-badge">+50%</span>
-                </div>
+              </div>
+              <div class="card-benefit">
+                <span class="benefit-badge">+50%</span>
               </div>
               <button class="select-btn">Select</button>
             </div>
@@ -2338,9 +2344,9 @@ layout: manage_ads
               <div class="card-content">
                 <h5 class="card-title">Platinum</h5>
                 <p class="card-description">Premium placement for 7 days</p>
-                <div class="card-benefit">
-                  <span class="benefit-badge platinum">+100%</span>
-                </div>
+              </div>
+              <div class="card-benefit">
+                <span class="benefit-badge platinum">+100%</span>
               </div>
               <button class="select-btn platinum">Select</button>
             </div>
@@ -2352,9 +2358,9 @@ layout: manage_ads
               <div class="card-content">
                 <h5 class="card-title">Gold Sponsored</h5>
                 <p class="card-description">Priority placement for 5 days</p>
-                <div class="card-benefit">
-                  <span class="benefit-badge gold">+75%</span>
-                </div>
+              </div>
+              <div class="card-benefit">
+                <span class="benefit-badge gold">+75%</span>
               </div>
               <button class="select-btn gold">Select</button>
             </div>
@@ -2366,9 +2372,9 @@ layout: manage_ads
               <div class="card-content">
                 <h5 class="card-title">Premium Boost</h5>
                 <p class="card-description">Top placement for 10 days</p>
-                <div class="card-benefit">
-                  <span class="benefit-badge premium">+120%</span>
-                </div>
+              </div>
+              <div class="card-benefit">
+                <span class="benefit-badge premium">+120%</span>
               </div>
               <button class="select-btn premium">Select</button>
             </div>
@@ -2385,13 +2391,6 @@ layout: manage_ads
           </div>
 
           <div class="addons-content">
-            <div class="section-header">
-              <h3 class="section-title">Enhance Your Ad</h3>
-              <p class="section-subtitle">
-                Add powerful features to boost your ad performance
-              </p>
-            </div>
-
             <div class="addons-grid">
               <!-- Image Enhancer Card -->
               <div class="addon-card image-enhancer">
@@ -2458,26 +2457,86 @@ layout: manage_ads
 
         <!-- Boost Section -->
         <div class="modal-section" id="boost-section">
-          <div class="section-header">
-            <h4 class="section-title">Boost Your Ad</h4>
-            <p class="section-subtitle">
-              Get more visibility with our boost options:
-            </p>
-          </div>
 
           <div class="boost-content">
-            <p class="coming-soon">
-              Boost section content will be added here...
-            </p>
+            <!-- Instant Visibility Section -->
+            <div class="boost-section">
+              <div class="section-header">
+                <h5 class="section-title">Instant Visibility</h5>
+                <p class="section-subtitle">
+                  Get instant visibility with boost credits:
+                </p>
+              </div>
+
+              <div class="instant-visibility-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <i class="bi bi-lightning-charge-fill"></i>
+                  </div>
+                  <div class="card-content">
+                    <h6 class="card-title">Instant Visibility Boost</h6>
+                    <p class="card-description">
+                      Push your ad to the top immediately
+                    </p>
+                  </div>
+                </div>
+                <div class="visibility-details">
+                  <i class="bi bi-arrow-up-circle-fill"></i>
+                  <span>+200% visibility for 24 hours</span>
+                </div>
+                <div class="card-footer">
+                  <div class="credits-info">
+                    <span class="credits-label">Available Credits</span>
+                    <span class="credits-count">5</span>
+                  </div>
+                  <button class="use-credit-btn">Use 1 Credit</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Buy More Credits Section -->
+            <div class="boost-section credit">
+              <div class="section-header">
+                <div class="header-with-icon">
+                  <div class="section-icon">
+                    <i class="bi bi-currency-dollar"></i>
+                  </div>
+                  <div>
+                    <h5 class="section-title">Buy More Credits</h5>
+                    <p class="section-subtitle">
+                      Get more boost power for your ads
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="credits-packages">
+                <div class="credit-package">
+                  <div class="package-title">5 credits</div>
+                  <div class="package-price">$9.99</div>
+                </div>
+                <div class="credit-package best-value">
+                  <div class="best-badge">Best</div>
+                  <div class="package-title">15 credits</div>
+                  <div class="package-price">$24.99</div>
+                </div>
+                <div class="credit-package">
+                  <div class="package-title">30 credits</div>
+                  <div class="package-price">$39.99</div>
+                </div>
+              </div>
+
+              <button class="btn purchase-credits-btn">Purchase Credits</button>
+            </div>
           </div>
         </div>
       </div>
       <!-- Modal Footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">
           Cancel
         </button>
-        <button type="button" class="btn btn-primary apply-btn">
+        <button type="button" class="btn btn-sm btn-primary apply-btn">
           Apply Selected
         </button>
       </div>
