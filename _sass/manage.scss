@@ -302,10 +302,11 @@ body {
 
       .status-label {
         font-size: 14px;
-        padding: 12px 24px;
+        padding: 6px 12px;
         border-radius: 50px;
         white-space: nowrap;
         font-weight: 600;
+        text-decoration: none;
 
         @media (max-width: 767.98px) {
           padding: 6px 12px;
@@ -539,6 +540,9 @@ $header-bg: #f1f3f5;
 
   // When expanded
   &.expanded {
+    .header-row {
+      background-color: lightgray;
+    }
     .property-details {
       display: block;
     }
@@ -948,6 +952,12 @@ $header-bg: #f1f3f5;
       i {
         font-size: 16px;
       }
+    }
+
+    .edit-btn {
+      background-color: #fff !important;
+      border: 1px solid $color-boost-bg;
+      color: $color-boost-bg;
     }
 
     .view-toggle {
@@ -1383,6 +1393,7 @@ $header-bg: #f1f3f5;
             justify-content: center;
             cursor: pointer;
             transition: background-color 0.3s;
+            border:1px solid rgba(26,115,232,.6);
 
             &:hover {
               background-color: #e0e0e0;

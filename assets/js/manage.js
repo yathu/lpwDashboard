@@ -1,4 +1,29 @@
 $(document).ready(() => {
+    // Function to toggle selected options container visibility
+    function toggleSelectedOptionsVisibility() {
+        // Use jQuery to select checkboxes and container
+        const $checkboxes = $('.property-item input[type="checkbox"][id^="propertyListItem"]');
+        const $selectedOptionsContainer = $('#selectedItemsOptions');
+
+        // Check if at least one checkbox is checked
+        const atLeastOneChecked = $checkboxes.is(':checked');
+
+        // Show/hide the selected options container based on checkbox state
+        if (atLeastOneChecked) {
+            $selectedOptionsContainer.addClass('d-md-flex');
+        } else {
+            $selectedOptionsContainer.removeClass('d-md-flex');
+        }
+    }
+
+    // Add event listeners to all property item checkboxes
+    $(document).on('change', '.property-item input[type="checkbox"][id^="propertyListItem"]', function () {
+        toggleSelectedOptionsVisibility();
+    });
+
+    // Initialize the visibility state on page load
+    toggleSelectedOptionsVisibility();
+
     // Initialize Swiper
 
     var swiper = new Swiper(".initial-swiper", {
@@ -119,18 +144,18 @@ $(document).ready(() => {
     const listItem = $('.property-item');
     const listItemHeader = $('.property-item .header-row');
 
+    $(listItemHeader).on('click', function (el) {
+        const element = $(this).parent('.property-item');
 
-    $(listItemHeader).on('click', function () {
-        const element = listItem;
+        // Close all other expanded items first
+        $('.property-item.expanded').not(element).removeClass('expanded')
+            .find('.bi-chevron-up').removeClass('bi-chevron-up').addClass('bi-chevron-down');
 
+        // Toggle clicked item
         $(element).toggleClass('expanded');
 
         // Change the chevron icon direction
         const chevron = element.find('.bi-chevron-down, .bi-chevron-up');
-
-        console.log("chevron==>", chevron);
-
-
         if (chevron) {
             $(chevron).toggleClass('bi-chevron-down');
             $(chevron).toggleClass('bi-chevron-up');
@@ -493,21 +518,21 @@ $(document).ready(() => {
     const modalSections = document.querySelectorAll('.modal-section');
 
     tabButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const targetSection = this.getAttribute('data-section');
-            
+
             // Remove active class from all tabs
             tabButtons.forEach(btn => btn.classList.remove('active'));
-            
+
             // Add active class to clicked tab
             this.classList.add('active');
-            
+
             // Scroll to target section
             const targetElement = document.getElementById(`${targetSection}-section`);
             if (targetElement) {
                 const modalBody = targetElement.closest('.modal-body');
                 const targetOffset = targetElement.offsetTop - modalBody.offsetTop - 20; // 20px offset for better visibility
-                
+
                 modalBody.scrollTo({
                     top: targetOffset,
                     behavior: 'smooth'
@@ -521,15 +546,15 @@ $(document).ready(() => {
     const selectButtons = document.querySelectorAll('.select-btn');
 
     selectButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const card = this.closest('.placement-card');
-            
+
             // Remove selected state from all cards
             placementCards.forEach(c => {
                 c.classList.remove('selected');
                 c.querySelector('.select-btn').textContent = 'Select';
             });
-            
+
             // Add selected state to clicked card
             card.classList.add('selected');
             this.textContent = 'Selected';
@@ -541,10 +566,10 @@ $(document).ready(() => {
     //     trigger: 'click,    // });
 
     // Scroll spy functionality - update active tab based on visible section
-    (function() {
+    (function () {
         const modalBody = document.querySelector('#promotedAddModal .modal-body');
         if (!modalBody) return;
-        modalBody.addEventListener('scroll', function() {
+        modalBody.addEventListener('scroll', function () {
             const scrollTop = this.scrollTop;
             const tabHeight = document.querySelector('.promote-modal-tabs').offsetHeight;
             let currentSection = null;

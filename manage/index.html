@@ -197,7 +197,18 @@ layout: manage_ads
       <!--            my ads-->
       <div class="my-ads-container">
         <div class="d-flex justify-content-between align-items-center">
-          <h2 class="my-ads-title">My Ads</h2>
+
+          <div class="status-labels-container">
+            <div class="status-labels">
+              <a href="#" class="status-label active">ACTIVE: 3</a>
+              <a href="#" class="status-label inactive">INACTIVE: 2</a>
+              <a href="#" class="status-label pending">PENDING: 1</a>
+              <a href="#" class="status-label upgraded">UPGRADED: 1</a>
+              <a href="#" class="status-label expire">ABOUT TO EXPIRE: 4</a>
+            </div>
+          </div>
+
+<!--          <h2 class="my-ads-title">My Ads</h2>-->
           <div class="d-flex align-items-center">
             <div class="view-toggle me-3">
               <button class="btn btn-outline-light p-1 active">
@@ -286,21 +297,13 @@ layout: manage_ads
           </div>
         </div>
 
-        <div class="status-labels-container">
-          <div class="status-labels">
-            <div class="status-label active">ACTIVE: 3</div>
-            <div class="status-label inactive">INACTIVE: 2</div>
-            <div class="status-label pending">PENDING: 1</div>
-            <div class="status-label upgraded">UPGRADED: 1</div>
-            <div class="status-label expire">ABOUT TO EXPIRE: 4</div>
-          </div>
-        </div>
       </div>
 
       <!--            selected items options-->
 
       <div
-        class="selected-options-container d-none d-md-flex flex-column flex-md-row align-items-center"
+              id="selectedItemsOptions"
+        class="selected-options-container d-none flex-column flex-md-row align-items-center"
       >
         <button
           class="btn btn-dark"
@@ -700,7 +703,7 @@ layout: manage_ads
                             />
                           </div>
                           <button
-                            class="promote-btn boost-btn edit-btn btn showAutoBoostBtn"
+                            class="boost-btn edit-btn btn"
                           >
                             <i class="bi bi-pencil-fill edit-icon me-1"></i>
                             Edit
@@ -1593,7 +1596,7 @@ layout: manage_ads
                     />
                   </div>
                   <button
-                    class="promote-btn boost-btn edit-btn btn showAutoBoostBtn"
+                    class="boost-btn edit-btn btn"
                   >
                     <i class="bi bi-pencil-fill edit-icon me-1"></i>
                     Edit
@@ -2689,7 +2692,7 @@ layout: manage_ads
                 checked
               />
             </div>
-            <button class="promote-btn boost-btn edit-btn btn showAutoBoostBtn">
+            <button class="boost-btn edit-btn btn">
               <i class="bi bi-pencil-fill edit-icon"></i>
               Edit
             </button>
