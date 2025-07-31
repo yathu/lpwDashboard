@@ -2538,7 +2538,8 @@ $header-bg: #f1f3f5;
             box-shadow: 0 4px 12px rgba(26, 115, 232, 0.15);
 
             .select-btn {
-              background: #1a73e8;
+              background-color: #ff5722;
+              border-color: #ff5722;
               color: #ffffff;
             }
 
@@ -2656,9 +2657,9 @@ $header-bg: #f1f3f5;
 
           .select-btn {
             padding: 4px 8px;
-            border: 1px solid #1a73e8;
-            background: transparent;
-            color: #1a73e8;
+            border: 1px solid #ff5722;
+            background-color: #ff5722;
+            color: #FFFFFF;
             border-radius: 8px;
             font-weight: 500;
             font-size: 14px;
@@ -2667,8 +2668,8 @@ $header-bg: #f1f3f5;
             flex-shrink: 0;
 
             &:hover {
-              background: #1a73e8;
-              color: #ffffff;
+              //background: #1a73e8;
+              //color: #ffffff;
             }
 
             &.platinum {
@@ -4426,8 +4427,8 @@ label.form-check-label:focus,
 
   &:hover {
     background: linear-gradient(to right, rgba(52, 211, 153, 0.3), rgba(59, 130, 246, 0.3));
-    transform: scale(1.02);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    //transform: scale(1.01);
+    //box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
   }
 
   .icon-wrapper {
