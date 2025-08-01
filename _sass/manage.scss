@@ -3115,6 +3115,27 @@ $header-bg: #f1f3f5;
             gap: 12px;
             margin-bottom: 20px;
 
+            .credit-package-label {
+              flex: 1;
+              cursor: pointer;
+              margin: 0;
+
+              .credit-package-radio {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+
+                &:checked + .credit-package {
+                  background-color: #fff8ed;
+                  border-color: #ff6b35;
+                  transform: translateY(-2px);
+                  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+                }
+              }
+            }
+
             .credit-package {
               flex: 1;
               background: #ffffff;
@@ -3194,6 +3215,10 @@ $header-bg: #f1f3f5;
             .credits-packages {
               flex-direction: column;
               gap: 8px;
+
+              .credit-package-label {
+                width: 100%;
+              }
 
               .credit-package {
                 padding: 12px;
@@ -4479,4 +4504,3 @@ label.form-check-label:focus,
     100% { transform: scale(1); }
   }
 }
-

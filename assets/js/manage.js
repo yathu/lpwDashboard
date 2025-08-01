@@ -1,4 +1,12 @@
 $(document).ready(() => {
+    // Handle credit package selection
+    $('.credit-package-radio').on('change', function() {
+        // Store the selected credit package value
+        const selectedValue = $(this).val();
+        console.log('Selected credit package:', selectedValue);
+
+        // You can add more logic here if needed
+    });
     // Function to toggle selected options container visibility
     function toggleSelectedOptionsVisibility() {
         // Use jQuery to select checkboxes and container

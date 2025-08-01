@@ -2472,19 +2472,35 @@ layout: manage_ads
               </div>
 
               <div class="credits-packages">
-                <div class="credit-package">
-                  <div class="package-title">5 credits</div>
-                  <div class="package-price">$9.99</div>
-                </div>
-                <div class="credit-package best-value">
-                  <div class="best-badge">Best</div>
-                  <div class="package-title">15 credits</div>
-                  <div class="package-price">$24.99</div>
-                </div>
-                <div class="credit-package">
-                  <div class="package-title">30 credits</div>
-                  <div class="package-price">$39.99</div>
-                </div>
+                <label class="credit-package-label">
+                  <input type="radio" name="credit-package" class="credit-package-radio" value="5">
+                  <div class="credit-package">
+                    <div class="package-title">5 credits</div>
+                    <div class="package-price">$9.99</div>
+                  </div>
+                </label>
+                <label class="credit-package-label">
+                  <input type="radio" name="credit-package" class="credit-package-radio" value="15" checked>
+                  <div class="credit-package best-value">
+                    <div class="best-badge">Best</div>
+                    <div class="package-title">15 credits</div>
+                    <div class="package-price">$24.99</div>
+                  </div>
+                </label>
+                <label class="credit-package-label">
+                  <input type="radio" name="credit-package" class="credit-package-radio" value="30">
+                  <div class="credit-package">
+                    <div class="package-title">30 credits</div>
+                    <div class="package-price">$39.99</div>
+                  </div>
+                </label>
+                <label class="credit-package-label">
+                  <input type="radio" name="credit-package" class="credit-package-radio" value="40">
+                  <div class="credit-package">
+                    <div class="package-title">40 credits</div>
+                    <div class="package-price">$39.99</div>
+                  </div>
+                </label>
               </div>
 
               <button class="btn purchase-credits-btn">Purchase Credits</button>
