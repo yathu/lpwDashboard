@@ -603,4 +603,21 @@ $(document).ready(() => {
         });
     })();
 
+    // Video preview click handler
+    $('.video-preview').on('click', function() {
+        // Close the promote modal
+        $('#promotedAddModal').modal('hide');
+
+        // Get video source from data-video attribute
+        const videoSrc = $(this).data('video');
+        $('#videoPlayerFrame').attr('src', videoSrc);
+
+        // Open the video player modal
+        $('#videoPlayerModal').modal('show');
+    });
+
+    // Reset video src when modal is closed to stop playback
+    $('#videoPlayerModal').on('hidden.bs.modal', function () {
+        $('#videoPlayerFrame').attr('src', '');
+    });
 });
