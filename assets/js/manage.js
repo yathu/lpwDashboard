@@ -619,5 +619,7 @@ $(document).ready(() => {
     // Reset video src when modal is closed to stop playback
     $('#videoPlayerModal').on('hidden.bs.modal', function () {
         $('#videoPlayerFrame').attr('src', '');
+        // Reopen the promotedAddModal when videoPlayerModal is closed
+        $('#promotedAddModal').modal('show');
     });
 });
