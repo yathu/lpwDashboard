@@ -667,59 +667,70 @@ layout: manage_ads
 
                     <!-- Second Column - Boost Ad -->
                     <div class="col">
-                      <div
-                        class="boost-card d-flex align-items-center justify-content-between w-100"
-                      >
+                      <div class="boost-card flex-column w-100">
                         <!-- Dropdown icon (only visible on desktop) -->
 
-                        <div
-                          class="d-flex align-items-center justify-content-between gap-2"
-                        >
+                        <div class="row gx-1 w-100">
                           <!-- Content visible only on desktop -->
-                          <div class="boost-info d-none d-md-block flex-grow-1">
-                            Last boosted: <strong>01 hr ago</strong>
+                          <div class="boost-info d-none d-md-block col text-center">
+                            Last boosted: <strong>03 hr ago</strong>
                           </div>
+                          <div class="auto-boost-label col text-center">Auto Boost</div>
 
-                          <!-- Button visible on all screens -->
-                          <button
-                            class="boost-btn d-flex align-items-center"
-                            data-bs-toggle="modal"
-                            data-bs-target="#boostAdModal"
+                        </div>
+
+                        <div class="d-flex align-items-center justify-content-center gap-3">
+                          <div
+                                  class="d-flex align-items-center justify-content-between gap-2"
                           >
-                            <span class="me-2">
-                              <i class="bi bi-rocket-takeoff-fill"></i>
-                            </span>
-                            BOOST AD
-                          </button>
+                            <!-- Content visible only on desktop -->
+                            <!--                    <div class="boost-info d-none d-md-block flex-grow-1">-->
+                            <!--                      Last boosted: <strong>02 hr ago</strong>-->
+                            <!--                    </div>-->
 
-                          <!-- Info icon -->
-                          <span class="ms-2 info-icon">
-                            <i
-                              data-bs-toggle="tooltip"
-                              data-bs-custom-class="custom-tooltip"
-                              data-bs-title="Click the Boost button to boost visibility and generate more leads."
-                              class="bi bi-info-circle-fill"
+                            <!-- Button visible on all screens -->
+                            <button
+                                    class="boost-btn d-flex align-items-center"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#boostAdModal"
                             >
-                            </i>
-                          </span>
-                        </div>
-                        <div class="controls-section">
-                          <span class="auto-boost-label">Auto Boost</span>
-                          <div class="form-check form-switch">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              id="autoBoostSwitch2"
-                              checked
-                            />
+                    <span class="me-2">
+                      <i class="bi bi-rocket-takeoff-fill"></i>
+                    </span>
+                              BOOST AD
+                            </button>
+
+                            <!-- Info icon -->
+                            <span class="info-icon">
+                    <i
+                            data-bs-toggle="tooltip"
+                            data-bs-custom-class="custom-tooltip"
+                            data-bs-title="Click the Boost button to boost visibility and generate more leads."
+                            class="bi bi-info-circle-fill"
+                    >
+                    </i>
+                  </span>
                           </div>
-                          <button
-                            class="boost-btn edit-btn btn"
-                          >
-                            <i class="bi bi-pencil-fill edit-icon me-1"></i>
-                            Edit
-                          </button>
+                          <div class="" style="width: 1px; height: 100%; background-color: #a1a1a1"></div>
+                          <div class="controls-section">
+                            <div class="form-check form-switch">
+                              <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="autoBoostSwitch1"
+                                      checked
+                              />
+                            </div>
+                            <button
+                                    class="boost-btn edit-btn btn showAutoBoostBtn"
+                            >
+                              <i class="bi bi-pencil-fill edit-icon me-1"></i>
+                              Edit
+                            </button>
+                          </div>
                         </div>
+
+
                         <!--                            <span class="ms-2 d-none d-md-block dropdown-icon"><i class="fa-solid fa-chevron-down"></i></span>-->
                       </div>
                     </div>
@@ -1540,57 +1551,70 @@ layout: manage_ads
 
             <!-- Second Column - Boost Ad -->
             <div class="col">
-              <div class="boost-card">
+              <div class="boost-card flex-column">
                 <!-- Dropdown icon (only visible on desktop) -->
 
-                <div
-                  class="d-flex align-items-center justify-content-between gap-2"
-                >
+                <div class="row gx-1 w-100">
                   <!-- Content visible only on desktop -->
-                  <div class="boost-info d-none d-md-block flex-grow-1">
-                    Last boosted: <strong>01 hr ago</strong>
+                  <div class="boost-info d-none d-md-block col text-center">
+                    Last boosted: <strong>03 hr ago</strong>
                   </div>
+                  <div class="auto-boost-label col text-center">Auto Boost</div>
 
-                  <!-- Button visible on all screens -->
-                  <button
-                    class="boost-btn d-flex align-items-center"
-                    data-bs-toggle="modal"
-                    data-bs-target="#boostAdModal"
+                </div>
+
+                <div class="d-flex align-items-center justify-content-center gap-3">
+                  <div
+                          class="d-flex align-items-center justify-content-between gap-2"
                   >
+                    <!-- Content visible only on desktop -->
+<!--                    <div class="boost-info d-none d-md-block flex-grow-1">-->
+<!--                      Last boosted: <strong>02 hr ago</strong>-->
+<!--                    </div>-->
+
+                    <!-- Button visible on all screens -->
+                    <button
+                            class="boost-btn d-flex align-items-center"
+                            data-bs-toggle="modal"
+                            data-bs-target="#boostAdModal"
+                    >
                     <span class="me-2">
                       <i class="bi bi-rocket-takeoff-fill"></i>
                     </span>
-                    BOOST AD
-                  </button>
+                      BOOST AD
+                    </button>
 
-                  <!-- Info icon -->
-                  <span class="ms-2 info-icon">
+                    <!-- Info icon -->
+                    <span class="info-icon">
                     <i
-                      data-bs-toggle="tooltip"
-                      data-bs-custom-class="custom-tooltip"
-                      data-bs-title="Click the Boost button to boost visibility and generate more leads."
-                      class="bi bi-info-circle-fill"
+                            data-bs-toggle="tooltip"
+                            data-bs-custom-class="custom-tooltip"
+                            data-bs-title="Click the Boost button to boost visibility and generate more leads."
+                            class="bi bi-info-circle-fill"
                     >
                     </i>
                   </span>
-                </div>
-                <div class="controls-section">
-                  <span class="auto-boost-label">Auto Boost</span>
-                  <div class="form-check form-switch">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      id="autoBoostSwitch1"
-                      checked
-                    />
                   </div>
-                  <button
-                    class="boost-btn edit-btn btn"
-                  >
-                    <i class="bi bi-pencil-fill edit-icon me-1"></i>
-                    Edit
-                  </button>
+                  <div class="" style="width: 1px; height: 100%; background-color: #a1a1a1"></div>
+                  <div class="controls-section">
+                    <div class="form-check form-switch">
+                      <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="autoBoostSwitch1"
+                              checked
+                      />
+                    </div>
+                    <button
+                            class="boost-btn edit-btn btn showAutoBoostBtn"
+                    >
+                      <i class="bi bi-pencil-fill edit-icon me-1"></i>
+                      Edit
+                    </button>
+                  </div>
                 </div>
+
+
                 <!--                            <span class="ms-2 d-none d-md-block dropdown-icon"><i class="fa-solid fa-chevron-down"></i></span>-->
               </div>
             </div>
@@ -2260,7 +2284,7 @@ layout: manage_ads
 <!-- promote modal -->
 
 <div
-  class="modal custom-manage-modal fade slide-up"
+  class="modal custom-manage-modal fade slide-up bottom-sheet-modal"
   id="promotedAddModal"
   tabindex="-1"
   aria-labelledby="promotedAddModalLabel"
@@ -2635,7 +2659,7 @@ layout: manage_ads
 </div>
 
 <div
-  class="modal fade boost-ad-modal slide-up"
+  class="modal fade boost-ad-modal slide-up bottom-sheet-modal"
   id="boostAdModal"
   tabindex="-1"
   aria-labelledby="boostAdModalLabel"
@@ -2691,7 +2715,7 @@ layout: manage_ads
                 checked
               />
             </div>
-            <button class="boost-btn edit-btn btn">
+            <button class="boost-btn edit-btn btn showAutoBoostBtn">
               <i class="bi bi-pencil-fill edit-icon"></i>
               Edit
             </button>
@@ -3248,36 +3272,70 @@ layout: manage_ads
 
               <!-- Second Column - Boost Ad -->
               <div class="col">
-                <div
-                  class="boost-card d-flex align-items-center justify-content-between"
-                >
-                  <!-- Content visible only on desktop -->
-                  <div class="boost-info d-none d-md-block flex-grow-1">
-                    Last boosted: <strong>01 hr ago</strong>
+                <div class="boost-card flex-column w-100">
+                  <!-- Dropdown icon (only visible on desktop) -->
+
+                  <div class="row gx-1 w-100">
+                    <!-- Content visible only on desktop -->
+                    <div class="boost-info col text-center">
+                      Last boosted: <strong>03 hr ago</strong>
+                    </div>
+                    <div class="auto-boost-label col text-center">Auto Boost</div>
+
                   </div>
 
-                  <!-- Button visible on all screens -->
-                  <button
-                    class="boost-btn d-flex align-items-center"
-                    data-bs-toggle="modal"
-                    data-bs-target="#boostAdModal"
-                  >
+                  <div class="d-flex align-items-center justify-content-center gap-3">
+                    <div
+                            class="d-flex align-items-center justify-content-between gap-2"
+                    >
+                      <!-- Content visible only on desktop -->
+                      <!--                    <div class="boost-info d-none d-md-block flex-grow-1">-->
+                      <!--                      Last boosted: <strong>02 hr ago</strong>-->
+                      <!--                    </div>-->
+
+                      <!-- Button visible on all screens -->
+                      <button
+                              class="boost-btn d-flex align-items-center"
+                              data-bs-toggle="modal"
+                              data-bs-target="#boostAdModal"
+                      >
                     <span class="me-2">
                       <i class="bi bi-rocket-takeoff-fill"></i>
                     </span>
-                    BOOST AD
-                  </button>
+                        BOOST AD
+                      </button>
 
-                  <!-- Info icon -->
-                  <span class="ms-2 info-icon">
+                      <!-- Info icon -->
+                      <span class="info-icon">
                     <i
-                      data-bs-toggle="tooltip"
-                      data-bs-custom-class="custom-tooltip"
-                      data-bs-title="Click the Boost button to boost visibility and generate more leads."
-                      class="bi bi-info-circle-fill"
-                    ></i>
+                            data-bs-toggle="tooltip"
+                            data-bs-custom-class="custom-tooltip"
+                            data-bs-title="Click the Boost button to boost visibility and generate more leads."
+                            class="bi bi-info-circle-fill"
+                    >
+                    </i>
                   </span>
-                  <!-- Dropdown icon (only visible on desktop) -->
+                    </div>
+                    <div class="" style="width: 1px; height: 100%; background-color: #a1a1a1"></div>
+                    <div class="controls-section">
+                      <div class="form-check form-switch">
+                        <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="autoBoostSwitch1"
+                                checked
+                        />
+                      </div>
+                      <button
+                              class="boost-btn edit-btn btn showAutoBoostBtn"
+                      >
+                        <i class="bi bi-pencil-fill edit-icon me-1"></i>
+                        Edit
+                      </button>
+                    </div>
+                  </div>
+
+
                   <!--                            <span class="ms-2 d-none d-md-block dropdown-icon"><i class="fa-solid fa-chevron-down"></i></span>-->
                 </div>
               </div>
