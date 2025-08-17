@@ -547,8 +547,8 @@ $header-bg: #f1f3f5;
   .property-item {
     .col-1 {
       // Make columns stack better on smaller screens
-      padding-left: 0;
-      padding-right: 0;
+      //padding-left: 0;
+      //padding-right: 0;
     }
   }
 }
@@ -2620,6 +2620,10 @@ $header-bg: #f1f3f5;
             flex-shrink: 0;
             margin-left: auto;
             margin-right: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            align-items: center;
 
             .benefit-badge {
               display: inline-block;
@@ -2629,6 +2633,8 @@ $header-bg: #f1f3f5;
               border-radius: 20px;
               font-weight: 600;
               font-size: 14px;
+              width: 100%;
+              text-align: center;
 
               &.platinum {
                 background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
@@ -2644,6 +2650,9 @@ $header-bg: #f1f3f5;
                 background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
                 color: #4caf50;
               }
+            }
+            .benefit-text{
+              font-size: 13px;
             }
           }
 
