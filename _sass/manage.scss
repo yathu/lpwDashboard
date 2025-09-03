@@ -1749,37 +1749,23 @@ $header-bg: #f1f3f5;
           .progress-container {
             margin-bottom: 16px;
 
-            .progress-bar-custom {
+            .progress-stacked{
+              background-color: white;
               height: 8px;
-              border-radius: 4px;
-              background: #e5e7eb;
-              position: relative;
-              overflow: hidden;
 
-              .progress-fill {
-                height: 100%;
-                background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
-                border-radius: 4px;
-                transition: width 0.6s ease;
 
-                &.photos-progress {
-                  width: 35%;
-                }
+              .progress{
+                height: 8px;
+                //background-color: rgba(3, 99, 227, 0.20);
 
-                &.video-progress {
-                  width: 25%;
-                }
-
-                &.urgent-progress {
-                  width: 30%;
+                .progress-light{
+                  background-color: rgba(3, 99, 227, 0.20);
+                  border-radius: 0 25px 25px 0;
                 }
               }
             }
 
-            .progress{
-              height: 8px;
-              background-color: rgba(3, 99, 227, 0.20);
-            }
+
 
             .progress-labels {
               display: flex;
