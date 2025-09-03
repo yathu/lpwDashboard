@@ -1,4 +1,7 @@
 $(document).ready(() => {
+
+    // $('.selectpicker').selectpicker();
+
     // Handle credit package selection
     $('.credit-package-radio').on('change', function() {
         // Store the selected credit package value

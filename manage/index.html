@@ -155,7 +155,7 @@ layout: manage_ads
             />
           </div>
           <div class="col-6 col-lg-auto">
-            <select class="form-select">
+            <select class="selectpicker">
               <option selected>All Types</option>
               <option>Sales</option>
               <option>Rentals</option>
@@ -163,31 +163,35 @@ layout: manage_ads
             </select>
           </div>
           <div class="col-6 col-lg-2">
-            <select class="form-select">
-              <option value="0">All types</option>
-              <option value="House">House</option>
-              <option value="Apartment">Apartment / Flat</option>
-              <option value="Annexe">Annexe</option>
-              <option value="Bungalow">Bungalow</option>
-              <option value="Villa">Villa</option>
-              <option value="Commercial">Commercial</option>
-              <option value="Room">Room</option>
-              <option value="Studio/Bedsit">Studio/Bedsit</option>
-              <option value="Other">Other</option>
-              <option value="Bare Land">Bare(empty) Land</option>
-              <option value="Cultivated Land">Cultivated Land</option>
-              <option value="Land with house">Land with house</option>
-              <option value="Coconut land">Coconut land</option>
-              <option value="Tea land">Tea land</option>
-              <option value="Rubber land">Rubber land</option>
-              <option value="Paddy(rice) land">Paddy(rice) land</option>
-              <option value="Beachfront land">Beachfront land</option>
-              <option value="Waterfront land">WaterFront Land</option>
-              <option value="Cinnamon land">Cinnamon land</option>
+            <select class="selectpicker">
+              <optgroup label="Accommodation">
+                <option value="House">House</option>
+                <option>Apartment / Flat</option>
+                <option value="Annexe">Annexe</option>
+                <option value="Bungalow">Bungalow</option>
+                <option value="Villa">Villa</option>
+                <option value="Commercial">Commercial</option>
+                <option value="Room">Room</option>
+                <option value="Studio/Bedsit">Studio/Bedsit</option>
+                <option value="Other">Other</option>
+              </optgroup>
+
+              <optgroup label="Land">
+                <option value="Bare Land">Bare(empty) Land</option>
+                <option value="Cultivated Land">Cultivated Land</option>
+                <option value="Land with house">Land with house</option>
+                <option value="Coconut land">Coconut land</option>
+                <option value="Tea land">Tea land</option>
+                <option value="Rubber land">Rubber land</option>
+                <option value="Paddy(rice) land">Paddy(rice) land</option>
+                <option value="Beachfront land">Beachfront land</option>
+                <option value="Waterfront land">WaterFront Land</option>
+                <option value="Cinnamon land">Cinnamon land</option>
+              </optgroup>
             </select>
           </div>
           <div class="col-6 col-lg-auto">
-            <select class="form-select">
+            <select class="selectpicker">
               <option selected disabled>Status</option>
               <option value="0">All</option>
               <option value="1">Active</option>
@@ -203,7 +207,7 @@ layout: manage_ads
             </select>
           </div>
           <div class="col-6 col-lg-auto">
-            <select class="form-select">
+            <select class="selectpicker">
               <option value="0">Any</option>
               <option value="2">Last 24 hrs</option>
               <option value="3">Last 7 days</option>
@@ -398,10 +402,10 @@ layout: manage_ads
       <!-- Property Header Component -->
       <div class="property-header d-none d-lg-block py-1">
         <div class="mx-0 row gx-3">
-          <div class="col-2">Title <i class="bi bi-chevron-expand"></i></div>
+          <div class="col-3 ps-4">Title <i class="bi bi-chevron-expand"></i></div>
           <div class="col-auto" style="min-width: 110px">Location</div>
           <div class="col-auto" style="min-width: 140px">Listing</div>
-          <div class="col-1" style="min-width: 95px">Status</div>
+<!--          <div class="col-1" style="min-width: 95px">Status</div>-->
           <div class="col-1">Views <i class="bi bi-chevron-expand"></i></div>
           <div class="col-1">Leads <i class="bi bi-chevron-expand"></i></div>
           <div class="col-1" style="min-width: 95px">
@@ -420,9 +424,9 @@ layout: manage_ads
       <!-- Property Item Component -->
 
       {% for i in (1..5) %}
-      <div class="property-item">
+      <div class="property-item {% if i == 1 %}active{% endif%}">
         <div class="row mx-0 gx-3 header-row">
-          <div class="col-2 position-relative">
+          <div class="col-3 position-relative">
             <input
               class="form-check-input position-absolute z-0"
               id="propertyListItem{{i}}"
@@ -451,15 +455,15 @@ layout: manage_ads
             <button class="whatsapp-btn"><i class="bi bi-whatsapp"></i></button>
             <button class="hot-btn"><i class="bi bi-fire"></i></button>
           </div>
-          <div class="col-auto">
-            <label class="custom-switch">
-              <input type="checkbox" />
-              <div class="switch-slider">
-                <span class="on-text">Active</span>
-                <span class="off-text">Inactive</span>
-              </div>
-            </label>
-          </div>
+<!--          <div class="col-auto">-->
+<!--            <label class="custom-switch">-->
+<!--              <input type="checkbox" />-->
+<!--              <div class="switch-slider">-->
+<!--                <span class="on-text">Active</span>-->
+<!--                <span class="off-text">Inactive</span>-->
+<!--              </div>-->
+<!--            </label>-->
+<!--          </div>-->
           <div class="col-1">19 Views</div>
           <div class="col-1">7 Leads</div>
           <div class="col-1">01 day ago</div>
@@ -1108,121 +1112,134 @@ layout: manage_ads
                         <div class="ad-swiper-container">
                           <div class="swiper max-ad-swiper-1">
                             <div class="swiper-wrapper">
-                              <!-- Slide 1 -->
+
                               <div class="swiper-slide">
-                                <div
-                                  class="ad-slide green"
-                                  style="
-                                    background-image: url('../assets/img/mng_sources/features/max-property-image.png');
-                                  "
-                                >
-                                  <h2 class="ad-slide-title">
-                                    Add Property Photos
-                                  </h2>
-                                  <div class="ad-badge ad-badge-green">
-                                    <div class="ad-badge-icon">
-                                      <span class="icon-circle">
-                                        <i class="bi bi-arrow-up-short"></i>
-                                      </span>
-                                      <div class="ad-badge-percentage">
-                                        +50%
+                                  <div class="max-ad-swiper-item">
+                                      <div class="d-flex justify-content-between align-items-start">
+                                          <div class="card-icon photos">
+                                              <i class="bi bi-card-image"></i>
+                                          </div>
+                                          <div class="stats-badge views">+340% Views</div>
+
                                       </div>
-                                    </div>
-                                    <div class="ad-badge-content">
-                                      <div class="ad-badge-text">
-                                        More Buyers<br />will see Ad
+
+
+
+                                      <h3 class="card-title">Add 10 Professional Photos</h3>
+
+                                      <p class="card-description">
+                                          More photos = 340% more views. Show every angle.
+                                      </p>
+
+                                      <div class="lead-potential">
+                                          <div class="label">Lead Potential</div>
+                                          <div class="lead-info">
+                                              <span class="current-leads">4</span>
+                                              <span class="arrow">→</span>
+                                              <span class="potential-leads">14</span>
+                                              <span class="leads-text">leads</span>
+                                          </div>
                                       </div>
-                                    </div>
+
+                                      <div class="progress-container">
+                                          <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                              <div class="progress-bar" style="width: 50%"></div>
+                                          </div>
+                                          <div class="progress-labels">
+                                              <span class="current">Current: 4</span>
+                                              <span class="target">Up to 10 more with photos</span>
+                                          </div>
+                                      </div>
+
+                                      <button class="apply-btn">Apply</button>
                                   </div>
-                                </div>
                               </div>
 
-                              <!-- Slide 2 -->
-                              <div class="swiper-slide">
-                                <div
-                                  class="ad-slide blue"
-                                  style="
-                                    background-image: url('../assets/img/mng_sources/features/max-property-image.png');
-                                  "
-                                >
-                                  <h2 class="ad-slide-title">
-                                    Add Property Photos
-                                  </h2>
-                                  <div class="ad-badge ad-badge-blue">
-                                    <div class="ad-badge-icon">
-                                      <span class="icon-circle">
-                                        <i class="bi bi-arrow-up-short"></i>
-                                      </span>
-                                      <div class="ad-badge-percentage">
-                                        +50%
-                                      </div>
-                                    </div>
-                                    <div class="ad-badge-content">
-                                      <div class="ad-badge-text">
-                                        More Buyers<br />will see Ad
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                                <div class="swiper-slide">
+                                    <div class="max-ad-swiper-item">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <div class="card-icon video">
+                                                <i class="bi bi-camera-video"></i>
+                                            </div>
+                                            <div class="stats-badge views">+340% Views</div>
 
-                              <!-- Slide 3 -->
-                              <div class="swiper-slide">
-                                <div
-                                  class="ad-slide gold"
-                                  style="
-                                    background-image: url('../assets/img/mng_sources/features/max-property-image.png');
-                                  "
-                                >
-                                  <h2 class="ad-slide-title">
-                                    Add Property Photos
-                                  </h2>
-                                  <div class="ad-badge ad-badge-gold">
-                                    <div class="ad-badge-icon">
-                                      <span class="icon-circle">
-                                        <i class="bi bi-arrow-up-short"></i>
-                                      </span>
-                                      <div class="ad-badge-percentage">
-                                        +50%
-                                      </div>
-                                    </div>
-                                    <div class="ad-badge-content">
-                                      <div class="ad-badge-text">
-                                        More Buyers<br />will see Ad
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                                        </div>
 
-                              <!-- Slide 2 -->
-                              <div class="swiper-slide">
-                                <div
-                                  class="ad-slide blue"
-                                  style="
-                                    background-image: url('../assets/img/mng_sources/features/max-property-image.png');
-                                  "
-                                >
-                                  <h2 class="ad-slide-title">
-                                    Add Property Photos
-                                  </h2>
-                                  <div class="ad-badge ad-badge-blue">
-                                    <div class="ad-badge-icon">
-                                      <span class="icon-circle">
-                                        <i class="bi bi-arrow-up-short"></i>
-                                      </span>
-                                      <div class="ad-badge-percentage">
-                                        +50%
-                                      </div>
+
+
+                                        <h3 class="card-title">Add 10 Professional Photos</h3>
+
+                                        <p class="card-description">
+                                            More photos = 340% more views. Show every angle.
+                                        </p>
+
+                                        <div class="lead-potential">
+                                            <div class="label">Lead Potential</div>
+                                            <div class="lead-info">
+                                                <span class="current-leads">4</span>
+                                                <span class="arrow">→</span>
+                                                <span class="potential-leads">14</span>
+                                                <span class="leads-text">leads</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="progress-container">
+                                            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar" style="width: 30%"></div>
+                                            </div>
+                                            <div class="progress-labels">
+                                                <span class="current">Current: 4</span>
+                                                <span class="target">Up to 10 more with photos</span>
+                                            </div>
+                                        </div>
+
+                                        <button class="apply-btn">Apply</button>
                                     </div>
-                                    <div class="ad-badge-content">
-                                      <div class="ad-badge-text">
-                                        More Buyers<br />will see Ad
-                                      </div>
-                                    </div>
-                                  </div>
                                 </div>
-                              </div>
+
+                                <div class="swiper-slide">
+                                    <div class="max-ad-swiper-item">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <div class="card-icon urgent">
+                                                <i class="bi bi-exclamation-triangle-fill"></i>
+                                            </div>
+                                            <div class="stats-badge views">+340% Views</div>
+
+                                        </div>
+
+
+
+                                        <h3 class="card-title">Add 10 Professional Photos</h3>
+
+                                        <p class="card-description">
+                                            More photos = 340% more views. Show every angle.
+                                        </p>
+
+                                        <div class="lead-potential">
+                                            <div class="label">Lead Potential</div>
+                                            <div class="lead-info">
+                                                <span class="current-leads">4</span>
+                                                <span class="arrow">→</span>
+                                                <span class="potential-leads">14</span>
+                                                <span class="leads-text">leads</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="progress-container">
+                                            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar" style="width: 80%"></div>
+                                            </div>
+                                            <div class="progress-labels">
+                                                <span class="current">Current: 4</span>
+                                                <span class="target">Up to 10 more with photos</span>
+                                            </div>
+                                        </div>
+
+                                        <button class="apply-btn">Apply</button>
+                                    </div>
+                                </div>
+
+
                             </div>
                           </div>
                           <!-- Navigation buttons -->
