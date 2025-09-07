@@ -136,7 +136,7 @@ $(document).ready(() => {
         allowSlideNext: true,
         breakpoints: {
             320: {
-                slidesPerView: 1.3,
+                slidesPerView: 1.2,
             },
             576: {
                 slidesPerView: 2.1,
