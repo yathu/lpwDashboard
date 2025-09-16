@@ -2396,6 +2396,9 @@ $header-bg: #f1f3f5;
     }
   }
   .ad-details{
+    @media (max-width: 575.98px) {
+      padding-left: 4px;
+    }
     .ad-icons{
       margin-top: 0 !important;
       justify-content: start !important;
@@ -2407,11 +2410,20 @@ $header-bg: #f1f3f5;
         }
       }
       .icon-circle{
-        width: 16px !important;
-        height: 16px !important;
+        width: 22px !important;
+        height: 22px !important;
         i{
           font-size: 12px !important;
         }
+      }
+    }
+    .btn-link{
+      @media (max-width: 575.98px) {
+        font-size: 12px !important;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        text-decoration: none;
       }
     }
   }
