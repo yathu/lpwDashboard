@@ -3,13 +3,14 @@ $(document).ready(() => {
     // $('.selectpicker').selectpicker();
 
     // Handle credit package selection
-    $('.credit-package-radio').on('change', function() {
+    $('.credit-package-radio').on('change', function () {
         // Store the selected credit package value
         const selectedValue = $(this).val();
         console.log('Selected credit package:', selectedValue);
 
         // You can add more logic here if needed
     });
+
     // Function to toggle selected options container visibility
     function toggleSelectedOptionsVisibility() {
         // Use jQuery to select checkboxes and container
@@ -607,7 +608,7 @@ $(document).ready(() => {
     })();
 
     // Video preview click handler
-    $('.video-preview').on('click', function() {
+    $('.video-preview').on('click', function () {
         // Close the promote modal
         $('#promotedAddModal').modal('hide');
 
@@ -624,5 +625,56 @@ $(document).ready(() => {
         $('#videoPlayerFrame').attr('src', '');
         // Reopen the promotedAddModal when videoPlayerModal is closed
         $('#promotedAddModal').modal('show');
+    });
+
+    // Initialize charts for all insight buttons
+    function initializeInsightChart(canvasId) {
+        const ctx = document.getElementById(canvasId).getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [
+                    {
+                        data: [435, 321, 532, 801, 1231, 1098, 732, 321, 451, 482, 513, 397]
+                    }
+                ]
+            },
+            options: {
+                responsive: false,
+                scales: {
+                    y: {display: false},
+                    x: {display: false}
+                },
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                },
+                elements: {
+                    line: {
+                        borderColor: '#fff',
+                        borderWidth: 1
+                    },
+                    point: {
+                        radius: 0
+                    }
+                },
+                tooltips: {
+                    enabled: false
+                },
+            }
+        });
+        return chart;
+    }
+
+    // Initialize
+    // all
+    // charts
+    const chartIds = ['insightChart2', 'insightChart3', 'insightChart4',];
+    chartIds.forEach(id => {
+        if (document.getElementById(id)) {
+            initializeInsightChart(id);
+        }
     });
 });
