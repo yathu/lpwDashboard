@@ -786,6 +786,7 @@ $header-bg: #f1f3f5;
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
+      align-items: center;
 
       .label {
         display: inline-flex;
@@ -2158,12 +2159,18 @@ $header-bg: #f1f3f5;
       padding: 6px 10px;
       font-family: "Inter", sans-serif;
       font-weight: 500;
-      font-size: 13px;
+      font-size: 12px;
       line-height: 16px;
       letter-spacing: -1%;
 
       i {
         margin-right: 4px;
+      }
+
+      &.label-featured {
+        background-color: #f4bc2f;
+        color: #000000;
+        //border-radius: 8px;
       }
 
       &.label-orange {
@@ -2363,6 +2370,48 @@ $header-bg: #f1f3f5;
       img {
         width: 20px;
         height: auto;
+      }
+    }
+  }
+}
+
+.mobile-list-item {
+  &.active {
+    border-color: #25d366;
+  }
+
+  .ad-image{
+    position: relative;
+    .location{
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      bottom: 0;
+      left: 8px;
+      right: 8px;
+      background-color: rgba(255, 255, 255, 0.58);
+      padding: 5px 0;
+      font-size: 12px;
+
+    }
+  }
+  .ad-details{
+    .ad-icons{
+      margin-top: 0 !important;
+      justify-content: start !important;
+      gap: 6px !important;
+      .icon-item{
+        gap: 4px !important;
+        span{
+          font-size: 12px !important;
+        }
+      }
+      .icon-circle{
+        width: 16px !important;
+        height: 16px !important;
+        i{
+          font-size: 12px !important;
+        }
       }
     }
   }
