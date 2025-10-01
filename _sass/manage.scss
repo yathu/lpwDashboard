@@ -963,6 +963,12 @@ $header-bg: #f1f3f5;
       color: #dc3545;
     }
 
+    .add-page-no{
+      font-size: 16px;
+      color: #dc3545;
+      font-weight: 500;
+    }
+
     // Button styles
     .promote-btn,
     .boost-btn {
@@ -2156,7 +2162,7 @@ $header-bg: #f1f3f5;
       display: inline-flex;
       align-items: center;
       border-radius: 54px;
-      padding: 6px 10px;
+      padding: 6px 8px;
       font-family: "Inter", sans-serif;
       font-weight: 500;
       font-size: 12px;
