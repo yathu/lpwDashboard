@@ -1765,17 +1765,27 @@ $header-bg: #f1f3f5;
             margin-bottom: 16px;
             .progress-stacked{
               //background-color: white;
-              height: 16px;
+              height: 24px;
               border-radius: 25px;
+              border: 4px solid #e9ebee;
               .progress{
                 height: 16px;
                 font-size: 12px;
                 //background-color: rgba(3, 99, 227, 0.20);
 
+                .progress-bar:not(.progress-light){
+                  border-radius: 25px;
+                }
+
                 .progress-light{
                   background-color: rgba(3, 99, 227, 0.39);
                   border-radius: 0 25px 25px 0;
                 }
+              }
+
+              .progress:nth-of-type(1){
+                border-radius: 0;
+                background-color: #99b7eb;
               }
             }
 
