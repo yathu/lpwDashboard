@@ -636,7 +636,10 @@ $(document).ready(() => {
                 labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                 datasets: [
                     {
-                        data: [435, 321, 532, 801, 1231, 1098, 732, 321, 451, 482, 513, 397]
+                        data: [435, 321, 532, 801, 1231, 1098, 732, 321, 451, 482, 513, 397],
+                        backgroundColor: 'rgba(182,224,241,0.65)', // Light blue fill
+                        borderWidth: 1,
+                        fill: true,
                     }
                 ]
             },
@@ -653,7 +656,7 @@ $(document).ready(() => {
                 },
                 elements: {
                     line: {
-                        borderColor: '#fff',
+                        borderColor: '#3298c3',
                         borderWidth: 1
                     },
                     point: {
