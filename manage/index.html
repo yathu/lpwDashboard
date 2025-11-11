@@ -312,23 +312,16 @@ layout: manage_ads
                             </button>
                         </div>
                         <div class="sort-dropdown">
-                            <button
-                                    class="btn btn-outline-secondary dropdown-toggle sort-btn"
-                                    type="button"
-                                    id="sortDropdown"
-                                    data-bs-toggle="dropdown"
-                                    aria-expanded="false"
-                            >
-                                <i style="font-size: 16px" class="bi bi-filter me-2"></i>
-                                Sort
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="sortDropdown">
-                                <li><a class="dropdown-item" href="#">Newest First</a></li>
-                                <li><a class="dropdown-item" href="#">Oldest First</a></li>
-                                <li><a class="dropdown-item" href="#">Last Modified</a></li>
-                                <li><a class="dropdown-item" href="#">Last Boosted</a></li>
-                                <li><a class="dropdown-item" href="#">Sort by Page</a></li>
-                            </ul>
+                            <i style="font-size: 16px" class="bi bi-filter"></i>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Sort</option>
+                                <option value="1">Newest First</option>
+                                <option value="2">Oldest First</option>
+                                <option value="3">Last Modified</option>
+                                <option value="4">Last Boosted</option>
+                                <option value="5">Sort by Page</option>
+                            </select>
+
                         </div>
                     </div>
                 </div>

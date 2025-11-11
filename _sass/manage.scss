@@ -165,6 +165,12 @@ body {
   .swiper-button-next {
     right: -12px;
   }
+
+  .swiper-button-prev, .swiper-button-next{
+    @media (max-width: 767.98px) {
+      display: none !important;
+    }
+  }
 }
 
 //search container
@@ -277,15 +283,30 @@ body {
 
   .sort-dropdown {
     //margin-top: 16px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid rgba(146, 146, 157, 0.36);
+    padding: 3px 0 3px 0;
+    max-width: 150px;
+    overflow: hidden;
+    position: relative;
 
-    .sort-btn {
+    i{
+      position: absolute;
+      left: 8px;
+    }
+
+    .form-select{
+      border: none !important;
+      outline: none !important;
       font-size: 12px;
       font-weight: 500;
-      border-radius: 8px;
-      padding: 8px 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      padding-left: 32px;
+      &:focus{
+        outline: none !important;
+        box-shadow: none !important;
+      }
     }
 
     .dropdown-item {
