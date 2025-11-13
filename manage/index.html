@@ -1724,10 +1724,10 @@ layout: manage_ads
                         </div>
 
                         <!-- Right Column (col-3) - Action Buttons -->
-                        <div class="col-md-3">
+                        <div class="col-md-3 desktop-col">
                             <div class="d-flex flex-column h-100 row-gap-2">
                                 <!-- Edit Button -->
-                                <button class="btn action-btn edit-btn">
+                                <button class="btn action-btn edit-btn ">
                                     <i class="bi bi-pencil-square"></i> Edit
                                 </button>
 
@@ -1771,6 +1771,8 @@ layout: manage_ads
 
                             </div>
                         </div>
+
+
                     </div>
 
                     <!--                features-->
@@ -1972,6 +1974,28 @@ layout: manage_ads
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-md-3 mobile-only-col d-md-none">
+                        <div class="d-flex flex-column h-100 row-gap-2">
+                            <!-- Edit Button -->
+                            <button class="btn action-btn edit-btn">
+                                <i class="bi bi-pencil-square"></i> Edit
+                            </button>
+
+                            <!-- Delete Button -->
+                            <button
+                                    class="btn action-btn delete-btn"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#closeAdModal"
+                            >
+                                <i class="bi bi-trash"></i> Delete
+                            </button>
+
+
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -2042,7 +2066,7 @@ layout: manage_ads
                         <div class="col-12 col-md">
                             <div class="d-flex flex-column h-100">
                                 <!-- Second Row: Ad Details -->
-                                <div class="ad-details-container d-flex">
+                                <div class="ad-details-container d-flex mb-0">
                                     <!-- Ad ID -->
                                     <div class="detail-item">
                                         <div class="detail-icon">
@@ -3340,7 +3364,7 @@ layout: manage_ads
                             </div>
 
                             <!-- Right Column (col-3) - Action Buttons -->
-                            <div class="col-md-3">
+                            <div class="col-md-3 desktop-col">
                                 <div class="d-flex flex-column h-100 row-gap-2">
                                     <!-- Edit Button -->
                                     <button class="btn action-btn edit-btn">
@@ -3392,7 +3416,7 @@ layout: manage_ads
 
                         <!--                features-->
 
-                        <div class="lead-features-section">
+                        <div class="lead-features-section mt-0">
                             <div class="row gx-2">
                                 <!-- Left Column - Toggle Features -->
                                 <div class="col-12 col-lg-5 col-xxl-4">
@@ -3591,6 +3615,27 @@ layout: manage_ads
                                         ></div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mobile-only-col d-md-none">
+                            <div class="d-flex flex-column h-100 row-gap-2">
+                                <!-- Edit Button -->
+                                <button class="btn action-btn edit-btn">
+                                    <i class="bi bi-pencil-square"></i> Edit
+                                </button>
+
+                                <!-- Delete Button -->
+                                <button
+                                        class="btn action-btn delete-btn"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#closeAdModal"
+                                >
+                                    <i class="bi bi-trash"></i> Delete
+                                </button>
+
+
+
                             </div>
                         </div>
                     </div>
