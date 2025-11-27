@@ -630,24 +630,51 @@ $(document).ready(() => {
     // Initialize charts for all insight buttons
     function initializeInsightChart(canvasId) {
         const ctx = document.getElementById(canvasId).getContext('2d');
+
+        var gradient = ctx.createLinearGradient(0, 0, 0, 60);
+        gradient.addColorStop(0.2, 'rgba(255,0,79,0.7)');
+        gradient.addColorStop(1, 'rgba(255,0,79,0.07)');
+
         const chart = new Chart(ctx, {
             type: 'line',
             data: {
                 labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                 datasets: [
                     {
-                        data: [435, 321, 532, 801, 1231, 1098, 732, 321, 451, 482, 513, 397],
-                        backgroundColor: 'rgba(182,224,241,0.65)', // Light blue fill
+                        data: [850, 700, 900, 600, 650, 1098, 600, 500, 451, 900, 513, 397],
+                        // backgroundColor: 'rgba(250,35,35,0.11)', // Light blue fill
+                        backgroundColor: gradient, // Light blue fill
                         borderWidth: 1,
                         fill: true,
                     }
                 ]
             },
             options: {
-                responsive: false,
+                responsive: true,
+                maintainAspectRatio: false,
                 scales: {
-                    y: {display: false},
-                    x: {display: false}
+                    y: {
+                        display: true,
+                        ticks: {
+                            display: false
+                        },
+                        border: {
+                            width: 0,
+                            dash: [2, 4],
+                        },
+                        grid: {
+                            drawTicks: false,
+                        },
+                    },
+                    x: {
+                        display: false,
+                        ticks: {
+                            display: false
+                        },
+                        border: {
+                            width: 0,
+                        },
+                    }
                 },
                 plugins: {
                     legend: {
@@ -656,7 +683,7 @@ $(document).ready(() => {
                 },
                 elements: {
                     line: {
-                        borderColor: '#3298c3',
+                        borderColor: '#FA2323FF',
                         borderWidth: 1
                     },
                     point: {
