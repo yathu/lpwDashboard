@@ -96,11 +96,11 @@ $(document).ready(() => {
   const featuredAdsViewsData = [0, 800];
   const featuredAdsLeadsData = [0, 700];
 
-  const platinumAdsViewsData = [300, 700];
-  const platinumAdsLeadsData = [100, 600];
+  const platinumAdsViewsData = [300, 300];
+  const platinumAdsLeadsData = [100, 200];
 
   const showcaseAdsViewsData = [200, 500];
-  const showcaseAdsLeadsData = [300, 600];
+  const showcaseAdsLeadsData = [100, 600];
 
   var adsTypeData = {
     labels: ["Featured", "Normal"],
@@ -116,9 +116,10 @@ $(document).ready(() => {
           bottom: 0,
           left: 0
         },        borderColor: "white",
-        backgroundColor: (ctx) => {
-          return createGradient(ctx.chart, "green");
-        },
+        // backgroundColor: (ctx) => {
+        //   return createGradient(ctx.chart, "green");
+        // },
+        backgroundColor: 'rgba(255,0,80,0.53)',
         // barPercentage: 0.3
 
         // categoryPercentage:1.0,
@@ -128,6 +129,7 @@ $(document).ready(() => {
           anchor: "end",
           color: "green",
           offset: 0,
+          display: false,
         },
       },
       {
@@ -143,14 +145,17 @@ $(document).ready(() => {
           left: 0
         },
         borderColor: "white",
-        backgroundColor: (ctx) => {
-          return createGradient(ctx.chart, "");
-        },
+        // backgroundColor: (ctx) => {
+        //   return createGradient(ctx.chart, "");
+        // },
+        backgroundColor: 'rgba(110,5,38,0.63)',
         datalabels: {
           align: "end",
           anchor: "end",
           color: "blue",
           offset: 0,
+          display: false,
+
         },
         // inflateAmount:5
         // barPercentage: 0.7
@@ -193,6 +198,7 @@ $(document).ready(() => {
             // drawTicks: false,
             tickColor: "white",
           },
+          stacked: true,
         },
         y1: {
           type: "linear",
@@ -207,6 +213,7 @@ $(document).ready(() => {
             // autoSkip: true,
             maxTicksLimit: 6,
           },
+          stacked: true
         },
         x: {
           type: "category",
@@ -218,6 +225,7 @@ $(document).ready(() => {
           border: {
             display: false,
           },
+          stacked: true,
         },
       },
       plugins: {
