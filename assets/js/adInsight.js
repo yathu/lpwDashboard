@@ -93,25 +93,22 @@ $(document).ready(() => {
   //ads type chart
   var adsTypeCtx = document.getElementById("adsTypeChart");
 
-  const featuredAdsViewsData = [0, 800];
-  const featuredAdsLeadsData = [0, 700];
+  const AdsViewsData = [100, 300, 200];
+  const potentialViewsData = [150, 350,250];
 
-  const platinumAdsViewsData = [300, 300];
-  const platinumAdsLeadsData = [100, 200];
-
-  const showcaseAdsViewsData = [200, 500];
-  const showcaseAdsLeadsData = [100, 600];
+  const AdsLeadsData = [200, 400, 300];
+  const potentialLeadsData = [250, 450,350];
 
   var adsTypeData = {
-    labels: ["Featured", "Normal"],
+    labels: ["Featured Ads", "Platinum Ads", "Showcase Ads"],
     datasets: [
       {
         label: "Views",
         type: "bar",
-        data: featuredAdsViewsData,
+        data: AdsViewsData,
         barThickness: 30,
         borderWidth: {
-          top: 1,
+          top: 0,
           right: 0,
           bottom: 0,
           left: 0
@@ -133,21 +130,18 @@ $(document).ready(() => {
         },
       },
       {
-        label: "Leads",
+        label: "Potential",
         type: "bar",
-        data: featuredAdsLeadsData,
-        yAxisID: "y1",
+        data: potentialViewsData,
+        // yAxisID: "y1",
         barThickness: 30,
         borderWidth: {
-          top: 1,
+          top: 0,
           right: 0,
           bottom: 0,
           left: 0
         },
         borderColor: "white",
-        // backgroundColor: (ctx) => {
-        //   return createGradient(ctx.chart, "");
-        // },
         backgroundColor: 'rgba(110,5,38,0.63)',
         datalabels: {
           align: "end",
@@ -155,14 +149,8 @@ $(document).ready(() => {
           color: "blue",
           offset: 0,
           display: false,
-
         },
-        // inflateAmount:5
-        // barPercentage: 0.7
-
-        // categoryPercentage: 0,
-        // barPercentage: 0.5,
-      },
+      }
     ],
   };
 
@@ -200,21 +188,21 @@ $(document).ready(() => {
           },
           stacked: true,
         },
-        y1: {
-          type: "linear",
-          display: true,
-          position: "right",
-          //suggestedMin: 0,
-          grid: {
-            drawOnChartArea: false,
-            tickColor: "white",
-          },
-          ticks: {
-            // autoSkip: true,
-            maxTicksLimit: 6,
-          },
-          stacked: true
-        },
+        // y1: {
+        //   type: "linear",
+        //   display: true,
+        //   position: "right",
+        //   //suggestedMin: 0,
+        //   grid: {
+        //     drawOnChartArea: false,
+        //     tickColor: "white",
+        //   },
+        //   ticks: {
+        //     // autoSkip: true,
+        //     maxTicksLimit: 6,
+        //   },
+        //   stacked: true
+        // },
         x: {
           type: "category",
           grid: {
@@ -242,7 +230,7 @@ $(document).ready(() => {
     },
     plugins: [
       genLeftTitle("Pages", "PageNUmLtitle", 0, 20),
-      genRightTitle("Leads Per Ads", "PageNumRtitle", -50, 20),
+      // genRightTitle("Leads Per Ads", "PageNumRtitle", -50, 20),
     ],
   });
 
@@ -251,23 +239,24 @@ $(document).ready(() => {
   // console.log(adsTypeChart.data);
 
   $("input[type=radio][name=upgradeChartType]").change(function () {
-    // console.log(adsTypeChart.data.labels);
-    if (this.value == "featured") {
-      adsTypeChart.data.datasets[0].data = featuredAdsViewsData;
-      adsTypeChart.data.datasets[1].data = featuredAdsLeadsData;
+    console.log(adsTypeChart.data.datasets);
+    if (this.value == "views") {
+      adsTypeChart.data.datasets[0].data = AdsViewsData;
+      adsTypeChart.data.datasets[1].data = potentialViewsData;
 
-      adsTypeChart.data.labels.splice(0, 1, "Featured");
-    } else if (this.value == "platinum") {
-      adsTypeChart.data.datasets[0].data = platinumAdsViewsData;
-      adsTypeChart.data.datasets[1].data = platinumAdsLeadsData;
+      // adsTypeChart.data.labels.splice(0, 1, "Featured");
+    } else if (this.value == "leads") {
+      adsTypeChart.data.datasets[0].data = AdsLeadsData;
+      adsTypeChart.data.datasets[1].data = potentialLeadsData;
 
-      adsTypeChart.data.labels.splice(0, 1, "Platinum");
-    } else {
-      adsTypeChart.data.datasets[0].data = showcaseAdsViewsData;
-      adsTypeChart.data.datasets[1].data = showcaseAdsLeadsData;
-
-      adsTypeChart.data.labels.splice(0, 1, "ShowCase");
+      // adsTypeChart.data.labels.splice(0, 1, "Platinum");
     }
+    // else {
+    //   // adsTypeChart.data.datasets[0].data = showcaseAdsViewsData;
+    //   adsTypeChart.data.datasets[1].data = showcaseAdsLeadsData;
+    //
+    //   // adsTypeChart.data.labels.splice(0, 1, "ShowCase");
+    // }
 
     adsTypeChart.update();
   });
