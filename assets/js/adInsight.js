@@ -103,7 +103,7 @@ $(document).ready(() => {
     labels: ["Featured Ads", "Platinum Ads", "Showcase Ads"],
     datasets: [
       {
-        label: "Views",
+        label: "Current",
         type: "bar",
         data: AdsViewsData,
         barThickness: 30,
