@@ -321,7 +321,7 @@ $(document).ready(() => {
     var dealsCtx = document.getElementById("dealsChart");
 
     const dealsViewsData = [400, 800];
-    const dealLeadsData = [200, 600];
+    const dealLeadsData = [600, 600];
 
     const wapViewsData = [300, 600];
     const wapLeadsData = [100, 400];
@@ -357,7 +357,7 @@ $(document).ready(() => {
                 label: "Leads",
                 type: "bar",
                 data: dealLeadsData,
-                yAxisID: "y1",
+                // yAxisID: "y1",
                 barThickness: 30,
                 borderWidth: 1,
                 borderColor: "white",
@@ -408,21 +408,23 @@ $(document).ready(() => {
                         // drawTicks: false,
                         tickColor: "white",
                     },
+                    // stacked: true,
+
                 },
-                y1: {
-                    type: "linear",
-                    display: true,
-                    position: "right",
-                    //suggestedMin: 0,
-                    grid: {
-                        drawOnChartArea: false,
-                        tickColor: "white",
-                    },
-                    ticks: {
-                        // autoSkip: true,
-                        maxTicksLimit: 6,
-                    },
-                },
+                // y1: {
+                //     type: "linear",
+                //     display: true,
+                //     position: "right",
+                //     //suggestedMin: 0,
+                //     grid: {
+                //         drawOnChartArea: false,
+                //         tickColor: "white",
+                //     },
+                //     ticks: {
+                //         // autoSkip: true,
+                //         maxTicksLimit: 6,
+                //     },
+                // },
                 x: {
                     type: "category",
                     grid: {
@@ -433,6 +435,7 @@ $(document).ready(() => {
                     border: {
                         display: false,
                     },
+                    stacked: true,
                 },
             },
             plugins: {
@@ -449,7 +452,7 @@ $(document).ready(() => {
         },
         plugins: [
             genLeftTitle("Views", "dealsLtitle", 0, 20),
-            genRightTitle("Leads", "dealsRtitle", 1, 20),
+            // genRightTitle("Leads", "dealsRtitle", 1, 20),
         ],
     });
 
