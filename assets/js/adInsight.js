@@ -90,14 +90,16 @@ $(document).ready(() => {
         return gradient;
     };
 
+    let CURRENT_LANGUAGE = 'en';
+
     //ads type chart
     var adsTypeCtx = document.getElementById("adsTypeChart");
 
     const AdsViewsData = [100, 300, 200];
     const potentialViewsData = [250, 350, 250];
 
-    const AdsLeadsData = [200, 400, 300];
-    const potentialLeadsData = [250, 450, 350];
+    const AdsLeadsData = [350, 400, 300];
+    const potentialLeadsData = [400, 450, 350];
 
     var adsTypeData = {
         labels: ["Featured Ads", "Platinum Ads", "Showcase Ads"],
@@ -263,6 +265,54 @@ $(document).ready(() => {
 
         adsTypeChart.update();
     });
+
+    // Walkthrough Arrays
+    const walkthrough1 = [
+        {
+            type: 'element',
+            id: 'adsTypeChartDataType',
+            content: {
+                en: 'This information box provides context about the chart data.',
+                es: 'Este cuadro de información proporciona contexto sobre los datos del gráfico.',
+                fr: 'Cette boîte d\'information fournit un contexte sur les données du graphique.'
+            }
+        },
+        {
+            type: 'chart-bars',
+            label: 'Featured Ads',
+            content: {
+                en: 'These bars represent January sales for both products.',
+                es: 'Estas barras representan las ventas de enero para ambos productos.',
+                fr: 'Ces barres représentent les ventes de janvier pour les deux produits.'
+            }
+        },
+        {
+            type: 'chart-bars',
+            label: 'Platinum Ads',
+            content: {
+                en: 'March shows different performance across products.',
+                es: 'Marzo muestra un rendimiento diferente entre productos.',
+                fr: 'Mars montre des performances différentes selon les produits.'
+            }
+        },
+        {
+            type: 'chart-bars',
+            label: 'Showcase Ads',
+            content: {
+                en: 'March shows different performance across products.',
+                es: 'Marzo muestra un rendimiento diferente entre productos.',
+                fr: 'Mars montre des performances différentes selon les produits.'
+            }
+        },
+        {
+            type: 'chart-legend',
+            content: {
+                en: 'The legend helps identify which color represents which product.',
+                es: 'La leyenda ayuda a identificar qué color representa cada producto.',
+                fr: 'La légende aide à identifier quelle couleur représente quel produit.'
+            }
+        }
+    ];
 
     //ads type chart end
 
@@ -2205,4 +2255,261 @@ $(document).ready(() => {
     );
 
     //custom long legends end
+
+
+    class ChartWalkthrough {
+        constructor(chartInstance, steps) {
+            this.chart = chartInstance;
+            this.steps = steps;
+            this.currentStep = 0;
+            this.isActive = false;
+            this.overlay = null;
+            this.highlight = null;
+            this.tooltip = null;
+        }
+
+        start() {
+            if (this.isActive) return;
+
+            this.isActive = true;
+            this.currentStep = 0;
+
+            // Wait for chart to render completely before getting positions
+            setTimeout(() => {
+                this.createElements();
+                this.showStep(0);
+            }, 100);
+        }
+
+        createElements() {
+            // Create overlay
+            this.overlay = $('<div class="walkthrough-overlay"></div>');
+            $('body').append(this.overlay);
+            this.overlay.fadeIn(300);
+
+            // Create highlight box
+            this.highlight = $('<div class="walkthrough-highlight"></div>');
+            $('body').append(this.highlight);
+
+            // Create tooltip
+            this.tooltip = $('<div class="walkthrough-tooltip"></div>');
+            $('body').append(this.tooltip);
+        }
+
+        showStep(stepIndex) {
+            if (stepIndex < 0 || stepIndex >= this.steps.length) return;
+
+            this.currentStep = stepIndex;
+            const step = this.steps[stepIndex];
+            const content = step.content[CURRENT_LANGUAGE] || step.content['en'];
+
+            let targetRect;
+
+            if (step.type === 'element') {
+                targetRect = this.getElementRect(step.id);
+            } else if (step.type === 'chart-bars') {
+                targetRect = this.getChartBarsRect(step.label);
+            } else if (step.type === 'chart-legend') {
+                targetRect = this.getChartLegendRect();
+            }
+
+            if (!targetRect) {
+                console.error('Could not find target element for step', stepIndex);
+                return;
+            }
+
+            // Position highlight
+            this.highlight.css({
+                left: targetRect.left + 'px',
+                top: targetRect.top + 'px',
+                width: targetRect.width + 'px',
+                height: targetRect.height + 'px',
+                display: 'block'
+            });
+
+            // Build tooltip content
+            const tooltipHTML = `
+                    <div class="walkthrough-tooltip-content">${content}</div>
+                    <div class="walkthrough-tooltip-footer">
+                        <div class="walkthrough-step-info">
+                            ${stepIndex + 1} / ${this.steps.length}
+                        </div>
+                        <div class="walkthrough-buttons">
+                            ${stepIndex > 0 ? '<button class="btn-walkthrough-prev">Previous</button>' : ''}
+                            ${stepIndex < this.steps.length - 1 ? '<button class="btn-walkthrough-next">Next</button>' : '<button class="btn-walkthrough-next">Done</button>'}
+                            <button class="btn-walkthrough-skip">Skip</button>
+                        </div>
+                    </div>
+                `;
+
+            this.tooltip.html(tooltipHTML);
+
+            // Position tooltip
+            this.positionTooltip(targetRect);
+
+            // Bind events
+            this.tooltip.find('.btn-walkthrough-prev').on('click', () => this.previous());
+            this.tooltip.find('.btn-walkthrough-next').on('click', () => this.next());
+            this.tooltip.find('.btn-walkthrough-skip').on('click', () => this.close());
+        }
+
+        getElementRect(elementId) {
+            const element = document.getElementById(elementId);
+            if (!element) return null;
+
+            const rect = element.getBoundingClientRect();
+            const padding = 10;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+            return {
+                left: rect.left + scrollLeft - padding,
+                top: rect.top + scrollTop - padding,
+                width: rect.width + (padding * 2),
+                height: rect.height + (padding * 2)
+            };
+        }
+
+        getChartBarsRect(label) {
+            const meta = this.chart.getDatasetMeta(0);
+            const labelIndex = this.chart.data.labels.indexOf(label);
+
+            if (labelIndex === -1) return null;
+
+            let minX = Infinity, minY = Infinity;
+            let maxX = -Infinity, maxY = -Infinity;
+
+            // Get all datasets and find bars for this label
+            this.chart.data.datasets.forEach((dataset, datasetIndex) => {
+                const meta = this.chart.getDatasetMeta(datasetIndex);
+                if (meta.data[labelIndex]) {
+                    const bar = meta.data[labelIndex];
+                    const props = bar.getProps(['x', 'y', 'base', 'width', 'height'], true);
+
+                    const barLeft = props.x - props.width / 2;
+                    const barRight = props.x + props.width / 2;
+                    const barTop = Math.min(props.y, props.base);
+                    const barBottom = Math.max(props.y, props.base);
+
+                    minX = Math.min(minX, barLeft);
+                    maxX = Math.max(maxX, barRight);
+                    minY = Math.min(minY, barTop);
+                    maxY = Math.max(maxY, barBottom);
+                }
+            });
+
+            const canvas = this.chart.canvas;
+            const canvasRect = canvas.getBoundingClientRect();
+            const padding = 10;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+            return {
+                left: canvasRect.left + scrollLeft + minX - padding,
+                top: canvasRect.top + scrollTop + minY - padding,
+                width: (maxX - minX) + (padding * 2),
+                height: (maxY - minY) + (padding * 2)
+            };
+        }
+
+        getChartLegendRect() {
+            const legend = this.chart.legend;
+            if (!legend) return null;
+
+            const canvas = this.chart.canvas;
+            const canvasRect = canvas.getBoundingClientRect();
+            const padding = 10;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+            return {
+                left: canvasRect.left + scrollLeft + legend.left - padding,
+                top: canvasRect.top + scrollTop + legend.top - padding,
+                width: legend.width + (padding * 2),
+                height: legend.height + (padding * 2)
+            };
+        }
+
+        positionTooltip(targetRect) {
+            const tooltipHeight = this.tooltip.outerHeight();
+            const tooltipWidth = this.tooltip.outerWidth();
+            const windowHeight = $(window).height();
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+            const spacing = 20;
+
+            let top, left;
+
+            // Convert absolute position to viewport position for comparison
+            const targetTopInViewport = targetRect.top - scrollTop;
+
+            // Try to position above target
+            if (targetTopInViewport - tooltipHeight - spacing > 0) {
+                top = targetRect.top - tooltipHeight - spacing;
+            } else {
+                // Position below if not enough space above
+                top = targetRect.top + targetRect.height + spacing;
+            }
+
+            // Center horizontally relative to target
+            left = targetRect.left + (targetRect.width / 2) - (tooltipWidth / 2);
+
+            // Keep within viewport
+            const maxLeft = scrollLeft + $(window).width() - tooltipWidth - 10;
+            const minLeft = scrollLeft + 10;
+            left = Math.max(minLeft, Math.min(left, maxLeft));
+
+            this.tooltip.css({
+                top: top + 'px',
+                left: left + 'px',
+                display: 'block'
+            });
+        }
+
+        next() {
+            if (this.currentStep < this.steps.length - 1) {
+                this.showStep(this.currentStep + 1);
+            } else {
+                this.close();
+            }
+        }
+
+        previous() {
+            if (this.currentStep > 0) {
+                this.showStep(this.currentStep - 1);
+            }
+        }
+
+        close() {
+            this.isActive = false;
+            this.overlay.fadeOut(300, () => this.overlay.remove());
+            this.highlight.fadeOut(300, () => this.highlight.remove());
+            this.tooltip.fadeOut(300, () => this.tooltip.remove());
+        }
+    }
+    // Initialize walkthroughs
+    let walkthroughInstance1;
+    let walkthroughInstance2;
+
+    $('#AdsTypeChartWalkthrough').on('click', function() {
+        walkthroughInstance1 = new ChartWalkthrough(adsTypeChart, walkthrough1);
+        walkthroughInstance1.start();
+    });
+
+    $('#startWalkthrough2').on('click', function() {
+        walkthroughInstance2 = new ChartWalkthrough(chart2, walkthrough2);
+        walkthroughInstance2.start();
+    });
+
+    // Language buttons - all change the global variable
+    $('.lang-btn').on('click', function() {
+        CURRENT_LANGUAGE = $(this).data('lang');
+
+        // Update active state for all language buttons
+        $('.lang-btn').removeClass('active');
+        $(`.lang-btn[data-lang="${CURRENT_LANGUAGE}"]`).addClass('active');
+    });
+
+    // Set initial active language
+    $(`.lang-btn[data-lang="${CURRENT_LANGUAGE}"]`).addClass('active');
 });
