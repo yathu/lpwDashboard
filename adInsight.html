@@ -166,6 +166,42 @@ title: insight
                 </div>
             </div>
 
+            <div class="d-flex align-items-center gap-2 mb-3">
+                <span class="text-muted">Language:</span>
+                <div class="btn-group me-2" role="group">
+                    <input
+                            type="radio"
+                            class="btn-check"
+                            name="language"
+                            id="langEnglish"
+                            autocomplete="off"
+                            checked
+                            value="en"
+                    />
+                    <label class="btn btn-outline-success btn-sm lang-btn" for="langEnglish" data-lang="en">English</label>
+
+                    <input
+                            type="radio"
+                            class="btn-check"
+                            name="language"
+                            id="langSinhala"
+                            autocomplete="off"
+                            value="es"
+                    />
+                    <label class="btn btn-outline-success btn-sm lang-btn" for="langSinhala" data-lang="es">සිංහල</label>
+
+                    <input
+                            type="radio"
+                            class="btn-check"
+                            name="language"
+                            id="langTamil"
+                            autocomplete="off"
+                            value="fr"
+                    />
+                    <label class="btn btn-outline-success btn-sm lang-btn" for="langTamil" data-lang="fr">தமிழ்</label>
+                </div>
+            </div>
+
             <div class="charts-container mb-3">
                 <div class="chart-box d-flex flex-column justify-content-between">
                     <div>
@@ -238,124 +274,49 @@ title: insight
 
                     <div class="d-flex justify-content-between align-items-start">
 
-                        <div class="buttons-container d-flex align-items-center justify-content-between">
+                        <div class="title">
+                            <img src="assets/img/addInsight/summary/upgradeAds.svg" alt=""/>
+                            Ad Types Comparison
+                        </div>
 
-                            <div class="deals-arrows dealsPrev">
-                                <i class="bi bi-chevron-left"></i>
-                            </div>
-
-                            <div class="swiper dealsButtonsSwiper d-flex align-items-center">
-                                <div class="swiper-wrapper">
-                                    <!-- Slides -->
-                                    <div class="swiper-slide">
-                                        <input
-                                                type="radio"
-                                                class="btn-check"
-                                                name="dealChartType"
-                                                id="hotDeal"
-                                                autocomplete="off"
-                                                checked
-                                                value="hotdeal"
-                                        />
-                                        <label class="btn btn-outline-primary" for="hotDeal">
-                                            <img src="assets/img/addInsight/hotdeal.svg" alt=""/>
-                                            <span>Hot deal</span>
-                                        </label>
-                                    </div>
-                                    <div class="swiper-slide"><input
-                                            type="radio"
-                                            class="btn-check"
-                                            name="dealChartType"
-                                            id="whatsapp"
-                                            autocomplete="off"
-                                            value="whatsapp"
-                                    />
-                                        <label class="btn btn-outline-primary" for="whatsapp">
-                                            <img src="assets/img/addInsight/whatsapp.svg" alt=""/>
-                                            WhatsApp Live Chat</label
-                                        >
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <input
-                                                type="radio"
-                                                class="btn-check"
-                                                name="dealChartType"
-                                                id="video"
-                                                autocomplete="off"
-                                                value="video"
-                                        />
-                                        <label class="btn btn-outline-primary" for="video">
-                                            <img src="assets/img/addInsight/video.svg" alt=""/>
-                                            Ads with Videos</label
-                                        >
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <input
-                                                type="radio"
-                                                class="btn-check"
-                                                name="dealChartType"
-                                                id="new1"
-                                                autocomplete="off"
-                                                value="new1"
-                                        />
-                                        <label class="btn btn-outline-primary" for="new1">
-                                            <img src="assets/img/addInsight/hotdeal.svg" alt=""/>
-                                            <span>New 1</span>
-                                        </label>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <input
-                                                type="radio"
-                                                class="btn-check"
-                                                name="dealChartType"
-                                                id="new2"
-                                                autocomplete="off"
-                                                value="new2"
-                                        />
-                                        <label class="btn btn-outline-primary" for="new2">
-                                            <img src="assets/img/addInsight/hotdeal.svg" alt=""/>
-                                            <span>New  with data</span>
-                                        </label>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <input
-                                                type="radio"
-                                                class="btn-check"
-                                                name="dealChartType"
-                                                id="new3"
-                                                autocomplete="off"
-                                                value="new3"
-                                        />
-                                        <label class="btn btn-outline-primary" for="new3">
-                                            <img src="assets/img/addInsight/hotdeal.svg" alt=""/>
-                                            <span>Facebook Ads view</span>
-                                        </label>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="deals-arrows dealsNext">
-                                <i class="bi bi-chevron-right"></i>
-                            </div>
-
-                            <div
+                        <div class="d-flex align-items-center gap-2">
+                            <div id="dealChartDataType"
                                     class="btn-group"
                                     role="group"
                                     aria-label="Basic radio toggle button group"
                             >
+                                <input
+                                        type="radio"
+                                        class="btn-check"
+                                        name="dealChartDataType"
+                                        id="dealViews"
+                                        autocomplete="off"
+                                        checked
+                                        value="views"
+                                />
+                                <label class="btn btn-outline-primary" for="dealViews"
+                                >Views</label
+                                >
 
+                                <input
+                                        type="radio"
+                                        class="btn-check"
+                                        name="dealChartDataType"
+                                        id="dealLeads"
+                                        autocomplete="off"
+                                        value="leads"
+                                />
+                                <label class="btn btn-outline-primary" for="dealLeads"
+                                >Leads</label>
                             </div>
 
+                            <button type="button" class="btn btn-sm btn-outline-secondary rounded-5 text-center"
+                                    data-bs-toggle="popover"
+                                    data-bs-trigger="hover" data-bs-placement="top"
+                                    data-bs-content="And here's some amazing content. It's very engaging. Right?">
+                                <i class="bi bi-info ms-0"></i>
+                            </button>
                         </div>
-
-
-                        <button type="button" class="btn btn-sm btn-outline-secondary rounded-5 text-center mt-2"
-                                data-bs-toggle="popover"
-                                data-bs-trigger="hover" data-bs-placement="top"
-                                data-bs-content="And here's some amazing content. It's very engaging. Right?">
-                            <i class="bi bi-info ms-0"></i>
-                        </button>
                     </div>
 
 

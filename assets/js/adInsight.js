@@ -320,59 +320,62 @@ $(document).ready(() => {
 
     var dealsCtx = document.getElementById("dealsChart");
 
-    const dealsViewsData = [400, 800];
-    const dealLeadsData = [600, 600];
-
-    const wapViewsData = [300, 600];
-    const wapLeadsData = [100, 400];
-
-    const videoViewsData = [200, 700];
-    const videoLeadsData = [400, 700];
+    // Data for all 6 ad types - Current and Potential
+    const allDealsCurrentViewsData = [400, 300, 200, 350, 450, 500];
+    const allDealsPotentialViewsData = [550, 450, 350, 500, 600, 650];
+    
+    const allDealsCurrentLeadsData = [600, 100, 400, 250, 350, 300];
+    const allDealsPotentialLeadsData = [750, 250, 550, 400, 500, 450];
 
     var hotData = {
-        labels: ["Hot deals", "Normal"],
+        labels: ["Hot deals", "WhatsApp Live Chat", "Ads with Videos", "New 1", "New with data", "Facebook Ads view"],
         datasets: [
             {
-                label: "Views",
+                label: "Current",
                 type: "bar",
-                // backgroundColor: "red",
-                data: dealsViewsData,
+                data: allDealsCurrentViewsData,
                 barThickness: 30,
-                borderWidth: 1,
+                borderWidth: {
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0
+                },
                 borderColor: "white",
-                // barPercentage: 0.3
-
-                // categoryPercentage:1.0,
-                // barPercentage: 0.5,
-
-                // borderColor: (ctx) => "#3DD598",
+                borderRadius: 7,
                 backgroundColor: (ctx) => {
                     return createGradient(ctx.chart, "green");
                 },
                 datalabels: {
+                    align: "end",
+                    anchor: "end",
+                    color: "green",
+                    offset: 0,
                     display: false,
                 },
             },
             {
-                label: "Leads",
+                label: "Potential",
                 type: "bar",
-                data: dealLeadsData,
-                // yAxisID: "y1",
+                data: allDealsPotentialViewsData,
                 barThickness: 30,
-                borderWidth: 1,
-                borderColor: "white",
-                backgroundColor: (ctx) => {
-                    return createGradient(ctx.chart, "");
+                borderWidth: {
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0
                 },
+                borderColor: "white",
+                borderRadius: 7,
+                backgroundColor: 'rgba(68, 189, 134, 0.34)',
                 datalabels: {
+                    align: "end",
+                    anchor: "end",
+                    color: "blue",
+                    offset: 0,
                     display: false,
                 },
-                // inflateAmount:5
-                // barPercentage: 0.7
-
-                // categoryPercentage: 0,
-                // barPercentage: 0.5,
-            },
+            }
         ],
     };
 
@@ -456,35 +459,16 @@ $(document).ready(() => {
         ],
     });
 
-    $("input[type=radio][name=dealChartType]").change(function (e) {
-
+    // Toggle between Views and Leads for deals chart
+    $("input[type=radio][name=dealChartDataType]").change(function (e) {
         e.preventDefault();
 
-        if (this.value == "hotdeal") {
-            dealsChart.data.datasets[0].data = dealsViewsData;
-            dealsChart.data.datasets[1].data = dealLeadsData;
-
-            dealsChart.data.labels.splice(0, 1, "Hot deals");
-        } else if (this.value == "whatsapp") {
-            dealsChart.data.datasets[0].data = wapViewsData;
-            dealsChart.data.datasets[1].data = wapLeadsData;
-
-            dealsChart.data.labels.splice(0, 1, "whatsapp");
-        } else if (this.value == "video") {
-            dealsChart.data.datasets[0].data = videoViewsData;
-            dealsChart.data.datasets[1].data = videoLeadsData;
-
-            dealsChart.data.labels.splice(0, 1, "Video");
-        } else if (this.value == "new1") {
-            dealsChart.data.datasets[0].data = wapViewsData;
-            dealsChart.data.datasets[1].data = wapLeadsData;
-
-            dealsChart.data.labels.splice(0, 1, "new 1");
-        } else if (this.value == "new2") {
-            dealsChart.data.datasets[0].data = videoViewsData;
-            dealsChart.data.datasets[1].data = videoLeadsData;
-
-            dealsChart.data.labels.splice(0, 1, "new 2");
+        if (this.value == "views") {
+            dealsChart.data.datasets[0].data = allDealsCurrentViewsData;
+            dealsChart.data.datasets[1].data = allDealsPotentialViewsData;
+        } else if (this.value == "leads") {
+            dealsChart.data.datasets[0].data = allDealsCurrentLeadsData;
+            dealsChart.data.datasets[1].data = allDealsPotentialLeadsData;
         }
 
         dealsChart.update();
