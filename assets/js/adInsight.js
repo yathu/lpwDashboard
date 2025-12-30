@@ -2245,9 +2245,10 @@ $(document).ready(() => {
 
 
     class ChartWalkthrough {
-        constructor(chartInstance, steps) {
+        constructor(chartInstance, steps, title = 'Walkthrough') {
             this.chart = chartInstance;
             this.steps = steps;
+            this.title = title;
             this.currentStep = 0;
             this.isActive = false;
             this.overlay = null;
@@ -2323,6 +2324,7 @@ $(document).ready(() => {
             // Build tooltip content
             const tooltipHTML = `
                     <div class="walkthrough-tooltip-header">
+                        <div class="walkthrough-title">${this.title}</div>
                         <button class="btn-walkthrough-close" title="Close">×</button>
                     </div>
                     <div class="walkthrough-tooltip-content">${content}</div>
@@ -2485,12 +2487,12 @@ $(document).ready(() => {
     let walkthroughInstance2;
 
     $('#AdsTypeChartWalkthrough').on('click', function() {
-        walkthroughInstance1 = new ChartWalkthrough(adsTypeChart, walkthrough1);
+        walkthroughInstance1 = new ChartWalkthrough(adsTypeChart, walkthrough1, 'Ad Types Overview');
         walkthroughInstance1.start();
     });
 
     $('#startWalkthrough2').on('click', function() {
-        walkthroughInstance2 = new ChartWalkthrough(chart2, walkthrough2);
+        walkthroughInstance2 = new ChartWalkthrough(chart2, walkthrough2, 'Chart Guide');
         walkthroughInstance2.start();
     });
 

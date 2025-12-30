@@ -2781,9 +2781,17 @@ body {
 
 .walkthrough-tooltip-header {
   display: flex;
-  justify-content: flex-end;
-  padding: 8px 12px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px 0px 10px;
   background: #1967d3;
+  gap: 12px;
+}
+
+.walkthrough-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
 }
 
 .walkthrough-tooltip-content {
