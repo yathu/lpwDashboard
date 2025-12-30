@@ -646,6 +646,7 @@ $(document).ready(() => {
                         backgroundColor: gradient, // Light blue fill
                         borderWidth: 1,
                         fill: true,
+                        tension:.3
                     }
                 ]
             },

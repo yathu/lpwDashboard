@@ -4803,16 +4803,18 @@ label.form-check-label:focus,
 
   canvas{
     background-color: rgba(255, 255, 255, 1);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
     //border-radius: 14px;
     //padding: 0 4px;
   }
 
   h6{
     color: #000000;
-    font-size: 13px;
+    font-size: 11px;
     //font-weight: 500;
     text-align: left;
-    margin-top: 10px;
+    margin-top: 5px;
     margin-left: 10px;
   }
   p{
@@ -4823,9 +4825,9 @@ label.form-check-label:focus,
   .badge{
     background-color: rgba(250, 35, 35, 0.90);
     color: #FFFFFF;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 500;
-    padding: 8px 8px;
+    padding: 6px 2px;
     border-radius: 25px;
     position: absolute;
     top: 6px;
