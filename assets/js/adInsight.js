@@ -2314,18 +2314,24 @@ $(document).ready(() => {
                 display: 'block'
             });
 
+            // Build indicator dots
+            let dotsHTML = '';
+            for (let i = 0; i < this.steps.length; i++) {
+                dotsHTML += `<span class="walkthrough-dot ${i === stepIndex ? 'active' : ''}"></span>`;
+            }
+
             // Build tooltip content
             const tooltipHTML = `
+                    <div class="walkthrough-tooltip-header">
+                        <button class="btn-walkthrough-close" title="Close">×</button>
+                    </div>
                     <div class="walkthrough-tooltip-content">${content}</div>
+                    <div class="walkthrough-step-indicators">
+                        ${dotsHTML}
+                    </div>
                     <div class="walkthrough-tooltip-footer">
-                        <div class="walkthrough-step-info">
-                            ${stepIndex + 1} / ${this.steps.length}
-                        </div>
-                        <div class="walkthrough-buttons">
-                            ${stepIndex > 0 ? '<button class="btn-walkthrough-prev">Previous</button>' : ''}
-                            ${stepIndex < this.steps.length - 1 ? '<button class="btn-walkthrough-next">Next</button>' : '<button class="btn-walkthrough-next">Done</button>'}
-                            <button class="btn-walkthrough-skip">Skip</button>
-                        </div>
+                        ${stepIndex > 0 ? '<button class="btn-walkthrough-prev">Back</button>' : '<div></div>'}
+                        ${stepIndex < this.steps.length - 1 ? '<button class="btn-walkthrough-next">Next</button>' : '<button class="btn-walkthrough-next">Done</button>'}
                     </div>
                 `;
 
@@ -2337,7 +2343,7 @@ $(document).ready(() => {
             // Bind events
             this.tooltip.find('.btn-walkthrough-prev').on('click', () => this.previous());
             this.tooltip.find('.btn-walkthrough-next').on('click', () => this.next());
-            this.tooltip.find('.btn-walkthrough-skip').on('click', () => this.close());
+            this.tooltip.find('.btn-walkthrough-close').on('click', () => this.close());
         }
 
         getElementRect(elementId) {
