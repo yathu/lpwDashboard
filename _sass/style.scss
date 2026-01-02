@@ -180,7 +180,7 @@ body {
     background: #ffffff;
     border-radius: 16px;
     box-shadow: 0 0 1px 0 rgba(12, 26, 75, 0.24),
-      0 3px 8px -1px rgba(50, 50, 71, 0.05);
+    0 3px 8px -1px rgba(50, 50, 71, 0.05);
     padding: 15px 8px 8px 8px;
     height: 100%;
     display: flex;
@@ -615,10 +615,10 @@ body {
         bottom: 0;
         width: 100%;
         background-image: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0) 0%,
-          rgba(255, 255, 255, 0.78) 43%,
-          #ffffff 100%
+                        180deg,
+                        rgba(255, 255, 255, 0) 0%,
+                        rgba(255, 255, 255, 0.78) 43%,
+                        #ffffff 100%
         );
         padding-top: 15px;
         text-align: center;
@@ -899,7 +899,7 @@ body {
   background: #ffffff;
   border-radius: 20px;
   box-shadow: 0 0 1px 0 rgba(12, 26, 75, 0.24),
-    0 3px 8px -1px rgba(50, 50, 71, 0.05);
+  0 3px 8px -1px rgba(50, 50, 71, 0.05);
   padding: 22px 14px 16px;
 
   @media (max-width: 767.98px) {
@@ -998,7 +998,7 @@ body {
   border: 1px solid #d0d9e1;
   border-radius: 20px;
   box-shadow: 0 0 1px 0 rgba(12, 26, 75, 0.24),
-    0 3px 8px -1px rgba(50, 50, 71, 0.05);
+  0 3px 8px -1px rgba(50, 50, 71, 0.05);
   display: flex;
   padding: 16px 12px;
   gap: 12px;
@@ -1140,7 +1140,7 @@ body {
 
   .slide {
     box-shadow: 0 0 1px 0 rgba(12, 26, 75, 0.24),
-      0 3px 8px -1px rgba(50, 50, 71, 0.05);
+    0 3px 8px -1px rgba(50, 50, 71, 0.05);
     background: #f7fafc;
     border: 1px solid #e2e2ea;
     border-radius: 20px;
@@ -2284,7 +2284,7 @@ body {
   .summary-sec-container {
     background: #ffffff;
     box-shadow: 0px 0px 1px rgba(12, 26, 75, 0.24),
-      0px 3px 8px -1px rgba(50, 50, 71, 0.05);
+    0px 3px 8px -1px rgba(50, 50, 71, 0.05);
     border-radius: 20px;
     padding: 12px;
     display: flex;
@@ -2377,7 +2377,7 @@ body {
   .charts-container {
     background: #ffffff;
     box-shadow: 0px 0px 1px rgba(12, 26, 75, 0.24),
-      0px 3px 8px -1px rgba(50, 50, 71, 0.05);
+    0px 3px 8px -1px rgba(50, 50, 71, 0.05);
     border-radius: 20px;
     padding: 12px;
     display: flex;
@@ -2447,6 +2447,7 @@ body {
           color: #009432;
           font-weight: bold !important;
         }
+
         i::before {
           //font-weight: 600 !important;
         }
@@ -2588,7 +2589,7 @@ body {
   .recommend-container {
     background: #ffffff;
     box-shadow: 0px 0px 1px rgba(12, 26, 75, 0.24),
-      0px 3px 8px -1px rgba(50, 50, 71, 0.05);
+    0px 3px 8px -1px rgba(50, 50, 71, 0.05);
     border-radius: 20px;
     padding: 24px 24px 20px;
 
@@ -2899,4 +2900,74 @@ body {
 
 .btn-walkthrough-close:hover {
   color: rgba(255, 255, 255, 0.8);
+}
+
+
+// Base Legend Design (Used for ALL legends)
+.chart-legend-custom {
+  border: 2px solid;
+  border-radius: 8px;
+  padding: 0 16px 12px 16px;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.chart-legend-title {
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #f7fafc;
+  padding: 0 8px;
+  position: relative;
+  top: -15px;
+  display: inline-block;
+}
+
+.chart-legend-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: -5px;
+
+
+  .chart-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #333;
+
+    .chart-legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+  }
+}
+
+
+// Color Mixin - Creates a color theme with 3 colors
+@mixin legend-color-theme($border-color, $primary-dot, $secondary-dot) {
+  border-color: $border-color;
+
+  .chart-legend-title {
+    color: $border-color;
+  }
+
+  .dot-primary {
+    background-color: $primary-dot;
+  }
+
+  .dot-secondary {
+    background-color: $secondary-dot;
+  }
+}
+
+//manage 3 collors by yathavan
+.overall-blue {
+  @include legend-color-theme(#0d6efd, #0d6efd, #6ec4db);
+}
+
+.own-green {
+  @include legend-color-theme(#198754, #198754, #86c7a8);
 }
