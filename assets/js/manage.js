@@ -632,8 +632,8 @@ $(document).ready(() => {
         const ctx = document.getElementById(canvasId).getContext('2d');
 
         var gradient = ctx.createLinearGradient(0, 0, 0, 60);
-        gradient.addColorStop(0.2, 'rgba(255,0,79,0.7)');
-        gradient.addColorStop(1, 'rgba(255,0,79,0.07)');
+        gradient.addColorStop(0.2, 'rgb(161,205,250)');
+        gradient.addColorStop(1, 'rgba(218,241,253,0.52)');
 
         const chart = new Chart(ctx, {
             type: 'line',
@@ -641,12 +641,13 @@ $(document).ready(() => {
                 labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                 datasets: [
                     {
-                        data: [850, 700, 900, 600, 650, 1098, 600, 500, 451, 900, 513, 397],
+                        data: [300, 350, 900, 300, 330, 900, 300, 310, 400, 900, 300, 397],
                         // backgroundColor: 'rgba(250,35,35,0.11)', // Light blue fill
                         backgroundColor: gradient, // Light blue fill
-                        borderWidth: 1,
+                        borderWidth: 2,
                         fill: true,
-                        tension:.3
+                        tension:.3,
+                        borderColor:'rgb(25 127 230)'
                     }
                 ]
             },
@@ -684,7 +685,7 @@ $(document).ready(() => {
                 },
                 elements: {
                     line: {
-                        borderColor: '#FA2323FF',
+                        borderColor: 'rgb(237,237,237)',
                         borderWidth: 1
                     },
                     point: {
