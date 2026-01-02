@@ -2913,8 +2913,8 @@ body {
 }
 
 .chart-legend-title {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 500;
   background-color: #f7fafc;
   padding: 0 8px;
   position: relative;
@@ -2935,6 +2935,10 @@ body {
     gap: 6px;
     font-size: 14px;
     color: #333;
+
+    span{
+      font-size: 13px;
+    }
 
     .chart-legend-dot {
       width: 10px;
@@ -2965,9 +2969,9 @@ body {
 
 //manage 3 collors by yathavan
 .overall-blue {
-  @include legend-color-theme(#0d6efd, #0d6efd, #6ec4db);
+  @include legend-color-theme(rgb(25 127 230), rgb(25 127 230), rgb(147 206 236));
 }
 
 .own-green {
-  @include legend-color-theme(#198754, #198754, #86c7a8);
+  @include legend-color-theme(#1fad53, #1fad53, rgba(121,210,154,1));
 }

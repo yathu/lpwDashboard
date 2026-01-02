@@ -101,6 +101,11 @@ $(document).ready(() => {
     const AdsLeadsData = [350, 400, 300];
     const potentialLeadsData = [400, 450, 350];
 
+    //  3 colors for Current bars
+    const currentBarColors = ['#1fad53', 'rgb(25 127 230)', 'rgb(25 127 230)'];
+    //  3 transparent colors for Potential bars
+    const potentialBarColors = ['rgba(121,210,154,1)', 'rgb(147 206 236)', 'rgb(147 206 236)'];
+
     var adsTypeData = {
         labels: ["Featured Ads", "Platinum Ads", "Showcase Ads"],
         datasets: [
@@ -120,7 +125,7 @@ $(document).ready(() => {
                 // backgroundColor: (ctx) => {
                 //   return createGradient(ctx.chart, "green");
                 // },
-                backgroundColor: 'rgb(255,0,80)',
+                backgroundColor: currentBarColors,
                 // barPercentage: 0.3
 
                 // categoryPercentage:1.0,
@@ -147,7 +152,7 @@ $(document).ready(() => {
                 },
                 borderColor: "white",
                 borderRadius: 7,
-                backgroundColor: 'rgba(255,0,80,0.34)',
+                backgroundColor: potentialBarColors,
                 datalabels: {
                     align: "end",
                     anchor: "end",
@@ -167,7 +172,6 @@ $(document).ready(() => {
             //barValueSpacing: 20,
             categoryPercentage: 0.5,
             barPercentage: 0.3,
-
             responsive: true,
             maintainAspectRatio: false,
             layout: {
@@ -223,7 +227,7 @@ $(document).ready(() => {
             },
             plugins: {
                 legend: {
-                    display: true,
+                    display: false,
                     position: "bottom",
                     labels: {
                         usePointStyle: true,
