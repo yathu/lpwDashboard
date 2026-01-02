@@ -2323,6 +2323,7 @@ $(document).ready(() => {
 
             // Build tooltip content
             const tooltipHTML = `
+                    <div class="walkthrough-tooltip-arrow"></div>
                     <div class="walkthrough-tooltip-header">
                         <div class="walkthrough-title">${this.title}</div>
                         <button class="btn-walkthrough-close" title="Close">×</button>
@@ -2339,7 +2340,7 @@ $(document).ready(() => {
 
             this.tooltip.html(tooltipHTML);
 
-            // Position tooltip
+            // Position tooltip and arrow
             this.positionTooltip(targetRect);
 
             // Bind events
@@ -2432,18 +2433,22 @@ $(document).ready(() => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
             const spacing = 20;
+            const arrowSize = 12;
 
             let top, left;
+            let arrowPosition = 'bottom'; // default: arrow points down (tooltip above)
 
             // Convert absolute position to viewport position for comparison
             const targetTopInViewport = targetRect.top - scrollTop;
 
             // Try to position above target
             if (targetTopInViewport - tooltipHeight - spacing > 0) {
-                top = targetRect.top - tooltipHeight - spacing;
+                top = targetRect.top - tooltipHeight - spacing - arrowSize;
+                arrowPosition = 'bottom';
             } else {
                 // Position below if not enough space above
-                top = targetRect.top + targetRect.height + spacing;
+                top = targetRect.top + targetRect.height + spacing + arrowSize;
+                arrowPosition = 'top';
             }
 
             // Center horizontally relative to target
@@ -2454,10 +2459,22 @@ $(document).ready(() => {
             const minLeft = scrollLeft + 10;
             left = Math.max(minLeft, Math.min(left, maxLeft));
 
+            // Calculate arrow position relative to tooltip
+            const targetCenterX = targetRect.left + (targetRect.width / 2);
+            const tooltipLeftInViewport = left - scrollLeft;
+            const arrowOffsetX = targetCenterX - tooltipLeftInViewport;
+
             this.tooltip.css({
                 top: top + 'px',
                 left: left + 'px',
                 display: 'block'
+            });
+
+            // Position arrow
+            const arrow = this.tooltip.find('.walkthrough-tooltip-arrow');
+            arrow.removeClass('top bottom').addClass(arrowPosition);
+            arrow.css({
+                left: Math.max(10, Math.min(tooltipWidth - 20, arrowOffsetX)) + 'px'
             });
         }
 
