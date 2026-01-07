@@ -309,7 +309,8 @@ $(document).ready(() => {
             }
         },
         {
-            type: 'chart-legend',
+            type: 'element',
+            id: 'adsTypeChartlegend',
             content: {
                 en: 'The legend helps identify which color represents which product.',
                 es: 'La leyenda ayuda a identificar qué color representa cada producto.',
@@ -477,6 +478,46 @@ $(document).ready(() => {
 
         dealsChart.update();
     });
+
+    // Walkthrough deals
+    const dealsChartWalk = [
+        {
+            type: 'element',
+            id: 'dealChartDataType',
+            content: {
+                en: 'This information box provides context about the chart data.',
+                es: 'Este cuadro de información proporciona contexto sobre los datos del gráfico.',
+                fr: 'Cette boîte d\'information fournit un contexte sur les données du graphique.'
+            }
+        },
+        {
+            type: 'chart-bars',
+            label: 'Hot deals',
+            content: {
+                en: 'These bars represent January sales for both products.',
+                es: 'Estas barras representan las ventas de enero para ambos productos.',
+                fr: 'Ces barres représentent les ventes de janvier pour les deux produits.'
+            }
+        },
+        {
+            type: 'chart-bars',
+            label: 'WhatsApp Live Chat',
+            content: {
+                en: 'March shows different performance across products.',
+                es: 'Marzo muestra un rendimiento diferente entre productos.',
+                fr: 'Mars montre des performances différentes selon les produits.'
+            }
+        },
+        {
+            type: 'element',
+            id: 'dealsLegend',
+            content: {
+                en: 'The legend helps identify which color represents which product.',
+                es: 'La leyenda ayuda a identificar qué color representa cada producto.',
+                fr: 'La légende aide à identifier quelle couleur représente quel produit.'
+            }
+        }
+    ];
 
     //deals chart end .......................................
 
@@ -2512,8 +2553,8 @@ $(document).ready(() => {
         walkthroughInstance1.start();
     });
 
-    $('#startWalkthrough2').on('click', function() {
-        walkthroughInstance2 = new ChartWalkthrough(chart2, walkthrough2, 'Chart Guide');
+    $('#DealsChartWalkthrough').on('click', function() {
+        walkthroughInstance2 = new ChartWalkthrough(dealsChart, dealsChartWalk, 'Ad Types Comparison');
         walkthroughInstance2.start();
     });
 
