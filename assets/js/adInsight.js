@@ -525,7 +525,7 @@ $(document).ready(() => {
 
     var boostedCtx = document.getElementById("boostedChart");
 
-    const boostedFeaturedViewsData = [400, 300];
+    const boostedFeaturedViewsData = [300, 300];
     const boostedNormalViewsData = [400, 500];
 
     const boostedFeaturedLeadsData = [200, 150];
@@ -616,7 +616,7 @@ $(document).ready(() => {
                         // drawTicks: false,
                         tickColor: "white",
                     },
-                    stacked: true,
+                    // stacked: true,
                 },
                 x: {
                     type: "category",
