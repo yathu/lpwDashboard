@@ -525,49 +525,61 @@ $(document).ready(() => {
 
     var boostedCtx = document.getElementById("boostedChart");
 
-    const boostedViewsData = [400, 800];
-    const boostedLeadsData = [200, 600];
+    const boostedFeaturedViewsData = [400, 300];
+    const boostedNormalViewsData = [400, 500];
+
+    const boostedFeaturedLeadsData = [200, 150];
+    const boostedNormalLeadsData = [200, 450];
+
+    const boostedCurrentBarColors = ['#1fad53', 'rgb(25 127 230)'];
+    const boostedPotentialBarColors = ['rgba(121,210,154,1)', 'rgb(147 206 236)'];
 
     var boostedData = {
         labels: ["Featured", "Normal"],
         datasets: [
             {
-                label: "Views",
+                label: "Boosted",
                 type: "bar",
-                data: boostedViewsData,
+                data: boostedFeaturedViewsData,
                 barThickness: 30,
-                borderWidth: 1,
-                borderColor: "white",
-                // barPercentage: 0.3
-
-                // categoryPercentage:1.0,
-                // barPercentage: 0.5,
-                backgroundColor: (ctx) => {
-                    return createGradient(ctx.chart, "green");
+                borderWidth: {
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0
                 },
+                borderColor: "white",
+                borderRadius: 7,
+                backgroundColor: boostedCurrentBarColors,
                 datalabels: {
+                    align: "end",
+                    anchor: "end",
+                    color: "green",
+                    offset: 0,
                     display: false,
                 },
             },
             {
-                label: "Leads",
+                label: "Normal",
                 type: "bar",
-                data: boostedLeadsData,
-                yAxisID: "y1",
+                data: boostedNormalViewsData,
                 barThickness: 30,
-                borderWidth: 1,
-                borderColor: "white",
-                backgroundColor: (ctx) => {
-                    return createGradient(ctx.chart, "");
+                borderWidth: {
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0
                 },
+                borderColor: "white",
+                borderRadius: 7,
+                backgroundColor: boostedPotentialBarColors,
                 datalabels: {
+                    align: "end",
+                    anchor: "end",
+                    color: "blue",
+                    offset: 0,
                     display: false,
                 },
-                // inflateAmount:5
-                // barPercentage: 0.7
-
-                // categoryPercentage: 0,
-                // barPercentage: 0.5,
             },
         ],
     };
@@ -604,20 +616,7 @@ $(document).ready(() => {
                         // drawTicks: false,
                         tickColor: "white",
                     },
-                },
-                y1: {
-                    type: "linear",
-                    display: true,
-                    position: "right",
-                    //suggestedMin: 0,
-                    grid: {
-                        drawOnChartArea: false,
-                        tickColor: "white",
-                    },
-                    ticks: {
-                        // autoSkip: true,
-                        maxTicksLimit: 6,
-                    },
+                    stacked: true,
                 },
                 x: {
                     type: "category",
@@ -629,11 +628,12 @@ $(document).ready(() => {
                     border: {
                         display: false,
                     },
+                    stacked: true,
                 },
             },
             plugins: {
                 legend: {
-                    display: true,
+                    display: false,
                     position: "bottom",
                     labels: {
                         usePointStyle: true,
@@ -644,12 +644,67 @@ $(document).ready(() => {
             },
         },
         plugins: [
-            genLeftTitle("Views", "boostedLtitle", 0, 20),
-            genRightTitle("Leads", "boostedRtitle", 1, 20),
+            genLeftTitle("Pages", "boostedLtitle", 0, 20),
         ],
     });
 
+    // Toggle between Views and Leads for boosted chart
+    $("input[type=radio][name=boostedChartDataType]").change(function (e) {
+        e.preventDefault();
+
+        if (this.value == "views") {
+            boostedChart.data.datasets[0].data = boostedFeaturedViewsData;
+            boostedChart.data.datasets[1].data = boostedNormalViewsData;
+        } else if (this.value == "leads") {
+            boostedChart.data.datasets[0].data = boostedFeaturedLeadsData;
+            boostedChart.data.datasets[1].data = boostedNormalLeadsData;
+        }
+
+        boostedChart.update();
+    });
+
+    // Walkthrough boosted chart
+    const boostedChartWalk = [
+        {
+            type: 'element',
+            id: 'boostedChartDataType',
+            content: {
+                en: 'This information box provides context about the chart data.',
+                es: 'Este cuadro de información proporciona contexto sobre los datos del gráfico.',
+                fr: 'Cette boîte d\'information fournit un contexte sur les données du graphique.'
+            }
+        },
+        {
+            type: 'chart-bars',
+            label: 'Featured',
+            content: {
+                en: 'These bars represent Featured ads performance.',
+                es: 'Estas barras representan el rendimiento de los anuncios destacados.',
+                fr: 'Ces barres représentent la performance des annonces mises en avant.'
+            }
+        },
+        {
+            type: 'chart-bars',
+            label: 'Normal',
+            content: {
+                en: 'These bars represent Normal ads performance.',
+                es: 'Estas barras representan el rendimiento de los anuncios normales.',
+                fr: 'Ces barres représentent la performance des annonces normales.'
+            }
+        },
+        {
+            type: 'element',
+            id: 'boostedLegend',
+            content: {
+                en: 'The legend helps identify which color represents which product.',
+                es: 'La leyenda ayuda a identificar qué color representa cada producto.',
+                fr: 'La légende aide à identifier quelle couleur représente quel produit.'
+            }
+        }
+    ];
+
     // boostedChart ends ........................................
+
 
     var ctx = document.getElementById("pageNumberChart");
 
@@ -2547,6 +2602,7 @@ $(document).ready(() => {
     // Initialize walkthroughs
     let walkthroughInstance1;
     let walkthroughInstance2;
+    let walkthroughInstanceBoosted;
 
     $('#AdsTypeChartWalkthrough').on('click', function() {
         walkthroughInstance1 = new ChartWalkthrough(adsTypeChart, walkthrough1, 'Ad Types Overview');
@@ -2556,6 +2612,11 @@ $(document).ready(() => {
     $('#DealsChartWalkthrough').on('click', function() {
         walkthroughInstance2 = new ChartWalkthrough(dealsChart, dealsChartWalk, 'Ad Types Comparison');
         walkthroughInstance2.start();
+    });
+
+    $('#BoostedChartWalkthrough').on('click', function() {
+        walkthroughInstanceBoosted = new ChartWalkthrough(boostedChart, boostedChartWalk, 'Boosted ads Vs Normal ads');
+        walkthroughInstanceBoosted.start();
     });
 
     // Language buttons - all change the global variable
