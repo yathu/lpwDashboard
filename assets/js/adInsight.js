@@ -101,10 +101,12 @@ $(document).ready(() => {
     const AdsLeadsData = [350, 400, 300];
     const potentialLeadsData = [400, 450, 350];
 
+    //char bars green - light-1fad53 dark-rgba(68, 189, 134, 0.34)
+
     //  3 colors for Current bars
     const currentBarColors = ['#1fad53', 'rgb(25 127 230)', 'rgb(25 127 230)'];
     //  3 transparent colors for Potential bars
-    const potentialBarColors = ['rgba(121,210,154,1)', 'rgb(147 206 236)', 'rgb(147 206 236)'];
+    const potentialBarColors = ['rgba(68, 189, 134, 0.34)', 'rgb(147 206 236)', 'rgb(147 206 236)'];
 
     var adsTypeData = {
         labels: ["Featured Ads", "Platinum Ads", "Showcase Ads"],
@@ -348,9 +350,7 @@ $(document).ready(() => {
                 },
                 borderColor: "white",
                 borderRadius: 7,
-                backgroundColor: (ctx) => {
-                    return createGradient(ctx.chart, "green");
-                },
+                backgroundColor: '#1fad53',
                 datalabels: {
                     align: "end",
                     anchor: "end",
@@ -448,7 +448,7 @@ $(document).ready(() => {
             },
             plugins: {
                 legend: {
-                    display: true,
+                    display: false,
                     position: "bottom",
                     labels: {
                         usePointStyle: true,
@@ -522,6 +522,7 @@ $(document).ready(() => {
     //deals chart end .......................................
 
     // boostedChart........................................
+    //char bars green - light-1fad53 dark-rgba(68, 189, 134, 0.34)
 
     var boostedCtx = document.getElementById("boostedChart");
 
@@ -532,7 +533,7 @@ $(document).ready(() => {
     const boostedNormalLeadsData = [200, 450];
 
     const boostedCurrentBarColors = ['#1fad53', 'rgb(25 127 230)'];
-    const boostedPotentialBarColors = ['rgba(121,210,154,1)', 'rgb(147 206 236)'];
+    const boostedPotentialBarColors = ['rgba(68, 189, 134, 0.34)', 'rgb(147 206 236)'];
 
     var boostedData = {
         labels: ["Featured", "Normal"],
