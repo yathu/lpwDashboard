@@ -2434,7 +2434,12 @@ $(document).ready(() => {
                         ${dotsHTML}
                     </div>
                     <div class="walkthrough-tooltip-footer">
-                        ${stepIndex > 0 ? '<button class="btn-walkthrough-prev">Back</button>' : '<div></div>'}
+                        <button class="btn-walkthrough-prev" role="group" aria-label="languages button" style="opacity: ${stepIndex > 0 ? '1' : '0'}">Back</button>
+                        <div class="btn-group walkthrough-language-group gap-0">
+                            <button class="walkthrough-lang-btn btn ${CURRENT_LANGUAGE === 'en' ? 'active' : ''}" id="langEnglish" data-lang="en">EN</button>
+                            <button class="walkthrough-lang-btn btn ${CURRENT_LANGUAGE === 'es' ? 'active' : ''}" id="langSinhala" data-lang="es">SI</button>
+                            <button class="walkthrough-lang-btn btn ${CURRENT_LANGUAGE === 'fr' ? 'active' : ''}" id="langTamil" data-lang="fr">TA</button>
+                        </div>
                         ${stepIndex < this.steps.length - 1 ? '<button class="btn-walkthrough-next">Next</button>' : '<button class="btn-walkthrough-next">Done</button>'}
                     </div>
                 `;
@@ -2448,6 +2453,21 @@ $(document).ready(() => {
             this.tooltip.find('.btn-walkthrough-prev').on('click', () => this.previous());
             this.tooltip.find('.btn-walkthrough-next').on('click', () => this.next());
             this.tooltip.find('.btn-walkthrough-close').on('click', () => this.close());
+            
+            // Language button handlers for walkthrough
+            this.tooltip.find('.walkthrough-lang-btn').on('click', (e) => {
+                const newLang = $(e.target).data('lang');
+                CURRENT_LANGUAGE = newLang;
+                
+                // Update active state for walkthrough language buttons
+                this.tooltip.find('.walkthrough-lang-btn').removeClass('active');
+                this.tooltip.find(`.walkthrough-lang-btn[data-lang="${newLang}"]`).addClass('active');
+                
+                // Update the content with new language
+                const stepContent = this.steps[this.currentStep].content;
+                const newContent = stepContent[newLang] || stepContent['en'];
+                this.tooltip.find('.walkthrough-tooltip-content').text(newContent);
+            });
         }
 
         getElementRect(elementId) {

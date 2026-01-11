@@ -2808,6 +2808,8 @@ body {
   padding: 10px 5px 0px 10px;
   background: #1967d3;
   gap: 12px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
 .walkthrough-title {
@@ -2831,7 +2833,6 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   gap: 12px;
 }
-
 .walkthrough-step-indicators {
   display: flex;
   gap: 6px;
@@ -2870,6 +2871,21 @@ body {
   color: #1967d3;
   border: 1px solid white !important;
   font-weight: 500;
+}
+
+.walkthrough-language-group {
+
+
+}
+.walkthrough-language-group .btn {
+  background: transparent;
+  color: white;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.walkthrough-language-group .btn.active {
+  background-color: white;
+  color: #1967d3;
 }
 
 .btn-walkthrough-prev {
