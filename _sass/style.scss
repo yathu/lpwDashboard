@@ -2833,6 +2833,9 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   gap: 12px;
 }
+.walkthrough-tooltip-footer .lang-container{
+  flex: 1;
+}
 .walkthrough-step-indicators {
   display: flex;
   gap: 6px;
@@ -2862,7 +2865,7 @@ body {
 }
 
 .walkthrough-tooltip-footer button {
-  padding: 6px 12px;
+  padding: 4px 8px;
   font-size: 13px;
   border-radius: 4px;
   border: none;

@@ -2434,13 +2434,20 @@ $(document).ready(() => {
                         ${dotsHTML}
                     </div>
                     <div class="walkthrough-tooltip-footer">
-                        <button class="btn-walkthrough-prev" role="group" aria-label="languages button" style="opacity: ${stepIndex > 0 ? '1' : '0'}">Back</button>
+                    <div class="lang-container">
                         <div class="btn-group walkthrough-language-group gap-0">
-                            <button class="walkthrough-lang-btn btn ${CURRENT_LANGUAGE === 'en' ? 'active' : ''}" id="langEnglish" data-lang="en">EN</button>
-                            <button class="walkthrough-lang-btn btn ${CURRENT_LANGUAGE === 'es' ? 'active' : ''}" id="langSinhala" data-lang="es">SI</button>
-                            <button class="walkthrough-lang-btn btn ${CURRENT_LANGUAGE === 'fr' ? 'active' : ''}" id="langTamil" data-lang="fr">TA</button>
+                            <button class="walkthrough-lang-btn btn ${CURRENT_LANGUAGE === 'en' ? 'active' : ''}" id="langEnglish" data-lang="en">English</button>
+                            <button class="walkthrough-lang-btn btn ${CURRENT_LANGUAGE === 'es' ? 'active' : ''}" id="langSinhala" data-lang="es">සිංහල</button>
+                            <button class="walkthrough-lang-btn btn ${CURRENT_LANGUAGE === 'fr' ? 'active' : ''}" id="langTamil" data-lang="fr">தமிழ்</button>
                         </div>
-                        ${stepIndex < this.steps.length - 1 ? '<button class="btn-walkthrough-next">Next</button>' : '<button class="btn-walkthrough-next">Done</button>'}
+                    </div>
+                    <div>
+                        <button class="btn-walkthrough-prev" role="group" aria-label="languages button" style="opacity: ${stepIndex > 0 ? '1' : '0'}">
+                        <i class="bi bi-chevron-left"></i>
+                        </button>
+                        
+                        ${stepIndex < this.steps.length - 1 ? '<button class="btn-walkthrough-next"><i class="bi bi-chevron-right"></i></button>' : '<button class="btn-walkthrough-next">Done</button>'}
+                    </div>
                     </div>
                 `;
 
