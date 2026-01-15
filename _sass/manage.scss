@@ -4910,3 +4910,72 @@ label.form-check-label:focus,
 .bg-green-up{
   background-color: #16a05f !important;
 }
+
+// Bulk actions dropdown styling
+.dropdown-menu-dark {
+  background-color: #2d2d2d !important;
+  border: 1px solid #3d3d3d;
+  border-radius: 8px;
+  padding: 8px 0;
+  
+  .dropdown-item {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+    
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+    
+    i, svg {
+      margin-right: 8px;
+    }
+  }
+}
+
+// Individual dropdown item colors
+.dropdown-item-set-status {
+  color: #fa5723;
+  
+  i, svg {
+    color: #fa5723;
+  }
+}
+
+.dropdown-item-assign-user {
+  color: #29a745;
+  
+  i, svg {
+    color: #29a745;
+  }
+}
+
+.dropdown-item-share {
+  color: #d6e4fb;
+  
+  i, svg {
+    color: #d6e4fb;
+  }
+}
+
+.dropdown-item-boost {
+  color: #fdc108;
+  
+  i, svg {
+    color: #fdc108;
+  }
+}
+
+.dropdown-item-deactivate {
+  color: #dc3545;
+  
+  i, svg {
+    color: #dc3545;
+  }
+}
