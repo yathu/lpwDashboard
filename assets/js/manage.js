@@ -14,22 +14,30 @@ $(document).ready(() => {
     // Function to toggle selected options container visibility
     function toggleSelectedOptionsVisibility() {
         // Use jQuery to select checkboxes and container
-        const $checkboxes = $('.property-item input[type="checkbox"][id^="propertyListItem"]');
+        const $propertyCheckboxes = $('.property-item input[type="checkbox"][id^="propertyListItem"]');
+        const $mobileCheckboxes = $('.mobile-ad-checkbox');
         const $selectedOptionsContainer = $('#selectedItemsOptions');
 
-        // Check if at least one checkbox is checked
-        const atLeastOneChecked = $checkboxes.is(':checked');
+        // Check if at least one checkbox is checked (from either property items or mobile items)
+        const propertyAtLeastOneChecked = $propertyCheckboxes.is(':checked');
+        const mobileAtLeastOneChecked = $mobileCheckboxes.is(':checked');
+        const atLeastOneChecked = propertyAtLeastOneChecked || mobileAtLeastOneChecked;
 
         // Show/hide the selected options container based on checkbox state
         if (atLeastOneChecked) {
-            $selectedOptionsContainer.addClass('d-md-flex');
+            $selectedOptionsContainer.removeClass('d-none').addClass('d-flex');
         } else {
-            $selectedOptionsContainer.removeClass('d-md-flex');
+            $selectedOptionsContainer.removeClass('d-flex').addClass('d-none');
         }
     }
 
     // Add event listeners to all property item checkboxes
     $(document).on('change', '.property-item input[type="checkbox"][id^="propertyListItem"]', function () {
+        toggleSelectedOptionsVisibility();
+    });
+
+    // Add event listeners to all mobile ad checkboxes
+    $(document).on('change', '.mobile-ad-checkbox', function () {
         toggleSelectedOptionsVisibility();
     });
 
