@@ -2883,9 +2883,21 @@ layout: manage_ads
                 </div>
 
                 <!-- Activate Content -->
-                <div class="modal-content-Activate d-none">
+                <div class="modal-content-activate d-none">
                     <p>Are you sure you want to activate the selected ads?</p>
                     <p>You can deactivate them later.</p>
+                </div>
+
+                <!-- Share Content -->
+                <div class="modal-content-share d-none">
+                    <p>Share the selected ads with your social media networks and contacts.</p>
+                    <div class="d-flex gap-3 mt-4 justify-content-center">
+                        <a href="#" class="text-dark fs-4" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-dark fs-4" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-dark fs-4" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                        <a href="#" class="text-dark fs-4" title="Telegram"><i class="bi bi-telegram"></i></a>
+                        <a href="#" class="text-dark fs-4" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
@@ -2911,6 +2923,9 @@ layout: manage_ads
                 </button>
                 <button type="button" class="btn btn-success modal-btn-activate d-none">
                     Yes, Activate
+                </button>
+                <button type="button" class="btn btn-success modal-btn-share d-none">
+                    Share Now
                 </button>
             </div>
         </div>

@@ -415,29 +415,42 @@ $(document).ready(() => {
 //     });
 
 
-    // Button click handlers
-    $('#deleteSelectedAdsBtn').click(function () {
-        $('#selectedAdsActionsModal .modal-title').text('Confirm Delete');
-        $('#selectedAdsActionsModal .modal-content-delete').removeClass('d-none');
-        $('#selectedAdsActionsModal .modal-content-boost, #selectedAdsActionsModal .modal-content-deactivate, #selectedAdsActionsModal .modal-content-activate').addClass('d-none');
-        $('#selectedAdsActionsModal .modal-btn-delete').removeClass('d-none');
-        $('#selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-deactivate, #selectedAdsActionsModal .modal-btn-activate').addClass('d-none');
+    // Bulk action dropdown handlers
+    $('#setStatusBtn').click(function () {
+        // Handle set status action
+        console.log('Set status action triggered');
     });
 
-    $('#boostSelectedAd').click(function () {
+    $('#assignToUserBtn').click(function () {
+        // Handle assign to user action
+        console.log('Assign to user action triggered');
+    });
+
+    // Share selected ads handler
+    $('#shareBtn').click(function () {
+        $('#selectedAdsActionsModal .modal-title').text('Share Selected Ads');
+        $('#selectedAdsActionsModal .modal-content-share').removeClass('d-none');
+        $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-boost, #selectedAdsActionsModal .modal-content-deactivate, #selectedAdsActionsModal .modal-content-activate').addClass('d-none');
+        $('#selectedAdsActionsModal .modal-btn-share').removeClass('d-none');
+        $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-deactivate, #selectedAdsActionsModal .modal-btn-activate').addClass('d-none');
+    });
+
+    // Boost selected ads handler
+    $('#boostBtn').click(function () {
         $('#selectedAdsActionsModal .modal-title').text('Confirm Boost');
         $('#selectedAdsActionsModal .modal-content-boost').removeClass('d-none');
-        $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-deactivate, #selectedAdsActionsModal .modal-content-activate').addClass('d-none');
+        $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-deactivate, #selectedAdsActionsModal .modal-content-activate, #selectedAdsActionsModal .modal-content-share').addClass('d-none');
         $('#selectedAdsActionsModal .modal-btn-boost').removeClass('d-none');
-        $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-deactivate, #selectedAdsActionsModal .modal-btn-activate').addClass('d-none');
+        $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-deactivate, #selectedAdsActionsModal .modal-btn-activate, #selectedAdsActionsModal .modal-btn-share').addClass('d-none');
     });
 
-    $('#deactivateSelectedAdsBtn').click(function () {
+    // Deactivate selected ads handler
+    $('#deactivateBtn').click(function () {
         $('#selectedAdsActionsModal .modal-title').text('Confirm Deactivate');
         $('#selectedAdsActionsModal .modal-content-deactivate').removeClass('d-none');
-        $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-boost, #selectedAdsActionsModal .modal-content-activate').addClass('d-none');
+        $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-boost, #selectedAdsActionsModal .modal-content-activate, #selectedAdsActionsModal .modal-content-share').addClass('d-none');
         $('#selectedAdsActionsModal .modal-btn-deactivate').removeClass('d-none');
-        $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-activate').addClass('d-none');
+        $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-activate, #selectedAdsActionsModal .modal-btn-share').addClass('d-none');
     });
 
     // Handle switch toggle for deactivation
@@ -446,19 +459,19 @@ $(document).ready(() => {
             // If switch is turned off, show deactivate confirmation modal
             $('#selectedAdsActionsModal .modal-title').text('Confirm Deactivate');
             $('#selectedAdsActionsModal .modal-content-deactivate').removeClass('d-none');
-            $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-boost, #selectedAdsActionsModal .modal-content-activate').addClass('d-none');
+            $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-boost, #selectedAdsActionsModal .modal-content-activate, #selectedAdsActionsModal .modal-content-share').addClass('d-none');
             $('#selectedAdsActionsModal .modal-btn-deactivate').removeClass('d-none');
-            $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-activate').addClass('d-none');
+            $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-activate, #selectedAdsActionsModal .modal-btn-share').addClass('d-none');
 
             // Show the modal
             $('#selectedAdsActionsModal').modal('show');
         } else {
             // If switch is turned on, show activate confirmation modal
             $('#selectedAdsActionsModal .modal-title').text('Confirm Activate');
-            $('#selectedAdsActionsModal .modal-content-Activate').removeClass('d-none');
-            $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-boost, #selectedAdsActionsModal .modal-content-deactivate').addClass('d-none');
+            $('#selectedAdsActionsModal .modal-content-activate').removeClass('d-none');
+            $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-boost, #selectedAdsActionsModal .modal-content-deactivate, #selectedAdsActionsModal .modal-content-share').addClass('d-none');
             $('#selectedAdsActionsModal .modal-btn-activate').removeClass('d-none');
-            $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-deactivate').addClass('d-none');
+            $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-deactivate, #selectedAdsActionsModal .modal-btn-share').addClass('d-none');
 
             // Show the modal
             $('#selectedAdsActionsModal').modal('show');
@@ -487,10 +500,15 @@ $(document).ready(() => {
         $('#selectedAdsActionsModal').modal('hide');
     });
 
+    $('#selectedAdsActionsModal .modal-btn-share').click(function () {
+        console.log('Sharing selected ads...');
+        $('#selectedAdsActionsModal').modal('hide');
+    });
+
     // Reset modal content when modal is hidden
     $('#selectedAdsActionsModal').on('hidden.bs.modal', function () {
-        $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-boost, #selectedAdsActionsModal .modal-content-deactivate, #selectedAdsActionsModal .modal-content-Activate').addClass('d-none');
-        $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-deactivate, #selectedAdsActionsModal .modal-btn-activate').addClass('d-none');
+        $('#selectedAdsActionsModal .modal-content-delete, #selectedAdsActionsModal .modal-content-boost, #selectedAdsActionsModal .modal-content-deactivate, #selectedAdsActionsModal .modal-content-activate, #selectedAdsActionsModal .modal-content-share').addClass('d-none');
+        $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-deactivate, #selectedAdsActionsModal .modal-btn-activate, #selectedAdsActionsModal .modal-btn-share').addClass('d-none');
     });
 
 
