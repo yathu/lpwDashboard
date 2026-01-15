@@ -5064,3 +5064,176 @@ label.form-check-label:focus,
     }
   }
 }
+
+// Bulk Actions Mobile Bottom Sheet
+.modal-dialog-bottom {
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-width: 100%;
+
+  .modal-content {
+    border-radius: 16px;
+    border: none;
+
+  }
+}
+
+.bulk-actions-sheet {
+  background-color: #1a1a1e;
+  border-top: 1px solid #333;
+  padding: 10px;
+
+  .modal-body {
+    padding: 24px;
+  }
+}
+
+.bulk-actions-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: auto;
+}
+
+.bulk-actions-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.selected-count-box {
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #0a7ee5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 16px;
+
+  span {
+    font-weight: bold;
+    color: white;
+  }
+}
+
+.bulk-actions-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+
+  .bulk-actions-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .bulk-actions-subtitle {
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+    line-height: 1.2;
+  }
+}
+
+.bulk-actions-right {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .bulk-action-btn {
+    padding: 10px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    i {
+      font-size: 14px;
+    }
+
+    span {
+      display: block;
+    }
+  }
+}
+
+// Bulk action button color variants
+.bulk-action-btn {
+  &.boost-action {
+    background-color: #ff7a00;
+
+    &:hover {
+      background-color: #e67000;
+    }
+  }
+
+  &.delete-action {
+    background-color: #dc3545;
+
+    &:hover {
+      background-color: #c82333;
+    }
+  }
+
+  &.deactivate-action {
+    background-color: #6c757d;
+
+    &:hover {
+      background-color: #5a6268;
+    }
+  }
+
+  &.activate-action {
+    background-color: #28a745;
+
+    &:hover {
+      background-color: #218838;
+    }
+  }
+
+  &.share-action {
+    background-color: #17a2b8;
+
+    &:hover {
+      background-color: #138496;
+    }
+  }
+
+  &.status-action {
+    background-color: #6c757d;
+
+    &:hover {
+      background-color: #5a6268;
+    }
+  }
+
+  &.assign-action {
+    background-color: #6c757d;
+
+    &:hover {
+      background-color: #5a6268;
+    }
+  }
+}

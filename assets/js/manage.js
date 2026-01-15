@@ -511,6 +511,75 @@ $(document).ready(() => {
         $('#selectedAdsActionsModal .modal-btn-delete, #selectedAdsActionsModal .modal-btn-boost, #selectedAdsActionsModal .modal-btn-deactivate, #selectedAdsActionsModal .modal-btn-activate, #selectedAdsActionsModal .modal-btn-share').addClass('d-none');
     });
 
+    // ===== Mobile Bottom Sheet Handlers =====
+    // Store current action type for mobile bottom sheet
+    let currentMobileActionType = null;
+
+    // Update mobile bottom sheet content from dropdown data attributes
+    function updateMobileBottomSheet(actionType, title, subtitle, buttonText, buttonColor, iconClass) {
+        currentMobileActionType = actionType;
+
+        // Update UI elements
+        $('.bulk-actions-title').text(title);
+        $('.bulk-actions-subtitle').text(subtitle);
+        
+        const $btn = $('#bulkActionButton');
+        $btn.html('<i class="bi ' + iconClass + '"></i><span>' + buttonText + '</span>');
+        $btn.removeClass('boost-action delete-action deactivate-action activate-action share-action status-action assign-action');
+        $btn.addClass(actionType + '-action');
+        $btn.css('background-color', buttonColor);
+    }
+
+    // Handle mobile bulk actions dropdown items
+    $(document).on('click', '.mobile-action-item', function (e) {
+        e.preventDefault();
+        
+        const actionType = $(this).data('action');
+        const title = $(this).data('title');
+        const subtitle = $(this).data('subtitle');
+        const buttonText = $(this).data('button');
+        const buttonColor = $(this).data('color');
+        const iconClass = $(this).data('icon');
+
+        // Update bottom sheet content
+        updateMobileBottomSheet(actionType, title, subtitle, buttonText, buttonColor, iconClass);
+
+        // Close the dropdown
+        const dropdownBtn = document.getElementById('bulkActionsMobileDropdown');
+        const dropdown = bootstrap.Dropdown.getInstance(dropdownBtn);
+        if (dropdown) {
+            dropdown.hide();
+        }
+
+        // Show the bottom sheet modal
+        const modal = new bootstrap.Modal(document.getElementById('bulkActionsMobileModal'));
+        modal.show();
+    });
+
+    // Mobile bottom sheet action button click
+    $('#bulkActionButton').click(function () {
+        if (currentMobileActionType === 'boost') {
+            console.log('Mobile: Boosting selected ads...');
+        } else if (currentMobileActionType === 'delete') {
+            console.log('Mobile: Deleting selected ads...');
+        } else if (currentMobileActionType === 'deactivate') {
+            console.log('Mobile: Deactivating selected ads...');
+        } else if (currentMobileActionType === 'activate') {
+            console.log('Mobile: Activating selected ads...');
+        } else if (currentMobileActionType === 'share') {
+            console.log('Mobile: Sharing selected ads...');
+        } else if (currentMobileActionType === 'status') {
+            console.log('Mobile: Setting status for selected ads...');
+        } else if (currentMobileActionType === 'assign') {
+            console.log('Mobile: Assigning user for selected ads...');
+        }
+        
+        // Close the bottom sheet
+        const modal = bootstrap.Modal.getInstance(document.getElementById('bulkActionsMobileModal'));
+        if (modal) {
+            modal.hide();
+        }
+    });
 
     //social media popover
 
