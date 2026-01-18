@@ -41,6 +41,28 @@ $(document).ready(() => {
         toggleSelectedOptionsVisibility();
     });
 
+    // Handle click on agent-mobile-ad container to toggle checkbox (mobile UX)
+    $(document).on('click', '.agent-mobile-ad', function (e) {
+        // Get the checkbox inside this container
+        const $checkbox = $(this).find('.mobile-ad-checkbox');
+        
+        // Check if clicked element is a button or interactive element that shouldn't trigger checkbox
+        const $target = $(e.target);
+        const isButton = $target.closest('button').length > 0 || $target.closest('.btn').length > 0;
+        const isInteractiveIcon = $target.closest('[data-bs-toggle]').length > 0 || $target.closest('.dot-popover').length > 0 || $target.closest('.custom-switch').length > 0;
+        
+        // If click is on a button or interactive element, don't toggle checkbox
+        if (isButton || isInteractiveIcon) {
+            return;
+        }
+        
+        // Toggle the checkbox
+        if ($checkbox.length) {
+            $checkbox.prop('checked', !$checkbox.prop('checked'));
+            $checkbox.trigger('change');
+        }
+    });
+
     // Initialize the visibility state on page load
     toggleSelectedOptionsVisibility();
 
