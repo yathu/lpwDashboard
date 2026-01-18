@@ -808,7 +808,7 @@ $(document).ready(() => {
     });
 
 
-     // Configuration
+     // ===== Progress Modal Configuration =====
         const config = {
             currentPage: 18,
             targetPage: 4
@@ -828,12 +828,19 @@ $(document).ready(() => {
         // Animate progress circle
         function animateProgress() {
             const progress = calculateProgress(config.currentPage, config.targetPage);
-            const circumference = 2 * Math.PI * 110;
-            const offset = circumference - (progress * circumference);
+            const radius = 110;
+            const circumference = 2 * Math.PI * radius; // 691.15 approximately
+            const offset = circumference * (1 - progress); // Start full, animate to progress
             
+            // Delay animation to allow modal to render
             setTimeout(function() {
-                $('#progressCircle').css('stroke-dashoffset', offset);
-            }, 100);
+                const $circle = $('#progressCircle');
+                $circle.css({
+                    'stroke-dasharray': circumference,
+                    'stroke-dashoffset': offset
+                });
+                console.log('Animation triggered:', { progress, circumference, offset });
+            }, 300);
         }
         
         // Initialize progress view
@@ -873,22 +880,23 @@ $(document).ready(() => {
         };
         
         // Initialize modals
-        progressModal = new bootstrap.Modal($('#progressModal')[0], {
+        progressModal = new bootstrap.Modal('#progressModal');
+        
+        successModal = new bootstrap.Modal(document.getElementById('successModal'), {
             backdrop: false,
             keyboard: false
         });
         
-        successModal = new bootstrap.Modal($('#successModal')[0], {
-            backdrop: false,
-            keyboard: false
+        // Handle progress modal show event - animate when modal becomes visible
+        document.getElementById('progressModal').addEventListener('shown.bs.modal', function() {
+            initProgressView();
         });
         
         // Event handlers
         $('#btnMinimize').on('click', showSuccess);
         
-        // Show progress modal and initialize
+        // Show progress modal on page load
         progressModal.show();
-        initProgressView();
         
 
 });

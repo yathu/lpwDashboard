@@ -3831,7 +3831,7 @@ layout: manage_ads
 
 
     <!-- Progress Modal -->
-    <div class="modal fade" id="progressModal" tabindex="-1" style="display: none;">
+    <div class="modal fade slide-up bottom-sheet-modal" id="progressModal" tabindex="-1" aria-labelledby="progressModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <!-- Drag Handle -->
@@ -3842,7 +3842,7 @@ layout: manage_ads
                 <!-- Header -->
                 <div class="px-4 pb-2 d-flex justify-content-between align-items-center">
                     <div style="width: 32px;"></div>
-                    <h2 class="fs-5 fw-bold mb-0">Boosting Ad</h2>
+                    <h2 class="fs-6 fw-bold mb-0">Boosting Ad</h2>
                     <button type="button" class="btn-close-custom" data-bs-dismiss="modal">
                         <span class="bi bi-x fs-5"></span>
                     </button>
@@ -3876,37 +3876,34 @@ layout: manage_ads
                     </div>
                     
                     <!-- Status Indicator -->
-                    <div class="d-flex align-items-center justify-content-center gap-3 mb-4 status-indicator">
-                        <span class="position-relative d-flex" style="height: 12px; width: 12px;">
-                            <span class="position-absolute top-0 start-0 ping rounded-circle bg-danger opacity-75" style="height: 12px; width: 12px;"></span>
-                            <span class="position-relative rounded-circle bg-danger" style="height: 12px; width: 12px;"></span>
-                        </span>
-                        <span class="text-danger fw-bold fs-5 text-uppercase" style="letter-spacing: 0.05em;">Boosting your ad...</span>
+                    <div class="d-flex align-items-center justify-content-center gap-2 mb-3 status-indicator">
+                        <span class="position-relative rounded-circle" style="height: 12px; width: 12px;"></span>
+                        <span class="fw-bold fs-6 text-uppercase" style="letter-spacing: 0.05em;">Boosting your ad...</span>
                     </div>
                     
                     <!-- Position Comparison -->
-                    <div class="bg-light rounded-4 p-4 mb-4 border" style="max-width: 320px; margin: 0 auto;">
-                        <div class="row align-items-center g-2">
-                            <div class="col text-start">
-                                <small class="text-muted text-uppercase fw-medium d-block mb-1" style="font-size: 0.75rem; letter-spacing: 0.05em;">Current Pos.</small>
-                                <div class="fs-5 fw-bold" id="currentPage">Page 18</div>
+                    <div class="bg-light rounded-4 px-3 py-3 mb-4 border position-container" style="max-width: 320px; margin: 0 auto;">
+                        <div class="row align-items-center justify-content-between g-2">
+                            <div class="col text-start text-col">
+                                <small class="text-muted text-uppercase d-block">Current Pos.</small>
+                                <div class="fs-6 fw-bold" id="currentPage">Page 18</div>
                             </div>
                             <div class="col-auto">
                                 <div class="bg-white rounded-circle shadow-sm d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
                                     <span class="bi bi-arrow-right text-secondary" style="font-size: 1.125rem;"></span>
                                 </div>
                             </div>
-                            <div class="col text-end">
-                                <small class="text-muted text-uppercase fw-medium d-block mb-1" style="font-size: 0.75rem; letter-spacing: 0.05em;">New Pos.</small>
-                                <div class="fs-5 fw-bold text-success" id="newPage">Page 4</div>
+                            <div class="col text-end text-col">
+                                <small class="text-muted text-uppercase d-block">New Pos.</small>
+                                <div class="fs-6 fw-bold text-success" id="newPage">Page 4</div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Message -->
-                    <div class="mb-4 px-3">
-                        <h3 class="fs-4 fw-bold mb-2">Your ad is being boosted.</h3>
-                        <p class="text-secondary fw-medium mb-0">Please check in 5-10 mins to see the changes.</p>
+                    <div class="mb-4 px-4 msg-container">
+                        <h3 class="fs-5 fw-bold mb-2">Your ad is being boosted.</h3>
+                        <p class="text-secondary">Please check in 5-10 mins to see the changes.</p>
                     </div>
                     
                     <!-- Action Button -->
@@ -3920,7 +3917,7 @@ layout: manage_ads
     </div>
     
     <!-- Success Modal -->
-    <div class="modal fade" id="successModal" tabindex="-1">
+    <div class="modal fade slide-up bottom-sheet-modal" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <!-- Drag Handle -->

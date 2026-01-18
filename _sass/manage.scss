@@ -5320,28 +5320,24 @@ label.form-check-label:focus,
 
 /* Status Indicator */
 .status-indicator {
-  animation: pulseText 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes pulseText {
-  0%,
-  100% {
-    opacity: 1;
+  .rounded-circle{
+    background-color: #fd7e14;
   }
-  50% {
-    opacity: 0.7;
+  color: #fd7e14;
+}
+
+.position-container{
+  .text-col{
+    small{
+      font-size: 11px; 
+      letter-spacing: .5px
+    }
   }
 }
 
-.ping {
-  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
-@keyframes ping {
-  75%,
-  100% {
-    transform: scale(2);
-    opacity: 0;
+.msg-container{
+  p{
+    font-size: 13px;
   }
 }
 
