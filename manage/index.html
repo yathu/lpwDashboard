@@ -437,127 +437,6 @@ layout: manage_ads
                     </ul>
                 </div>
 
-                <!-- Mobile Bulk Actions Dropdown -->
-                <div class="dropdown d-md-none w-100">
-                    <button
-                            class="btn btn-dark dropdown-toggle w-100"
-                            type="button"
-                            id="bulkActionsMobileDropdown"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                    >
-                        <i class="bi bi-three-dots-vertical"></i> Bulk actions
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-dark w-100" aria-labelledby="bulkActionsMobileDropdown">
-                        <li>
-                            <button
-                                    class="dropdown-item dropdown-item-set-status mobile-action-item"
-                                    data-action="status"
-                                    data-title="Set Status"
-                                    data-subtitle="Change status of selected ads"
-                                    data-button="SET STATUS"
-                                    data-color="#6c757d"
-                                    data-icon="bi-toggle2-on"
-                            >
-                                <svg
-                                        width="20"
-                                        height="20"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        style="margin-right: 8px;"
-                                >
-                                    <path
-                                            d="M7 18C5.33333 18 3.91667 17.4167 2.75 16.25C1.58333 15.0833 1 13.6667 1 12C1 10.3333 1.58333 8.91667 2.75 7.75C3.91667 6.58333 5.33333 6 7 6H17C18.6667 6 20.0833 6.58333 21.25 7.75C22.4167 8.91667 23 10.3333 23 12C23 13.6667 22.4167 15.0833 21.25 16.25C20.0833 17.4167 18.6667 18 17 18H7ZM7 15C7.83333 15 8.54167 14.7083 9.125 14.125C9.70833 13.5417 10 12.8333 10 12C10 11.1667 9.70833 10.4583 9.125 9.875C8.54167 9.29167 7.83333 9 7 9C6.16667 9 5.45833 9.29167 4.875 9.875C4.29167 10.4583 4 11.1667 4 12C4 12.8333 4.29167 13.5417 4.875 14.125C5.45833 14.7083 6.16667 15 7 15Z"
-                                            fill="currentColor"
-                                    />
-                                </svg>
-                                Set Status
-                            </button>
-                        </li>
-                        <li>
-                            <button
-                                    class="dropdown-item dropdown-item-assign-user mobile-action-item"
-                                    data-action="assign"
-                                    data-title="Assign To User"
-                                    data-subtitle="Assign selected ads to a user"
-                                    data-button="ASSIGN USER"
-                                    data-color="#6c757d"
-                                    data-icon="bi-people-fill"
-                            >
-                                <i class="bi bi-people-fill" style="margin-right: 8px;"></i>
-                                Assign To User
-                            </button>
-                        </li>
-                        <li>
-                            <button
-                                    class="dropdown-item dropdown-item-share mobile-action-item"
-                                    data-action="share"
-                                    data-title="Share Selected Ads"
-                                    data-subtitle="Share on social media"
-                                    data-button="SHARE NOW"
-                                    data-color="#17a2b8"
-                                    data-icon="bi-share-fill"
-                            >
-                                <i class="bi bi-share-fill" style="margin-right: 8px;"></i>
-                                Share selected ads
-                            </button>
-                        </li>
-                        <li>
-                            <button
-                                    class="dropdown-item dropdown-item-boost mobile-action-item"
-                                    data-action="boost"
-                                    data-title="Boost Selected Ads"
-                                    data-subtitle="Increase visibility of your ads"
-                                    data-button="BULK BOOST"
-                                    data-color="#ff7a00"
-                                    data-icon="bi-rocket-takeoff-fill"
-                            >
-                                <i class="bi bi-rocket-takeoff-fill" style="margin-right: 8px;"></i>
-                                Boost selected ads
-                            </button>
-                        </li>
-                        <li>
-                            <button
-                                    class="dropdown-item dropdown-item-deactivate mobile-action-item"
-                                    data-action="deactivate"
-                                    data-title="Deactivate Selected Ads"
-                                    data-subtitle="Your ads will be removed from listings"
-                                    data-button="DEACTIVATE"
-                                    data-color="#6c757d"
-                                    data-icon="bi-toggle2-off"
-                            >
-                                <svg
-                                        width="20"
-                                        height="20"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        style="margin-right: 8px;"
-                                >
-                                    <mask
-                                            id="mask0_1_1574"
-                                            style="mask-type: alpha"
-                                            maskUnits="userSpaceOnUse"
-                                            x="0"
-                                            y="0"
-                                            width="24"
-                                            height="24"
-                                    >
-                                        <rect width="24" height="24" fill="#D9D9D9"/>
-                                    </mask>
-                                    <g mask="url(#mask0_1_1574)">
-                                        <path
-                                                d="M9.12634 17.0237L12.0152 14.1348L14.9041 17.0237L16.4597 15.4681L13.5708 12.5792L16.4597 9.69035L14.9041 8.13479L12.0152 11.0237L9.12634 8.13479L7.57079 9.69035L10.4597 12.5792L7.57079 15.4681L9.12634 17.0237ZM6.45968 22.0237C5.84857 22.0237 5.32542 21.8061 4.89023 21.3709C4.45505 20.9357 4.23745 20.4126 4.23745 19.8015V5.35702H3.12634V3.13479H8.6819V2.02368H15.3486V3.13479H20.9041V5.35702H19.793V19.8015C19.793 20.4126 19.5754 20.9357 19.1402 21.3709C18.705 21.8061 18.1819 22.0237 17.5708 22.0237H6.45968Z"
-                                                fill="currentColor"
-                                        />
-                                    </g>
-                                </svg>
-                                Delete selected ads
-                            </button>
-                        </li>
-                    </ul>
-                </div>
             </div>
 
             <!-- Property Header Component -->
@@ -3077,12 +2956,104 @@ layout: manage_ads
                         </div>
                     </div>
 
-                    <!-- Right 50% - Action Button -->
+                    <!-- Right 50% - Action Dropdown -->
                     <div class="bulk-actions-right">
-                        <button class="btn bulk-action-btn" id="bulkActionButton">
-                            <i class="bi bi-rocket-takeoff-fill"></i>
-                            <span>BULK BOOST</span>
-                        </button>
+                        <div class="dropdown w-100" style="position: relative;">
+                            <button
+                                    class="btn btn-dark dropdown-toggle w-100"
+                                    type="button"
+                                    id="bulkActionsMobileDropdown"
+                                    data-bs-toggle="dropdown"
+                                    data-bs-drop="up"
+                                    aria-expanded="false"
+                            >
+                                <i class="bi bi-three-dots-vertical"></i> Actions
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark w-100" aria-labelledby="bulkActionsMobileDropdown">
+                                <li>
+                                    <button
+                                            class="dropdown-item dropdown-item-set-status mobile-action-item"
+                                            data-action="status"
+                                    >
+                                        <svg
+                                                width="20"
+                                                height="20"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                style="margin-right: 8px;"
+                                        >
+                                            <path
+                                                    d="M7 18C5.33333 18 3.91667 17.4167 2.75 16.25C1.58333 15.0833 1 13.6667 1 12C1 10.3333 1.58333 8.91667 2.75 7.75C3.91667 6.58333 5.33333 6 7 6H17C18.6667 6 20.0833 6.58333 21.25 7.75C22.4167 8.91667 23 10.3333 23 12C23 13.6667 22.4167 15.0833 21.25 16.25C20.0833 17.4167 18.6667 18 17 18H7ZM7 15C7.83333 15 8.54167 14.7083 9.125 14.125C9.70833 13.5417 10 12.8333 10 12C10 11.1667 9.70833 10.4583 9.125 9.875C8.54167 9.29167 7.83333 9 7 9C6.16667 9 5.45833 9.29167 4.875 9.875C4.29167 10.4583 4 11.1667 4 12C4 12.8333 4.29167 13.5417 4.875 14.125C5.45833 14.7083 6.16667 15 7 15Z"
+                                                    fill="currentColor"
+                                            />
+                                        </svg>
+                                        Set Status
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                            class="dropdown-item dropdown-item-assign-user mobile-action-item"
+                                            data-action="assign"
+                                    >
+                                        <i class="bi bi-people-fill" style="margin-right: 8px;"></i>
+                                        Assign To User
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                            class="dropdown-item dropdown-item-share mobile-action-item"
+                                            data-action="share"
+                                    >
+                                        <i class="bi bi-share-fill" style="margin-right: 8px;"></i>
+                                        Share selected ads
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                            class="dropdown-item dropdown-item-boost mobile-action-item"
+                                            data-action="boost"
+                                    >
+                                        <i class="bi bi-rocket-takeoff-fill" style="margin-right: 8px;"></i>
+                                        Boost selected ads
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                            class="dropdown-item dropdown-item-deactivate mobile-action-item"
+                                            data-action="deactivate"
+                                    >
+                                        <svg
+                                                width="20"
+                                                height="20"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                style="margin-right: 8px;"
+                                        >
+                                            <mask
+                                                    id="mask0_1_1574"
+                                                    style="mask-type: alpha"
+                                                    maskUnits="userSpaceOnUse"
+                                                    x="0"
+                                                    y="0"
+                                                    width="24"
+                                                    height="24"
+                                            >
+                                                <rect width="24" height="24" fill="#D9D9D9"/>
+                                            </mask>
+                                            <g mask="url(#mask0_1_1574)">
+                                                <path
+                                                        d="M9.12634 17.0237L12.0152 14.1348L14.9041 17.0237L16.4597 15.4681L13.5708 12.5792L16.4597 9.69035L14.9041 8.13479L12.0152 11.0237L9.12634 8.13479L7.57079 9.69035L10.4597 12.5792L7.57079 15.4681L9.12634 17.0237ZM6.45968 22.0237C5.84857 22.0237 5.32542 21.8061 4.89023 21.3709C4.45505 20.9357 4.23745 20.4126 4.23745 19.8015V5.35702H3.12634V3.13479H8.6819V2.02368H15.3486V3.13479H20.9041V5.35702H19.793V19.8015C19.793 20.4126 19.5754 20.9357 19.1402 21.3709C18.705 21.8061 18.1819 22.0237 17.5708 22.0237H6.45968Z"
+                                                        fill="currentColor"
+                                                />
+                                            </g>
+                                        </svg>
+                                        Delete selected ads
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
