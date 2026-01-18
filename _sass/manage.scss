@@ -4936,6 +4936,11 @@ label.form-check-label:focus,
     i, svg {
       margin-right: 8px;
     }
+
+    @media (max-width: 767.98px) {
+    padding: 8px 8px 8px 10px;
+      
+    }
   }
 }
 
@@ -5150,32 +5155,9 @@ label.form-check-label:focus,
   display: flex;
   align-items: center;
   justify-content: center;
-
-  .bulk-action-btn {
-    padding: 10px 16px;
-    font-size: 12px;
-    font-weight: 600;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: background-color 0.2s ease;
-
-    &:hover {
-      opacity: 0.9;
-    }
-
-    i {
-      font-size: 14px;
-    }
-
-    span {
-      display: block;
-    }
+  .btn{
+    font-size: 13px;
+    text-transform: uppercase;
   }
 }
 
