@@ -124,13 +124,14 @@ $(document).ready(function () {
     },
   });
 
+  //progress SVG animation
   var bar1 = new ProgressBar.Path("#path-ndmds5olzj-3", {
     easing: "easeInOut",
     duration: 1400,
   });
 
   bar1.set(0);
-  bar1.animate(0.7); // Number from 0.0 to 1.0
+  bar1.animate(0.9); // Number from 0.0 to 1.0
 
   const updateSwiper = new Swiper(".product-update-desktop .update-swiper", {
     loop: false,
