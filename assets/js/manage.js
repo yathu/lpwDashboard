@@ -806,4 +806,89 @@ $(document).ready(() => {
             initializeInsightChart(id);
         }
     });
+
+
+     // Configuration
+        const config = {
+            currentPage: 18,
+            targetPage: 4
+        };
+        
+        // Bootstrap modal instances
+        let progressModal;
+        let successModal;
+        
+        // Calculate progress
+        function calculateProgress(current, target) {
+            const totalPages = current;
+            const progress = (totalPages - target) / totalPages;
+            return Math.min(Math.max(progress, 0), 1);
+        }
+        
+        // Animate progress circle
+        function animateProgress() {
+            const progress = calculateProgress(config.currentPage, config.targetPage);
+            const circumference = 2 * Math.PI * 110;
+            const offset = circumference - (progress * circumference);
+            
+            setTimeout(function() {
+                $('#progressCircle').css('stroke-dashoffset', offset);
+            }, 100);
+        }
+        
+        // Initialize progress view
+        function initProgressView() {
+            $('#targetPage').text(config.targetPage);
+            $('#currentPage').text('Page ' + config.currentPage);
+            $('#newPage').text('Page ' + config.targetPage);
+            
+            animateProgress();
+        }
+        
+        // Show success modal
+        function showSuccess() {
+            $('#successPageNumber').text(config.targetPage);
+            $('#successFromPage').text('page ' + config.currentPage);
+            $('#successToPage').text('page ' + config.targetPage);
+            $('#successInitialPage').text('Page ' + config.currentPage);
+            $('#successFinalPage').text('Page ' + config.targetPage);
+            
+            progressModal.hide();
+            successModal.show();
+        }
+        
+        // Public API for external use (if needed)
+        $.fn.updateBoostConfig = function(currentPage, targetPage) {
+            config.currentPage = currentPage;
+            config.targetPage = targetPage;
+            initProgressView();
+            return this;
+        };
+        
+        $.fn.showProgressModal = function() {
+            successModal.hide();
+            progressModal.show();
+            initProgressView();
+            return this;
+        };
+        
+        // Initialize modals
+        progressModal = new bootstrap.Modal($('#progressModal')[0], {
+            backdrop: false,
+            keyboard: false
+        });
+        
+        successModal = new bootstrap.Modal($('#successModal')[0], {
+            backdrop: false,
+            keyboard: false
+        });
+        
+        // Event handlers
+        $('#btnMinimize').on('click', showSuccess);
+        
+        // Show progress modal and initialize
+        progressModal.show();
+        initProgressView();
+        
+
 });

@@ -3827,3 +3827,163 @@ layout: manage_ads
         </div>
     </div>
 </div>
+
+
+
+    <!-- Progress Modal -->
+    <div class="modal fade" id="progressModal" tabindex="-1" style="display: none;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Drag Handle -->
+                <div class="text-center pt-3 pb-2">
+                    <div class="drag-handle mx-auto"></div>
+                </div>
+                
+                <!-- Header -->
+                <div class="px-4 pb-2 d-flex justify-content-between align-items-center">
+                    <div style="width: 32px;"></div>
+                    <h2 class="fs-5 fw-bold mb-0">Boosting Ad</h2>
+                    <button type="button" class="btn-close-custom" data-bs-dismiss="modal">
+                        <span class="bi bi-x fs-5"></span>
+                    </button>
+                </div>
+                
+                <!-- Body -->
+                <div class="modal-body px-4 pb-4 text-center">
+                    <!-- Progress Circle -->
+                    <div class="progress-circle-container my-4 mx-auto">
+                        <svg class="progress-circle" width="256" height="256" viewBox="0 0 256 256">
+                            <defs>
+                                <linearGradient id="gradient-progress" x1="0%" y1="100%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#ef4444"/>
+                                    <stop offset="40%" stop-color="#eab308"/>
+                                    <stop offset="100%" stop-color="#22c55e"/>
+                                </linearGradient>
+                            </defs>
+                            <circle class="progress-circle-bg" cx="128" cy="128" r="110"/>
+                            <circle class="progress-circle-fill" id="progressCircle" cx="128" cy="128" r="110" stroke="url(#gradient-progress)"/>
+                        </svg>
+                        
+                        <div class="circle-content">
+                            <div class="page-number" id="targetPage">4</div>
+                            <div class="page-label">Page no.</div>
+                            <div class="arrow-boost">
+                                <i class="bi bi-chevron-up"></i>
+                                <i class="bi bi-chevron-up"></i>
+                                <i class="bi bi-chevron-up"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Status Indicator -->
+                    <div class="d-flex align-items-center justify-content-center gap-3 mb-4 status-indicator">
+                        <span class="position-relative d-flex" style="height: 12px; width: 12px;">
+                            <span class="position-absolute top-0 start-0 ping rounded-circle bg-danger opacity-75" style="height: 12px; width: 12px;"></span>
+                            <span class="position-relative rounded-circle bg-danger" style="height: 12px; width: 12px;"></span>
+                        </span>
+                        <span class="text-danger fw-bold fs-5 text-uppercase" style="letter-spacing: 0.05em;">Boosting your ad...</span>
+                    </div>
+                    
+                    <!-- Position Comparison -->
+                    <div class="bg-light rounded-4 p-4 mb-4 border" style="max-width: 320px; margin: 0 auto;">
+                        <div class="row align-items-center g-2">
+                            <div class="col text-start">
+                                <small class="text-muted text-uppercase fw-medium d-block mb-1" style="font-size: 0.75rem; letter-spacing: 0.05em;">Current Pos.</small>
+                                <div class="fs-5 fw-bold" id="currentPage">Page 18</div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="bg-white rounded-circle shadow-sm d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                                    <span class="bi bi-arrow-right text-secondary" style="font-size: 1.125rem;"></span>
+                                </div>
+                            </div>
+                            <div class="col text-end">
+                                <small class="text-muted text-uppercase fw-medium d-block mb-1" style="font-size: 0.75rem; letter-spacing: 0.05em;">New Pos.</small>
+                                <div class="fs-5 fw-bold text-success" id="newPage">Page 4</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Message -->
+                    <div class="mb-4 px-3">
+                        <h3 class="fs-4 fw-bold mb-2">Your ad is being boosted.</h3>
+                        <p class="text-secondary fw-medium mb-0">Please check in 5-10 mins to see the changes.</p>
+                    </div>
+                    
+                    <!-- Action Button -->
+                    <button id="btnMinimize" class="btn btn-primary btn-lg w-100 rounded-3 d-flex align-items-center justify-content-center gap-2 fw-semibold" onclick="showSuccess()">
+                        <span>Minimize Window</span>
+                        <span class="bi bi-chevron-down" style="font-size: 1.25rem;"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Drag Handle -->
+                <div class="text-center pt-3 pb-2">
+                    <div class="drag-handle mx-auto"></div>
+                </div>
+                
+                <!-- Body -->
+                <div class="modal-body px-4 py-5 text-center">
+                    <!-- Success Badge -->
+                    <div class="d-flex align-items-center justify-content-center gap-2 mb-4">
+                        <span class="bi bi-check-circle-fill text-success" style="font-size: 1.5rem;"></span>
+                        <span class="text-success fw-bold text-uppercase" style="font-size: 1.25rem; letter-spacing: 0.05em;">Boosted</span>
+                    </div>
+                    
+                    <!-- Success Circle -->
+                    <div class="mb-4">
+                        <div class="success-circle mx-auto">
+                            <div class="success-number" id="successPageNumber">4</div>
+                            <div class="success-label">Page no.</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Success Message -->
+                    <div class="mb-4">
+                        <h1 class="fs-4 fw-bold mb-2" style="letter-spacing: -0.025em;">Success! Your ad is boosted</h1>
+                        <p class="text-secondary fw-medium px-3">Your listing jumped from <span id="successFromPage">page 18</span> to <span id="successToPage">page 4</span> for maximum exposure.</p>
+                    </div>
+                    
+                    <!-- Comparison -->
+                    <div class="bg-light rounded-4 p-4 mb-4 border">
+                        <div class="row align-items-center g-3">
+                            <div class="col text-start">
+                                <small class="text-muted text-uppercase fw-bold d-block mb-1" style="font-size: 0.625rem; letter-spacing: 0.1em;">Initial</small>
+                                <div class="fs-5 fw-bold text-muted text-decoration-line-through" id="successInitialPage">Page 18</div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="bg-white rounded-circle shadow-sm d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                    <span class="bi bi-graph-up text-success" style="font-size: 1.5rem;"></span>
+                                </div>
+                            </div>
+                            <div class="col text-end">
+                                <small class="text-success text-uppercase fw-bold d-block mb-1" style="font-size: 0.625rem; letter-spacing: 0.1em;">New Position</small>
+                                <div class="fw-bolder text-success" style="font-size: 2rem; line-height: 1;" id="successFinalPage">Page 4</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Upgrade CTA -->
+                    <div class="rounded-4 p-4 mb-3" style="background-color: rgba(29, 133, 237, 0.05); border: 1px solid rgba(29, 133, 237, 0.2);">
+                        <div class="mb-3 text-center">
+                            <div class="text-primary fw-bold mb-1" style="font-size: 1.125rem;">Reach page 1 or 2</div>
+                            <p class="text-muted small mb-0">Get 3x more visibility by upgrading</p>
+                        </div>
+                        <button class="btn btn-primary w-100 rounded-4 d-flex align-items-center justify-content-center gap-2 fw-bold" style="height: 3.5rem; box-shadow: 0 4px 6px -1px rgba(29, 133, 237, 0.2);">
+                            <span class="bi bi-rocket-takeoff-fill" style="font-size: 1.25rem;"></span>
+                            <span>Upgrade your ad now</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Done Button -->
+                    <button class="btn btn-light w-100 rounded-4 fw-semibold text-secondary" style="height: 3rem;" data-bs-dismiss="modal">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
