@@ -3843,8 +3843,7 @@ layout: manage_ads
                 <div class="px-4 pb-2 d-flex justify-content-between align-items-center">
                     <div style="width: 32px;"></div>
                     <h2 class="fs-6 fw-bold mb-0">Boosting Ad</h2>
-                    <button type="button" class="btn-close-custom" data-bs-dismiss="modal">
-                        <span class="bi bi-x fs-5"></span>
+                    <button type="button" class="btn btn-close" data-bs-dismiss="modal">
                     </button>
                 </div>
                 
@@ -3907,9 +3906,9 @@ layout: manage_ads
                     </div>
                     
                     <!-- Action Button -->
-                    <button id="btnMinimize" class="btn btn-primary btn-lg w-100 rounded-3 d-flex align-items-center justify-content-center gap-2 fw-semibold" onclick="showSuccess()">
+                    <button id="btnMinimize" class="btn btn-primary w-100 py-2 rounded-3 progress-modal-btn" onclick="showSuccess()">
                         <span>Minimize Window</span>
-                        <span class="bi bi-chevron-down" style="font-size: 1.25rem;"></span>
+                        <span class="bi bi-chevron-down" style="font-size: 12px;"></span>
                     </button>
                 </div>
             </div>
@@ -3917,8 +3916,8 @@ layout: manage_ads
     </div>
     
     <!-- Success Modal -->
-    <div class="modal fade slide-up bottom-sheet-modal" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+    <div class="modal fade slide-up bottom-sheet-modal success-modal" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered success-modal">
             <div class="modal-content">
                 <!-- Drag Handle -->
                 <div class="text-center pt-3 pb-2">
@@ -3926,11 +3925,11 @@ layout: manage_ads
                 </div>
                 
                 <!-- Body -->
-                <div class="modal-body px-4 py-5 text-center">
+                <div class="modal-body px-4 pt-3 pb-4 text-center">
                     <!-- Success Badge -->
-                    <div class="d-flex align-items-center justify-content-center gap-2 mb-4">
-                        <span class="bi bi-check-circle-fill text-success" style="font-size: 1.5rem;"></span>
-                        <span class="text-success fw-bold text-uppercase" style="font-size: 1.25rem; letter-spacing: 0.05em;">Boosted</span>
+                    <div class="d-flex align-items-center justify-content-center gap-1 mb-4">
+                        <span class="bi bi-check-circle-fill success-badge-icon"></span>
+                        <span class="fw-bold text-uppercase success-badge-text">Boosted</span>
                     </div>
                     
                     <!-- Success Circle -->
@@ -3942,44 +3941,44 @@ layout: manage_ads
                     </div>
                     
                     <!-- Success Message -->
-                    <div class="mb-4">
-                        <h1 class="fs-4 fw-bold mb-2" style="letter-spacing: -0.025em;">Success! Your ad is boosted</h1>
-                        <p class="text-secondary fw-medium px-3">Your listing jumped from <span id="successFromPage">page 18</span> to <span id="successToPage">page 4</span> for maximum exposure.</p>
+                    <div class="mb-4 suscess-msg-box">
+                        <h1 class="fs-5 fw-bold mb-2 success-title">Success! Your ad is boosted</h1>
+                        <p class="text-secondary px-3">Your listing jumped from <span id="successFromPage">page 18</span> to <span id="successToPage">page 4</span> for maximum exposure.</p>
                     </div>
                     
                     <!-- Comparison -->
-                    <div class="bg-light rounded-4 p-4 mb-4 border">
-                        <div class="row align-items-center g-3">
-                            <div class="col text-start">
-                                <small class="text-muted text-uppercase fw-bold d-block mb-1" style="font-size: 0.625rem; letter-spacing: 0.1em;">Initial</small>
-                                <div class="fs-5 fw-bold text-muted text-decoration-line-through" id="successInitialPage">Page 18</div>
+                    <div class="bg-light rounded-4 px-3 py-3 mb-4 border position-container" style="max-width: 320px; margin: 0 auto;">
+                        <div class="row align-items-center justify-content-between g-2">
+                            <div class="col text-start text-col">
+                                <small class="text-muted text-uppercase d-block success-small-label">Initial</small>
+                                <div class="fs-6 fw-bold text-muted text-decoration-line-through" id="successInitialPage">Page 18</div>
                             </div>
                             <div class="col-auto">
-                                <div class="bg-white rounded-circle shadow-sm d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-                                    <span class="bi bi-graph-up text-success" style="font-size: 1.5rem;"></span>
+                                <div class="bg-white rounded-circle shadow-sm d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                                    <span class="bi bi-graph-up-arrow text-success" style="font-size: 1.125rem;"></span>
                                 </div>
                             </div>
-                            <div class="col text-end">
-                                <small class="text-success text-uppercase fw-bold d-block mb-1" style="font-size: 0.625rem; letter-spacing: 0.1em;">New Position</small>
-                                <div class="fw-bolder text-success" style="font-size: 2rem; line-height: 1;" id="successFinalPage">Page 4</div>
+                            <div class="col text-end text-col">
+                                <small class="text-success text-uppercase d-block success-small-label">New Position</small>
+                                <div class="fs-6 fw-bold text-success" id="successFinalPage">Page 4</div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Upgrade CTA -->
-                    <div class="rounded-4 p-4 mb-3" style="background-color: rgba(29, 133, 237, 0.05); border: 1px solid rgba(29, 133, 237, 0.2);">
+                    <div class="rounded-4 p-3 mb-3 success-upgrade-box">
                         <div class="mb-3 text-center">
-                            <div class="text-primary fw-bold mb-1" style="font-size: 1.125rem;">Reach page 1 or 2</div>
-                            <p class="text-muted small mb-0">Get 3x more visibility by upgrading</p>
-                        </div>
-                        <button class="btn btn-primary w-100 rounded-4 d-flex align-items-center justify-content-center gap-2 fw-bold" style="height: 3.5rem; box-shadow: 0 4px 6px -1px rgba(29, 133, 237, 0.2);">
-                            <span class="bi bi-rocket-takeoff-fill" style="font-size: 1.25rem;"></span>
+                            <div class="text-primary fw-bold mb-1 success-upgrade-title">Reach page 1 or 2</div>
+                            <p class="text-muted small mb-0 getmore-text">Get 3x more visibility by upgrading</p>
+                        </div> 
+                        <button class="btn btn-primary w-100 rounded-4 d-flex align-items-center justify-content-center gap-2 fw-bold success-upgrade-btn">
+                            <span class="bi bi-rocket-takeoff-fill"></span>
                             <span>Upgrade your ad now</span>
                         </button>
                     </div>
                     
                     <!-- Done Button -->
-                    <button class="btn btn-light w-100 rounded-4 fw-semibold text-secondary" style="height: 3rem;" data-bs-dismiss="modal">Done</button>
+                    <button class="btn w-100 text-secondary success-done-btn border-0" data-bs-dismiss="modal">Done</button>
                 </div>
             </div>
         </div>

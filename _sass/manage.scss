@@ -5169,50 +5169,10 @@ label.form-check-label:focus,
   }
 }
 
-/* Background */
-.background-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  background-image: url("https://images.unsplash.com/photo-1600596542815-e32870110294?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80");
-  background-size: cover;
-  background-position: center;
-  filter: blur(4px) brightness(0.5);
-}
-
-.background-overlay::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-}
-
-/* Modal positioning */
-.modal {
-  z-index: 1055;
-  background: transparent !important;
-}
-
-.modal-backdrop {
-  display: none !important;
-}
-
-.modal-dialog {
-  max-width: 420px;
-  margin: auto;
-}
-
-.modal-content {
-  border-radius: 1.5rem;
-  border: none;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  background: white;
+#progressModal {
+  .btn-close {
+    font-size: 12px;
+  }
 }
 
 /* Drag Handle */
@@ -5320,23 +5280,23 @@ label.form-check-label:focus,
 
 /* Status Indicator */
 .status-indicator {
-  .rounded-circle{
+  .rounded-circle {
     background-color: #fd7e14;
   }
   color: #fd7e14;
 }
 
-.position-container{
-  .text-col{
-    small{
-      font-size: 11px; 
-      letter-spacing: .5px
+.position-container {
+  .text-col {
+    small {
+      font-size: 11px;
+      letter-spacing: 0.5px;
     }
   }
 }
 
-.msg-container{
-  p{
+.msg-container {
+  p {
     font-size: 13px;
   }
 }
@@ -5362,45 +5322,79 @@ label.form-check-label:focus,
 }
 
 .success-label {
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-top: 0.25rem;
   opacity: 0.9;
 }
 
-/* Buttons */
-.btn-primary {
-  background-color: #1d85ed;
-  border-color: #1d85ed;
-  box-shadow: 0 4px 6px -1px rgba(29, 133, 237, 0.2);
-}
+#successModal {
+  .success-badge-icon {
+    font-size: 18px;
+    color: #22c55e;
+  }
 
-.btn-primary:hover {
-  background-color: #156fc7;
-  border-color: #156fc7;
-}
+  .success-badge-text {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    color: #22c55e;
+  }
 
-.btn-primary:active {
-  transform: scale(0.98);
-}
+  .suscess-msg-box {
+    p {
+      font-size: 14px;
+    }
+  }
 
-.btn-close-custom {
-  background: transparent;
-  border: none;
-  padding: 0.5rem;
-  cursor: pointer;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #6b7280;
-  transition: background-color 0.2s;
-}
+  .success-title {
+    letter-spacing: -0.025em;
+  }
 
-.btn-close-custom:hover {
-  background-color: #f3f4f6;
+  .success-small-label {
+    font-size: 0.625rem;
+  }
+
+  .success-icon-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .success-graph-icon {
+    font-size: 1.5rem;
+  }
+
+  .success-final-page {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .success-upgrade-box {
+    background-color: rgba(29, 133, 237, 0.05);
+    border: 1px solid rgba(29, 133, 237, 0.2);
+
+    .getmore-text {
+      font-size: 13px;
+    }
+  }
+
+  .success-upgrade-title {
+    font-size: 16px;
+  }
+
+  .success-upgrade-btn {
+    height: 56px;
+
+    .bi {
+      font-size: 14px;
+    }
+  }
+
+  .success-done-btn {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+  }
 }
