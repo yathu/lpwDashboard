@@ -882,10 +882,7 @@ $(document).ready(() => {
         // Initialize modals
         progressModal = new bootstrap.Modal('#progressModal');
         
-        successModal = new bootstrap.Modal(document.getElementById('successModal'), {
-            backdrop: false,
-            keyboard: false
-        });
+        successModal = new bootstrap.Modal('#successModal');
         
         // Handle progress modal show event - animate when modal becomes visible
         document.getElementById('progressModal').addEventListener('shown.bs.modal', function() {
@@ -894,9 +891,13 @@ $(document).ready(() => {
         
         // Event handlers
         $('#btnMinimize').on('click', showSuccess);
+
+        $('#btnYesBoost').on("click",()=>{
+            progressModal.show();
+        });
         
         // Show progress modal on page load
-        progressModal.show();
+        // progressModal.show();
         
 
 });

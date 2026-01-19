@@ -5175,6 +5175,10 @@ label.form-check-label:focus,
   }
 }
 
+.progress-text-green{
+  color: #22c55e;
+}
+
 /* Drag Handle */
 .drag-handle {
   width: 40px;
@@ -5291,6 +5295,15 @@ label.form-check-label:focus,
     small {
       font-size: 11px;
       letter-spacing: 0.5px;
+      color: #6b7280;
+    }
+    .text-num{
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .text-muted{
+      color: #9ca3af !important;
     }
   }
 }
@@ -5354,7 +5367,7 @@ label.form-check-label:focus,
   }
 
   .success-small-label {
-    font-size: 0.625rem;
+    font-size: 11px;
   }
 
   .success-icon-circle {

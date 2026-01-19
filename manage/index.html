@@ -3088,7 +3088,7 @@ layout: manage_ads
                 >
                     no, cancel boost!
                 </button>
-                <button type="button" class="btn promote-btn boost-btn">
+                <button type="button" id="btnYesBoost" data-bs-dismiss="modal" class="btn promote-btn boost-btn">
                     Yes Boost it!
                 </button>
             </div>
@@ -3884,8 +3884,8 @@ layout: manage_ads
                     <div class="bg-light rounded-4 px-3 py-3 mb-4 border position-container" style="max-width: 320px; margin: 0 auto;">
                         <div class="row align-items-center justify-content-between g-2">
                             <div class="col text-start text-col">
-                                <small class="text-muted text-uppercase d-block">Current Pos.</small>
-                                <div class="fs-6 fw-bold" id="currentPage">Page 18</div>
+                                <small class="text-uppercase d-block">Current Pos.</small>
+                                <div class="text-num" id="currentPage">Page 18</div>
                             </div>
                             <div class="col-auto">
                                 <div class="bg-white rounded-circle shadow-sm d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
@@ -3893,8 +3893,8 @@ layout: manage_ads
                                 </div>
                             </div>
                             <div class="col text-end text-col">
-                                <small class="text-muted text-uppercase d-block">New Pos.</small>
-                                <div class="fs-6 fw-bold text-success" id="newPage">Page 4</div>
+                                <small class="text-uppercase d-block">New Pos.</small>
+                                <div class="text-num progress-text-green" id="newPage">Page 4</div>
                             </div>
                         </div>
                     </div>
@@ -3950,8 +3950,8 @@ layout: manage_ads
                     <div class="bg-light rounded-4 px-3 py-3 mb-4 border position-container" style="max-width: 320px; margin: 0 auto;">
                         <div class="row align-items-center justify-content-between g-2">
                             <div class="col text-start text-col">
-                                <small class="text-muted text-uppercase d-block success-small-label">Initial</small>
-                                <div class="fs-6 fw-bold text-muted text-decoration-line-through" id="successInitialPage">Page 18</div>
+                                <small class="text-uppercase d-block">Initial</small>
+                                <div class="text-num text-muted text-decoration-line-through" id="successInitialPage">Page 18</div>
                             </div>
                             <div class="col-auto">
                                 <div class="bg-white rounded-circle shadow-sm d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
@@ -3959,8 +3959,8 @@ layout: manage_ads
                                 </div>
                             </div>
                             <div class="col text-end text-col">
-                                <small class="text-success text-uppercase d-block success-small-label">New Position</small>
-                                <div class="fs-6 fw-bold text-success" id="successFinalPage">Page 4</div>
+                                <small class="progress-text-green text-uppercase d-block">New Position</small>
+                                <div class="text-num progress-text-green" id="successFinalPage">Page 4</div>
                             </div>
                         </div>
                     </div>
