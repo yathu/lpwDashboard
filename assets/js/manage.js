@@ -48,6 +48,12 @@ $(document).ready(() => {
         
         // Check if clicked element is a button or interactive element that shouldn't trigger checkbox
         const $target = $(e.target);
+        
+        // If click directly on checkbox, let native behavior handle
+        if ($target.hasClass('mobile-ad-checkbox')) {
+            return;
+        }
+        
         const isButton = $target.closest('button').length > 0 || $target.closest('.btn').length > 0;
         const isInteractiveIcon = $target.closest('[data-bs-toggle]').length > 0 || $target.closest('.dot-popover').length > 0 || $target.closest('.custom-switch').length > 0;
         
