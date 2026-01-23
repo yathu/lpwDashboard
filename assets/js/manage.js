@@ -833,20 +833,25 @@ $(document).ready(() => {
         
         // Animate progress circle
         function animateProgress() {
-            const progress = calculateProgress(config.currentPage, config.targetPage);
-            const radius = 110;
-            const circumference = 2 * Math.PI * radius; // 691.15 approximately
-            const offset = circumference * (1 - progress); // Start full, animate to progress
-            
-            // Delay animation to allow modal to render
-            setTimeout(function() {
-                const $circle = $('#progressCircle');
-                $circle.css({
-                    'stroke-dasharray': circumference,
-                    'stroke-dashoffset': offset
-                });
-                console.log('Animation triggered:', { progress, circumference, offset });
-            }, 300);
+            return new Promise((resolve) => {
+                const progress = calculateProgress(config.currentPage, config.targetPage);
+                const radius = 110;
+                const circumference = 2 * Math.PI * radius; // 691.15 approximately
+                const offset = circumference * (1 - progress); // Start full, animate to progress
+                
+                // Delay animation to allow modal to render
+                setTimeout(function() {
+                    const $circle = $('#progressCircle');
+                    $circle.css({
+                        'stroke-dasharray': circumference,
+                        'stroke-dashoffset': offset
+                    });
+                    console.log('Animation triggered:', { progress, circumference, offset });
+                    
+                    // Wait for CSS transition (1.5s) to complete
+                    setTimeout(resolve, 1500);
+                }, 300);
+            });
         }
         
         // Initialize progress view
@@ -855,7 +860,7 @@ $(document).ready(() => {
             $('#currentPage').text('Page ' + config.currentPage);
             $('#newPage').text('Page ' + config.targetPage);
             
-            animateProgress();
+            animateProgress().then(() => setTimeout(() => showSuccess(), 1000));
         }
         
         // Show success modal
