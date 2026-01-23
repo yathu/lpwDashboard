@@ -903,7 +903,7 @@ $(document).ready(() => {
         });
         
         // Show progress modal on page load
-        // progressModal.show();
+         progressModal.show(); 
         
 
 });

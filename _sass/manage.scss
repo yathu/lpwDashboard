@@ -5220,11 +5220,11 @@ label.form-check-label:focus,
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  padding-top: 8px;
+  padding-top: 10px;
 }
 
 .page-number {
-  font-size: 4.5rem;
+  font-size: 52px;
   font-weight: 700;
   line-height: 1;
   margin: 0;
@@ -5274,22 +5274,43 @@ label.form-check-label:focus,
 .arrow-boost .bi-chevron-up:nth-child(2) {
   font-size: 18px;
   opacity: 0.7;
-  margin-top: -5px;
+  margin-top: -12px;
 }
 
 .arrow-boost .bi-chevron-up:nth-child(3) {
   font-size: 20px;
-  margin-top: -10px;
+  margin-top: -15px;
 }
+        
+
 
 /* Status Indicator */
 .status-indicator {
+            animation: pulseText 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   .rounded-circle {
     background-color: #fd7e14;
   }
   color: #fd7e14;
 }
-
+        @keyframes pulseText {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+        
+        .ping {
+            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+        
+        @keyframes ping {
+            75%, 100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
 .position-container {
   .text-col {
     small {
