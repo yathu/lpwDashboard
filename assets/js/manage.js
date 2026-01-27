@@ -866,20 +866,31 @@ $(document).ready(() => {
                 const progress = calculateProgress(config.currentPage, config.targetPage);
                 const radius = 110;
                 const circumference = 2 * Math.PI * radius; // 691.15 approximately
-                const offset = circumference * (1 - progress); // Start full, animate to progress
+                const offset = circumference * (1 - progress); // Calculate target offset
                 
-                // Delay animation to allow modal to render
+                const $circle = $('#progressCircle');
+                
+                // First, reset the circle to 0% progress (full offset)
+                $circle.css({
+                    'stroke-dasharray': circumference,
+                    'stroke-dashoffset': circumference,  // Start at 0% progress
+                    'transition': 'none'  // Disable transition for instant reset
+                });
+                
+                // Force reflow to apply the reset immediately
+                $circle[0].offsetHeight;
+                
+                // Re-enable transition and animate to target
                 setTimeout(function() {
-                    const $circle = $('#progressCircle');
                     $circle.css({
-                        'stroke-dasharray': circumference,
-                        'stroke-dashoffset': offset
+                        'transition': 'stroke-dashoffset 1.5s ease-in-out',
+                        'stroke-dashoffset': offset  // Animate to target progress
                     });
                     console.log('Animation triggered:', { progress, circumference, offset });
                     
                     // Wait for CSS transition (1.5s) to complete
                     setTimeout(resolve, 1500);
-                }, 300);
+                }, 100);
             });
         }
         
@@ -903,8 +914,9 @@ $(document).ready(() => {
             // Hide progress content and show success content
             $('#progressContent').addClass('d-none');
             $('#successContent').removeClass('d-none');
-            // Optionally update header - remove if you want to keep the same header
-            // $('#modalHeader h2').text('Ad Boosted Successfully');
+            
+            // Hide the header when showing success content
+            $('#modalHeader').addClass('d-none');
         }
         
         // Public API for external use (if needed)
@@ -919,8 +931,9 @@ $(document).ready(() => {
             // Reset to show progress content
             $('#progressContent').removeClass('d-none');
             $('#successContent').addClass('d-none');
+            $('#modalHeader').removeClass('d-none');
+            
             progressModal.show();
-            initProgressView();
             return this;
         };
         
@@ -932,6 +945,8 @@ $(document).ready(() => {
             // Reset to show progress content when modal opens
             $('#progressContent').removeClass('d-none');
             $('#successContent').addClass('d-none');
+            $('#modalHeader').removeClass('d-none');
+            
             initProgressView();
         });
         
