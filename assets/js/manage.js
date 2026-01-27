@@ -558,11 +558,20 @@ $(document).ready(() => {
         }
     }
     
-    // Show mobile bottom sheet on checkbox selection (only when checked)
+    // Show/hide mobile bottom sheet on checkbox selection
     $(document).on('change', '.mobile-ad-checkbox', function () {
-        // Only show bottom sheet on mobile (< 768px) and only when checkbox is checked
-        if (window.innerWidth < 768 && $(this).is(':checked')) {
-            showBottomSheet('bulkActionsMobileModal');
+        // Only handle on mobile (< 768px)
+        if (window.innerWidth < 768) {
+            // Count how many checkboxes are currently checked
+            const checkedCount = $('.mobile-ad-checkbox:checked').length;
+            
+            if (checkedCount > 0) {
+                // Show bottom sheet if at least one checkbox is checked
+                showBottomSheet('bulkActionsMobileModal');
+            } else {
+                // Hide bottom sheet if no checkboxes are checked
+                hideBottomSheet('bulkActionsMobileModal');
+            }
         }
     });
 
