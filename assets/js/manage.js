@@ -850,9 +850,8 @@ $(document).ready(() => {
             targetPage: 4
         };
         
-        // Bootstrap modal instances
+        // Bootstrap modal instance
         let progressModal;
-        let successModal;
         
         // Calculate progress
         function calculateProgress(current, target) {
@@ -893,7 +892,7 @@ $(document).ready(() => {
             animateProgress().then(() => setTimeout(() => showSuccess(), 1000));
         }
         
-        // Show success modal
+        // Show success content
         function showSuccess() {
             $('#successPageNumber').text(config.targetPage);
             $('#successFromPage').text('page ' + config.currentPage);
@@ -901,8 +900,11 @@ $(document).ready(() => {
             $('#successInitialPage').text('Page ' + config.currentPage);
             $('#successFinalPage').text('Page ' + config.targetPage);
             
-            progressModal.hide();
-            successModal.show();
+            // Hide progress content and show success content
+            $('#progressContent').addClass('d-none');
+            $('#successContent').removeClass('d-none');
+            // Optionally update header - remove if you want to keep the same header
+            // $('#modalHeader h2').text('Ad Boosted Successfully');
         }
         
         // Public API for external use (if needed)
@@ -914,19 +916,22 @@ $(document).ready(() => {
         };
         
         $.fn.showProgressModal = function() {
-            successModal.hide();
+            // Reset to show progress content
+            $('#progressContent').removeClass('d-none');
+            $('#successContent').addClass('d-none');
             progressModal.show();
             initProgressView();
             return this;
         };
         
-        // Initialize modals
+        // Initialize modal
         progressModal = new bootstrap.Modal('#progressModal');
-        
-        successModal = new bootstrap.Modal('#successModal');
         
         // Handle progress modal show event - animate when modal becomes visible
         document.getElementById('progressModal').addEventListener('shown.bs.modal', function() {
+            // Reset to show progress content when modal opens
+            $('#progressContent').removeClass('d-none');
+            $('#successContent').addClass('d-none');
             initProgressView();
         });
         
