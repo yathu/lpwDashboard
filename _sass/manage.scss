@@ -5088,9 +5088,39 @@ label.form-check-label:focus,
   width: 100%;
   max-width: 100%;
 
+
   .modal-content {
     border-radius: 16px;
     border: none;
+  }
+}
+
+// Custom Bottom Sheet Implementation (replaces Bootstrap modal to avoid backdrop issues)
+.custom-bottom-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1055;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+  pointer-events: none;
+  padding: 8px;
+  
+  &.show {
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  
+  .bottom-sheet-content {
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .bottom-sheet-body {
+    padding: 24px;
   }
 }
 
@@ -5099,7 +5129,7 @@ label.form-check-label:focus,
   border-top: 1px solid #333;
   padding: 10px;
 
-  .modal-body {
+  .bottom-sheet-body {
     padding: 24px;
   }
 }

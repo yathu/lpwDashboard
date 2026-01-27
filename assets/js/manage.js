@@ -540,12 +540,29 @@ $(document).ready(() => {
     });
 
     // ===== Mobile Bottom Sheet Handlers =====
+    
+    // Custom bottom sheet helper functions (replaces Bootstrap modal)
+    function showBottomSheet(elementId) {
+        const bottomSheet = document.getElementById(elementId);
+        if (bottomSheet) {
+            bottomSheet.classList.add('show');
+            bottomSheet.setAttribute('aria-hidden', 'false');
+        }
+    }
+    
+    function hideBottomSheet(elementId) {
+        const bottomSheet = document.getElementById(elementId);
+        if (bottomSheet) {
+            bottomSheet.classList.remove('show');
+            bottomSheet.setAttribute('aria-hidden', 'true');
+        }
+    }
+    
     // Show mobile bottom sheet on checkbox selection (only when checked)
     $(document).on('change', '.mobile-ad-checkbox', function () {
         // Only show bottom sheet on mobile (< 768px) and only when checkbox is checked
         if (window.innerWidth < 768 && $(this).is(':checked')) {
-            const modal = new bootstrap.Modal(document.getElementById('bulkActionsMobileModal'));
-            modal.show();
+            showBottomSheet('bulkActionsMobileModal');
         }
     });
 
@@ -582,12 +599,16 @@ $(document).ready(() => {
         
         // Close the bottom sheet
         setTimeout(() => {
-            const modal = bootstrap.Modal.getInstance(document.getElementById('bulkActionsMobileModal'));
-            if (modal) {
-                modal.hide();
-            }
+            hideBottomSheet('bulkActionsMobileModal');
         }, 200);
     }
+    
+    // Close bottom sheet when clicking outside of it
+    $(document).on('click', '.custom-bottom-sheet.show', function(e) {
+        if (e.target === this) {
+            hideBottomSheet('bulkActionsMobileModal');
+        }
+    });
 
     //social media popover
 
