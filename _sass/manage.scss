@@ -5200,6 +5200,9 @@ label.form-check-label:focus,
 }
 
 #progressModal {
+  .modal-content {
+    height: 658px;
+  }
   .btn-close {
     font-size: 12px;
   }
@@ -5316,7 +5319,11 @@ label.form-check-label:focus,
 
 /* Status Indicator */
 .status-indicator {
-            animation: pulseText 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: pulseText 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  padding: 7px 0px;
+  border-radius: 10px;
+  border: 1px solid #d1d1d1;
+
   .rounded-circle {
     background-color: #fd7e14;
   }
@@ -5394,7 +5401,7 @@ label.form-check-label:focus,
   opacity: 0.9;
 }
 
-#successModal {
+#progressModal {
   .success-badge-icon {
     font-size: 18px;
     color: #22c55e;
