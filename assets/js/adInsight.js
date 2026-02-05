@@ -330,7 +330,7 @@ $(document).ready(() => {
     // Data for all 6 ad types - Current and Potential
     const allDealsCurrentViewsData = [400, 300, 200, 350, 450, 500];
     const allDealsPotentialViewsData = [550, 450, 350, 500, 600, 650];
-    
+
     const allDealsCurrentLeadsData = [600, 100, 400, 250, 350, 300];
     const allDealsPotentialLeadsData = [750, 250, 550, 400, 500, 450];
 
@@ -726,40 +726,48 @@ $(document).ready(() => {
     const adsTick = chartData.map((data) => data.ads);
     const psg = chartData.map((data) => data.psg);
 
+    // const boostedCurrentBarColors = ['#1fad53', 'rgb(25 127 230)'];
+
     var Addata = {
         labels: labelsData,
         datasets: [
             {
                 label: "Views",
                 type: "bar",
-                backgroundColor: "#0C68E9",
+                backgroundColor: "#197FE6FF",
                 data: viewsData,
-                barThickness: 14,
+                barThickness: 15,
                 datalabels: {
                     display: false,
                 },
                 borderWidth: 1,
                 borderColor: "white",
+                borderRadius: 5,
+
                 // axis: 'y',
                 //yAxisID: 'y',
             },
             {
                 label: "Ads count",
                 type: "bar",
-                backgroundColor: "#34A06F",
+                backgroundColor: "#1fad53",
                 data: adsTick,
                 xAxisID: "x2",
-                barThickness: 14,
+                barThickness: 15,
                 datalabels: {
                     display: false,
                 },
                 borderWidth: 1,
                 borderColor: "white",
+                borderRadius: 5,
+
                 // axis: 'y',
                 // yAxisID: "y1",
             },
         ],
     };
+
+    //pageNumberChart
 
     var myBarChart = new Chart(ctx, {
         type: "bar",
@@ -775,6 +783,10 @@ $(document).ready(() => {
             },
             //barValueSpacing: 20,
             scales: {
+                // xAxes: [{
+                //     categoryPercentage: 5.0,
+                //     barPercentage: 5.0
+                // }],
                 x: {
                     grid: {
                         drawOnChartArea: false,
@@ -1522,6 +1534,10 @@ $(document).ready(() => {
         },
     };
 
+    var gradient = ctx.createLinearGradient(0, 0, 0, 400);
+    gradient.addColorStop(0, 'rgb(205,255,246)');
+    gradient.addColorStop(1, 'rgba(154,189,184,0.09)');
+
     const data = {
         datasets: [
             {
@@ -1530,25 +1546,27 @@ $(document).ready(() => {
                 data: chartDatas.all[7].pageView,
                 fill: true,
                 tension: 0.4,
-                borderWidth: 0,
+                borderWidth: 2,
                 order: 3,
-                segment: {
-                    // borderColor: (ctx) => "#3DD598",
-                    backgroundColor: (ctx) => {
-                        // console.log("data===>", ctx?.p0?.raw?.adsCount);
-                        const ads_count = ctx?.p0?.raw?.adsCount;
-
-                        if (ads_count) {
-                            return ads_count < 10 ? yellowShades[ads_count] : yellowShades[yellowShades.length - 1];
-                        } else return yellowShades[0];
-                        // return createGradient(ctx, ctx.chart)
-                    },
-                },
+                // segment: {
+                //     // borderColor: (ctx) => "#3DD598",
+                //     backgroundColor: (ctx) => {
+                //         // console.log("data===>", ctx?.p0?.raw?.adsCount);
+                //         const ads_count = ctx?.p0?.raw?.adsCount;
+                //
+                //         if (ads_count) {
+                //             return ads_count < 10 ? yellowShades[ads_count] : yellowShades[yellowShades.length - 1];
+                //         } else return yellowShades[0];
+                //         // return createGradient(ctx, ctx.chart)
+                //     },
+                // },
+                backgroundColor: gradient,
                 // pointStyle: false,
                 datalabels: {
                     display: false,
                 },
                 pointBackgroundColor: "yellow",
+                borderColor: "#2bb8a5",
                 pointRadius: 3,
                 pointBorderColor: yellowShades[yellowShades.length - 1],
                 pointBorderWidth: 1,
@@ -1560,7 +1578,7 @@ $(document).ready(() => {
                 data: chartDatas.all[7].pageNUm,
                 fill: false,
                 tension: 0.4,
-                borderWidth: 3,
+                borderWidth: 2,
                 order: 1,
                 borderColor: "#E13D44",
                 // pointStyle: false,
@@ -1572,17 +1590,19 @@ $(document).ready(() => {
                 pointRadius: 3,
                 pointBorderColor: "#FF007F",
                 pointBorderWidth: 1,
+                borderDash:[4,6]
             },
             {
                 label: "Scatter Dataset",
                 type: "bubble",
                 data: chartDatas.all[7].scatter.filter((data) => data.value > 0),
-                backgroundColor: "#ffc0b3",
+                backgroundColor: "#f97416",
                 borderColor: "#ff0000",
                 order: 2,
-                borderWidth: 2,
-                pointRadius: 10,
+                borderWidth: 0,
+                pointRadius: 14,
                 pointHoverRadius: 1,
+                pointStyle: 'rectRounded',
 
                 // Core options
                 datalabels: {
@@ -1593,7 +1613,7 @@ $(document).ready(() => {
                         return value < 100 ? value : "99+";
                         // return value;
                     },
-                    // color: 'white'
+                    color: 'white'
                 },
             },
         ],
@@ -1661,6 +1681,8 @@ $(document).ready(() => {
 
                             if (isWeekend) {
                                 return 'blue'
+                            } else{
+                                return 'grey'
                             }
                         }
                     },
@@ -2460,16 +2482,16 @@ $(document).ready(() => {
             this.tooltip.find('.btn-walkthrough-prev').on('click', () => this.previous());
             this.tooltip.find('.btn-walkthrough-next').on('click', () => this.next());
             this.tooltip.find('.btn-walkthrough-close').on('click', () => this.close());
-            
+
             // Language button handlers for walkthrough
             this.tooltip.find('.walkthrough-lang-btn').on('click', (e) => {
                 const newLang = $(e.target).data('lang');
                 CURRENT_LANGUAGE = newLang;
-                
+
                 // Update active state for walkthrough language buttons
                 this.tooltip.find('.walkthrough-lang-btn').removeClass('active');
                 this.tooltip.find(`.walkthrough-lang-btn[data-lang="${newLang}"]`).addClass('active');
-                
+
                 // Update the content with new language
                 const stepContent = this.steps[this.currentStep].content;
                 const newContent = stepContent[newLang] || stepContent['en'];
@@ -2627,28 +2649,29 @@ $(document).ready(() => {
             this.tooltip.fadeOut(300, () => this.tooltip.remove());
         }
     }
+
     // Initialize walkthroughs
     let walkthroughInstance1;
     let walkthroughInstance2;
     let walkthroughInstanceBoosted;
 
-    $('#AdsTypeChartWalkthrough').on('click', function() {
+    $('#AdsTypeChartWalkthrough').on('click', function () {
         walkthroughInstance1 = new ChartWalkthrough(adsTypeChart, walkthrough1, 'Ad Types Overview');
         walkthroughInstance1.start();
     });
 
-    $('#DealsChartWalkthrough').on('click', function() {
+    $('#DealsChartWalkthrough').on('click', function () {
         walkthroughInstance2 = new ChartWalkthrough(dealsChart, dealsChartWalk, 'Ad Types Comparison');
         walkthroughInstance2.start();
     });
 
-    $('#BoostedChartWalkthrough').on('click', function() {
+    $('#BoostedChartWalkthrough').on('click', function () {
         walkthroughInstanceBoosted = new ChartWalkthrough(boostedChart, boostedChartWalk, 'Boosted ads Vs Normal ads');
         walkthroughInstanceBoosted.start();
     });
 
     // Language buttons - all change the global variable
-    $('.lang-btn').on('click', function() {
+    $('.lang-btn').on('click', function () {
         CURRENT_LANGUAGE = $(this).data('lang');
 
         // Update active state for all language buttons
