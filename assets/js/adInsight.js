@@ -1907,6 +1907,7 @@ $(document).ready(() => {
                 label: "# of Votes",
                 data: timelineData(chartDatas.all[7].timelineDate),
                 borderWidth: 1,
+
             },
         ],
     };
@@ -2036,13 +2037,51 @@ $(document).ready(() => {
     const timeline_anntation_gen = (genData) => {
         let temData = {};
 
-        genData.map(({start, end, type, value}, index) => {
-            //MyObjList['newKey'] = obj;
-            // console.log("ind==>", index);
-            const str = `line${index}`;
+        // Group data by type to calculate totals
+        const typeGroups = {};
+        genData.forEach(({start, end, type, value}) => {
+            if (!typeGroups[type]) {
+                typeGroups[type] = { items: [], total: 0 };
+            }
+            typeGroups[type].items.push({start, end, value});
+            typeGroups[type].total += value;
+        });
 
-            const bColor = getColor(type, value);
+        // Get the type-specific styling
+        const getTypeStyle = (type) => {
+            switch(type) {
+                case "hotDeal":
+                    return {
+                        bgColor: "#EF5350",
+                        icon: "\uF7F6",  // bi-fire
+                        label: "Hot Deal"
+                    };
+                case "urgentSale":
+                    return {
+                        bgColor: "#4CAF50",
+                        icon: "\uF46D",  // bi-lightning-charge-fill
+                        label: "Urgent Sale"
+                    };
+                case "whatsapp":
+                    return {
+                        bgColor: "#25D366",
+                        icon: "\uF618",  // bi-chat-fill
+                        label: "Whatsapp"
+                    };
+                default:
+                    return {
+                        bgColor: "#2196F3",
+                        icon: "\uF21F",  // bi-play-btn-fill
+                        label: "Thumbnail Video"
+                    };
+            }
+        };
 
+        let annotationIndex = 0;
+        
+        genData.forEach(({start, end, type, value}, index) => {
+            const style = getTypeStyle(type);
+            
             const placement =
                 type == "whatsapp"
                     ? 4
@@ -2052,49 +2091,69 @@ $(document).ready(() => {
                             ? 2
                             : 1;
 
-            // console.log("placement==>", placement);
-
-            const newData = {
-                [str]: {
-                    //line 4
-                    type: "line",
+            // Main bar annotation using box type for rounded corners
+            const barStr = `bar${annotationIndex}`;
+            const barAnnotation = {
+                [barStr]: {
+                    type: "box",
                     xMin: start,
                     xMax: end,
-                    yMin: barPlacement[placement],
-                    yMax: barPlacement[placement],
-                    borderColor: bColor,
-                    borderWidth: 8,
+                    yMin: barPlacement[placement] - 1.2,
+                    yMax: barPlacement[placement] + 1.2,
+                    backgroundColor: style.bgColor,
+                    borderColor: style.bgColor,
+                    borderRadius: 6,
+                    borderWidth: 0,
                     drawTime: "afterDatasetsDraw",
                     label: {
                         display: true,
-                        backgroundColor: "#fff",
-                        color: "#000",
-                        borderColor: bColor,
-                        borderWidth: 2,
-
-                        content: (ctx) => {
-                            // console.log("ctx1==>", ctx);
-
-                            return [value];
+                        content: `${style.icon}  ${style.label}`,
+                        color: "#fff",
+                        font: {
+                            family: "'bootstrap-icons'",
+                            size: 12,
+                            weight: 600,
+                        },
+                        position: {
+                            x: "start",
+                            y: "center"
                         },
                         padding: {
-                            top: 0,
-                            left: 3,
-                            bottom: 0,
-                            right: 3,
-                        },
-                        yAdjust: 0,
-                        font: {
-                            size: 11,
-                            weight: 400,
+                            left: 10,
+                            right: 8,
                         },
                     },
                 },
             };
 
-            // console.log("newData str==>", newData);
+            // Badge annotation for count (x1, x2, etc.)
+            const badgeStr = `badge${annotationIndex}`;
+            const badgeAnnotation = {
+                [badgeStr]: {
+                    type: "label",
+                    xValue: end,
+                    yValue: barPlacement[placement],
+                    xAdjust: -20,
+                    backgroundColor: "rgba(255,255,255,0.25)",
+                    borderRadius: 4,
+                    content: `x${value}`,
+                    color: "#fff",
+                    font: {
+                        size: 11,
+                        weight: 600,
+                    },
+                    padding: {
+                        top: 2,
+                        left: 6,
+                        bottom: 2,
+                        right: 6,
+                    },
+                    drawTime: "afterDatasetsDraw",
+                },
+            };
 
-            temData = {...temData, ...newData};
+            temData = {...temData, ...barAnnotation, ...badgeAnnotation};
+            annotationIndex++;
         });
 
         return temData;
@@ -2102,20 +2161,55 @@ $(document).ready(() => {
 
     const timeline7gen = timeline_anntation_gen(chartDatas.all[7].timelineData);
 
-    let temp_timeline_bg_lines = {...timeline_bg_lines, ...timeline7gen};
+    // let temp_timeline_bg_lines = {...timeline_bg_lines, ...timeline7gen};
+    let temp_timeline_bg_lines = { ...timeline7gen};
+
 
     // // console.log("timeline_bg_lines==>", timeline7gen);
 
     const timelineChart = new Chart(timeline_ctx, {
         type: "line",
         data: timeline_data,
+        plugins: [{
+            id: 'customCanvasBackgroundColor',
+            beforeDraw: (chart) => {
+                const ctx = chart.canvas.getContext('2d');
+                const chartArea = chart.chartArea;
+                if (!chartArea) return;
+                
+                ctx.save();
+                ctx.fillStyle = '#edf1f4ff'; // Light grey background
+                
+                // Draw rounded rectangle - full width, bottom above x-axis
+                const x = 0;
+                const y = 0;
+                const width = chart.width;
+                const height = chartArea.bottom; // Stops above x-axis
+                const radius = 12; // Border radius
+                
+                ctx.beginPath();
+                ctx.moveTo(x + radius, y);
+                ctx.lineTo(x + width - radius, y);
+                ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+                ctx.lineTo(x + width, y + height - radius);
+                ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+                ctx.lineTo(x + radius, y + height);
+                ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+                ctx.lineTo(x, y + radius);
+                ctx.quadraticCurveTo(x, y, x + radius, y);
+                ctx.closePath();
+                ctx.fill();
+                
+                ctx.restore();
+            }
+        }],
         options: {
             maintainAspectRatio: false,
             layout: {
                 padding: {
                     left: 25,
                     right: 20,
-                    top: 25,
+                    top: 0,
                     bottom: 0,
                 },
             },
@@ -2158,7 +2252,7 @@ $(document).ready(() => {
                         display: false,
                     },
                     ticks: {
-                        display: false,
+                        // display: false,
                     },
                 },
                 x: {
@@ -2288,7 +2382,7 @@ $(document).ready(() => {
 
         const timelinegen = timeline_anntation_gen(days);
 
-        let temp_timeline_bg_lines = {...timeline_bg_lines, ...timelinegen};
+        let temp_timeline_bg_lines = {...timelinegen};
 
         timelineChart.options.plugins.annotation.annotations =
             temp_timeline_bg_lines;
