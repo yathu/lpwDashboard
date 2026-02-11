@@ -2240,7 +2240,22 @@ $(document).ready(() => {
                     borderWidth: 0,
                     drawTime: "afterDatasetsDraw",
                     label: {
-                        display: false,
+                        display: true,
+                        content: `${style.icon}  ${style.label}`,
+                        color: "#fff",
+                        font: {
+                            family: `"bootstrap-icons", "Inter", sans-serif`,
+                            size: 11,
+                            weight: 500,
+                        },
+                        position: {
+                            x: "start",
+                            y: "center"
+                        },
+                        padding: {
+                            left: 10,
+                            right: 8,
+                        },
                     },
                 },
             };
@@ -2271,44 +2286,7 @@ $(document).ready(() => {
                 },
             };
 
-            // Icon annotation (Bootstrap Icons font)
-            const iconStr = `icon${annotationIndex}`;
-            const iconAnnotation = {
-                [iconStr]: {
-                    type: "label",
-                    xValue: start,
-                    yValue: barPlacement[placement],
-                    xAdjust: 14,
-                    content: style.icon,
-                    color: "#fff",
-                    font: {
-                        family: "bootstrap-icons",
-                        size: 11,
-                    },
-                    drawTime: "afterDatasetsDraw",
-                },
-            };
-
-            // Text label annotation (Inter font)
-            const textStr = `text${annotationIndex}`;
-            const textAnnotation = {
-                [textStr]: {
-                    type: "label",
-                    xValue: start,
-                    yValue: barPlacement[placement],
-                    xAdjust: 28 + (style.label.length * 3.5),
-                    content: style.label,
-                    color: "#fff",
-                    font: {
-                        family: `"Inter", sans-serif`,
-                        size: 11,
-                        weight: 500,
-                    },
-                    drawTime: "afterDatasetsDraw",
-                },
-            };
-
-            temData = {...temData, ...barAnnotation, ...badgeAnnotation, ...iconAnnotation, ...textAnnotation};
+            temData = {...temData, ...barAnnotation, ...badgeAnnotation};
             annotationIndex++;
         });
 
