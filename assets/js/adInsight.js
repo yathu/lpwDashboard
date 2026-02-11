@@ -1771,30 +1771,113 @@ $(document).ready(() => {
                 },
 
                 tooltip: {
+                    enabled: false,
                     mode: "nearest",
                     intersect: false,
-                    callbacks: {
-                        label: function (context) {
-                            // console.log("tool1==>", context.dataset.type);
-                            // // console.log("tool1==>",context?.raw?.y);
-                            // console.log("tool1==>", context?.dataset?.label);
+                    external: function (context) {
+                        const {chart, tooltip} = context;
+                        let tooltipEl = chart.canvas.parentNode.querySelector('.overall-chart-tooltip');
 
-                            if (context.dataset.type == "bubble") {
-                                let label = "Upgrade ads";
-                                if (context.parsed.y !== null) {
-                                    console.log("context==>",context);
-                                    label += `: ${context.raw.value}`;
+                        // Create tooltip element on first render
+                        if (!tooltipEl) {
+                            tooltipEl = document.createElement('div');
+                            tooltipEl.classList.add('overall-chart-tooltip');
+                            tooltipEl.style.cssText = `
+                                background: #fff;
+                                border: 1px solid #e0e0e0;
+                                border-radius: 8px;
+                                padding: 12px 14px;
+                                pointer-events: none;
+                                position: absolute;
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                                font-size: 13px;
+                                color: #333;
+                                box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                                transition: opacity 0.15s ease, left 0.1s ease, top 0.1s ease;
+                                z-index: 100;
+                                min-width: 140px;
+                            `;
+                            chart.canvas.parentNode.appendChild(tooltipEl);
+                        }
+
+                        // Hide if no tooltip
+                        if (tooltip.opacity === 0) {
+                            tooltipEl.style.opacity = '0';
+                            return;
+                        }
+
+                        // Build tooltip content
+                        let innerHtml = '';
+
+                        // Date header – use the title (x-axis label)
+                        if (tooltip.title && tooltip.title.length) {
+                            const rawTitle = tooltip.title[0];
+                            // Format date as "Mon DD" e.g. "Jun 24"
+                            let dateStr = rawTitle;
+                            try {
+                                const parsed = moment(rawTitle);
+                                if (parsed.isValid()) {
+                                    dateStr = parsed.format('MMM DD');
                                 }
-                                return label;
-                            }
+                            } catch(e) { /* use rawTitle */ }
+                            innerHtml += `<div style="font-size:15px;font-weight:600;color:#222;margin-bottom:8px;">${dateStr}</div>`;
+                        }
 
-                            const datasetLabel = context.dataset.label || "";
-                            const value =
-                                context.parsed && context.parsed.y !== undefined
-                                    ? context.parsed.y
-                                    : context.formattedValue;
-                            return `${datasetLabel}: ${value}`;
-                        },
+                        // Separate items: line datasets vs bubble dataset
+                        const lineItems = [];
+                        const bubbleItems = [];
+
+                        if (tooltip.dataPoints) {
+                            tooltip.dataPoints.forEach((dp) => {
+                                if (dp.dataset.type === 'bubble') {
+                                    bubbleItems.push(dp);
+                                } else {
+                                    lineItems.push(dp);
+                                }
+                            });
+                        }
+
+                        // Render line dataset rows (Views, Page #) with circle markers
+                        lineItems.forEach((dp) => {
+                            const color = dp.dataset.borderColor || dp.dataset.backgroundColor || '#999';
+                            const label = dp.dataset.label || '';
+                            const value = dp.parsed && dp.parsed.y !== undefined ? dp.parsed.y : dp.formattedValue;
+                            innerHtml += `
+                                <div style="display:flex;align-items:center;gap:7px;margin-bottom:4px;">
+                                    <span style="width:9px;height:9px;border-radius:50%;background:${color};display:inline-block;flex-shrink:0;"></span>
+                                    <span style="color:#666;">${label}:</span>
+                                    <span style="font-weight:600;color:#222;margin-left:4px;">${value}</span>
+                                </div>`;
+                        });
+
+                        // Divider + Bubble dataset rows (Upgrade Ads) with rounded-rect marker
+                        if (bubbleItems.length > 0) {
+                            innerHtml += `<div style="border-top:1px solid #e5e5e5;margin:6px 0;"></div>`;
+                            bubbleItems.forEach((dp) => {
+                                const rawVal = dp.raw && dp.raw.value !== undefined ? dp.raw.value : '';
+                                innerHtml += `
+                                    <div style="display:flex;align-items:center;gap:7px;">
+                                        <span style="width:12px;height:9px;border-radius:3px;background:#f97416;display:inline-block;flex-shrink:0;"></span>
+                                        <span style="color:#666;">Upgrade Ads:</span>
+                                        <span style="font-weight:600;color:#b8860b;margin-left:4px;">${rawVal}</span>
+                                    </div>`;
+                            });
+                        }
+
+                        tooltipEl.innerHTML = innerHtml;
+                        tooltipEl.style.opacity = '1';
+
+                        // Position tooltip
+                        const {offsetLeft: positionX, offsetTop: positionY} = chart.canvas;
+                        const tooltipWidth = tooltipEl.offsetWidth;
+                        const chartWidth = chart.width;
+                        let left = positionX + tooltip.caretX + 12;
+                        // Flip to left side if overflowing right
+                        if (tooltip.caretX + tooltipWidth + 20 > chartWidth) {
+                            left = positionX + tooltip.caretX - tooltipWidth - 12;
+                        }
+                        tooltipEl.style.left = left + 'px';
+                        tooltipEl.style.top = positionY + tooltip.caretY - 20 + 'px';
                     },
                 },
             },
