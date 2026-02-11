@@ -1236,7 +1236,7 @@ $(document).ready(() => {
 
     const scatter7 = [
         {x: "11.07.2024", y: 0, value: 2},
-        {x: "13.07.2024", y: 0, value: 700},
+        {x: "13.07.2024", y: 0, value: 8},
     ];
 
     const scatter90 = [
@@ -1622,13 +1622,55 @@ $(document).ready(() => {
         ],
     };
 
+    const overallChartHoverLinePlugin = {
+        id: "overallChartHoverLine",
+        afterDraw(chart) {
+            const activeElements = chart.getActiveElements
+                ? chart.getActiveElements()
+                : chart?.tooltip?._active || [];
+
+            if (!activeElements.length) {
+                return;
+            }
+
+            const activePoint = activeElements[0].element || activeElements[0];
+            const x = activePoint?.x;
+            const { top, bottom } = chart.chartArea || {};
+
+            if (x === undefined || top === undefined || bottom === undefined) {
+                return;
+            }
+
+            const { ctx } = chart;
+            ctx.save();
+            ctx.beginPath();
+            ctx.moveTo(x, top);
+            ctx.lineTo(x, bottom);
+            ctx.lineWidth = 1;
+            ctx.strokeStyle = "#D8D8DF";
+            ctx.stroke();
+            ctx.restore();
+        },
+    };
+
     // config
     const config = {
         data,
+        plugins: [overallChartHoverLinePlugin],
         options: {
             clip: false,
             responsive: true,
             maintainAspectRatio: false,
+            interaction: {
+                mode: "x",
+                intersect: false,
+                axis: "x",
+            },
+            hover: {
+                mode: "x",
+                intersect: false,
+                axis: "x",
+            },
 
             scales: {
                 y: {
@@ -1729,6 +1771,8 @@ $(document).ready(() => {
                 },
 
                 tooltip: {
+                    mode: "x",
+                    intersect: false,
                     callbacks: {
                         label: function (context) {
                             // console.log("tool1==>", context.dataset.type);
@@ -1736,16 +1780,20 @@ $(document).ready(() => {
                             // console.log("tool1==>", context?.dataset?.label);
 
                             if (context.dataset.type == "bubble") {
-                                let label = "Boosted ads";
-
-                                if (label) {
-                                    label += ": ";
-                                }
+                                let label = "Upgrade ads";
                                 if (context.parsed.y !== null) {
-                                    label += context.raw.value;
+                                    console.log("context==>",context);
+                                    label += `: ${context.raw.value}`;
                                 }
                                 return label;
                             }
+
+                            const datasetLabel = context.dataset.label || "";
+                            const value =
+                                context.parsed && context.parsed.y !== undefined
+                                    ? context.parsed.y
+                                    : context.formattedValue;
+                            return `${datasetLabel}: ${value}`;
                         },
                     },
                 },
