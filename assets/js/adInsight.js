@@ -1662,12 +1662,12 @@ $(document).ready(() => {
             responsive: true,
             maintainAspectRatio: false,
             interaction: {
-                mode: "x",
+                mode: "nearest",
                 intersect: false,
                 axis: "x",
             },
             hover: {
-                mode: "x",
+                mode: "nearest",
                 intersect: false,
                 axis: "x",
             },
@@ -1771,7 +1771,7 @@ $(document).ready(() => {
                 },
 
                 tooltip: {
-                    mode: "x",
+                    mode: "nearest",
                     intersect: false,
                     callbacks: {
                         label: function (context) {
