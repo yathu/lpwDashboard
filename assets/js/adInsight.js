@@ -2241,7 +2241,7 @@ $(document).ready(() => {
                     drawTime: "afterDatasetsDraw",
                     label: {
                         display: true,
-                        content: `${style.icon}  ${style.label}`,
+                        content: window.innerWidth >= 768 ? `${style.icon}  ${style.label}` : style.icon,
                         color: "#fff",
                         font: {
                             family: `"bootstrap-icons", "Inter", sans-serif`,
@@ -2253,8 +2253,8 @@ $(document).ready(() => {
                             y: "center"
                         },
                         padding: {
-                            left: 10,
-                            right: 8,
+                            left: window.innerWidth >= 576 ? 10 : 4,
+                            right: window.innerWidth >= 576 ? 8 : 2,
                         },
                     },
                 },
@@ -2267,7 +2267,7 @@ $(document).ready(() => {
                     type: "label",
                     xValue: end,
                     yValue: barPlacement[placement],
-                    xAdjust: -20,
+                    xAdjust: window.innerWidth >= 576 ? -20 : -13,
                     backgroundColor: "rgba(255,255,255,0.25)",
                     borderRadius: 4,
                     content: `x${value}`,
@@ -2278,9 +2278,9 @@ $(document).ready(() => {
                     },
                     padding: {
                         top: 2,
-                        left: 6,
+                        left: window.innerWidth >= 576 ? 6 : 2,
                         bottom: 2,
-                        right: 6,
+                        right: window.innerWidth >= 576 ? 6 : 2,
                     },
                     drawTime: "afterDatasetsDraw",
                 },
