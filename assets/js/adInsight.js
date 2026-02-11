@@ -930,6 +930,7 @@ $(document).ready(() => {
                 datalabels: {
                     display: false,
                 },
+                borderRadius:5
             },
             {
                 label: "Ads",
@@ -940,6 +941,8 @@ $(document).ready(() => {
                 datalabels: {
                     display: false,
                 },
+                borderRadius:5
+
             },
         ],
     };
@@ -1247,16 +1250,16 @@ $(document).ready(() => {
     ];
 
     const yellowShades = [
-        "#FFFFE0", // Light Yellow
-        "#FFFACD", // Lemon Chiffon
-        "#FAFAD2", // Light Goldenrod Yellow
-        "#FFEFD5", // Papaya Whip
-        "#FFE4B5", // Moccasin
-        "#FFD700", // Gold
-        "#FFC107", // Amber
-        "#FFB300", // Dark Amber
-        "#FFA000", // Deep Orange
-        "#FF8C00", // Dark Orange (Darker Yellow)
+        "#ddcfc0", // Lightest shade
+        "#d9c3ad",
+        "#d5b79a",
+        "#d2ab87",
+        "#ce9f74",
+        "#ca9361",
+        "#c6874e",
+        "#c27b3b",
+        "#bf6f34",
+        "#bd5c28", // Darkest shade
     ];
 
     const timelineDates7 = [
@@ -1535,14 +1538,14 @@ $(document).ready(() => {
     };
 
     var gradient = ctx.createLinearGradient(0, 0, 0, 400);
-    gradient.addColorStop(0, 'rgb(205,255,246)');
+    gradient.addColorStop(0, 'rgba(233,255,250,0.67)');
     gradient.addColorStop(1, 'rgba(154,189,184,0.09)');
 
     const data = {
         datasets: [
             {
                 type: "line",
-                label: "Weekly Sales",
+                label: "Views",
                 data: chartDatas.all[7].pageView,
                 fill: true,
                 tension: 0.4,
@@ -1574,23 +1577,23 @@ $(document).ready(() => {
 
             {
                 type: "line",
-                label: "Sales",
+                label: "Page #",
                 data: chartDatas.all[7].pageNUm,
                 fill: false,
                 tension: 0.4,
                 borderWidth: 2,
                 order: 1,
-                borderColor: "#E13D44",
+                borderColor: "#9933cc",
                 // pointStyle: false,
                 yAxisID: "viewLine",
                 datalabels: {
                     display: false,
                 },
-                pointBackgroundColor: "yellow",
+                pointBackgroundColor: "#9933cc",
                 pointRadius: 3,
-                pointBorderColor: "#FF007F",
+                pointBorderColor: "#9933cc",
                 pointBorderWidth: 1,
-                borderDash:[4,6]
+                borderDash:[4,4]
             },
             {
                 label: "Scatter Dataset",
@@ -1851,16 +1854,16 @@ $(document).ready(() => {
     ];
 
     const upgradeAdsColors = [
-        "#f8eddf", // Lightest shade
-        "#f5e4cd",
-        "#ebcaa2",
-        "#e1af78",
-        "#d7944d",
-        "#cd7a23",
-        "#b66f1f",
-        "#9f641b",
-        "#885916",
-        "#d5aa55", // Original color
+        "#ddcfc0", // Lightest shade
+        "#d8c4b1",
+        "#d5b79a",
+        "#d2ab87",
+        "#ce9f74",
+        "#ca9361",
+        "#c6874e",
+        "#c27b3b",
+        "#bf6f34",
+        "#bd5c28", // Darkest shade
     ];
 
     // const timelineData = [
@@ -2448,14 +2451,14 @@ $(document).ready(() => {
     );
 
     //upgradeAdsColors
-    $("#upgradeAdsColors").append('<span class="me-1">1</span>');
+    $("#upgradeAdsColors").append('<span class="me-2">1</span>');
     yellowShades.map((color) =>
         $("#upgradeAdsColors").append(
             '<span class="box" style="background-color:' + color + '"></span>'
         )
     );
     $("#upgradeAdsColors").append(
-        '<span class="ms-1">' + thumbnailVideoAdColors.length + "</span>"
+        '<span class="ms-2">' + thumbnailVideoAdColors.length + "</span>"
     );
 
     //custom long legends end
