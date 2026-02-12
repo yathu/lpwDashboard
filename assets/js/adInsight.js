@@ -2193,7 +2193,7 @@ $(document).ready(() => {
                 case "urgentSale":
                     return {
                         bgColor: "#4CAF50",
-                        icon: "\uF46D",  // bi-lightning-charge-fill
+                        icon: "\uF46E",  // bi-lightning-charge-fill
                         label: "Urgent Sale"
                     };
                 case "whatsapp":
@@ -2205,7 +2205,7 @@ $(document).ready(() => {
                 default:
                     return {
                         bgColor: "#2196F3",
-                        icon: "\uF21F",  // bi-play-btn-fill
+                        icon: "\uF4F0",  // bi-play-btn-fill
                         label: "Thumbnail Video"
                     };
             }
