@@ -2168,6 +2168,44 @@ $(document).ready(() => {
         return colorType[newVal];
     };
 
+    // Timeline Tooltip Helper
+    const getTooltip = () => {
+        let tooltip = document.getElementById('timeline-tooltip');
+        if (!tooltip) {
+            tooltip = document.createElement('div');
+            tooltip.id = 'timeline-tooltip';
+            tooltip.style.opacity = 0;
+            tooltip.style.position = 'absolute';
+            tooltip.style.background = '#fff';
+            tooltip.style.border = '1px solid #ebebebff';
+            tooltip.style.color = '#000000ff';
+            tooltip.style.borderRadius = '5px';
+            tooltip.style.padding = '6px 10px';
+            tooltip.style.fontSize = '12px';
+            tooltip.style.fontFamily = '"Inter", sans-serif';
+            tooltip.style.pointerEvents = 'none';
+            tooltip.style.zIndex = '1000';
+            tooltip.style.transition = 'opacity 0.2s';
+            tooltip.style.transform = 'translate(-50%, -100%)'; // Center above cursor
+            tooltip.style.marginTop = '-10px';
+            document.body.appendChild(tooltip);
+        }
+        return tooltip;
+    };
+
+    const formatDate = (dateUnformated) => {
+        // Parse dd.MM.yyyy
+        const parts = dateUnformated.split('.');
+        const day = parseInt(parts[0], 10);
+        const month = parseInt(parts[1], 10) - 1; // Months are 0-indexed
+        const year = parseInt(parts[2], 10);
+        
+        const date = new Date(year, month, day);
+        
+        // Format to "MMM dd" (e.g. Jul 18)
+        return date.toLocaleDateString('en-US', { month: 'short', day: '2-digit' });
+    };
+
     const timeline_anntation_gen = (genData) => {
         let temData = {};
 
@@ -2257,6 +2295,25 @@ $(document).ready(() => {
                             right: window.innerWidth >= 576 ? 8 : 2,
                         },
                     },
+                    enter: (ctx, event) => {
+                        const tooltip = getTooltip();
+                        tooltip.innerHTML = `${formatDate(start)} - ${formatDate(end)}`;
+                        
+                        // Use native event coordinates for body-relative positioning
+                        const e = event.native || event;
+                        const pageX = e.pageX !== undefined ? e.pageX : e.clientX + window.scrollX;
+                        const pageY = e.pageY !== undefined ? e.pageY : e.clientY + window.scrollY;
+                        
+                        tooltip.style.left = pageX + 'px';
+                        tooltip.style.top = pageY + 'px';
+                        tooltip.style.opacity = 1;
+                        ctx.chart.canvas.style.cursor = 'pointer';
+                    },
+                    leave: (ctx, event) => {
+                        const tooltip = getTooltip();
+                        tooltip.style.opacity = 0;
+                        ctx.chart.canvas.style.cursor = 'default';
+                    }
                 },
             };
 
