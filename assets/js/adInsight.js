@@ -2231,14 +2231,10 @@ $(document).ready(() => {
     const timeline_anntation_gen = (genData) => {
         let temData = {};
 
-        // Group data by type to calculate totals
-        const typeGroups = {};
-        genData.forEach(({start, end, type, value}) => {
-            if (!typeGroups[type]) {
-                typeGroups[type] = { items: [], total: 0 };
-            }
-            typeGroups[type].items.push({start, end, value});
-            typeGroups[type].total += value;
+        // Group data by type to track which types are present
+        const typesPresent = new Set();
+        genData.forEach(({type}) => {
+            typesPresent.add(type);
         });
 
         // Get the type-specific styling
@@ -2271,6 +2267,46 @@ $(document).ready(() => {
             }
         };
 
+        // Create one title per category (centered in chart area)
+        let titleIndex = 0;
+        typesPresent.forEach((type) => {
+            const style = getTypeStyle(type);
+            const placement =
+                type == "whatsapp"
+                    ? 4
+                    : type == "hotDeal"
+                        ? 3
+                        : type == "urgentSale"
+                            ? 2
+                            : 1;
+
+            const titleStr = `categoryTitle${titleIndex}`;
+            temData[titleStr] = {
+                type: "label",
+                yValue: barPlacement[placement],
+                yAdjust: -22,
+                // xAdjust: -75,
+                backgroundColor: "#333",
+                content: [style.label],
+                font: {
+                    size: 10,
+                    family: '"Inter", sans-serif',
+                },
+                display: window.innerWidth < 768,
+                color: "#fff",
+                borderRadius: 4,
+                padding: {
+                    top: 2,
+                    left: 4,
+                    bottom: 2,
+                    right: 4,
+                },
+                position: "center",
+                drawTime: "afterDatasetsDraw",
+            };
+            titleIndex++;
+        });
+
         let annotationIndex = 0;
         
         genData.forEach(({start, end, type, value}, index) => {
@@ -2292,20 +2328,20 @@ $(document).ready(() => {
                     type: "box",
                     xMin: start,
                     xMax: end,
-                    yMin: barPlacement[placement] - 1.2,
-                    yMax: barPlacement[placement] + 1.2,
+                    yMin: barPlacement[placement] - 0.7,
+                    yMax: barPlacement[placement] + 0.7,
                     backgroundColor: style.bgColor,
                     borderColor: style.bgColor,
                     borderRadius: 6,
                     borderWidth: 0,
                     drawTime: "afterDatasetsDraw",
                     label: {
-                        display: true,
-                        content: window.innerWidth >= 768 ? `${style.icon}  ${style.label}` : style.icon,
+                        display: window.innerWidth >= 768,
+                        content: `${style.icon}  ${style.label}`,
                         color: "#fff",
                         font: {
                             family: `"bootstrap-icons", "Inter", sans-serif`,
-                            size: 11,
+                            size: 10,
                             weight: 500,
                         },
                         position: {
@@ -2347,7 +2383,7 @@ $(document).ready(() => {
                     xValue: end,
                     yValue: barPlacement[placement],
                     xAdjust: window.innerWidth >= 576 ? -20 : -13,
-                    backgroundColor: "rgba(255,255,255,0.25)",
+                    backgroundColor: "rgba(255,255,255,0.15)",
                     borderRadius: 4,
                     content: `x${value}`,
                     color: "#fff",
