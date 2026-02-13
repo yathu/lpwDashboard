@@ -1551,19 +1551,41 @@ $(document).ready(() => {
                 tension: 0.4,
                 borderWidth: 2,
                 order: 3,
-                // segment: {
-                //     // borderColor: (ctx) => "#3DD598",
-                //     backgroundColor: (ctx) => {
-                //         // console.log("data===>", ctx?.p0?.raw?.adsCount);
-                //         const ads_count = ctx?.p0?.raw?.adsCount;
-                //
-                //         if (ads_count) {
-                //             return ads_count < 10 ? yellowShades[ads_count] : yellowShades[yellowShades.length - 1];
-                //         } else return yellowShades[0];
-                //         // return createGradient(ctx, ctx.chart)
-                //     },
-                // },
-                backgroundColor: gradient,
+                segment: {
+                    // borderColor: (ctx) => "#3DD598",
+                    backgroundColor: (ctx) => {
+                        const ads_count = ctx?.p0?.raw?.adsCount;
+                        const chart = ctx.chart;
+                        const {ctx: canvasCtx, chartArea} = chart;
+
+                        if (!chartArea) {
+                            // Chart not fully initialized yet
+                            return 'rgb(255,255,255)';
+                        }
+
+                        // Create gradient
+                        const gradient = canvasCtx.createLinearGradient(
+                            0, chartArea.bottom,
+                            0, chartArea.top
+                        );
+
+                        // Add yellow at stop 0
+                        gradient.addColorStop(0, '#fffcf9'); // Yellow
+
+                        // Add dynamic color based on ads_count
+                        if (ads_count) {
+                            const color = ads_count < 10
+                                ? yellowShades[ads_count]
+                                : yellowShades[yellowShades.length - 1];
+                            gradient.addColorStop(1, color);
+                        } else {
+                            gradient.addColorStop(1, yellowShades[0]);
+                        }
+
+                        return gradient;
+                    },
+                },
+                // backgroundColor: gradient,
                 // pointStyle: false,
                 datalabels: {
                     display: false,

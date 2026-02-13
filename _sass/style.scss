@@ -1390,61 +1390,87 @@ body {
     }
 
     .campaign-timeline-section {
-        .transition-icon {
-            transition: transform 0.3s ease;
+      .transition-icon {
+        transition: transform 0.3s ease;
+      }
+
+      a[aria-expanded="true"] .transition-icon {
+        transform: rotate(180deg);
+      }
+
+      .timeline-detail-box {
+        background-color: #fff;
+        transition: all 0.2s ease;
+
+        .box-header {
+
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 12px;
+
+          .small {
+            font-size: 12px;
+          }
         }
-        
-        a[aria-expanded="true"] .transition-icon {
-            transform: rotate(180deg);
+
+        .value {
+          font-size: 14px;
+          font-weight: 600;
+          color: #14181f;
         }
 
-        .timeline-detail-box {
-            background-color: #fff;
-            transition: all 0.2s ease;
+        &.box-red {
+          // border-color: #fee2e2 !important;
+          .icon-circle {
+            background-color: #ef5350 !important;
+          }
 
-            .box-header {
-
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              margin-bottom: 12px;
-                .small{
-                  font-size: 12px;
-                }
-            }
-            .value{
-              font-size: 14px;
-              font-weight: 600;
-              color: #14181f;
-            }
-            
-            &.box-red {
-                // border-color: #fee2e2 !important;
-                .icon-circle { background-color: #ef5350 !important; }
-                .badge { background-color: #ef5350 !important; }
-            }
-            &.box-green {
-                // border-color: #dcfce7 !important;
-                .icon-circle { background-color: #4caf50 !important; }
-                .badge { background-color: #4caf50 !important; }
-            }
-            &.box-blue {
-                // border-color: #dbeafe !important;
-                .icon-circle { background-color: #2196f3 !important; }
-                .badge { background-color: #2196f3 !important; }
-            }
-            &.box-whatsapp {
-                // border-color: #ffedd5 !important;
-                .icon-circle { background-color: #25d366 !important; }
-                .badge { background-color: #25d366 !important; }
-                // Use a darker text for orange background badge if needed, but white is usually fine
-            }
-
-            &:hover {
-                // transform: translateY(-2px);
-                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            }
+          .badge {
+            background-color: #ef5350 !important;
+          }
         }
+
+        &.box-green {
+          // border-color: #dcfce7 !important;
+          .icon-circle {
+            background-color: #4caf50 !important;
+          }
+
+          .badge {
+            background-color: #4caf50 !important;
+          }
+        }
+
+        &.box-blue {
+          // border-color: #dbeafe !important;
+          .icon-circle {
+            background-color: #2196f3 !important;
+          }
+
+          .badge {
+            background-color: #2196f3 !important;
+          }
+        }
+
+        &.box-whatsapp {
+          // border-color: #ffedd5 !important;
+          .icon-circle {
+            background-color: #25d366 !important;
+          }
+
+          .badge {
+            background-color: #25d366 !important;
+          }
+
+          // Use a darker text for orange background badge if needed, but white is usually fine
+        }
+
+        &:hover {
+          // transform: translateY(-2px);
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+      }
     }
 
     //.custom-legends {
@@ -1491,6 +1517,23 @@ body {
       border-top: 1px solid #e1e6ea;
       margin-top: 15px;
       padding: 15px 0;
+      gap: 15px 0;
+
+
+      @media (min-width: 576px) and (max-width: 991.98px) {
+        flex-direction: row;
+        align-items: start;
+        .legend-item {
+          width: 50%;
+          margin-right: 0 !important;
+          justify-content: start !important;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        flex-direction: column;
+        align-items: start;
+      }
 
       .legend-item {
         display: flex;
@@ -1504,19 +1547,32 @@ body {
         font-size: 11px;
         color: #6f767e;
         letter-spacing: 0.1px;
-        margin-right: 25px;
+        margin-right: 20px;
+        line-height: 1;
 
         :last-child {
           margin-right: 0;
         }
 
-        p{
+        p {
           margin-bottom: 0;
         }
 
-        .line-no-legend{
-          width: 24px;
+        .line-no-legend {
+          width: 20px;
           border-top: 2px dashed #9933cc;
+        }
+
+        .views-legend {
+          width: 20px;
+          border-top: 2px solid #2bb8a5;
+        }
+
+        .upgrade-legend {
+          width: 16px;
+          height: 16px;
+          border-radius: 4px;
+          background-color: #f97416;
         }
 
         .box-container {
@@ -2904,9 +2960,11 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   gap: 12px;
 }
-.walkthrough-tooltip-footer .lang-container{
+
+.walkthrough-tooltip-footer .lang-container {
   flex: 1;
 }
+
 .walkthrough-step-indicators {
   display: flex;
   gap: 6px;
@@ -2951,12 +3009,14 @@ body {
 
 
 }
+
 .walkthrough-language-group .btn {
   background: transparent;
   color: white;
   padding-left: 8px;
   padding-right: 8px;
 }
+
 .walkthrough-language-group .btn.active {
   background-color: white;
   color: #1967d3;
@@ -3026,7 +3086,7 @@ body {
     font-size: 14px;
     color: #333;
 
-    span{
+    span {
       font-size: 13px;
     }
 
@@ -3063,5 +3123,5 @@ body {
 }
 
 .own-green {
-  @include legend-color-theme(#1fad53, #1fad53, rgba(121,210,154,1));
+  @include legend-color-theme(#1fad53, #1fad53, rgba(121, 210, 154, 1));
 }
