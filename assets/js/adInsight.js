@@ -1250,16 +1250,16 @@ $(document).ready(() => {
     ];
 
     const yellowShades = [
-        "#ddcfc0", // Lightest shade
-        "#d9c3ad",
-        "#d5b79a",
-        "#d2ab87",
-        "#ce9f74",
-        "#ca9361",
-        "#c6874e",
-        "#c27b3b",
-        "#bf6f34",
-        "#bd5c28", // Darkest shade
+        "#ffe0cc",
+        "#ffd9b3",
+        "#ffcc99",
+        "#ffc266",
+        "#ffb366",
+        "#ff9933",
+        "#ff8c1a",
+        "#e67300",
+        "#cc6600",
+        "#b35900"
     ];
 
     const timelineDates7 = [

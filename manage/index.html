@@ -3839,22 +3839,19 @@ layout: manage_ads
                 <!-- Header -->
                 <div class="px-4 pb-2 d-flex justify-content-between align-items-center" id="modalHeader">
                     <div style="width: 32px;"></div>
-                    <h2 class="fs-6 fw-bold mb-0">Boosting Ad</h2>
+                    <h2 id="modalTitle" class="fs-6 fw-bold mb-0" data-boosting="Boosting Ad" data-boosted="Boosted">Boosting Ad</h2>
                     <button type="button" class="btn btn-close" data-bs-dismiss="modal">
                     </button>
                 </div>
                 
                 <!-- Body -->
                 <div class="modal-body px-4 pb-4 text-center">
-                    <!-- Progress Content -->
-                    <div id="progressContent">
-                    <!-- Progress Circle -->
-                    <div class="progress-circle-container mb-2 mx-auto">
+                    <!-- Progress Circle (Visible only during boosting) -->
+                    <div id="progressCircleContainer" class="progress-circle-container mb-2 mx-auto">
                         <svg class="progress-circle" width="225" height="225" viewBox="0 0 256 256">
                             <defs>
                                 <linearGradient id="gradient-progress" x1="0%" y1="100%" x2="100%" y2="0%">
                                     <stop offset="0%" stop-color="#22c55e"/>
-                                    <!-- <stop offset="40%" stop-color="#eab308"/> -->
                                     <stop offset="100%" stop-color="#22c55e"/>
                                 </linearGradient>
                             </defs>
@@ -3873,83 +3870,61 @@ layout: manage_ads
                         </div>
                     </div>
                     
-                    <!-- Status Indicator -->
-                    <div class="d-flex align-items-center justify-content-center gap-3 mb-4 status-indicator">
-                        <span class="position-relative d-flex" style="height: 12px; width: 12px;">
+                    <!-- Success Circle (Visible only when boosted) -->
+                    <div id="successCircleContainer" class="d-none mb-4">
+                        <div class="success-circle mx-auto">
+                            <div class="success-number" id="successPageNumber">4</div>
+                            <div class="success-label">Page no.</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Status/Title Container (Reused for both states) -->
+                    <!-- Status Indicator for Boosting -->
+                    <div id="statusIndicator" class="d-flex align-items-center justify-content-center gap-3 mb-4 status-indicator">
+                        <span class="position-relative d-flex" style="height: 12px; width: 12px;" id="statusPing">
                             <span class="position-absolute top-0 start-0 ping rounded-circle opacity-75" style="height: 12px; width: 12px;"></span>
                             <span class="position-relative rounded-circle" style="height: 12px; width: 12px;"></span>
                         </span>
-                        <span class="fw-bold fs-6 text-uppercase" style="letter-spacing: 0.05em;">Boosting your ad</span>
+                        <span id="statusText" class="fw-bold fs-6 text-uppercase" style="letter-spacing: 0.05em;">Boosting your ad</span>
                     </div>
                     
-                    <!-- Position Comparison -->
-                    <div class="bg-light rounded-4 px-3 py-3 mb-4 border position-container" style="max-width: 320px; margin: 0 auto;">
+                    <!-- Success Title for Boosted (Initially Hidden) -->
+                    <div id="successTitleContainer" class="d-none mb-4 px-4">
+                        <div class="d-flex align-items-center justify-content-center gap-1 mb-3">
+                            <span class="bi bi-check-circle-fill" style="font-size: 18px; color: #22c55e;"></span>
+                            <span class="fw-bold text-uppercase" style="font-size: 18px; letter-spacing: 0.05em; color: #22c55e;">Boosted</span>
+                        </div>
+                        <h3 class="fs-5 fw-bold mb-2">Success! Your ad is boosted</h3>
+                        <p class="text-secondary px-3">Your listing jumped from <span id="successFromPage">page 18</span> to <span id="successToPage">page 4</span> for maximum exposure.</p>
+                    </div>
+                    
+                    <!-- Position Comparison (Reused for both states) -->
+                    <div id="positionContainer" class="bg-light rounded-4 px-3 py-3 mb-4 border position-container" style="max-width: 320px; margin: 0 auto;">
                         <div class="row align-items-center justify-content-between g-2">
                             <div class="col text-start text-col">
-                                <small class="text-uppercase d-block">Current Pos.</small>
-                                <div class="text-num" id="currentPage">Page 18</div>
+                                <small id="leftLabel" class="text-uppercase d-block">Current Pos.</small>
+                                <div id="leftValue" class="text-num">Page 18</div>
                             </div>
                             <div class="col-auto">
                                 <div class="bg-white rounded-circle shadow-sm d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
-                                    <span class="bi bi-arrow-right text-secondary" style="font-size: 1.125rem;"></span>
+                                    <span id="comparisonIcon" class="bi bi-arrow-right text-secondary" style="font-size: 1.125rem;"></span>
                                 </div>
                             </div>
                             <div class="col text-end text-col">
-                                <small class="text-uppercase d-block">New Pos.</small>
-                                <div class="text-num progress-text-green" id="newPage">Page 4</div>
+                                <small id="rightLabel" class="text-uppercase d-block">New Pos.</small>
+                                <div id="rightValue" class="text-num progress-text-green">Page 4</div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Message -->
-                    <div class="mb-4 px-4 msg-container">
+                    <!-- Message Section (Boosting only) -->
+                    <div id="boostingMessageSection" class="mb-4 px-4 msg-container">
                         <h3 class="fs-5 fw-bold mb-2">Your ad is being boosted.</h3>
                         <p class="text-secondary">Please check in 5-10 mins to see the changes.</p>
                     </div>
-                    </div>
                     
-                    <!-- Success Content (Initially Hidden) -->
-                    <div id="successContent" class="d-none">
-                        <!-- Success Badge -->
-                        <div class="d-flex align-items-center justify-content-center gap-1 mb-4">
-                            <span class="bi bi-check-circle-fill success-badge-icon"></span>
-                            <span class="fw-bold text-uppercase success-badge-text">Boosted</span>
-                        </div>
-                        
-                        <!-- Success Circle -->
-                        <div class="mb-4">
-                            <div class="success-circle mx-auto">
-                                <div class="success-number" id="successPageNumber">4</div>
-                                <div class="success-label">Page no.</div>
-                            </div>
-                        </div>
-                        
-                        <!-- Success Message -->
-                        <div class="mb-4 suscess-msg-box">
-                            <h1 class="fs-5 fw-bold mb-2 success-title">Success! Your ad is boosted</h1>
-                            <p class="text-secondary px-3">Your listing jumped from <span id="successFromPage">page 18</span> to <span id="successToPage">page 4</span> for maximum exposure.</p>
-                        </div>
-                        
-                        <!-- Comparison -->
-                        <div class="bg-light rounded-4 px-3 py-3 mb-4 border position-container" style="max-width: 320px; margin: 0 auto;">
-                            <div class="row align-items-center justify-content-between g-2">
-                                <div class="col text-start text-col">
-                                    <small class="text-uppercase d-block">Initial</small>
-                                    <div class="text-num text-muted text-decoration-line-through" id="successInitialPage">Page 18</div>
-                                </div>
-                                <div class="col-auto">
-                                    <div class="bg-white rounded-circle shadow-sm d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
-                                        <span class="bi bi-graph-up-arrow text-success" style="font-size: 1.125rem;"></span>
-                                    </div>
-                                </div>
-                                <div class="col text-end text-col">
-                                    <small class="progress-text-green text-uppercase d-block">New Position</small>
-                                    <div class="text-num progress-text-green" id="successFinalPage">Page 4</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Upgrade CTA -->
+                    <!-- Upgrade CTA Section (Visible only when boosted) -->
+                    <div id="upgradeSectionContainer" class="d-none">
                         <div class="rounded-4 p-3 mb-3 success-upgrade-box">
                             <div class="mb-3 text-center">
                                 <div class="text-primary fw-bold mb-1 success-upgrade-title">Reach page 1 or 2</div>

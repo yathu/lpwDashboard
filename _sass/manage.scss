@@ -5370,6 +5370,11 @@ label.form-check-label:focus,
   }
 }
 
+/* Light gray styling for initial page number in success state */
+.light-page-number {
+  color: #d1d5db !important;
+}
+
 .msg-container {
   p {
     font-size: 13px;

@@ -845,9 +845,10 @@ $(document).ready(() => {
 
 
      // ===== Progress Modal Configuration =====
-        const config = {
+        const progressConfig = {
             currentPage: 18,
-            targetPage: 4
+            targetPage: 4,
+            isBoostComplete: false
         };
         
         // Bootstrap modal instance
@@ -863,7 +864,7 @@ $(document).ready(() => {
         // Animate progress circle
         function animateProgress() {
             return new Promise((resolve) => {
-                const progress = calculateProgress(config.currentPage, config.targetPage);
+                const progress = calculateProgress(progressConfig.currentPage, progressConfig.targetPage);
                 const radius = 110;
                 const circumference = 2 * Math.PI * radius; // 691.15 approximately
                 const offset = circumference * (1 - progress); // Calculate target offset
@@ -894,44 +895,94 @@ $(document).ready(() => {
             });
         }
         
-        // Initialize progress view
-        function initProgressView() {
-            $('#targetPage').text(config.targetPage);
-            $('#currentPage').text('Page ' + config.currentPage);
-            $('#newPage').text('Page ' + config.targetPage);
+        // Update modal to boosting state
+        function setBoostingState() {
+            progressConfig.isBoostComplete = false;
             
-            animateProgress().then(() => setTimeout(() => showSuccess(), 1000));
+            // Update title
+            $('#modalTitle').text('Boosting Ad').css('color', '');
+            
+            // Show progress circle, hide success circle
+            $('#progressCircleContainer').removeClass('d-none');
+            $('#successCircleContainer').addClass('d-none');
+            
+            // Show status indicator, hide success title
+            $('#statusIndicator').removeClass('d-none');
+            $('#successTitleContainer').addClass('d-none');
+            $('#statusText').text('Boosting your ad');
+            
+            // Update position container for boosting state
+            $('#positionContainer').removeClass('d-none');
+            $('#leftLabel').text('Current Pos.');
+            $('#rightLabel').text('New Pos.');
+            $('#leftValue').text('Page ' + progressConfig.currentPage)
+                .removeClass('text-muted text-decoration-line-through light-page-number');
+            $('#rightValue').text('Page ' + progressConfig.targetPage)
+                .removeClass('text-muted text-decoration-line-through light-page-number');
+            $('#comparisonIcon')
+                .attr('class', 'bi bi-arrow-right text-secondary')
+                .attr('style', 'font-size: 1.125rem;');
+            
+            // Show boosting message, hide upgrade section
+            $('#boostingMessageSection').removeClass('d-none');
+            $('#upgradeSectionContainer').addClass('d-none');
         }
         
-        // Show success content
-        function showSuccess() {
-            $('#successPageNumber').text(config.targetPage);
-            $('#successFromPage').text('page ' + config.currentPage);
-            $('#successToPage').text('page ' + config.targetPage);
-            $('#successInitialPage').text('Page ' + config.currentPage);
-            $('#successFinalPage').text('Page ' + config.targetPage);
+        // Update modal to boosted state
+        function setBoostedState() {
+            progressConfig.isBoostComplete = true;
             
-            // Hide progress content and show success content
-            $('#progressContent').addClass('d-none');
-            $('#successContent').removeClass('d-none');
+            // Update title with success color
+            $('#modalTitle').text('Boosted').css('color', '#22c55e');
             
-            // Hide the header when showing success content
-            $('#modalHeader').addClass('d-none');
+            // Hide progress circle, show success circle
+            $('#progressCircleContainer').addClass('d-none');
+            $('#successCircleContainer').removeClass('d-none');
+            $('#successPageNumber').text(progressConfig.targetPage);
+            
+            // Hide status indicator, show success title
+            $('#statusIndicator').addClass('d-none');
+            $('#successTitleContainer').removeClass('d-none');
+            $('#successFromPage').text('page ' + progressConfig.currentPage);
+            $('#successToPage').text('page ' + progressConfig.targetPage);
+            
+            // Update position container for boosted state
+            $('#positionContainer').removeClass('d-none');
+            $('#leftLabel').text('Initial');
+            $('#rightLabel').text('New Position');
+            $('#leftValue').text('Page ' + progressConfig.currentPage)
+                .addClass('text-muted text-decoration-line-through light-page-number');
+            $('#rightValue').text('Page ' + progressConfig.targetPage)
+                .removeClass('text-muted text-decoration-line-through light-page-number');
+            $('#comparisonIcon')
+                .attr('class', 'bi bi-graph-up-arrow text-success')
+                .attr('style', 'font-size: 1.125rem;');
+            
+            // Hide boosting message, show upgrade section
+            $('#boostingMessageSection').addClass('d-none');
+            $('#upgradeSectionContainer').removeClass('d-none');
+        }
+        
+        // Initialize progress view
+        function initProgressView() {
+            setBoostingState();
+            $('#targetPage').text(progressConfig.targetPage);
+            
+            animateProgress().then(() => setTimeout(() => setBoostedState(), 1000));
         }
         
         // Public API for external use (if needed)
         $.fn.updateBoostConfig = function(currentPage, targetPage) {
-            config.currentPage = currentPage;
-            config.targetPage = targetPage;
+            progressConfig.currentPage = currentPage;
+            progressConfig.targetPage = targetPage;
             initProgressView();
             return this;
         };
         
         $.fn.showProgressModal = function() {
-            // Reset to show progress content
-            $('#progressContent').removeClass('d-none');
-            $('#successContent').addClass('d-none');
-            $('#modalHeader').removeClass('d-none');
+            // Reset to boosting state when showing modal
+            setBoostingState();
+            progressConfig.isBoostComplete = false;
             
             progressModal.show();
             return this;
@@ -942,16 +993,19 @@ $(document).ready(() => {
         
         // Handle progress modal show event - animate when modal becomes visible
         document.getElementById('progressModal').addEventListener('shown.bs.modal', function() {
-            // Reset to show progress content when modal opens
-            $('#progressContent').removeClass('d-none');
-            $('#successContent').addClass('d-none');
-            $('#modalHeader').removeClass('d-none');
+            // Reset to boosting state when modal opens
+            setBoostingState();
+            progressConfig.isBoostComplete = false;
             
             initProgressView();
         });
         
         // Event handlers
-        $('#btnMinimize').on('click', showSuccess);
+        $('#btnMinimize').on('click', function() {
+            if (!progressConfig.isBoostComplete) {
+                setBoostedState();
+            }
+        });
 
         $('#btnYesBoost').on("click",()=>{
             progressModal.show();
