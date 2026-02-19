@@ -5205,7 +5205,8 @@ label.form-check-label:focus,
 
 #progressModal {
   .modal-content {
-    height: 658px;
+    // height: 658px;
+    max-height: 812px;
   }
   .btn-close {
     font-size: 12px;

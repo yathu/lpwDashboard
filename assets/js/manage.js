@@ -904,7 +904,7 @@ $(document).ready(() => {
             
             // Show progress circle, hide success circle
             $('#progressCircleContainer').removeClass('d-none');
-            $('#successCircleContainer').addClass('d-none');
+            // $('#successCircleContainer').addClass('d-none');
             
             // Show status indicator, hide success title
             $('#statusIndicator').removeClass('d-none');
@@ -936,8 +936,8 @@ $(document).ready(() => {
             $('#modalTitle').text('Boosted').css('color', '#22c55e');
             
             // Hide progress circle, show success circle
-            $('#progressCircleContainer').addClass('d-none');
-            $('#successCircleContainer').removeClass('d-none');
+            // $('#progressCircleContainer').addClass('d-none');
+            // $('#successCircleContainer').removeClass('d-none');
             $('#successPageNumber').text(progressConfig.targetPage);
             
             // Hide status indicator, show success title
