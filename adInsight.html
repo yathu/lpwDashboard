@@ -457,7 +457,7 @@ title: insight
                     <div class="performance-chart-container shadow">
                         <div class="widget-title-1">Listing Performance Insights</div>
 
-                        <div class="row justify-content-between align-items-end">
+                        <div class="row justify-content-between align-items-end gy-2">
 
                             <div class="col-12 col-sm-6">
                                 <div
@@ -481,22 +481,24 @@ title: insight
 
 
                             <div
-                                    class="col-12 col-md-6 btn-group custom-dropdown"
+                                    class="col-12 col-md-6 text-end"
                                     role="group"
                                     aria-label="Button group with nested dropdown"
                             >
-                                <select
-                                        class="form-select form-select-sm"
-                                        aria-label=".form-select-sm example"
-                                        id="listingPerfomanceDays"
-                                >
-                                    <option selected value="7">Last 7 Days</option>
-                                    <option value="30">Last 30 Days</option>
-                                    <option value="90">Last 90 Days</option>
-                                </select>
-                                <button type="button" class="btn">
-                                    <i class="bi bi-caret-down-fill"></i>
-                                </button>
+                                <div class="btn-group custom-dropdown">
+                                    <select
+                                            class="form-select form-select-sm"
+                                            aria-label=".form-select-sm example"
+                                            id="listingPerfomanceDays"
+                                    >
+                                        <option selected value="7">Last 7 Days</option>
+                                        <option value="30">Last 30 Days</option>
+                                        <option value="90">Last 90 Days</option>
+                                    </select>
+                                    <button type="button" class="btn">
+                                        <i class="bi bi-caret-down-fill"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
