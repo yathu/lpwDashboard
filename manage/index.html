@@ -3837,7 +3837,7 @@ layout: manage_ads
                 </div>
                 
                 <!-- Header -->
-                <div class="px-4 pb-2 d-flex justify-content-between align-items-center" id="modalHeader">
+                <div class="px-4 pb-1 d-flex justify-content-between align-items-center" id="modalHeader">
                     <div style="width: 32px;"></div>
                     <h2 id="modalTitle" class="fs-6 fw-bold mb-0" data-boosting="Boosting Ad" data-boosted="Boosted">Boosting Ad</h2>
                     <button type="button" class="btn btn-close" data-bs-dismiss="modal">
@@ -3847,7 +3847,7 @@ layout: manage_ads
                 <!-- Body -->
                 <div class="modal-body px-4 pb-4 text-center">
                     <!-- Progress Circle (Visible only during boosting) -->
-                    <div id="progressCircleContainer" class="progress-circle-container mb-2 mx-auto">
+                    <div id="progressCircleContainer" class="progress-circle-container mx-auto">
                         <svg class="progress-circle" width="225" height="225" viewBox="0 0 256 256">
                             <defs>
                                 <linearGradient id="gradient-progress" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -3880,7 +3880,7 @@ layout: manage_ads
                     
                     <!-- Status/Title Container (Reused for both states) -->
                     <!-- Status Indicator for Boosting -->
-                    <div id="statusIndicator" class="d-flex align-items-center justify-content-center gap-3 mb-4 status-indicator">
+                    <div id="statusIndicator" class="d-flex align-items-center justify-content-center gap-3 mb-3 status-indicator">
                         <span class="position-relative d-flex" style="height: 12px; width: 12px;" id="statusPing">
                             <span class="position-absolute top-0 start-0 ping rounded-circle opacity-75" style="height: 12px; width: 12px;"></span>
                             <span class="position-relative rounded-circle" style="height: 12px; width: 12px;"></span>
@@ -3889,17 +3889,17 @@ layout: manage_ads
                     </div>
                     
                     <!-- Success Title for Boosted (Initially Hidden) -->
-                    <div id="successTitleContainer" class="d-none mb-4 px-4">
-                        <div class="d-flex align-items-center justify-content-center gap-1 mb-3">
-                            <span class="bi bi-check-circle-fill" style="font-size: 18px; color: #22c55e;"></span>
-                            <span class="fw-bold text-uppercase" style="font-size: 18px; letter-spacing: 0.05em; color: #22c55e;">Boosted</span>
+                    <div id="successTitleContainer" class="d-none mb-3">
+                        <div class="d-flex align-items-center justify-content-center gap-1 mb-1">
+                            <span class="bi bi-check-circle-fill" style="font-size: 16px; color: #22c55e;"></span>
+                            <span class="fw-bold text-uppercase" style="font-size: 16px; letter-spacing: 0.05em; color: #22c55e;">Boosted</span>
                         </div>
-                        <h3 class="fs-5 fw-bold mb-2">Success! Your ad is boosted</h3>
-                        <p class="text-secondary px-3">Your listing jumped from <span id="successFromPage">page 18</span> to <span id="successToPage">page 4</span> for maximum exposure.</p>
+                        <h3 class="fw-bold mb-2">Success! Your ad is boosted</h3>
+                        <p class="text-secondary px-3 mb-2">Your listing jumped from <span id="successFromPage">page 18</span> to <span id="successToPage">page 4</span> for maximum exposure.</p>
                     </div>
                     
                     <!-- Position Comparison (Reused for both states) -->
-                    <div id="positionContainer" class="bg-light rounded-4 px-3 py-3 mb-4 border position-container" style="max-width: 320px; margin: 0 auto;">
+                    <div id="positionContainer" class="bg-light rounded-4 px-3 py-3 mb-3 border position-container" style="max-width: 320px; margin: 0 auto;">
                         <div class="row align-items-center justify-content-between g-2">
                             <div class="col text-start text-col">
                                 <small id="leftLabel" class="text-uppercase d-block">Current Pos.</small>
@@ -3925,19 +3925,19 @@ layout: manage_ads
                     
                     <!-- Upgrade CTA Section (Visible only when boosted) -->
                     <div id="upgradeSectionContainer" class="d-none">
-                        <div class="rounded-4 p-3 mb-3 success-upgrade-box">
-                            <div class="mb-3 text-center">
+                        <div class="rounded-4 p-3 mb-2 success-upgrade-box">
+                            <div class="mb-2 text-center">
                                 <div class="text-primary fw-bold mb-1 success-upgrade-title">Reach page 1 or 2</div>
                                 <p class="text-muted small mb-0 getmore-text">Get 3x more visibility by upgrading</p>
                             </div> 
-                            <button class="btn btn-primary w-100 rounded-4 d-flex align-items-center justify-content-center gap-2 fw-bold success-upgrade-btn">
+                            <button class="btn btn-primary w-100 rounded-3 d-flex align-items-center justify-content-center gap-2 fw-bold success-upgrade-btn">
                                 <span class="bi bi-rocket-takeoff-fill"></span>
                                 <span>Upgrade your ad now</span>
                             </button>
                         </div>
                         
                         <!-- Done Button -->
-                        <button class="btn w-100 text-secondary success-done-btn border-0" data-bs-dismiss="modal">Done</button>
+                        <button class="btn w-100 text-secondary success-done-btn border-0 py-0" data-bs-dismiss="modal">Done</button>
                     </div>
                     
                 </div>

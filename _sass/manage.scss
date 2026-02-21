@@ -5205,11 +5205,20 @@ label.form-check-label:focus,
 
 #progressModal {
   .modal-content {
-    // height: 658px;
-    max-height: 812px;
+    height: 658px;
+    // max-height: 812px;
   }
   .btn-close {
     font-size: 12px;
+  }
+  #successTitleContainer{
+    margin-top: -20px;
+    h3{
+      font-size: 14px;
+    }
+    .text-secondary{
+      font-size: 13px;
+    }
   }
 }
 
@@ -5466,7 +5475,7 @@ label.form-check-label:focus,
   }
 
   .success-upgrade-btn {
-    height: 56px;
+    height: 40px;
 
     .bi {
       font-size: 14px;
