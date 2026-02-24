@@ -2423,37 +2423,37 @@ $(document).ready(() => {
         type: "line",
         data: timeline_data,
         plugins: [{
-            id: 'customCanvasBackgroundColor',
-            beforeDraw: (chart) => {
-                const ctx = chart.canvas.getContext('2d');
-                const chartArea = chart.chartArea;
-                if (!chartArea) return;
+            // id: 'customCanvasBackgroundColor',
+            // beforeDraw: (chart) => {
+            //     const ctx = chart.canvas.getContext('2d');
+            //     const chartArea = chart.chartArea;
+            //     if (!chartArea) return;
                 
-                ctx.save();
-                ctx.fillStyle = '#edf1f4ff'; // Light grey background
+            //     ctx.save();
+            //     ctx.fillStyle = '#edf1f4ff'; // Light grey background
                 
-                // Draw rounded rectangle - full width, bottom above x-axis
-                const x = 0;
-                const y = 0;
-                const width = chart.width;
-                const height = chartArea.bottom; // Stops above x-axis
-                const radius = 12; // Border radius
+            //     // Draw rounded rectangle - full width, bottom above x-axis
+            //     const x = 0;
+            //     const y = 0;
+            //     const width = chart.width;
+            //     const height = chartArea.bottom; // Stops above x-axis
+            //     const radius = 12; // Border radius
                 
-                ctx.beginPath();
-                ctx.moveTo(x + radius, y);
-                ctx.lineTo(x + width - radius, y);
-                ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
-                ctx.lineTo(x + width, y + height - radius);
-                ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
-                ctx.lineTo(x + radius, y + height);
-                ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
-                ctx.lineTo(x, y + radius);
-                ctx.quadraticCurveTo(x, y, x + radius, y);
-                ctx.closePath();
-                ctx.fill();
+            //     ctx.beginPath();
+            //     ctx.moveTo(x + radius, y);
+            //     ctx.lineTo(x + width - radius, y);
+            //     ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+            //     ctx.lineTo(x + width, y + height - radius);
+            //     ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+            //     ctx.lineTo(x + radius, y + height);
+            //     ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+            //     ctx.lineTo(x, y + radius);
+            //     ctx.quadraticCurveTo(x, y, x + radius, y);
+            //     ctx.closePath();
+            //     ctx.fill();
                 
-                ctx.restore();
-            }
+            //     ctx.restore();
+            // }
         }],
         options: {
             maintainAspectRatio: false,
@@ -2523,7 +2523,7 @@ $(document).ready(() => {
                     common: {
                         drawTime: "beforeDatasetsDraw",
                     },
-                    annotations: temp_timeline_bg_lines,
+                    // annotations: temp_timeline_bg_lines,
                 },
             },
         },
@@ -2774,6 +2774,9 @@ $(document).ready(() => {
                 console.error('Could not find target element for step', stepIndex);
                 return;
             }
+
+            //scroll to position on 0
+            if (stepIndex == 0) window.scrollTo(0, targetRect.top);
 
             // Position highlight
             this.highlight.css({
@@ -3027,4 +3030,77 @@ $(document).ready(() => {
 
     // Set initial active language
     $(`.lang-btn[data-lang="${CURRENT_LANGUAGE}"]`).addClass('active');
+
+
+    // Walkthrough for overall
+    const overallChartWalk = [
+        {
+            type: 'element',
+            id: 'allAdsSelect',
+            content: {
+                en: 'chart types',
+                es: 'chart types ES',
+                fr: 'chart types FR'
+            }
+        },
+        {
+            type: 'element',
+            id: 'listingPerfomanceDays',
+            content: {
+                en: 'chart types',
+                es: 'chart types ES',
+                fr: 'chart types FR'
+            }
+        },
+        {
+            type: 'element',
+            id: 'legendUpgradeAds',
+            content: {
+                en: 'chart types',
+                es: 'chart types ES',
+                fr: 'chart types FR'
+            }
+        },
+        {
+            type: 'element',
+            id: 'legendPageNo',
+            content: {
+                en: 'chart types',
+                es: 'chart types ES',
+                fr: 'chart types FR'
+            }
+        },
+        {
+            type: 'element',
+            id: 'legendViews',
+            content: {
+                en: 'chart types',
+                es: 'chart types ES',
+                fr: 'chart types FR'
+            }
+        },
+        {
+            type: 'element',
+            id: 'legendBoosts',
+            content: {
+                en: 'chart types',
+                es: 'chart types ES',
+                fr: 'chart types FR'
+            }
+        },
+        {
+            type: 'element',
+            id: 'timelineChart',
+            content: {
+                en: 'chart types',
+                es: 'chart types ES',
+                fr: 'chart types FR'
+            }
+        },
+    ];
+
+        $('#OverallChartWalkthrough').on('click', function () {
+        walkthroughInstanceBoosted = new ChartWalkthrough(timelineChart, overallChartWalk, 'Overall & timeline');
+        walkthroughInstanceBoosted.start();
+    });
 });
