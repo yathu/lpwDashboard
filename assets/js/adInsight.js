@@ -1250,16 +1250,16 @@ $(document).ready(() => {
     ];
 
     const yellowShades = [
-        "#ffe0cc",
-        "#ffd9b3",
-        "#ffcc99",
-        "#ffc266",
-        "#ffb366",
-        "#ff9933",
-        "#ff8c1a",
-        "#e67300",
-        "#cc6600",
-        "#b35900"
+        "#FFE0A3",
+        "#FFCE70",
+        "#FFBF44",
+        "#FFAE14",
+        "#F09E00",
+        "#E08F00",
+        "#B87500",
+        "#915C00",
+        "#6E4600",
+        "#402900"
     ];
 
     const timelineDates7 = [
@@ -1836,12 +1836,15 @@ $(document).ready(() => {
                             const rawTitle = tooltip.title[0];
                             // Format date as "Mon DD" e.g. "Jun 24"
                             let dateStr = rawTitle;
+                            console.log("dateStr==>",dateStr);
                             try {
-                                const parsed = moment(rawTitle);
+                                const parsed = moment(dateStr, "MMM DD, YYYY, hh:mm:ss a");
                                 if (parsed.isValid()) {
-                                    dateStr = parsed.format('MMM DD');
+                                    dateStr = parsed.format('MMM DD, YYYY');
                                 }
-                            } catch(e) { /* use rawTitle */ }
+                            } catch(e) {
+                                console.log("date format error==>",e);
+                            }
                             innerHtml += `<div style="font-size:15px;font-weight:600;color:#222;margin-bottom:8px;">${dateStr}</div>`;
                         }
 
