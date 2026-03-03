@@ -999,13 +999,7 @@ $(document).ready(() => {
             
             initProgressView();
         });
-        
-        // Event handlers
-        $('#btnMinimize').on('click', function() {
-            if (!progressConfig.isBoostComplete) {
-                setBoostedState();
-            }
-        });
+
 
         $('#btnYesBoost').on("click",()=>{
             progressModal.show();
