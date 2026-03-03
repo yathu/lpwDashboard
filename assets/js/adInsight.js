@@ -1541,6 +1541,15 @@ $(document).ready(() => {
     gradient.addColorStop(0, 'rgba(233,255,250,0.67)');
     gradient.addColorStop(1, 'rgba(154,189,184,0.09)');
 
+    //hex to rgb convert
+    function hexToRgba(hex, alpha) {
+        const r = parseInt(hex.slice(1, 3), 16);
+        const g = parseInt(hex.slice(3, 5), 16);
+        const b = parseInt(hex.slice(5, 7), 16);
+
+        return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    }
+
     const data = {
         datasets: [
             {
@@ -1570,7 +1579,8 @@ $(document).ready(() => {
                         );
 
                         // Add yellow at stop 0
-                        gradient.addColorStop(0, '#fffcf9'); // Yellow
+                        const bottomColor = hexToRgba(yellowShades[0], 0.6);
+                        gradient.addColorStop(0, bottomColor); // Yellow
 
                         // Add dynamic color based on ads_count
                         if (ads_count) {
