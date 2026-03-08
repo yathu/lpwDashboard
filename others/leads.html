@@ -2,112 +2,168 @@
 layout: leads_only
 ---
 
-<div class="row">
-    <div class="col-5 p-4">
-        <div class="leads-progress-container">
-            <div class="lead-potential">
-                <div class="label">Expected Leads</div>
-                <div class="stats-badge views">
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-8 col-lg-5 p-4">
+            <div class="leads-progress-container">
+                <div class="lead-potential">
+                    <div class="label">Expected Leads</div>
+                    <div class="stats-badge views">
 
-                    <svg class="me-1" viewBox="0 0 512 512">
-                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                              stroke-width="32"
-                              d="M352 144h112v112"/>
-                        <path d="M48 368l121.37-121.37a32 32 0 0145.26 0l50.74 50.74a32 32 0 0045.26 0L448 160"
-                              fill="none"
-                              stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
-                    </svg>
+                        <svg class="me-1" viewBox="0 0 512 512">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="32"
+                                  d="M352 144h112v112"/>
+                            <path d="M48 368l121.37-121.37a32 32 0 0145.26 0l50.74 50.74a32 32 0 0045.26 0L448 160"
+                                  fill="none"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="32"/>
+                        </svg>
 
-                    +340% Views
-                </div>
-            </div>
-
-            <div class="progress-container">
-                <div class="progress-stacked">
-                    <div class="progress" role="progressbar"
-                         aria-label="Segment one"
-                         aria-valuenow="25" aria-valuemin="0"
-                         aria-valuemax="100" style="width: 25%">
-                        <div class="progress-bar">
-                            <!--                            4-->
-                        </div>
-                    </div>
-                    <div class="progress" role="progressbar"
-                         aria-label="Segment two"
-                         aria-valuenow="30" aria-valuemin="0"
-                         aria-valuemax="100" style="width: 30%"
-                         data-bs-toggle="popover"
-                         data-bs-custom-class="progress-popover"
-                         data-bs-placement="top"
-                         data-bs-html="true"
-                         data-bs-trigger="hover focus"
-                         data-bs-content="4x more leads">
-                        <div class="progress-bar progress-light">
-                            <!--                            +10-->
-                        </div>
+                        +340% Views
                     </div>
                 </div>
-                <div class="progress-labels">
+
+                <div class="progress-container">
+                    <div class="progress-stacked">
+                        <div class="progress" role="progressbar"
+                             aria-label="Segment one"
+                             aria-valuenow="25" aria-valuemin="0"
+                             aria-valuemax="100" style="width: 25%">
+                            <div class="progress-bar">
+                                <!--                            4-->
+                            </div>
+                        </div>
+                        <div class="progress" role="progressbar"
+                             aria-label="Segment two"
+                             aria-valuenow="30" aria-valuemin="0"
+                             aria-valuemax="100" style="width: 30%"
+                             data-bs-toggle="popover"
+                             data-bs-custom-class="progress-popover"
+                             data-bs-placement="top"
+                             data-bs-html="true"
+                             data-bs-trigger="hover focus"
+                             data-bs-content="4x more leads">
+                            <div class="progress-bar progress-light">
+                                <!--                            +10-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-labels">
                                               <span class="current">
                                                 <i class="bi bi-circle-fill"></i>
                                                 Now: 20 leads/mo</span>
-                    <span class="target">
+                        <span class="target">
                                                 <i class="bi bi-circle-fill"></i>
                                                 Potential Leads</span>
+                    </div>
                 </div>
+            </div>
+
+            <!--        lead potential-->
+            <br>
+            <br>
+            <div class="leads-progress-container potential-container border d-none d-sm-block">
+                <div class="lead-potential">
+                    <div class="title-icon">
+                        <svg class="" viewBox="0 0 512 512">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="32"
+                                  d="M352 144h112v112"/>
+                            <path d="M48 368l121.37-121.37a32 32 0 0145.26 0l50.74 50.74a32 32 0 0045.26 0L448 160"
+                                  fill="none"
+                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="32"/>
+                        </svg>
+                    </div>
+                    <div class="title-container text-start mx-2">
+                        <h6 class="mb-0 fs-6 fw-bold">Leads Potential</h6>
+                        <p>Estimated monthly reach</p>
+                    </div>
+                    <div class="stats-badge light-badge">
+                        <i class="bi bi-lightning-charge me-1"></i>
+                        +30%
+                    </div>
+                </div>
+
+                <div class="progress-container mb-3">
+                    <div class="progress-info">
+                        <i class="bi bi-people"></i>
+                        <div class="title px-2">Without add-ons</div>
+                        <div class="leads">50 current leads</div>
+                    </div>
+                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25"
+                         aria-valuemin="0"
+                         aria-valuemax="100">
+                        <div class="progress-bar progress-bar-light" style="width: 25%"></div>
+                    </div>
+                </div>
+
+                <div class="progress-container active">
+                    <div class="progress-info">
+                        <i class="bi bi-lightning-charge"></i>
+
+                        <div class="title px-2">With add-ons</div>
+                        <div class="leads">50 Leads</div>
+                    </div>
+                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25"
+                         aria-valuemin="0"
+                         aria-valuemax="100">
+                        <div class="progress-bar" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="fixed-bottom d-sm-none p-3 bg-dark-subtle">
+    <div class="leads-progress-container potential-container border">
+        <div class="lead-potential">
+            <div class="title-icon">
+                <svg class="" viewBox="0 0 512 512">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="32"
+                          d="M352 144h112v112"/>
+                    <path d="M48 368l121.37-121.37a32 32 0 0145.26 0l50.74 50.74a32 32 0 0045.26 0L448 160"
+                          fill="none"
+                          stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+                </svg>
+            </div>
+            <div class="title-container text-start mx-2">
+                <h6 class="mb-0 fs-6 fw-bold">Leads Potential</h6>
+                <p>Estimated monthly reach</p>
+            </div>
+            <div class="stats-badge light-badge">
+                <i class="bi bi-lightning-charge me-1"></i>
+                +30%
             </div>
         </div>
 
-        <!--        lead potential-->
-        <br>
-        <br>
-        <div class="leads-progress-container potential-container border">
-            <div class="lead-potential">
-                <div class="title-icon">
-                    <svg class="" viewBox="0 0 512 512">
-                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                              stroke-width="32"
-                              d="M352 144h112v112"/>
-                        <path d="M48 368l121.37-121.37a32 32 0 0145.26 0l50.74 50.74a32 32 0 0045.26 0L448 160"
-                              fill="none"
-                              stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
-                    </svg>
-                </div>
-                <div class="title-container text-start mx-2">
-                    <h6 class="mb-0 fs-6 fw-bold">Leads Potential</h6>
-                    <p>Estimated monthly reach</p>
-                </div>
-                <div class="stats-badge light-badge">
-                    <i class="bi bi-lightning-charge me-1"></i>
-                    +30%
-                </div>
+        <div class="progress-container mb-3">
+            <div class="progress-info">
+                <i class="bi bi-people"></i>
+                <div class="title px-2">Without add-ons</div>
+                <div class="leads">50 current leads</div>
             </div>
-
-            <div class="progress-container mb-3">
-                <div class="progress-info">
-                    <i class="bi bi-people"></i>
-                    <div class="title px-2">Without add-ons</div>
-                    <div class="leads">50 Leads</div>
-                </div>
-                <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0"
-                     aria-valuemax="100">
-                    <div class="progress-bar progress-bar-light" style="width: 25%"></div>
-                </div>
-            </div>
-
-            <div class="progress-container active">
-                <div class="progress-info">
-                    <i class="bi bi-lightning-charge"></i>
-
-                    <div class="title px-2">With add-ons</div>
-                    <div class="leads">50 Leads</div>
-                </div>
-                <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0"
-                     aria-valuemax="100">
-                    <div class="progress-bar" style="width: 75%"></div>
-                </div>
+            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0"
+                 aria-valuemax="100">
+                <div class="progress-bar progress-bar-light" style="width: 25%"></div>
             </div>
         </div>
 
+        <div class="progress-container active">
+            <div class="progress-info">
+                <i class="bi bi-lightning-charge"></i>
+
+                <div class="title px-2">With add-ons</div>
+                <div class="leads">50 Leads</div>
+            </div>
+            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0"
+                 aria-valuemax="100">
+                <div class="progress-bar" style="width: 75%"></div>
+            </div>
+        </div>
     </div>
 </div>
